@@ -31,6 +31,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Collections;
+using System.Diagnostics;
+
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
@@ -38,42 +40,75 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
 {
     public partial class Tests03Mode
     {
+        Stopwatch sw = null;
 
         [Test()]
         public void Mode01()
         {
+            // Arrange
             List<int> data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
 
+            sw = Stopwatch.StartNew();
+            // Act
             List<int> modes01 = data01.Modes();
+            sw.Stop();
+            Console.WriteLine($"List<int>.Average() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            sw.Reset();
 
+            // Assert
             Assert.AreEqual(new List<int> { 4 }, modes01);
 
-
+            // Arrange
             Stack<int> data02 = new Stack<int>(new[] { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 });
 
+            sw = Stopwatch.StartNew();
+            // Act
             List<int> modes02 = data02.Modes();
+            sw.Stop();
+            Console.WriteLine($"List<int>.Average() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            sw.Reset();
 
+            // Assert
             Assert.AreEqual(new List<int> { 4 }, modes02);
 
-
+            // Arrange
             Queue<int> data03 = new Queue<int>(new[] { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 });
 
+            sw = Stopwatch.StartNew();
+            // Act
             List<int> modes03 = data03.Modes();
+            sw.Stop();
+            Console.WriteLine($"List<int>.Average() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            sw.Reset();
 
+            // Assert
             Assert.AreEqual(new List<int> { 4 }, modes03);
 
-
+            // Arrange
             int[] data04 = new[] { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
 
+            sw = Stopwatch.StartNew();
+            // Act
             List<int> modes04 = data04.Modes();
+            sw.Stop();
+            Console.WriteLine($"List<int>.Average() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            sw.Reset();
 
+            // Assert
             Assert.AreEqual(new List<int> { 4 }, modes04);
 
+            // Arrange
             ArrayList data05 = new ArrayList { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
 
             #if NETSTANDARD1_3
+            sw = Stopwatch.StartNew();
+            // Act
             List<int> modes05 = data05.Modes();
+            sw.Stop();
+            Console.WriteLine($"List<int>.Average() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            sw.Reset();
 
+            // Assert
             Assert.AreEqual(new List<int> { 4 }, modes05);
             #endif
 

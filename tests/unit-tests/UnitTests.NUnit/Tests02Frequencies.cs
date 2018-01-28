@@ -30,23 +30,43 @@ using System;
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Diagnostics;
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.HolisticWare.Core.Math.Statistics
 {
-    public partial class Tests01MeanAverage
+    public partial class Tests02Frequencies
     {
-        
+        Stopwatch sw = null;
+
         [Test()]
-        public void MeanAverage()
+        public void Frequencies()
         {
+            // Arrange
             List<int> data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
 
-            double mean01 = data01.Average();
+            sw = Stopwatch.StartNew();
+            // Act
+            IEnumerable<KeyValuePair<int, uint>> frequencies01 = data01.Frequencies();
+            sw.Stop();
+            Console.WriteLine($"List<int>.Average() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            sw.Reset();
 
-            Assert.AreEqual(3.8, mean01, 0.1);
-
+            CollectionAssert.AreEquivalent
+                                (
+                                    frequencies01,
+                                    new Dictionary<int, uint>()
+                                    {
+                                        { 4, 3 },
+                                        { 2, 2 },
+                                        { 3, 1 },
+                                        { 5, 1 },
+                                        { 6, 1 },
+                                        { 7, 1 },
+                                        { 1, 1 },
+                                    }
+                                );
             return;
         }
 
