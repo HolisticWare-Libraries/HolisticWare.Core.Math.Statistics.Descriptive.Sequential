@@ -43,18 +43,22 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
         [Test()]
         public void MeanAverage()
         {
+            //====================================================================================================
             // Arrange
             List<int> data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
 
             sw = Stopwatch.StartNew();
+            //----------------------------------------------------------------------------------------------------
             // Act
             double mean01 = data01.Average();
             sw.Stop();
             Console.WriteLine($"List<int>.Average() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
             sw.Reset();
 
+            //----------------------------------------------------------------------------------------------------
             // Assert
             Assert.AreEqual(3.8, mean01, 0.1);
+            //====================================================================================================
 
             return;
         }

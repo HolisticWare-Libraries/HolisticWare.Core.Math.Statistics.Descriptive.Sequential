@@ -45,6 +45,7 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
         [Test()]
         public void Mode01()
         {
+            //====================================================================================================
             // Arrange
             List<int> data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
 
@@ -57,7 +58,9 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
 
             // Assert
             Assert.AreEqual(new List<int> { 4 }, modes01);
+            //====================================================================================================
 
+            //====================================================================================================
             // Arrange
             Stack<int> data02 = new Stack<int>(new[] { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 });
 
@@ -65,12 +68,14 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             // Act
             List<int> modes02 = data02.Modes();
             sw.Stop();
-            Console.WriteLine($"List<int>.Average() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"Stack<int>.Average() size={data02.Count} elapsed[ticks]={sw.ElapsedTicks}");
             sw.Reset();
 
             // Assert
             Assert.AreEqual(new List<int> { 4 }, modes02);
+            //====================================================================================================
 
+            //====================================================================================================
             // Arrange
             Queue<int> data03 = new Queue<int>(new[] { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 });
 
@@ -78,12 +83,14 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             // Act
             List<int> modes03 = data03.Modes();
             sw.Stop();
-            Console.WriteLine($"List<int>.Average() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"Queue<int>.Average() size={data03.Count} elapsed[ticks]={sw.ElapsedTicks}");
             sw.Reset();
 
             // Assert
             Assert.AreEqual(new List<int> { 4 }, modes03);
+            //====================================================================================================
 
+            //====================================================================================================
             // Arrange
             int[] data04 = new[] { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
 
@@ -91,25 +98,28 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             // Act
             List<int> modes04 = data04.Modes();
             sw.Stop();
-            Console.WriteLine($"List<int>.Average() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"int[].Modes() size={data04.Length} elapsed[ticks]={sw.ElapsedTicks}");
             sw.Reset();
 
             // Assert
             Assert.AreEqual(new List<int> { 4 }, modes04);
+            //====================================================================================================
 
+            #if NETSTANDARD1_3
+            //====================================================================================================
             // Arrange
             ArrayList data05 = new ArrayList { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
 
-            #if NETSTANDARD1_3
             sw = Stopwatch.StartNew();
             // Act
             List<int> modes05 = data05.Modes();
             sw.Stop();
-            Console.WriteLine($"List<int>.Average() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"ArrayList.Modes() size={data05.Count} elapsed[ticks]={sw.ElapsedTicks}");
             sw.Reset();
 
             // Assert
             Assert.AreEqual(new List<int> { 4 }, modes05);
+            //====================================================================================================
             #endif
 
             return;
@@ -118,11 +128,19 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
         [Test()]
         public void Mode02()
         {
+            //====================================================================================================
+            // Arrange
             List<int> data01 = new List<int> { 1, 2, 2, 3, 3, 4 };
 
+            sw = Stopwatch.StartNew();
+            // Act
             List<int> modes01 = data01.Modes();
+            sw.Stop();
+            Console.WriteLine($"List<int>.Modes() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
 
+            // Assert
             Assert.AreEqual(new List<int> { 2, 3 }, modes01);
+            //====================================================================================================
 
             return;
         }
@@ -130,11 +148,19 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
         [Test()]
         public void Mode03()
         {
+            //====================================================================================================
+            // Arrange
             List<int> data01 = new List<int> { 1, 2, 2, 3, 3, 4, 5, 6 };
 
+            sw = Stopwatch.StartNew();
+            // Act
             List<int> modes01 = data01.Modes();
+            sw.Stop();
+            Console.WriteLine($"List<int>.Modes() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
 
+            // Assert
             Assert.AreEqual(new List<int> { 2, 3 }, modes01);
+            //====================================================================================================
 
             return;
         }
