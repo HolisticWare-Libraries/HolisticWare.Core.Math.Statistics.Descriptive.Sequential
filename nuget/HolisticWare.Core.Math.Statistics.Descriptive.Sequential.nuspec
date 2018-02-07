@@ -31,7 +31,9 @@
 
 			Statistics (Descriptive Statistics) Algorithms based on IEnumerable&lt;T&gt; - Sequential
 
-			Xplat (cross platform) .NET Standard 1.0 (netstandard1.0) implementation 
+			Xplat (cross platform) 
+			.NET Standard 1.0 (netstandard1.0) implementation 
+			.NET Standard 1.3 (netstandard1.3) implementation 
 		</description>
 		<releaseNotes>
 			Implementation split into 2 nugets (Sequential and Parallel)
@@ -42,6 +44,7 @@
 		<tags>
 			Math, Statistics, Descriptive, IEnumerable&lt;T&gt;, Parallel
 			.NET Standard 1.0, netstandard1.0
+			.NET Standard 1.3, netstandard1.3
 		</tags>
 		<licenseUrl>
 			https://github.com/moljac/HolisticWare.Core.Math.Statistics.Descriptive.Sequential/blob/master/LICENSE.md
@@ -97,6 +100,11 @@
 		<file
 			src="output/netstandard1.0/HolisticWare.Core.Math.Statistics.Descriptive.Sequential.dll"
 			target="lib/netstandard1.0/HolisticWare.Core.Math.Statistics.Descriptive.Sequential.dll"
+			>
+		</file>
+		<file
+			src="output/netstandard1.3/HolisticWare.Core.Math.Statistics.Descriptive.Sequential.dll"
+			target="lib/netstandard1.3/HolisticWare.Core.Math.Statistics.Descriptive.Sequential.dll"
 			>
 		</file>
 
