@@ -61,19 +61,23 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
         [Test()]
         public void Data00()
         {
+            // Act
             double x1_average = x1.Average();
             // Assert
             Assert.AreEqual(x1_average, 58.77, 0.01);
 
-            double x1_standard_deviation = x1.StandardDeviationSample();
+			// Act
+			double x1_standard_deviation = x1.StandardDeviationSample();
             // Assert
             Assert.AreEqual(x1_standard_deviation, 17.63, 0.01);
 
-            double x1_min = x1.Min();
+			// Act
+			double x1_min = x1.Min();
             // Assert
             Assert.AreEqual(x1_min, 33.65, 0.01);
 
-            double x1_max = x1.Max();
+			// Act
+			double x1_max = x1.Max();
             // Assert
             Assert.AreEqual(x1_max, 93.51, 0.01);
 
