@@ -15,7 +15,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             long n = x.LongCount();
 
-            Dictionary<T, uint> frequencies = new Dictionary<T, uint>((int) n);
+            Dictionary<T, uint> frequencies = new Dictionary<T, uint>((int)n);
 
             for (int i = 0; i < n; i++)
             {
@@ -32,8 +32,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             IEnumerable<KeyValuePair<T, uint>> frequencies_sorted =
                 from pair in frequencies
-                    orderby pair.Key ascending
-                    select pair
+                orderby pair.Key ascending
+                select pair
                     ;
 
             return frequencies_sorted;
@@ -43,7 +43,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             long n = x.LongCount();
 
-            Dictionary<ushort, uint> frequencies = new Dictionary<ushort, uint>((int) n);
+            Dictionary<ushort, uint> frequencies = new Dictionary<ushort, uint>((int)n);
 
             for (int i = 0; i < n; i++)
             {
@@ -55,7 +55,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 else
                 {
                     frequencies.Add(x_i, 1);
-                }                
+                }
             }
 
             IEnumerable<KeyValuePair<ushort, uint>> frequencies_sorted =
@@ -290,36 +290,5 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             return frequencies_sorted;
         }
-
-        #if NETSTANDARD1_3
-        [Obsolete("Performance issue (boxing)")]
-        public static IEnumerable<KeyValuePair<object, uint>> FrequencyDistribution(this System.Collections.ArrayList x)
-        {
-            long n = x.Count;
-
-            Dictionary<object, uint> frequencies = new Dictionary<object, uint>((int)n);
-
-            for (int i = 0; i < n; i++)
-            {
-                object x_i = x[i];
-                if (frequencies.ContainsKey(x_i))
-                {
-                    frequencies[i] += 1;
-                }
-                else
-                {
-                    frequencies.Add(x_i, 1);
-                }
-            }
-
-            IEnumerable<KeyValuePair<object, uint>> frequencies_sorted =
-                from pair in frequencies
-                orderby pair.Key ascending
-                select pair
-                    ;
-
-            return frequencies_sorted;
-        }
-        #endif
     }
 }
