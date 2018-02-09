@@ -51,6 +51,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.VariancePopulation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.VarianceSample.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.WelchStatistics.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.FrequencyCounter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.FrequencyCounter.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)readme.md" />
