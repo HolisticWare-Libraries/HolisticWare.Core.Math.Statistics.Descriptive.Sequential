@@ -57,7 +57,11 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             sw.Reset();
 
             // Assert
-            Assert.AreEqual(new List<int> { 4 }, modes01);
+            CollectionAssert.AreEquivalent
+                                    (
+                                        new List<int> { 4 }, 
+                                        modes01
+                                    );
             //====================================================================================================
 
             //====================================================================================================
@@ -72,7 +76,11 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             sw.Reset();
 
             // Assert
-            Assert.AreEqual(new List<int> { 4 }, modes02);
+            CollectionAssert.AreEquivalent
+                                    (
+                                        new List<int> { 4 },
+                                        modes02
+                                    );
             //====================================================================================================
 
             //====================================================================================================
@@ -87,7 +95,11 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             sw.Reset();
 
             // Assert
-            Assert.AreEqual(new List<int> { 4 }, modes03);
+            CollectionAssert.AreEquivalent
+                                    (
+                                        new List<int> { 4 },
+                                        modes03
+                                    );
             //====================================================================================================
 
             //====================================================================================================
@@ -102,7 +114,11 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             sw.Reset();
 
             // Assert
-            Assert.AreEqual(new List<int> { 4 }, modes04);
+            CollectionAssert.AreEquivalent
+                                    (
+                                        new List<int> { 4 }, 
+                                        modes04
+                                    );
             //====================================================================================================
 
             #if NETSTANDARD1_3
@@ -118,7 +134,11 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             sw.Reset();
 
             // Assert
-            Assert.AreEqual(new List<int> { 4 }, modes05);
+            CollectionAssert.AreEquivalent
+                                    (
+                                        new List<int> { 4 }, 
+                                        modes05
+                                    );
             //====================================================================================================
             #endif
 
@@ -139,7 +159,11 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             Console.WriteLine($"List<int>.Modes() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
 
             // Assert
-            Assert.AreEqual(new List<int> { 2, 3 }, modes01);
+            CollectionAssert.AreEquivalent
+                                    (
+                                        new List<int> { 2, 3 },
+                                        modes01
+                                    );
             //====================================================================================================
 
             return;
@@ -159,7 +183,12 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             Console.WriteLine($"List<int>.Modes() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
 
             // Assert
-            Assert.AreEqual(new List<int> { 2, 3 }, modes01);
+            // Assert
+            CollectionAssert.AreEquivalent
+                                    (
+                                        new List<int> { 2, 3 },
+                                        modes01
+                                    );
             //====================================================================================================
 
             return;
