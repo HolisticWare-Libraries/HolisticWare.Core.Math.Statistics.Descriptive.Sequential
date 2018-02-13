@@ -53,6 +53,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.WelchStatistics.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.FrequencyCounter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.FrequencyCounter.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.CorrelationOptimized.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.Correlation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sequential\Correlation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sequential\Covariance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sequential\FStatistics.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sequential\StudenttStatisticIndependent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sequential\WelchStatistics.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)readme.md" />
