@@ -84,11 +84,8 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             return;
         }
 
-        [Test()]
-        public void Data01()
-        {
-            // Arrange
-            List<double> x21 = new List<double>
+        // Arrange
+        List<double> x21 = new List<double>
             {
                 87.61,
                 98.51,
@@ -107,6 +104,9 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
                 82.95,
             };
 
+        [Test()]
+        public void Data01()
+        {
             // Act
             double x21_average = x21.Average();
             // Assert
@@ -163,14 +163,32 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             // Assert
             Assert.AreEqual(d1_standard_deviation_population, 0.0, 0.01);
 
+
+            // Act
+            double correlation_x1_x2_01 = x1.Correlation(x21);
+            // Assert
+            Assert.AreEqual(correlation_x1_x2_01, 1.0, 0.01);
+
+            // Act
+            double correlation_x1_x2_02 = x1.CorrelationOptimized(x21);
+            // Assert
+            Assert.AreEqual(correlation_x1_x2_02, 1.0, 0.01);
+
+            // Act
+            double correlation_x1_d1_01 = x1.Correlation(d1);
+            // Assert
+            Assert.AreEqual(correlation_x1_d1_01, 0.0, 0.01);
+
+            // Act
+            double correlation_x1_d1_02 = x1.CorrelationOptimized(d1);
+            // Assert
+            Assert.AreEqual(correlation_x1_d1_02, 0.0, 0.01);
+
             return;
         }
 
-        [Test()]
-        public void Data02()
-        {
-            // Arrange
-            List<double> x22 = new List<double>
+        // Arrange
+        List<double> x22 = new List<double>
             {
                 83.98,
                 94.31,
@@ -189,6 +207,9 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
                 80.21,
             };
 
+        [Test()]
+        public void Data02()
+        {
             // Act
             double x22_average = x22.Average();
             double x22_standard_deviation = x22.StandardDeviationSample();
@@ -220,14 +241,31 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             Assert.AreEqual(d2_max, 9.68, 0.01);
             Assert.AreEqual(d2_standard_deviation, 3.01, 0.01);
 
+            // Act
+            double correlation_x1_x2_01 = x1.Correlation(x22);
+            // Assert
+            Assert.AreEqual(correlation_x1_x2_01, 0.99, 0.01);
+
+            // Act
+            double correlation_x1_x2_02 = x1.CorrelationOptimized(x22);
+            // Assert
+            Assert.AreEqual(correlation_x1_x2_02, 0.99, 0.01);
+
+            // Act
+            double correlation_x1_d2_01 = x1.Correlation(d2);
+            // Assert
+            Assert.AreEqual(correlation_x1_d2_01, -0.7, 0.01);
+
+            // Act
+            double correlation_x1_d2_02 = x1.CorrelationOptimized(d2);
+            // Assert
+            Assert.AreEqual(correlation_x1_d2_02, -0.7, 0.01);
+
             return;
         }
 
-        [Test()]
-        public void Data03()
-        {
-            // Arrange
-            List<double> x23 = new List<double>
+        // Arrange
+        List<double> x23 = new List<double>
             {
                 85.65,
                 94.62,
@@ -246,6 +284,9 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
                 82.21,
             };
 
+        [Test()]
+        public void Data03()
+        {
             // Act
             double x23_average = x23.Average();
             Assert.AreEqual(x23_average, 64.32, 0.01);
@@ -286,9 +327,29 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             Assert.AreEqual(d3_standard_deviation, 3.79, 0.01);
 
 
+            // Act
+            double correlation_x1_x2_01 = x1.Correlation(x23);
+            // Assert
+            Assert.AreEqual(correlation_x1_x2_01, 0.98, 0.01);
+
+            // Act
+            double correlation_x1_x2_02 = x1.CorrelationOptimized(x23);
+            // Assert
+            Assert.AreEqual(correlation_x1_x2_02, 0.98, 0.01);
+
+            // Act
+            double correlation_x1_d3_01 = x1.Correlation(d3);
+            // Assert
+            Assert.AreEqual(correlation_x1_d3_01, -0.1, 0.1);
+
+            // Act
+            double correlation_x1_d3_02 = x1.CorrelationOptimized(d3);
+            // Assert
+            Assert.AreEqual(correlation_x1_d3_02, -0.1, 0.1);
+
+
             return;
         }
-
 
     }
 }

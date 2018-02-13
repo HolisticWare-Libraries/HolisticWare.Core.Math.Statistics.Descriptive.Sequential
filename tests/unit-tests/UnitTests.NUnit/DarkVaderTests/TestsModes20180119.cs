@@ -123,7 +123,7 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             List<int> modes01 = data01.Modes();
 
             // Assert
-            Assert.AreEqual
+            CollectionAssert.AreEquivalent      // only content taken into account
                         (
                             new List<int> { 180 }, 
                             modes01
