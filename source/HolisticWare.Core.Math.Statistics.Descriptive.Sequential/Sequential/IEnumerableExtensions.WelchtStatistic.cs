@@ -36,6 +36,29 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public static (double welch_t, double degrees_of_freedom) WelchtStatistic
                                                                         (
+                                                                            this IEnumerable<ushort> x,
+                                                                            IEnumerable<ushort> y
+                                                                        )
+        {
+            // unequal variances
+            double xmean = x.Cast<int>().Average();
+            double ymean = y.Cast<int>().Average();
+            double xvar = x.VarianceSample();
+            double yvar = y.VarianceSample();
+            int xn = x.Count();
+            int yn = y.Count();
+            double xvn = xvar / xn;
+            double yvn = yvar / yn;
+            double sxy = System.Math.Sqrt(xvn + yvn);
+
+            double df = System.Math.Pow(xvn + yvn, 2) / (xvn * xvn / (xn - 1) + yvn * yvn / (yn - 1));
+            double ws = (xmean - ymean) / sxy;
+
+            return (ws, df);
+        }
+
+        public static (double welch_t, double degrees_of_freedom) WelchtStatistic
+                                                                        (
                                                                             this IEnumerable<int> x,
                                                                             IEnumerable<int> y
                                                                         )

@@ -94,6 +94,50 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return (x_average - y_average) / denom;
         }
 
+        public static double StudenttStatisticIndependent(this IEnumerable<long> x, IEnumerable<long> y)
+        {
+            // equal variances
+            double x_average = x.Cast<long>().Average();
+            double y_average = y.Cast<long>().Average();
+            double x_variance = x.VarianceSample();
+            double y_variance = y.VarianceSample();
+            int xn = x.Count();
+            int yn = y.Count();
+
+            double sxy =
+                System.Math.Sqrt
+                        (
+                            ((xn - 1) * x_variance + (yn - 1) * y_variance)
+                            /
+                            (xn + yn - 2)
+                        );
+            double denom = System.Math.Sqrt(x_variance / xn + y_variance / yn);
+
+            return (x_average - y_average) / denom;
+        }
+
+        public static double StudenttStatisticIndependent(this IEnumerable<ulong> x, IEnumerable<ulong> y)
+        {
+            // equal variances
+            double x_average = x.Cast<double>().Average();
+            double y_average = y.Cast<double>().Average();
+            double x_variance = x.VarianceSample();
+            double y_variance = y.VarianceSample();
+            int xn = x.Count();
+            int yn = y.Count();
+
+            double sxy =
+                System.Math.Sqrt
+                        (
+                            ((xn - 1) * x_variance + (yn - 1) * y_variance)
+                            /
+                            (xn + yn - 2)
+                        );
+            double denom = System.Math.Sqrt(x_variance / xn + y_variance / yn);
+
+            return (x_average - y_average) / denom;
+        }
+
         public static double StudenttStatisticIndependent(this IEnumerable<float> x, IEnumerable<float> y)
         {
             // equal variances
