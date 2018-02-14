@@ -1,15 +1,35 @@
-# HolisticWare.Core.Math.Statistics
+# HolisticWare.Core.Math.Statistics.Sequential
 
 Statistics library for .NET Standard 1.0. 
 
-*   Nuget https://www.nuget.org/packages/HolisticWare.Core.Math.Statistics/
+*   Nuget https://www.nuget.org/packages/HolisticWare.Core.Math.Statistics.Sequential/
 
-Basic algorithms based on:
+Basic Descriptive Statistics Algorithms implemented as sequential in both synchronous and
+aynchronous variants. Implementations are based on IEnumerable<T> as extension methods
+(similar to LINQ - System.Linq )
 
-*   IEnumerable<T>
-*   System.Linq extension methods
+NOTE: Parallel algorithms based on (TPL) can be found in 
 
-## 
+*   Nuget: https://www.nuget.org/packages/HolisticWare.Core.Math.Statistics.Sequential/
+
+*   Repo: 
+
+## Algorithms
+
+*   Average (Mean) Arithmetic and GeoMetric
+*   Frequencies
+*   Modes
+*   Median
+*   Moment
+*   Standard Deviation (Sample and Population)
+*   Variance (Sample and Population)
+*   Skewness
+*   Kurtosis
+*   Correlation 
+*   Covariance
+*   F Statistics
+*   Studentt Statistic
+*   Welcht Statistic
 
 ## TODOs / Plans
 
@@ -61,5 +81,20 @@ Basic algorithms based on:
         *   https://en.wikipedia.org/wiki/Correlation_and_dependence
 
         *   http://www.mathsisfun.com/data/correlation.html
+
+
+### Alternatives
+
+*   LinqStatistics
+    
+    *   https://www.nuget.org/packages/LinqStatistics/
+
+    *   https://github.com/dkackman/LinqStatistics
+
+*   Meta.Numerics
+
+    *   http://www.meta-numerics.net/
+    
+    *   https://www.nuget.org/packages/Meta.Numerics/
 
 
