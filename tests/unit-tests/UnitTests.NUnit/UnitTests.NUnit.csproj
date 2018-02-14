@@ -38,14 +38,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Tests01MeanAverage.cs" />
-    <Compile Include="Tests02Frequencies.cs" />
-    <Compile Include="Tests03Mode.cs" />
-    <Compile Include="DarkVaderTests\TestsModes20180119.cs" />
-    <Compile Include="DarkVaderTests\TestsFrequencies20180119.cs" />
-    <Compile Include="DarkVaderTests\TestsFrequencyDistribution20180120.cs" />
-    <Compile Include="KIF.Handbook.QuantitiativeMethods\Tests03Page95DescriptiveAnalysis.cs" />
-    <Compile Include="DarkVaderTests\UnitTest20180213.cs" />
+    <Compile Include="Sync\DarkVaderTests\TestsFrequencies20180119.cs" />
+    <Compile Include="Sync\DarkVaderTests\TestsFrequencyDistribution20180120.cs" />
+    <Compile Include="Sync\DarkVaderTests\TestsModes20180119.cs" />
+    <Compile Include="Sync\DarkVaderTests\UnitTest20180213.cs" />
+    <Compile Include="Sync\KIF.Handbook.QuantitiativeMethods\Tests03Page95DescriptiveAnalysis.cs" />
+    <Compile Include="Sync\Tests01MeanAverage.cs" />
+    <Compile Include="Sync\Tests02Frequencies.cs" />
+    <Compile Include="Sync\Tests03Mode.cs" />
+    <Compile Include="Async\Tests01MeanAverage.cs" />
+    <Compile Include="Async\Tests02Frequencies.cs" />
+    <Compile Include="Async\Tests03Mode.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -62,6 +65,13 @@
       <Project>{defacba9-2e24-46bd-b3e0-eff602fa05dc}</Project>
       <Name>HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sync\" />
+    <Folder Include="Async\" />
+    <Folder Include="Sync\DarkVaderTests\" />
+    <Folder Include="Sync\KIF.Handbook.QuantitiativeMethods\" />
+    <Folder Include="Xtras-BigData\" />
   </ItemGroup>
   <Choose>
     <When Condition="! exists('..\..\..\source\HolisticWare.Core.Math.Statistics.NetStandard10\HolisticWare.Core.Math.Statistics.NetStandard10.csproj')">
