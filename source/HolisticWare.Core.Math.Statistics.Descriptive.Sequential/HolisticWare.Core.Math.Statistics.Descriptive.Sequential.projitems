@@ -9,64 +9,90 @@
     <Import_RootNamespace>Core.Math.Statistics.Descriptive.Sequential</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.Correlation.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.Covariance.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.Frequencies.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.FrequencyDistribution.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.FStatistic.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.Kurtosis.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.KurtosisExcess.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.KurtosisSampleExcess.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.MeanArithmetic.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.MeanGeometric.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.Median.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.Modes.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.Moment.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.Range.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.Skewness.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.StandardDeviationPopulation.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.StandardDeviationSample.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.StudenttStatisticIndependent.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.VariancePopulation.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.VarianceSample.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.WelchtStatistic.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.Frequencies.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.FrequencyDistributions.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.Modes.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.Corellation.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.Covariance.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.FStatistics.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.Kurtosis.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.KurtosisExcess.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.KurtosisSampleExcess.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.MeanArithmetic.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.MeanGeometric.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.Median.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.Moment.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.Range.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.Skewness.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.StandardDeviationPopulation.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.StandardDeviationSample.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.StudentStatisticIdenpendent.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.VariancePopulation.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.VarianceSample.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.WelchStatistics.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.FrequencyCounter.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\IEnumerableExtensions.FrequencyCounter.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\IEnumerableExtensions.CorrelationOptimized.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.Correlation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.Covariance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.Frequencies.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.FrequencyDistribution.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.FStatistic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.Kurtosis.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.KurtosisExcess.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.KurtosisSampleExcess.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.MeanArithmetic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.MeanGeometric.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.Median.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.Modes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.Moment.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.Range.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.Skewness.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.StandardDeviationPopulation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.StandardDeviationSample.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.StudenttStatisticIndependent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.VariancePopulation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.VarianceSample.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.WelchtStatistic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\ArrayList\IEnumerableExtensions.Frequencies.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\ArrayList\IEnumerableExtensions.FrequencyDistributions.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\ArrayList\IEnumerableExtensions.Modes.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\ArrayList\IEnumerableExtensions.Corellation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\ArrayList\IEnumerableExtensions.Covariance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\ArrayList\IEnumerableExtensions.FStatistics.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\ArrayList\IEnumerableExtensions.Kurtosis.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\ArrayList\IEnumerableExtensions.KurtosisExcess.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\ArrayList\IEnumerableExtensions.KurtosisSampleExcess.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\ArrayList\IEnumerableExtensions.MeanArithmetic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\ArrayList\IEnumerableExtensions.MeanGeometric.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\ArrayList\IEnumerableExtensions.Median.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\ArrayList\IEnumerableExtensions.Moment.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\ArrayList\IEnumerableExtensions.Range.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\ArrayList\IEnumerableExtensions.Skewness.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\ArrayList\IEnumerableExtensions.StandardDeviationPopulation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\ArrayList\IEnumerableExtensions.StandardDeviationSample.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\ArrayList\IEnumerableExtensions.StudentStatisticIdenpendent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\ArrayList\IEnumerableExtensions.VariancePopulation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\ArrayList\IEnumerableExtensions.VarianceSample.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\ArrayList\IEnumerableExtensions.WelchStatistics.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.FrequencyCounter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\ArrayList\IEnumerableExtensions.FrequencyCounter.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.CorrelationOptimized.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.Correlation.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\Correlation.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\Covariance.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\FStatistics.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\StudenttStatisticIndependent.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sequential\WelchStatistics.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\Correlation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\Covariance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FStatistics.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\StudenttStatisticIndependent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\WelchStatistics.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\Correlation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.CorrelationOptimized.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.Covariance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.Frequencies.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.FrequencyCounter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.FrequencyDistribution.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.FStatistic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.Kurtosis.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.KurtosisExcess.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.KurtosisSampleExcess.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.MeanGeometric.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.MeanArithmetic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.Modes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.Moment.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.Range.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.Skewness.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.StandardDeviationPopulation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.StandardDeviationSample.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.StudenttStatisticIndependent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.VariancePopulation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.VarianceSample.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.WelchtStatistic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\Covariance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\FStatistic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\WelchtStatistic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\StudenttStatisticIndependent.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)readme.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Async\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Sequential\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Sequential\ArrayList\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sync\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sync\ArrayList\" />
   </ItemGroup>
 </Project>
