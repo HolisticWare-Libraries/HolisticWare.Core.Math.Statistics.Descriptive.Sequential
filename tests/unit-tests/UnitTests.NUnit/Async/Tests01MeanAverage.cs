@@ -34,14 +34,14 @@ using System.Diagnostics;
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
-namespace UnitTests.HolisticWare.Core.Math.Statistics
+namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
 {
     public partial class Tests01MeanAverage
     {
         Stopwatch sw = null;
         
         [Test()]
-        public void MeanAverage()
+        public void MeanAverage1()
         {
             //====================================================================================================
             // Arrange
@@ -60,8 +60,49 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             Assert.AreEqual(3.8, mean01, 0.1);
             //====================================================================================================
 
+            //====================================================================================================
+            // Arrange
+            List<int> data02 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+
+            sw = Stopwatch.StartNew();
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double mean02 = data01.MeanArithmetic();
+            sw.Stop();
+            Console.WriteLine($"List<int>.Average() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            Assert.AreEqual(3.8, mean02, 0.1);
+            //====================================================================================================
+
             return;
         }
 
+        [Test()]
+        public void MeanAverage2()
+        {
+            //====================================================================================================
+            // Arrange
+            // TODO: nullable
+            //List<int?> data01 = new List<int?> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+            List<int> data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+
+            sw = Stopwatch.StartNew();
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double mean01 = data01.Average();
+            sw.Stop();
+            Console.WriteLine($"List<int>.Average() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            Assert.AreEqual(3.8, mean01, 0.1);
+            //====================================================================================================
+
+            return;
+        }
     }
 }

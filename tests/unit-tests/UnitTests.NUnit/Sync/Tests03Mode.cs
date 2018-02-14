@@ -36,7 +36,7 @@ using System.Diagnostics;
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
-namespace UnitTests.HolisticWare.Core.Math.Statistics
+namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class Tests03Mode
     {

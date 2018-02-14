@@ -34,7 +34,7 @@ using System.Diagnostics;
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
-namespace UnitTests.HolisticWare.Core.Math.Statistics
+namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
 {
     public partial class Tests02Frequencies
     {
