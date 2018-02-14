@@ -31,6 +31,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
+using System.Threading.Tasks;
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
@@ -39,9 +40,39 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
     public partial class Tests01MeanAverage
     {
         Stopwatch sw = null;
-        
+
         [Test()]
-        public void MeanAverage1()
+        public void MeanAverage01()
+        {
+            Nito.AsyncEx.AsyncContext.Run
+                    (
+                        async () =>
+                        {
+                            //====================================================================================================
+                            // Arrange
+                            List<int> data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+
+                            sw = Stopwatch.StartNew();
+                            //----------------------------------------------------------------------------------------------------
+                            // Act
+                            double mean02 = await data01.MeanArithmeticAsync();
+                            sw.Stop();
+                            Console.WriteLine($"List<int>.Average() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+                            sw.Reset();
+
+                            //----------------------------------------------------------------------------------------------------
+                            // Assert
+                            Assert.AreEqual(3.8, mean02, 0.1);
+                            //====================================================================================================
+                            
+                        }
+                    );
+
+            return;
+        }
+
+        [Test()]
+        public async Task MeanAverage01Async()
         {
             //====================================================================================================
             // Arrange
@@ -67,7 +98,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
             sw = Stopwatch.StartNew();
             //----------------------------------------------------------------------------------------------------
             // Act
-            double mean02 = data01.MeanArithmetic();
+            double mean02 = await data02.MeanArithmeticAsync();
             sw.Stop();
             Console.WriteLine($"List<int>.Average() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
             sw.Reset();
@@ -81,7 +112,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
         }
 
         [Test()]
-        public void MeanAverage2()
+        public async Task MeanAverage2()
         {
             //====================================================================================================
             // Arrange
@@ -92,7 +123,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
             sw = Stopwatch.StartNew();
             //----------------------------------------------------------------------------------------------------
             // Act
-            double mean01 = data01.Average();
+            double mean01 = await data01.MeanArithmeticAsync();
             sw.Stop();
             Console.WriteLine($"List<int>.Average() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
             sw.Reset();
