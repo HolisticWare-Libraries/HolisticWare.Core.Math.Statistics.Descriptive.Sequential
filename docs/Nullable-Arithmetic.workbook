@@ -169,3 +169,18 @@ Console.WriteLine($"list01.Sum() = {list01.Sum()}");
 List<int?> list02 = new List<int?>{};
 Console.WriteLine($"list02.Sum() = {list02.Sum()}");
 ```
+
+## Links/References
+
+*   http://www.csharp-examples.net/linq-sum/
+
+*   https://dzone.com/articles/null-sematics-linq%E2%80%99s-sum
+
+`Sum()` for `IEnumerable<Nullable<T>` implementation links
+
+*   https://github.com/dotnet/corefx/tree/master/src/System.Linq
+
+*   https://github.com/dotnet/corefx/blob/master/src/System.Linq/src/System/Linq/Sum.cs#L30
+
+*   https://github.com/dotnet/corefx/blob/master/src/System.Linq/src/System/Linq/Sum.cs#L42-L45
+
