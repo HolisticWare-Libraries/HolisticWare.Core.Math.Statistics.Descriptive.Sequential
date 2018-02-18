@@ -88,3 +88,84 @@ int count = list.Count;
 ```csharp
 double? average_linq = list.Average();
 ```
+
+## Pragmatic issues with semantic meaning (expectations)
+
+Seems like LINQ aggregate function Sum has different behaviour than one would expect. It most likely uses Predicate that ignores/skips null values, but this contradicts what would be expected.
+
+From mathematical standpoint Sum() is  \
+\
+`sum = list[0] + list[1] + … + list[n-1]`
+
+```csharp
+Console.WriteLine($"NOTE: No output means - null!!");
+```
+
+```csharp
+int? sum_math_trivial = 1 + 2 + 4 + null + 5;
+Console.WriteLine($"sum_math_trivial = {sum_math_trivial}");
+```
+
+Let say Sum() is trivially implemented with for loop as:
+
+```csharp
+int? sum_loop_1 = 0;
+for (int index = 0; index < list.Count; index++)
+{
+    //if(null == list[index])
+    //{
+    //    continue;
+    //}
+    //else
+    {
+        sum_loop_1 += list[index];
+    }
+};
+
+Console.WriteLine($"sum_loop_1 = {sum_loop_1}");
+```
+
+But it seems like LINQ Sum() extension method:
+
+```csharp
+Console.WriteLine($"list.Sum() = {list.Sum()}");
+```
+
+behaves like this:
+
+```csharp
+int? sum_loop_2 = 0;
+for (int index = 0; index < list.Count; index++)
+{
+    if(null == list[index])
+    {
+        continue;
+    }
+    else
+    {
+        sum_loop_2 += list[index];
+    }
+};
+
+Console.WriteLine($"sum_loop_2 = {sum_loop_2}");
+```
+
+The LINQ behaviour can be explained that nulls are interpreted as 0!!
+
+```csharp
+Console.WriteLine($"list.DefaultIfEmpty(0).Sum() = {list.DefaultIfEmpty(0).Sum()}");
+```
+
+LINQ over empty collections:
+
+```csharp
+List<int> list01 = null;
+//Console.WriteLine($"list01.Sum() = {list01.Sum()}"); // ArgumentNullException
+list01 = new List<int>{};
+Console.WriteLine($"list01.Sum() = {list01.Sum()}");
+```
+
+```csharp
+List<int?> list02 = new List<int?>{};
+Console.WriteLine($"list02.Sum() = {list02.Sum()}");
+```
