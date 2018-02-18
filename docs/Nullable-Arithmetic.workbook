@@ -1,0 +1,48 @@
+---
+uti: com.xamarin.workbook
+id: 9fa432b9-8eef-489d-8844-0af6a2e6a939
+title: Nullable-Arithmetic
+platforms:
+- Console
+---
+
+```csharp
+    int? i;
+    int? j;
+    int? sum;
+    int? product;
+
+    i = 3;
+    j = 2;
+
+    sum = i + j;
+```
+
+```csharp
+    product = i * j;
+```
+
+```csharp
+    i = null;
+    j = 2;
+
+    sum = i + j;    
+```
+
+```csharp
+product = i * j;
+```
+
+```csharp
+using System.Linq;
+
+List<int?> list = new List<int?> {1,2,4,null, 5};
+```
+
+```csharp
+int? sum = list.Sum();
+```
+
+```csharp
+double? avg = list.Average();
+```
