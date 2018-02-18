@@ -6,43 +6,85 @@ platforms:
 - Console
 ---
 
-```csharp
-    int? i;
-    int? j;
-    int? sum;
-    int? product;
+# Nullable Collections and Aggregate Algorithms
 
-    i = 3;
-    j = 2;
+This Workbook shows Nullable arithmetics and LINQ aggregate extension methods (Sum and Average) which are needed for statistical algorithms.
 
-    sum = i + j;
-```
+Define Nullable variables:
 
 ```csharp
-    product = i * j;
+int? i;
+int? j;
+int? sum;
+int? product;
 ```
+
+Sum with initialized variables:
 
 ```csharp
-    i = null;
-    j = 2;
+i = 3;
+j = 2;
 
-    sum = i + j;    
+sum = i + j;
 ```
+
+Product with initialized variables:
 
 ```csharp
 product = i * j;
 ```
 
+Sum with null resulting in null:
+
+```csharp
+i = null;
+j = 2;
+
+sum = i + j;    
+```
+
+Extending that to more summands:
+
+```csharp
+int? sum01 = 1 + 2 + 4 + null + 5;
+```
+
+Product with null resulting in null:
+
+```csharp
+product = i * j;
+```
+
+Extending that to more multiplicands:
+
+```csharp
+int? product01 = 1 * 2 * 4 * null * 5;
+```
+
+## LINQ Aggregate Extension Methods
+
+Extending basic arithmetic operators to LINQ aggregate methods.
+
+Include LINQ Extension Methods by adding using statement:
+
 ```csharp
 using System.Linq;
+```
 
+Define IEnumerable<Nullable> type:
+
+```csharp
 List<int?> list = new List<int?> {1,2,4,null, 5};
 ```
 
 ```csharp
-int? sum = list.Sum();
+int? sum_linq = list.Sum();
 ```
 
 ```csharp
-double? avg = list.Average();
+int count = list.Count;
+```
+
+```csharp
+double? average_linq = list.Average();
 ```
