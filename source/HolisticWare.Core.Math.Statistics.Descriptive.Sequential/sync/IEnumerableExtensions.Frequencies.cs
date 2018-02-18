@@ -10,6 +10,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// </summary>
     public static partial class IEnumerableExtensionsFrequencies
     {
+        //==============================================================================================================
         public static IEnumerable<KeyValuePair<T, uint>> Frequencies<T>(this IEnumerable<T> x)
         {
             Dictionary<T, uint> frequencies = x.FrequencyCounter();
@@ -140,6 +141,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             return frequencies_sorted;
         }
+        //==============================================================================================================
+
 
     }
 }

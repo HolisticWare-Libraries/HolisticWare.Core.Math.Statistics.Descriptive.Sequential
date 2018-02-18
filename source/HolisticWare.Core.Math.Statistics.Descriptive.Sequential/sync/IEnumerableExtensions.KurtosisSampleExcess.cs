@@ -12,6 +12,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// <see cref="https://brownmath.com/stat/shape.htm"/>
     public static partial class IEnumerableExtensionsKurtosisSampleExcess
     {
+        //==============================================================================================================
         public static double KurtosisSampleExcess(this IEnumerable<short> x)
         {
             int n = x.Count();
@@ -119,5 +120,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             return 0;
         }
+        //==============================================================================================================
+
     }
 }

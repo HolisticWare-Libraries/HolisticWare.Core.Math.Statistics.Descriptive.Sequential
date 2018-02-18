@@ -12,6 +12,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// <see cref="https://en.wikipedia.org/wiki/Mode_(statistics)"/> 
     public static partial class IEnumerableExtensionsFrequency
     {
+        //==============================================================================================================
         public static List<ushort> Modes(this IEnumerable<ushort> x)
         {
             IEnumerable<KeyValuePair<ushort, uint>> frequencies = x.Frequencies();
@@ -182,5 +183,6 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             return modes;
         }
-   }
+        //==============================================================================================================
+    }
 }

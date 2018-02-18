@@ -11,6 +11,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// TODO: Welch t test (statistics) 2. async/await
     public static partial class IEnumerableExtensionsWelchtStatistic
     {
+        //==============================================================================================================
         public static (double welch_t, double degrees_of_freedom) WelchtStatistic
                                                                         (
                                                                             this IEnumerable<short> x,
@@ -221,5 +222,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             return (ws, df);
         }
+        //==============================================================================================================
+
     }
 }

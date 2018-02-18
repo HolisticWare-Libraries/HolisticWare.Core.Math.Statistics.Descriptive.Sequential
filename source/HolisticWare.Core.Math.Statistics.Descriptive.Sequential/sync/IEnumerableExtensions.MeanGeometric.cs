@@ -9,10 +9,9 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// <summary>
     /// Correlation
     /// </summary>
-    /// <see cref="https://en.wikipedia.org/wiki/Correlation_and_dependence"/> 
-    /// <see cref="http://www.mathsisfun.com/data/correlation.html"/>
     public static partial class IEnumerableExtensionsMeanGeometric
     {
+        //==============================================================================================================
         public static double MeanGeometric(this IEnumerable<ushort> x)
         {
             double product = 1.0;
@@ -29,7 +28,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double product = 1.0;
 
-            foreach (ushort x_i in x)
+            foreach (short x_i in x)
             {
                 product *= x_i;
             }
@@ -41,7 +40,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double product = 1.0;
 
-            foreach (ushort x_i in x)
+            foreach (int x_i in x)
             {
                 product *= x_i;
             }
@@ -53,7 +52,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double product = 1.0;
 
-            foreach (ushort x_i in x)
+            foreach (uint x_i in x)
             {
                 product *= x_i;
             }
@@ -65,7 +64,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double product = 1.0;
 
-            foreach (ushort x_i in x)
+            foreach (long x_i in x)
             {
                 product *= x_i;
             }
@@ -77,7 +76,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double product = 1.0;
 
-            foreach (ushort x_i in x)
+            foreach (ulong x_i in x)
             {
                 product *= x_i;
             }
@@ -89,7 +88,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double product = 1.0;
 
-            foreach (ushort x_i in x)
+            foreach (float x_i in x)
             {
                 product *= x_i;
             }
@@ -101,7 +100,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double product = 1.0;
 
-            foreach (ushort x_i in x)
+            foreach (double x_i in x)
             {
                 product *= x_i;
             }
@@ -111,14 +110,16 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public static decimal MeanGeometric(this IEnumerable<decimal> x)
         {
-            double product = 1.0;
+            decimal product = 1.0m;
 
-            foreach (ushort x_i in x)
+            foreach (decimal x_i in x)
             {
                 product *= x_i;
             }
 
-            return (decimal) System.Math.Pow(product, 1.0 / x.LongCount());
+            return (decimal) System.Math.Pow((double)product, 1.0 / x.LongCount());
         }
+        //==============================================================================================================
+
     }
 }

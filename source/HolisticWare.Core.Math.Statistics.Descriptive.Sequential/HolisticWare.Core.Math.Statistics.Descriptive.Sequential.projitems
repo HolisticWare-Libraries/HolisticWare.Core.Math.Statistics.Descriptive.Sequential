@@ -86,6 +86,34 @@
     <Compile Include="$(MSBuildThisFileDirectory)Async\FStatistic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Async\WelchtStatistic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Async\StudenttStatisticIndependent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\Correlation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\Covarinace.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\FStatistics.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\IEnumerableExtensions.Correlation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\IEnumerableExtensions.CorrelationOptimized.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\IEnumerableExtensions.Covariance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\IEnumerableExtensions.Frequencies.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\IEnumerableExtensions.FrequencyCounter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\IEnumerableExtensions.FrequencyDistribution.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\IEnumerableExtensions.FStatistic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\IEnumerableExtensions.Kurtosis.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\IEnumerableExtensions.KurtosisExcess.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\IEnumerableExtensions.KurtosisSampleExcess.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\IEnumerableExtensions.MeanArithmetic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\IEnumerableExtensions.MeanGeometric.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\IEnumerableExtensions.Median.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\IEnumerableExtensions.Modes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\IEnumerableExtensions.Moment.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\IEnumerableExtensions.Range.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\IEnumerableExtensions.Skewness.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\IEnumerableExtensions.StandardDeviationPopulation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\IEnumerableExtensions.StandardDeviationSample.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\IEnumerableExtensions.StudenttStatisticIndependent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\IEnumerableExtensions.VariancePopulation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\IEnumerableExtensions.VarianceSample.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\IEnumerableExtensions.WelchtStatistic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\StudenttStatisticIndependent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\WelchStatistics.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)readme.md" />
@@ -94,5 +122,6 @@
     <Folder Include="$(MSBuildThisFileDirectory)Async\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\ArrayList\" />
+    <Folder Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\" />
   </ItemGroup>
 </Project>

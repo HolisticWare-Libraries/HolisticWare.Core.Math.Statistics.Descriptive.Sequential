@@ -8,9 +8,13 @@ using Core.Math.Statistics.Descriptive.Sequential;
 namespace Core.Math.Statistics.Descriptive.Sequential
 {
     /// <summary>
+    /// Correlation Optimized version
     /// </summary>
+    /// <see cref="https://en.wikipedia.org/wiki/Correlation_and_dependence"/> 
+    /// <see cref="http://www.mathsisfun.com/data/correlation.html"/>
     public static partial class IEnumerableExtensionsCorrelationOptimized
     {
+        //==============================================================================================================
         public static double CorrelationOptimized(this IEnumerable<short> x, IEnumerable<short> y)
         {
             int n = x.Count();
@@ -370,5 +374,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             return correlation;
         }
+        //==============================================================================================================
+
     }
 }

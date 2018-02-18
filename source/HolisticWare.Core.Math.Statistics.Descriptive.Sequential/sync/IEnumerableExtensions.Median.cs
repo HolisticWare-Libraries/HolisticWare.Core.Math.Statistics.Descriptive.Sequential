@@ -9,6 +9,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// </summary>
     public static partial class IEnumerableExtensionsMedian
     {
+        //==============================================================================================================
         public static double Median(this IEnumerable<short> x)
         {
             int n = x.Count();
@@ -125,6 +126,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             return 0.5M * (x.ElementAt(n2) + x.ElementAt(n2 + 1));
         }
+        //==============================================================================================================
 
     }
 }

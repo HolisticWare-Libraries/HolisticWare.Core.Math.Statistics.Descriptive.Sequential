@@ -6,6 +6,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 {
     public static partial class IEnumerableExtensionsMoment
     {
+        //==============================================================================================================
         public static double Moment(this IEnumerable<short> x, int m)
         {
             double average = x.Cast<int>().Average();
@@ -140,5 +141,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             return sum / n;
         }
+        //==============================================================================================================
+
     }
 }

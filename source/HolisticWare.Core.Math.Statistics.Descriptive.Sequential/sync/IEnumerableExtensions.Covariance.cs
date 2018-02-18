@@ -4,8 +4,12 @@ using System.Linq;
 
 namespace Core.Math.Statistics.Descriptive.Sequential
 {
+    /// <summary>
+    /// Covariance
+    /// </summary>
     public static partial class IEnumerableExtensionsCovariance
     {
+        //==============================================================================================================
         public static double Covariance(this IEnumerable<short> x, IEnumerable<short> y)
         {
             long sum_x = 0;
@@ -185,5 +189,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             return (sum_product_xy - sum_x * sum_y / n) / (n - 1);
         }
+        //==============================================================================================================
+
     }
 }

@@ -9,10 +9,9 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// <summary>
     /// Correlation
     /// </summary>
-    /// <see cref="https://en.wikipedia.org/wiki/Correlation_and_dependence"/> 
-    /// <see cref="http://www.mathsisfun.com/data/correlation.html"/>
     public static partial class IEnumerableExtensionsMeanArithmetic
     {
+        //==============================================================================================================
         public static double MeanArithmetic(this IEnumerable<ushort> x)
         {
             return x.Cast<int>().Average();
@@ -57,6 +56,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             return x.Average();
         }
+        //==============================================================================================================
 
     }
 }

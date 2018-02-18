@@ -6,6 +6,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 {
     public static partial class IEnumerableExtensionsSkewness
     {
+        //==============================================================================================================
         public static double Skewness(this IEnumerable<short> x)
         {
             // NIST definition of adjusted Fisher-Pearson
@@ -148,6 +149,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 (decimal)System.Math.Pow((double)x_standard_deviation, 3)
                                ;
         }
-
+        //==============================================================================================================
+    
     }
 }
