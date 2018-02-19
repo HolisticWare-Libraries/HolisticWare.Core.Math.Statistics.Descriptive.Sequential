@@ -12,30 +12,56 @@ NOTE: Parallel algorithms based on (TPL) can be found in
 
 *   Nuget: https://www.nuget.org/packages/HolisticWare.Core.Math.Statistics.Sequential/
 
-*   Repo: 
+*   Repo:  
 
-## Algorithms
+## DONE
+
+### Algorithms
 
 *   Average (Mean) Arithmetic and GeoMetric
+
 *   Frequencies
+
 *   Modes
+
 *   Median
+
 *   Moment
+
 *   Standard Deviation (Sample and Population)
+
 *   Variance (Sample and Population)
+
 *   Skewness
+
 *   Kurtosis
+
 *   Correlation 
+
 *   Covariance
+
 *   F Statistics
+
 *   Studentt Statistic
+
 *   Welcht Statistic
 
-## TODOs / Plans
+## Technical/Platform Implementation Details
 
 *   async/await
 
+    Each synchronous (blocking) method has processor bound async (TPL counterpart).
+
 *   TPL/PLINQ
+
+    Parallel versions taget .NET Standard 1.1, so they are in placed separate nuget and repo:
+
+    *   
+
+    *   
+
+## TODOs / Plans
+
 
     *   https://docs.microsoft.com/en-us/dotnet/standard/parallel-programming/task-parallel-library-tpl
 
@@ -55,6 +81,16 @@ NOTE: Parallel algorithms based on (TPL) can be found in
 
 *   RX 
 
+## Performance 
+
+Performance question boils down to use of `for` vs `foreach`. Current implementation uses `for`.
+
+After benchmarks will be added and tests conducted, implementation might change in the future.
+
+
+*   https://stackoverflow.com/questions/365615/in-net-which-loop-runs-faster-for-or-foreach
+
+*   https://codeblog.jonskeet.uk/2009/01/29/for-vs-foreach-on-arrays-and-lists/
 
 ## References Links
 

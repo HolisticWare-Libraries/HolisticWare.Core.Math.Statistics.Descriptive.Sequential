@@ -9,10 +9,9 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// <summary>
     /// Correlation
     /// </summary>
-    /// <see cref="https://en.wikipedia.org/wiki/Correlation_and_dependence"/> 
-    /// <see cref="http://www.mathsisfun.com/data/correlation.html"/>
     public static partial class WelchtStatistic
     {
+        //==============================================================================================================
         public static (double welch_t, double degrees_of_freedom) Calculate(IEnumerable<short> x, IEnumerable<short> y)
         {
             return x.WelchtStatistic(y);
@@ -57,6 +56,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             return x.WelchtStatistic(y);
         }
+        //==============================================================================================================
 
     }
 }

@@ -6,6 +6,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 {
     public static partial class IEnumerableExtensionsStudenttStatisticIndependent
     {
+        //==============================================================================================================
         public static double StudenttStatisticIndependent(this IEnumerable<short> x, IEnumerable<short> y)
         {
             // equal variances
@@ -203,6 +204,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             return (decimal)((x_average - y_average) / denom);
         }
+        //==============================================================================================================
 
     }
 }

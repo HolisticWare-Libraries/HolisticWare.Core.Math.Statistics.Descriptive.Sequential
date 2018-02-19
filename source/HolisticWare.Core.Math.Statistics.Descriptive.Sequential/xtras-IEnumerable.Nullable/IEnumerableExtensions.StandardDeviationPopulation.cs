@@ -9,51 +9,50 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsStandardDeviationPopulation
     {
         //==============================================================================================================
-        public static double StandardDeviationPopulation(this IEnumerable<short> x)
+        public static double StandardDeviationPopulation(this IEnumerable<short?> x)
         {
             return System.Math.Sqrt(x.VariancePopulation());
         }
 
-        public static double StandardDeviationPopulation(this IEnumerable<ushort> x)
+        public static double StandardDeviationPopulation(this IEnumerable<ushort?> x)
         {
             return System.Math.Sqrt(x.VariancePopulation());
         }
 
-        public static double StandardDeviationPopulation(this IEnumerable<int> x)
+        public static double StandardDeviationPopulation(this IEnumerable<int?> x)
         {
             return System.Math.Sqrt(x.VariancePopulation());
         }
 
-        public static double StandardDeviationPopulation(this IEnumerable<uint> x)
+        public static double StandardDeviationPopulation(this IEnumerable<uint?> x)
         {
             return System.Math.Sqrt(x.VariancePopulation());
         }
 
-        public static double StandardDeviationPopulation(this IEnumerable<long> x)
+        public static double StandardDeviationPopulation(this IEnumerable<long?> x)
         {
             return System.Math.Sqrt(x.VariancePopulation());
         }
 
-        public static double StandardDeviationPopulation(this IEnumerable<ulong> x)
+        public static double StandardDeviationPopulation(this IEnumerable<ulong?> x)
         {
             return System.Math.Sqrt(x.VariancePopulation());
         }
 
-        public static double StandardDeviationPopulation(this IEnumerable<float> x)
+        public static double StandardDeviationPopulation(this IEnumerable<float?> x)
         {
             return System.Math.Sqrt(x.VariancePopulation());
         }
 
-        public static double StandardDeviationPopulation(this IEnumerable<double> x)
+        public static double StandardDeviationPopulation(this IEnumerable<double?> x)
         {
             return System.Math.Sqrt(x.VariancePopulation());
         }
 
-        public static decimal StandardDeviationPopulation(this IEnumerable<decimal> x)
+        public static decimal StandardDeviationPopulation(this IEnumerable<decimal?> x)
         {
-            return (decimal) System.Math.Sqrt((double)x.VariancePopulation());
+            return (decimal)System.Math.Sqrt((double)x.VariancePopulation());
         }
         //==============================================================================================================
-
     }
 }

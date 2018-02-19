@@ -6,6 +6,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 {
     public static partial class IEnumerableExtensionsVariancePopulation
     {
+        //==============================================================================================================
         public static double VariancePopulation(this IEnumerable<short> x)
         {
             double mean = x.Cast<int>().Average();
@@ -158,6 +159,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             return sum_suquares / n;
         }
+        //==============================================================================================================
 
     }
 }

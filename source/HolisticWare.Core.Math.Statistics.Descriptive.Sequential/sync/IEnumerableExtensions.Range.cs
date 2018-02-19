@@ -9,10 +9,9 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// <summary>
     /// Correlation
     /// </summary>
-    /// <see cref="https://en.wikipedia.org/wiki/Correlation_and_dependence"/> 
-    /// <see cref="http://www.mathsisfun.com/data/correlation.html"/>
     public static partial class IEnumerableExtensionsRange
     {
+        //==============================================================================================================
         public static (short min, short max) Range(this IEnumerable<short> x)
         {
             short min = x.Min();
@@ -84,6 +83,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             return (min, max);
         }
+        //==============================================================================================================
 
     }
 }

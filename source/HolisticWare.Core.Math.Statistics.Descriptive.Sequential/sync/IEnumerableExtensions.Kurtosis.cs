@@ -12,6 +12,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// <see cref="http://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm"/>
     public static partial class IEnumerableExtensionsKurtosis
     {
+        //==============================================================================================================
         public static double Kurtosis(this IEnumerable<short> x)
         {
             double m2 = x.Moment(2);
@@ -83,6 +84,6 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             return m4 / (m2 * m2);
         }
-
+        //==============================================================================================================
     }
 }

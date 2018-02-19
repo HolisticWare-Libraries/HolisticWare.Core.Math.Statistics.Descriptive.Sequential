@@ -36,9 +36,11 @@ using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.HolisticWare.Core.Math.Statistics
 {
-    public partial class UnitTestNew
+    public partial class UnitTests20180213
     {
         Stopwatch sw = null;
+
+
 
         [Test()]
         public void Data01()
