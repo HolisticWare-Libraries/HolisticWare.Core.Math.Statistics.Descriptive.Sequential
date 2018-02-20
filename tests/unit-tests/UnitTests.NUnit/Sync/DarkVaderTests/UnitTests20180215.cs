@@ -79,17 +79,67 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
         [Test]
         public void Average()
         {
+            sw = Stopwatch.StartNew();
             // Act
             double mean_arithmetic = data.MeanArithmetic();
+            sw.Stop();
+            Console.WriteLine($"data.MeanArithmetic()");
+            Console.WriteLine($"        mean_arithmetic = {mean_arithmetic}");
+            Console.WriteLine($"        size            = {data.Count}");
+            Console.WriteLine($"        elapsed[ticks]  = {sw.ElapsedTicks}");
+            Console.WriteLine($"        elapsed[ms]     = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+            Assert.AreEqual(mean_arithmetic, 177.2499, 0.0001);
 
+            sw = Stopwatch.StartNew();
             // Act
             double mean_geometric = data.MeanGeometric();
+            sw.Stop();
+            Console.WriteLine($"data.MeanGeometric()");
+            Console.WriteLine($"        mean_geometric  = {mean_geometric}");
+            Console.WriteLine($"        size            = {data.Count}");
+            Console.WriteLine($"        elapsed[ticks]  = {sw.ElapsedTicks}");
+            Console.WriteLine($"        elapsed[ms]     = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
             Assert.That(Double.IsInfinity(mean_geometric));
 
-            decimal mean_deomatric_decimal = (data.Cast<decimal>()).MeanGeometric();
+            //decimal mean_deomatric_decimal = (data.Cast<decimal>()).MeanGeometric();
 
             return;
         }
 
+        [Test]
+        public void StandardDeviation()
+        {
+            sw = Stopwatch.StartNew();
+            // Act
+            double standard_deviaton_sample = data.StandardDeviationSample();
+            sw.Stop();
+            Console.WriteLine($"data.StandardDeviationSample()");
+            Console.WriteLine($"        standard_deviaton_sample = {standard_deviaton_sample}");
+            Console.WriteLine($"        size                     = {data.Count}");
+            Console.WriteLine($"        elapsed[ticks]           = {sw.ElapsedTicks}");
+            Console.WriteLine($"        elapsed[ms]              = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+            // Assert
+            Assert.AreEqual(standard_deviaton_sample, 16.85999, 0.00001);
+
+            sw = Stopwatch.StartNew();
+            // Act
+            double standard_deviaton_population = data.StandardDeviationPopulation();
+            sw.Stop();
+            Console.WriteLine($"data.StandardDeviationPopulation()");
+            Console.WriteLine($"        standard_deviaton_population = {standard_deviaton_population}");
+            Console.WriteLine($"        size              = {data.Count}");
+            Console.WriteLine($"        elapsed[ticks]    = {sw.ElapsedTicks}");
+            Console.WriteLine($"        elapsed[ms]       = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+            // Assert
+            Assert.AreEqual(standard_deviaton_population, 16.85991, 0.00001);
+
+            //decimal mean_deomatric_decimal = (data.Cast<decimal>()).MeanGeometric();
+
+            return;
+        }
     }
 }
