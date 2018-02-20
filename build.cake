@@ -48,15 +48,15 @@ Running Cake to Build targets
 
 #########################################################################################
 */
-#tool nuget:?package=XamarinComponent
-//#tool nuget:?package=NUnit.Runners
-#tool nuget:?package=NUnit.ConsoleRunner&version=3.4.0
-#tool nuget:?package=NUnit.Console&include=../Nunit.ConsoleRunner/**/*
-
 #addin nuget:?package=Cake.XCode
 #addin nuget:?package=Cake.Xamarin.Build
 #addin nuget:?package=Cake.Xamarin
 #addin nuget:?package=Cake.FileHelpers
+
+#tool nuget:?package=NUnit.ConsoleRunner
+#tool nuget:?package=NUnit.Console&include=../Nunit.ConsoleRunner/**/*
+//#tool nuget:?package=NUnit.Runners
+
 
 var TARGET = Argument ("t", Argument ("target", "Default"));
 
