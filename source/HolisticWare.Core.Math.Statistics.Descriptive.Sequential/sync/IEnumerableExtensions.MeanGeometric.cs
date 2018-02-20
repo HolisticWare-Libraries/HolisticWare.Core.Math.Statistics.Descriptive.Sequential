@@ -112,7 +112,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             decimal product = 1.0m;
 
-            foreach (decimal x_i in x)
+            foreach (decimal x_i in x) // System.InvalidCastException : Specified cast is not valid.
             {
                 product *= x_i;
             }

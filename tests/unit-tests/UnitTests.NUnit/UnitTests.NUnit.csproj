@@ -75,13 +75,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Xtras-BigData\Rand_Samp_BigData_2.csv" />
-    <None Include="Xtras-SampleData\Rand_Samp1_50.csv" />
-    <None Include="Xtras-SampleData\Rand_Samp2_50.csv" />
-    <None Include="Xtras-SampleData\Rand_Samp3_50.csv" />
-    <None Include="Xtras-SampleData\Rand_Samp4_50.csv" />
-    <None Include="Xtras-SampleData\Rand_Samp5_50.csv" />
-    <None Include="Xtras-SampleData\Rand_Samp6_50.csv" />
   </ItemGroup>
   <!--
   ==================================================================================================
@@ -92,6 +85,7 @@
   <ItemGroup>
     <Folder Include="Xtras-BigData\" />
     <Folder Include="Xtras-SampleData\" />
+    <Folder Include="Sync\FromFiles\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10.csproj">
@@ -102,6 +96,27 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Xtras-BigData\Rand_Samp_BigData_1.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xtras-SampleData\Rand_Samp1_50.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xtras-SampleData\Rand_Samp2_50.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xtras-SampleData\Rand_Samp3_50.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xtras-SampleData\Rand_Samp4_50.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xtras-SampleData\Rand_Samp5_50.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xtras-SampleData\Rand_Samp6_50.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xtras-BigData\Rand_Samp_BigData_2.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
