@@ -10,15 +10,16 @@ aynchronous variants. Implementations are based on IEnumerable<T> as extension m
 
 NOTE: Parallel algorithms based on (TPL) can be found in 
 
-*   Nuget: https://www.nuget.org/packages/HolisticWare.Core.Math.Statistics.Sequential/
+*   Nuget: 
 
-*   Repo:  
+*   Repo:  https://github.com/moljac/HolisticWare.Core.Math.Statistics.Descriptive.Parallel
+
 
 ## DONE
 
 ### Algorithms
 
-*   Average (Mean) Arithmetic and GeoMetric
+*   Average (Mean) Arithmetic and Geometric
 
 *   Frequencies
 
