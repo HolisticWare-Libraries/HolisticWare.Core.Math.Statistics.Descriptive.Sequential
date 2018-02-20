@@ -71,7 +71,10 @@
     <Compile Include="Async\Tests01MeanAverage.cs" />
     <Compile Include="Async\Tests02Frequencies.cs" />
     <Compile Include="Async\Tests03Mode.cs" />
+    <Compile Include="Sync\FromFiles\UnitTests20180219.SampleData.1.cs" />
     <Compile Include="Sync\FromFiles\UnitTests20180215.BigData.cs" />
+    <Compile Include="Sync\FromFiles\UnitTests20180219.SampleData.cs" />
+    <Compile Include="Sync\FromFiles\UnitTests20180219.SampleData.2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

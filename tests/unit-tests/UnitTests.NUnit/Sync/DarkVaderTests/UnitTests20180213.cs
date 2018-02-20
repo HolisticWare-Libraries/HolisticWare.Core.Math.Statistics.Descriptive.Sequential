@@ -61,7 +61,11 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
 			// Act
 			double x4_average = x4.Average();
 			sw.Stop();
-			Console.WriteLine($"List<int>.Average() size={x4.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"List<int>.Average()");
+            Console.WriteLine($"          average            = {x4_average}");
+            Console.WriteLine($"          size               = {x4.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
 			sw.Reset();
 
 			// Assert
@@ -71,7 +75,11 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
 			// Act
 			double x4_standard_deviation = x4.StandardDeviationSample();
 			sw.Stop();
-			Console.WriteLine($"List<int>.StandardDeviationSample() size={x4.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"List<int>.StandardDeviationSample()");
+            Console.WriteLine($"          standard_deviation = {x4_standard_deviation}");
+            Console.WriteLine($"          size               = {x4.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
 			sw.Reset();
 
 			// Assert
@@ -81,7 +89,11 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
 			// Act
 			double x4_min = x4.Min();
 			sw.Stop();
-			Console.WriteLine($"List<int>.Min() size={x4.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"List<int>.Min()");
+            Console.WriteLine($"          min             = {x4_min}");
+            Console.WriteLine($"          size            = {x4.Count}");
+            Console.WriteLine($"          elapsed[ticks]  = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]     = {sw.Elapsed.TotalMilliseconds}");
 			sw.Reset();
 
 			// Assert
@@ -91,7 +103,11 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
 			// Act
 			double x4_max = x4.Max();
 			sw.Stop();
-			Console.WriteLine($"List<int>.Max() size={x4.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"List<int>.Max()");
+            Console.WriteLine($"          max             = {x4_max}");
+            Console.WriteLine($"          size            = {x4.Count}");
+            Console.WriteLine($"          elapsed[ticks]  = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]     = {sw.Elapsed.TotalMilliseconds}");
 			sw.Reset();
 
 			// Assert

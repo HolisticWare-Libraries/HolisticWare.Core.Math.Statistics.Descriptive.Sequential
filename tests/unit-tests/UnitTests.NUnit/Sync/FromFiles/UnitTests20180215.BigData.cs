@@ -123,9 +123,12 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             // Act
             double mean_arithmetic = data01.MeanArithmetic();
             sw.Stop();
-            Console.WriteLine($"List<int>.Average() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"List<double>.MeanArithmetic()");
+            Console.WriteLine($"          mean_arithmetic    = {mean_arithmetic}");
+            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
-
             //----------------------------------------------------------------------------------------------------
             // Assert
             Assert.AreEqual(177.24999, mean_arithmetic, 0.00001);
@@ -141,7 +144,11 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             // Act
             double mean_geometric = data01.MeanGeometric();
             sw.Stop();
-            Console.WriteLine($"List<int>.Average() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"List<double>.MeanGeometric()");
+            Console.WriteLine($"          mean_geometric     = {mean_geometric}");
+            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
 
             //----------------------------------------------------------------------------------------------------
@@ -168,7 +175,11 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             // Act
             double mean_arithmetic = data02.MeanArithmetic();
             sw.Stop();
-            Console.WriteLine($"List<int>.Average() size={data02.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"List<double>.MeanArithmetic()");
+            Console.WriteLine($"          mean_arithmetic    = {mean_arithmetic}");
+            Console.WriteLine($"          size               = {data02.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
 
             //----------------------------------------------------------------------------------------------------
@@ -186,7 +197,11 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             // Act
             double mean_geometric = data02.MeanGeometric();
             sw.Stop();
-            Console.WriteLine($"List<int>.Average() size={data02.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"List<double>.MeanGeometric()");
+            Console.WriteLine($"          mean_geometric     = {mean_geometric}");
+            Console.WriteLine($"          size               = {data02.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
 
             //----------------------------------------------------------------------------------------------------
@@ -196,6 +211,264 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
 
             // TODO: System.InvalidCastException : Specified cast is not valid.
             //decimal mean_deomatric_decimal = (data02.Cast<decimal>()).MeanGeometric();
+
+            return;
+        }
+
+        [Test]
+        public void StandardDeviation_data01()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double standard_deviation_s = data01.StandardDeviationSample();
+            sw.Stop();
+            Console.WriteLine($"List<double>.StandardDeviationSample()");
+            Console.WriteLine($"          standard_deviation = {standard_deviation_s}");
+            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            Assert.AreEqual(16.86, standard_deviation_s, 0.00001);
+            //====================================================================================================
+
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double standard_deviation_p = data01.StandardDeviationPopulation();
+            sw.Stop();
+            Console.WriteLine($"List<double>.StandardDeviationPopulation()");
+            Console.WriteLine($"          standard_deviation = {standard_deviation_p}");
+            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            Assert.AreEqual(16.8599, standard_deviation_p, 0.0001);
+            //====================================================================================================
+        }
+
+        [Test]
+        public void StandardDeviation_data02()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double standard_deviation_s = data02.StandardDeviationSample();
+            sw.Stop();
+            Console.WriteLine($"List<double>.StandardDeviationSample()");
+            Console.WriteLine($"          standard_deviation = {standard_deviation_s}");
+            Console.WriteLine($"          size               = {data02.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            Assert.AreEqual(16.86, standard_deviation_s, 0.00001);
+            //====================================================================================================
+
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double standard_deviation_p = data02.StandardDeviationPopulation();
+            sw.Stop();
+            Console.WriteLine($"List<double>.StandardDeviationPopulation()");
+            Console.WriteLine($"          standard_deviation = {standard_deviation_p}");
+            Console.WriteLine($"          size               = {data02.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            Assert.AreEqual(16.8599, standard_deviation_p, 0.0001);
+            //====================================================================================================
+        }
+
+        [Test]
+        public void Variance_data01()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double variance_s = data01.VarianceSample();
+            sw.Stop();
+            Console.WriteLine($"List<double>.VarianceSample()");
+            Console.WriteLine($"          variance           = {variance_s}");
+            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            Assert.AreEqual(284.26, variance_s, 0.01);
+            //====================================================================================================
+
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double variance_p = data01.VariancePopulation();
+            sw.Stop();
+            Console.WriteLine($"List<double>.VariancePopulation()");
+            Console.WriteLine($"          variance           = {variance_p}");
+            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            Assert.AreEqual(284.2567, variance_p, 0.0001);
+            //====================================================================================================
+
+            return;
+        }
+
+        [Test]
+        public void Variance_data02()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double variance_s = data02.VarianceSample();
+            sw.Stop();
+            Console.WriteLine($"List<double>.VarianceSample()");
+            Console.WriteLine($"          variance           = {variance_s}");
+            Console.WriteLine($"          size               = {data02.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            Assert.AreEqual(284.26, variance_s, 0.01);
+            //====================================================================================================
+
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double variance_p = data02.VariancePopulation();
+            sw.Stop();
+            Console.WriteLine($"List<double>.VariancePopulation()");
+            Console.WriteLine($"          variance           = {variance_p}");
+            Console.WriteLine($"          size               = {data02.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            Assert.AreEqual(284.2569, variance_p, 0.0001);
+            //====================================================================================================
+
+            return;
+        }
+
+        double? correlation_data01_data02_01 = null;
+        double? correlation_data02_data01_01 = null;
+        double? correlation_data01_data02_02 = null;
+        double? correlation_data02_data02_02 = null;
+
+        [Test]
+        public void Correlation()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            correlation_data01_data02_01 = data01.Correlation(data02);
+            sw.Stop();
+            Console.WriteLine($"List<double>.Correlation(List<double>)");
+            Console.WriteLine($"          correlation        = {correlation_data01_data02_01}");
+            Console.WriteLine($"          size               = {data01.Count} x {data02.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            Assert.AreEqual(0.00262, correlation_data01_data02_01, 0.00001);
+            //====================================================================================================
+
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            correlation_data02_data01_01 = data02.Correlation(data01);
+            sw.Stop();
+            Console.WriteLine($"List<double>.Correlation(List<double>)");
+            Console.WriteLine($"          correlation        = {correlation_data02_data01_01}");
+            Console.WriteLine($"          size               = {data01.Count} x {data02.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            Assert.AreEqual(0.00262, correlation_data02_data01_01, 0.00001);
+            //====================================================================================================
+
+            Assert.AreEqual
+                        (
+                            (double) correlation_data01_data02_01, 
+                            (double) correlation_data02_data01_01, 
+                            0.00001
+                        );
 
             return;
         }
