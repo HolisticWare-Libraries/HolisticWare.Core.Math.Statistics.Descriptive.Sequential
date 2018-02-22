@@ -7,6 +7,23 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsVarianceSample
     {
         //==============================================================================================================
+        public static double VarianceSample(this IEnumerable<byte> x)
+        {
+            double mean = x.Cast<int>().Average();
+            double sum_suquares = 0;
+
+            long n = x.LongCount();
+
+            for (int i = 0; i < n; i++)
+            {
+                double delta = x.ElementAt(i) - mean;
+
+                sum_suquares += delta * delta;
+            }
+
+            return sum_suquares / (n - 1);
+        }
+
         public static double VarianceSample(this IEnumerable<short> x)
         {
             double mean = x.Cast<int>().Average();

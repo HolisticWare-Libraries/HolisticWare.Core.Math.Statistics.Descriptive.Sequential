@@ -7,6 +7,21 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsMoment
     {
         //==============================================================================================================
+        public static double Moment(this IEnumerable<byte> x, int m)
+        {
+            double average = x.Cast<int>().Average();
+            double sum = 0;
+
+            int n = x.Count();
+
+            for (int i = 0; i < n; i++)
+            {
+                sum += System.Math.Pow(x.ElementAt(i) - average, m);
+            }
+
+            return sum / n;
+        }
+
         public static double Moment(this IEnumerable<short> x, int m)
         {
             double average = x.Cast<int>().Average();

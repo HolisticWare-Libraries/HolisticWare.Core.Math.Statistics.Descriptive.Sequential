@@ -13,6 +13,25 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsFrequency
     {
         //==============================================================================================================
+        public static List<byte> Modes(this IEnumerable<byte> x)
+        {
+            IEnumerable<KeyValuePair<byte, uint>> frequencies = x.Frequencies();
+
+            List<byte> modes = new List<byte>();
+
+            uint occurences = frequencies.FirstOrDefault().Value;
+
+            foreach (KeyValuePair<byte, uint> kvp in frequencies)
+            {
+                if (occurences == kvp.Value)
+                {
+                    modes.Add(kvp.Key);
+                }
+            }
+
+            return modes;
+        }
+
         public static List<ushort> Modes(this IEnumerable<ushort> x)
         {
             IEnumerable<KeyValuePair<ushort, uint>> frequencies = x.Frequencies();

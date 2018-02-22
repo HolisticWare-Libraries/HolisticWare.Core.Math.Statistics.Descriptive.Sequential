@@ -114,6 +114,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\IEnumerableExtensions.WelchtStatistic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\StudenttStatisticIndependent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\WelchStatistics.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.MeanHarmonic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.MeanHarmonic.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)readme.md" />

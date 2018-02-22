@@ -14,6 +14,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class Correlation
     {
         //==============================================================================================================
+        public static double Calculate(IEnumerable<byte> x, IEnumerable<byte> y)
+        {
+            return x.Correlation(y);
+        }
+
         public static double Calculate(IEnumerable<short> x, IEnumerable<short> y)
         {
             return x.Correlation(y);

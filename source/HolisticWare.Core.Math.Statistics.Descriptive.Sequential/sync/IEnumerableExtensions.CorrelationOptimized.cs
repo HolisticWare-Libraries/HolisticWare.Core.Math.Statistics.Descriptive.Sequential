@@ -15,6 +15,46 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsCorrelationOptimized
     {
         //==============================================================================================================
+        public static double CorrelationOptimized(this IEnumerable<byte> x, IEnumerable<byte> y)
+        {
+            int n = x.Count();
+
+            double sum_x = 0.0;
+            double sum_y = 0.0;
+            double sum_x_pow_2 = 0.0;
+            double sum_y_pow_2 = 0.0;
+            double sum_product_x_y = 0.0;
+
+            for (int i = 0; i < n; i++)
+            {
+                short x_i = x.ElementAt(i);
+                short y_i = y.ElementAt(i);
+
+                sum_x += x_i;
+                sum_y += y_i;
+                sum_x_pow_2 += x_i * x_i;
+                sum_y_pow_2 += y_i * y_i;
+                sum_product_x_y += x_i * y_i;
+            }
+
+            double tmp_x = n * sum_x_pow_2 - sum_x * sum_x;
+            double tmp_y = n * sum_y_pow_2 - sum_y * sum_y;
+            double denominator = System.Math.Sqrt(tmp_x) * System.Math.Sqrt(tmp_y);
+
+            if (System.Math.Abs(denominator) < Double.Epsilon)
+            {
+                return 0.0;
+            }
+
+            double correlation =
+                (n * sum_product_x_y - sum_x * sum_y)
+                /
+                denominator
+                ;
+
+            return correlation;
+        }
+
         public static double CorrelationOptimized(this IEnumerable<short> x, IEnumerable<short> y)
         {
             int n = x.Count();

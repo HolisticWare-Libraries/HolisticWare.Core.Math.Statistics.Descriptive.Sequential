@@ -10,6 +10,26 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsCovariance
     {
         //==============================================================================================================
+        public static double Covariance(this IEnumerable<byte> x, IEnumerable<byte> y)
+        {
+            long sum_x = 0;
+            long sum_y = 0;
+            long sum_product_xy = 0;
+
+            int n = x.Count();
+
+            for (int i = 0; i < n; i++)
+            {
+                byte x_i = x.ElementAt(i);
+                byte y_i = y.ElementAt(i);
+                sum_x += x_i;
+                sum_y += y_i;
+                sum_product_xy += x_i * y_i;
+            }
+
+            return (sum_product_xy - sum_x * sum_y / n) / (n - 1);
+        }
+
         public static double Covariance(this IEnumerable<short> x, IEnumerable<short> y)
         {
             long sum_x = 0;

@@ -12,6 +12,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsMeanArithmetic
     {
         //==============================================================================================================
+        public static double MeanArithmetic(this IEnumerable<byte> x)
+        {
+            return x.Cast<int>().Average();
+        }
+
         public static double MeanArithmetic(this IEnumerable<ushort> x)
         {
             return x.Cast<int>().Average();

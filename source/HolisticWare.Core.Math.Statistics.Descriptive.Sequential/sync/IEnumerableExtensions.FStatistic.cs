@@ -13,6 +13,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsFStatistic
     {
         //==============================================================================================================
+        public static double FStatistic(this IEnumerable<byte> x, IEnumerable<byte> y)
+        {
+            return x.VarianceSample() / y.VarianceSample();
+        }
+
         public static double FStatistic(this IEnumerable<short> x, IEnumerable<short> y)
         {
             return x.VarianceSample() / y.VarianceSample();

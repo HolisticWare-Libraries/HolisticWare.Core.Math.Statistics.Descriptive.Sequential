@@ -13,6 +13,18 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsKurtosisSampleExcess
     {
         //==============================================================================================================
+        public static double KurtosisSampleExcess(this IEnumerable<byte> x)
+        {
+            int n = x.Count();
+
+            if (n >= 3)
+            {
+                return (n - 1) * ((n + 1) * x.KurtosisExcess() + 6) / ((n - 2) * (n - 3));
+            }
+
+            return 0;
+        }
+
         public static double KurtosisSampleExcess(this IEnumerable<short> x)
         {
             int n = x.Count();

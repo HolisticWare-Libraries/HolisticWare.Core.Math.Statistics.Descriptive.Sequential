@@ -12,6 +12,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class WelchtStatistic
     {
         //==============================================================================================================
+        public static (double welch_t, double degrees_of_freedom) Calculate(IEnumerable<byte> x, IEnumerable<byte> y)
+        {
+            return x.WelchtStatistic(y);
+        }
+
         public static (double welch_t, double degrees_of_freedom) Calculate(IEnumerable<short> x, IEnumerable<short> y)
         {
             return x.WelchtStatistic(y);

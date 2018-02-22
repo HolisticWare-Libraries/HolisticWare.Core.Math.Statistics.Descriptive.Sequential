@@ -13,6 +13,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsKurtosisExcess
     {
         //==============================================================================================================
+        public static double KurtosisExcess(this IEnumerable<byte> x)
+        {
+            return x.Kurtosis() - 3.0;
+        }
+
         public static double KurtosisExcess(this IEnumerable<short> x)
         {
             return x.Kurtosis() - 3.0;

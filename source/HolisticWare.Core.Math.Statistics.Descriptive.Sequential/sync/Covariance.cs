@@ -12,6 +12,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class Covariance
     {
         //==============================================================================================================
+        public static double Calculate(IEnumerable<byte> x, IEnumerable<byte> y)
+        {
+            return x.Covariance(y);
+        }
+
         public static double Calculate(IEnumerable<short> x, IEnumerable<short> y)
         {
             return x.Covariance(y);

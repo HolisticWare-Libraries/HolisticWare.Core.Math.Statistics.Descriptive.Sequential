@@ -25,6 +25,19 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return frequencies_sorted;
         }
 
+        public static IEnumerable<KeyValuePair<byte, uint>> FrequencyDistribution(this IEnumerable<byte> x)
+        {
+            Dictionary<byte, uint> frequencies = x.FrequencyCounter();
+
+            IEnumerable<KeyValuePair<byte, uint>> frequencies_sorted =
+                from pair in frequencies
+                orderby pair.Key ascending
+                select pair
+                    ;
+
+            return frequencies_sorted;
+        }
+
         public static IEnumerable<KeyValuePair<ushort, uint>> FrequencyDistribution(this IEnumerable<ushort> x)
         {
             Dictionary<ushort, uint> frequencies = x.FrequencyCounter();

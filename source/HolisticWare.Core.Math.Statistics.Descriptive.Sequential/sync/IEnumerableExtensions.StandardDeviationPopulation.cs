@@ -9,6 +9,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsStandardDeviationPopulation
     {
         //==============================================================================================================
+        public static double StandardDeviationPopulation(this IEnumerable<byte> x)
+        {
+            return System.Math.Sqrt(x.VariancePopulation());
+        }
+
         public static double StandardDeviationPopulation(this IEnumerable<short> x)
         {
             return System.Math.Sqrt(x.VariancePopulation());

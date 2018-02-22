@@ -33,6 +33,28 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return frequencies;
         }
 
+        public static Dictionary<byte, uint> FrequencyCounter(this IEnumerable<byte> x)
+        {
+            long n = x.LongCount();
+
+            Dictionary<byte, uint> frequencies = new Dictionary<byte, uint>((int)n);
+
+            for (int i = 0; i < n; i++)
+            {
+                byte x_i = x.ElementAt(i);
+                if (frequencies.ContainsKey(x_i))
+                {
+                    frequencies[x_i] += 1;
+                }
+                else
+                {
+                    frequencies.Add(x_i, 1);
+                }
+            }
+
+            return frequencies;
+        }
+
         public static Dictionary<ushort, uint> FrequencyCounter(this IEnumerable<ushort> x)
         {
             long n = x.LongCount();

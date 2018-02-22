@@ -12,6 +12,14 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsRange
     {
         //==============================================================================================================
+        public static (byte min, byte max) Range(this IEnumerable<byte> x)
+        {
+            byte min = x.Min();
+            byte max = x.Max();
+
+            return (min, max);
+        }
+
         public static (short min, short max) Range(this IEnumerable<short> x)
         {
             short min = x.Min();
