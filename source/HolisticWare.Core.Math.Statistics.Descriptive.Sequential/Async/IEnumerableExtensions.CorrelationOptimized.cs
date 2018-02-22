@@ -6,6 +6,19 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 {
 	public static partial class IEnumerableExtensionsCorrelation
 	{
+        public async static Task<double> CorrelationOptimizedAsync(this IEnumerable<byte> x, IEnumerable<byte> y)
+        {
+            double correlation =
+                await Task
+                            .Run
+                                (
+                                    () => x.CorrelationOptimized(y)
+                                )
+                            .ConfigureAwait(false);
+
+            return correlation;
+        }
+
         public async static Task<double> CorrelationOptimizedAsync(this IEnumerable<short> x, IEnumerable<short> y)
         {
             double correlation = 

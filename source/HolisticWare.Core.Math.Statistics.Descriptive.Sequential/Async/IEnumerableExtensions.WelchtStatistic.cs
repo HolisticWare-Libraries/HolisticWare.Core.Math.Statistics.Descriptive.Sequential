@@ -8,6 +8,23 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 	{
         public async static Task<(double welch_t, double degrees_of_freedom)> WelchtStatisticAsync
                                                                                 (
+                                                                                   this IEnumerable<byte> x,
+                                                                                   IEnumerable<byte> y
+                                                                                )
+        {
+            (double welch_t, double degrees_of_freedom) statistic =
+                await Task
+                            .Run
+                                (
+                                    () => x.WelchtStatistic(y)
+                                )
+                            .ConfigureAwait(false);
+
+            return statistic;
+        }
+
+        public async static Task<(double welch_t, double degrees_of_freedom)> WelchtStatisticAsync
+                                                                                (
                                                                                    this IEnumerable<short> x, 
                                                                                    IEnumerable<short> y
                                                                                 )

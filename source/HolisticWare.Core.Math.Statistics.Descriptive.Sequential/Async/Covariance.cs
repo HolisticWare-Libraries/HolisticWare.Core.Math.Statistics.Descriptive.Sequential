@@ -6,6 +6,19 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 {
     public static partial class Covariance
     {
+        public async static Task<double> CalculateAsync(IEnumerable<byte> x, IEnumerable<byte> y)
+        {
+            double covariance =
+                await Task
+                            .Run
+                                (
+                                    () => x.Covariance(y)
+                                )
+                            .ConfigureAwait(false);
+
+            return covariance;
+        }
+
         public async static Task<double> CalculateAsync(IEnumerable<short> x, IEnumerable<short> y)
         {
             double covariance =

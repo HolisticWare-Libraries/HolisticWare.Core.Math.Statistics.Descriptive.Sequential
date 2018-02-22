@@ -6,6 +6,19 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 {
 	public static partial class IEnumerableExtensionsFStatistic
 	{
+        public async static Task<double> FStatisticAsync(this IEnumerable<byte> x, IEnumerable<byte> y)
+        {
+            double correlation =
+                await Task
+                            .Run
+                                (
+                                    () => x.FStatistic(y)
+                                )
+                            .ConfigureAwait(false);
+
+            return correlation;
+        }
+
         public async static Task<double> FStatisticAsync(this IEnumerable<short> x, IEnumerable<short> y)
         {
             double correlation = 

@@ -6,6 +6,19 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 {
 	public static partial class IEnumerableExtensionsSkewness
 	{
+        public async static Task<double> SkewnessAsync(this IEnumerable<byte> x)
+        {
+            double skewness =
+                await Task
+                            .Run
+                                (
+                                    () => x.Skewness()
+                                )
+                            .ConfigureAwait(false);
+
+            return skewness;
+        }
+
         public async static Task<double> SkewnessAsync(this IEnumerable<short> x)
         {
             double skewness = 

@@ -6,6 +6,19 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 {
 	public static partial class IEnumerableExtensionsRange
 	{
+        public async static Task<(short min, short max)> RangeAsync(this IEnumerable<byte> x, IEnumerable<byte> y)
+        {
+            (short min, short max) range =
+                await Task
+                            .Run
+                                (
+                                    () => x.Range()
+                                )
+                            .ConfigureAwait(false);
+
+            return range;
+        }
+
         public async static Task<(short min, short max)> RangeAsync(this IEnumerable<short> x, IEnumerable<short> y)
         {
             (short min, short max) range = 

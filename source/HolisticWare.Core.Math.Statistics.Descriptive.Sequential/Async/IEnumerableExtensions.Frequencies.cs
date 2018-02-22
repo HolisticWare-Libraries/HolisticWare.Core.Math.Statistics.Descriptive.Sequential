@@ -6,6 +6,19 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 {
 	public static partial class IEnumerableExtensionsFrequencies
 	{
+        public async static Task<IEnumerable<KeyValuePair<byte, uint>>> FrequenciesAsync(this IEnumerable<byte> x)
+        {
+            IEnumerable<KeyValuePair<byte, uint>> frequencies =
+                await Task
+                            .Run
+                                (
+                                    () => x.Frequencies()
+                                )
+                            .ConfigureAwait(false);
+
+            return frequencies;
+        }
+
         public async static Task<IEnumerable<KeyValuePair<short, uint>>> FrequenciesAsync(this IEnumerable<short> x)
         {
             IEnumerable<KeyValuePair<short, uint>> frequencies = 

@@ -6,6 +6,19 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 {
 	public static partial class IEnumerableExtensionsMeanGeometric
 	{
+        public async static Task<double> MeanGeometricAsync(this IEnumerable<byte> x)
+        {
+            double mean =
+                await Task
+                            .Run
+                                (
+                                    () => x.MeanGeometric()
+                                )
+                            .ConfigureAwait(false);
+
+            return mean;
+        }
+
         public async static Task<double> MeanGeometricAsync(this IEnumerable<short> x)
         {
             double mean = 

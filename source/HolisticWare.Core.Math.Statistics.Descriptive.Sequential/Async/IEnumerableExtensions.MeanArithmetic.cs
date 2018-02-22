@@ -6,6 +6,19 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 {
     public static partial class IEnumerableExtensionsMeanArithmetic
     {
+        public async static Task<double> MeanArithmeticAsync(this IEnumerable<byte> x)
+        {
+            double mean =
+                await Task
+                            .Run
+                                (
+                                    () => x.MeanArithmetic()
+                                )
+                            .ConfigureAwait(false);
+
+            return mean;
+        }
+
         public async static Task<double> MeanArithmeticAsync(this IEnumerable<short> x)
         {
             double mean =

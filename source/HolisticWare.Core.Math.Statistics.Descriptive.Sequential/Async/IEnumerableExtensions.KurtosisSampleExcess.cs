@@ -6,6 +6,19 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 {
 	public static partial class IEnumerableExtensionsKurtosisSampleExcess
 	{
+        public async static Task<double> KurtosisSampleExcessAsync(this IEnumerable<byte> x, IEnumerable<byte> y)
+        {
+            double kurtosis =
+                await Task
+                            .Run
+                                (
+                                    () => x.KurtosisSampleExcess()
+                                )
+                            .ConfigureAwait(false);
+
+            return kurtosis;
+        }
+
         public async static Task<double> KurtosisSampleExcessAsync(this IEnumerable<short> x, IEnumerable<short> y)
         {
             double kurtosis = 

@@ -6,6 +6,19 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 {
 	public static partial class IEnumerableExtensionsVariancePopulation
 	{
+        public async static Task<double> VariancePopulationAsync(this IEnumerable<byte> x)
+        {
+            double variance =
+                await Task
+                            .Run
+                                (
+                                    () => x.VariancePopulation()
+                                )
+                            .ConfigureAwait(false);
+
+            return variance;
+        }
+
         public async static Task<double> VariancePopulationAsync(this IEnumerable<short> x)
         {
             double variance = 

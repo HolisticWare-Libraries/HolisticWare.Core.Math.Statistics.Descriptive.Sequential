@@ -6,6 +6,19 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 {
 	public static partial class IEnumerableExtensionsModes
 	{
+        public async static Task<List<byte>> ModesAsync(this IEnumerable<byte> x)
+        {
+            List<byte> modes =
+                await Task
+                            .Run
+                                (
+                                    () => x.Modes()
+                                )
+                            .ConfigureAwait(false);
+
+            return modes;
+        }
+
         public async static Task<List<short>> ModesAsync(this IEnumerable<short> x)
         {
             List<short> modes = 

@@ -6,6 +6,19 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 {
 	public static partial class IEnumerableExtensionsStandardDeviationPopulation
 	{
+        public async static Task<double> StandardDeviationPopulationAsync(this IEnumerable<byte> x)
+        {
+            double standard_deviation =
+                await Task
+                            .Run
+                                (
+                                    () => x.StandardDeviationPopulation()
+                                )
+                            .ConfigureAwait(false);
+
+            return standard_deviation;
+        }
+
         public async static Task<double> StandardDeviationPopulationAsync(this IEnumerable<short> x)
         {
             double standard_deviation = 

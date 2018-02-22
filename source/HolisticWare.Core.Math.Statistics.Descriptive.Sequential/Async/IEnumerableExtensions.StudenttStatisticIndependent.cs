@@ -6,6 +6,19 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 {
 	public static partial class IEnumerableExtensionsStudenttStatisticIndependent
 	{
+        public async static Task<double> StudenttStatisticIndependentAsync(this IEnumerable<byte> x, IEnumerable<byte> y)
+        {
+            double statistics =
+                await Task
+                            .Run
+                                (
+                                    () => x.StudenttStatisticIndependent(y)
+                                )
+                            .ConfigureAwait(false);
+
+            return statistics;
+        }
+
         public async static Task<double> StudenttStatisticIndependentAsync(this IEnumerable<short> x, IEnumerable<short> y)
         {
             double statistics = 

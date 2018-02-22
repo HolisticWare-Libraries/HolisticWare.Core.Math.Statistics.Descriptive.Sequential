@@ -6,6 +6,19 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 {
     public static partial class IEnumerableExtensionsFrequencyCounter
 	{
+        public async static Task<Dictionary<byte, uint>> CorrelationAsync(this IEnumerable<byte> x)
+        {
+            Dictionary<byte, uint> frequencies =
+                await Task
+                            .Run
+                                (
+                                    () => x.FrequencyCounter()
+                                )
+                            .ConfigureAwait(false);
+
+            return frequencies;
+        }
+
         public async static Task<Dictionary<short, uint>> CorrelationAsync(this IEnumerable<short> x)
         {
             Dictionary<short, uint> frequencies = 

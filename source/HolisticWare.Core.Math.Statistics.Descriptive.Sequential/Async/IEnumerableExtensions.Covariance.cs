@@ -6,6 +6,19 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 {
     public static partial class IEnumerableExtensionsCovariance
     {
+        public async static Task<double> CovarianceAsync(this IEnumerable<byte> x, IEnumerable<byte> y)
+        {
+            double correlation =
+                await Task
+                            .Run
+                                (
+                                    () => x.Covariance(y)
+                                )
+                            .ConfigureAwait(false);
+
+            return correlation;
+        }
+
         public async static Task<double> CovarianceAsync(this IEnumerable<short> x, IEnumerable<short> y)
         {
             double correlation =
