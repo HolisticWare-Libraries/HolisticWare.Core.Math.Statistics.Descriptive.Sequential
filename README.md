@@ -19,7 +19,13 @@ NOTE: Parallel algorithms based on (TPL) can be found in
 
 ### Algorithms
 
-*   Average (Mean) Arithmetic and Geometric
+*   Average (Mean) 
+
+    *   Arithmetic 
+
+    *   Geometric
+
+    *   Harmonic
 
 *   Frequencies
 
@@ -94,6 +100,16 @@ After benchmarks will be added and tests conducted, implementation might change 
 *   https://codeblog.jonskeet.uk/2009/01/29/for-vs-foreach-on-arrays-and-lists/
 
 ## References Links
+
+*   http://statpages.info/#WhichAnalysis
+
+*   online calculators
+
+    *   http://www.calculator.net/statistics-calculator.html
+
+    *   http://www.alcula.com/calculators/statistics/
+
+    *   https://www.mathportal.org/calculators/statistics-calculator/standard-deviation-calculator.php
 
 *   some ideas and inspirations came from following libraries:
 
