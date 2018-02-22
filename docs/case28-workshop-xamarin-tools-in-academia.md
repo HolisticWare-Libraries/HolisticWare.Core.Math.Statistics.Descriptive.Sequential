@@ -23,9 +23,10 @@ C++ and C#. Thus making R&D solutions difficult to apply in industry.
 
 This workshop will try to answer "Why not C#?" (favourite question of one of the authors to researchers)
 and will show some methodic principles how to help academic staff and students to grasp broad spectrum 
-in the technology and start working on the real (open source) projects. Methodology starts with business 
-development analysis and research and continues with testing and for those highly motivated ends in designing 
-and implementing the libraries.
+in the technology and start working on the real (open source) projects, through the demos of various tools
+that resemble work with scientific tools. Methodology starts with business development analysis and research 
+and continues with using tools and testing algorithms and hypoteses and for those highly motivated ends in 
+designing and implementing the libraries.
 
 
 Content:
