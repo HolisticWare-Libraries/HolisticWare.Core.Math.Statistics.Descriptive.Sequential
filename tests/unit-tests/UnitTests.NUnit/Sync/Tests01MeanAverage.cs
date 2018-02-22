@@ -26,8 +26,8 @@
 //    OTHER DEALINGS IN THE SOFTWARE.
 // */
 using NUnit.Framework;
-using System;
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
@@ -41,7 +41,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         Stopwatch sw = null;
         
         [Test()]
-        public void MeanAverage()
+        public void MeanArithmetic()
         {
             //====================================================================================================
             // Arrange
@@ -50,9 +50,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw = Stopwatch.StartNew();
             //----------------------------------------------------------------------------------------------------
             // Act
-            double mean01 = data01.Average();
+            double mean01 = data01.MeanArithmetic();
             sw.Stop();
-            Console.WriteLine($"List<int>.Average() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"List<int>.MeanArithmetic()");
+            Console.WriteLine($"          mean_arithmetic    = {mean01}");
+            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
 
             //----------------------------------------------------------------------------------------------------
@@ -63,5 +67,31 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             return;
         }
 
+        [Test()]
+        public void Average()
+        {
+            //====================================================================================================
+            // Arrange
+            List<int> data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+
+            sw = Stopwatch.StartNew();
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double average = data01.Average();
+            sw.Stop();
+            Console.WriteLine($"List<int>.Average()");
+            Console.WriteLine($"          average            = {average}");
+            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            Assert.AreEqual(3.8, average, 0.1);
+            //====================================================================================================
+
+            return;
+        }
     }
 }
