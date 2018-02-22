@@ -1,4 +1,4 @@
-# Xamarin/Microsoft tools in Academia
+# Xamarin/Microsoft tools in Academia (Research & Development)
 
 *   Darko Katovic KIF
 
