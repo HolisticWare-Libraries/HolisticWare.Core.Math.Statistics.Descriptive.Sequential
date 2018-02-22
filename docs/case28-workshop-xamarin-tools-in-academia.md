@@ -12,10 +12,20 @@ working even with 10 years old kids and with work on real projects with age of 1
 age it is possible to start with documentation which can be done with Xamarin.Workbooks, while in later 
 stags kids or young developers can start working on application testing (either unit testing and/or UI
 testng).
-This workshop will show some methodic principles how to help academic staff and students to grasp broad
-spectrum in the technology and start working on the real (open source) projects. Methodology starts with
-business development analysis and research and continues with testing and for those highly motivated ends 
-in designing and implementing the libraries.
+
+All roles in academia, both lecturers and students work on various problems in reasearch and development, 
+usually those problems are from today's hype buzzwords like "big data", "machine learning", but for rational
+users this is only math and sience. One of the math fields that fits into those buzzwords is for sure statistics.
+Academia works both with Descriptive and Inferential Statistics using tools like Statistica, MatLab, Octave,
+Mathematica and programming languages like R and Python. The problem arising here is that it is difficult to
+transofrm (port) solutions made with those tools to industry wide acceped programming languages like Java,
+C++ and C#. Thus making R&D solutions difficult to apply in industry.
+
+This workshop will try to answer "Why not C#?" (favourite question of one of the authors to researchers)
+and will show some methodic principles how to help academic staff and students to grasp broad spectrum 
+in the technology and start working on the real (open source) projects. Methodology starts with business 
+development analysis and research and continues with testing and for those highly motivated ends in designing 
+and implementing the libraries.
 
 
 Content:
