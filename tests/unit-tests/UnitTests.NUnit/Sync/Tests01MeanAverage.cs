@@ -38,14 +38,42 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class Tests01MeanAverage
     {
+        List<int> data01 = null;
         Stopwatch sw = null;
         
+        [Test()]
+        public void Average()
+        {
+            //====================================================================================================
+            // Arrange
+            data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+
+            sw = Stopwatch.StartNew();
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double average = data01.Average();
+            sw.Stop();
+            Console.WriteLine($"List<int>.Average()");
+            Console.WriteLine($"          average            = {average}");
+            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            Assert.AreEqual(3.8, average, 0.1);
+            //====================================================================================================
+
+            return;
+        }
+
         [Test()]
         public void MeanArithmetic()
         {
             //====================================================================================================
             // Arrange
-            List<int> data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+            data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
 
             sw = Stopwatch.StartNew();
             //----------------------------------------------------------------------------------------------------
@@ -68,19 +96,19 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Test()]
-        public void Average()
+        public void MeanGeometric()
         {
             //====================================================================================================
             // Arrange
-            List<int> data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+            data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
 
             sw = Stopwatch.StartNew();
             //----------------------------------------------------------------------------------------------------
             // Act
-            double average = data01.Average();
+            double mean01 = data01.MeanGeometric();
             sw.Stop();
-            Console.WriteLine($"List<int>.Average()");
-            Console.WriteLine($"          average            = {average}");
+            Console.WriteLine($"List<int>.MeanArithmetic()");
+            Console.WriteLine($"          mean_arithmetic    = {mean01}");
             Console.WriteLine($"          size               = {data01.Count}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -88,10 +116,157 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Assert
-            Assert.AreEqual(3.8, average, 0.1);
+            Assert.AreEqual(3.317, mean01, 0.0001);
             //====================================================================================================
 
             return;
         }
+
+        [Test()]
+        public void MeanHarmonic()
+        {
+            //====================================================================================================
+            // Arrange
+            data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+
+            sw = Stopwatch.StartNew();
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double mean01 = data01.MeanHarmonic();
+            sw.Stop();
+            Console.WriteLine($"List<int>.MeanArithmetic()");
+            Console.WriteLine($"          mean_arithmetic    = {mean01}");
+            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            Assert.AreEqual(2.783, mean01, 0.001);
+            //====================================================================================================
+
+            return;
+        }
+
+        [Test()]
+        public void MeanQuadratic()
+        {
+            //====================================================================================================
+            // Arrange
+            data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+
+            sw = Stopwatch.StartNew();
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double mean01 = data01.MeanQuadratic();
+            sw.Stop();
+            Console.WriteLine($"List<int>.MeanArithmetic()");
+            Console.WriteLine($"          mean_arithmetic    = {mean01}");
+            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            Assert.AreEqual(4.19523539268, mean01, 0.000001);
+            //====================================================================================================
+
+            return;
+        }
+
+        [Test()]
+        public void MeanCubic()
+        {
+            //====================================================================================================
+            // Arrange
+            data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+
+            sw = Stopwatch.StartNew();
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double mean01 = data01.MeanCubic();
+            sw.Stop();
+            Console.WriteLine($"List<int>.MeanCubic()");
+            Console.WriteLine($"          mean_cubic         = {mean01}");
+            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            Assert.AreEqual(4.514, mean01, 0.001);
+            //====================================================================================================
+
+            return;
+        }
+
+        [Test()]
+        public void MeanGeneralized()
+        {
+            //====================================================================================================
+            // Arrange
+            data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+
+            sw = Stopwatch.StartNew();
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double mean01 = data01.MeanGeneralized(2.0);
+            double mean02 = data01.MeanGeneralized(3.0);
+            sw.Stop();
+            Console.WriteLine($"List<int>.MeanGeneralized()");
+            Console.WriteLine($"          mean_generalized(2.0) = {mean01}");
+            Console.WriteLine($"          mean_generalized(3.0) = {mean02}");
+            Console.WriteLine($"          size                  = {data01.Count}");
+            Console.WriteLine($"          elapsed[ticks]        = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]           = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            Assert.AreEqual(4.19523, mean01, 0.00001);
+            Assert.AreEqual(4.514, mean02, 0.001);
+            //====================================================================================================
+
+            return;
+        }
+
+        List<double> weights = null;
+
+        [Test()]
+        public void MeanWeighted()
+        {
+            //  http://elsenaju.eu/Calculator/mean-value-calculator.htm
+            //  https://ncalculators.com/statistics/weighted-mean-calculator.htm
+
+            //====================================================================================================
+            // Arrange
+            data01 = new List<int> 
+                    { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+            weights = new List<double>()
+                    { 1, 4, 3, 4, 4, 4, 5, 3, 2, 1 };
+
+            sw = Stopwatch.StartNew();
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double mean01 = data01.MeanWeighted(weights);
+            sw.Stop();
+            Console.WriteLine($"List<int>.MeanWeighted(weights)");
+            Console.WriteLine($"          mean_weighted      = {mean01}");
+            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            Assert.AreEqual(4.3871, mean01, 0.00001);
+            //====================================================================================================
+
+            return;
+        }
+
     }
 }
