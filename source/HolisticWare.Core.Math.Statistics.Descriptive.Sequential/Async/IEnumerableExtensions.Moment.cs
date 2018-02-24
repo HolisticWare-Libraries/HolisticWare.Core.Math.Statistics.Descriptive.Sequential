@@ -6,6 +6,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 {
 	public static partial class IEnumerableExtensionsMoment
 	{
+        //==============================================================================================================
         public async static Task<double> MomentAsync(this IEnumerable<byte> x, int m)
         {
             double moment =
@@ -135,5 +136,6 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             return moment;
         }
+        //==============================================================================================================
 	}
 }

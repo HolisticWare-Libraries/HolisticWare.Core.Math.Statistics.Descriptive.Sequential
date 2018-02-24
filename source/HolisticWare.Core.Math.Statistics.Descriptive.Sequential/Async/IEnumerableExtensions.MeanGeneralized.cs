@@ -4,133 +4,133 @@ using System.Threading.Tasks;
 
 namespace Core.Math.Statistics.Descriptive.Sequential
 {
-    public static partial class IEnumerableExtensionsMeanArithmetic
+    //==============================================================================================================
+    public static partial class IEnumerableExtensionsMeanGeneralized
     {
-        //==============================================================================================================
-        public async static Task<double> MeanArithmeticAsync(this IEnumerable<byte> x)
+        public async static Task<double> MeanGeneralizedAsync(this IEnumerable<byte> x, double power)
         {
             double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.MeanArithmetic()
+                                    () => x.MeanGeneralized(power)
                                 )
                             .ConfigureAwait(false);
 
             return mean;
         }
 
-        public async static Task<double> MeanArithmeticAsync(this IEnumerable<short> x)
+        public async static Task<double> MeanGeneralizedAsync(this IEnumerable<short> x, double power)
         {
             double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.MeanArithmetic()
+                                    () => x.MeanGeneralized(power)
                                 )
                             .ConfigureAwait(false);
 
             return mean;
         }
 
-        public async static Task<double> MeanArithmeticAsync(this IEnumerable<ushort> x)
+        public async static Task<double> MeanGeneralizedAsync(this IEnumerable<ushort> x, double power)
         {
             double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.MeanArithmetic()
+                                    () => x.MeanGeneralized(power)
                                 )
                             .ConfigureAwait(false);
 
             return mean;
         }
 
-        public async static Task<double> MeanArithmeticAsync(this IEnumerable<int> x)
+        public async static Task<double> MeanGeneralizedAsync(this IEnumerable<int> x, double power)
         {
             double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.MeanArithmetic()
+                                    () => x.MeanGeneralized(power)
                                 )
                             .ConfigureAwait(false);
 
             return mean;
         }
 
-        public async static Task<double> MeanArithmeticAsync(this IEnumerable<uint> x)
+        public async static Task<double> MeanGeneralizedAsync(this IEnumerable<uint> x, double power)
         {
             double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.MeanArithmetic()
+                                    () => x.MeanGeneralized(power)
                                 )
                             .ConfigureAwait(false);
 
             return mean;
         }
 
-        public async static Task<double> MeanArithmeticAsync(this IEnumerable<long> x)
+        public async static Task<double> MeanGeneralizedAsync(this IEnumerable<long> x, double power)
         {
             double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.MeanArithmetic()
+                                    () => x.MeanGeneralized(power)
                                 )
                             .ConfigureAwait(false);
 
             return mean;
         }
 
-        public async static Task<double> MeanArithmeticAsync(this IEnumerable<ulong> x)
+        public async static Task<double> MeanGeneralizedAsync(this IEnumerable<ulong> x, double power)
         {
             double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.MeanArithmetic()
+                                    () => x.MeanGeneralized(power)
                                 )
                             .ConfigureAwait(false);
 
             return mean;
         }
 
-        public async static Task<double> MeanArithmeticAsync(this IEnumerable<float> x)
+        public async static Task<double> MeanGeneralizedAsync(this IEnumerable<float> x, double power)
         {
             double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.MeanArithmetic()
+                                    () => x.MeanGeneralized(power)
                                 )
                             .ConfigureAwait(false);
 
             return mean;
         }
 
-        public async static Task<double> MeanArithmeticAsync(this IEnumerable<double> x)
+        public async static Task<double> MeanGeneralizedAsync(this IEnumerable<double> x, double power)
         {
             double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.MeanArithmetic()
+                                    () => x.MeanGeneralized(power)
                                 )
                             .ConfigureAwait(false);
 
             return mean;
         }
 
-        public async static Task<decimal> MeanArithmeticAsync(this IEnumerable<decimal> x)
+        public async static Task<decimal> MeanGeneralizedAsync(this IEnumerable<decimal> x, double power)
         {
             decimal mean =
                 await Task
                             .Run
                                 (
-                                    () => x.MeanArithmetic()
+                                    () => x.MeanGeneralized(power)
                                 )
                             .ConfigureAwait(false);
 

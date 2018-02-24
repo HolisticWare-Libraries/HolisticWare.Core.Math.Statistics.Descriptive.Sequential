@@ -7,8 +7,9 @@ using Core.Math.Statistics.Descriptive.Sequential;
 namespace Core.Math.Statistics.Descriptive.Sequential
 {
     /// <summary>
-    /// Correlation
+    /// Mean (Average) Geometric
     /// </summary>
+    /// <see cref="https://en.wikipedia.org/wiki/Average"/>
     public static partial class IEnumerableExtensionsMeanGeometric
     {
         //==============================================================================================================

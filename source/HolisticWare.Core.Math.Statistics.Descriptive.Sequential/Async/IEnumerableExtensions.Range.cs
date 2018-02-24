@@ -6,6 +6,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 {
 	public static partial class IEnumerableExtensionsRange
 	{
+        //==============================================================================================================
         public async static Task<(short min, short max)> RangeAsync(this IEnumerable<byte> x, IEnumerable<byte> y)
         {
             (short min, short max) range =
@@ -135,5 +136,6 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             return range;
         }
+        //==============================================================================================================
 	}
 }

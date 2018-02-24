@@ -4,8 +4,9 @@ using System.Threading.Tasks;
 
 namespace Core.Math.Statistics.Descriptive.Sequential
 {
-	public static partial class IEnumerableExtensionsVariancePopulation
-	{
+    public static partial class IEnumerableExtensionsVariancePopulation
+    {
+        //==============================================================================================================
         public async static Task<double> VariancePopulationAsync(this IEnumerable<byte> x)
         {
             double variance =
@@ -21,7 +22,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public async static Task<double> VariancePopulationAsync(this IEnumerable<short> x)
         {
-            double variance = 
+            double variance =
                 await Task
                             .Run
                                 (
@@ -34,7 +35,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public async static Task<double> VariancePopulationAsync(this IEnumerable<ushort> x)
         {
-            double variance = 
+            double variance =
                 await Task
                             .Run
                                 (
@@ -47,7 +48,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public async static Task<double> VariancePopulationAsync(this IEnumerable<int> x)
         {
-            double variance = 
+            double variance =
                 await Task
                             .Run
                                 (
@@ -60,7 +61,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public async static Task<double> VariancePopulationAsync(this IEnumerable<uint> x)
         {
-            double variance = 
+            double variance =
                 await Task
                             .Run
                                 (
@@ -73,7 +74,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public async static Task<double> VariancePopulationAsync(this IEnumerable<long> x)
         {
-            double variance = 
+            double variance =
                 await Task
                             .Run
                                 (
@@ -86,7 +87,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public async static Task<double> VariancePopulationAsync(this IEnumerable<ulong> x)
         {
-            double variance = 
+            double variance =
                 await Task
                             .Run
                                 (
@@ -99,7 +100,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public async static Task<double> VariancePopulationAsync(this IEnumerable<float> x)
         {
-            double variance = 
+            double variance =
                 await Task
                             .Run
                                 (
@@ -112,7 +113,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public async static Task<double> VariancePopulationAsync(this IEnumerable<double> x)
         {
-            double variance = 
+            double variance =
                 await Task
                             .Run
                                 (
@@ -125,7 +126,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public async static Task<decimal> VariancePopulationAsync(this IEnumerable<decimal> x)
         {
-            decimal variance = 
+            decimal variance =
                 await Task
                             .Run
                                 (
@@ -135,5 +136,6 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             return variance;
         }
-	}
+        //==============================================================================================================
+    }
 }

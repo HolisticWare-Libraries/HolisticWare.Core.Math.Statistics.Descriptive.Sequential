@@ -4,138 +4,138 @@ using System.Threading.Tasks;
 
 namespace Core.Math.Statistics.Descriptive.Sequential
 {
-	public static partial class IEnumerableExtensionsFStatistic
-	{
+    public static partial class IEnumerableExtensionsMeanWeighted
+    {
         //==============================================================================================================
-        public async static Task<double> FStatisticAsync(this IEnumerable<byte> x, IEnumerable<byte> y)
+        public async static Task<double> MeanWeightedAsync(this IEnumerable<byte> x, IEnumerable<double> weights)
         {
-            double correlation =
+            double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.FStatistic(y)
+                                    () => x.MeanWeighted(weights)
                                 )
                             .ConfigureAwait(false);
 
-            return correlation;
+            return mean;
         }
 
-        public async static Task<double> FStatisticAsync(this IEnumerable<short> x, IEnumerable<short> y)
+        public async static Task<double> MeanWeightedAsync(this IEnumerable<short> x, IEnumerable<double> weights)
         {
-            double correlation = 
+            double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.FStatistic(y)
+                                    () => x.MeanWeighted(weights)
                                 )
                             .ConfigureAwait(false);
 
-            return correlation;
+            return mean;
         }
 
-        public async static Task<double> FStatisticAsync(this IEnumerable<ushort> x, IEnumerable<ushort> y)
+        public async static Task<double> MeanWeightedAsync(this IEnumerable<ushort> x, IEnumerable<double> weights)
         {
-            double correlation = 
+            double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.FStatistic(y)
+                                    () => x.MeanWeighted(weights)
                                 )
                             .ConfigureAwait(false);
 
-            return correlation;
+            return mean;
         }
 
-        public async static Task<double> FStatisticAsync(this IEnumerable<int> x, IEnumerable<int> y)
+        public async static Task<double> MeanWeightedAsync(this IEnumerable<int> x, IEnumerable<double> weights)
         {
-            double correlation = 
+            double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.FStatistic(y)
+                                    () => x.MeanWeighted(weights)
                                 )
                             .ConfigureAwait(false);
 
-            return correlation;
+            return mean;
         }
 
-        public async static Task<double> FStatisticAsync(this IEnumerable<uint> x, IEnumerable<uint> y)
+        public async static Task<double> MeanWeightedAsync(this IEnumerable<uint> x, IEnumerable<double> weights)
         {
-            double correlation = 
+            double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.FStatistic(y)
+                                    () => x.MeanWeighted(weights)
                                 )
                             .ConfigureAwait(false);
 
-            return correlation;
+            return mean;
         }
 
-        public async static Task<double> FStatisticAsync(this IEnumerable<long> x, IEnumerable<long> y)
+        public async static Task<double> MeanWeightedAsync(this IEnumerable<long> x, IEnumerable<double> weights)
         {
-            double correlation = 
+            double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.FStatistic(y)
+                                    () => x.MeanWeighted(weights)
                                 )
                             .ConfigureAwait(false);
 
-            return correlation;
+            return mean;
         }
 
-        public async static Task<double> FStatisticAsync(this IEnumerable<ulong> x, IEnumerable<ulong> y)
+        public async static Task<double> MeanWeightedAsync(this IEnumerable<ulong> x, IEnumerable<double> weights)
         {
-            double correlation = 
+            double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.FStatistic(y)
+                                    () => x.MeanWeighted(weights)
                                 )
                             .ConfigureAwait(false);
 
-            return correlation;
+            return mean;
         }
 
-        public async static Task<double> FStatisticAsync(this IEnumerable<float> x, IEnumerable<float> y)
+        public async static Task<double> MeanWeightedAsync(this IEnumerable<float> x, IEnumerable<double> weights)
         {
-            double correlation = 
+            double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.FStatistic(y)
+                                    () => x.MeanWeighted(weights)
                                 )
                             .ConfigureAwait(false);
 
-            return correlation;
+            return mean;
         }
 
-        public async static Task<double> FStatisticAsync(this IEnumerable<double> x, IEnumerable<double> y)
+        public async static Task<double> MeanWeightedAsync(this IEnumerable<double> x, IEnumerable<double> weights)
         {
-            double correlation = 
+            double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.FStatistic(y)
+                                    () => x.MeanWeighted(weights)
                                 )
                             .ConfigureAwait(false);
 
-            return correlation;
+            return mean;
         }
 
-        public async static Task<decimal> FStatisticAsync(this IEnumerable<decimal> x, IEnumerable<decimal> y)
+        public async static Task<decimal> MeanWeightedAsync(this IEnumerable<decimal> x, IEnumerable<double> weights)
         {
-            decimal correlation = 
+            decimal mean =
                 await Task
                             .Run
                                 (
-                                    () => x.FStatistic(y)
+                                    () => x.MeanWeighted(weights)
                                 )
                             .ConfigureAwait(false);
 
-            return correlation;
+            return mean;
         }
         //==============================================================================================================
-	}
+    }
 }

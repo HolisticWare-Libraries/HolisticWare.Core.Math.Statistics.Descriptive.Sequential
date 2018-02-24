@@ -53,6 +53,8 @@ NOTE: Parallel algorithms based on (TPL) can be found in
 
 *   Welcht Statistic
 
+
+
 ## Technical/Platform Implementation Details
 
 *   async/await
@@ -63,16 +65,31 @@ NOTE: Parallel algorithms based on (TPL) can be found in
 
     Parallel versions taget .NET Standard 1.1, so they are in placed separate nuget and repo:
 
-    *   
-
-    *   
-
-## TODOs / Plans
-
-
     *   https://docs.microsoft.com/en-us/dotnet/standard/parallel-programming/task-parallel-library-tpl
 
     *   https://docs.microsoft.com/en-us/dotnet/standard/parallel-programming/parallel-linq-plinq
+
+
+
+## TODOs / Plans
+
+    *   unit tests
+
+        *   currently (2018-02-24): 48
+
+        *   online calculator sources (references / links) 
+
+            mainly used for comparing results
+
+            *   https://www.easycalculation.com/statistics/measures-central-tendency.php
+
+            *   http://elsenaju.eu/Calculator/mean-value-calculator.htm
+
+        *   mathematical tools
+
+            *   octave
+
+            *   R
 
 *   more algorithms
 
@@ -98,6 +115,8 @@ After benchmarks will be added and tests conducted, implementation might change 
 *   https://stackoverflow.com/questions/365615/in-net-which-loop-runs-faster-for-or-foreach
 
 *   https://codeblog.jonskeet.uk/2009/01/29/for-vs-foreach-on-arrays-and-lists/
+
+
 
 ## References Links
 

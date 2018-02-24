@@ -6,6 +6,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 {
     public static partial class IEnumerableExtensionsStandardDeviationSample
     {
+        //==============================================================================================================
         public async static Task<double> StandardDeviationSampleAsync(this IEnumerable<byte> x)
         {
             double standard_deviation =
@@ -135,5 +136,6 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             return standard_deviation;
         }
+        //==============================================================================================================
     }
 }

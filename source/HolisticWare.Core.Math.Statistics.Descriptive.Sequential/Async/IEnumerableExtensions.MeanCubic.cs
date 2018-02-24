@@ -4,138 +4,138 @@ using System.Threading.Tasks;
 
 namespace Core.Math.Statistics.Descriptive.Sequential
 {
-	public static partial class IEnumerableExtensionsFStatistic
-	{
+    public static partial class IEnumerableExtensionsMeanCubic
+    {
         //==============================================================================================================
-        public async static Task<double> FStatisticAsync(this IEnumerable<byte> x, IEnumerable<byte> y)
+        public async static Task<double> MeanCubicAsync(this IEnumerable<byte> x)
         {
-            double correlation =
+            double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.FStatistic(y)
+                                    () => x.MeanCubic()
                                 )
                             .ConfigureAwait(false);
 
-            return correlation;
+            return mean;
         }
 
-        public async static Task<double> FStatisticAsync(this IEnumerable<short> x, IEnumerable<short> y)
+        public async static Task<double> MeanCubicAsync(this IEnumerable<short> x)
         {
-            double correlation = 
+            double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.FStatistic(y)
+                                    () => x.MeanCubic()
                                 )
                             .ConfigureAwait(false);
 
-            return correlation;
+            return mean;
         }
 
-        public async static Task<double> FStatisticAsync(this IEnumerable<ushort> x, IEnumerable<ushort> y)
+        public async static Task<double> MeanCubicAsync(this IEnumerable<ushort> x)
         {
-            double correlation = 
+            double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.FStatistic(y)
+                                    () => x.MeanCubic()
                                 )
                             .ConfigureAwait(false);
 
-            return correlation;
+            return mean;
         }
 
-        public async static Task<double> FStatisticAsync(this IEnumerable<int> x, IEnumerable<int> y)
+        public async static Task<double> MeanCubicAsync(this IEnumerable<int> x)
         {
-            double correlation = 
+            double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.FStatistic(y)
+                                    () => x.MeanCubic()
                                 )
                             .ConfigureAwait(false);
 
-            return correlation;
+            return mean;
         }
 
-        public async static Task<double> FStatisticAsync(this IEnumerable<uint> x, IEnumerable<uint> y)
+        public async static Task<double> MeanCubicAsync(this IEnumerable<uint> x)
         {
-            double correlation = 
+            double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.FStatistic(y)
+                                    () => x.MeanCubic()
                                 )
                             .ConfigureAwait(false);
 
-            return correlation;
+            return mean;
         }
 
-        public async static Task<double> FStatisticAsync(this IEnumerable<long> x, IEnumerable<long> y)
+        public async static Task<double> MeanCubicAsync(this IEnumerable<long> x)
         {
-            double correlation = 
+            double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.FStatistic(y)
+                                    () => x.MeanCubic()
                                 )
                             .ConfigureAwait(false);
 
-            return correlation;
+            return mean;
         }
 
-        public async static Task<double> FStatisticAsync(this IEnumerable<ulong> x, IEnumerable<ulong> y)
+        public async static Task<double> MeanCubicAsync(this IEnumerable<ulong> x)
         {
-            double correlation = 
+            double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.FStatistic(y)
+                                    () => x.MeanCubic()
                                 )
                             .ConfigureAwait(false);
 
-            return correlation;
+            return mean;
         }
 
-        public async static Task<double> FStatisticAsync(this IEnumerable<float> x, IEnumerable<float> y)
+        public async static Task<double> MeanCubicAsync(this IEnumerable<float> x)
         {
-            double correlation = 
+            double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.FStatistic(y)
+                                    () => x.MeanCubic()
                                 )
                             .ConfigureAwait(false);
 
-            return correlation;
+            return mean;
         }
 
-        public async static Task<double> FStatisticAsync(this IEnumerable<double> x, IEnumerable<double> y)
+        public async static Task<double> MeanCubicAsync(this IEnumerable<double> x)
         {
-            double correlation = 
+            double mean =
                 await Task
                             .Run
                                 (
-                                    () => x.FStatistic(y)
+                                    () => x.MeanCubic()
                                 )
                             .ConfigureAwait(false);
 
-            return correlation;
+            return mean;
         }
 
-        public async static Task<decimal> FStatisticAsync(this IEnumerable<decimal> x, IEnumerable<decimal> y)
+        public async static Task<decimal> MeanCubicAsync(this IEnumerable<decimal> x)
         {
-            decimal correlation = 
+            decimal mean =
                 await Task
                             .Run
                                 (
-                                    () => x.FStatistic(y)
+                                    () => x.MeanCubic()
                                 )
                             .ConfigureAwait(false);
 
-            return correlation;
+            return mean;
         }
         //==============================================================================================================
-	}
+    }
 }

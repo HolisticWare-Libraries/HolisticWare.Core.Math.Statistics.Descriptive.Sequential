@@ -6,6 +6,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 {
     public static partial class IEnumerableExtensionsVarianceSample
     {
+        //==============================================================================================================
         public async static Task<double> VarianceSampleAsync(this IEnumerable<byte> x)
         {
             double variance =
@@ -135,5 +136,6 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             return variance;
         }
+        //==============================================================================================================
     }
 }

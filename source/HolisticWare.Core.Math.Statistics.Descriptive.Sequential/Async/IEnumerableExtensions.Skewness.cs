@@ -6,6 +6,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 {
 	public static partial class IEnumerableExtensionsSkewness
 	{
+        //==============================================================================================================
         public async static Task<double> SkewnessAsync(this IEnumerable<byte> x)
         {
             double skewness =
@@ -135,5 +136,6 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             return skewness;
         }
+        //==============================================================================================================
 	}
 }

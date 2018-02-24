@@ -4,8 +4,9 @@ using System.Threading.Tasks;
 
 namespace Core.Math.Statistics.Descriptive.Sequential
 {
-	public static partial class IEnumerableExtensionsWelchtStatistic
-	{
+    public static partial class IEnumerableExtensionsWelchtStatistic
+    {
+        //==============================================================================================================
         public async static Task<(double welch_t, double degrees_of_freedom)> WelchtStatisticAsync
                                                                                 (
                                                                                    this IEnumerable<byte> x,
@@ -25,11 +26,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public async static Task<(double welch_t, double degrees_of_freedom)> WelchtStatisticAsync
                                                                                 (
-                                                                                   this IEnumerable<short> x, 
+                                                                                   this IEnumerable<short> x,
                                                                                    IEnumerable<short> y
                                                                                 )
         {
-            (double welch_t, double degrees_of_freedom) statistic = 
+            (double welch_t, double degrees_of_freedom) statistic =
                 await Task
                             .Run
                                 (
@@ -46,7 +47,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                                                                    IEnumerable<ushort> y
                                                                                 )
         {
-            (double welch_t, double degrees_of_freedom) statistic = 
+            (double welch_t, double degrees_of_freedom) statistic =
                 await Task
                             .Run
                                 (
@@ -63,7 +64,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                                                                    IEnumerable<int> y
                                                                                 )
         {
-            (double welch_t, double degrees_of_freedom) statistic = 
+            (double welch_t, double degrees_of_freedom) statistic =
                 await Task
                             .Run
                                 (
@@ -80,7 +81,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                                                                    IEnumerable<uint> y
                                                                                 )
         {
-            (double welch_t, double degrees_of_freedom) statistic = 
+            (double welch_t, double degrees_of_freedom) statistic =
                 await Task
                             .Run
                                 (
@@ -97,7 +98,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                                                                    IEnumerable<long> y
                                                                                 )
         {
-            (double welch_t, double degrees_of_freedom) statistic = 
+            (double welch_t, double degrees_of_freedom) statistic =
                 await Task
                             .Run
                                 (
@@ -114,7 +115,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                                                                    IEnumerable<ulong> y
                                                                                 )
         {
-            (double welch_t, double degrees_of_freedom) statistic = 
+            (double welch_t, double degrees_of_freedom) statistic =
                 await Task
                             .Run
                                 (
@@ -131,7 +132,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                                                                    IEnumerable<float> y
                                                                                 )
         {
-            (double welch_t, double degrees_of_freedom) statistic = 
+            (double welch_t, double degrees_of_freedom) statistic =
                 await Task
                             .Run
                                 (
@@ -148,7 +149,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                                                                    IEnumerable<double> y
                                                                                 )
         {
-            (double welch_t, double degrees_of_freedom) statistic = 
+            (double welch_t, double degrees_of_freedom) statistic =
                 await Task
                             .Run
                                 (
@@ -165,7 +166,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                                                                    IEnumerable<decimal> y
                                                                                 )
         {
-            (decimal welch_t, decimal degrees_of_freedom) statistic = 
+            (decimal welch_t, decimal degrees_of_freedom) statistic =
                 await Task
                             .Run
                                 (
@@ -175,5 +176,6 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             return statistic;
         }
-	}
+        //==============================================================================================================
+    }
 }

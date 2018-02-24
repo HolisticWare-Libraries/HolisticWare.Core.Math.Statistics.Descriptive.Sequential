@@ -4,8 +4,9 @@ using System.Threading.Tasks;
 
 namespace Core.Math.Statistics.Descriptive.Sequential
 {
-	public static partial class IEnumerableExtensionsMeanGeometric
-	{
+    public static partial class IEnumerableExtensionsMeanGeometric
+    {
+        //==============================================================================================================
         public async static Task<double> MeanGeometricAsync(this IEnumerable<byte> x)
         {
             double mean =
@@ -21,7 +22,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public async static Task<double> MeanGeometricAsync(this IEnumerable<short> x)
         {
-            double mean = 
+            double mean =
                 await Task
                             .Run
                                 (
@@ -34,7 +35,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public async static Task<double> MeanGeometricAsync(this IEnumerable<ushort> x)
         {
-            double mean = 
+            double mean =
                 await Task
                             .Run
                                 (
@@ -47,7 +48,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public async static Task<double> MeanGeometricAsync(this IEnumerable<int> x)
         {
-            double mean = 
+            double mean =
                 await Task
                             .Run
                                 (
@@ -60,7 +61,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public async static Task<double> MeanGeometricAsync(this IEnumerable<uint> x)
         {
-            double mean = 
+            double mean =
                 await Task
                             .Run
                                 (
@@ -73,7 +74,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public async static Task<double> MeanGeometricAsync(this IEnumerable<long> x)
         {
-            double mean = 
+            double mean =
                 await Task
                             .Run
                                 (
@@ -86,7 +87,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public async static Task<double> MeanGeometricAsync(this IEnumerable<ulong> x)
         {
-            double mean = 
+            double mean =
                 await Task
                             .Run
                                 (
@@ -99,7 +100,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public async static Task<double> MeanGeometricAsync(this IEnumerable<float> x)
         {
-            double mean = 
+            double mean =
                 await Task
                             .Run
                                 (
@@ -112,7 +113,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public async static Task<double> MeanGeometricAsync(this IEnumerable<double> x)
         {
-            double mean = 
+            double mean =
                 await Task
                             .Run
                                 (
@@ -125,7 +126,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public async static Task<decimal> MeanGeometricAsync(this IEnumerable<decimal> x)
         {
-            decimal mean = 
+            decimal mean =
                 await Task
                             .Run
                                 (
@@ -135,5 +136,6 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             return mean;
         }
-	}
+        //==============================================================================================================
+    }
 }
