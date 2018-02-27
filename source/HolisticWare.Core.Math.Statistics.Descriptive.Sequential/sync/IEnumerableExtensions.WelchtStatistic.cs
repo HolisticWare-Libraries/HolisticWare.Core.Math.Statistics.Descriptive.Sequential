@@ -19,8 +19,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                                                         )
         {
             // unequal variances
-            double xmean = x.Cast<int>().Average();
-            double ymean = y.Cast<int>().Average();
+            double xmean = x.Select(x_i => (int)x_i).Average();
+            double ymean = y.Select(x_i => (int)x_i).Average();
             double xvar = x.VarianceSample();
             double yvar = y.VarianceSample();
             int xn = x.Count();
@@ -42,8 +42,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                                                         )
         {
             // unequal variances
-            double xmean = x.Cast<int>().Average();
-            double ymean = y.Cast<int>().Average();
+            double xmean = x.Select(x_i => (int)x_i).Average();
+            double ymean = y.Select(x_i => (int)x_i).Average();
             double xvar = x.VarianceSample();
             double yvar = y.VarianceSample();
             int xn = x.Count();
@@ -65,8 +65,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                                                         )
         {
             // unequal variances
-            double xmean = x.Cast<int>().Average();
-            double ymean = y.Cast<int>().Average();
+            double xmean = x.Select(x_i => (int)x_i).Average();
+            double ymean = y.Select(x_i => (int)x_i).Average();
             double xvar = x.VarianceSample();
             double yvar = y.VarianceSample();
             int xn = x.Count();
@@ -111,8 +111,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                                                         )
         {
             // unequal variances
-            double xmean = x.Cast<long>().Average();
-            double ymean = y.Cast<long>().Average();
+            double xmean = x.Select(x_i => (long)x_i).Average();
+            double ymean = y.Select(x_i => (long)x_i).Average();
             double xvar = x.VarianceSample();
             double yvar = y.VarianceSample();
             int xn = x.Count();
@@ -157,8 +157,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                                                         )
         {
             // unequal variances
-            double xmean = x.Cast<double>().Average();
-            double ymean = y.Cast<double>().Average();
+            double xmean = x.Select(x_i => (double)x_i).Average();
+            double ymean = y.Select(x_i => (double)x_i).Average();
             double xvar = x.VarianceSample();
             double yvar = y.VarianceSample();
             int xn = x.Count();

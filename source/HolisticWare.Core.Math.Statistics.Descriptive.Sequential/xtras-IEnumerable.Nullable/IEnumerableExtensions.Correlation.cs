@@ -39,8 +39,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 sum += x.ElementAt(i) * y.ElementAt(i);
             }
 
-            double x_mean_average_arithmetic = x.Cast<int>().Average();
-            double y_mean_average_arithmetic = y.Cast<int>().Average();
+            double x_mean_average_arithmetic = x.Select(x_i => (int) x_i).Average();
+            double y_mean_average_arithmetic = y.Select(x_i => (int) x_i).Average();
 
             return
                 (double)
@@ -75,8 +75,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 sum += x.ElementAt(i) * y.ElementAt(i);
             }
 
-            double x_mean_average_arithmetic = x.Cast<long>().Average();
-            double y_mean_average_arithmetic = y.Cast<long>().Average();
+            double x_mean_average_arithmetic = x.Select(x_i => (long)x_i).Average();
+            double y_mean_average_arithmetic = y.Select(x_i => (long)x_i).Average();
 
             return
                 (double)
@@ -147,8 +147,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 sum += x.ElementAt(i) * y.ElementAt(i);
             }
 
-            double x_mean_average_arithmetic = x.Cast<long>().Average();
-            double y_mean_average_arithmetic = y.Cast<long>().Average();
+            double x_mean_average_arithmetic = x.Select(x_i => (long)x_i).Average();
+            double y_mean_average_arithmetic = y.Select(x_i => (long)x_i).Average();
 
 
             return
@@ -220,8 +220,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 sum += x.ElementAt(i) * y.ElementAt(i);
             }
 
-            double x_mean_average_arithmetic = x.Cast<double>().Average();
-            double y_mean_average_arithmetic = y.Cast<double>().Average();
+            double x_mean_average_arithmetic = x.Select(x_i => (double)x_i).Average();
+            double y_mean_average_arithmetic = y.Select(x_i => (double)x_i).Average();
 
             return
                 (double)

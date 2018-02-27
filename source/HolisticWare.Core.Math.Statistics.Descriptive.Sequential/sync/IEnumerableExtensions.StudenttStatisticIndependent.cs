@@ -10,8 +10,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         public static double StudenttStatisticIndependent(this IEnumerable<byte> x, IEnumerable<byte> y)
         {
             // equal variances
-            double x_average = x.Cast<int>().Average();
-            double y_average = y.Cast<int>().Average();
+            double x_average = x.Select(x_i => (int)x_i).Average();
+            double y_average = y.Select(x_i => (int)x_i).Average();
             double x_variance = x.VarianceSample();
             double y_variance = y.VarianceSample();
             int xn = x.Count();
@@ -32,8 +32,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         public static double StudenttStatisticIndependent(this IEnumerable<short> x, IEnumerable<short> y)
         {
             // equal variances
-            double x_average = x.Cast<int>().Average();
-            double y_average = y.Cast<int>().Average();
+            double x_average = x.Select(x_i => (int)x_i).Average();
+            double y_average = y.Select(x_i => (int)x_i).Average();
             double x_variance = x.VarianceSample();
             double y_variance = y.VarianceSample();
             int xn = x.Count();
@@ -54,8 +54,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         public static double StudenttStatisticIndependent(this IEnumerable<ushort> x, IEnumerable<ushort> y)
         {
             // equal variances
-            double x_average = x.Cast<int>().Average();
-            double y_average = y.Cast<int>().Average();
+            double x_average = x.Select(x_i => (int)x_i).Average();
+            double y_average = y.Select(x_i => (int)x_i).Average();
             double x_variance = x.VarianceSample();
             double y_variance = y.VarianceSample();
             int xn = x.Count();
@@ -98,8 +98,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         public static double StudenttStatisticIndependent(this IEnumerable<uint> x, IEnumerable<uint> y)
         {
             // equal variances
-            double x_average = x.Cast<long>().Average();
-            double y_average = y.Cast<long>().Average();
+            double x_average = x.Select(x_i => (long)x_i).Average();
+            double y_average = y.Select(x_i => (long)x_i).Average();
             double x_variance = x.VarianceSample();
             double y_variance = y.VarianceSample();
             int xn = x.Count();
@@ -120,8 +120,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         public static double StudenttStatisticIndependent(this IEnumerable<long> x, IEnumerable<long> y)
         {
             // equal variances
-            double x_average = x.Cast<long>().Average();
-            double y_average = y.Cast<long>().Average();
+            double x_average = x.Select(x_i => (long)x_i).Average();
+            double y_average = y.Select(x_i => (long)x_i).Average();
             double x_variance = x.VarianceSample();
             double y_variance = y.VarianceSample();
             int xn = x.Count();
@@ -142,8 +142,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         public static double StudenttStatisticIndependent(this IEnumerable<ulong> x, IEnumerable<ulong> y)
         {
             // equal variances
-            double x_average = x.Cast<double>().Average();
-            double y_average = y.Cast<double>().Average();
+            double x_average = x.Select(x_i => (double)x_i).Average();
+            double y_average = y.Select(x_i => (double)x_i).Average();
             double x_variance = x.VarianceSample();
             double y_variance = y.VarianceSample();
             int xn = x.Count();

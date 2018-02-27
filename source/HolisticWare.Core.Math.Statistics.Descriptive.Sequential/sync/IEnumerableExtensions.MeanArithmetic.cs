@@ -15,17 +15,17 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         //==============================================================================================================
         public static double MeanArithmetic(this IEnumerable<byte> x)
         {
-            return x.Cast<int>().Average();
+            return x.Select(x_i => (int)x_i).Average();
         }
 
         public static double MeanArithmetic(this IEnumerable<ushort> x)
         {
-            return x.Cast<int>().Average();
+            return x.Select(x_i => (int)x_i).Average();
         }
 
         public static double MeanArithmetic(this IEnumerable<short> x)
         {
-            return x.Cast<int>().Average();
+            return x.Select(x_i => (int)x_i).Average();
         }
 
         public static double MeanArithmetic(this IEnumerable<int> x)
@@ -35,7 +35,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public static double MeanArithmetic(this IEnumerable<uint> x)
         {
-            return x.Cast<long>().Average();
+            return x.Select(x_i => (long)x_i).Average();
         }
 
         public static double MeanArithmetic(this IEnumerable<long> x)
@@ -45,7 +45,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public static double MeanArithmetic(this IEnumerable<ulong> x)
         {
-            return x.Cast<double>().Average();
+            return x.Select(x_i => (double)x_i).Average();
         }
 
         public static double MeanArithmetic(this IEnumerable<float> x)

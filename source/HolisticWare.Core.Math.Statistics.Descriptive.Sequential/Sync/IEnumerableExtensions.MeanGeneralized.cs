@@ -10,6 +10,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// Mean (Average) Generalized
     /// </summary>
     /// <see cref="https://en.wikipedia.org/wiki/Average"/>
+    /// <see cref="https://en.wikipedia.org/wiki/Generalized_mean"/>
     public static partial class IEnumerableExtensionsMeanGeneralized
     {
         //==============================================================================================================

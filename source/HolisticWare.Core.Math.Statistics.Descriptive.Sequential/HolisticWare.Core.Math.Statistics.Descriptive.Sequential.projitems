@@ -125,6 +125,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.MeanCubic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.MeanGeneralized.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.MeanWeighted.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.MedianWeighted.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)readme.md" />

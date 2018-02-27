@@ -9,7 +9,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         //==============================================================================================================
         public static double VarianceSample(this IEnumerable<short?> x)
         {
-            double? mean = x.Cast<int?>().Average();
+            double? mean = x.Select(x_i => (int?)x_i).Average();
             double? sum_suquares = 0;
 
             long n = x.LongCount();
@@ -26,7 +26,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public static double VarianceSample(this IEnumerable<ushort?> x)
         {
-            double? mean = x.Cast<int?>().Average();
+            double? mean = x.Select(x_i => (int?)x_i).Average();
             double? sum_suquares = 0;
 
             long n = x.LongCount();
@@ -60,7 +60,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public static double VarianceSample(this IEnumerable<uint?> x)
         {
-            double? mean = x.Cast<long>().Average();
+            double? mean = x.Select(x_i => (long)x_i).Average();
             double? sum_suquares = 0;
 
             long n = x.LongCount();
@@ -94,7 +94,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
         public static double VarianceSample(this IEnumerable<ulong?> x)
         {
-            double? mean = x.Cast<double?>().Average();
+            double? mean = x.Select(x_i => (double?)x_i).Average();
             double? sum_suquares = 0;
 
             long n = x.LongCount();
