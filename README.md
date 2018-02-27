@@ -19,13 +19,21 @@ NOTE: Parallel algorithms based on (TPL) can be found in
 
 ### Algorithms
 
-*   Average (Mean) 
+*   Average (Mean) Value algorithms
 
     *   Arithmetic 
 
     *   Geometric
 
     *   Harmonic
+
+    *   Quadratic
+
+    *   Cubic
+
+    *   Generalized
+
+    *   Weighted
 
 *   Frequencies
 
@@ -129,6 +137,12 @@ After benchmarks will be added and tests conducted, implementation might change 
     *   http://www.alcula.com/calculators/statistics/
 
     *   https://www.mathportal.org/calculators/statistics-calculator/standard-deviation-calculator.php
+
+    *   http://powerandsamplesize.com/Calculators/
+
+    *   https://www.miniwebtool.com/root-mean-square-calculator/
+
+    *   http://elsenaju.eu/Calculator/mean-value-calculator.htm
 
 *   some ideas and inspirations came from following libraries:
 

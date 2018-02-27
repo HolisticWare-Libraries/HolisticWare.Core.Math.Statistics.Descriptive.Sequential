@@ -30,17 +30,52 @@ using System;
 
 using System.Collections.Generic;
 using System.Linq;
-using System.Collections;
 using System.Diagnostics;
-
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
-    public partial class Tests03Mode
+    public partial class UnitTests20180227DataSet001
     {
-        Stopwatch sw = null;
+        
+        [Test()]
+        public void Frequencies()
+        {
+            //====================================================================================================
+            // Arrange
+            // Arrange
+            List<int> data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+
+            sw = Stopwatch.StartNew();
+            // Act
+            IEnumerable<KeyValuePair<int, uint>> frequencies01 = data01.Frequencies();
+            sw.Stop();
+            Console.WriteLine($"List<int>.Frequencies()");
+            Console.WriteLine($"          frequencies01      = {frequencies01}");
+            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            CollectionAssert.AreEquivalent
+                                (
+                                    frequencies01,
+                                    new Dictionary<int, uint>()
+                                    {
+                                        { 4, 3 },
+                                        { 2, 2 },
+                                        { 3, 1 },
+                                        { 5, 1 },
+                                        { 6, 1 },
+                                        { 7, 1 },
+                                        { 1, 1 },
+                                    }
+                                );
+            //====================================================================================================
+
+            return;
+        }
 
         [Test()]
         public void Mode01()
@@ -59,11 +94,17 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Assert
             CollectionAssert.AreEquivalent
                                     (
-                                        new List<int> { 4 }, 
+                                        new List<int> { 4 },
                                         modes01
                                     );
             //====================================================================================================
 
+            return;
+        }
+
+        [Test()]
+        public void Mode02()
+        {
             //====================================================================================================
             // Arrange
             Stack<int> data02 = new Stack<int>(new[] { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 });
@@ -83,6 +124,12 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                     );
             //====================================================================================================
 
+            return;
+        }
+
+        [Test()]
+        public void Mode03()
+        {
             //====================================================================================================
             // Arrange
             Queue<int> data03 = new Queue<int>(new[] { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 });
@@ -102,6 +149,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                     );
             //====================================================================================================
 
+            return;
+        }
+
+        [Test()]
+        public void Mode04()
+        {
+
             //====================================================================================================
             // Arrange
             int[] data04 = new[] { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
@@ -116,11 +170,15 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Assert
             CollectionAssert.AreEquivalent
                                     (
-                                        new List<int> { 4 }, 
+                                        new List<int> { 4 },
                                         modes04
                                     );
             //====================================================================================================
+        }
 
+        [Test()]
+        public void Mode05()
+        {
             #if NETSTANDARD1_3
             //====================================================================================================
             // Arrange
@@ -141,55 +199,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                     );
             //====================================================================================================
             #endif
-
-            return;
-        }
-
-        [Test()]
-        public void Mode02()
-        {
-            //====================================================================================================
-            // Arrange
-            List<int> data01 = new List<int> { 1, 2, 2, 3, 3, 4 };
-
-            sw = Stopwatch.StartNew();
-            // Act
-            List<int> modes01 = data01.Modes();
-            sw.Stop();
-            Console.WriteLine($"List<int>.Modes() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
-
-            // Assert
-            CollectionAssert.AreEquivalent
-                                    (
-                                        new List<int> { 2, 3 },
-                                        modes01
-                                    );
-            //====================================================================================================
-
-            return;
-        }
-
-        [Test()]
-        public void Mode03()
-        {
-            //====================================================================================================
-            // Arrange
-            List<int> data01 = new List<int> { 1, 2, 2, 3, 3, 4, 5, 6 };
-
-            sw = Stopwatch.StartNew();
-            // Act
-            List<int> modes01 = data01.Modes();
-            sw.Stop();
-            Console.WriteLine($"List<int>.Modes() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
-
-            // Assert
-            // Assert
-            CollectionAssert.AreEquivalent
-                                    (
-                                        new List<int> { 2, 3 },
-                                        modes01
-                                    );
-            //====================================================================================================
 
             return;
         }

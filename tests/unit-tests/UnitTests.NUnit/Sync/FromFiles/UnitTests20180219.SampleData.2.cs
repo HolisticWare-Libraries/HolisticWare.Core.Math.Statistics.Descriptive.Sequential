@@ -128,9 +128,16 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             Assert.AreEqual(179.77969, mean_geometric, 0.00001);
             //====================================================================================================
 
-            // TODO: System.InvalidCastException : Specified cast is not valid.
-            //decimal mean_deomatric_decimal = (data01.Cast<decimal>()).MeanGeometric();
-
+            // System.OverflowException : Arithmetic operation resulted in an overflow.
+            Assert.Throws<System.OverflowException>
+                    (
+                        () =>
+                        {
+                            // TODO: System.InvalidCastException : Specified cast is not valid.
+                            decimal mean_deomatric_decimal = (data01.Select(x_i => (decimal)x_i)).MeanGeometric();
+                        }
+                    );
+            
             return;
         }
 

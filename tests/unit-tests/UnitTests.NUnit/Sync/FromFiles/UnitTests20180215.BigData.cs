@@ -43,6 +43,11 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
         List<double> data01 = null;
         List<double> data02 = null;
 
+        double? correlation_data01_data02_01 = null;
+        double? correlation_data02_data01_01 = null;
+        double? correlation_data01_data02_02 = null;
+        double? correlation_data02_data02_02 = null;
+
         [OneTimeSetUp]
         public void LoadDataFromFile()
 		{
@@ -107,11 +112,12 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
                 data02.Add(data_item);
             }
             //------------------------------------------------------------------
+
 			return;
 		}
 
         [Test]
-        public void Averages_data01()
+        public void Averages_data01_MeanArithmetic()
         {
             //====================================================================================================
             //  Arrange
@@ -134,6 +140,12 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             Assert.AreEqual(177.24999, mean_arithmetic, 0.00001);
             //====================================================================================================
 
+            return;
+        }
+
+        [Test]
+        public void Averages_data01_MeanGeometric01()
+        {
             //====================================================================================================
             //  Arrange
             //  reading data from files
@@ -156,14 +168,27 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             Assert.That(Double.IsInfinity(mean_geometric));
             //====================================================================================================
 
-            // TODO: System.InvalidCastException : Specified cast is not valid.
-            //decimal mean_deomatric_decimal = (data01.Cast<decimal>()).MeanGeometric();
-
             return;
         }
 
         [Test]
-        public void Averages_data02()
+        public void Averages_data01_MeanGeometric02()
+        {
+            // System.OverflowException : Arithmetic operation resulted in an overflow.
+            Assert.Throws<System.OverflowException>
+                    (
+                        () =>
+                        {
+                            // TODO: System.InvalidCastException : Specified cast is not valid.
+                            decimal mean_deomatric_decimal = (data01.Select(x_i => (decimal)x_i)).MeanGeometric();
+                        }
+                    );
+            
+            return;
+        }
+
+        [Test]
+        public void Averages_data02_MeanArithmetic()
         {
             //====================================================================================================
             //  Arrange
@@ -187,6 +212,12 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             Assert.AreEqual(177.249978, mean_arithmetic, 0.000001);
             //====================================================================================================
 
+            return;
+        }
+
+        [Test]
+        public void Averages_data02_MeanGeometric01()
+        {
             //====================================================================================================
             //  Arrange
             //  reading data from files
@@ -209,14 +240,27 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             Assert.That(Double.IsInfinity(mean_geometric));
             //====================================================================================================
 
-            // TODO: System.InvalidCastException : Specified cast is not valid.
-            //decimal mean_deomatric_decimal = (data02.Cast<decimal>()).MeanGeometric();
+            return;
+        }
+
+        [Test]
+        public void Averages_data02_MeanGeometric02()
+        {
+            // System.OverflowException : Arithmetic operation resulted in an overflow.
+            Assert.Throws<System.OverflowException>
+                    (
+                        () =>
+                        {
+                            // TODO: System.InvalidCastException : Specified cast is not valid.
+                            decimal mean_deomatric_decimal = (data02.Select(x_i => (decimal)x_i)).MeanGeometric();
+                        }
+                    );
 
             return;
         }
 
         [Test]
-        public void StandardDeviation_data01()
+        public void StandardDeviation_data01_Sample()
         {
             //====================================================================================================
             //  Arrange
@@ -240,6 +284,12 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             Assert.AreEqual(16.86, standard_deviation_s, 0.00001);
             //====================================================================================================
 
+            return;
+        }
+
+        [Test]
+        public void StandardDeviation_data01_Population()
+        {
             //====================================================================================================
             //  Arrange
             //  reading data from files
@@ -261,10 +311,12 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             // Assert
             Assert.AreEqual(16.8599, standard_deviation_p, 0.0001);
             //====================================================================================================
+
+            return;
         }
 
         [Test]
-        public void StandardDeviation_data02()
+        public void StandardDeviation_data02_Sample()
         {
             //====================================================================================================
             //  Arrange
@@ -288,6 +340,12 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             Assert.AreEqual(16.86, standard_deviation_s, 0.00001);
             //====================================================================================================
 
+            return;
+        }
+
+        [Test]
+        public void StandardDeviation_data02_Population()
+        {
             //====================================================================================================
             //  Arrange
             //  reading data from files
@@ -309,10 +367,12 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             // Assert
             Assert.AreEqual(16.8599, standard_deviation_p, 0.0001);
             //====================================================================================================
+
+            return;
         }
 
         [Test]
-        public void Variance_data01()
+        public void Variance_data01_Sample()
         {
             //====================================================================================================
             //  Arrange
@@ -336,6 +396,12 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             Assert.AreEqual(284.26, variance_s, 0.01);
             //====================================================================================================
 
+            return;
+        }
+
+        [Test]
+        public void Variance_data01_Population()
+        {
             //====================================================================================================
             //  Arrange
             //  reading data from files
@@ -362,7 +428,7 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
         }
 
         [Test]
-        public void Variance_data02()
+        public void Variance_data02_Sample()
         {
             //====================================================================================================
             //  Arrange
@@ -386,6 +452,12 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             Assert.AreEqual(284.26, variance_s, 0.01);
             //====================================================================================================
 
+            return;
+        }
+
+        [Test]
+        public void Variance_data02_Population()
+        {
             //====================================================================================================
             //  Arrange
             //  reading data from files
@@ -411,13 +483,8 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             return;
         }
 
-        double? correlation_data01_data02_01 = null;
-        double? correlation_data02_data01_01 = null;
-        double? correlation_data01_data02_02 = null;
-        double? correlation_data02_data02_02 = null;
-
         [Test]
-        public void Correlation()
+        public void Correlation_01_02()
         {
             //====================================================================================================
             //  Arrange
@@ -441,6 +508,12 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             Assert.AreEqual(0.00262, correlation_data01_data02_01, 0.00001);
             //====================================================================================================
 
+            return;
+        }
+
+        [Test]
+        public void Correlation_02_01()
+        {
             //====================================================================================================
             //  Arrange
             //  reading data from files

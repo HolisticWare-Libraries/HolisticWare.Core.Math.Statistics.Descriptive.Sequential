@@ -65,9 +65,6 @@
     <Compile Include="Sync\DarkVaderTests\TestsModes20180119.cs" />
     <Compile Include="Sync\DarkVaderTests\UnitTests20180213.cs" />
     <Compile Include="Sync\KIF.Handbook.QuantitiativeMethods\Tests03Page95DescriptiveAnalysis.cs" />
-    <Compile Include="Sync\Tests01MeanAverage.cs" />
-    <Compile Include="Sync\Tests02Frequencies.cs" />
-    <Compile Include="Sync\Tests03Mode.cs" />
     <Compile Include="Async\Tests01MeanAverage.cs" />
     <Compile Include="Async\Tests02Frequencies.cs" />
     <Compile Include="Async\Tests03Mode.cs" />
@@ -75,6 +72,14 @@
     <Compile Include="Sync\FromFiles\UnitTests20180215.BigData.cs" />
     <Compile Include="Sync\FromFiles\UnitTests20180219.SampleData.cs" />
     <Compile Include="Sync\FromFiles\UnitTests20180219.SampleData.2.cs" />
+    <Compile Include="Sync\UnitTests20180227DataSet001\Tests01MeansAverageMedian.cs" />
+    <Compile Include="Sync\UnitTests20180227DataSet002\Tests01MeanAverage.cs" />
+    <Compile Include="Sync\UnitTests20180227DataSet001\Tests02FrequenciesModes.cs" />
+    <Compile Include="Sync\UnitTests20180227DataSet003\Tests03Mode.cs" />
+    <Compile Include="Sync\UnitTests20180227DataSet003\Tests01MeanAverage.cs" />
+    <Compile Include="Sync\UnitTests20180227DataSet002\Tests03Mode.cs" />
+    <Compile Include="Sync\UnitTests20180227DataSet004\Tests01MeanAverage.cs" />
+    <Compile Include="Sync\UnitTests20180227DataSet004\Tests03Mode.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -89,6 +94,10 @@
     <Folder Include="Xtras-BigData\" />
     <Folder Include="Xtras-SampleData\" />
     <Folder Include="Sync\FromFiles\" />
+    <Folder Include="Sync\UnitTests20180227DataSet001\" />
+    <Folder Include="Sync\UnitTests20180227DataSet002\" />
+    <Folder Include="Sync\UnitTests20180227DataSet003\" />
+    <Folder Include="Sync\UnitTests20180227DataSet004\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10.csproj">

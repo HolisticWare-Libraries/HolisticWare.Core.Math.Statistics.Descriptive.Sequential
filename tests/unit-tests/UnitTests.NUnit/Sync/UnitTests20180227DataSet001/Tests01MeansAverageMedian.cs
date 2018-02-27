@@ -36,11 +36,19 @@ using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
-    public partial class Tests01MeanAverage
+    public partial class UnitTests20180227DataSet001
     {
         List<int> data01 = null;
+
+        double average = 0;
+        double mean01 = 0;
+        double mean02 = 0;
+        double median01 = 0;
+
+        List<double> weights = null;
+
         Stopwatch sw = null;
-        
+
         [Test()]
         public void Average()
         {
@@ -51,7 +59,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw = Stopwatch.StartNew();
             //----------------------------------------------------------------------------------------------------
             // Act
-            double average = data01.Average();
+            average = data01.Average();
             sw.Stop();
             Console.WriteLine($"List<int>.Average()");
             Console.WriteLine($"          average            = {average}");
@@ -78,7 +86,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw = Stopwatch.StartNew();
             //----------------------------------------------------------------------------------------------------
             // Act
-            double mean01 = data01.MeanArithmetic();
+            mean01 = data01.MeanArithmetic();
             sw.Stop();
             Console.WriteLine($"List<int>.MeanArithmetic()");
             Console.WriteLine($"          mean_arithmetic    = {mean01}");
@@ -105,7 +113,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw = Stopwatch.StartNew();
             //----------------------------------------------------------------------------------------------------
             // Act
-            double mean01 = data01.MeanGeometric();
+            mean01 = data01.MeanGeometric();
             sw.Stop();
             Console.WriteLine($"List<int>.MeanArithmetic()");
             Console.WriteLine($"          mean_arithmetic    = {mean01}");
@@ -132,10 +140,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw = Stopwatch.StartNew();
             //----------------------------------------------------------------------------------------------------
             // Act
-            double mean01 = data01.MeanHarmonic();
+            mean01 = data01.MeanHarmonic();
             sw.Stop();
-            Console.WriteLine($"List<int>.MeanArithmetic()");
-            Console.WriteLine($"          mean_arithmetic    = {mean01}");
+            Console.WriteLine($"List<int>.MeanHarmonic()");
+            Console.WriteLine($"          mean_harmonic      = {mean01}");
             Console.WriteLine($"          size               = {data01.Count}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -159,10 +167,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw = Stopwatch.StartNew();
             //----------------------------------------------------------------------------------------------------
             // Act
-            double mean01 = data01.MeanQuadratic();
+            mean01 = data01.MeanQuadratic();
             sw.Stop();
-            Console.WriteLine($"List<int>.MeanArithmetic()");
-            Console.WriteLine($"          mean_arithmetic    = {mean01}");
+            Console.WriteLine($"List<int>.MeanQuadratic()");
+            Console.WriteLine($"          mean_quadratic     = {mean01}");
             Console.WriteLine($"          size               = {data01.Count}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -186,7 +194,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw = Stopwatch.StartNew();
             //----------------------------------------------------------------------------------------------------
             // Act
-            double mean01 = data01.MeanCubic();
+            mean01 = data01.MeanCubic();
             sw.Stop();
             Console.WriteLine($"List<int>.MeanCubic()");
             Console.WriteLine($"          mean_cubic         = {mean01}");
@@ -213,8 +221,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw = Stopwatch.StartNew();
             //----------------------------------------------------------------------------------------------------
             // Act
-            double mean01 = data01.MeanGeneralized(2.0);
-            double mean02 = data01.MeanGeneralized(3.0);
+            mean01 = data01.MeanGeneralized(2.0);
+            mean02 = data01.MeanGeneralized(3.0);
             sw.Stop();
             Console.WriteLine($"List<int>.MeanGeneralized()");
             Console.WriteLine($"          mean_generalized(2.0) = {mean01}");
@@ -233,8 +241,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             return;
         }
 
-        List<double> weights = null;
-
         [Test()]
         public void MeanWeighted()
         {
@@ -251,7 +257,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw = Stopwatch.StartNew();
             //----------------------------------------------------------------------------------------------------
             // Act
-            double mean01 = data01.MeanWeighted(weights);
+            mean01 = data01.MeanWeighted(weights);
             sw.Stop();
             Console.WriteLine($"List<int>.MeanWeighted(weights)");
             Console.WriteLine($"          mean_weighted      = {mean01}");
@@ -263,6 +269,143 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             Assert.AreEqual(4.3871, mean01, 0.00001);
+            //====================================================================================================
+
+            return;
+        }
+
+        [Test()]
+        public void Median01()
+        {
+            //====================================================================================================
+            // Arrange
+            List<int> data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+
+            sw = Stopwatch.StartNew();
+            // Act
+            median01 = data01.Median();
+            sw.Stop();
+            Console.WriteLine($"List<int>.Median()");
+            Console.WriteLine($"          median01           = {median01}");
+            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            // Assert
+            Assert.AreEqual(4.0, median01, 0.1);
+            //====================================================================================================
+
+            return;
+        }
+
+        [Test()]
+        public void Median02()
+        {
+            //====================================================================================================
+            // Arrange
+            Stack<int> data02 = new Stack<int>(new[] { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 });
+
+            sw = Stopwatch.StartNew();
+            // Act
+            median01 = data02.Median();
+            sw.Stop();
+            Console.WriteLine($"Stack<int>.Average() size={data02.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            sw.Reset();
+
+            // Assert
+            Assert.AreEqual(4.0, median01, 0.001);
+            //====================================================================================================
+
+            return;
+        }
+
+        [Test()]
+        public void Median03()
+        {
+            //====================================================================================================
+            // Arrange
+            Queue<int> data03 = new Queue<int>(new[] { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 });
+
+            sw = Stopwatch.StartNew();
+            // Act
+            median01 = data03.Median();
+            sw.Stop();
+            Console.WriteLine($"Queue<int>.Average() size={data03.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            sw.Reset();
+
+            // Assert
+            Assert.AreEqual(4.0, median01, 0.001);
+            //====================================================================================================
+
+            return;
+        }
+
+        [Test()]
+        public void Median04()
+        {
+            //====================================================================================================
+            // Arrange
+            int[] data04 = new[] { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+
+            sw = Stopwatch.StartNew();
+            // Act
+            median01 = data04.Median();
+            sw.Stop();
+            Console.WriteLine($"int[].Modes() size={data04.Length} elapsed[ticks]={sw.ElapsedTicks}");
+            sw.Reset();
+
+            // Assert
+            Assert.AreEqual(4.0, median01, 0.001);
+            //====================================================================================================
+
+            return;
+        }
+
+        [Test()]
+        public void Median05()
+        {
+            #if NETSTANDARD1_3
+            //====================================================================================================
+            // Arrange
+            ArrayList data05 = new ArrayList { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+
+            sw = Stopwatch.StartNew();
+            // Act
+            List<int> modes05 = data05.Modes();
+            sw.Stop();
+            Console.WriteLine($"ArrayList.Modes() size={data05.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            sw.Reset();
+
+            // Assert
+            CollectionAssert.AreEquivalent
+                                    (
+                                        new List<int> { 4 }, 
+                                        modes05
+                                    );
+            //====================================================================================================
+            #endif
+
+            return;
+        }
+
+        [Test()]
+        public void MedianWeighted()
+        {
+            //====================================================================================================
+            // Arrange
+            int[] data04 = new[] { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+            int[] weights04 = new[] { 1, 3, 4, 5, 2, 3, 2, 4, 1, 1 };
+
+            sw = Stopwatch.StartNew();
+            // Act
+            median01 = data04.MedianWeighted(weights04.Select(i => (double)i));
+            sw.Stop();
+            Console.WriteLine($"int[].Modes() size={data04.Length} elapsed[ticks]={sw.ElapsedTicks}");
+            sw.Reset();
+
+            // Assert
+            Assert.AreEqual(5.0, median01, 0.001);
             //====================================================================================================
 
             return;
