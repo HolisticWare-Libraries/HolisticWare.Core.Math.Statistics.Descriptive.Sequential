@@ -256,6 +256,16 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
                         }
                     );
 
+            Assert.That
+                    (
+                        () =>
+                        {
+                            // TODO: System.InvalidCastException : Specified cast is not valid.
+                            decimal mean_deomatric_decimal = (data02.Select(x_i => (decimal)x_i)).MeanGeometric();
+                        }, 
+                        Throws.InstanceOf(typeof(System.OverflowException))
+                    );
+
             return;
         }
 

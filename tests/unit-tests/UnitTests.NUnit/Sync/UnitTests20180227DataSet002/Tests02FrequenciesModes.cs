@@ -36,16 +36,16 @@ using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
-    public partial class UnitTests20180227DataSet001
+    public partial class UnitTests20180227DataSet002
     {
-        
+
         [Test()]
         public void Frequencies()
         {
             //====================================================================================================
             // Arrange
             // Arrange
-            List<int> data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+            List<int> data01 = new List<int> { 22, 24, 33, 25, 36, 27, 34, 24, 32, 21, 28, 29, 30, 35, 29, 28 };
 
             sw = Stopwatch.StartNew();
             // Act
@@ -63,15 +63,23 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                     frequencies01,
                                     new Dictionary<int, uint>()
                                     {
-                                        { 4, 3 },
-                                        { 2, 2 },
-                                        { 3, 1 },
-                                        { 5, 1 },
-                                        { 6, 1 },
-                                        { 7, 1 },
-                                        { 1, 1 },
+                                        { 24, 2},
+                                        { 28, 2},
+                                        { 29, 2},
+                                        { 22, 1},
+                                        { 33, 1},
+                                        { 25, 1},
+                                        { 36, 1},
+                                        { 27, 1},
+                                        { 34, 1},
+                                        { 32, 1},
+                                        { 21, 1},
+                                        { 30, 1},
+                                        { 35, 1},
                                     }
                                 );
+
+
             //====================================================================================================
 
             return;
@@ -82,7 +90,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         {
             //====================================================================================================
             // Arrange
-            List<int> data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+            List<int> data01 = new List<int> { 22, 24, 33, 25, 36, 27, 34, 24, 32, 21, 28, 29, 30, 35, 29, 28 };
 
             sw = Stopwatch.StartNew();
             // Act
@@ -98,7 +106,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Assert
             CollectionAssert.AreEquivalent
                                     (
-                                        new List<int> { 4 },
+                                        new List<int> { 24, 28, 29 },
                                         modes01
                                     );
             //====================================================================================================
@@ -111,7 +119,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         {
             //====================================================================================================
             // Arrange
-            Stack<int> data02 = new Stack<int>(new[] { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 });
+            Stack<int> data02 = new Stack<int>(new[] { 22, 24, 33, 25, 36, 27, 34, 24, 32, 21, 28, 29, 30, 35, 29, 28 });
 
             sw = Stopwatch.StartNew();
             // Act
@@ -119,7 +127,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Stop();
             Console.WriteLine($"List<int>.MeanGeneralized()");
             Console.WriteLine($"          modes02               = {modes02}");
-            Console.WriteLine($"          size                  = {data02.Count}");
+            Console.WriteLine($"          size                  = {data01.Count}");
             Console.WriteLine($"          elapsed[ticks]        = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]           = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -127,7 +135,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Assert
             CollectionAssert.AreEquivalent
                                     (
-                                        new List<int> { 4 },
+                                        new List<int> { 24, 28, 29 },
                                         modes02
                                     );
             //====================================================================================================
@@ -140,7 +148,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         {
             //====================================================================================================
             // Arrange
-            Queue<int> data03 = new Queue<int>(new[] { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 });
+            Queue<int> data03 = new Queue<int>(new[] { 22, 24, 33, 25, 36, 27, 34, 24, 32, 21, 28, 29, 30, 35, 29, 28 });
 
             sw = Stopwatch.StartNew();
             // Act
@@ -148,7 +156,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Stop();
             Console.WriteLine($"List<int>.MeanGeneralized()");
             Console.WriteLine($"          modes03               = {modes03}");
-            Console.WriteLine($"          size                  = {data03.Count}");
+            Console.WriteLine($"          size                  = {data01.Count}");
             Console.WriteLine($"          elapsed[ticks]        = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]           = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -156,7 +164,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Assert
             CollectionAssert.AreEquivalent
                                     (
-                                        new List<int> { 4 },
+                                        new List<int> { 24, 28, 29 },
                                         modes03
                                     );
             //====================================================================================================
@@ -170,7 +178,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //====================================================================================================
             // Arrange
-            int[] data04 = new[] { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+            int[] data04 = new[] { 22, 24, 33, 25, 36, 27, 34, 24, 32, 21, 28, 29, 30, 35, 29, 28 };
 
             sw = Stopwatch.StartNew();
             // Act
@@ -178,7 +186,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Stop();
             Console.WriteLine($"List<int>.MeanGeneralized()");
             Console.WriteLine($"          modes04               = {modes04}");
-            Console.WriteLine($"          size                  = {data04.Count()}");
+            Console.WriteLine($"          size                  = {data01.Count}");
             Console.WriteLine($"          elapsed[ticks]        = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]           = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -186,7 +194,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Assert
             CollectionAssert.AreEquivalent
                                     (
-                                        new List<int> { 4 },
+                                        new List<int> { 24, 28, 29 },
                                         modes04
                                     );
             //====================================================================================================
@@ -198,7 +206,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             #if NETSTANDARD1_3
             //====================================================================================================
             // Arrange
-            ArrayList data05 = new ArrayList { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+            ArrayList data05 = new ArrayList { 22, 24, 33, 25, 36, 27, 34, 24, 32, 21, 28, 29, 30, 35, 29, 28 };
 
             sw = Stopwatch.StartNew();
             // Act
@@ -206,7 +214,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Stop();
             Console.WriteLine($"List<int>.MeanGeneralized()");
             Console.WriteLine($"          modes05               = {modes05}");
-            Console.WriteLine($"          size                  = {data05.Count}");
+            Console.WriteLine($"          size                  = {data01.Count}");
             Console.WriteLine($"          elapsed[ticks]        = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]           = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -214,7 +222,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Assert
             CollectionAssert.AreEquivalent
                                     (
-                                        new List<int> { 4 }, 
+                                        new List<int> { 24, 28, 29 },
                                         modes05
                                     );
             //====================================================================================================
@@ -222,5 +230,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             return;
         }
+
     }
 }

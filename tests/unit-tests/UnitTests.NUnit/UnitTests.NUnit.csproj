@@ -73,13 +73,13 @@
     <Compile Include="Sync\FromFiles\UnitTests20180219.SampleData.cs" />
     <Compile Include="Sync\FromFiles\UnitTests20180219.SampleData.2.cs" />
     <Compile Include="Sync\UnitTests20180227DataSet001\Tests01MeansAverageMedian.cs" />
-    <Compile Include="Sync\UnitTests20180227DataSet002\Tests01MeanAverage.cs" />
+    <Compile Include="Sync\UnitTests20180227DataSet002\Tests01MeanAverageMedian.cs" />
     <Compile Include="Sync\UnitTests20180227DataSet001\Tests02FrequenciesModes.cs" />
     <Compile Include="Sync\UnitTests20180227DataSet003\Tests03Mode.cs" />
     <Compile Include="Sync\UnitTests20180227DataSet003\Tests01MeanAverage.cs" />
-    <Compile Include="Sync\UnitTests20180227DataSet002\Tests03Mode.cs" />
     <Compile Include="Sync\UnitTests20180227DataSet004\Tests01MeanAverage.cs" />
     <Compile Include="Sync\UnitTests20180227DataSet004\Tests03Mode.cs" />
+    <Compile Include="Sync\UnitTests20180227DataSet002\Tests02FrequenciesModes.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

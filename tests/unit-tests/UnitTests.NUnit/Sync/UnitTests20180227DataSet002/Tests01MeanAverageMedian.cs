@@ -48,6 +48,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
         Stopwatch sw = null;
 
+
         [Test()]
         public void Average()
         {
