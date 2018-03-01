@@ -1,0 +1,38 @@
+data01 = [ 1, 2, 2, 3, 3, 4, 5, 6 ];
+
+ma = mean(data01, "a");
+ma
+mg = mean(data01, "g");
+mg
+mh = mean(data01, "h");
+mh
+msq = meansq(data01);
+msq
+
+q1 = quantile (data01, [0, 1]);   # Return minimum, maximum of distribution
+q1
+q2 = quantile (data01, [0.25 0.5 0.75]); # Return quartiles of distribution
+q2
+
+p  = prctile (data01);
+p
+
+m1 = moment(data01, 1);
+m1
+m2 = moment(data01, 2);
+m2
+m3 = moment(data01, 3);
+m3
+m5 = moment(data01, 5);
+m5
+
+s = skewness(data01);
+s 
+k = kurtosis(data01);
+k 
+
+# minimum, first quartile, median, third quartile, maximum, 
+# mean, standard deviation, skewness, and kurtosis
+s = statistics(data01);
+s 
+
