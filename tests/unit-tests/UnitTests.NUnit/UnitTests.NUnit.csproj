@@ -80,9 +80,18 @@
     <Compile Include="Sync\UnitTests20180227DataSet004\Tests01MeanAverageMedian.cs" />
     <Compile Include="Sync\UnitTests20180227DataSet004\Tests02FrequenciesModes.cs" />
     <Compile Include="Sync\UnitTests20180227DataSet002\Tests02FrequenciesModes.cs" />
+    <Compile Include="Sync\UnitTests20180227DataSet001\Tests03Moments.cs" />
+    <Compile Include="Sync\UnitTests20180227DataSet001\Tests04SkewnessKurtosis.cs" />
+    <Compile Include="Sync\UnitTests20180227DataSet002\Tests03Moments.cs" />
+    <Compile Include="Sync\UnitTests20180227DataSet002\Tests04SkewnessKurtosis.cs" />
+    <Compile Include="Sync\UnitTests20180227DataSet003\Tests03Moments.cs" />
+    <Compile Include="Sync\UnitTests20180227DataSet003\Tests04SkewnessKurtosis.cs" />
+    <Compile Include="Sync\UnitTests20180227DataSet004\Tests03Moments.cs" />
+    <Compile Include="Sync\UnitTests20180227DataSet004\Tests04SkewnessKurtosis.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Xtras-SampleData\Judo.csv" />
   </ItemGroup>
   <!--
   ==================================================================================================
