@@ -38,5 +38,91 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class UnitTests20180227DataSet001
     {
+        double moment_2;
+
+        [Test()]
+        public void Moment2()
+        {
+            //====================================================================================================
+            // Arrange
+            data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+
+            sw = Stopwatch.StartNew();
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            moment_2 = data01.Moment(2);
+            sw.Stop();
+            Console.WriteLine($"List<int>.Average()");
+            Console.WriteLine($"          moment_2           = {moment_2}");
+            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            Assert.AreEqual(3.16, moment_2, 0.01);
+            //====================================================================================================
+
+            return;
+        }
+
+        double moment_3;
+
+        [Test()]
+        public void Moment3()
+        {
+            //====================================================================================================
+            // Arrange
+            data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+
+            sw = Stopwatch.StartNew();
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            moment_3 = data01.Moment(3);
+            sw.Stop();
+            Console.WriteLine($"List<int>.Average()");
+            Console.WriteLine($"          moment_3           = {moment_3}");
+            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            Assert.AreEqual(1.1040, moment_3, 0.01);
+            //====================================================================================================
+
+            return;
+        }
+
+        double moment_5;
+
+        [Test()]
+        public void Moment5()
+        {
+            //====================================================================================================
+            // Arrange
+            data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+
+            sw = Stopwatch.StartNew();
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            moment_5 = data01.Moment(5);
+            sw.Stop();
+            Console.WriteLine($"List<int>.Average()");
+            Console.WriteLine($"          moment_5           = {moment_5}");
+            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            Assert.AreEqual(17.935, moment_5, 0.001);
+            //====================================================================================================
+
+            return;
+        }
     }
 }
