@@ -38,16 +38,12 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class UnitTests20180227DataSet001
     {
-        List<int> data01 = null;
-
         double average = 0;
         double mean01 = 0;
         double mean02 = 0;
         double median01 = 0;
 
         List<double> weights = null;
-
-        Stopwatch sw = null;
 
         [Test()]
         public void Average()
@@ -81,7 +77,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         {
             //====================================================================================================
             // Arrange
-            data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+            data01 = new Queue<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
 
             sw = Stopwatch.StartNew();
             //----------------------------------------------------------------------------------------------------
@@ -108,7 +104,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         {
             //====================================================================================================
             // Arrange
-            data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+            data01 = new Stack<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
 
             sw = Stopwatch.StartNew();
             //----------------------------------------------------------------------------------------------------

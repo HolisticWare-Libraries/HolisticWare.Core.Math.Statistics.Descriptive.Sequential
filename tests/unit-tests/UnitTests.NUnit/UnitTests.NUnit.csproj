@@ -89,6 +89,8 @@
     <Compile Include="Sync\UnitTests20180227DataSet004\Tests03Moments.cs" />
     <Compile Include="Sync\UnitTests20180227DataSet004\Tests04SkewnessKurtosis.cs" />
     <Compile Include="Sync\UnitTests20180227DataSet001\Tests05Percentiles.cs" />
+    <Compile Include="Sync\UnitTests20180227DataSet001\Tests11Statistics.cs" />
+    <Compile Include="Sync\UnitTests20180227DataSet001\Tests00Data.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
