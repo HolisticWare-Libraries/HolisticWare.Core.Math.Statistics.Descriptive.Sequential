@@ -127,6 +127,16 @@
     <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.MeanWeighted.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.MedianWeighted.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.Percentile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.MomentCentral.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.MomentCentralAbsolute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.MomentRaw.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.MomentRawAbsolute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.MomentCentralAbsolute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.MomentRaw.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.MomentCentral.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.MomentRawAbsolute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\StatisticsDescriptive.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.Statistics.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)readme.md" />
