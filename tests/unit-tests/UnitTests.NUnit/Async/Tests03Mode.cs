@@ -53,7 +53,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
             // Act
             List<int> modes01 = data01.Modes();
             sw.Stop();
-            Console.WriteLine($"List<int>.Average() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"List<int>.Average() size={data01.Count()} elapsed[ticks]={sw.ElapsedTicks}");
             sw.Reset();
 
             // Assert
@@ -72,7 +72,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
             // Act
             List<int> modes02 = data02.Modes();
             sw.Stop();
-            Console.WriteLine($"Stack<int>.Average() size={data02.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"Stack<int>.Average() size={data02.Count()} elapsed[ticks]={sw.ElapsedTicks}");
             sw.Reset();
 
             // Assert
@@ -91,7 +91,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
             // Act
             List<int> modes03 = data03.Modes();
             sw.Stop();
-            Console.WriteLine($"Queue<int>.Average() size={data03.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"Queue<int>.Average() size={data03.Count()} elapsed[ticks]={sw.ElapsedTicks}");
             sw.Reset();
 
             // Assert
@@ -130,7 +130,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
             // Act
             List<int> modes05 = data05.Modes();
             sw.Stop();
-            Console.WriteLine($"ArrayList.Modes() size={data05.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"ArrayList.Modes() size={data05.Count()} elapsed[ticks]={sw.ElapsedTicks}");
             sw.Reset();
 
             // Assert
@@ -156,7 +156,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
             // Act
             List<int> modes01 = data01.Modes();
             sw.Stop();
-            Console.WriteLine($"List<int>.Modes() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"List<int>.Modes() size={data01.Count()} elapsed[ticks]={sw.ElapsedTicks}");
 
             // Assert
             CollectionAssert.AreEquivalent
@@ -180,7 +180,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
             // Act
             List<int> modes01 = data01.Modes();
             sw.Stop();
-            Console.WriteLine($"List<int>.Modes() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"List<int>.Modes() size={data01.Count()} elapsed[ticks]={sw.ElapsedTicks}");
 
             // Assert
             // Assert

@@ -54,7 +54,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Stop();
             Console.WriteLine($"List<int>.Average()");
             Console.WriteLine($"          moment_2           = {moment_2}");
-            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          size               = {data01.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -83,7 +83,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Stop();
             Console.WriteLine($"List<int>.Average()");
             Console.WriteLine($"          moment_3           = {moment_3}");
-            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          size               = {data01.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -112,7 +112,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Stop();
             Console.WriteLine($"List<int>.Average()");
             Console.WriteLine($"          moment_5           = {moment_5}");
-            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          size               = {data01.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();

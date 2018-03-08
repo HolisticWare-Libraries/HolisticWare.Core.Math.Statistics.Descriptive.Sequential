@@ -38,15 +38,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class UnitTests20180227DataSet004
     {
-        List<int> data01 = null;
-
         double average = 0;
         double mean01 = 0;
         double mean02 = 0;
 
         List<double> weights = null;
-
-        Stopwatch sw = null;
-
     }
 }

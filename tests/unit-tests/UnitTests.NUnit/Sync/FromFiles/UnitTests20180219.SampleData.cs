@@ -68,7 +68,7 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             sw.Stop();
             Console.WriteLine($"List<double>.Correlation(List<double>)");
             Console.WriteLine($"          correlation        = {correlation_data01_data02_01}");
-            Console.WriteLine($"          size               = {data01.Count} x {data02.Count}");
+            Console.WriteLine($"          size               = {data01.Count()} x {data02.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -90,7 +90,7 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             sw.Stop();
             Console.WriteLine($"List<double>.Correlation(List<double>)");
             Console.WriteLine($"          correlation        = {correlation_data02_data01_01}");
-            Console.WriteLine($"          size               = {data01.Count} x {data02.Count}");
+            Console.WriteLine($"          size               = {data01.Count()} x {data02.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();

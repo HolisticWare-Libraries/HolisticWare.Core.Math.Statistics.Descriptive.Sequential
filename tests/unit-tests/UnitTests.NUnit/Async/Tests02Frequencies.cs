@@ -50,7 +50,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
             // Act
             IEnumerable<KeyValuePair<int, uint>> frequencies01 = data01.Frequencies();
             sw.Stop();
-            Console.WriteLine($"List<int>.Average() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"List<int>.Average() size={data01.Count()} elapsed[ticks]={sw.ElapsedTicks}");
             sw.Reset();
 
             CollectionAssert.AreEquivalent

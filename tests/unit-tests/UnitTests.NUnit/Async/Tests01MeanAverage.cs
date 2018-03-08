@@ -57,7 +57,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
                             // Act
                             double mean02 = await data01.MeanArithmeticAsync();
                             sw.Stop();
-                            Console.WriteLine($"List<int>.Average() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+                            Console.WriteLine($"List<int>.Average() size={data01.Count()} elapsed[ticks]={sw.ElapsedTicks}");
                             sw.Reset();
 
                             //----------------------------------------------------------------------------------------------------
@@ -83,7 +83,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
             // Act
             double mean01 = data01.Average();
             sw.Stop();
-            Console.WriteLine($"List<int>.Average() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"List<int>.Average() size={data01.Count()} elapsed[ticks]={sw.ElapsedTicks}");
             sw.Reset();
 
             //----------------------------------------------------------------------------------------------------
@@ -100,7 +100,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
             // Act
             double mean02 = await data02.MeanArithmeticAsync();
             sw.Stop();
-            Console.WriteLine($"List<int>.Average() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"List<int>.Average() size={data01.Count()} elapsed[ticks]={sw.ElapsedTicks}");
             sw.Reset();
 
             //----------------------------------------------------------------------------------------------------
@@ -125,7 +125,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
             // Act
             double mean01 = await data01.MeanArithmeticAsync();
             sw.Stop();
-            Console.WriteLine($"List<int>.Average() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"List<int>.Average() size={data01.Count()} elapsed[ticks]={sw.ElapsedTicks}");
             sw.Reset();
 
             //----------------------------------------------------------------------------------------------------

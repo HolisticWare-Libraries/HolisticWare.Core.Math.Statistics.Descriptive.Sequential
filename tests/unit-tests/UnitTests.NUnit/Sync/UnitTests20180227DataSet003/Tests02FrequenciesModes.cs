@@ -51,7 +51,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Act
             List<int> modes01 = data01.Modes();
             sw.Stop();
-            Console.WriteLine($"List<int>.Modes() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"List<int>.Modes() size={data01.Count()} elapsed[ticks]={sw.ElapsedTicks}");
 
             // Assert
             CollectionAssert.AreEquivalent
@@ -75,7 +75,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Act
             List<int> modes01 = data01.Modes();
             sw.Stop();
-            Console.WriteLine($"List<int>.Modes() size={data01.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"List<int>.Modes() size={data01.Count()} elapsed[ticks]={sw.ElapsedTicks}");
 
             // Assert
             CollectionAssert.AreEquivalent

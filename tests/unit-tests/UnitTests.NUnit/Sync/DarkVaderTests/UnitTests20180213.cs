@@ -63,7 +63,7 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
 			sw.Stop();
             Console.WriteLine($"List<int>.Average()");
             Console.WriteLine($"          average            = {x4_average}");
-            Console.WriteLine($"          size               = {x4.Count}");
+            Console.WriteLine($"          size               = {x4.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
 			sw.Reset();
@@ -77,7 +77,7 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
 			sw.Stop();
             Console.WriteLine($"List<int>.StandardDeviationSample()");
             Console.WriteLine($"          standard_deviation = {x4_standard_deviation}");
-            Console.WriteLine($"          size               = {x4.Count}");
+            Console.WriteLine($"          size               = {x4.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
 			sw.Reset();
@@ -91,7 +91,7 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
 			sw.Stop();
             Console.WriteLine($"List<int>.Min()");
             Console.WriteLine($"          min             = {x4_min}");
-            Console.WriteLine($"          size            = {x4.Count}");
+            Console.WriteLine($"          size            = {x4.Count()}");
             Console.WriteLine($"          elapsed[ticks]  = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]     = {sw.Elapsed.TotalMilliseconds}");
 			sw.Reset();
@@ -105,7 +105,7 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
 			sw.Stop();
             Console.WriteLine($"List<int>.Max()");
             Console.WriteLine($"          max             = {x4_max}");
-            Console.WriteLine($"          size            = {x4.Count}");
+            Console.WriteLine($"          size            = {x4.Count()}");
             Console.WriteLine($"          elapsed[ticks]  = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]     = {sw.Elapsed.TotalMilliseconds}");
 			sw.Reset();

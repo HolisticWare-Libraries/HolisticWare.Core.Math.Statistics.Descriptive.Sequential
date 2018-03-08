@@ -96,7 +96,7 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             sw.Stop();
             Console.WriteLine($"List<double>.MeanArithmetic()");
             Console.WriteLine($"          mean_arithmetic    = {mean_arithmetic}");
-            Console.WriteLine($"          size               = {data02.Count}");
+            Console.WriteLine($"          size               = {data02.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -117,7 +117,7 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             sw.Stop();
             Console.WriteLine($"List<double>.MeanGeometric()");
             Console.WriteLine($"          mean_geometric     = {mean_geometric}");
-            Console.WriteLine($"          size               = {data02.Count}");
+            Console.WriteLine($"          size               = {data02.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -156,7 +156,7 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             sw.Stop();
             Console.WriteLine($"List<double>.StandardDeviationSample()");
             Console.WriteLine($"          standard_deviation = {standard_deviation_s}");
-            Console.WriteLine($"          size               = {data02.Count}");
+            Console.WriteLine($"          size               = {data02.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -178,7 +178,7 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             sw.Stop();
             Console.WriteLine($"List<double>.StandardDeviationPopulation()");
             Console.WriteLine($"          standard_deviation = {standard_deviation_p}");
-            Console.WriteLine($"          size               = {data02.Count}");
+            Console.WriteLine($"          size               = {data02.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -204,7 +204,7 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             sw.Stop();
             Console.WriteLine($"List<double>.VarianceSample()");
             Console.WriteLine($"          variance           = {variance_s}");
-            Console.WriteLine($"          size               = {data02.Count}");
+            Console.WriteLine($"          size               = {data02.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -226,7 +226,7 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             sw.Stop();
             Console.WriteLine($"List<double>.VariancePopulation()");
             Console.WriteLine($"          variance           = {variance_p}");
-            Console.WriteLine($"          size               = {data02.Count}");
+            Console.WriteLine($"          size               = {data02.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();

@@ -38,6 +38,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class UnitTests20180227DataSet001
     {
+        StatisticsDescriptive statistics;
+
         [Test()]
         public void Satistics01()
         {
@@ -48,11 +50,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw = Stopwatch.StartNew();
             //----------------------------------------------------------------------------------------------------
             // Act
-            percentile_int_01 = data01.
+            statistics = data01.StatisticsDescriptive();
             sw.Stop();
             Console.WriteLine($"List<int>.Percentile(50)");
             Console.WriteLine($"          percentile_int_01  = {percentile_int_01}");
-            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          size               = {data01.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();

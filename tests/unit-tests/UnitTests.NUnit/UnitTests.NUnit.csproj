@@ -91,6 +91,9 @@
     <Compile Include="Sync\UnitTests20180227DataSet001\Tests05Percentiles.cs" />
     <Compile Include="Sync\UnitTests20180227DataSet001\Tests11Statistics.cs" />
     <Compile Include="Sync\UnitTests20180227DataSet001\Tests00Data.cs" />
+    <Compile Include="Sync\UnitTests20180227DataSet002\Tests00Data.cs" />
+    <Compile Include="Sync\UnitTests20180227DataSet003\Tests00Data.cs" />
+    <Compile Include="Sync\UnitTests20180227DataSet004\Tests00Data.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

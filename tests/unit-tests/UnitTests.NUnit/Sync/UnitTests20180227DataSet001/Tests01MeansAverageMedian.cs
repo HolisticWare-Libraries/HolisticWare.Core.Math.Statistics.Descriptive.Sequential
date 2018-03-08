@@ -59,7 +59,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Stop();
             Console.WriteLine($"List<int>.Average()");
             Console.WriteLine($"          average            = {average}");
-            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          size               = {data01.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -77,7 +77,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         {
             //====================================================================================================
             // Arrange
-            data01 = new Queue<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+            data01 = new Queue<int> (new int[] {2, 4, 3, 5, 6, 7, 4, 4, 2, 1 });
 
             sw = Stopwatch.StartNew();
             //----------------------------------------------------------------------------------------------------
@@ -86,7 +86,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Stop();
             Console.WriteLine($"List<int>.MeanArithmetic()");
             Console.WriteLine($"          mean_arithmetic    = {mean01}");
-            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          size               = {data01.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -104,7 +104,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         {
             //====================================================================================================
             // Arrange
-            data01 = new Stack<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+            data01 = new Stack<int>( new int[] { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 });
 
             sw = Stopwatch.StartNew();
             //----------------------------------------------------------------------------------------------------
@@ -113,7 +113,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Stop();
             Console.WriteLine($"List<int>.MeanArithmetic()");
             Console.WriteLine($"          mean_arithmetic    = {mean01}");
-            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          size               = {data01.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -140,7 +140,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Stop();
             Console.WriteLine($"List<int>.MeanHarmonic()");
             Console.WriteLine($"          mean_harmonic      = {mean01}");
-            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          size               = {data01.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -167,7 +167,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Stop();
             Console.WriteLine($"List<int>.MeanQuadratic()");
             Console.WriteLine($"          mean_quadratic     = {mean01}");
-            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          size               = {data01.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -194,7 +194,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Stop();
             Console.WriteLine($"List<int>.MeanCubic()");
             Console.WriteLine($"          mean_cubic         = {mean01}");
-            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          size               = {data01.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -223,7 +223,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"List<int>.MeanGeneralized()");
             Console.WriteLine($"          mean_generalized(2.0) = {mean01}");
             Console.WriteLine($"          mean_generalized(3.0) = {mean02}");
-            Console.WriteLine($"          size                  = {data01.Count}");
+            Console.WriteLine($"          size                  = {data01.Count()}");
             Console.WriteLine($"          elapsed[ticks]        = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]           = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -257,7 +257,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Stop();
             Console.WriteLine($"List<int>.MeanWeighted(weights)");
             Console.WriteLine($"          mean_weighted      = {mean01}");
-            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          size               = {data01.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -283,7 +283,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Stop();
             Console.WriteLine($"List<int>.Median()");
             Console.WriteLine($"          median01           = {median01}");
-            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          size               = {data01.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -306,7 +306,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Act
             median01 = data02.Median();
             sw.Stop();
-            Console.WriteLine($"Stack<int>.Average() size={data02.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"Stack<int>.Average() size={data02.Count()} elapsed[ticks]={sw.ElapsedTicks}");
             sw.Reset();
 
             // Assert
@@ -327,7 +327,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Act
             median01 = data03.Median();
             sw.Stop();
-            Console.WriteLine($"Queue<int>.Average() size={data03.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"Queue<int>.Average() size={data03.Count()} elapsed[ticks]={sw.ElapsedTicks}");
             sw.Reset();
 
             // Assert
@@ -370,7 +370,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Act
             List<int> modes05 = data05.Modes();
             sw.Stop();
-            Console.WriteLine($"ArrayList.Modes() size={data05.Count} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"ArrayList.Modes() size={data05.Count()} elapsed[ticks]={sw.ElapsedTicks}");
             sw.Reset();
 
             // Assert

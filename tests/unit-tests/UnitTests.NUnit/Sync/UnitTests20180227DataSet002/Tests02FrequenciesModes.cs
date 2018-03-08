@@ -53,7 +53,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Stop();
             Console.WriteLine($"List<int>.Frequencies()");
             Console.WriteLine($"          frequencies01      = {frequencies01}");
-            Console.WriteLine($"          size               = {data01.Count}");
+            Console.WriteLine($"          size               = {data01.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -98,7 +98,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Stop();
             Console.WriteLine($"List<int>.MeanGeneralized()");
             Console.WriteLine($"          modes01               = {modes01}");
-            Console.WriteLine($"          size                  = {data01.Count}");
+            Console.WriteLine($"          size                  = {data01.Count()}");
             Console.WriteLine($"          elapsed[ticks]        = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]           = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -127,7 +127,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Stop();
             Console.WriteLine($"List<int>.MeanGeneralized()");
             Console.WriteLine($"          modes02               = {modes02}");
-            Console.WriteLine($"          size                  = {data01.Count}");
+            Console.WriteLine($"          size                  = {data01.Count()}");
             Console.WriteLine($"          elapsed[ticks]        = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]           = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -156,7 +156,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Stop();
             Console.WriteLine($"List<int>.MeanGeneralized()");
             Console.WriteLine($"          modes03               = {modes03}");
-            Console.WriteLine($"          size                  = {data01.Count}");
+            Console.WriteLine($"          size                  = {data01.Count()}");
             Console.WriteLine($"          elapsed[ticks]        = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]           = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -186,7 +186,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Stop();
             Console.WriteLine($"List<int>.MeanGeneralized()");
             Console.WriteLine($"          modes04               = {modes04}");
-            Console.WriteLine($"          size                  = {data01.Count}");
+            Console.WriteLine($"          size                  = {data01.Count()}");
             Console.WriteLine($"          elapsed[ticks]        = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]           = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -214,7 +214,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Stop();
             Console.WriteLine($"List<int>.MeanGeneralized()");
             Console.WriteLine($"          modes05               = {modes05}");
-            Console.WriteLine($"          size                  = {data01.Count}");
+            Console.WriteLine($"          size                  = {data01.Count()}");
             Console.WriteLine($"          elapsed[ticks]        = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]           = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
