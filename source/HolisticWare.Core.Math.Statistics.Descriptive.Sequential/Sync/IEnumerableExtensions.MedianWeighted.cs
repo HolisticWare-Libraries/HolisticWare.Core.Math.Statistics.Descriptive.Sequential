@@ -13,7 +13,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsMedianWeighted
     {
         //==============================================================================================================
-        public static int MedianWeighted(this IEnumerable<int> x, IEnumerable<double> weights)
+        public static int MedianWeighted
+                                    (
+                                        this IEnumerable<int> x, 
+                                        IEnumerable<double> weights
+                                    )
         {
             int n = x.Count();
             int n_2 = weights.ToArray().Count();

@@ -13,7 +13,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsFrequency
     {
         //==============================================================================================================
-        public static List<byte> Modes(this IEnumerable<byte> x)
+        public static List<byte> Modes
+                                    (
+                                        this IEnumerable<byte> x
+                                    )
         {
             IEnumerable<KeyValuePair<byte, uint>> frequencies = x.Frequencies();
 
@@ -32,7 +35,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return modes;
         }
 
-        public static List<ushort> Modes(this IEnumerable<ushort> x)
+        public static List<ushort> Modes
+                                    (
+                                        this IEnumerable<ushort> x
+                                    )
         {
             IEnumerable<KeyValuePair<ushort, uint>> frequencies = x.Frequencies();
 
@@ -51,7 +57,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return modes;
         }
 
-        public static List<short> Modes(this IEnumerable<short> x)
+        public static List<short> Modes
+                                    (
+                                        this IEnumerable<short> x
+                                    )
         {
             IEnumerable<KeyValuePair<short, uint>> frequencies = x.Frequencies();
 
@@ -70,7 +79,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return modes;
         }
 
-        public static List<int> Modes(this IEnumerable<int> x)
+        public static List<int> Modes
+                                    (
+                                        this IEnumerable<int> x
+                                    )
         {
             IEnumerable<KeyValuePair<int, uint>> frequencies = x.Frequencies();
 
@@ -89,7 +101,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return modes;
         }
 
-        public static List<uint> Modes(this IEnumerable<uint> x)
+        public static List<uint> Modes
+                                    (
+                                        this IEnumerable<uint> x
+                                    )
         {
             IEnumerable<KeyValuePair<uint, uint>> frequencies = x.Frequencies();
 
@@ -108,7 +123,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return modes;
         }
 
-        public static List<long> Modes(this IEnumerable<long> x)
+        public static List<long> Modes
+                                    (
+                                        this IEnumerable<long> x
+                                    )
         {
             IEnumerable<KeyValuePair<long, uint>> frequencies = x.Frequencies();
 
@@ -127,7 +145,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return modes;
         }
 
-        public static List<ulong> Modes(this IEnumerable<ulong> x)
+        public static List<ulong> Modes
+                                    (
+                                        this IEnumerable<ulong> x
+                                    )
         {
             IEnumerable<KeyValuePair<ulong, uint>> frequencies = x.Frequencies();
 
@@ -146,7 +167,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return modes;
         }
 
-        public static List<float> Modes(this IEnumerable<float> x)
+        public static List<float> Modes
+                                    (
+                                        this IEnumerable<float> x
+                                    )
         {
             IEnumerable<KeyValuePair<float, uint>> frequencies = x.Frequencies();
 
@@ -165,7 +189,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return modes;
         }
 
-        public static List<double> Modes(this IEnumerable<double> x)
+        public static List<double> Modes
+                                    (
+                                        this IEnumerable<double> x
+                                    )
         {
             IEnumerable<KeyValuePair<double, uint>> frequencies = x.Frequencies();
 
@@ -184,7 +211,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return modes;
         }
 
-        public static List<decimal> Modes(this IEnumerable<decimal> x)
+        public static List<decimal> Modes
+                                    (
+                                        this IEnumerable<decimal> x
+                                    )
         {
             IEnumerable<KeyValuePair<decimal, uint>> frequencies = x.Frequencies();
 

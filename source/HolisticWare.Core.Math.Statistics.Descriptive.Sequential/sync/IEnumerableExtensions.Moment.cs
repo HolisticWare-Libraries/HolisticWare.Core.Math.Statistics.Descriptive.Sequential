@@ -7,7 +7,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsMoment
     {
         //==============================================================================================================
-        public static double Moment(this IEnumerable<byte> x, int m)
+        public static double Moment
+                                (
+                                    this IEnumerable<byte> x, 
+                                    int m
+                                )
         {
             double average = x.Select(x_i => (int)x_i).Average();
             double sum = 0;
@@ -22,7 +26,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum / n;
         }
 
-        public static double Moment(this IEnumerable<short> x, int m)
+        public static double Moment
+                                (
+                                    this IEnumerable<short> x, 
+                                    int m
+                                )
         {
             double average = x.Select(x_i => (int)x_i).Average();
             double sum = 0;
@@ -37,7 +45,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum / n;
         }
 
-        public static double Moment(this IEnumerable<ushort> x, int m)
+        public static double Moment
+                                (
+                                    this IEnumerable<ushort> x, 
+                                    int m
+                                )
         {
             double average = x.Select(x_i => (int)x_i).Average();
             double sum = 0;
@@ -52,7 +64,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum / n;
         }
 
-        public static double Moment(this IEnumerable<int> x, int m)
+        public static double Moment
+                                (
+                                    this IEnumerable<int> x, 
+                                    int m
+                                )
         {
             double average = x.Average();
             double sum = 0;
@@ -67,7 +83,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum / n;
         }
 
-        public static double Moment(this IEnumerable<uint> x, int m)
+        public static double Moment
+                                (
+                                    this IEnumerable<uint> x, 
+                                    int m
+                                )
         {
             double average = x.Select(x_i => (long)x_i).Average();
             double sum = 0;
@@ -82,7 +102,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum / n;
         }
 
-        public static double Moment(this IEnumerable<long> x, int m)
+        public static double Moment
+                                (
+                                    this IEnumerable<long> x, 
+                                    int m
+                                )
         {
             double average = x.Average();
             double sum = 0;
@@ -97,7 +121,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum / n;
         }
 
-        public static double Moment(this IEnumerable<ulong> x, int m)
+        public static double Moment
+                                (
+                                    this IEnumerable<ulong> x, 
+                                    int m
+                                )
         {
             double average = x.Select(x_i => (double)x_i).Average();
             double sum = 0;
@@ -112,7 +140,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum / n;
         }
 
-        public static double Moment(this IEnumerable<float> x, int m)
+        public static double Moment
+                                (
+                                    this IEnumerable<float> x, 
+                                    int m
+                                )
         {
             double average = x.Average();
             double sum = 0;
@@ -127,7 +159,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum / n;
         }
 
-        public static double Moment(this IEnumerable<double> x, int m)
+        public static double Moment
+                                (
+                                    this IEnumerable<double> x, 
+                                    int m
+                                )
         {
             double average = x.Average();
             double sum = 0;
@@ -142,7 +178,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum / n;
         }
 
-        public static decimal Moment(this IEnumerable<decimal> x, int m)
+        public static decimal Moment
+                                (
+                                    this IEnumerable<decimal> x, 
+                                    int m
+                                )
         {
             decimal average = x.Average();
             decimal sum = 0;
