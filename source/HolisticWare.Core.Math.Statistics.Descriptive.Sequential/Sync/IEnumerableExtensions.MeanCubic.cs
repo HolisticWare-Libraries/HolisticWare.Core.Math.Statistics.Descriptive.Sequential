@@ -13,7 +13,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsMeanCubic
     {
         //==============================================================================================================
-        public static double MeanCubic(this IEnumerable<byte> x)
+        public static double MeanCubic
+                                    (
+                                        this IEnumerable<byte> x
+                                    )
         {
             int n = x.Count();
 
@@ -28,7 +31,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(sum / n, 1.0 / 3.0);
         }
 
-        public static double MeanCubic(this IEnumerable<short> x)
+        public static double MeanCubic
+                                    (
+                                        this IEnumerable<short> x
+                                    )
         {
             int n = x.Count();
 
@@ -43,7 +49,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(sum / n, 1.0 / 3.0);
         }
 
-        public static double MeanCubic(this IEnumerable<ushort> x)
+        public static double MeanCubic
+                                    (
+                                        this IEnumerable<ushort> x
+                                    )
         {
             int n = x.Count();
 
@@ -58,7 +67,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(sum / n, 1.0 / 3.0);
         }
 
-        public static double MeanCubic(this IEnumerable<int> x)
+        public static double MeanCubic
+                                    (
+                                        this IEnumerable<int> x
+                                    )
         {
             int n = x.Count();
 
@@ -73,7 +85,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(sum / n, 1.0 / 3.0);
         }
 
-        public static double MeanCubic(this IEnumerable<uint> x)
+        public static double MeanCubic
+                                    (
+                                        this IEnumerable<uint> x
+                                    )
         {
             int n = x.Count();
 
@@ -88,7 +103,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(sum / n, 1.0 / 3.0);
         }
 
-        public static double MeanCubic(this IEnumerable<long> x)
+        public static double MeanCubic
+                                    (
+                                        this IEnumerable<long> x
+                                    )
         {
             int n = x.Count();
 
@@ -103,7 +121,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(sum / n, 1.0 / 3.0);
         }
 
-        public static double MeanCubic(this IEnumerable<ulong> x)
+        public static double MeanCubic
+                                    (
+                                        this IEnumerable<ulong> x
+                                    )
         {
             int n = x.Count();
 
@@ -118,7 +139,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(sum / n, 1.0 / 3.0);
         }
 
-        public static double MeanCubic(this IEnumerable<float> x)
+        public static double MeanCubic
+                                    (
+                                        this IEnumerable<float> x
+                                    )
         {
             int n = x.Count();
 
@@ -133,7 +157,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(sum / n, 1.0 / 3.0);
         }
 
-        public static double MeanCubic(this IEnumerable<double> x)
+        public static double MeanCubic
+                                    (
+                                        this IEnumerable<double> x
+                                    )
         {
             int n = x.Count();
 
@@ -148,7 +175,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(sum / n, 1.0 / 3.0);
         }
 
-        public static decimal MeanCubic(this IEnumerable<decimal> x)
+        public static decimal MeanCubic
+                                    (
+                                        this IEnumerable<decimal> x
+                                    )
         {
             int n = x.Count();
 

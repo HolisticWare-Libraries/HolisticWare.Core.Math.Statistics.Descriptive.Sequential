@@ -13,7 +13,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsMeanGeometric
     {
         //==============================================================================================================
-        public static double MeanGeometric(this IEnumerable<byte> x)
+        public static double MeanGeometric
+                                        (
+                                            this IEnumerable<byte> x
+                                        )
         {
             int n = x.Count();
 
@@ -28,7 +31,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(product, 1.0 / n);
         }
 
-        public static double MeanGeometric(this IEnumerable<ushort> x)
+        public static double MeanGeometric
+                                        (
+                                            this IEnumerable<ushort> x
+                                        )
         {
             int n = x.Count();
 
@@ -43,7 +49,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(product, 1.0 / n);
         }
 
-        public static double MeanGeometric(this IEnumerable<short> x)
+        public static double MeanGeometric
+                                        (
+                                            this IEnumerable<short> x
+                                        )
         {
             int n = x.Count();
 
@@ -59,7 +68,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(product, 1.0 / n);
         }
 
-        public static double MeanGeometric(this IEnumerable<int> x)
+        public static double MeanGeometric
+                                        (
+                                            this IEnumerable<int> x
+                                        )
         {
             int n = x.Count();
 
@@ -74,7 +86,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(product, 1.0 / n);
         }
 
-        public static double MeanGeometric(this IEnumerable<uint> x)
+        public static double MeanGeometric
+                                        (
+                                            this IEnumerable<uint> x
+                                        )
         {
             int n = x.Count();
 
@@ -89,7 +104,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(product, 1.0 / n);
         }
 
-        public static double MeanGeometric(this IEnumerable<long> x)
+        public static double MeanGeometric
+                                        (
+                                            this IEnumerable<long> x
+                                        )
         {
             int n = x.Count();
 
@@ -104,7 +122,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(product, 1.0 / n);
         }
 
-        public static double MeanGeometric(this IEnumerable<ulong> x)
+        public static double MeanGeometric
+                                        (
+                                            this IEnumerable<ulong> x
+                                        )
         {
             int n = x.Count();
 
@@ -119,7 +140,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(product, 1.0 / n);
         }
 
-        public static double MeanGeometric(this IEnumerable<float> x)
+        public static double MeanGeometric
+                                        (
+                                            this IEnumerable<float> x
+                                        )
         {
             int n = x.Count();
 
@@ -134,7 +158,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(product, 1.0 / n);
         }
 
-        public static double MeanGeometric(this IEnumerable<double> x)
+        public static double MeanGeometric
+                                        (
+                                            this IEnumerable<double> x
+                                        )
         {
             int n = x.Count();
 

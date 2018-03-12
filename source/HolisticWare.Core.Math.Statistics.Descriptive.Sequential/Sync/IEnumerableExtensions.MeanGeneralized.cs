@@ -14,7 +14,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsMeanGeneralized
     {
         //==============================================================================================================
-        public static double MeanGeneralized(this IEnumerable<byte> x, double power)
+        public static double MeanGeneralized
+                                        (
+                                            this IEnumerable<byte> x,
+                                            double power
+                                        )
         {
             int n = x.Count();
 
@@ -29,7 +33,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(sum / n, 1.0 / power);
         }
 
-        public static double MeanGeneralized(this IEnumerable<short> x, double power)
+        public static double MeanGeneralized
+                                        (
+                                            this IEnumerable<short> x,
+                                            double power
+                                        )
         {
             int n = x.Count();
 
@@ -44,7 +52,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(sum / n, 1.0 / power);
         }
 
-        public static double MeanGeneralized(this IEnumerable<ushort> x, double power)
+        public static double MeanGeneralized
+                                        (
+                                            this IEnumerable<ushort> x, 
+                                            double power
+                                        )
         {
             int n = x.Count();
 
@@ -59,7 +71,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(sum / n, 1.0 / power);
         }
 
-        public static double MeanGeneralized(this IEnumerable<int> x, double power)
+        public static double MeanGeneralized
+                                        (
+                                            this IEnumerable<int> x, 
+                                            double power
+                                        )
         {
             int n = x.Count();
 
@@ -74,7 +90,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(sum / n, 1.0 / power);
         }
 
-        public static double MeanGeneralized(this IEnumerable<uint> x, double power)
+        public static double MeanGeneralized
+                                        (
+                                            this IEnumerable<uint> x, 
+                                            double power
+                                        )
         {
             int n = x.Count();
 
@@ -89,7 +109,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(sum / n, 1.0 / power);
         }
 
-        public static double MeanGeneralized(this IEnumerable<long> x, double power)
+        public static double MeanGeneralized
+                                        (
+                                            this IEnumerable<long> x, 
+                                            double power
+                                        )
         {
             int n = x.Count();
 
@@ -104,7 +128,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(sum / n, 1.0 / power);
         }
 
-        public static double MeanGeneralized(this IEnumerable<ulong> x, double power)
+        public static double MeanGeneralized
+                                        (
+                                            this IEnumerable<ulong> x, 
+                                            double power
+                                        )
         {
             int n = x.Count();
 
@@ -119,7 +147,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(sum / n, 1.0 / power);
         }
 
-        public static double MeanGeneralized(this IEnumerable<float> x, double power)
+        public static double MeanGeneralized
+                                        (
+                                            this IEnumerable<float> x, 
+                                            double power
+                                        )
         {
             int n = x.Count();
 
@@ -134,7 +166,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(sum / n, 1.0 / power);
         }
 
-        public static double MeanGeneralized(this IEnumerable<double> x, double power)
+        public static double MeanGeneralized
+                                        (
+                                            this IEnumerable<double> x, 
+                                            double power
+                                        )
         {
             int n = x.Count();
 
@@ -149,7 +185,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return System.Math.Pow(sum / n, 1.0 / power);
         }
 
-        public static decimal MeanGeneralized(this IEnumerable<decimal> x, double power)
+        public static decimal MeanGeneralized
+                                        (
+                                            this IEnumerable<decimal> x, 
+                                            double power
+                                        )
         {
             int n = x.Count();
 
