@@ -13,7 +13,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsMeanHarmonic
     {
         //==============================================================================================================
-        public static double MeanHarmonic(this IEnumerable<byte> x)
+        public static double MeanHarmonic
+                                    (
+                                        this IEnumerable<byte> x
+                                    )
         {
             int n = x.Count();
             double sum = 0.0;
@@ -27,7 +30,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return n / sum;
         }
 
-        public static double MeanHarmonic(this IEnumerable<ushort> x)
+        public static double MeanHarmonic
+                                    (
+                                        this IEnumerable<ushort> x
+                                    )
         {
             int n = x.Count();
             double sum = 0.0;
@@ -41,7 +47,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return n / sum;
         }
 
-        public static double MeanHarmonic(this IEnumerable<short> x)
+        public static double MeanHarmonic
+                                    (
+                                        this IEnumerable<short> x
+                                    )
         {
             int n = x.Count();
             double sum = 0.0;
@@ -55,7 +64,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return n / sum;
         }
 
-        public static double MeanHarmonic(this IEnumerable<int> x)
+        public static double MeanHarmonic
+                                    (
+                                        this IEnumerable<int> x
+                                    )
         {
             int n = x.Count();
             double sum = 0.0;
@@ -69,7 +81,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return n / sum;
         }
 
-        public static double MeanHarmonic(this IEnumerable<uint> x)
+        public static double MeanHarmonic
+                                    (
+                                        this IEnumerable<uint> x
+                                    )
         {
             int n = x.Count();
             double sum = 0.0;
@@ -83,7 +98,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return n / sum;
         }
 
-        public static double MeanHarmonic(this IEnumerable<long> x)
+        public static double MeanHarmonic
+                                    (
+                                        this IEnumerable<long> x
+                                    )
         {
             int n = x.Count();
             double sum = 0.0;
@@ -97,7 +115,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return n / sum;
         }
 
-        public static double MeanHarmonic(this IEnumerable<ulong> x)
+        public static double MeanHarmonic
+                                    (
+                                        this IEnumerable<ulong> x
+                                    )
         {
             int n = x.Count();
             double sum = 0.0;
@@ -111,7 +132,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return n / sum;
         }
 
-        public static double MeanHarmonic(this IEnumerable<float> x)
+        public static double MeanHarmonic
+                                    (
+                                        this IEnumerable<float> x
+                                    )
         {
             int n = x.Count();
             double sum = 0.0;
@@ -125,7 +149,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return n / sum;
         }
 
-        public static double MeanHarmonic(this IEnumerable<double> x)
+        public static double MeanHarmonic
+                                    (
+                                        this IEnumerable<double> x
+                                    )
         {
             int n = x.Count();
             double sum = 0.0;
@@ -139,7 +166,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return n / sum;
         }
 
-        public static decimal MeanHarmonic(this IEnumerable<decimal> x)
+        public static decimal MeanHarmonic
+                                    (
+                                        this IEnumerable<decimal> x
+                                    )
         {
             int n = x.Count();
             decimal sum = 0.0M;
