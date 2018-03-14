@@ -135,8 +135,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.MomentRaw.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.MomentCentral.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerableExtensions.MomentRawAbsolute.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\StatisticsDescriptive.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.Statistics.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.PercentileRank.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\IEnumerableExtensions.StatisticsDescriptive.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\StatisticsDescriptive.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)readme.md" />
@@ -146,5 +147,6 @@
     <Folder Include="$(MSBuildThisFileDirectory)Sync\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\ArrayList\" />
     <Folder Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\" />
+    <Folder Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\" />
   </ItemGroup>
 </Project>

@@ -13,52 +13,82 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsKurtosisExcess
     {
         //==============================================================================================================
-        public static double KurtosisExcess(this IEnumerable<byte> x)
+        public static double KurtosisExcess
+                                        (
+                                            this IEnumerable<byte> x
+                                        )
         {
             return x.Kurtosis() - 3.0;
         }
 
-        public static double KurtosisExcess(this IEnumerable<short> x)
+        public static double KurtosisExcess
+                                        (
+                                            this IEnumerable<short> x
+                                        )
         {
             return x.Kurtosis() - 3.0;
         }
 
-        public static double KurtosisExcess(this IEnumerable<ushort> x)
+        public static double KurtosisExcess
+                                        (
+                                            this IEnumerable<ushort> x
+                                        )
         {
             return x.Kurtosis() - 3.0;
         }
 
-        public static double KurtosisExcess(this IEnumerable<int> x)
+        public static double KurtosisExcess
+                                        (
+                                            this IEnumerable<int> x
+                                        )
         {
             return x.Kurtosis() - 3.0;
         }
 
-        public static double KurtosisExcess(this IEnumerable<uint> x)
+        public static double KurtosisExcess
+                                        (
+                                            this IEnumerable<uint> x
+                                        )
         {
             return x.Kurtosis() - 3.0;
         }
 
-        public static double KurtosisExcess(this IEnumerable<long> x)
+        public static double KurtosisExcess
+                                        (
+                                            this IEnumerable<long> x
+                                        )
         {
             return x.Kurtosis() - 3.0;
         }
 
-        public static double KurtosisExcess(this IEnumerable<ulong> x)
+        public static double KurtosisExcess
+                                        (
+                                            this IEnumerable<ulong> x
+                                        )
         {
             return x.Kurtosis() - 3.0;
         }
 
-        public static double KurtosisExcess(this IEnumerable<float> x)
+        public static double KurtosisExcess
+                                        (
+                                            this IEnumerable<float> x
+                                        )
         {
             return x.Kurtosis() - 3.0;
         }
 
-        public static double KurtosisExcess(this IEnumerable<double> x)
+        public static double KurtosisExcess
+                                        (
+                                            this IEnumerable<double> x
+                                        )
         {
             return x.Kurtosis() - 3.0;
         }
 
-        public static decimal KurtosisExcess(this IEnumerable<decimal> x)
+        public static decimal KurtosisExcess
+                                        (
+                                            this IEnumerable<decimal> x
+                                        )
         {
             return x.Kurtosis() - 3.0M;
         }

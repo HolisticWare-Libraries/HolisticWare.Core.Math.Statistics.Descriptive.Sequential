@@ -13,7 +13,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsKurtosisSampleExcess
     {
         //==============================================================================================================
-        public static double KurtosisSampleExcess(this IEnumerable<byte> x)
+        public static double KurtosisSampleExcess
+                                            (
+                                                this IEnumerable<byte> x
+                                            )
         {
             int n = x.Count();
 
@@ -25,7 +28,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return 0;
         }
 
-        public static double KurtosisSampleExcess(this IEnumerable<short> x)
+        public static double KurtosisSampleExcess
+                                            (
+                                                this IEnumerable<short> x
+                                            )
         {
             int n = x.Count();
 
@@ -37,7 +43,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return 0;
         }
 
-        public static double KurtosisSampleExcess(this IEnumerable<ushort> x)
+        public static double KurtosisSampleExcess
+                                            (
+                                                this IEnumerable<ushort> x
+                                            )
         {
             int n = x.Count();
 
@@ -49,7 +58,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return 0;
         }
 
-        public static double KurtosisSampleExcess(this IEnumerable<int> x)
+        public static double KurtosisSampleExcess
+                                            (
+                                                this IEnumerable<int> x
+                                            )
         {
             int n = x.Count();
 
@@ -61,7 +73,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return 0;
         }
 
-        public static double KurtosisSampleExcess(this IEnumerable<uint> x)
+        public static double KurtosisSampleExcess
+                                            (
+                                                this IEnumerable<uint> x
+                                            )
         {
             int n = x.Count();
 
@@ -73,7 +88,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return 0;
         }
 
-        public static double KurtosisSampleExcess(this IEnumerable<long> x)
+        public static double KurtosisSampleExcess
+                                            (
+                                                this IEnumerable<long> x
+                                            )
         {
             int n = x.Count();
 
@@ -85,7 +103,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return 0;
         }
 
-        public static double KurtosisSampleExcess(this IEnumerable<ulong> x)
+        public static double KurtosisSampleExcess
+                                            (
+                                                this IEnumerable<ulong> x
+                                            )
         {
             int n = x.Count();
 
@@ -97,7 +118,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return 0;
         }
 
-        public static double KurtosisSampleExcess(this IEnumerable<float> x)
+        public static double KurtosisSampleExcess
+                                            (
+                                                this IEnumerable<float> x
+                                            )
         {
             int n = x.Count();
 
@@ -109,7 +133,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return 0;
         }
 
-        public static double KurtosisSampleExcess(this IEnumerable<double> x)
+        public static double KurtosisSampleExcess
+                                            (
+                                                this IEnumerable<double> x
+                                            )
         {
             int n = x.Count();
 
@@ -121,7 +148,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return 0;
         }
 
-        public static decimal KurtosisSampleExcess(this IEnumerable<decimal> x)
+        public static decimal KurtosisSampleExcess
+                                            (
+                                                this IEnumerable<decimal> x
+                                            )
         {
             int n = x.Count();
 

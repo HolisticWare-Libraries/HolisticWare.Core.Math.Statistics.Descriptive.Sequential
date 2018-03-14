@@ -7,7 +7,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsVariancePopulation
     {
         //==============================================================================================================
-        public static double VariancePopulation(this IEnumerable<byte> x)
+        public static double VariancePopulation
+                                            (
+                                                this IEnumerable<byte> x
+                                            )
         {
             double mean = x.Select(x_i => (int)x_i).Average();
             double sum_suquares = 0;
@@ -24,7 +27,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum_suquares / n;
         }
 
-        public static double VariancePopulation(this IEnumerable<short> x)
+        public static double VariancePopulation
+                                            (
+                                                this IEnumerable<short> x
+                                            )
         {
             double mean = x.Select(x_i => (int)x_i).Average();
             double sum_suquares = 0;
@@ -41,7 +47,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum_suquares / n;
         }
 
-        public static double VariancePopulation(this IEnumerable<ushort> x)
+        public static double VariancePopulation
+                                            (
+                                                this IEnumerable<ushort> x
+                                            )
         {
             double mean = x.Select(x_i => (int)x_i).Average();
             double sum_suquares = 0;
@@ -58,7 +67,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum_suquares / n;
         }
 
-        public static double VariancePopulation(this IEnumerable<int> x)
+        public static double VariancePopulation
+                                            (
+                                                this IEnumerable<int> x
+                                            )
         {
             double mean = x.Average();
             double sum_suquares = 0;
@@ -75,7 +87,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum_suquares / n;
         }
 
-        public static double VariancePopulation(this IEnumerable<uint> x)
+        public static double VariancePopulation
+                                            (
+                                                this IEnumerable<uint> x
+                                            )
         {
             double mean = x.Select(x_i => (long)x_i).Average();
             double sum_suquares = 0;
@@ -92,7 +107,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum_suquares / n;
         }
 
-        public static double VariancePopulation(this IEnumerable<long> x)
+        public static double VariancePopulation
+                                            (
+                                                this IEnumerable<long> x
+                                            )
         {
             double mean = x.Average();
             double sum_suquares = 0;
@@ -109,7 +127,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum_suquares / n;
         }
 
-        public static double VariancePopulation(this IEnumerable<ulong> x)
+        public static double VariancePopulation
+                                            (
+                                                this IEnumerable<ulong> x
+                                            )
         {
             double mean = x.Select(x_i => (double)x_i).Average();
             double sum_suquares = 0;
@@ -126,7 +147,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum_suquares / n;
         }
 
-        public static double VariancePopulation(this IEnumerable<float> x)
+        public static double VariancePopulation
+                                            (
+                                                this IEnumerable<float> x
+                                            )
         {
             double mean = x.Average();
             double sum_suquares = 0;
@@ -143,7 +167,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum_suquares / n;
         }
 
-        public static double VariancePopulation(this IEnumerable<double> x)
+        public static double VariancePopulation
+                                            (
+                                                this IEnumerable<double> x
+                                            )
         {
             double mean = x.Average();
             double sum_suquares = 0;
@@ -160,7 +187,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum_suquares / n;
         }
 
-        public static decimal VariancePopulation(this IEnumerable<decimal> x)
+        public static decimal VariancePopulation
+                                            (
+                                                this IEnumerable<decimal> x
+                                            )
         {
             decimal mean = x.Average();
             decimal sum_suquares = 0;

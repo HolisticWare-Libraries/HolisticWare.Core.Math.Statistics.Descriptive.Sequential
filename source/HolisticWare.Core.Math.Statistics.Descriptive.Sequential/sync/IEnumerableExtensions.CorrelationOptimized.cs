@@ -15,7 +15,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsCorrelationOptimized
     {
         //==============================================================================================================
-        public static double CorrelationOptimized(this IEnumerable<byte> x, IEnumerable<byte> y)
+        public static double CorrelationOptimized
+                                            (
+                                                this IEnumerable<byte> x, 
+                                                IEnumerable<byte> y
+                                            )
         {
             int n = x.Count();
 
@@ -55,7 +59,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return correlation;
         }
 
-        public static double CorrelationOptimized(this IEnumerable<short> x, IEnumerable<short> y)
+        public static double CorrelationOptimized
+                                            (
+                                                this IEnumerable<short> x, 
+                                                IEnumerable<short> y
+                                            )
         {
             int n = x.Count();
 
@@ -95,7 +103,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return correlation;
         }
 
-        public static double CorrelationOptimized(this IEnumerable<ushort> x, IEnumerable<ushort> y)
+        public static double CorrelationOptimized
+                                            (
+                                                this IEnumerable<ushort> x, 
+                                                IEnumerable<ushort> y
+                                            )
         {
             int n = x.Count();
 
@@ -135,7 +147,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return correlation;
         }
 
-        public static double CorrelationOptimized(this IEnumerable<int> x, IEnumerable<int> y)
+        public static double CorrelationOptimized
+                                            (
+                                                this IEnumerable<int> x, 
+                                                IEnumerable<int> y
+                                            )
         {
             int n = x.Count();
 
@@ -175,7 +191,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return correlation;
         }
 
-        public static double CorrelationOptimized(this IEnumerable<uint> x, IEnumerable<uint> y)
+        public static double CorrelationOptimized
+                                            (
+                                                this IEnumerable<uint> x, 
+                                                IEnumerable<uint> y
+                                            )
         {
             int n = x.Count();
 
@@ -215,7 +235,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return correlation;
         }
 
-        public static double CorrelationOptimized(this IEnumerable<long> x, IEnumerable<long> y)
+        public static double CorrelationOptimized
+                                            (
+                                                this IEnumerable<long> x, 
+                                                IEnumerable<long> y
+                                            )
         {
             int n = x.Count();
 
@@ -255,7 +279,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return correlation;
         }
 
-        public static double CorrelationOptimized(this IEnumerable<ulong> x, IEnumerable<ulong> y)
+        public static double CorrelationOptimized
+                                            (
+                                                this IEnumerable<ulong> x, 
+                                                IEnumerable<ulong> y
+                                            )
         {
             int n = x.Count();
 
@@ -295,7 +323,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return correlation;
         }
 
-        public static double CorrelationOptimized(this IEnumerable<float> x, IEnumerable<float> y)
+        public static double CorrelationOptimized
+                                            (
+                                                this IEnumerable<float> x, 
+                                                IEnumerable<float> y
+                                            )
         {
             int n = x.Count();
 
@@ -335,7 +367,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return correlation;
         }
 
-        public static double CorrelationOptimized(this IEnumerable<double> x, IEnumerable<double> y)
+        public static double CorrelationOptimized
+                                            (
+                                                this IEnumerable<double> x, 
+                                                IEnumerable<double> y
+                                            )
         {
             int n = x.Count();
 
@@ -375,7 +411,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return correlation;
         }
 
-        public static decimal CorrelationOptimized(this IEnumerable<decimal> x, IEnumerable<decimal> y)
+        public static decimal CorrelationOptimized
+                                            (
+                                                this IEnumerable<decimal> x, 
+                                                IEnumerable<decimal> y
+                                            )
         {
             int n = x.Count();
 

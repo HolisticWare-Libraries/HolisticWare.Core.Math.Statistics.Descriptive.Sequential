@@ -7,7 +7,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsStudenttStatisticIndependent
     {
         //==============================================================================================================
-        public static double StudenttStatisticIndependent(this IEnumerable<byte> x, IEnumerable<byte> y)
+        public static double StudenttStatisticIndependent
+                                                (
+                                                    this IEnumerable<byte> x, 
+                                                    IEnumerable<byte> y
+                                                )
         {
             // equal variances
             double x_average = x.Select(x_i => (int)x_i).Average();
@@ -29,7 +33,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return (x_average - y_average) / denominator;
         }
 
-        public static double StudenttStatisticIndependent(this IEnumerable<short> x, IEnumerable<short> y)
+        public static double StudenttStatisticIndependent
+                                                (
+                                                    this IEnumerable<short> x, 
+                                                    IEnumerable<short> y
+                                                )
         {
             // equal variances
             double x_average = x.Select(x_i => (int)x_i).Average();
@@ -51,7 +59,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return (x_average - y_average) / denominator;
         }
 
-        public static double StudenttStatisticIndependent(this IEnumerable<ushort> x, IEnumerable<ushort> y)
+        public static double StudenttStatisticIndependent
+                                                (
+                                                    this IEnumerable<ushort> x, 
+                                                    IEnumerable<ushort> y
+                                                )
         {
             // equal variances
             double x_average = x.Select(x_i => (int)x_i).Average();
@@ -73,7 +85,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return (x_average - y_average) / denominator;
         }
 
-        public static double StudenttStatisticIndependent(this IEnumerable<int> x, IEnumerable<int> y)
+        public static double StudenttStatisticIndependent
+                                                (
+                                                    this IEnumerable<int> x, 
+                                                    IEnumerable<int> y
+                                                )
         {
             // equal variances
             double x_average = x.Average();
@@ -95,7 +111,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return (x_average - y_average) / denominator;
         }
 
-        public static double StudenttStatisticIndependent(this IEnumerable<uint> x, IEnumerable<uint> y)
+        public static double StudenttStatisticIndependent
+                                                (
+                                                    this IEnumerable<uint> x, 
+                                                    IEnumerable<uint> y
+                                                )
         {
             // equal variances
             double x_average = x.Select(x_i => (long)x_i).Average();
@@ -117,7 +137,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return (x_average - y_average) / denominator;
         }
 
-        public static double StudenttStatisticIndependent(this IEnumerable<long> x, IEnumerable<long> y)
+        public static double StudenttStatisticIndependent
+                                                (
+                                                    this IEnumerable<long> x, 
+                                                    IEnumerable<long> y
+                                                )
         {
             // equal variances
             double x_average = x.Select(x_i => (long)x_i).Average();
@@ -139,7 +163,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return (x_average - y_average) / denominator;
         }
 
-        public static double StudenttStatisticIndependent(this IEnumerable<ulong> x, IEnumerable<ulong> y)
+        public static double StudenttStatisticIndependent
+                                                (
+                                                    this IEnumerable<ulong> x, 
+                                                    IEnumerable<ulong> y
+                                                )
         {
             // equal variances
             double x_average = x.Select(x_i => (double)x_i).Average();
@@ -161,7 +189,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return (x_average - y_average) / denominator;
         }
 
-        public static double StudenttStatisticIndependent(this IEnumerable<float> x, IEnumerable<float> y)
+        public static double StudenttStatisticIndependent
+                                                (
+                                                    this IEnumerable<float> x, 
+                                                    IEnumerable<float> y
+                                                )
         {
             // equal variances
             double x_average = x.Average();
@@ -183,7 +215,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return (x_average - y_average) / denominator;
         }
 
-        public static double StudenttStatisticIndependent(this IEnumerable<double> x, IEnumerable<double> y)
+        public static double StudenttStatisticIndependent
+                                                (
+                                                    this IEnumerable<double> x, 
+                                                    IEnumerable<double> y
+                                                )
         {
             // equal variances
             double x_average = x.Average();
@@ -205,7 +241,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return (x_average - y_average) / denominator;
         }
 
-        public static decimal StudenttStatisticIndependent(this IEnumerable<decimal> x, IEnumerable<decimal> y)
+        public static decimal StudenttStatisticIndependent
+                                                (
+                                                    this IEnumerable<decimal> x, 
+                                                    IEnumerable<decimal> y
+                                                )
         {
             // equal variances
             decimal x_average = x.Average();

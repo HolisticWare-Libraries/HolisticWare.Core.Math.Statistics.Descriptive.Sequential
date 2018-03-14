@@ -12,7 +12,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsFrequencyDistibution
     {
         //==============================================================================================================
-        public static IEnumerable<KeyValuePair<T, uint>> FrequencyDistribution<T>(this IEnumerable<T> x)
+        public static IEnumerable<KeyValuePair<T, uint>> FrequencyDistribution<T>
+                                                                            (
+                                                                                this IEnumerable<T> x
+                                                                            )
         {
             Dictionary<T, uint> frequencies = x.FrequencyCounter();
 
@@ -25,7 +28,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return frequencies_sorted;
         }
 
-        public static IEnumerable<KeyValuePair<byte, uint>> FrequencyDistribution(this IEnumerable<byte> x)
+        public static IEnumerable<KeyValuePair<byte, uint>> FrequencyDistribution
+                                                                            (
+                                                                                this IEnumerable<byte> x
+                                                                            )
         {
             Dictionary<byte, uint> frequencies = x.FrequencyCounter();
 
@@ -38,7 +44,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return frequencies_sorted;
         }
 
-        public static IEnumerable<KeyValuePair<ushort, uint>> FrequencyDistribution(this IEnumerable<ushort> x)
+        public static IEnumerable<KeyValuePair<ushort, uint>> FrequencyDistribution
+                                                                            (
+                                                                                this IEnumerable<ushort> x
+                                                                            )
         {
             Dictionary<ushort, uint> frequencies = x.FrequencyCounter();
 
@@ -51,7 +60,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return frequencies_sorted;
         }
 
-        public static IEnumerable<KeyValuePair<short, uint>> FrequencyDistribution(this IEnumerable<short> x)
+        public static IEnumerable<KeyValuePair<short, uint>> FrequencyDistribution
+                                                                            (
+                                                                                this IEnumerable<short> x
+                                                                            )
         {
             Dictionary<short, uint> frequencies = x.FrequencyCounter();
 
@@ -64,7 +76,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return frequencies_sorted;
         }
 
-        public static IEnumerable<KeyValuePair<int, uint>> FrequencyDistribution(this IEnumerable<int> x)
+        public static IEnumerable<KeyValuePair<int, uint>> FrequencyDistribution
+                                                                            (
+                                                                                this IEnumerable<int> x
+                                                                            )
         {
             Dictionary<int, uint> frequencies = x.FrequencyCounter();
 
@@ -77,7 +92,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return frequencies_sorted;
         }
 
-        public static IEnumerable<KeyValuePair<uint, uint>> FrequencyDistribution(this IEnumerable<uint> x)
+        public static IEnumerable<KeyValuePair<uint, uint>> FrequencyDistribution
+                                                                            (
+                                                                                this IEnumerable<uint> x
+                                                                            )
         {
             Dictionary<uint, uint> frequencies = x.FrequencyCounter();
 
@@ -90,7 +108,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return frequencies_sorted;
         }
 
-        public static IEnumerable<KeyValuePair<long, uint>> FrequencyDistribution(this IEnumerable<long> x)
+        public static IEnumerable<KeyValuePair<long, uint>> FrequencyDistribution
+                                                                            (
+                                                                                this IEnumerable<long> x
+                                                                            )
         {
             Dictionary<long, uint> frequencies = x.FrequencyCounter();
 
@@ -103,7 +124,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return frequencies_sorted;
         }
 
-        public static IEnumerable<KeyValuePair<ulong, uint>> FrequencyDistribution(this IEnumerable<ulong> x)
+        public static IEnumerable<KeyValuePair<ulong, uint>> FrequencyDistribution
+                                                                            (
+                                                                                this IEnumerable<ulong> x
+                                                                            )
         {
             Dictionary<ulong, uint> frequencies = x.FrequencyCounter();
 
@@ -116,7 +140,9 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return frequencies_sorted;
         }
 
-        public static IEnumerable<KeyValuePair<float, uint>> FrequencyDistribution(this IEnumerable<float> x)
+        public static IEnumerable<KeyValuePair<float, uint>> FrequencyDistribution
+        (
+            this IEnumerable<float> x)
         {
             Dictionary<float, uint> frequencies = x.FrequencyCounter();
 
@@ -129,7 +155,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return frequencies_sorted;
         }
 
-        public static IEnumerable<KeyValuePair<double, uint>> FrequencyDistribution(this IEnumerable<double> x)
+        public static IEnumerable<KeyValuePair<double, uint>> FrequencyDistribution
+                                                                            (
+                                                                                this IEnumerable<double> x
+                                                                            )
         {
             Dictionary<double, uint> frequencies = x.FrequencyCounter();
 
@@ -142,7 +171,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return frequencies_sorted;
         }
 
-        public static IEnumerable<KeyValuePair<decimal, uint>> FrequencyDistribution(this IEnumerable<decimal> x)
+        public static IEnumerable<KeyValuePair<decimal, uint>> FrequencyDistribution
+                                                                            (
+                                                                                this IEnumerable<decimal> x
+                                                                            )
         {
             Dictionary<decimal, uint> frequencies = x.FrequencyCounter();
 

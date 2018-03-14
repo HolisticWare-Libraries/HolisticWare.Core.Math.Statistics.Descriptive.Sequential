@@ -11,7 +11,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsFrequencyCounter
     {
         //==============================================================================================================
-        public static Dictionary<T, uint> FrequencyCounter<T>(this IEnumerable<T> x)
+        public static Dictionary<T, uint> FrequencyCounter<T>
+                                                        (
+                                                            this IEnumerable<T> x
+                                                        )
         {
             long n = x.LongCount();
 
@@ -33,7 +36,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return frequencies;
         }
 
-        public static Dictionary<byte, uint> FrequencyCounter(this IEnumerable<byte> x)
+        public static Dictionary<byte, uint> FrequencyCounter
+                                                        (
+                                                            this IEnumerable<byte> x
+                                                        )
         {
             long n = x.LongCount();
 
@@ -55,7 +61,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return frequencies;
         }
 
-        public static Dictionary<ushort, uint> FrequencyCounter(this IEnumerable<ushort> x)
+        public static Dictionary<ushort, uint> FrequencyCounter
+                                                        (
+                                                            this IEnumerable<ushort> x
+                                                        )
         {
             long n = x.LongCount();
 
@@ -77,7 +86,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return frequencies;
         }
 
-        public static Dictionary<short, uint> FrequencyCounter(this IEnumerable<short> x)
+        public static Dictionary<short, uint> FrequencyCounter
+                                                        (
+                                                            this IEnumerable<short> x
+                                                        )
         {
             long n = x.LongCount();
 
@@ -99,7 +111,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return frequencies;
         }
 
-        public static Dictionary<int, uint> FrequencyCounter(this IEnumerable<int> x)
+        public static Dictionary<int, uint> FrequencyCounter
+                                                        (
+                                                            this IEnumerable<int> x
+                                                        )
         {
             long n = x.LongCount();
 
@@ -121,7 +136,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return frequencies;
         }
 
-        public static Dictionary<uint, uint> FrequencyCounter(this IEnumerable<uint> x)
+        public static Dictionary<uint, uint> FrequencyCounter
+                                                        (
+                                                            this IEnumerable<uint> x
+                                                        )
         {
             long n = x.LongCount();
 
@@ -143,7 +161,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return frequencies;
         }
 
-        public static Dictionary<long, uint> FrequencyCounter(this IEnumerable<long> x)
+        public static Dictionary<long, uint> FrequencyCounter
+                                                        (
+                                                            this IEnumerable<long> x
+                                                        )
         {
             long n = x.LongCount();
 
@@ -165,7 +186,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return frequencies;
         }
 
-        public static Dictionary<ulong, uint> FrequencyCounter(this IEnumerable<ulong> x)
+        public static Dictionary<ulong, uint> FrequencyCounter
+                                                        (
+                                                            this IEnumerable<ulong> x
+                                                        )
         {
             long n = x.LongCount();
 
@@ -187,7 +211,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return frequencies;
         }
 
-        public static Dictionary<float, uint> FrequencyCounter(this IEnumerable<float> x)
+        public static Dictionary<float, uint> FrequencyCounter
+                                                        (
+                                                            this IEnumerable<float> x
+                                                        )
         {
             long n = x.LongCount();
 
@@ -209,7 +236,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return frequencies;
         }
 
-        public static Dictionary<double, uint> FrequencyCounter(this IEnumerable<double> x)
+        public static Dictionary<double, uint> FrequencyCounter
+                                                        (
+                                                            this IEnumerable<double> x
+                                                        )
         {
             long n = x.LongCount();
 
@@ -231,7 +261,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return frequencies;
         }
 
-        public static Dictionary<decimal, uint> FrequencyCounter(this IEnumerable<decimal> x)
+        public static Dictionary<decimal, uint> FrequencyCounter
+                                                        (
+                                                            this IEnumerable<decimal> x
+                                                        )
         {
             long n = x.LongCount();
 

@@ -14,7 +14,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsCorrelation
     {
         //==============================================================================================================
-        public static double Correlation(this IEnumerable<byte> x, IEnumerable<byte> y)
+        public static double Correlation
+                                    (
+                                        this IEnumerable<byte> x, 
+                                        IEnumerable<byte> y
+                                    )
         {
             double standard_deviation_x = x.StandardDeviationSample();
 
@@ -49,7 +53,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 ;
         }
 
-        public static double Correlation(this IEnumerable<short> x, IEnumerable<short> y)
+        public static double Correlation
+                                    (
+                                        this IEnumerable<short> x, 
+                                        IEnumerable<short> y
+                                    )
         {
             double standard_deviation_x = x.StandardDeviationSample();
 
@@ -84,7 +92,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 ;
         }
 
-        public static double Correlation(this IEnumerable<ushort> x, IEnumerable<ushort> y)
+        public static double Correlation
+                                    (
+                                        this IEnumerable<ushort> x, 
+                                        IEnumerable<ushort> y
+                                    )
         {
             double standard_deviation_x = x.StandardDeviationSample();
 
@@ -119,7 +131,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 ;
         }
 
-        public static double Correlation(this IEnumerable<int> x, IEnumerable<int> y)
+        public static double Correlation
+                                    (
+                                        this IEnumerable<int> x, 
+                                        IEnumerable<int> y
+                                    )
         {
             double standard_deviation_x = x.StandardDeviationSample();
 
@@ -154,7 +170,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 ;
         }
 
-        public static double Correlation(this IEnumerable<uint> x, IEnumerable<uint> y)
+        public static double Correlation
+                                    (
+                                        this IEnumerable<uint> x, 
+                                        IEnumerable<uint> y
+                                    )
         {
             double standard_deviation_x = x.StandardDeviationSample();
 
@@ -190,7 +210,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 ;
         }
 
-        public static double Correlation(this IEnumerable<long> x, IEnumerable<long> y)
+        public static double Correlation
+                                    (
+                                        this IEnumerable<long> x, 
+                                        IEnumerable<long> y
+                                    )
         {
             double standard_deviation_x = x.StandardDeviationSample();
 
@@ -225,7 +249,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 ;        
         }
 
-        public static double Correlation(this IEnumerable<ulong> x, IEnumerable<ulong> y)
+        public static double Correlation
+                                    (
+                                        this IEnumerable<ulong> x, 
+                                        IEnumerable<ulong> y
+                                    )
         {
             double standard_deviation_x = x.StandardDeviationSample();
 
@@ -260,7 +288,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 ;        
         }
 
-        public static double Correlation(this IEnumerable<float> x, IEnumerable<float> y)
+        public static double Correlation
+                                    (
+                                        this IEnumerable<float> x, 
+                                        IEnumerable<float> y
+                                    )
         {
             double standard_deviation_x = x.StandardDeviationSample();
 
@@ -295,7 +327,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 ;
         }
 
-        public static double Correlation(this IEnumerable<double> x, IEnumerable<double> y)
+        public static double Correlation
+                                    (
+                                        this IEnumerable<double> x, 
+                                        IEnumerable<double> y
+                                    )
         {
             double standard_deviation_x = x.StandardDeviationSample();
 
@@ -330,7 +366,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 ;        
         }
 
-        public static decimal Correlation(this IEnumerable<decimal> x, IEnumerable<decimal> y)
+        public static decimal Correlation
+                                    (
+                                        this IEnumerable<decimal> x, 
+                                        IEnumerable<decimal> y
+                                    )
         {
             decimal standard_deviation_x = x.StandardDeviationSample();
 
