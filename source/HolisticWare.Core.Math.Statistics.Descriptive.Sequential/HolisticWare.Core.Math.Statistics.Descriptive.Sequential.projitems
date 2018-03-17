@@ -139,6 +139,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\IEnumerableExtensions.StatisticsDescriptive.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\StatisticsDescriptive.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\StatisticsDescriptive.DataMissing.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.MeanGeometricNaive.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)readme.md" />
