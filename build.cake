@@ -56,7 +56,9 @@ Running Cake to Build targets
 #tool nuget:?package=NUnit.ConsoleRunner
 #tool nuget:?package=NUnit.Console&include=../Nunit.ConsoleRunner/**/*
 //#tool nuget:?package=NUnit.Runners
-
+#tool "nuget:?package=xunit.runner.console"
+#tool "nuget:?package=OpenCover"
+#tool "nuget:?package=ReportGenerator"
 
 var TARGET = Argument ("t", Argument ("target", "Default"));
 
@@ -131,6 +133,63 @@ Task("unit-tests")
             );
         }
     );
+
+
+const string TEST_DLL_FORMAT = "../MyApp.Tests.{0}/bin/{1}/MyApp.Tests.{0}.dll";
+const string OUTPUT_DIR = "output";
+ 
+Task("all-tests-coverage")
+    .IsDependentOn("build")
+    .Does
+    (
+        () =>
+        {
+            string[] dlls = 
+            {
+                //string.Format(TEST_DLL_FORMAT, "Integration", _buildConfiguration),
+                //string.Format(TEST_DLL_FORMAT, "Unit", _buildConfiguration)
+            };
+        
+            var coverSettings = new OpenCoverSettings()
+                .WithFilter("+[MyApp.*]*")
+                .WithFilter("-[MyApp.Tests.*]*");
+            coverSettings.SkipAutoProps = true;
+            coverSettings.Register = "user";
+            coverSettings.MergeByHash = true;
+            coverSettings.NoDefaultFilters = true;
+        
+            XUnit2Settings unitSettings = new XUnit2Settings 
+            { 
+                ShadowCopy = false,
+                HtmlReport = true,
+                OutputDirectory = $"./{OUTPUT_DIR}",
+        
+                // Shows progress text as each test is executing
+                ArgumentCustomization = args => args.Append("-verbose")
+            };
+        
+            var openCoverDir = $"./{OUTPUT_DIR}/OpenCover";
+            EnsureDirectoryExists(openCoverDir);
+        
+            var resultsFilePath = new FilePath($"{openCoverDir}/_results.xml");
+            OpenCover
+            (
+                tool => 
+                { 
+                    tool.XUnit2(dlls, unitSettings); 
+                }, 
+                resultsFilePath, 
+                coverSettings
+            );
+        
+            ReportGenerator(resultsFilePath, openCoverDir);
+        }
+    );
+
+
+
+
+
 
 Task ("externals")
     .IsDependentOn ("externals-base")
