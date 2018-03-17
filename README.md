@@ -77,6 +77,13 @@ NOTE: Parallel algorithms based on (TPL) can be found in
 
     *   https://docs.microsoft.com/en-us/dotnet/standard/parallel-programming/parallel-linq-plinq
 
+## Comparison
+
+*   Octave
+
+    *   https://www.gnu.org/software/octave/doc/v4.0.1/Descriptive-Statistics.html#Descriptive-Statistics
+
+
 
 
 ## TODOs / Plans
@@ -132,17 +139,29 @@ After benchmarks will be added and tests conducted, implementation might change 
 
 *   online calculators
 
+    *   http://calculator.vhex.net/function-index/statistics
+
+    *   https://www.wessa.net/rwasp_correlation.wasp#output
+
+    *   https://www.numberempire.com/statisticscalculator.php
+
+    *   https://www.easycalculation.com/statistics/statistics.php
+
     *   http://www.calculator.net/statistics-calculator.html
 
     *   http://www.alcula.com/calculators/statistics/
 
-    *   https://www.mathportal.org/calculators/statistics-calculator/standard-deviation-calculator.php
+    *   https://www.mathportal.org/calculators/statistics-calculator/descriptive-statistics-calculator.php
 
     *   http://powerandsamplesize.com/Calculators/
 
     *   https://www.miniwebtool.com/root-mean-square-calculator/
 
     *   http://elsenaju.eu/Calculator/mean-value-calculator.htm
+
+    *   https://www.calculatorsoup.com/calculators/statistics/index.php
+
+    *   http://www.socscistatistics.com/tests/
 
 *   some ideas and inspirations came from following libraries:
 
