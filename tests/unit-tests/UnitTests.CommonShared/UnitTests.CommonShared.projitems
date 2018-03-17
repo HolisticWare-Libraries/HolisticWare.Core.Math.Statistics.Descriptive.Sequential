@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{13AB4AD2-D077-48E0-B6F2-791BC25EB413}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>UnitTests.CommonShared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Async\Tests01MeanAverage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\Tests02Frequencies.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\Tests03Mode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\TestsFrequencies20180119.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\TestsFrequencyDistribution20180120.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\TestsModes20180119.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\UnitTests20180213.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180215.BigData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180219.SampleData.1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180219.SampleData.2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180219.SampleData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\KIF.Handbook.QuantitiativeMethods\Tests03Page95DescriptiveAnalysis.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests00Data.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests01MeansAverageMedian.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests02FrequenciesModes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests03Moments.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests04SkewnessKurtosis.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests05Percentiles.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests11Statistics.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet002\Tests00Data.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet002\Tests01MeanAverageMedian.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet002\Tests02FrequenciesModes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet002\Tests03Moments.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet002\Tests04SkewnessKurtosis.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet003\Tests00Data.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet003\Tests01MeanAverageMedian.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet003\Tests02FrequenciesModes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet003\Tests03Moments.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet003\Tests04SkewnessKurtosis.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet004\Tests00Data.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet004\Tests01MeanAverageMedian.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet004\Tests02FrequenciesModes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet004\Tests03Moments.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet004\Tests04SkewnessKurtosis.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)0Portability\UnitTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Async\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sync\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Xtras-BigData\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Xtras-SampleData\" />
+    <Folder Include="$(MSBuildThisFileDirectory)0Portability\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Xtras-BigData\Rand_Samp_BigData_01.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Xtras-BigData\Rand_Samp_BigData_02.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Xtras-SampleData\Rand_Samp1_50.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Xtras-SampleData\Rand_Samp2_50.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Xtras-SampleData\Rand_Samp3_50.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Xtras-SampleData\Rand_Samp4_50.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Xtras-SampleData\Rand_Samp5_50.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Xtras-SampleData\Rand_Samp6_50.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Xtras-SampleData\Judo.csv" />
+  </ItemGroup>
+</Project>
