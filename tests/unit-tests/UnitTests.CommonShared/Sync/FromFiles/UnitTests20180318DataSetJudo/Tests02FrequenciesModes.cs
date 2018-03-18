@@ -61,17 +61,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Stop();
             Console.WriteLine($"List<int>.Modes() size={data01.Count()} elapsed[ticks]={sw.ElapsedTicks}");
 
-            // Assert
-            #if NUNIT
-            CollectionAssert.AreEquivalent
-            #elif XUNIT
-            Assert.Equal
-            #elif MSTEST
-            #endif
-                            (
-                                new List<int> { 2, 3 },
-                                modes01
-                            );
             //====================================================================================================
 
             return;

@@ -32,6 +32,7 @@ using System.Linq;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.IO;
+using UnitTests.CommonShared.Sync.FromFiles.UnitTests20180318DataSetBasketball;
 
 #if XUNIT
 using Xunit;
@@ -49,7 +50,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class UnitTests20180318DataSetBasketball
     {
-        IEnumerable<double> data01 = null;
+        List<BasketballTeamData> data01 = null;
 
         Stopwatch sw = null;
 
@@ -89,9 +90,33 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 StringSplitOptions.RemoveEmptyEntries
                             );
 
-            data01 = new List<double>();
-            foreach (string s in lines)
+            data01 = new List<BasketballTeamData>();
+            int n = lines.Count();
+            for (int i = 1; i < n; i++)
+
             {
+                string s1 = lines[i].Replace("\r", "");
+
+                string[] s_parts = s1.Split(new string[] { "." }, StringSplitOptions.None);
+                BasketballTeamData bg = new BasketballTeamData()
+                {
+                    Points2Success = int.Parse(s_parts[0].Replace(",000", "")),
+                    Points2Fail = int.Parse(s_parts[1].Replace(",000", "")),
+                    Points3Success = int.Parse(s_parts[2].Replace(",000", "")),
+                    Points3Fail = int.Parse(s_parts[3].Replace(",000", "")),
+                    FreeThrowSuccess = int.Parse(s_parts[4].Replace(",000", "")),
+                    FreeThrowFail = int.Parse(s_parts[5].Replace(",000", "")),
+                    JumpsOffensive = int.Parse(s_parts[6].Replace(",000", "")),
+                    JumpsDefensive = int.Parse(s_parts[7].Replace(",000", "")),
+                    Assistence = int.Parse(s_parts[8].Replace(",000", "")),
+                    BallsLost = int.Parse(s_parts[9].Replace(",000", "")),
+                    BallsStolen = int.Parse(s_parts[10].Replace(",000", "")),
+                    Blocks = int.Parse(s_parts[11].Replace(",000", "")),
+                    Criteria01 = int.Parse(s_parts[12].Replace(",000", "")),
+                    Criteria02 = int.Parse(s_parts[13].Replace(",000", "")),
+                };
+
+                data01.Add(bg);
             }
             //------------------------------------------------------------------
 

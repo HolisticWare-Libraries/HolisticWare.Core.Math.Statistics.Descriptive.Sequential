@@ -36,6 +36,7 @@ using System.IO;
 #if XUNIT
 using Xunit;
 using Test = Xunit.FactAttribute;
+using OneTimeSetUp = System.ObsoleteAttribute;
 #elif NUNIT
 using NUnit.Framework;
 using Fact=NUnit.Framework.TestAttribute;

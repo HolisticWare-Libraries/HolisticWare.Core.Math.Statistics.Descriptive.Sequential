@@ -52,5 +52,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         double mean02 = 0;
 
         List<double> weights = null;
+
+
     }
 }

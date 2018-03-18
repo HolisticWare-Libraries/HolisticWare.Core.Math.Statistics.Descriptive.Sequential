@@ -54,6 +54,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests02FrequenciesModes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests03Moments.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests04SkewnessKurtosis.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\BasketballTeamData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Async\" />

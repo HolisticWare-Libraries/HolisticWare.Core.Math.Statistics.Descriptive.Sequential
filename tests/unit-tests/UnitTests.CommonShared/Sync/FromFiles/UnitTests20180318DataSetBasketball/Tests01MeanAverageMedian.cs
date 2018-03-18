@@ -47,10 +47,43 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class UnitTests20180318DataSetBasketball
     {
-        double average = 0;
-        double mean01 = 0;
-        double mean02 = 0;
+        IEnumerable<int> data_2pts_success;
+        IEnumerable<int> data_3pts_success;
 
-        List<double> weights = null;
+        [Test()]
+        public void MeanArithmetic_Points2Success()
+        {
+            data_2pts_success =
+                                from row in data01
+                                where row.Assistence == 2
+                                         orderby row.BallsLost
+                                    select row.Points2Success
+                                    ;
+
+            mean_2_a = data_2pts_success.MeanArithmetic();
+            double mean_2_g = data_2pts_success.MeanGeometric();
+
+            return;
+        }
+
+        double mean_2_a;
+
+        [Test()]
+        public void MeanArithmetic_Points3Success()
+        {
+            data_3pts_success =
+                from d in data01
+                select d.Points3Success
+                        ;
+
+            double mean_3_a = data_3pts_success.MeanArithmetic();
+            double mean_3_g = data_3pts_success.MeanGeometric();
+
+            double c = data_3pts_success.Correlation(data_2pts_success);
+
+            mean_2_a++;
+
+            return;
+        }
     }
 }
