@@ -44,6 +44,16 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet004\Tests03Moments.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet004\Tests04SkewnessKurtosis.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)0Portability\UnitTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetJudo\Tests00Data.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetJudo\Tests01MeanAverageMedian.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetJudo\Tests02FrequenciesModes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetJudo\Tests03Moments.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetJudo\Tests04SkewnessKurtosis.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests00Data.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests01MeanAverageMedian.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests02FrequenciesModes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests03Moments.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests04SkewnessKurtosis.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Async\" />
@@ -51,6 +61,8 @@
     <Folder Include="$(MSBuildThisFileDirectory)Xtras-BigData\" />
     <Folder Include="$(MSBuildThisFileDirectory)Xtras-SampleData\" />
     <Folder Include="$(MSBuildThisFileDirectory)0Portability\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetJudo\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Xtras-BigData\Rand_Samp_BigData_01.csv">
@@ -77,8 +89,11 @@
     <Content Include="$(MSBuildThisFileDirectory)Xtras-SampleData\Rand_Samp6_50.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)Xtras-SampleData\Judo.csv" />
+    <Content Include="$(MSBuildThisFileDirectory)Xtras-SampleData\Basketball.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Xtras-SampleData\Judo.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>
