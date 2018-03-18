@@ -50,7 +50,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class UnitTests20180318DataSetBasketball
     {
-        List<BasketballTeamData> data01 = null;
+        List<BasketballTeamData> basketball_team_data_table = null;
 
         Stopwatch sw = null;
 
@@ -90,7 +90,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 StringSplitOptions.RemoveEmptyEntries
                             );
 
-            data01 = new List<BasketballTeamData>();
+            basketball_team_data_table = new List<BasketballTeamData>();
             int n = lines.Count();
             for (int i = 1; i < n; i++)
 
@@ -116,7 +116,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                     Criteria02 = int.Parse(s_parts[13].Replace(",000", "")),
                 };
 
-                data01.Add(bg);
+                basketball_team_data_table.Add(bg);
             }
             //------------------------------------------------------------------
 
