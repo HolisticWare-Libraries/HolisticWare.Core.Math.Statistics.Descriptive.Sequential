@@ -33,6 +33,14 @@ using Xunit;
 using Test = Xunit.FactAttribute;
 #elif NUNIT
 using NUnit.Framework;
+// MSTest fixes
+using TestInitialize = NUnit.Framework.SetUpAttribute;
+using TestContext = System.Object;
+using TestProperty = NUnit.Framework.PropertyAttribute;
+using TestClass = NUnit.Framework.TestFixtureAttribute;
+using TestMethod = NUnit.Framework.TestAttribute;
+using TestCleanup = NUnit.Framework.TearDownAttribute;
+// XUnit fixes
 using Fact=NUnit.Framework.TestAttribute;
 #elif MSTEST
 using Microsoft.VisualStudio.TestTools.UnitTesting;
