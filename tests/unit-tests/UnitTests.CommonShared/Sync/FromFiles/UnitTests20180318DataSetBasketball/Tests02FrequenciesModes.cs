@@ -52,31 +52,32 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     public partial class UnitTests20180318DataSetBasketball
     {
         [Test()]
-        public void Mode01()
+        public void Mode_Points2Success()
         {
-            //====================================================================================================
-            // Arrange
+            data_2pts_success =
+                                from row in basketball_team_data_table
+                                select row.Points2Success
+                                    ;
 
-            sw = Stopwatch.StartNew();
-            // Act
-            //List<double> modes01 = data01.Modes();
-            sw.Stop();
-            Console.WriteLine($"List<int>.Modes() size={data01.Count()} elapsed[ticks]={sw.ElapsedTicks}");
-
-            // Assert
-            //#if NUNIT
-            //CollectionAssert.AreEquivalent
-            //#elif XUNIT
-            //Assert.Equal
-            //#elif MSTEST
-            //#endif
-                            //(
-                            //    new List<double> { 2, 3 },
-                            //    modes01
-                            //);
-            //====================================================================================================
+            List<int> modes = data_2pts_success.Modes();
 
             return;
         }
+
+
+        [Test()]
+        public void Mode_Points3Success()
+        {
+            data_3pts_success =
+                                from row in basketball_team_data_table
+                                select row.Points3Success
+                                    ;
+
+            List<int> modes = data_3pts_success.Modes();
+
+            return;
+        }
+
+
     }
 }

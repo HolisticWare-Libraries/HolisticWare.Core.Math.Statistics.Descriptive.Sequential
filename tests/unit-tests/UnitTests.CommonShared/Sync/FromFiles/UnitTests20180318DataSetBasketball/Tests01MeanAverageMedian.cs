@@ -57,9 +57,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void MeanArithmetic_Points2Success()
         {
             data_2pts_success =
-                                from row in data01
-                                where row.Assistence == 2
-                                         orderby row.BallsLost
+                                from row in basketball_team_data_table
                                     select row.Points2Success
                                     ;
 
@@ -75,7 +73,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void MeanArithmetic_Points3Success()
         {
             data_3pts_success =
-                from d in data01
+                from d in basketball_team_data_table
                 select d.Points3Success
                         ;
 
