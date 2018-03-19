@@ -26,6 +26,7 @@
 //    OTHER DEALINGS IN THE SOFTWARE.
 // */
 using System;
+
 namespace UnitTests.CommonShared.Sync.FromFiles.UnitTests20180318DataSetBasketball
 {
     public class BasketballTeamData

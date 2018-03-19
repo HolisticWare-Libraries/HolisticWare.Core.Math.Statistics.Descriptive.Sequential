@@ -35,11 +35,14 @@ using Test = Xunit.FactAttribute;
 using NUnit.Framework;
 using Fact=NUnit.Framework.TestAttribute;
 #elif MSTEST
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Test = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
+using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 #endif
 
-namespace UnitTests.CommonShared
+namespace HolisticWare.Core.Testing
 {
-    public class UnitTestAAAAAAAAAAAAAAAAA
+    public class UnitTestCompatibilityTests
     {
         [Fact]
         public void Test1()
@@ -52,5 +55,42 @@ namespace UnitTests.CommonShared
         {
 
         }
+
+
+        /*
+
+        https://stackoverflow.com/questions/6193744/what-would-be-an-alternate-to-setup-and-teardown-in-mstest
+
+        [AssemblyInitialize()]
+        public static void AssemblyInit(TestContext context) { }
+
+        [ClassInitialize()]
+        public static void ClassInit(TestContext context) { }
+
+        [TestInitialize()]
+        public void Initialize() { }
+
+        [TestCleanup()]
+        public void Cleanup() { }
+
+        [ClassCleanup()]
+        public static void ClassCleanup() { }
+
+        [AssemblyCleanup()]
+        public static void AssemblyCleanup() { }
+
+
+        individual test (test method) level
+        
+            [TestInitialize]        // [SetUp]
+            
+            [TestCleanup]           // [TearDown]
+
+        class level
+        
+            [ClassInitialize]
+            
+            [ClassCleanup] 
+        */
     }
 }

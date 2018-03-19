@@ -39,6 +39,9 @@ using Test = Xunit.FactAttribute;
 using NUnit.Framework;
 using Fact=NUnit.Framework.TestAttribute;
 #elif MSTEST
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Test = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
+using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 #endif
 
 using Core.Math.Statistics.Descriptive.Sequential;
@@ -64,10 +67,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
 
             #if NUNIT
             CollectionAssert.AreEquivalent
-            #elif XUNIT
-            Assert.Equal
-            #elif MSTEST
-            #endif
                             (
                                 frequencies01,
                                 new Dictionary<int, uint>()
@@ -81,6 +80,37 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
                                     { 1, 1 },
                                 }
                             );
+            #elif XUNIT
+            Assert.Equal
+                            (
+                                frequencies01,
+                                new Dictionary<int, uint>()
+                                {
+                                    { 4, 3 },
+                                    { 2, 2 },
+                                    { 3, 1 },
+                                    { 5, 1 },
+                                    { 6, 1 },
+                                    { 7, 1 },
+                                    { 1, 1 },
+                                }
+                            );
+            #elif MSTEST
+            CollectionAssert.AreEquivalent
+                            (
+                                frequencies01.ToArray(),
+                                new Dictionary<int, uint>()
+                                {
+                                    { 4, 3 },
+                                    { 2, 2 },
+                                    { 3, 1 },
+                                    { 5, 1 },
+                                    { 6, 1 },
+                                    { 7, 1 },
+                                    { 1, 1 },
+                                }
+                            );
+            #endif
         return;
         }
 

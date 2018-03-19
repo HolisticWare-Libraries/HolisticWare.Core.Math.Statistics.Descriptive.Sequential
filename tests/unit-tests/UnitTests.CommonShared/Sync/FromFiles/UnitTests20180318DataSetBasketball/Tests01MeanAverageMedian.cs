@@ -39,6 +39,9 @@ using Test = Xunit.FactAttribute;
 using NUnit.Framework;
 using Fact=NUnit.Framework.TestAttribute;
 #elif MSTEST
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Test = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
+using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 #endif
 
 using Core.Math.Statistics.Descriptive.Sequential;
@@ -80,8 +83,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double mean_3_g = data_3pts_success.MeanGeometric();
 
             double c = data_3pts_success.Correlation(data_2pts_success);
-
-            mean_2_a++;
 
             return;
         }

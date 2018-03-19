@@ -39,6 +39,10 @@ using Test = Xunit.FactAttribute;
 using NUnit.Framework;
 using Fact=NUnit.Framework.TestAttribute;
 #elif MSTEST
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Test = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
+using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
+using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute;
 #endif
 
 using Core.Math.Statistics.Descriptive.Sequential;
@@ -69,10 +73,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             #if NUNIT
             CollectionAssert.AreEquivalent
-            #elif XUNIT
-            Assert.Equal
-            #elif MSTEST
-            #endif
                                 (
                                     frequencies01,
                                     new Dictionary<int, uint>()
@@ -92,8 +92,49 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         { 35, 1},
                                     }
                                 );
-
-
+            #elif XUNIT
+            Assert.Equal
+                                (
+                                    frequencies01,
+                                    new Dictionary<int, uint>()
+                                    {
+                                        { 24, 2},
+                                        { 28, 2},
+                                        { 29, 2},
+                                        { 22, 1},
+                                        { 33, 1},
+                                        { 25, 1},
+                                        { 36, 1},
+                                        { 27, 1},
+                                        { 34, 1},
+                                        { 32, 1},
+                                        { 21, 1},
+                                        { 30, 1},
+                                        { 35, 1},
+                                    }
+                                );
+            #elif MSTEST
+            CollectionAssert.AreEquivalent
+                                (
+                                    frequencies01.ToArray(),
+                                    new Dictionary<int, uint>()
+                                    {
+                                        { 24, 2},
+                                        { 28, 2},
+                                        { 29, 2},
+                                        { 22, 1},
+                                        { 33, 1},
+                                        { 25, 1},
+                                        { 36, 1},
+                                        { 27, 1},
+                                        { 34, 1},
+                                        { 32, 1},
+                                        { 21, 1},
+                                        { 30, 1},
+                                        { 35, 1},
+                                    }
+                                );
+            #endif
             //====================================================================================================
 
             return;
@@ -120,14 +161,23 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Assert
             #if NUNIT
             CollectionAssert.AreEquivalent
-            #elif XUNIT
-            Assert.Equal
-            #elif MSTEST
-            #endif
                                 (
                                     new List<int> { 24, 28, 29 },
                                     modes01
                                 );
+            #elif XUNIT
+            Assert.Equal
+                                (
+                                    new List<int> { 24, 28, 29 },
+                                    modes01
+                                );
+            #elif MSTEST
+            CollectionAssert.AreEquivalent
+                                (
+                                    new List<int> { 24, 28, 29 },
+                                    modes01
+                                );
+            #endif
             //====================================================================================================
 
             return;
@@ -154,14 +204,23 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Assert
             #if NUNIT
             CollectionAssert.AreEquivalent
-            #elif XUNIT
-            Assert.Equal
-            #elif MSTEST
-            #endif
                                     (
                                         new List<int> { 24, 28, 29 },
                                         modes02
                                     );
+            #elif XUNIT
+            Assert.Equal
+                                    (
+                                        new List<int> { 24, 28, 29 },
+                                        modes02
+                                    );
+            #elif MSTEST
+            CollectionAssert.AreEquivalent
+                                    (
+                                        new List<int> { 24, 28, 29 },
+                                        modes02
+                                    );
+            #endif
             //====================================================================================================
 
             return;
@@ -188,14 +247,23 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Assert
             #if NUNIT
             CollectionAssert.AreEquivalent
-            #elif XUNIT
-            Assert.Equal
-            #elif MSTEST
-            #endif
                                     (
                                         new List<int> { 24, 28, 29 },
                                         modes03
                                     );
+            #elif XUNIT
+            Assert.Equal
+                                    (
+                                        new List<int> { 24, 28, 29 },
+                                        modes03
+                                    );
+            #elif MSTEST
+            CollectionAssert.AreEquivalent
+                                    (
+                                        new List<int> { 24, 28, 29 },
+                                        modes03
+                                    );
+            #endif
             //====================================================================================================
 
             return;
@@ -223,14 +291,23 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Assert
             #if NUNIT
             CollectionAssert.AreEquivalent
-            #elif XUNIT
-            Assert.Equal
-            #elif MSTEST
-            #endif
                                     (
                                         new List<int> { 24, 28, 29 },
                                         modes04
                                     );
+            #elif XUNIT
+            Assert.Equal
+                                    (
+                                        new List<int> { 24, 28, 29 },
+                                        modes04
+                                    );
+            #elif MSTEST
+            CollectionAssert.AreEquivalent
+                                    (
+                                        new List<int> { 24, 28, 29 },
+                                        modes04
+                                    );
+            #endif
             //====================================================================================================
         }
 
