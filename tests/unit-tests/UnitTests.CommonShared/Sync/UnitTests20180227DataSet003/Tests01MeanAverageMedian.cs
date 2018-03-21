@@ -270,7 +270,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             #if NUNIT
             Assert.AreEqual(3.605, mean01, 0.001);
             #elif XUNIT
-            Assert.Equal(3.605, mean01, 3);
+            Assert.Equal(3.60555, mean01, 4);
             #elif MSTEST
             #endif
             // 3.90396 ?????
