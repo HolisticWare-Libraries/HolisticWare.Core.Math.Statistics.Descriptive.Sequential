@@ -79,5 +79,31 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
 
+        [Test()]
+        public void Mode_Points2Fail()
+        {
+            data_2pts_fail =
+                                from row in basketball_team_data_table
+                                select row.Points2Fail
+                                    ;
+
+            List<int> modes = data_2pts_fail.Modes();
+
+            return;
+        }
+
+
+        [Test()]
+        public void Mode_Points3Fail()
+        {
+            data_3pts_fail =
+                                from row in basketball_team_data_table
+                                select row.Points3Fail
+                                    ;
+
+            List<int> modes = data_3pts_fail.Modes();
+
+            return;
+        }
     }
 }

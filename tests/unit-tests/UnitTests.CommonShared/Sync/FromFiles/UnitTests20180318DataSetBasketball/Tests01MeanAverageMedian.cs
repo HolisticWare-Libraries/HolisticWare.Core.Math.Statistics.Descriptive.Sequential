@@ -52,35 +52,70 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     {
         IEnumerable<int> data_2pts_success;
         IEnumerable<int> data_3pts_success;
+        IEnumerable<int> data_2pts_fail;
+        IEnumerable<int> data_3pts_fail;
 
         [Test()]
         public void MeanArithmetic_Points2Success()
         {
             data_2pts_success =
-                                from row in basketball_team_data_table
+                                from row in BasketballTeamDataTable
                                     select row.Points2Success
                                     ;
 
-            mean_2_a = data_2pts_success.MeanArithmetic();
+            double mean_2_a = data_2pts_success.MeanArithmetic();
             double mean_2_g = data_2pts_success.MeanGeometric();
 
             return;
         }
 
-        double mean_2_a;
+        //double mean_2_a;
 
         [Test()]
         public void MeanArithmetic_Points3Success()
         {
             data_3pts_success =
-                from d in basketball_team_data_table
+                from d in BasketballTeamDataTable
                 select d.Points3Success
                         ;
 
             double mean_3_a = data_3pts_success.MeanArithmetic();
             double mean_3_g = data_3pts_success.MeanGeometric();
 
-            double c = data_3pts_success.Correlation(data_2pts_success);
+            //double c = data_3pts_success.Correlation(data_2pts_success);
+
+            //mean_3_a++;
+
+            return;
+        }
+
+
+        [Test()]
+        public void MeanArithmetic_Points2Fail()
+        {
+            data_2pts_fail =
+                                from row in BasketballTeamDataTable
+                                select row.Points2Fail
+                                    ;
+
+            double mean_2_a = data_2pts_fail.MeanArithmetic();
+            double mean_2_g = data_2pts_fail.MeanGeometric();
+
+
+            return;
+        }
+
+
+        [Test()]
+        public void MeanArithmetic_Points3Fail()
+        {
+            data_3pts_fail =
+                                from row in BasketballTeamDataTable
+                                select row.Points3Fail
+                                    ;
+
+            double mean_3_a = data_3pts_fail.MeanArithmetic();
+            double mean_3_g = data_3pts_fail.MeanGeometric();
 
             return;
         }
