@@ -65,8 +65,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Act
             statistics = data01.StatisticsDescriptive();
             sw.Stop();
-            Console.WriteLine($"List<int>.Percentile(50)");
-            Console.WriteLine($"          percentile_int_01  = {percentile_int_01}");
+            Console.WriteLine($"List<int>.StatisticsDescriptive()");
+            Console.WriteLine($"          statistics         = {statistics}");
             Console.WriteLine($"          size               = {data01.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -75,13 +75,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(3, percentile_int_01.min);
-            Assert.AreEqual(5, percentile_int_01.max);
-            Assert.AreEqual(4, percentile_int_01.interpolated);
+            //Assert.AreEqual(3, statistics);
+            //Assert.AreEqual(3, statistics);
             #elif XUNIT
-            Assert.Equal(3, percentile_int_01.min);
-            Assert.Equal(5, percentile_int_01.max);
-            Assert.Equal(4, percentile_int_01.interpolated);
             #elif MSTEST
             #endif
             //====================================================================================================
