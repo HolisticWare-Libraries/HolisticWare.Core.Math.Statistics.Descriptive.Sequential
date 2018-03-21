@@ -39,6 +39,8 @@ using Test = Xunit.FactAttribute;
 using NUnit.Framework;
 using Fact=NUnit.Framework.TestAttribute;
 #elif MSTEST
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute;
 #endif
 
 using Core.Math.Statistics.Descriptive.Sequential;

@@ -69,7 +69,7 @@ BuildSpec buildSpec = new BuildSpec ()
     {
         new DefaultSolutionBuilder 
         {
-            SolutionPath = "./source/Source.sln",
+            SolutionPath = "./source/HolisticWare.Core.Math.Statistics.Descriptive.Sequential.Source.sln",
             OutputFiles = new [] 
             { 
                 new OutputFileCopy 
@@ -84,17 +84,13 @@ BuildSpec buildSpec = new BuildSpec ()
                 },
             }
         },
-        new DefaultSolutionBuilder 
-        {
-            SolutionPath = "tests/unit-tests/UnitTests.sln",
-        }
     },
 
     Samples = new ISolutionBuilder [] 
     {
         new DefaultSolutionBuilder 
         { 
-            SolutionPath = "./samples/.Samples.sln" 
+            SolutionPath = "./samples/Samples.sln" 
         },	
     },
 
@@ -116,6 +112,17 @@ BuildSpec buildSpec = new BuildSpec ()
 };
 
 Task("unit-tests")
+    .IsDependentOn ("unit-tests-nunit")	
+    .IsDependentOn ("unit-tests-xunit")
+    .IsDependentOn ("unit-tests-mstest")
+    .Does
+    (
+        () =>
+        {
+        }
+    );
+
+Task("unit-tests-nunit")
     .IsDependentOn ("externals-build")	
     .IsDependentOn ("nuget")
     .IsDependentOn ("libs")
@@ -123,23 +130,103 @@ Task("unit-tests")
     (
         () =>
         {
+            MSBuild
+            (
+                "./tests/unit-tests/UnitTests.NUnit/UnitTests.NUnit.csproj", 
+                new MSBuildSettings 
+                {
+                    Configuration = "Debug",
+                }.WithProperty("DefineConstants", "TRACE;DEBUG;NETCOREAPP2_0;NUNIT")
+            );
             NUnit3
             (
-                "./tests/unit-tests/**/bin/Release/**/*UnitTests*.dll", 
+                "./tests/unit-tests/UnitTests.NUnit/bin/Debug/**/UnitTests.NUnit.dll", 
                 new NUnit3Settings 
                 {
-                    NoResults = true
                 }
             );
+ 
+            return;
         }
     );
 
+Task("unit-tests-xunit")
+    .IsDependentOn ("externals-build")	
+    .IsDependentOn ("nuget")
+    .IsDependentOn ("libs")
+    .Does
+    (
+        () =>
+        {
+            MSBuild
+            (
+                "./tests/unit-tests/UnitTests.XUnit/UnitTests.XUnit.csproj", 
+                new MSBuildSettings 
+                {
+                    Configuration = "Debug",
+                }.WithProperty("DefineConstants", "TRACE;DEBUG;NETCOREAPP2_0;XUNIT")
+            );
+            // XUnit2
+            // (
+            //     "./tests/unit-tests/UnitTests.XUnit/bin/Debug/**/UnitTests.XUnit.dll", 
+            //     new XUnit2Settings
+            //     {
+            //     }
+            // );
+            DotNetCoreTest
+            (
+                "./tests/unit-tests/UnitTests.XUnit/UnitTests.XUnit.csproj",
+                //"xunit",  "--no-build -noshadow"
+                new DotNetCoreTestSettings()
+                {
+                }
+            );
+
+            return;
+        }
+    );
+
+Task("unit-tests-mstest")
+    .IsDependentOn ("externals-build")	
+    .IsDependentOn ("nuget")
+    .IsDependentOn ("libs")
+    .Does
+    (
+        () =>
+        {
+            MSBuild
+            (
+                "./tests/unit-tests/UnitTests.MSTest/UnitTests.MSTest.csproj", 
+                new MSBuildSettings 
+                {
+                    Configuration = "Debug",
+                }.WithProperty("DefineConstants", "TRACE;DEBUG;NETCOREAPP2_0;MSTEST")
+            );
+            // MSTest
+            // (
+            //     "./tests/unit-tests/UnitTests.MSTest/bin/Debug/**/UnitTests.MSTest.dll", 
+            //     new MSTestSettings 
+            //     {
+            //     }
+            // );
+            DotNetCoreTest
+            (
+                "./tests/unit-tests/UnitTests.MSTest/UnitTests.MSTest.csproj",
+                //"xunit",  "--no-build -noshadow"
+                new DotNetCoreTestSettings()
+                {
+                }
+            );
+ 
+            return;
+        }
+    );
 
 const string TEST_DLL_FORMAT = "../MyApp.Tests.{0}/bin/{1}/MyApp.Tests.{0}.dll";
 const string OUTPUT_DIR = "output";
  
 Task("all-tests-coverage")
-    .IsDependentOn("build")
+    .IsDependentOn("libs")
     .Does
     (
         () =>

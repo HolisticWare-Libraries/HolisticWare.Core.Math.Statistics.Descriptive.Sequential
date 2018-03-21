@@ -22,6 +22,8 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "UnitTests.CommonShared", "U
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests.XUnit", "UnitTests.XUnit\UnitTests.XUnit.csproj", "{9F02C2A3-1007-424C-9B59-2DE1CD8AA093}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests.MSTest", "UnitTests.MSTest\UnitTests.MSTest.csproj", "{A8E79CF3-AF9D-4953-92C3-0CCB80210D9F}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.projitems*{920d7d0f-3fae-4c77-9174-23e7a4e80e50}*SharedItemsImports = 13
@@ -47,6 +49,10 @@ Global
 		{9F02C2A3-1007-424C-9B59-2DE1CD8AA093}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F02C2A3-1007-424C-9B59-2DE1CD8AA093}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F02C2A3-1007-424C-9B59-2DE1CD8AA093}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8E79CF3-AF9D-4953-92C3-0CCB80210D9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8E79CF3-AF9D-4953-92C3-0CCB80210D9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8E79CF3-AF9D-4953-92C3-0CCB80210D9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8E79CF3-AF9D-4953-92C3-0CCB80210D9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

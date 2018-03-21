@@ -41,6 +41,10 @@ using OneTimeSetUp = System.ObsoleteAttribute;
 using NUnit.Framework;
 using Fact=NUnit.Framework.TestAttribute;
 #elif MSTEST
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Test = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
+using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
+using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute;
 #endif
 
 using Core.Math.Statistics.Descriptive.Sequential;
@@ -60,6 +64,7 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
                                     #elif XUNIT
                                     System.Reflection.Assembly.GetExecutingAssembly().CodeBase
                                     #elif MSTEST
+                                    System.Reflection.Assembly.GetExecutingAssembly().CodeBase
                                     #endif
                                     ;
 
@@ -124,6 +129,7 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             #elif XUNIT
             Assert.Equal(177.62579, mean_arithmetic, 5);
             #elif MSTEST
+            Assert.AreEqual(177.62579, mean_arithmetic, 5);
             #endif
             //====================================================================================================
 
@@ -153,10 +159,13 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             Assert.True(!Double.IsInfinity(mean_geometric));
             Assert.Equal(176.59794, mean_geometric, 5);
             #elif MSTEST
+            Assert.IsTrue(!Double.IsInfinity(mean_geometric));
+            Assert.AreEqual(176.59794, mean_geometric, 0.00001);
             #endif
             //====================================================================================================
 
             // System.OverflowException : Arithmetic operation resulted in an overflow.
+            #if NUNIT
             Assert.Throws<System.OverflowException>
                     (
                         () =>
@@ -165,8 +174,18 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
                             decimal mean_deomatric_decimal = (data02.Select(x_i => (decimal)x_i)).MeanGeometric();
                         }
                     );
-
-            return;
+            #elif XUNIT
+                Assert.Throws<System.OverflowException>
+                    (
+                        () =>
+                        {
+                            // TODO: System.InvalidCastException : Specified cast is not valid.
+                            decimal mean_deomatric_decimal = (data02.Select(x_i => (decimal)x_i)).MeanGeometric();
+                        }
+                    );
+            #elif MSTEST
+            #endif
+                return;
         }
 
         [Test]

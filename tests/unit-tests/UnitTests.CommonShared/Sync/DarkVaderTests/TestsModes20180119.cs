@@ -39,6 +39,9 @@ using Test = Xunit.FactAttribute;
 using NUnit.Framework;
 using Fact=NUnit.Framework.TestAttribute;
 #elif MSTEST
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Test = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
+using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 #endif
 
 using Core.Math.Statistics.Descriptive.Sequential;
@@ -60,14 +63,23 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             // Assert
             #if NUNIT
             Assert.AreEqual
-            #elif XUNIT
-            Assert.Equal
-            #elif MSTEST
-            #endif
                         (
                             new List<int> { 3 },
                             modes01
                         );
+            #elif XUNIT
+            Assert.Equal
+                        (
+                            new List<int> { 3 },
+                            modes01
+                        );
+            #elif MSTEST
+            Assert.AreEqual
+                        (
+                            new List<int> { 3 },
+                            modes01
+                        );
+            #endif
 
             return;
         }
@@ -100,29 +112,40 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             //);
             #if NUNIT
             CollectionAssert.AreEquivalent
-            #elif XUNIT
-            Assert.Equal
-            #elif MSTEST
-            #endif
                         (
                             new List<double> { 14.7, 18.2 },
                             modes01
                         );
+            #elif XUNIT
+            Assert.Equal
+                        (
+                            new List<double> { 14.7, 18.2 },
+                            modes01
+                        );
+            #elif MSTEST
+            CollectionAssert.AreEquivalent
+                        (
+                            new List<double> { 14.7, 18.2 },
+                            modes01
+                        );
+            #endif
+
             #if NUNIT
             Assert.That
-            #elif XUNIT
-            Assert.Equal
-            #elif MSTEST
-            #endif
                         (
                             new List<double> { 14.7, 18.2 },
-                            #if NUNIT
                             Is.EquivalentTo(modes01)
-                            #elif XUNIT
-                            modes01
-                            #elif MSTEST
-                            #endif
                         );
+            #elif XUNIT
+            Assert.Equal
+                        (
+                            new List<double> { 14.7, 18.2 },
+                            modes01
+                        );
+            #elif MSTEST
+            #endif
+
+
             //Assert.IsTrue
                         //(
                         //    modes01.SequenceEqual(new List<double> { 14.7, 18.2 })
@@ -155,14 +178,23 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             // Assert
             #if NUNIT
             CollectionAssert.AreEquivalent
-            #elif XUNIT
-            Assert.Equal
-            #elif MSTEST
-            #endif
                         (
                             new List<int> { 180 }, 
                             modes01
                         );
+            #elif XUNIT
+            Assert.Equal
+                        (
+                            new List<int> { 180 }, 
+                            modes01
+                        );
+            #elif MSTEST
+            CollectionAssert.AreEquivalent
+                        (
+                            new List<int> { 180 },
+                            modes01
+                        );
+            #endif
 
             return;
         }

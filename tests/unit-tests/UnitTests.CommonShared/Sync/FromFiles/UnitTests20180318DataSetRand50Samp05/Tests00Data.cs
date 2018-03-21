@@ -32,7 +32,6 @@ using System.Linq;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.IO;
-using UnitTests.CommonShared.Sync.FromFiles.UnitTests20180318DataSetBasketball;
 
 #if XUNIT
 using Xunit;
@@ -43,18 +42,19 @@ using NUnit.Framework;
 using Fact=NUnit.Framework.TestAttribute;
 #elif MSTEST
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute;
 using Test = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
+using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute;
 #endif
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
-    public partial class UnitTests20180318DataSetBasketball
+    public partial class UnitTests20180318DataSetRand50Samp05
+
     {
-        List<BasketballTeamData> basketball_team_data_table = null;
+        List<double> data01 = null;
 
         Stopwatch sw = null;
 
@@ -82,7 +82,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                             {
                                                 directory_test,
                                                 $@"Xtras-SampleData",
-                                                $@"Basketball.csv",
+                                                $@"Rand_Samp5_50.csv",
                                             }
                                     );
             using (StreamReader reader = new StreamReader(path_data))
@@ -95,33 +95,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 StringSplitOptions.RemoveEmptyEntries
                             );
 
-            basketball_team_data_table = new List<BasketballTeamData>();
-            int n = lines.Count();
-            for (int i = 1; i < n; i++)
-
+            data01 = new List<double>();
+            foreach (string s in lines)
             {
-                string s1 = lines[i].Replace("\r", "");
-
-                string[] s_parts = s1.Split(new string[] { "." }, StringSplitOptions.None);
-                BasketballTeamData bg = new BasketballTeamData()
-                {
-                    Points2Success = int.Parse(s_parts[0].Replace(",000", "")),
-                    Points2Fail = int.Parse(s_parts[1].Replace(",000", "")),
-                    Points3Success = int.Parse(s_parts[2].Replace(",000", "")),
-                    Points3Fail = int.Parse(s_parts[3].Replace(",000", "")),
-                    FreeThrowSuccess = int.Parse(s_parts[4].Replace(",000", "")),
-                    FreeThrowFail = int.Parse(s_parts[5].Replace(",000", "")),
-                    JumpsOffensive = int.Parse(s_parts[6].Replace(",000", "")),
-                    JumpsDefensive = int.Parse(s_parts[7].Replace(",000", "")),
-                    Assistence = int.Parse(s_parts[8].Replace(",000", "")),
-                    BallsLost = int.Parse(s_parts[9].Replace(",000", "")),
-                    BallsStolen = int.Parse(s_parts[10].Replace(",000", "")),
-                    Blocks = int.Parse(s_parts[11].Replace(",000", "")),
-                    Criteria01 = int.Parse(s_parts[12].Replace(",000", "")),
-                    Criteria02 = int.Parse(s_parts[13].Replace(",000", "")),
-                };
-
-                basketball_team_data_table.Add(bg);
+                double data_item = Double.Parse(s);
+                data01.Add(data_item);
             }
             //------------------------------------------------------------------
 

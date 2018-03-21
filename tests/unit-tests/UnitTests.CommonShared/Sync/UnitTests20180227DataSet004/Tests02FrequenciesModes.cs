@@ -39,6 +39,10 @@ using Test = Xunit.FactAttribute;
 using NUnit.Framework;
 using Fact=NUnit.Framework.TestAttribute;
 #elif MSTEST
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Test = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
+using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
+using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute;
 #endif
 
 
@@ -64,14 +68,23 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Assert
             #if NUNIT
             CollectionAssert.AreEquivalent
-            #elif XUNIT
-            Assert.Equal
-            #elif MSTEST
-            #endif
                             (
                                 new List<int> { 2, 3 },
                                 modes01
                             );
+            #elif XUNIT
+            Assert.Equal
+                            (
+                                new List<int> { 2, 3 },
+                                modes01
+                            );
+            #elif MSTEST
+            CollectionAssert.AreEquivalent
+                            (
+                                new List<int> { 2, 3 },
+                                modes01
+                            );
+            #endif
             //====================================================================================================
 
             return;

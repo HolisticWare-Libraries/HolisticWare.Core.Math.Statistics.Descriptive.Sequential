@@ -41,6 +41,10 @@ using OneTimeSetUp = System.ObsoleteAttribute;
 using NUnit.Framework;
 using Fact=NUnit.Framework.TestAttribute;
 #elif MSTEST
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Test = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
+using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
+using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute;
 #endif
 
 using Core.Math.Statistics.Descriptive.Sequential;
@@ -65,6 +69,7 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
                                     #elif XUNIT
                                     System.Reflection.Assembly.GetExecutingAssembly().CodeBase
                                     #elif MSTEST
+                                    System.Reflection.Assembly.GetExecutingAssembly().CodeBase
                                     #endif
                                     ;
 
@@ -199,6 +204,7 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
         [Test]
         public void Averages_data01_MeanGeometric02()
         {
+            #if NUNIT
             // System.OverflowException : Arithmetic operation resulted in an overflow.
             Assert.Throws<System.OverflowException>
                     (
@@ -208,7 +214,19 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
                             decimal mean_deomatric_decimal = (data01.Select(x_i => (decimal)x_i)).MeanGeometric();
                         }
                     );
-            
+            #elif XUNIT
+            // System.OverflowException : Arithmetic operation resulted in an overflow.
+            Assert.Throws<System.OverflowException>
+                    (
+                        () =>
+                        {
+                            // TODO: System.InvalidCastException : Specified cast is not valid.
+                            decimal mean_deomatric_decimal = (data01.Select(x_i => (decimal)x_i)).MeanGeometric();
+                        }
+                    );
+            #elif MSTEST
+            #endif
+
             return;
         }
 
@@ -282,16 +300,6 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
         [Test]
         public void Averages_data02_MeanGeometric02()
         {
-            // System.OverflowException : Arithmetic operation resulted in an overflow.
-            Assert.Throws<System.OverflowException>
-                    (
-                        () =>
-                        {
-                            // TODO: System.InvalidCastException : Specified cast is not valid.
-                            decimal mean_deomatric_decimal = (data02.Select(x_i => (decimal)x_i)).MeanGeometric();
-                        }
-                    );
-
             #if NUNIT
             Assert.That
                     (
@@ -303,6 +311,16 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
                         Throws.InstanceOf(typeof(System.OverflowException))
                     );
             #elif XUNIT
+            // System.OverflowException : Arithmetic operation resulted in an overflow.
+            Assert.Throws<System.OverflowException>
+                    (
+                        () =>
+                        {
+                            // TODO: System.InvalidCastException : Specified cast is not valid.
+                            decimal mean_deomatric_decimal = (data02.Select(x_i => (decimal)x_i)).MeanGeometric();
+                        }
+                    );
+
             #elif MSTEST
             #endif
 

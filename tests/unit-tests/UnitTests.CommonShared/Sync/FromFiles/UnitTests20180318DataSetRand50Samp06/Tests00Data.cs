@@ -43,18 +43,18 @@ using NUnit.Framework;
 using Fact=NUnit.Framework.TestAttribute;
 #elif MSTEST
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute;
 using Test = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
+using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute;
 #endif
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
-    public partial class UnitTests20180318DataSetBasketball
+    public partial class UnitTests20180318DataSetRand50Samp06
     {
-        List<BasketballTeamData> basketball_team_data_table = null;
+        List<BasketballTeamData> data01 = null;
 
         Stopwatch sw = null;
 
@@ -82,7 +82,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                             {
                                                 directory_test,
                                                 $@"Xtras-SampleData",
-                                                $@"Basketball.csv",
+                                                $@"Rand_Samp6_50.csv",
                                             }
                                     );
             using (StreamReader reader = new StreamReader(path_data))
@@ -95,7 +95,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 StringSplitOptions.RemoveEmptyEntries
                             );
 
-            basketball_team_data_table = new List<BasketballTeamData>();
+            data01 = new List<BasketballTeamData>();
             int n = lines.Count();
             for (int i = 1; i < n; i++)
 
@@ -121,7 +121,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                     Criteria02 = int.Parse(s_parts[13].Replace(",000", "")),
                 };
 
-                basketball_team_data_table.Add(bg);
+                data01.Add(bg);
             }
             //------------------------------------------------------------------
 
