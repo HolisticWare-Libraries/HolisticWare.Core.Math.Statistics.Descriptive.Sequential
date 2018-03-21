@@ -42,32 +42,30 @@ using Fact=NUnit.Framework.TestAttribute;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Test = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
-using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute;
 #endif
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
-    public partial class UnitTests20180227DataSet001
+    public partial class UnitTests20180318DataSetRand50Samp02
     {
-        (int min, double interpolated, int max) percentile_int_01;
-
-        [Test()]
-        public void Percentiles01()
+        [Test]
+        public void MeanArithmetic()
         {
             //====================================================================================================
-            // Arrange
-            data01 = new List<int> { 2, 3, 5, 9 };
+            //  Arrange
+            //  reading data from files
 
             sw = Stopwatch.StartNew();
+
             //----------------------------------------------------------------------------------------------------
             // Act
-            percentile_int_01 = data01.Percentile(0.50);
+            double mean_arithmetic = Data.MeanArithmetic();
             sw.Stop();
-            Console.WriteLine($"List<int>.Percentile(0.50)");
-            Console.WriteLine($"          percentile_int_01  = {percentile_int_01}");
-            Console.WriteLine($"          size               = {data01.Count()}");
+            Console.WriteLine($"List<double>.MeanArithmetic()");
+            Console.WriteLine($"          mean_arithmetic    = {mean_arithmetic}");
+            Console.WriteLine($"          size               = {Data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -75,13 +73,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(3, percentile_int_01.min);
-            Assert.AreEqual(5, percentile_int_01.max);
-            Assert.AreEqual(4, percentile_int_01.interpolated);
+            Assert.AreEqual(177.6258, mean_arithmetic, 0.00001);
             #elif XUNIT
-            Assert.Equal(3, percentile_int_01.min);
-            Assert.Equal(5, percentile_int_01.max);
-            Assert.Equal(4, percentile_int_01.interpolated);
+            Assert.Equal(177.6258, mean_arithmetic, 5);
             #elif MSTEST
             #endif
             //====================================================================================================
@@ -89,21 +83,22 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             return;
         }
 
-        [Test()]
-        public void Percentiles02()
+        [Test]
+        public void MeanGeometric()
         {
             //====================================================================================================
-            // Arrange
-            data01 = new List<int> { 2, 3, 5, 9, 11 };
+            //  Arrange
+            //  reading data from files
 
             sw = Stopwatch.StartNew();
+
             //----------------------------------------------------------------------------------------------------
             // Act
-            percentile_int_01 = data01.Percentile(0.50);
+            double mean_geometric = Data.MeanGeometric();
             sw.Stop();
-            Console.WriteLine($"List<int>.Percentile(0.50)");
-            Console.WriteLine($"          percentile_int_01  = {percentile_int_01}");
-            Console.WriteLine($"          size               = {data01.Count()}");
+            Console.WriteLine($"List<double>.MeanGeometric()");
+            Console.WriteLine($"          mean_geometric     = {mean_geometric}");
+            Console.WriteLine($"          size               = {Data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -111,54 +106,45 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            //Assert.AreEqual(5, percentile_int_01.min);
-            //Assert.AreEqual(5, percentile_int_01.max);
-            //Assert.AreEqual(5, percentile_int_01.interpolated);
-            //Assert.AreEqual(5, data01.Median());
+            Assert.That(!Double.IsInfinity(mean_geometric));
+            Assert.AreEqual(176.5979, mean_geometric, 0.0001);
             #elif XUNIT
-            //Assert.Equal(5, percentile_int_01.min);
-            //Assert.Equal(5, percentile_int_01.max);
-            //Assert.Equal(5, percentile_int_01.interpolated);
-            //Assert.Equal(5, data01.Median());
+            Assert.True(Double.IsInfinity(mean_geometric));
+            Assert.Equal(176.5979, mean_geometric, 4);
             #elif MSTEST
+            Assert.IsTrue(!Double.IsInfinity(mean_geometric));
+            Assert.AreEqual(176.5979, mean_geometric, 0.0001);
             #endif
             //====================================================================================================
 
             return;
         }
 
-        [Test()]
-        public void Percentiles03()
+        [Test]
+        public void MeanGeometric_Exception()
         {
-            //====================================================================================================
-            // Arrange
-            data01 = new List<int> { 3, 5, 7, 9, 12, 21, 25, 30 };
-
-            sw = Stopwatch.StartNew();
-            //----------------------------------------------------------------------------------------------------
-            // Act
-            percentile_int_01 = data01.Percentile(0.25);
-            sw.Stop();
-            Console.WriteLine($"List<int>.Percentile(0.25)");
-            Console.WriteLine($"          percentile_int_01  = {percentile_int_01}");
-            Console.WriteLine($"          size               = {data01.Count()}");
-            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
-            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
-            sw.Reset();
-
-            //----------------------------------------------------------------------------------------------------
-            // Assert
             #if NUNIT
-            Assert.AreEqual(5, percentile_int_01.min);
-            Assert.AreEqual(7, percentile_int_01.max);
-            Assert.AreEqual(5.5, percentile_int_01.interpolated);
+            Assert.That
+                    (
+                        () =>
+                        {
+                            // TODO: System.InvalidCastException : Specified cast is not valid.
+                            decimal mean_deomatric_decimal = (Data.Select(x_i => (decimal)x_i)).MeanGeometric();
+                        },
+                        Throws.InstanceOf(typeof(System.OverflowException))
+                    );
             #elif XUNIT
-            Assert.Equal(5, percentile_int_01.min);
-            Assert.Equal(7, percentile_int_01.max);
-            Assert.Equal(5.5, percentile_int_01.interpolated);
+            // System.OverflowException : Arithmetic operation resulted in an overflow.
+            Assert.Throws<System.OverflowException>
+                    (
+                        () =>
+                        {
+                            // TODO: System.InvalidCastException : Specified cast is not valid.
+                            decimal mean_deomatric_decimal = (Data.Select(x_i => (decimal)x_i)).MeanGeometric();
+                        }
+                    );
             #elif MSTEST
             #endif
-            //====================================================================================================
 
             return;
         }

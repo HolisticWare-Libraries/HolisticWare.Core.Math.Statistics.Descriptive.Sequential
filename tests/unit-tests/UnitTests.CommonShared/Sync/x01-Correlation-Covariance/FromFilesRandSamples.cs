@@ -31,43 +31,54 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using System.IO;
+using UnitTests.CommonShared.Sync.FromFiles.UnitTests20180318DataSetBasketball;
 
 #if XUNIT
 using Xunit;
 using Test = Xunit.FactAttribute;
+using OneTimeSetUp = System.ObsoleteAttribute;
 #elif NUNIT
 using NUnit.Framework;
 using Fact=NUnit.Framework.TestAttribute;
 #elif MSTEST
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute;
 using Test = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
-using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute;
 #endif
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
-    public partial class UnitTests20180227DataSet001
+    public partial class FromFilesRandSamples
     {
-        (int min, double interpolated, int max) percentile_int_01;
+        Stopwatch sw = null;
+        List<double> data01 = null;
+        List<double> data02 = null;
 
-        [Test()]
-        public void Percentiles01()
+        double? correlation_data01_data02_01 = null;
+        double? correlation_data02_data01_01 = null;
+
+        [Test]
+        public void Correlation_01_02()
         {
             //====================================================================================================
-            // Arrange
-            data01 = new List<int> { 2, 3, 5, 9 };
+            //  Arrange
+            //  reading data from files
+            data01 = UnitTests20180318DataSetRand50Samp01.Data;
+            data02 = UnitTests20180318DataSetRand50Samp02.Data;
 
             sw = Stopwatch.StartNew();
+
             //----------------------------------------------------------------------------------------------------
             // Act
-            percentile_int_01 = data01.Percentile(0.50);
+            correlation_data01_data02_01 = data01.Correlation(data02);
             sw.Stop();
-            Console.WriteLine($"List<int>.Percentile(0.50)");
-            Console.WriteLine($"          percentile_int_01  = {percentile_int_01}");
-            Console.WriteLine($"          size               = {data01.Count()}");
+            Console.WriteLine($"List<double>.Correlation(List<double>)");
+            Console.WriteLine($"          correlation        = {correlation_data01_data02_01}");
+            Console.WriteLine($"          size               = {data01.Count()} x {data02.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -75,13 +86,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(3, percentile_int_01.min);
-            Assert.AreEqual(5, percentile_int_01.max);
-            Assert.AreEqual(4, percentile_int_01.interpolated);
+            Assert.AreEqual(0.1882, correlation_data01_data02_01, 0.0001);
             #elif XUNIT
-            Assert.Equal(3, percentile_int_01.min);
-            Assert.Equal(5, percentile_int_01.max);
-            Assert.Equal(4, percentile_int_01.interpolated);
+            Assert.Equal(0.1882, (double)correlation_data01_data02_01, 4);
             #elif MSTEST
             #endif
             //====================================================================================================
@@ -89,21 +96,22 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             return;
         }
 
-        [Test()]
-        public void Percentiles02()
+        [Test]
+        public void Correlation_02_01()
         {
             //====================================================================================================
-            // Arrange
-            data01 = new List<int> { 2, 3, 5, 9, 11 };
+            //  Arrange
+            //  reading data from files
 
             sw = Stopwatch.StartNew();
+
             //----------------------------------------------------------------------------------------------------
             // Act
-            percentile_int_01 = data01.Percentile(0.50);
+            correlation_data02_data01_01 = data02.Correlation(data01);
             sw.Stop();
-            Console.WriteLine($"List<int>.Percentile(0.50)");
-            Console.WriteLine($"          percentile_int_01  = {percentile_int_01}");
-            Console.WriteLine($"          size               = {data01.Count()}");
+            Console.WriteLine($"List<double>.Correlation(List<double>)");
+            Console.WriteLine($"          correlation        = {correlation_data02_data01_01}");
+            Console.WriteLine($"          size               = {data01.Count()} x {data02.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -111,54 +119,35 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            //Assert.AreEqual(5, percentile_int_01.min);
-            //Assert.AreEqual(5, percentile_int_01.max);
-            //Assert.AreEqual(5, percentile_int_01.interpolated);
-            //Assert.AreEqual(5, data01.Median());
+            Assert.AreEqual(0.1882, correlation_data02_data01_01, 0.0001);
             #elif XUNIT
-            //Assert.Equal(5, percentile_int_01.min);
-            //Assert.Equal(5, percentile_int_01.max);
-            //Assert.Equal(5, percentile_int_01.interpolated);
-            //Assert.Equal(5, data01.Median());
+            Assert.Equal(0.1882, (double)correlation_data02_data01_01, 4);
             #elif MSTEST
             #endif
             //====================================================================================================
 
-            return;
-        }
-
-        [Test()]
-        public void Percentiles03()
-        {
-            //====================================================================================================
-            // Arrange
-            data01 = new List<int> { 3, 5, 7, 9, 12, 21, 25, 30 };
-
-            sw = Stopwatch.StartNew();
-            //----------------------------------------------------------------------------------------------------
-            // Act
-            percentile_int_01 = data01.Percentile(0.25);
-            sw.Stop();
-            Console.WriteLine($"List<int>.Percentile(0.25)");
-            Console.WriteLine($"          percentile_int_01  = {percentile_int_01}");
-            Console.WriteLine($"          size               = {data01.Count()}");
-            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
-            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
-            sw.Reset();
-
-            //----------------------------------------------------------------------------------------------------
-            // Assert
             #if NUNIT
-            Assert.AreEqual(5, percentile_int_01.min);
-            Assert.AreEqual(7, percentile_int_01.max);
-            Assert.AreEqual(5.5, percentile_int_01.interpolated);
+            Assert.AreEqual
+                        (
+                            (double)correlation_data01_data02_01,
+                            (double)correlation_data02_data01_01,
+                            0.00001
+                        );
             #elif XUNIT
-            Assert.Equal(5, percentile_int_01.min);
-            Assert.Equal(7, percentile_int_01.max);
-            Assert.Equal(5.5, percentile_int_01.interpolated);
+            Assert.Equal
+                        (
+                            (double)correlation_data01_data02_01,
+                            (double)correlation_data02_data01_01,
+                            5
+                        );
             #elif MSTEST
+            Assert.AreEqual
+                        (
+                            (double)correlation_data01_data02_01,
+                            (double)correlation_data02_data01_01,
+                            0.00001
+                        );
             #endif
-            //====================================================================================================
 
             return;
         }

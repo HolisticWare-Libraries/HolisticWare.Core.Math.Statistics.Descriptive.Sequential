@@ -29,7 +29,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             IEnumerable<int> x_sorted = x.OrderBy(x_i => x_i);
 
             int n = x.Count();
-            double index_percentile = p / 100.0 * (n + 1);
+            double index_percentile = p * (n + 1);
 
             int index_lower = (int)index_percentile;
             int index_upper = (int)(index_percentile + 1.0);

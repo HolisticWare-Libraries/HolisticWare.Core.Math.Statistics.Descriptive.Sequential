@@ -64,7 +64,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                     #if NUNIT
                                     TestContext.CurrentContext.TestDirectory
                                     #elif XUNIT
-                                    System.Reflection.Assembly.GetExecutingAssembly().CodeBase
+                                    Environment.CurrentDirectory
                                     #elif MSTEST
                                     System.Reflection.Assembly.GetExecutingAssembly().CodeBase
                                     #endif

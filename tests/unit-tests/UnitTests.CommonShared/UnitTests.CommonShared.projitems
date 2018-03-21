@@ -16,10 +16,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\TestsFrequencyDistribution20180120.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\TestsModes20180119.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\UnitTests20180213.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180215.BigData.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180219.SampleData.1.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180219.SampleData.2.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180219.SampleData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\KIF.Handbook.QuantitiativeMethods\Tests03Page95DescriptiveAnalysis.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests00Data.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests01MeansAverageMedian.cs" />
@@ -61,6 +57,18 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp04\Tests00Data.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp05\Tests00Data.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp06\Tests00Data.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp01\Tests01MeanAverageMedian.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp02\Tests01MeanAverageMedian.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests05StandardDeviationVariance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetJudo\Tests05StandardDeviationVariance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp01\Tests05StandardDeviationVariance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp02\Tests05StandardDeviationVariance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp03\Tests05StandardDeviationVariance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp04\Tests05StandardDeviationVariance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp05\Tests05StandardDeviationVariance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp06\Tests05StandardDeviationVariance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\x01-Correlation-Covariance\FromFilesRandSamples.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SetUpFixture.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Async\" />
@@ -76,6 +84,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp03\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp05\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp06\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sync\x01-Correlation-Covariance\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Xtras-BigData\Rand_Samp_BigData_01.csv">

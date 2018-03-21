@@ -31,7 +31,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using System.IO;
 
 #if XUNIT
 using Xunit;
@@ -43,29 +42,50 @@ using Fact=NUnit.Framework.TestAttribute;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Test = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
-using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute;
 #endif
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
-namespace UnitTests.HolisticWare.Core.Math.Statistics
+namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
-    public partial class UnitTests20180219
+    public partial class UnitTests20180318DataSetRand50Samp01
     {
-        Stopwatch sw = null;
-
+        
         [Test]
-        public void Correlation_1_2()
+        public void MeanArithmetic()
         {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double mean_arithmetic = Data.MeanArithmetic();
+            sw.Stop();
+            Console.WriteLine($"List<double>.MeanArithmetic()");
+            Console.WriteLine($"          mean_arithmetic    = {mean_arithmetic}");
+            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(180.8814, mean_arithmetic, 0.00001);
+            #elif XUNIT
+            Assert.Equal(180.8814, mean_arithmetic, 5);
+            #elif MSTEST
+            Assert.AreEqual(180.8814, mean_arithmetic, 0.00001);
+            #endif
+            //====================================================================================================
 
             return;
         }
 
-        double? correlation_data01_data02_01 = null;
-        double? correlation_data02_data01_01 = null;
-
         [Test]
-        public void Correlation()
+        public void MeanGeometric()
         {
             //====================================================================================================
             //  Arrange
@@ -75,11 +95,11 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            correlation_data01_data02_01 = data01.Correlation(data02);
+            double mean_geometric = Data.MeanGeometric();
             sw.Stop();
-            Console.WriteLine($"List<double>.Correlation(List<double>)");
-            Console.WriteLine($"          correlation        = {correlation_data01_data02_01}");
-            Console.WriteLine($"          size               = {data01.Count()} x {data02.Count()}");
+            Console.WriteLine($"List<double>.MeanGeometric()");
+            Console.WriteLine($"          mean_geometric     = {mean_geometric}");
+            Console.WriteLine($"          size               = {Data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -87,54 +107,41 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(0.18815, correlation_data01_data02_01, 0.00001);
+            Assert.That(!Double.IsInfinity(mean_geometric));
+            Assert.AreEqual(179.7796, mean_geometric, 0.0001);
             #elif XUNIT
-            Assert.Equal(0.18815, (double)correlation_data01_data02_01, 5);
+            Assert.True(!Double.IsInfinity(mean_geometric));
+            Assert.Equal(179.7797, mean_geometric, 4);
             #elif MSTEST
             #endif
             //====================================================================================================
 
-            //====================================================================================================
-            //  Arrange
-            //  reading data from files
+            return;
+        }
 
-            sw = Stopwatch.StartNew();
-
-            //----------------------------------------------------------------------------------------------------
-            // Act
-            correlation_data02_data01_01 = data02.Correlation(data01);
-            sw.Stop();
-            Console.WriteLine($"List<double>.Correlation(List<double>)");
-            Console.WriteLine($"          correlation        = {correlation_data02_data01_01}");
-            Console.WriteLine($"          size               = {data01.Count()} x {data02.Count()}");
-            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
-            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
-            sw.Reset();
-
-            //----------------------------------------------------------------------------------------------------
-            // Assert
+        [Test]
+        public void MeanGeometric_Exception()
+        {
             #if NUNIT
-            Assert.AreEqual(0.18815, correlation_data02_data01_01, 0.00001);
+            // System.OverflowException : Arithmetic operation resulted in an overflow.
+            Assert.Throws<System.OverflowException>
+                    (
+                        () =>
+                        {
+                            // TODO: System.InvalidCastException : Specified cast is not valid.
+                            decimal mean_deomatric_decimal = (Data.Select(x_i => (decimal)x_i)).MeanGeometric();
+                        }
+                    );
             #elif XUNIT
-            Assert.Equal(0.18815, (double)correlation_data02_data01_01, 5);
-            #elif MSTEST
-            #endif
-            //====================================================================================================
-
-            #if NUNIT
-            Assert.AreEqual
-                        (
-                            (double)correlation_data01_data02_01,
-                            (double)correlation_data02_data01_01,
-                            0.00001
-                        );
-            #elif XUNIT
-            Assert.Equal
-                        (
-                            (double)correlation_data01_data02_01,
-                            (double)correlation_data02_data01_01,
-                            5
-                        );
+            // System.OverflowException : Arithmetic operation resulted in an overflow.
+            Assert.Throws<System.OverflowException>
+                    (
+                        () =>
+                        {
+                            // TODO: System.InvalidCastException : Specified cast is not valid.
+                            decimal mean_deomatric_decimal = (Data.Select(x_i => (decimal)x_i)).MeanGeometric();
+                        }
+                    );
             #elif MSTEST
             #endif
 

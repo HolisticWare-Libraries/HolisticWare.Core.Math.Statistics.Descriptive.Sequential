@@ -72,20 +72,27 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             };
 
         [Test()]
-        public void Data00()
+        public void Data_x1_Mean_Average()
         {
             // Act
             double x1_average = x1.Average();
             // Assert
             #if NUNIT
-            Assert.AreEqual(x1_average, 58.77, 0.01);
+            Assert.AreEqual(x1_average, 58.7787, 0.0001);
             #elif XUNIT
-            Assert.Equal(x1_average, 58.77, 2);
+            Assert.Equal(x1_average, 58.7787, 4);
             #elif MSTEST
             #endif
 
+            return;
+        }
+
+        [Test()]
+        public void Data_x1_StandardDeviationSample()
+        {
             // Act
             double x1_standard_deviation = x1.StandardDeviationSample();
+
             // Assert
             #if NUNIT
             Assert.AreEqual(x1_standard_deviation, 17.63, 0.01);
@@ -94,6 +101,12 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             #elif MSTEST
             #endif
 
+            return;
+        }
+
+        [Test()]
+        public void Data_x1_Min()
+        {
             // Act
             double x1_min = x1.Min();
             // Assert
@@ -103,6 +116,13 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             Assert.Equal(x1_min, 33.65, 2);
             #elif MSTEST
             #endif
+
+            return;
+        }
+
+        [Test()]
+        public void Data_x1_Max()
+        {
 
             // Act
             double x1_max = x1.Max();
@@ -138,7 +158,7 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             };
 
         [Test()]
-        public void Data01()
+        public void Data_x21_MeanArithmetic_Average()
         {
             // Act
             double x21_average = x21.Average();
@@ -146,20 +166,32 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             #if NUNIT
             Assert.AreEqual(x21_average, 63.77, 0.01);
             #elif XUNIT
-            Assert.Equal(x21_average, 63.77, 2);
+            Assert.Equal(x21_average, 63.779, 3);
             #elif MSTEST
             #endif
 
+            return;
+        }
+
+        [Test()]
+        public void Data_x21_StandardDeviation()
+        {
             // Act
             double x21_standard_deviation = x21.StandardDeviationSample();
             // Assert
             #if NUNIT
             Assert.AreEqual(x21_standard_deviation, 17.63, 0.01);
             #elif XUNIT
-            Assert.Equal(x21_standard_deviation, 17.63, 2);
+            Assert.Equal(x21_standard_deviation, 17.6391, 4);
             #elif MSTEST
             #endif
 
+            return;
+        }
+
+        [Test()]
+        public void Data_x21_Min()
+        {
             // Act
             double x21_min = x21.Min();
             // Assert
@@ -170,6 +202,12 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             #elif MSTEST
             #endif
 
+            return;
+        }
+
+        [Test()]
+        public void Data_x21_Max()
+        {
             // Act
             double x21_max = x21.Max();
             // Assert
@@ -180,13 +218,32 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             #elif MSTEST
             #endif
 
-            // Arrange
-            List<double> d1 = new List<double>();
-            for (int i = 0; i < x1.Count; i++)
-            {
-                d1.Add(x21[i] - x1[i]);
-            }
+            return;
+        }
 
+        List<double> d1_list = null;
+
+        private List<double> d1
+        {
+            // Arrange
+            get
+            {
+                if (d1_list == null)
+                {
+                    d1_list = new List<double>();
+                    for (int i = 0; i < x1.Count; i++)
+                    {
+                        d1_list.Add(x21[i] - x1[i]);
+                    }
+                }
+
+                return d1_list;
+            }
+        }
+
+        [Test()]
+        public void Data_d1_MeanArithmetic_Average()
+        {
             // Act
             double d1_average = d1.Average();
             // Assert
@@ -197,6 +254,12 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             #elif MSTEST
             #endif
 
+            return;
+        }
+
+        [Test()]
+        public void Data_d1_Min()
+        {
             // Act
             double d1_min = d1.Min();
             // Assert
@@ -207,6 +270,12 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             #elif MSTEST
             #endif
 
+            return;
+        }
+
+        [Test()]
+        public void Data_d1_Max()
+        {
             // Act
             double d1_max = d1.Max();
             // Assert
@@ -221,6 +290,12 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             //Assert.AreEqual(d1_max, 93.51, 0.01);
             //Assert.AreEqual(d1_max, 93.51, 0.01);
 
+            return;
+        }
+
+        [Test()]
+        public void Data_d1_StandardDeviationSample()
+        {
             // Act
             double d1_standard_deviation_sample = d1.StandardDeviationSample();
             // Assert
@@ -231,6 +306,12 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             #elif MSTEST
             #endif
 
+            return;
+        }
+
+        [Test()]
+        public void Data_d1_StandardDeviationPopulation()
+        {
             // Act
             double d1_standard_deviation_population = d1.StandardDeviationPopulation();
             // Assert
@@ -241,7 +322,12 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             #elif MSTEST
             #endif
 
+            return;
+        }
 
+        [Test()]
+        public void Data_x1_x2_Correlation()
+        {
             // Act
             double correlation_x1_x2_01 = x1.Correlation(x21);
             // Assert
@@ -252,6 +338,12 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             #elif MSTEST
             #endif
 
+            return;
+        }
+
+        [Test()]
+        public void Data_x1_x2_CorrelationOptimized()
+        {
             // Act
             double correlation_x1_x2_02 = x1.CorrelationOptimized(x21);
             // Assert
@@ -262,6 +354,12 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             #elif MSTEST
             #endif
 
+            return;
+        }
+
+        [Test()]
+        public void Data_x1_d1_Correlation()
+        {
             // Act
             double correlation_x1_d1_01 = x1.Correlation(d1);
             // Assert
@@ -272,6 +370,12 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             #elif MSTEST
             #endif
 
+            return;
+        }
+
+        [Test()]
+        public void Data_x1_d1_CorrelationOptimized()
+        {
             // Act
             double correlation_x1_d1_02 = x1.CorrelationOptimized(d1);
             // Assert
@@ -306,33 +410,46 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             };
 
         [Test()]
-        public void Data02()
+        public void Data_x2_Mean_Average()
         {
             // Act
             double x22_average = x22.Average();
-            double x22_standard_deviation = x22.StandardDeviationSample();
-            double x22_min = x22.Min();
-            double x22_max = x22.Max();
-
+    
             // Assert
             #if NUNIT
             Assert.AreEqual(x22_average, 63.86, 0.01);
             #elif XUNIT
-            Assert.Equal(x22_average, 63.86, 2);
+            Assert.Equal(x22_average, 63.87, 2);
             #elif MSTEST
             #endif
-            #if NUNIT
-            Assert.AreEqual(x22_standard_deviation, 15.67, 0.01);
-            #elif XUNIT
-            Assert.Equal(x22_standard_deviation, 15.67, 2);
-            #elif MSTEST
-            #endif
+
+            return;
+        }
+
+        [Test()]
+        public void Data_x2_Min()
+        {
+            // Act
+            double x22_min = x22.Min();
+
+            // Assert
             #if NUNIT
             Assert.AreEqual(x22_min, 39.51, 0.01);
             #elif XUNIT
             Assert.Equal(x22_min, 39.51, 2);
             #elif MSTEST
             #endif
+
+            return;
+        }
+
+        [Test()]
+        public void Data_x2_Max()
+        {
+            // Act
+            double x22_max = x22.Max();
+
+            // Assert
             #if NUNIT
             Assert.AreEqual(x22_max, 94.31, 0.01);
             #elif XUNIT
@@ -340,18 +457,51 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             #elif MSTEST
             #endif
 
-            // Arrange
-            List<double> d2 = new List<double>();
-            for (int i = 0; i < x1.Count; i++)
-            {
-                d2.Add(x22[i] - x1[i]);
-            }
+            return;
+        }
 
+        [Test()]
+        public void Data_x2_StandardDeviationSample()
+        {
+            // Act
+            double x22_standard_deviation = x22.StandardDeviationSample();
+
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(x22_standard_deviation, 15.67, 0.01);
+            #elif XUNIT
+            Assert.Equal(x22_standard_deviation, 15.67, 2);
+            #elif MSTEST
+            #endif
+
+            return;
+        }
+
+        List<double> d2_list = null;
+
+        private List<double> d2
+        {
+            // Arrange
+            get
+            {
+                if (d2_list == null)
+                {
+                    d2_list = new List<double>();
+                    for (int i = 0; i < x1.Count; i++)
+                    {
+                        d2_list.Add(x21[i] - x1[i]);
+                    }
+                }
+
+                return d2_list;
+            }
+        }
+
+        [Test()]
+        public void Data_d2_MeanArithmetic_Average()
+        {
             // Act
             double d2_average = d2.Average();
-            double d2_min = d2.Min();
-            double d2_max = d2.Max();
-            double d2_standard_deviation = d2.StandardDeviationSample();
 
             // Assert
             #if NUNIT
@@ -360,18 +510,51 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             Assert.Equal(d2_average, 5.08, 2);
             #elif MSTEST
             #endif
+
+            return;
+        }
+
+        [Test()]
+        public void Data_d2_Min()
+        {
+            // Act
+            double d2_min = d2.Min();
+
+            // Assert
             #if NUNIT
             Assert.AreEqual(d2_min, 0.8, 0.01);
             #elif XUNIT
             Assert.Equal(d2_min, 0.8, 2);
             #elif MSTEST
             #endif
+
+            return;
+        }
+
+        [Test()]
+        public void Data_d2_Max()
+        {
+            // Act
+            double d2_max = d2.Max();
+
+            // Assert
             #if NUNIT
             Assert.AreEqual(d2_max, 9.68, 0.01);
             #elif XUNIT
             Assert.Equal(d2_max, 9.68, 2);
             #elif MSTEST
             #endif
+
+            return;
+        }
+
+        [Test()]
+        public void Data_d2_StandardDeviationSample()
+        {
+            // Act
+            double d2_standard_deviation = d2.StandardDeviationSample();
+
+            // Assert
             #if NUNIT
             Assert.AreEqual(d2_standard_deviation, 3.01, 0.01);
             #elif XUNIT
@@ -379,6 +562,12 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             #elif MSTEST
             #endif
 
+            return;
+        }
+
+        [Test()]
+        public void Data_x1_x22_Correlation()
+        {
             // Act
             double correlation_x1_x2_01 = x1.Correlation(x22);
             // Assert
@@ -388,6 +577,13 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             Assert.Equal(correlation_x1_x2_01, 0.99, 2);
             #elif MSTEST
             #endif
+
+            return;
+        }
+
+        [Test()]
+        public void Data_x1_x22_CorrelationOptimized()
+        {
 
             // Act
             double correlation_x1_x2_02 = x1.CorrelationOptimized(x22);
@@ -399,6 +595,12 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             #elif MSTEST
             #endif
 
+            return;
+        }
+
+        [Test()]
+        public void Data_x1_d2_Correlation()
+        {
             // Act
             double correlation_x1_d2_01 = x1.Correlation(d2);
             // Assert
@@ -409,6 +611,12 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             #elif MSTEST
             #endif
 
+            return;
+        }
+
+        [Test()]
+        public void Data_x1_d2_CorrelationOptimized()
+        {
             // Act
             double correlation_x1_d2_02 = x1.CorrelationOptimized(d2);
             // Assert
@@ -450,9 +658,9 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             
             // Assert
             #if NUNIT
-            Assert.AreEqual(x23_average, 64.32, 0.01);
+            Assert.AreEqual(x23_average, 64.3266, 0.0001);
             #elif XUNIT
-            Assert.Equal(x23_average, 64.32, 2);
+            Assert.Equal(x23_average, 64.3466, 5);
             #elif MSTEST
             #endif
 
