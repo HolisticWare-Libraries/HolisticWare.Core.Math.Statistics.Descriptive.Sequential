@@ -62,10 +62,56 @@ NOTE: Parallel algorithms based on (TPL) can be found in
 *   Welcht Statistic
 
 
+### Comparison Table
+
+
+|   C# HolisticWare                 | Octave                             | R                                 |
+|   `x = IEnumerable<T>`            |                                    |                                   |
+|   extension methods               |                                    |                                   |
+| ------------------------------------ | ---------------------------------- | --------------------------------- |
+| `x.MeanArithmetic();`                | `mean(vector_list, "a")`           | `mean(vector_list)`               |
+| `x.MeanGeometric();`                 | `mean(vector_list, "g")`           | `N/A (custom function)`           |
+| `x.MeanGeometricNaive();`            | `mean(vector_list, "g")`           | `N/A (custom function)`           |
+| `x.MeanHarmonic();`                  | `mean(vector_list, "h")`           | `???`                             |
+| `x.MeanSquared();`                   | `meansq(vector_list)`              | `???`                             |
+| `x.MeanCubic();`                     | `???`                              | `????`                            |
+| `x.MeanWeighted();`                  | `???`                              | `???`                             |
+| `x.Median();`                        | `???`                              | `???`                             |
+| `x.MedianWeighted();`                | `???`                              | `???`                             |
+| `x.Modes();`                         | `???`                              | `???`                             |
+| `x.ModesRank();`                     | `???`                              | `???`                             |
+| `x.Moment();`                        | `???`                              | `???`                             |
+| `x.MomentCentral();`                 | `???`                              | `???`                             |
+| `x.MomentCentralAbsolute();`         | `???`                              | `???`                             |
+| `x.MomentRaw();`                     | `???`                              | `???`                             |
+| `x.MomentRawAbsolute();`             | `???`                              | `???`                             |
+| `x.Range();`                         | `???`                              | `???`                             |
+| `x.FrequencyCounter();`              | `???`                              | `???`                             |
+| `x.FrequencyDistribution();`         | `???`                              | `???`                             |
+| `x.Frequencies();`                   | `???`                              | `???`                             |
+| `x.Percentiles();`                   | `???`                              | `???`                             |
+| `x.PercentilesRank();`               | `???`                              | `???`                             |
+| `x.Skewness();`                      | `???`                              | `???`                             |
+| `x.Kurtosis();`                      | `???`                              | `???`                             |
+| `x.KurtosisSample();`                | `???`                              | `???`                             |
+| `x.KurtosisSampleExcess();`          | `???`                              | `???`                             |
+| `x.StandardDeviationPopulation();`   | `???`                              | `???`                             |
+| `x.StandardDeviationSample();`       | `???`                              | `???`                             |
+| `x.Correlation(y);`                  | `???`                              | `???`                             |
+| `x.CorrelationOptimized(y);`         | `???`                              | `???`                             |
+| `x.Covariance(y);`                   | `???`                              | `???`                             |
+| `x.StudenttStatisticIndependent(y);` | `???`                              | `???`                             |
+| `x.FStatistic(y);`                   | `???`                              | `???`                             |
+| `x.Welcht(y);`                       | `???`                              | `???`                             |
+
+
+
 
 ## Technical/Platform Implementation Details
 
-*   async/await
+*   IEnumerable<T> extension methods (LINQ like)
+
+*   async/await API
 
     Each synchronous (blocking) method has processor bound async (TPL counterpart).
 
@@ -203,3 +249,12 @@ After benchmarks will be added and tests conducted, implementation might change 
     *   https://www.nuget.org/packages/Meta.Numerics/
 
 
+## Contributirs / Authors
+
+*   Darko Katovic - Katodix
+
+    KIF (Faculty of Kinesiology, University of Zagreb, Croatia)
+
+*   Miljenko Cvjetko - moljac
+
+    Microsoft (Xamarin Inc.), HolisticWare
