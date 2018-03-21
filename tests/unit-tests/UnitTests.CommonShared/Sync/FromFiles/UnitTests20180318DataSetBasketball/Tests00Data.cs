@@ -54,18 +54,31 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class UnitTests20180318DataSetBasketball
     {
-        List<BasketballTeamData> basketball_team_data_table = null;
+        private static List<BasketballTeamData> basketball_team_data_table = null;
+
+        public static List<BasketballTeamData> BasketballTeamDataTable
+        {
+            get
+            {
+                if (basketball_team_data_table == null)
+                {
+                    LoadDataFromFile();
+                }
+
+                return basketball_team_data_table;
+            }
+        }
 
         Stopwatch sw = null;
 
         [OneTimeSetUp]
-        public void LoadDataFromFile()
+        private static void LoadDataFromFile()
         {
             string directory_test =
                                     #if NUNIT
                                     TestContext.CurrentContext.TestDirectory
                                     #elif XUNIT
-                                    System.Reflection.Assembly.GetExecutingAssembly().CodeBase
+                                    Environment.CurrentDirectory
                                     #elif MSTEST
                                     System.Reflection.Assembly.GetExecutingAssembly().CodeBase
                                     #endif
