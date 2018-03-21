@@ -65,9 +65,14 @@ NOTE: Parallel algorithms based on (TPL) can be found in
 ### Comparison Table
 
 
-|   C# HolisticWare                 | Octave                             | R                                 |
-|   `x = IEnumerable<T>`            |                                    |                                   |
-|   extension methods               |                                    |                                   |
+|   `x = IEnumerable<T>`               |                                    |                                   |
+| ------------------------------------ | ---------------------------------- | --------------------------------- |
+|   extension methods                  |                                    |                                   |
+
+
+
+
+|   C# HolisticWare                    | Octave                             | R                                 |
 | ------------------------------------ | ---------------------------------- | --------------------------------- |
 | `x.MeanArithmetic();`                | `mean(vector_list, "a")`           | `mean(vector_list)`               |
 | `x.MeanGeometric();`                 | `mean(vector_list, "g")`           | `N/A (custom function)`           |
