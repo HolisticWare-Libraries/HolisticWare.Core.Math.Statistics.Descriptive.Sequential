@@ -53,18 +53,31 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class UnitTests20180318DataSetRand50Samp01
     {
-        List<double> data01 = null;
+        private static List<double> data = null;
+
+        public static List<double> Data
+        {
+            get
+            {
+                if (data == null)
+                {
+                    LoadDataFromFile();   
+                }
+
+                return data;
+            }
+        }
 
         Stopwatch sw = null;
 
         [OneTimeSetUp]
-        public void LoadDataFromFile()
+        public static void LoadDataFromFile()
         {
             string directory_test =
                                     #if NUNIT
                                     TestContext.CurrentContext.TestDirectory
                                     #elif XUNIT
-                                    System.Reflection.Assembly.GetExecutingAssembly().CodeBase
+                                    Environment.CurrentDirectory
                                     #elif MSTEST
                                     System.Reflection.Assembly.GetExecutingAssembly().CodeBase
                                     #endif
@@ -93,7 +106,12 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 new string[] { Environment.NewLine },
                                 StringSplitOptions.RemoveEmptyEntries
                             );
-
+            data = new List<double>();
+            foreach (string s in lines)
+            {
+                double data_item = Double.Parse(s);
+                data.Add(data_item);
+            }
             //------------------------------------------------------------------
 
             return;
