@@ -47,30 +47,10 @@ using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializ
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
-namespace UnitTests.HolisticWare.Core.Math.Statistics
+namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class Tests03Page95DescriptiveAnalysis
     {
-        // Arrange
-        List<double> x1 = new List<double>
-            {
-                82.61,
-                93.51,
-                78.46,
-                55.14,
-                49.65,
-                45.82,
-                50.21,
-                51.65,
-                69.45,
-                57.32,
-                35.62,
-                47.95,
-                33.65,
-                52.69,
-                77.95,
-            };
-
         [Test()]
         public void Data_x1_Mean_Average()
         {
@@ -137,26 +117,6 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             return;
         }
 
-        // Arrange
-        List<double> x21 = new List<double>
-            {
-                87.61,
-                98.51,
-                83.46,
-                60.14,
-                54.65,
-                50.82,
-                55.21,
-                56.65,
-                74.45,
-                62.32,
-                40.62,
-                52.95,
-                38.65,
-                57.69,
-                82.95,
-            };
-
         [Test()]
         public void Data_x21_MeanArithmetic_Average()
         {
@@ -219,26 +179,6 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             #endif
 
             return;
-        }
-
-        List<double> d1_list = null;
-
-        private List<double> d1
-        {
-            // Arrange
-            get
-            {
-                if (d1_list == null)
-                {
-                    d1_list = new List<double>();
-                    for (int i = 0; i < x1.Count; i++)
-                    {
-                        d1_list.Add(x21[i] - x1[i]);
-                    }
-                }
-
-                return d1_list;
-            }
         }
 
         [Test()]
@@ -389,26 +329,6 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             return;
         }
 
-        // Arrange
-        List<double> x22 = new List<double>
-            {
-                83.98,
-                94.31,
-                80.62,
-                56.36,
-                57.47,
-                51.19,
-                56.54,
-                60.91,
-                74.45,
-                67.00,
-                44.56,
-                53.24,
-                39.51,
-                57.64,
-                80.21,
-            };
-
         [Test()]
         public void Data_x2_Mean_Average()
         {
@@ -475,26 +395,6 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             #endif
 
             return;
-        }
-
-        List<double> d2_list = null;
-
-        private List<double> d2
-        {
-            // Arrange
-            get
-            {
-                if (d2_list == null)
-                {
-                    d2_list = new List<double>();
-                    for (int i = 0; i < x1.Count; i++)
-                    {
-                        d2_list.Add(x21[i] - x1[i]);
-                    }
-                }
-
-                return d2_list;
-            }
         }
 
         [Test()]
@@ -629,26 +529,6 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
 
             return;
         }
-
-        // Arrange
-        List<double> x23 = new List<double>
-            {
-                85.65,
-                94.62,
-                83.65,
-                59.84,
-                52.34,
-                51.26,
-                61.24,
-                57.95,
-                80.65,
-                61.53,
-                37.45,
-                58.31,
-                33.95,
-                64.25,
-                82.21,
-            };
 
         [Test()]
         public void Data03()
