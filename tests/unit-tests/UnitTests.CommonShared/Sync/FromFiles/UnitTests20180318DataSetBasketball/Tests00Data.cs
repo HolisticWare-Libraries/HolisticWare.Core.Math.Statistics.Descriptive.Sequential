@@ -71,7 +71,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
         Stopwatch sw = null;
 
-        [OneTimeSetUp]
+        //[OneTimeSetUp]
         private static void LoadDataFromFile()
         {
             string directory_test =

@@ -59,7 +59,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void MeanArithmetic_Points2Success()
         {
             data_2pts_success =
-                                from row in basketball_team_data_table
+                                from row in BasketballTeamDataTable
                                     select row.Points2Success
                                     ;
 
@@ -75,7 +75,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void MeanArithmetic_Points3Success()
         {
             data_3pts_success =
-                from d in basketball_team_data_table
+                from d in BasketballTeamDataTable
                 select d.Points3Success
                         ;
 
@@ -94,7 +94,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void MeanArithmetic_Points2Fail()
         {
             data_2pts_fail =
-                                from row in basketball_team_data_table
+                                from row in BasketballTeamDataTable
                                 select row.Points2Fail
                                     ;
 
@@ -110,7 +110,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void MeanArithmetic_Points3Fail()
         {
             data_3pts_fail =
-                                from row in basketball_team_data_table
+                                from row in BasketballTeamDataTable
                                 select row.Points3Fail
                                     ;
 
