@@ -27,7 +27,7 @@
 // */
 using System;
 
-namespace UnitTests.CommonShared.Sync.FromFiles.UnitTests20180318DataSetBasketball
+namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public class BasketballTeamData
     {

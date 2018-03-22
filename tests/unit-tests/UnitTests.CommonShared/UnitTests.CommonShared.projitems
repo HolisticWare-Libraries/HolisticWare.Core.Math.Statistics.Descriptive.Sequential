@@ -12,9 +12,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Async\Tests01MeanAverage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Async\Tests02Frequencies.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Async\Tests03Mode.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\TestsFrequencies20180119.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119.Frequencies.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\TestsFrequencyDistribution20180120.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\TestsModes20180119.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119.Modes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\UnitTests20180213.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\KIF.Handbook.QuantitiativeMethods\Tests03Page95DescriptiveAnalysis.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests00Data.cs" />

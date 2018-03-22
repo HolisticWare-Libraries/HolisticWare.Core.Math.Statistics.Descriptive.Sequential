@@ -34,13 +34,25 @@ using System.Threading.Tasks;
 
 #if XUNIT
 using Xunit;
+// NUnit aliases
 using Test = Xunit.FactAttribute;
+// XUnit aliases
+using TestClass = HolisticWare.Core.Testing.UnitTestsCompatibilityAliasAttribute;
 #elif NUNIT
 using NUnit.Framework;
+// MSTest aliases
+using TestInitialize = NUnit.Framework.SetUpAttribute;
+using TestProperty = NUnit.Framework.PropertyAttribute;
+using TestClass = NUnit.Framework.TestFixtureAttribute;
+using TestMethod = NUnit.Framework.TestAttribute;
+using TestCleanup = NUnit.Framework.TearDownAttribute;
+// XUnit aliases
 using Fact=NUnit.Framework.TestAttribute;
 #elif MSTEST
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+// NUnit aliases
 using Test = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
+// XUnit aliases
 using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 #endif
 
@@ -48,6 +60,7 @@ using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.HolisticWare.Core.Math.Statistics
 {
+    [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
     public partial class Tests20180120
     {
         

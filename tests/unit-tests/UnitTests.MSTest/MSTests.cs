@@ -1,8 +1,8 @@
 ﻿// /*
-//    Copyright (c) 2017-12
+//    Copyright (c) 2018-3
 //
 //    moljac
-//    Test.cs
+//    MSTests.cs
 //
 //    Permission is hereby granted, free of charge, to any person
 //    obtaining a copy of this software and associated documentation
@@ -27,41 +27,20 @@
 // */
 using System;
 
-using System.Collections.Generic;
-using System.Linq;
-using System.Diagnostics;
-using System.Threading.Tasks;
-
-#if XUNIT
-using Xunit;
-// NUnit aliases
-using Test = Xunit.FactAttribute;
-// XUnit aliases
-using TestClass = HolisticWare.Core.Testing.UnitTestsCompatibilityAliasAttribute;
-#elif NUNIT
-using NUnit.Framework;
-// MSTest aliases
-using TestInitialize = NUnit.Framework.SetUpAttribute;
-using TestProperty = NUnit.Framework.PropertyAttribute;
-using TestClass = NUnit.Framework.TestFixtureAttribute;
-using TestMethod = NUnit.Framework.TestAttribute;
-using TestCleanup = NUnit.Framework.TearDownAttribute;
-// XUnit aliases
-using Fact=NUnit.Framework.TestAttribute;
-#elif MSTEST
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-// NUnit aliases
-using Test = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
-using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute;
-// XUnit aliases
-using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
-#endif
 
-using Core.Math.Statistics.Descriptive.Sequential;
-
-namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
+namespace UnitTests.MSTest
 {
-    public partial class UnitTests20180318DataSetJudo
+    [TestClass]
+    public class MSTests
     {
+        [TestMethod]
+        public void Dummy()
+        {
+            int a = 1;
+            double b = 1;
+
+            Assert.Equals(a, b);
+        }
     }
 }
