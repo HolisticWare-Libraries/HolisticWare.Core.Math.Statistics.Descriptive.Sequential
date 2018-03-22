@@ -2,7 +2,7 @@
 //    Copyright (c) 2018-3
 //
 //    moljac
-//    MSTests.cs
+//    Car.cs
 //
 //    Permission is hereby granted, free of charge, to any person
 //    obtaining a copy of this software and associated documentation
@@ -27,20 +27,12 @@
 // */
 using System;
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace UnitTests.MSTest
+namespace UnitTests.CommonShared.Sync.Qualitative.Classes
 {
-    [TestClass]
-    public class MSTests
+    public class Car
     {
-        [TestMethod]
-        public void Dummy()
+        public Car()
         {
-            int a = 1;
-            double b = 1;
-
-            Assert.Equals(a, b);
         }
     }
 }
