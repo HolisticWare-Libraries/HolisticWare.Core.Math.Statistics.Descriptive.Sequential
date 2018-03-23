@@ -210,3 +210,4 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
     }
 }
+

@@ -140,6 +140,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\StatisticsDescriptive.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\StatisticsDescriptive.DataMissing.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.MeanGeometricNaive.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.VarianceMedianSample.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.VarianceMedianPopulation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)readme.md" />
