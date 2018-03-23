@@ -29,10 +29,9 @@ using System;
 
 namespace UnitTests.CommonShared.Sync.Qualitative.Classes
 {
-    public class Gender
+    public enum Gender
     {
-        public Gender()
-        {
-        }
+        Male = -1,
+        Female = 1
     }
 }

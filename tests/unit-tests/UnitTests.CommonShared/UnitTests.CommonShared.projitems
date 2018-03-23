@@ -77,8 +77,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\KIF.Handbook.QuantitiativeMethods\Tests03Page95DescriptiveAnalysis\Tests05StandardDeviationVariance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\Qualitative\Classes\Person.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\Qualitative\Classes\Gender.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\Qualitative\Classes\UnitTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\Qualitative\Classes\UnitTestsQualitativePersons.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\Qualitative\Classes\Car.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\Qualitative\Classes\EyeColor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Async\" />
