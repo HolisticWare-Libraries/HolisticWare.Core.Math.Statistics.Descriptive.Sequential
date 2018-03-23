@@ -2,7 +2,7 @@
 //    Copyright (c) 2018-3
 //
 //    moljac
-//    UnitTests.cs
+//    Gender.cs
 //
 //    Permission is hereby granted, free of charge, to any person
 //    obtaining a copy of this software and associated documentation
@@ -26,26 +26,16 @@
 //    OTHER DEALINGS IN THE SOFTWARE.
 // */
 using System;
-using System.Collections.Generic;
 
 namespace UnitTests.CommonShared.Sync.Qualitative.Classes
 {
-    public partial class UnitTests
+    public enum EyeColor
     {
-        public List<Person> Persons
-        {
-            get
-            {
-                return
-                    new List<Person>()
-                {
-                    new Person()
-                    {
-                        NameFirst = "NF1",
-
-                    },
-                };
-            }            
-        }
+        Blue,
+        Brown,
+        Gray,
+        Green,
+        Hazel,
+        RedAndViolet,
     }
 }

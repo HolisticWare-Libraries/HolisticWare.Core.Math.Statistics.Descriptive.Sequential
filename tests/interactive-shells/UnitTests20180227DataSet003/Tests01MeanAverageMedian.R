@@ -7,12 +7,12 @@ source("Tests00Data.R")
 mean_arithmetic <- mean(data01)
 print(mean_arithmetic)
 
-#mean_geometric = mean(data01, "g");
-#mean_geometric
-#mean_harmonic = mean(data01, "h");
-#mean_harmonic
+mean_geometric = geometric.mean(data01)
+print(mean_geometric)
+mean_harmonic = mean(data01, "h");
+print(mean_harmonic
 #mean_squared = meansq(data01);
-#mean_squared
+print(mean_squared
 
 #median = median(data01);
 #median
