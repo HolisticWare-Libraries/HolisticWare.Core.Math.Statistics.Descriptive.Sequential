@@ -80,6 +80,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\Qualitative\Classes\UnitTestsQualitativePersons.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\Qualitative\Classes\Car.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\Qualitative\Classes\EyeColor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\python-website-data\Tests00Data.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\python-website-data\Tests01MeansAverageMedian.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetJudo\JudoData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Async\" />
@@ -99,6 +102,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)Sync\KIF.Handbook.QuantitiativeMethods\Tests03Page95DescriptiveAnalysis\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\Qualitative\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\Qualitative\Classes\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sync\python-website-data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Xtras-BigData\Rand_Samp_BigData_01.csv">
