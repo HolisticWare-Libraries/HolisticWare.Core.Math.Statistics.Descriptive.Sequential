@@ -67,6 +67,16 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         IEnumerable<int> data_3pts_success;
         IEnumerable<int> data_2pts_fail;
         IEnumerable<int> data_3pts_fail;
+        IEnumerable<int> data_free_throw_fail;
+        IEnumerable<int> data_free_throw_success;
+        IEnumerable<int> data_jumps_offensive;
+        IEnumerable<int> data_jumps_defensive;
+        IEnumerable<int> data_assistence;
+        IEnumerable<int> data_personal_faults;
+        IEnumerable<int> data_balls_lost;
+        IEnumerable<int> data_balls_stolen;
+        IEnumerable<int> data_blocks;
+
 
         [Test()]
         public void MeanArithmetic_Points2Success()
@@ -76,8 +86,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                     select row.Points2Success
                                     ;
 
-            double mean_2_a = data_2pts_success.MeanArithmetic();
-            double mean_2_g = data_2pts_success.MeanGeometric();
+            double mean_2s_a = data_2pts_success.MeanArithmetic();
+            double mean_2s_g = data_2pts_success.MeanGeometric();
 
             return;
         }
@@ -92,8 +102,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                 select d.Points3Success
                         ;
 
-            double mean_3_a = data_3pts_success.MeanArithmetic();
-            double mean_3_g = data_3pts_success.MeanGeometric();
+            double mean_3s_a = data_3pts_success.MeanArithmetic();
+            double mean_3s_g = data_3pts_success.MeanGeometric();
 
             //double c = data_3pts_success.Correlation(data_2pts_success);
 
@@ -111,8 +121,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 select row.Points2Fail
                                     ;
 
-            double mean_2_a = data_2pts_fail.MeanArithmetic();
-            double mean_2_g = data_2pts_fail.MeanGeometric();
+            double mean_2f_a = data_2pts_fail.MeanArithmetic();
+            double mean_2f_g = data_2pts_fail.MeanGeometric();
 
 
             return;
@@ -127,8 +137,143 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 select row.Points3Fail
                                     ;
 
-            double mean_3_a = data_3pts_fail.MeanArithmetic();
-            double mean_3_g = data_3pts_fail.MeanGeometric();
+            double mean_3f_a = data_3pts_fail.MeanArithmetic();
+            double mean_3f_g = data_3pts_fail.MeanGeometric();
+
+            return;
+        }
+
+
+        [Test()]
+        public void MeanArithmetic_FreeThrowFail()
+        {
+            data_free_throw_fail =
+                                from row in BasketballTeamDataTable
+                                select row.FreeThrowFail
+                                    ;
+
+            double mean_ftf_a = data_free_throw_fail.MeanArithmetic();
+            double mean_ftf_g = data_free_throw_fail.MeanGeometric();
+
+            return;
+        }
+
+
+        [Test()]
+        public void MeanArithmetic_FreeThrowSuccess()
+        {
+            data_free_throw_success =
+                                from row in BasketballTeamDataTable
+                                select row.FreeThrowSuccess
+                                    ;
+
+            double mean_fts_a = data_free_throw_success.MeanArithmetic();
+            double mean_fts_g = data_free_throw_success.MeanGeometric();
+
+            return;
+        }
+
+
+        [Test()]
+        public void MeanArithmetic_JumpsOffensive()
+        {
+            data_jumps_offensive =
+                                from row in BasketballTeamDataTable
+                                select row.JumpsOffensive
+                                    ;
+
+            double mean_off_a = data_jumps_offensive.MeanArithmetic();
+            double mean_off_g = data_jumps_offensive.MeanGeometric();
+
+            return;
+        }
+
+
+        [Test()]
+        public void MeanArithmetic_JumpsDefensive()
+        {
+            data_jumps_defensive =
+                                from row in BasketballTeamDataTable
+                                select row.JumpsDefensive
+                                    ;
+
+            double mean_def_a = data_jumps_defensive.MeanArithmetic();
+            double mean_def_g = data_jumps_defensive.MeanGeometric();
+
+            return;
+        }
+
+
+        [Test()]
+        public void MeanArithmetic_Assistence()
+        {
+            data_assistence =
+                                from row in BasketballTeamDataTable
+                                select row.Assistence
+                                    ;
+
+            double mean_assist_a = data_assistence.MeanArithmetic();
+            double mean_assist_g = data_assistence.MeanGeometric();
+
+            return;
+        }
+
+
+        [Test()]
+        public void MeanArithmetic_PersonalFaults()
+        {
+            data_personal_faults =
+                                from row in BasketballTeamDataTable
+                                select row.PersonalFaults
+                                    ;
+
+            double mean_pf_a = data_personal_faults.MeanArithmetic();
+            double mean_pf_g = data_personal_faults.MeanGeometric();
+
+            return;
+        }
+
+
+        [Test()]
+        public void MeanArithmetic_BallsLost()
+        {
+            data_balls_lost =
+                                from row in BasketballTeamDataTable
+                                select row.BallsLost
+                                    ;
+
+            double mean_bl_a = data_balls_lost.MeanArithmetic();
+            double mean_bl_g = data_balls_lost.MeanGeometric();
+
+            return;
+        }
+
+
+        [Test()]
+        public void MeanArithmetic_BallsStolen()
+        {
+            data_balls_stolen =
+                                from row in BasketballTeamDataTable
+                                select row.BallsStolen
+                                    ;
+
+            double mean_bs_a = data_balls_stolen.MeanArithmetic();
+            double mean_bs_g = data_balls_stolen.MeanGeometric();
+
+            return;
+        }
+
+
+        [Test()]
+        public void MeanArithmetic_Blocks()
+        {
+            data_blocks =
+                                from row in BasketballTeamDataTable
+                                select row.Blocks
+                                    ;
+
+            double mean_block_a = data_blocks.MeanArithmetic();
+            double mean_block_g = data_blocks.MeanGeometric();
 
             return;
         }
