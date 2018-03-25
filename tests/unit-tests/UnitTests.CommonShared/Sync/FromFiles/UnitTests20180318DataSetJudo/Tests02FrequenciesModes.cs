@@ -68,13 +68,15 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         {
             //====================================================================================================
             // Arrange
-            data01 = new List<double> { 1, 2, 2, 3, 3, 4, 5, 6 };
+            var data = 
+                                from row in JudoDataTable
+                                select row
+                                    ;
 
             sw = Stopwatch.StartNew();
             // Act
-            List<double> modes01 = data01.Modes();
+
             sw.Stop();
-            Console.WriteLine($"List<int>.Modes() size={data01.Count()} elapsed[ticks]={sw.ElapsedTicks}");
 
             //====================================================================================================
 

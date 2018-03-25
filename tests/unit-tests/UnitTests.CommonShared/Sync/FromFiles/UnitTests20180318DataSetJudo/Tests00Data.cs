@@ -66,18 +66,31 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
     public partial class UnitTests20180318DataSetJudo
     {
-        IEnumerable<double> data01 = null;
+        private static List<JudoData> judo_data_table = null;
+
+        public static List<JudoData> JudoDataTable
+        {
+            get
+            {
+                if (judo_data_table == null)
+                {
+                    LoadDataFromFile();
+                }
+
+                return judo_data_table;
+            }
+        }
 
         Stopwatch sw = null;
 
-        [OneTimeSetUp]
-        protected void LoadDataFromFile()
+        //[OneTimeSetUp]
+        protected static void LoadDataFromFile()
         {
             string directory_test =
                                     #if NUNIT
                                     TestContext.CurrentContext.TestDirectory
                                     #elif XUNIT
-                                    System.Reflection.Assembly.GetExecutingAssembly().CodeBase
+                                    Environment.CurrentDirectory
                                     #elif MSTEST
                                     System.Reflection.Assembly.GetExecutingAssembly().CodeBase
                                     #endif
@@ -107,9 +120,25 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 StringSplitOptions.RemoveEmptyEntries
                             );
 
-            data01 = new List<double>();
-            foreach (string s in lines)
+            judo_data_table = new List<JudoData>();
+            int n = lines.Count();
+            for (int i = 1; i < n; i++)
             {
+                string s1 = lines[i].Replace("\r", "");
+
+                string[] s_parts = s1.Split(new string[] { "." }, StringSplitOptions.None);
+                JudoData jd = new JudoData()
+                {
+                    ONT = double.Parse(s_parts[0]),
+                    OUZ = double.Parse(s_parts[1]),
+                    NEB = double.Parse(s_parts[2]),
+                    SKL = double.Parse(s_parts[3]),
+                    TRB = double.Parse(s_parts[4]),
+                    CUC = double.Parse(s_parts[5]),
+                    SDM = double.Parse(s_parts[6]),
+                    BML = double.Parse(s_parts[7]),
+                };
+                judo_data_table.Add(jd);
             }
             //------------------------------------------------------------------
 
