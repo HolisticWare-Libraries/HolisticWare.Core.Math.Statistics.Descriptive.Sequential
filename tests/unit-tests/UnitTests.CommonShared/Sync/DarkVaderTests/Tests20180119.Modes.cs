@@ -137,7 +137,7 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
                         );
             #endif
 
-#if NUNIT
+            #if NUNIT
             Assert.That
                         (
                             new List<double> { 14.7, 18.2 },
@@ -146,7 +146,7 @@ namespace UnitTests.HolisticWare.Core.Math.Statistics
             #elif XUNIT
             Assert.Equal
                         (
-                            new List<double> { 14.7, 18.2 },
+                            new List<double> { 18.2, 14.7, },
                             modes01
                         );
             #elif MSTEST

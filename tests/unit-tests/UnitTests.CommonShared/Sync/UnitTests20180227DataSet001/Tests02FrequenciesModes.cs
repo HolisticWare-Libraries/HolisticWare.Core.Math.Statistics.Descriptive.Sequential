@@ -115,6 +115,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                     }
                                 );
             #elif MSTEST
+            CollectionAssert.AreEquivalent
+                                (
+                                    frequencies01.ToList(),
+                                    new Dictionary<int, uint>()
+                                    {
+                                        { 4, 3 },
+                                        { 2, 2 },
+                                        { 3, 1 },
+                                        { 5, 1 },
+                                        { 6, 1 },
+                                        { 7, 1 },
+                                        { 1, 1 },
+                                    }
+                                );
             #endif
             //====================================================================================================
 

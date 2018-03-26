@@ -32,6 +32,7 @@ using System.Linq;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.IO;
+using System.Reflection;
 
 #if XUNIT
 using Xunit;
@@ -88,7 +89,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                     #elif XUNIT
                                     Environment.CurrentDirectory
                                     #elif MSTEST
-                                    System.Reflection.Assembly.GetExecutingAssembly().CodeBase
+                                    Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)
                                     #endif
                                     ;
 
@@ -119,7 +120,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             basketball_team_data_table = new List<BasketballTeamData>();
             int n = lines.Count();
             for (int i = 1; i < n; i++)
-
             {
                 string s1 = lines[i].Replace("\r", "");
 

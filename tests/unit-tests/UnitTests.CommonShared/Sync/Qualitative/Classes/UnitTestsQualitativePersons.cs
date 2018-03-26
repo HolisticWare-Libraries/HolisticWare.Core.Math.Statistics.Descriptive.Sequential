@@ -65,15 +65,52 @@ namespace UnitTests.CommonShared.Sync.Qualitative.Classes
     [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
     public partial class UnitTestsQualitativePersons
     {
-
         [Test()]
-        public void Average()
+        public void Frequencies()
         {
             IEnumerable<EyeColor> data_eyecolors =
                                                     from Person p in Persons
                                                     select p.EyeColor;
 
             IEnumerable<KeyValuePair<EyeColor, uint>> f = data_eyecolors.Frequencies();
+
+            #if NUNIT
+            CollectionAssert.AreEquivalent
+                                (
+                                    f,
+                                    new Dictionary<EyeColor, uint>()
+                                    {
+                                        { EyeColor.Blue, 4 },
+                                        { EyeColor.Gray, 2 },
+                                        { EyeColor.Green, 1 },
+                                        { EyeColor.Hazel, 1 },
+                                    }
+                                );
+            #elif XUNIT
+            Assert.Equal
+                                (
+                                    f,
+                                    new Dictionary<EyeColor, uint>()
+                                    {
+                                        { EyeColor.Blue, 4 },
+                                        { EyeColor.Gray, 2 },
+                                        { EyeColor.Green, 1 },
+                                        { EyeColor.Hazel, 1 },
+                                    }
+                                );
+            #elif MSTEST
+            CollectionAssert.AreEquivalent
+                                (
+                                    f.ToList(),
+                                    new Dictionary<EyeColor, uint>()
+                                    {
+                                        { EyeColor.Blue, 4 },
+                                        { EyeColor.Gray, 2 },
+                                        { EyeColor.Green, 1 },
+                                        { EyeColor.Hazel, 1 },
+                                    }
+                                );
+            #endif
 
             return;
         }
