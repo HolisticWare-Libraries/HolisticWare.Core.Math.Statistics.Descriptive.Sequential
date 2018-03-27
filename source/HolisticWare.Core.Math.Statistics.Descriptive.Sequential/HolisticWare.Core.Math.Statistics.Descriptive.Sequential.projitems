@@ -142,6 +142,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.MeanGeometricNaive.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.VarianceMedianSample.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.VarianceMedianPopulation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.MedianHigh.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.MedianLow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.MedianGroupedData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)readme.md" />

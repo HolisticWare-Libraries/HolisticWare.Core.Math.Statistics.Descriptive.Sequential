@@ -7,10 +7,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// <summary>
     /// 
     /// </summary>
-    public static partial class IEnumerableExtensionsMedian
+    public static partial class IEnumerableExtensionsMedianHighHigh
     {
         //==============================================================================================================
-        public static double Median
+        public static double MedianHigh
                                 (
                                     this IEnumerable<byte> x
                                 )
@@ -24,10 +24,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 return x_ordered.ElementAt((n + 1) / 2 - 1);
             }
 
-            return 0.5 * (x_ordered.ElementAt(n2) + x_ordered.ElementAt(n2 + 1));
+            return x_ordered.ElementAt(n2 + 1);
         }
 
-        public static double Median
+        public static double MedianHigh
                                 (
                                     this IEnumerable<short> x
                                 )
@@ -41,10 +41,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 return x_ordered.ElementAt((n + 1) / 2 - 1);
             }
 
-            return 0.5 * (x_ordered.ElementAt(n2) + x_ordered.ElementAt(n2 + 1));
+            return x_ordered.ElementAt(n2 + 1);
         }
 
-        public static double Median
+        public static double MedianHigh
                                 (
                                     this IEnumerable<ushort> x
                                 )
@@ -58,10 +58,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 return x_ordered.ElementAt((n + 1) / 2 - 1);
             }
 
-            return 0.5 * (x_ordered.ElementAt(n2) + x_ordered.ElementAt(n2 + 1));
+            return x_ordered.ElementAt(n2 + 1);
         }
 
-        public static double Median
+        public static double MedianHigh
                                 (
                                     this IEnumerable<int> x
                                 )
@@ -75,10 +75,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 return x_ordered.ElementAt((n + 1) / 2 - 1);
             }
 
-            return 0.5 * (x_ordered.ElementAt(n2) + x_ordered.ElementAt(n2 + 1));
+            return x_ordered.ElementAt(n2 + 1);
         }
 
-        public static double Median
+        public static double MedianHigh
                                 (
                                     this IEnumerable<uint> x
                                 )
@@ -92,10 +92,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 return x_ordered.ElementAt((n + 1) / 2 - 1);
             }
 
-            return 0.5 * (x_ordered.ElementAt(n2) + x_ordered.ElementAt(n2 + 1));
+            return x_ordered.ElementAt(n2 + 1);
         }
 
-        public static double Median
+        public static double MedianHigh
                                 (
                                     this IEnumerable<long> x
                                 )
@@ -109,10 +109,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 return x_ordered.ElementAt((n + 1) / 2 - 1);
             }
 
-            return 0.5 * (x_ordered.ElementAt(n2) + x_ordered.ElementAt(n2 + 1));
+            return x_ordered.ElementAt(n2 + 1);
         }
 
-        public static double Median
+        public static double MedianHigh
                                 (
                                     this IEnumerable<ulong> x
                                 )
@@ -126,10 +126,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 return x_ordered.ElementAt((n + 1) / 2 - 1);
             }
 
-            return 0.5 * (x_ordered.ElementAt(n2) + x_ordered.ElementAt(n2 + 1));
+            return x_ordered.ElementAt(n2 + 1);
         }
 
-        public static double Median
+        public static double MedianHigh
                                 (
                                     this IEnumerable<float> x
                                 )
@@ -143,10 +143,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 return x_ordered.ElementAt((n + 1) / 2 - 1);
             }
 
-            return 0.5 * (x_ordered.ElementAt(n2) + x_ordered.ElementAt(n2 + 1));
+            return x_ordered.ElementAt(n2 + 1);
         }
 
-        public static double Median
+        public static double MedianHigh
                                 (
                                     this IEnumerable<double> x
                                 )
@@ -160,10 +160,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 return x_ordered.ElementAt((n + 1) / 2 - 1);
             }
 
-            return 0.5 * (x_ordered.ElementAt(n2) + x_ordered.ElementAt(n2 + 1));
+            return x_ordered.ElementAt(n2 + 1);
         }
 
-        public static decimal Median
+        public static decimal MedianHigh
                                 (
                                     this IEnumerable<decimal> x
                                 )
@@ -177,7 +177,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 return x_ordered.ElementAt((n + 1) / 2 - 1);
             }
 
-            return 0.5M * (x_ordered.ElementAt(n2) + x_ordered.ElementAt(n2 + 1));
+            return x_ordered.ElementAt(n2 + 1);
         }
         //==============================================================================================================
 
