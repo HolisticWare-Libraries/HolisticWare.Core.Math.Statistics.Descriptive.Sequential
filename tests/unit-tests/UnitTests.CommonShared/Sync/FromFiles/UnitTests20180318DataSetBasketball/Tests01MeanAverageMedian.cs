@@ -188,7 +188,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             return;
         }
 
-
         [Test()]
         public void MeanArithmetic_JumpsDefensive()
         {
@@ -203,7 +202,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             return;
         }
 
-
         [Test()]
         public void MeanArithmetic_Assistence()
         {
@@ -217,7 +215,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             return;
         }
-
 
         [Test()]
         public void MeanArithmetic_PersonalFaults()

@@ -32,6 +32,7 @@ using System.Linq;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.IO;
+using System.Reflection;
 
 #if XUNIT
 using Xunit;
@@ -66,12 +67,12 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
     public partial class UnitTests20180318DataSetRand50Samp03
     {
-        List<double> data01 = null;
+        static List<double> data01 = null;
 
         Stopwatch sw = null;
 
         [OneTimeSetUp]
-        protected void LoadDataFromFile()
+        protected static void LoadDataFromFile()
         {
             string directory_test =
                                     #if NUNIT
@@ -79,7 +80,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                     #elif XUNIT
                                     Environment.CurrentDirectory
                                     #elif MSTEST
-                                    System.Reflection.Assembly.GetExecutingAssembly().CodeBase
+                                    Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)
                                     #endif
                                     ;
 

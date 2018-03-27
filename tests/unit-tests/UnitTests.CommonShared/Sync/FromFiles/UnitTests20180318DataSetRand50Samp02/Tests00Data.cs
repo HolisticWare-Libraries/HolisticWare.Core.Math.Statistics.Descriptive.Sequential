@@ -32,6 +32,7 @@ using System.Linq;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.IO;
+using System.Reflection;
 
 #if XUNIT
 using Xunit;
@@ -84,7 +85,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         Stopwatch sw = null;
 
         [OneTimeSetUp]
-        public static void LoadDataFromFile()
+        protected static void LoadDataFromFile()
         {
             string directory_test =
                                     #if NUNIT
@@ -92,7 +93,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                     #elif XUNIT
                                     Environment.CurrentDirectory
                                     #elif MSTEST
-                                    System.Reflection.Assembly.GetExecutingAssembly().CodeBase
+                                    Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)
                                     #endif
                                     ;
 

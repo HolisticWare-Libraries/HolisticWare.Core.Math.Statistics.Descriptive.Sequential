@@ -114,6 +114,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //====================================================================================================
             //  Arrange
             //  reading data from files
+            data01 = UnitTests20180318DataSetRand50Samp01.Data;
+            data02 = UnitTests20180318DataSetRand50Samp02.Data;
 
             sw = Stopwatch.StartNew();
 
@@ -135,6 +137,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             #elif XUNIT
             Assert.Equal(0.1882, (double)correlation_data02_data01_01, 4);
             #elif MSTEST
+            Assert.AreEqual(0.1882, (double)correlation_data02_data01_01, 0.0001);
             #endif
             //====================================================================================================
 
