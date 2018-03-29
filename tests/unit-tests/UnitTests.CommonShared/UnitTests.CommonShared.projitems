@@ -83,6 +83,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\python-website-data\Tests00Data.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\python-website-data\Tests01MeansAverageMedian.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetJudo\JudoData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\02-GroupedData\Tests01MeansAverageMedian.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\02-GroupedData\Tests00Data.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Async\" />
@@ -103,6 +105,8 @@
     <Folder Include="$(MSBuildThisFileDirectory)Sync\Qualitative\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\Qualitative\Classes\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\python-website-data\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sync\02-GroupedData\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sync\03-DataFlows\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Xtras-BigData\Rand_Samp_BigData_01.csv">

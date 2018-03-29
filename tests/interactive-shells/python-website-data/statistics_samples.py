@@ -13,7 +13,7 @@ mean_arithmetic = statistics.mean(data01)
 end = timeit.default_timer()
 # Assert
 print ("mean_arithmetic = ", mean_arithmetic)
-print ("      time [us] = ", (end - start) * 100000)
+print (u"      time [\u00B5s] = ", (end - start) * 100000)
 assert(mean_arithmetic == 2.8)
 #==================================================================================
 
@@ -27,7 +27,7 @@ mean_arithmetic = statistics.mean(data01)
 end = timeit.default_timer()
 # Assert
 print ("mean_arithmetic = ", mean_arithmetic)
-print ("      time [us] = ", (end - start) * 100000)
+print (u"      time [\u00B5s] = ", (end - start) * 100000)
 assert(mean_arithmetic == 2.625)
 #==================================================================================
 
@@ -41,7 +41,7 @@ mean_harmonic = statistics.harmonic_mean(data01)
 end = timeit.default_timer()
 # Assert
 print ("mean_harmonic = ", mean_harmonic)
-print ("      time [us] = ", (end - start) * 100000)
+print (u"      time [\u00B5s] = ", (end - start) * 100000)
 assert(mean_harmonic == 3.6)
 #==================================================================================
 
@@ -55,7 +55,7 @@ median = statistics.median(data01)
 end = timeit.default_timer()
 # Assert
 print ("median = ", median)
-print ("      time [us] = ", (end - start) * 100000)
+print (u"      time [\u00B5s] = ", (end - start) * 100000)
 assert(median == 3)
 #==================================================================================
 
@@ -69,7 +69,7 @@ median = statistics.median(data01)
 end = timeit.default_timer()
 # Assert
 print ("median = ", median)
-print ("      time [us] = ", (end - start) * 100000)
+print (u"      time [\u00B5s] = ", (end - start) * 100000)
 assert(median == 4)
 #==================================================================================
 
@@ -83,7 +83,7 @@ median_low = statistics.median_low(data01)
 end = timeit.default_timer()
 # Assert
 print ("median_low = ", median_low)
-print ("      time [us] = ", (end - start) * 100000)
+print (u"      time [\u00B5s] = ", (end - start) * 100000)
 assert(median_low == 3)
 #==================================================================================
 
@@ -97,7 +97,7 @@ median_low = statistics.median_low(data01)
 end = timeit.default_timer()
 # Assert
 print ("median_low = ", median_low)
-print ("      time [us] = ", (end - start) * 100000)
+print (u"      time [\u00B5s] = ", (end - start) * 100000)
 assert(median_low == 3)
 #==================================================================================
 
@@ -111,7 +111,7 @@ median_high = statistics.median_high(data01)
 end = timeit.default_timer()
 # Assert
 print ("median_high = ", median_high)
-print ("      time [us] = ", (end - start) * 100000)
+print (u"      time [\u00B5s] = ", (end - start) * 100000)
 assert(median_high == 3)
 #==================================================================================
 
@@ -125,7 +125,7 @@ median_high = statistics.median_high(data01)
 end = timeit.default_timer()
 # Assert
 print ("median_high     = ", median_high)
-print ("      time [us] = ", (end - start) * 100000)
+print (u"      time [\u00B5s] = ", (end - start) * 100000)
 assert(median_high == 5)
 #==================================================================================
 
@@ -139,7 +139,7 @@ median_grouped = statistics.median_grouped(data01)
 end = timeit.default_timer()
 # Assert
 print ("median_grouped  = ", median_grouped)
-print ("      time [us] = ", (end - start) * 100000)
+print (u"      time [\u00B5s] = ", (end - start) * 100000)
 assert(median_grouped == 52.5)
 #==================================================================================
 
@@ -153,7 +153,7 @@ median_grouped = statistics.median_grouped(data01)
 end = timeit.default_timer()
 # Assert
 print ("median_grouped  = ", median_grouped)
-print ("      time [us] = ", (end - start) * 100000)
+print (u"      time [\u00B5s] = ", (end - start) * 100000)
 assert(median_grouped == 3.7)
 #==================================================================================
 
@@ -170,7 +170,7 @@ median_grouped = statistics.median_grouped(data01, interval=1)
 end = timeit.default_timer()
 # Assert
 print ("median_grouped  = ", median_grouped)
-print ("      time [us] = ", (end - start) * 100000)
+print (u"      time [\u00B5s] = ", (end - start) * 100000)
 assert(median_grouped == 3.25)
 #==================================================================================
 
@@ -198,7 +198,7 @@ median_grouped = statistics.median_grouped(data01, interval=1)
 end = timeit.default_timer()
 # Assert
 print ("median_grouped  = ", median_grouped)
-print ("      time [us] = ", (end - start) * 100000)
+print (u"      time [\u00B5s] = ", (end - start) * 100000)
 assert(median_grouped == 7.75)
 #==================================================================================
 
@@ -215,7 +215,7 @@ mode = statistics.mode(data01)
 end = timeit.default_timer()
 # Assert
 print ("mode            = ", mode)
-print ("      time [us] = ", (end - start) * 100000)
+print (u"      time [\u00B5s] = ", (end - start) * 100000)
 assert(mode == 3)
 #==================================================================================
 
@@ -229,7 +229,7 @@ mode = statistics.mode(data01)
 end = timeit.default_timer()
 # Assert
 print ("mode            = ", mode)
-print ("      time [us] = ", (end - start) * 100000)
+print (u"      time [\u00B5s] = ", (end - start) * 100000)
 assert(mode == "red")
 #==================================================================================
 
@@ -245,7 +245,7 @@ pstdev = statistics.pstdev(data01)
 end = timeit.default_timer()
 # Assert
 print ("pstdev          = ", pstdev)
-print ("      time [us] = ", (end - start) * 100000)
+print (u"      time [\u00B5s] = ", (end - start) * 100000)
 assert(abs(pstdev - 0.98689) < 0.00001)
 #==================================================================================
 
@@ -258,7 +258,7 @@ pstdev = statistics.pstdev(data01, mu)
 end = timeit.default_timer()
 # Assert
 print ("pstdev          = ", pstdev)
-print ("      time [us] = ", (end - start) * 100000)
+print (u"      time [\u00B5s] = ", (end - start) * 100000)
 assert(abs(pstdev - 0.98689) < 0.00001)
 #==================================================================================
 
@@ -274,7 +274,7 @@ pvariance = statistics.pvariance(data01)
 end = timeit.default_timer()
 # Assert
 print ("pvariance       = ", pvariance)
-print ("      time [us] = ", (end - start) * 100000)
+print (u"      time [\u00B5s] = ", (end - start) * 100000)
 assert(abs(pvariance - 1.25) < 0.001)
 #==================================================================================
 
@@ -287,7 +287,7 @@ pvariance = statistics.pvariance(data01, mu)
 end = timeit.default_timer()
 # Assert
 print ("pvariance       = ", pvariance)
-print ("      time [us] = ", (end - start) * 100000)
+print (u"      time [\u00B5s] = ", (end - start) * 100000)
 assert(abs(pvariance - 1.25) < 0.001)
 #==================================================================================
 
@@ -303,7 +303,7 @@ stdev = statistics.stdev(data01)
 end = timeit.default_timer()
 # Assert
 print ("stdev           = ", stdev)
-print ("      time [us] = ", (end - start) * 100000)
+print (u"      time [\u00B5s] = ", (end - start) * 100000)
 assert(abs(stdev - 1.08108) < 0.00001)
 #==================================================================================
 
@@ -316,7 +316,7 @@ stdev = statistics.stdev(data01, mu)
 end = timeit.default_timer()
 # Assert
 print ("stdev           = ", stdev)
-print ("      time [us] = ", (end - start) * 100000)
+print (u"      time [\u00B5s] = ", (end - start) * 100000)
 assert(abs(stdev - 1.08108) < 0.00001)
 #==================================================================================
 
@@ -332,7 +332,7 @@ variance = statistics.variance(data01)
 end = timeit.default_timer()
 # Assert
 print ("variance        = ", variance)
-print ("      time [us] = ", (end - start) * 100000)
+print (u"      time [\u00B5s] = ", (end - start) * 100000)
 assert(abs(variance - 1.37202) < 0.00001)
 #==================================================================================
 
@@ -345,7 +345,7 @@ variance = statistics.variance(data01, mu)
 end = timeit.default_timer()
 # Assert
 print ("variance        = ", variance)
-print ("      time [us] = ", (end - start) * 100000)
+print (u"      time [\u00B5s] = ", (end - start) * 100000)
 assert(abs(variance - 1.37202) < 0.00001)
 #==================================================================================
 
