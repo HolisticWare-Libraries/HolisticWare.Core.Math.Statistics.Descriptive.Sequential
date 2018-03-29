@@ -82,19 +82,19 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void MeanArithmetic_Points2Success()
         {
             data_2pts_success =
-                                from row in BasketballTeamDataTable
+                                    from row in BasketballTeamDataTable
                                     select row.Points2Success
-                                    ;
+                                        ;
 
             double mean_2s_a = data_2pts_success.MeanArithmetic();
-            double mean_2s_g = data_2pts_success.MeanGeometric();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_2s_a, 22.30, 0.0001);
+            Assert.AreEqual(mean_2s_a, 22.30, 0.01);
             #elif XUNIT
-            Assert.Equal(22.30, mean_2s_a, 4);
+            Assert.Equal(22.30, mean_2s_a, 2);
             #elif MSTEST
+            Assert.AreEqual(mean_2s_a, 22.30, 0.01);
             #endif
 
             return;
@@ -106,26 +106,21 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void MeanArithmetic_Points3Success()
         {
             data_3pts_success =
-                from d in BasketballTeamDataTable
-                select d.Points3Success
-                        ;
+                                    from row in BasketballTeamDataTable
+                                    select row.Points3Success
+                                        ;
 
             double mean_a_3pts_success = data_3pts_success.MeanArithmetic();
-            double mean_g_3pts_success = data_3pts_success.MeanGeometric();
 
             // Assert
             #if NUNIT
             Assert.AreEqual(mean_a_3pts_success, 6.68, 0.01);
-            //Assert.AreEqual(mean_g_3pts_success, 6.68, 0.0001);
             #elif XUNIT
-            Assert.Equal(6.68, mean_a_3pts_success, 4);
+            Assert.Equal(6.68, mean_a_3pts_success, 2);
             #elif MSTEST
             Assert.AreEqual(mean_a_3pts_success, 6.68, 0.01);
             #endif
 
-            //double c = data_3pts_success.Correlation(data_2pts_success);
-
-            //mean_3_a++;
 
             return;
         }
@@ -140,14 +135,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                     ;
 
             double mean_2f_a = data_2pts_fail.MeanArithmetic();
-            double mean_2f_g = data_2pts_fail.MeanGeometric();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_2f_a, 21.54, 0.0001);
+            Assert.AreEqual(mean_2f_a, 21.54, 0.01);
             #elif XUNIT
-            Assert.Equal(21.54, mean_2f_a, 4);
+            Assert.Equal(21.54, mean_2f_a, 2);
             #elif MSTEST
+            Assert.AreEqual(mean_2f_a, 21.54, 0.01);
             #endif
 
 
@@ -164,14 +159,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                     ;
 
             double mean_3f_a = data_3pts_fail.MeanArithmetic();
-            double mean_3f_g = data_3pts_fail.MeanGeometric();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_3f_a, 11.73, 0.0001);
+            Assert.AreEqual(mean_3f_a, 11.73, 0.01);
             #elif XUNIT
-            Assert.Equal(11.73, mean_3f_a, 4);
+            Assert.Equal(11.73, mean_3f_a, 2);
             #elif MSTEST
+            Assert.AreEqual(mean_3f_a, 11.73, 0.01);
             #endif
 
             return;
@@ -187,14 +182,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                     ;
 
             double mean_ftf_a = data_free_throw_fail.MeanArithmetic();
-            double mean_ftf_g = data_free_throw_fail.MeanGeometric();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_ftf_a, 6.11, 0.0001);
+            Assert.AreEqual(mean_ftf_a, 6.11, 0.01);
             #elif XUNIT
-            Assert.Equal(6.11, mean_ftf_a, 4);
+            Assert.Equal(6.11, mean_ftf_a, 2);
             #elif MSTEST
+            Assert.AreEqual(mean_ftf_a, 6.11, 0.01);
             #endif
 
             return;
@@ -210,14 +205,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                     ;
 
             double mean_fts_a = data_free_throw_success.MeanArithmetic();
-            double mean_fts_g = data_free_throw_success.MeanGeometric();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_fts_a, 15.73, 0.0001);
+            Assert.AreEqual(mean_fts_a, 15.73, 0.01);
             #elif XUNIT
-            Assert.Equal(15.73, mean_fts_a, 4);
+            Assert.Equal(15.73, mean_fts_a, 2);
             #elif MSTEST
+            Assert.AreEqual(mean_fts_a, 15.73, 0.01);
             #endif
 
             return;
@@ -233,14 +228,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                     ;
 
             double mean_off_a = data_jumps_offensive.MeanArithmetic();
-            double mean_off_g = data_jumps_offensive.MeanGeometric();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_off_a, 11.22, 0.0001);
+            Assert.AreEqual(mean_off_a, 11.22, 0.01);
             #elif XUNIT
-            Assert.Equal(11.22, mean_off_a, 4);
+            Assert.Equal(11.22, mean_off_a, 2);
             #elif MSTEST
+            Assert.AreEqual(mean_off_a, 11.22, 0.01);
             #endif
 
             return;
@@ -255,14 +250,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                     ;
 
             double mean_def_a = data_jumps_defensive.MeanArithmetic();
-            double mean_def_g = data_jumps_defensive.MeanGeometric();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_def_a, 21.77, 0.0001);
+            Assert.AreEqual(mean_def_a, 21.77, 0.01);
             #elif XUNIT
-            Assert.Equal(21.77, mean_def_a, 4);
+            Assert.Equal(21.77, mean_def_a, 2);
             #elif MSTEST
+            Assert.AreEqual(mean_def_a, 21.77, 0.01);
             #endif
 
             return;
@@ -277,7 +272,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                     ;
 
             double mean_assist_a = data_assistence.MeanArithmetic();
-            double mean_assist_g = data_assistence.MeanGeometric();
 
             // Assert
             #if NUNIT
@@ -300,7 +294,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                     ;
 
             double mean_pf_a = data_personal_faults.MeanArithmetic();
-            double mean_pf_g = data_personal_faults.MeanGeometric();
 
             // Assert
             #if NUNIT
@@ -324,7 +317,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                     ;
 
             double mean_bl_a = data_balls_lost.MeanArithmetic();
-            double mean_bl_g = data_balls_lost.MeanGeometric();
 
             // Assert
             #if NUNIT
@@ -332,6 +324,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             #elif XUNIT
             Assert.Equal(14.74, mean_bl_a, 2);
             #elif MSTEST
+            Assert.AreEqual(mean_bl_a, 14.74, 0.01);
             #endif
 
             return;
@@ -347,7 +340,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                     ;
 
             double mean_bs_a = data_balls_stolen.MeanArithmetic();
-            double mean_bs_g = data_balls_stolen.MeanGeometric();
 
             // Assert
             #if NUNIT
@@ -355,6 +347,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             #elif XUNIT
             Assert.Equal(7.08, mean_bs_a, 2);
             #elif MSTEST
+            Assert.AreEqual(mean_bs_a, 7.08, 0.01);
             #endif
 
             return;
@@ -370,8 +363,15 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                     ;
 
             double mean_block_a = data_blocks.MeanArithmetic();
-            double mean_block_g = data_blocks.MeanGeometric();
 
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(mean_block_a, 3.06, 0.01);
+            #elif XUNIT
+            Assert.Equal(3.06, mean_block_a, 2);
+            #elif MSTEST
+            Assert.AreEqual(mean_block_a, 3.06, 0.01);
+            #endif
             return;
         }
     }
