@@ -144,7 +144,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.VarianceMedianPopulation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.MedianHigh.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.MedianLow.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerableExtensions.MedianGroupedData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\GroupedData\IEnumerableExtensions.GroupedDataMedian.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\GroupedData\IEnumerableExtensions.GroupedDataGroups.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataFlows\StatisticAlgorithmDataflow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)readme.md" />
@@ -155,5 +157,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)Sync\ArrayList\" />
     <Folder Include="$(MSBuildThisFileDirectory)xtras-IEnumerable.Nullable\" />
     <Folder Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sync\GroupedData\" />
+    <Folder Include="$(MSBuildThisFileDirectory)DataFlows\" />
   </ItemGroup>
 </Project>
