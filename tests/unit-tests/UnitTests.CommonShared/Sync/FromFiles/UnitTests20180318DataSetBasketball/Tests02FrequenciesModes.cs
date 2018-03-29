@@ -71,7 +71,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 select row.Points2Success
                                     ;
 
-            List<int> modes = data_2pts_success.Modes();
+            List<int> modes_2s = data_2pts_success.Modes();
 
             return;
         }
@@ -85,7 +85,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 select row.Points3Success
                                     ;
 
-            List<int> modes = data_3pts_success.Modes();
+            List<int> modes_3s = data_3pts_success.Modes();
 
             return;
         }
@@ -99,7 +99,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 select row.Points2Fail
                                     ;
 
-            List<int> modes = data_2pts_fail.Modes();
+            List<int> modes_2f = data_2pts_fail.Modes();
 
             return;
         }
@@ -113,9 +113,136 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 select row.Points3Fail
                                     ;
 
-            List<int> modes = data_3pts_fail.Modes();
+            List<int> modes_3f = data_3pts_fail.Modes();
 
             return;
         }
+
+
+        [Test()]
+        public void Mode_FreeThrowFail()
+        {
+            data_free_throw_fail =
+                                from row in basketball_team_data_table
+                                select row.FreeThrowFail
+                                    ;
+
+            List<int> modes_ftf = data_free_throw_fail.Modes();
+
+            return;
+        }
+
+
+        [Test()]
+        public void Mode_FreeThrowSuccess()
+        {
+            data_free_throw_success =
+                                from row in basketball_team_data_table
+                                select row.FreeThrowSuccess
+                                    ;
+
+            List<int> modes_fts = data_free_throw_success.Modes();
+
+            return;
+        }
+
+
+        [Test()]
+        public void Mode_JumpsOffensive()
+        {
+            data_jumps_offensive =
+                                from row in basketball_team_data_table
+                                select row.JumpsOffensive
+                                    ;
+
+            List<int> modes_off = data_jumps_offensive.Modes();
+
+            return;
+        }
+
+
+        [Test()]
+        public void Mode_JumpsDefensive()
+        {
+            data_jumps_defensive =
+                                from row in basketball_team_data_table
+                                select row.JumpsDefensive
+                                    ;
+
+            List<int> modes_def = data_jumps_defensive.Modes();
+
+            return;
+        }
+
+
+        [Test()]
+        public void Mode_Assistance()
+        {
+            data_assistence =
+                                from row in basketball_team_data_table
+                                select row.Assistence
+                                    ;
+
+            List<int> modes_assist = data_assistence.Modes();
+
+            return;
+        }
+
+
+        [Test()]
+        public void Mode_PersonalFaults()
+        {
+            data_personal_faults =
+                                from row in basketball_team_data_table
+                                select row.PersonalFaults
+                                    ;
+
+            List<int> modes_pf = data_personal_faults.Modes();
+
+            return;
+        }
+
+
+        [Test()]
+        public void Mode_BallsLost()
+        {
+            data_balls_lost =
+                                from row in basketball_team_data_table
+                                select row.BallsLost
+                                    ;
+
+            List<int> modes_bl = data_balls_lost.Modes();
+
+            return;
+        }
+
+
+        [Test()]
+        public void Mode_BallsStolen()
+        {
+            data_balls_stolen =
+                                from row in basketball_team_data_table
+                                select row.BallsStolen
+                                    ;
+
+            List<int> modes_bs = data_balls_stolen.Modes();
+
+            return;
+        }
+
+
+        [Test()]
+        public void Mode_Blocks()
+        {
+            data_blocks =
+                                from row in basketball_team_data_table
+                                select row.Blocks
+                                    ;
+
+            List<int> modes_block = data_blocks.Modes();
+
+            return;
+        }
+
     }
 }
