@@ -60,7 +60,7 @@ using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
-namespace UnitTests.CommonShared.Sync.Qualitative.Classes
+namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.Qualitative.Classes
 {
     [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
     public partial class UnitTestsQualitativePersons

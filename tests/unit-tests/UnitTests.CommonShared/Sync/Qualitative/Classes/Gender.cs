@@ -27,7 +27,7 @@
 // */
 using System;
 
-namespace UnitTests.CommonShared.Sync.Qualitative.Classes
+namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.Qualitative.Classes
 {
     public enum Gender
     {
