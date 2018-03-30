@@ -372,6 +372,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             #elif MSTEST
             Assert.AreEqual(mean_block_a, 3.06, 0.01);
             #endif
+
             return;
         }
     }

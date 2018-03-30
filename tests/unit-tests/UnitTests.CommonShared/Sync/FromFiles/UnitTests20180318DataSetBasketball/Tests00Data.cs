@@ -135,11 +135,12 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                     JumpsOffensive = int.Parse(s_parts[6].Replace(",000", "")),
                     JumpsDefensive = int.Parse(s_parts[7].Replace(",000", "")),
                     Assistence = int.Parse(s_parts[8].Replace(",000", "")),
-                    BallsLost = int.Parse(s_parts[9].Replace(",000", "")),
-                    BallsStolen = int.Parse(s_parts[10].Replace(",000", "")),
-                    Blocks = int.Parse(s_parts[11].Replace(",000", "")),
-                    Criteria01 = int.Parse(s_parts[12].Replace(",000", "")),
-                    Criteria02 = int.Parse(s_parts[13].Replace(",000", "")),
+                    PersonalFaults = int.Parse(s_parts[9].Replace(",000", "")),
+                    BallsLost = int.Parse(s_parts[10].Replace(",000", "")),
+                    BallsStolen = int.Parse(s_parts[11].Replace(",000", "")),
+                    Blocks = int.Parse(s_parts[12].Replace(",000", "")),
+                    Criteria01 = int.Parse(s_parts[13].Replace(",000", "")),
+                    Criteria02 = int.Parse(s_parts[14].Replace(",000", "")),
                 };
 
                 basketball_team_data_table.Add(bg);
