@@ -85,6 +85,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetJudo\JudoData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\02-GroupedData\Tests01MeansAverageMedian.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\02-GroupedData\Tests00Data.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180330RandSampBig1Items10000\Tests00Data.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180330RandSampBig1Items10000\Tests05StandardDeviationVariance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180330RandSampBig1Items100000\Tests00Data.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180330RandSampBig1Items100000\Tests05StandardDeviationVariance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180330RandSampBig2Items10000\Tests00Data.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180330RandSampBig2Items10000\Tests05StandardDeviationVariance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180330RandSampBig2Items100000\Tests00Data.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180330RandSampBig2Items100000\Tests05StandardDeviationVariance.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Async\" />
@@ -107,6 +115,10 @@
     <Folder Include="$(MSBuildThisFileDirectory)Sync\python-website-data\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\02-GroupedData\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\03-DataFlows\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180330RandSampBig1Items10000\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180330RandSampBig1Items100000\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180330RandSampBig2Items10000\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180330RandSampBig2Items100000\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Xtras-BigData\Rand_Samp_BigData_01.csv">

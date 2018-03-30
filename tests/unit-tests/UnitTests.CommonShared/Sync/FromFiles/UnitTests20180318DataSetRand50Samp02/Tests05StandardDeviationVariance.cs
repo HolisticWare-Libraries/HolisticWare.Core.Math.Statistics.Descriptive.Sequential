@@ -186,10 +186,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(364.03337, variance_p, 0.00001);
+            Assert.AreEqual(364.03337, (double)variance_p, 0.00001);
             #elif XUNIT
-            Assert.Equal(364.03338, variance_p, 5);
+            Assert.Equal(364.03338, (double)variance_p, 5);
             #elif MSTEST
+            Assert.AreEqual(364.03337, (double)variance_p, 0.00001);
             #endif
             //====================================================================================================
 

@@ -637,8 +637,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             #if NUNIT
             Assert.AreEqual(d3_average, 5.548, 0.001);
             #elif XUNIT
-            Assert.Equal(d3_average, 5.548, 3);
+            Assert.Equal(5.548, d3_average, 3);
             #elif MSTEST
+            Assert.AreEqual(d3_average, 5.548, 0.001);
             #endif
 
             return;
@@ -654,8 +655,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             #if NUNIT
             Assert.AreEqual(d3_min, 0.3, 0.01);
             #elif XUNIT
-            Assert.Equal(d3_min, 0.3, 2);
+            Assert.Equal(0.3, d3_min, 2);
             #elif MSTEST
+            Assert.AreEqual(d3_min, 0.3, 0.01);
             #endif
             
             return;

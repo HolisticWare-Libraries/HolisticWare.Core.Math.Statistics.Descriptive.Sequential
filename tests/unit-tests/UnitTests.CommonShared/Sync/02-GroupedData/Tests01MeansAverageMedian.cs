@@ -67,7 +67,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         double median;
 
         [Test]
-        public void MedianGroupedData01()
+        public void GroupedDataMedian01()
         {
             //====================================================================================================
             // Arrange
@@ -98,7 +98,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Test]
-        public void MedianGroupedData02()
+        public void GroupedDataMedian02()
         {
             //====================================================================================================
             // https://mail.gnome.org/archives/gnumeric-list/2011-April/msg00018.html
@@ -109,7 +109,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Act
             median = data01.GroupedDataMedian();
             sw.Stop();
-            Console.WriteLine($"Queue<int>.MedianGrouped()");
+            Console.WriteLine($"Queue<int>.GroupedDataMedian()");
             Console.WriteLine($"          median             = {median}");
             Console.WriteLine($"          size               = {data01.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");

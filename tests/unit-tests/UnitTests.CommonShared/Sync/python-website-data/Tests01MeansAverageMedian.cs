@@ -265,7 +265,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             sw = Stopwatch.StartNew();
             // Act
-            median = data01.MedianLow();
+            median = data01.MedianHigh();
             sw.Stop();
             Console.WriteLine($"Queue<int>.Median()");
             Console.WriteLine($"          median             = {median}");
@@ -327,7 +327,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             sw = Stopwatch.StartNew();
             // Act
-            median = data01.MedianLow();
+            median = data01.MedianHigh();
             sw.Stop();
             Console.WriteLine($"Queue<int>.Median()");
             Console.WriteLine($"          median             = {median}");
