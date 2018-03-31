@@ -53,9 +53,9 @@ Running Cake to Build targets
 #addin nuget:?package=Cake.Xamarin
 #addin nuget:?package=Cake.FileHelpers
 
-#tool nuget:?package=NUnit.ConsoleRunner
-#tool nuget:?package=NUnit.Console&include=../Nunit.ConsoleRunner/**/*
-//#tool nuget:?package=NUnit.Runners
+// #tool nuget:?package=NUnit.ConsoleRunner
+// #tool nuget:?package=NUnit.Console&include=../Nunit.ConsoleRunner/**/*
+// #tool nuget:?package=NUnit.Runners
 #tool "nuget:?package=xunit.runner.console"
 #tool "nuget:?package=OpenCover"
 #tool "nuget:?package=ReportGenerator"
