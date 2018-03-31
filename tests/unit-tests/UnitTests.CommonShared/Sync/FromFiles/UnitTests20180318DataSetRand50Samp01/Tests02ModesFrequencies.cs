@@ -62,35 +62,33 @@ using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
-    public partial class UnitTestsPythonWebDocsStatisticsGroupedData
+    public partial class UnitTests20180318DataSetRand50Samp01
     {
-        double median;
-
+        
         [Test]
-        public void GroupedDataMedian01()
+        public void Frequencies()
         {
             //====================================================================================================
-            // Arrange
-            List<int> data01 = new List<int>(new[] { 52, 52, 53, 54 });
+            //  Arrange
+            //  reading data from files
 
             sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
             // Act
-            median = data01.GroupedDataMedian();
+            IEnumerable<KeyValuePair<double, uint>> frequencies = Data.Frequencies();
             sw.Stop();
-            Console.WriteLine($"Queue<int>.MedianGrouped()");
-            Console.WriteLine($"          median             = {median}");
-            Console.WriteLine($"          size               = {data01.Count()}");
+            Console.WriteLine($"List<double>.Frequencies()");
+            Console.WriteLine($"          quencies.Count     = {frequencies.Count()}");
+            Console.WriteLine($"          size               = {Data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
-
+            //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(52, median);
             #elif XUNIT
-            Assert.Equal(52, median);
             #elif MSTEST
-            Assert.AreEqual(52, median);
             #endif
             //====================================================================================================
 
@@ -98,37 +96,35 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Test]
-        public void GroupedDataMedian02()
+        public void Modes()
         {
             //====================================================================================================
-            // https://mail.gnome.org/archives/gnumeric-list/2011-April/msg00018.html
-            // Arrange
-            List<int> data01 = new List<int>(new[] { 7, 8, 8 });
+            //  Arrange
+            //  reading data from files
 
             sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
             // Act
-            median = data01.GroupedDataMedian();
+            List<double> modes = Data.Modes();
             sw.Stop();
-            Console.WriteLine($"Queue<int>.GroupedDataMedian()");
-            Console.WriteLine($"          median             = {median}");
-            Console.WriteLine($"          size               = {data01.Count()}");
+            Console.WriteLine($"List<double>.Modes()");
+            Console.WriteLine($"          modes              = {modes}");
+            Console.WriteLine($"          size               = {Data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
 
+            //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(8, median);
             #elif XUNIT
-            Assert.Equal(8, median);
             #elif MSTEST
-            Assert.AreEqual(8, median);
             #endif
             //====================================================================================================
 
             return;
         }
-
 
     }
 }

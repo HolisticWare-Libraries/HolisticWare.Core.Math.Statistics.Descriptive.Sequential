@@ -72,7 +72,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         List<double> weights = null;
 
         [Test()]
-        public void Average()
+        public void MeanArithmetic01()
         {
             //====================================================================================================
             // Arrange
@@ -104,7 +104,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Test()]
-        public void MeanArithmetic()
+        public void MeanArithmetic02()
         {
             //====================================================================================================
             // Arrange

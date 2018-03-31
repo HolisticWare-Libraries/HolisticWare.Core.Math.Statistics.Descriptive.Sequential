@@ -41,6 +41,7 @@ using Test = Xunit.FactAttribute;
 using OneTimeSetUp = HolisticWare.Core.Testing.UnitTestsCompatibilityAliasAttribute;
 // XUnit aliases
 using TestClass = HolisticWare.Core.Testing.UnitTestsCompatibilityAliasAttribute;
+using TestContext = HolisticWare.Core.Testing.UnitTestsCompatibilityAliasAttribute;
 #elif NUNIT
 using NUnit.Framework;
 // MSTest aliases
@@ -75,7 +76,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             {
                 if (judo_data_table == null)
                 {
-                    LoadDataFromFile();
+                    LoadDataFromFile(null);
                 }
 
                 return judo_data_table;
@@ -85,7 +86,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         Stopwatch sw = null;
 
         //[OneTimeSetUp]
-        protected static void LoadDataFromFile()
+        protected static void LoadDataFromFile(TestContext tc)
         {
             string directory_test =
                                     #if NUNIT

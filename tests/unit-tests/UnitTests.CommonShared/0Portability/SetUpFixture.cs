@@ -30,7 +30,7 @@ using System;
 using NUnit.Framework;
 #endif
 
-namespace UnitTests.CommonShared
+namespace HolisticWare.Core.Testing
 {
     #if NUNIT
     [SetUpFixture]

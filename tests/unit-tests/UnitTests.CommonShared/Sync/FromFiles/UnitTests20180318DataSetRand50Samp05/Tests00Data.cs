@@ -72,8 +72,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
         Stopwatch sw = null;
 
-        [OneTimeSetUp]
-        protected static void LoadDataFromFile()
+        [OneTimeSetUp] // for MSTest - ClassInitialize - public, static, void
+        public static void LoadDataFromFile()
         {
             string directory_test =
                                     #if NUNIT

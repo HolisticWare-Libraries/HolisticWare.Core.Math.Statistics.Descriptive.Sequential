@@ -58,7 +58,7 @@ using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
-namespace UnitTests.HolisticWare.Core.Math.Statistics
+namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
     public partial class Tests20180119

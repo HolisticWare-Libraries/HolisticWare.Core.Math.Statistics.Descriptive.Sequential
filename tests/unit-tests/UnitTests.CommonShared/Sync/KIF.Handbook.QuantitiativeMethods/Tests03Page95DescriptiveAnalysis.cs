@@ -66,10 +66,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     public partial class Tests03Page95DescriptiveAnalysis
     {
         [Test()]
-        public void Data_x1_Mean_Average()
+        public void Data_x1_MeanArithmetic()
         {
             // Act
-            double x1_average = x1.Average();
+            double x1_average = x1.MeanArithmetic();
             // Assert
             #if NUNIT
             Assert.AreEqual(x1_average, 58.7787, 0.0001);

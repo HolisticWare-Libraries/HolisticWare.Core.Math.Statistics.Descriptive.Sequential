@@ -67,12 +67,12 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
     public partial class UnitTests20180330RandSampBig2Items100000
     {
-        List<BasketballTeamData> data01 = null;
+        static List<BasketballTeamData> data01 = null;
 
         Stopwatch sw = null;
 
-        [OneTimeSetUp]
-        protected void LoadDataFromFile()
+        [OneTimeSetUp] // for MSTest - ClassInitialize - public, static, void
+        public static void LoadDataFromFile()
         {
             string directory_test =
                                     #if NUNIT

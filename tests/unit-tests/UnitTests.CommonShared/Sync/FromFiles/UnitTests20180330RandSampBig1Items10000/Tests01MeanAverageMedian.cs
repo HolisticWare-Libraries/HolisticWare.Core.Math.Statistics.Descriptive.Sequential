@@ -62,35 +62,36 @@ using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
-    public partial class UnitTestsPythonWebDocsStatisticsGroupedData
+    public partial class UnitTests20180330RandSampBig1Items10000
     {
-        double median;
-
+        
         [Test]
-        public void GroupedDataMedian01()
+        public void MeanArithmetic()
         {
             //====================================================================================================
-            // Arrange
-            List<int> data01 = new List<int>(new[] { 52, 52, 53, 54 });
+            //  Arrange
+            //  reading data from files
 
             sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
             // Act
-            median = data01.GroupedDataMedian();
+            double mean_arithmetic = Data.MeanArithmetic();
             sw.Stop();
-            Console.WriteLine($"Queue<int>.MedianGrouped()");
-            Console.WriteLine($"          median             = {median}");
-            Console.WriteLine($"          size               = {data01.Count()}");
+            Console.WriteLine($"List<double>.MeanArithmetic()");
+            Console.WriteLine($"          mean_arithmetic    = {mean_arithmetic}");
+            Console.WriteLine($"          size               = {Data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
-
+            //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(52, median);
+            Assert.AreEqual(177.25, mean_arithmetic, 0.01);
             #elif XUNIT
-            Assert.Equal(52, median);
+            Assert.Equal(177.25, mean_arithmetic, 2);
             #elif MSTEST
-            Assert.AreEqual(52, median);
+            Assert.AreEqual(177.25, mean_arithmetic, 0.01);
             #endif
             //====================================================================================================
 
@@ -98,37 +99,67 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Test]
-        public void GroupedDataMedian02()
+        public void MeanGeometric()
         {
             //====================================================================================================
-            // https://mail.gnome.org/archives/gnumeric-list/2011-April/msg00018.html
-            // Arrange
-            List<int> data01 = new List<int>(new[] { 7, 8, 8 });
+            //  Arrange
+            //  reading data from files
 
             sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
             // Act
-            median = data01.GroupedDataMedian();
+            double mean_geometric = Data.MeanGeometric();
             sw.Stop();
-            Console.WriteLine($"Queue<int>.GroupedDataMedian()");
-            Console.WriteLine($"          median             = {median}");
-            Console.WriteLine($"          size               = {data01.Count()}");
+            Console.WriteLine($"List<double>.MeanGeometric()");
+            Console.WriteLine($"          mean_geometric     = {mean_geometric}");
+            Console.WriteLine($"          size               = {Data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
 
+            //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(8, median);
+            Assert.That(!Double.IsInfinity(mean_geometric));
+            Assert.AreEqual(179.7796, mean_geometric, 0.0001);
             #elif XUNIT
-            Assert.Equal(8, median);
+            Assert.True(!Double.IsInfinity(mean_geometric));
+            Assert.Equal(179.7797, mean_geometric, 4);
             #elif MSTEST
-            Assert.AreEqual(8, median);
             #endif
             //====================================================================================================
 
             return;
         }
 
+        [Test]
+        public void MeanGeometric_Exception()
+        {
+            #if NUNIT
+            // System.OverflowException : Arithmetic operation resulted in an overflow.
+            Assert.Throws<System.OverflowException>
+                    (
+                        () =>
+                        {
+                            // TODO: System.InvalidCastException : Specified cast is not valid.
+                            decimal mean_deomatric_decimal = (Data.Select(x_i => (decimal)x_i)).MeanGeometric();
+                        }
+                    );
+            #elif XUNIT
+            // System.OverflowException : Arithmetic operation resulted in an overflow.
+            Assert.Throws<System.OverflowException>
+                    (
+                        () =>
+                        {
+                            // TODO: System.InvalidCastException : Specified cast is not valid.
+                            decimal mean_deomatric_decimal = (Data.Select(x_i => (decimal)x_i)).MeanGeometric();
+                        }
+                    );
+            #elif MSTEST
+            #endif
 
+            return;
+        }
     }
 }

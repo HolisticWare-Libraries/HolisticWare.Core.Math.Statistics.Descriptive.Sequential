@@ -70,9 +70,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         List<double> data01 = null;
         List<double> data02 = null;
 
-        double? correlation_data01_data02_01 = null;
-        double? correlation_data02_data01_01 = null;
-
         [Test]
         public void Correlation_01_02()
         {
@@ -86,10 +83,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            correlation_data01_data02_01 = data01.Correlation(data02);
+            double correlation_data01_data02 = data01.Correlation(data02);
             sw.Stop();
             Console.WriteLine($"List<double>.Correlation(List<double>)");
-            Console.WriteLine($"          correlation        = {correlation_data01_data02_01}");
+            Console.WriteLine($"          correlation        = {correlation_data01_data02}");
             Console.WriteLine($"          size               = {data01.Count()} x {data02.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -98,9 +95,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(0.1882, correlation_data01_data02_01, 0.0001);
+            Assert.AreEqual(0.1882, correlation_data01_data02, 0.0001);
             #elif XUNIT
-            Assert.Equal(0.1882, (double)correlation_data01_data02_01, 4);
+            Assert.Equal(0.1882, (double)correlation_data01_data02, 4);
             #elif MSTEST
             #endif
             //====================================================================================================
@@ -121,45 +118,66 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            correlation_data02_data01_01 = data02.Correlation(data01);
+            double correlation_data02_data01 = data02.Correlation(data01);
             sw.Stop();
             Console.WriteLine($"List<double>.Correlation(List<double>)");
-            Console.WriteLine($"          correlation        = {correlation_data02_data01_01}");
+            Console.WriteLine($"          correlation        = {correlation_data02_data01}");
             Console.WriteLine($"          size               = {data01.Count()} x {data02.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
 
             //----------------------------------------------------------------------------------------------------
+            // Act
+            double correlation_data01_data02 = data01.Correlation(data02);
+            sw.Stop();
+            Console.WriteLine($"List<double>.Correlation(List<double>)");
+            Console.WriteLine($"          correlation        = {correlation_data02_data01}");
+            Console.WriteLine($"          size               = {data01.Count()} x {data02.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double correlation_data01_data01_01 = data01.Correlation(data01);
+            sw.Stop();
+            Console.WriteLine($"List<double>.Correlation(List<double>)");
+            Console.WriteLine($"          correlation        = {correlation_data02_data01}");
+            Console.WriteLine($"          size               = {data01.Count()} x {data02.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+            //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(0.1882, correlation_data02_data01_01, 0.0001);
+            Assert.AreEqual(0.1882, correlation_data02_data01, 0.0001);
             #elif XUNIT
-            Assert.Equal(0.1882, (double)correlation_data02_data01_01, 4);
+            Assert.Equal(0.1882, correlation_data02_data01, 4);
             #elif MSTEST
-            Assert.AreEqual(0.1882, (double)correlation_data02_data01_01, 0.0001);
+            Assert.AreEqual(0.1882, correlation_data02_data01, 0.0001);
             #endif
             //====================================================================================================
 
             #if NUNIT
             Assert.AreEqual
                         (
-                            (double)correlation_data01_data02_01,
-                            (double)correlation_data02_data01_01,
+                            correlation_data01_data02,
+                            correlation_data02_data01,
                             0.00001
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            (double)correlation_data01_data02_01,
-                            (double)correlation_data02_data01_01,
+                            correlation_data01_data02,
+                            correlation_data02_data01,
                             5
                         );
             #elif MSTEST
             Assert.AreEqual
                         (
-                            (double)correlation_data01_data02_01,
-                            (double)correlation_data02_data01_01,
+                            correlation_data01_data02,
+                            correlation_data02_data01,
                             0.00001
                         );
             #endif

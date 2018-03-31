@@ -162,5 +162,204 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             return;
         }
+
+
+        [Test]
+        public void MeanHarmonic()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double mean = Data.MeanHarmonic();
+            sw.Stop();
+            Console.WriteLine($"List<double>.MeanHarmonic()");
+            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+#if NUNIT
+            Assert.AreEqual(179.7796, mean, 0.0001);
+#elif XUNIT
+            Assert.Equal(179.7797, mean, 4);
+#elif MSTEST
+            Assert.AreEqual(179.7796, mean, 0.0001);
+#endif
+            //====================================================================================================
+
+            return;
+        }
+
+
+        [Test]
+        public void MeanQuadratic()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double mean = Data.MeanQuadratic();
+            sw.Stop();
+            Console.WriteLine($"List<double>.MeanQuadratic()");
+            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+#if NUNIT
+            Assert.AreEqual(179.7796, mean, 0.0001);
+#elif XUNIT
+            Assert.Equal(179.7797, mean, 4);
+#elif MSTEST
+            Assert.AreEqual(179.7796, mean, 0.0001);
+#endif
+            //====================================================================================================
+
+            return;
+        }
+
+        [Test]
+        public void MeanCubic()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double mean = Data.MeanCubic();
+            sw.Stop();
+            Console.WriteLine($"List<double>.MeanCubic()");
+            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+#if NUNIT
+            Assert.AreEqual(179.7796, mean, 0.0001);
+#elif XUNIT
+            Assert.Equal(179.7797, mean, 4);
+#elif MSTEST
+            Assert.AreEqual(179.7796, mean, 0.0001);
+#endif
+            //====================================================================================================
+
+            return;
+        }
+
+        [Test]
+        public void Median()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double median = Data.Median();
+            sw.Stop();
+            Console.WriteLine($"List<double>.Median()");
+            Console.WriteLine($"          median             = {median}");
+            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+#if NUNIT
+#elif XUNIT
+#elif MSTEST
+#endif
+            //====================================================================================================
+
+            return;
+        }
+
+        [Test]
+        public void MedianLow()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double median = Data.MedianLow();
+            sw.Stop();
+            Console.WriteLine($"List<double>.MedianLow()");
+            Console.WriteLine($"          median             = {median}");
+            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+#if NUNIT
+#elif XUNIT
+#elif MSTEST
+#endif
+            //====================================================================================================
+
+            return;
+        }
+
+        [Test]
+        public void MedianHigh()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double median = Data.MedianHigh();
+            sw.Stop();
+            Console.WriteLine($"List<double>.MedianHigh()");
+            Console.WriteLine($"          median             = {median}");
+            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+#if NUNIT
+#elif XUNIT
+#elif MSTEST
+#endif
+            //====================================================================================================
+
+            return;
+        }
+
+
     }
 }
