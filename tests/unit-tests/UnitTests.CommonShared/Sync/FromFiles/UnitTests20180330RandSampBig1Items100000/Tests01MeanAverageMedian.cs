@@ -121,12 +121,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.That(!Double.IsInfinity(mean_geometric));
-            Assert.AreEqual(179.7796, mean_geometric, 0.0001);
+            Assert.That(Double.IsInfinity(mean_geometric));
             #elif XUNIT
-            Assert.True(!Double.IsInfinity(mean_geometric));
-            Assert.Equal(179.7797, mean_geometric, 4);
+            Assert.True(Double.IsInfinity(mean_geometric));
             #elif MSTEST
+            Assert.IsTrue(Double.IsInfinity(mean_geometric));
             #endif
             //====================================================================================================
 

@@ -72,13 +72,13 @@ namespace HolisticWare.Core.Testing
 
     public class UnitTestCompatibilityTests
     {
-        [Fact]
+        //[Fact]
         public void Test1()
         {
 
         }
 
-        [Test]
+        //[Test]
         public void Test2()
         {
 

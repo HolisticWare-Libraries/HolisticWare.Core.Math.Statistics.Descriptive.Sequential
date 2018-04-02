@@ -184,5 +184,76 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             return;
         }
+
+
+        [Test]
+        public void Correlation_01_01()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+            data01 = UnitTests20180318DataSetRand50Samp01.Data;
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double correlation_data01_data01 = data01.Correlation(data01);
+            sw.Stop();
+            Console.WriteLine($"List<double>.Correlation(List<double>)");
+            Console.WriteLine($"          correlation        = {correlation_data01_data01}");
+            Console.WriteLine($"          size               = {data01.Count()} x {data01.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(1.0, correlation_data01_data01, 0.0001);
+            #elif XUNIT
+            Assert.Equal(1.0, correlation_data01_data01, 4);
+            #elif MSTEST
+            Assert.AreEqual(1.0, correlation_data01_data01, 0.0001);
+            #endif
+            //====================================================================================================
+
+            return;
+        }
+    
+        [Test]
+        public void Correlation_02_02()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+            data02 = UnitTests20180318DataSetRand50Samp02.Data;
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double correlation_data02_data02 = data02.Correlation(data02);
+            sw.Stop();
+            Console.WriteLine($"List<double>.Correlation(List<double>)");
+            Console.WriteLine($"          correlation        = {correlation_data02_data02}");
+            Console.WriteLine($"          size               = {data02.Count()} x {data02.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(1.0, correlation_data02_data02, 0.0001);
+            #elif XUNIT
+            Assert.Equal(1.0, correlation_data02_data02, 4);
+            #elif MSTEST
+            Assert.AreEqual(1.0, correlation_data02_data02, 0.0001);
+            #endif
+            //====================================================================================================
+
+            return;
+        }
     }
 }

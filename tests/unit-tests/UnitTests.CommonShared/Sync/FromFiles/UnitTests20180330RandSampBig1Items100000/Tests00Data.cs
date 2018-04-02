@@ -84,7 +84,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
         Stopwatch sw = null;
 
-        [OneTimeSetUp] // for MSTest - ClassInitialize - public, static, void
+        //[OneTimeSetUp] // for MSTest - ClassInitialize - public, static, void
         public static void LoadDataFromFile()
         {
             string directory_test =

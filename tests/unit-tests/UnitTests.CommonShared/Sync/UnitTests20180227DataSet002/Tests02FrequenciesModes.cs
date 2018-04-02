@@ -215,13 +215,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Reset();
 
             // Assert
-            #if NUNIT
+#if NUNIT
             CollectionAssert.AreEquivalent
                                     (
                                         new List<int> { 24, 28, 29 },
                                         modes02
                                     );
             #elif XUNIT
+            modes02.Sort();
             Assert.Equal
                                     (
                                         new List<int> { 24, 28, 29 },

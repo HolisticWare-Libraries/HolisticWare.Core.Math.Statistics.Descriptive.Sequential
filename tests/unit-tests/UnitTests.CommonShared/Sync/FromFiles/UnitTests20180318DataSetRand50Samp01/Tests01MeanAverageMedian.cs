@@ -185,11 +185,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(179.7796, mean, 0.0001);
+            Assert.AreEqual(178.6275, mean, 0.0001);
             #elif XUNIT
-            Assert.Equal(179.7797, mean, 4);
+            Assert.Equal(178.6275, mean, 4);
             #elif MSTEST
-            Assert.AreEqual(179.7796, mean, 0.0001);
+            Assert.AreEqual(178.6275, mean, 0.0001);
             #endif
             //====================================================================================================
 
@@ -220,11 +220,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(179.7796, mean, 0.0001);
+            Assert.AreEqual(181.9349, mean, 0.0001);
             #elif XUNIT
-            Assert.Equal(179.7797, mean, 4);
+            Assert.Equal(181.9349, mean, 4);
             #elif MSTEST
-            Assert.AreEqual(179.7796, mean, 0.0001);
+            Assert.AreEqual(181.9349, mean, 0.0001);
             #endif
             //====================================================================================================
 
@@ -254,11 +254,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(179.7796, mean, 0.0001);
+            Assert.AreEqual(182.9428, mean, 0.0001);
             #elif XUNIT
-            Assert.Equal(179.7797, mean, 4);
+            Assert.Equal(182.9428, mean, 4);
             #elif MSTEST
-            Assert.AreEqual(179.7796, mean, 0.0001);
+            Assert.AreEqual(182.9428, mean, 0.0001);
             #endif
             //====================================================================================================
 

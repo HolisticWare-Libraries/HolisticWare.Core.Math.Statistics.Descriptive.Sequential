@@ -84,7 +84,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                             modes01
                         );
             #elif MSTEST
-            Assert.AreEqual
+            CollectionAssert.AreEqual
                         (
                             new List<int> { 3 },
                             modes01
@@ -150,6 +150,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                             modes01
                         );
             #elif MSTEST
+            CollectionAssert.AreEqual
+                        (
+                            new List<double> { 18.2, 14.7, },
+                            modes01
+                        );
             #endif
 
 
