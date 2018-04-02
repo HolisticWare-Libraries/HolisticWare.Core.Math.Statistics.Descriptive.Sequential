@@ -65,44 +65,44 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     {
 
         [Test()]
-        public void Variance_Points2Success()
+        public void Kurtosis_Points2Success()
         {
             data_2pts_success =
                                     from row in BasketballTeamDataTable
                                     select row.Points2Success
                                         ;
 
-            double variance_2s = data_2pts_success.VarianceSample();
+            double kurtosis_2s = data_2pts_success.Kurtosis();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(variance_2s, 47.218, 0.001);
+            Assert.AreEqual(kurtosis_2s, 0.088, 0.001);
             #elif XUNIT
-            Assert.Equal(47.218, variance_2s, 3);
+            Assert.Equal(0.088, kurtosis_2s, 3);
             #elif MSTEST
-            Assert.AreEqual(variance_2s, 47.218, 0.001);
+            Assert.AreEqual(kurtosis_2s, 0.088, 0.001);
             #endif
 
             return;
         }
 
-            [Test()]
-        public void Variance_Points3Success()
+        [Test()]
+        public void Kurtosis_Points3Success()
         {
             data_3pts_success =
                                     from row in BasketballTeamDataTable
                                     select row.Points3Success
                                         ;
 
-            double variance_3pts_success = data_3pts_success.VarianceSample();
+            double kurtosis_3pts_success = data_3pts_success.Kurtosis();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(variance_3pts_success, 11.983, 0.001);
+            Assert.AreEqual(kurtosis_3pts_success, 2.134, 0.001);
             #elif XUNIT
-            Assert.Equal(11.983, variance_3pts_success, 3);
+            Assert.Equal(2.134, kurtosis_3pts_success, 3);
             #elif MSTEST
-            Assert.AreEqual(variance_3pts_success, 11.983, 0.001);
+            Assert.AreEqual(kurtosis_3pts_success, 2.134, 0.001);
             #endif
 
 
@@ -111,22 +111,22 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Test()]
-        public void Variance_Points2Fail()
+        public void Kurtosis_Points2Fail()
         {
             data_2pts_fail =
                                 from row in BasketballTeamDataTable
                                 select row.Points2Fail
                                     ;
 
-            double variance_2f = data_2pts_fail.VarianceSample();
+            double kurtosis_2f = data_2pts_fail.Kurtosis();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(variance_2f, 42.943, 0.001);
+            Assert.AreEqual(kurtosis_2f, 0.235, 0.001);
             #elif XUNIT
-            Assert.Equal(42.943, variance_2f, 3);
+            Assert.Equal(0.235, kurtosis_2f, 3);
             #elif MSTEST
-            Assert.AreEqual(variance_2f, 42.943, 0.001);
+            Assert.AreEqual(kurtosis_2f, 0.235, 0.001);
             #endif
 
 
@@ -135,22 +135,22 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Test()]
-        public void Variance_Points3Fail()
+        public void Kurtosis_Points3Fail()
         {
             data_3pts_fail =
                                 from row in BasketballTeamDataTable
                                 select row.Points3Fail
                                     ;
 
-            double variance_3f = data_3pts_fail.VarianceSample();
+            double kurtosis_3f = data_3pts_fail.Kurtosis();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(variance_3f, 21.003, 0.001);
+            Assert.AreEqual(kurtosis_3f, 0.638, 0.001);
             #elif XUNIT
-            Assert.Equal(21.003, variance_3f, 3);
+            Assert.Equal(0.638, kurtosis_3f, 3);
             #elif MSTEST
-            Assert.AreEqual(variance_3f, 21.003, 0.001);
+            Assert.AreEqual(kurtosis_3f, 0.638, 0.001);
             #endif
 
             return;
@@ -158,22 +158,22 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Test()]
-        public void Variance_FreeThrowFail()
+        public void Kurtosis_FreeThrowFail()
         {
             data_free_throw_fail =
                                 from row in BasketballTeamDataTable
                                 select row.FreeThrowFail
                                     ;
 
-            double variance_ftf = data_free_throw_fail.VarianceSample();
+            double kurtosis_ftf = data_free_throw_fail.Kurtosis();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(variance_ftf, 10.334, 0.001);
+            Assert.AreEqual(kurtosis_ftf, -0.604, 0.001);
             #elif XUNIT
-            Assert.Equal(10.334, variance_ftf, 3);
+            Assert.Equal(-0.604, kurtosis_ftf, 3);
             #elif MSTEST
-            Assert.AreEqual(variance_ftf, 10.334, 0.001);
+            Assert.AreEqual(kurtosis_ftf, -0.604, 0.001);
             #endif
 
             return;
@@ -181,22 +181,22 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Test()]
-        public void Variance_FreeThrowSuccess()
+        public void Kurtosis_FreeThrowSuccess()
         {
             data_free_throw_success =
                                 from row in BasketballTeamDataTable
                                 select row.FreeThrowSuccess
                                     ;
 
-            double variance_fts = data_free_throw_success.VarianceSample();
+            double kurtosis_fts = data_free_throw_success.Kurtosis();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(variance_fts, 56.669, 0.001);
+            Assert.AreEqual(kurtosis_fts, -0.128, 0.001);
             #elif XUNIT
-            Assert.Equal(56.669, variance_fts, 3);
+            Assert.Equal(-0.128, kurtosis_fts, 3);
             #elif MSTEST
-            Assert.AreEqual(variance_fts, 56.669, 0.001);
+            Assert.AreEqual(kurtosis_fts, -0.128, 0.001);
             #endif
 
             return;
@@ -204,88 +204,88 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Test()]
-        public void Variance_JumpsOffensive()
+        public void Kurtosis_JumpsOffensive()
         {
             data_jumps_offensive =
                                 from row in BasketballTeamDataTable
                                 select row.JumpsOffensive
                                     ;
 
-            double variance_off = data_jumps_offensive.VarianceSample();
+            double kurtosis_off = data_jumps_offensive.Kurtosis();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(variance_off, 19.054, 0.001);
+            Assert.AreEqual(kurtosis_off, 0.420, 0.001);
             #elif XUNIT
-            Assert.Equal(19.054, variance_off, 3);
+            Assert.Equal(0.420, kurtosis_off, 3);
             #elif MSTEST
-            Assert.AreEqual(variance_off, 19.054, 0.001);
+            Assert.AreEqual(kurtosis_off, 0.420, 0.001);
             #endif
 
             return;
         }
 
         [Test()]
-        public void Variance_JumpsDefensive()
+        public void Kurtosis_JumpsDefensive()
         {
             data_jumps_defensive =
                                 from row in BasketballTeamDataTable
                                 select row.JumpsDefensive
                                     ;
 
-            double variance_def = data_jumps_defensive.VarianceSample();
+            double kurtosis_def = data_jumps_defensive.Kurtosis();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(variance_def, 35.929, 0.001);
+            Assert.AreEqual(kurtosis_def, -0.494, 0.001);
             #elif XUNIT
-            Assert.Equal(35.929, variance_def, 3);
+            Assert.Equal(-0.494, kurtosis_def, 3);
             #elif MSTEST
-            Assert.AreEqual(variance_def, 35.929, 0.001);
+            Assert.AreEqual(kurtosis_def, -0.494, 0.001);
             #endif
 
             return;
         }
 
         [Test()]
-        public void Variance_Assistence()
+        public void Kurtosis_Assistence()
         {
             data_assistence =
                                 from row in BasketballTeamDataTable
                                 select row.Assistence
                                     ;
 
-            double variance_assist = data_assistence.VarianceSample();
+            double kurtosis_assist = data_assistence.Kurtosis();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(variance_assist, 31.175, 0.001);
+            Assert.AreEqual(kurtosis_assist, 0.909, 0.001);
             #elif XUNIT
-            Assert.Equal(31.175, variance_assist, 3);
+            Assert.Equal(0.909, kurtosis_assist, 3);
             #elif MSTEST
-            Assert.AreEqual(variance_assist, 31.175, 0.001);
+            Assert.AreEqual(kurtosis_assist, 0.909, 0.001);
             #endif
 
             return;
         }
 
         [Test()]
-        public void Variance_PersonalFaults()
+        public void Kurtosis_PersonalFaults()
         {
             data_personal_faults =
                                 from row in BasketballTeamDataTable
                                 select row.PersonalFaults
                                     ;
 
-            double variance_pf = data_personal_faults.VarianceSample();
+            double kurtosis_pf = data_personal_faults.Kurtosis();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(variance_pf, 27.819, 0.001);
+            Assert.AreEqual(kurtosis_pf, 0.170, 0.001);
             #elif XUNIT
-            Assert.Equal(27.819, variance_pf, 3);
+            Assert.Equal(0.170, kurtosis_pf, 3);
             #elif MSTEST
-            Assert.AreEqual(variance_pf, 27.819, 0.001);
+            Assert.AreEqual(kurtosis_pf, 0.170, 0.001);
             #endif
 
             return;
@@ -293,22 +293,22 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Test()]
-        public void Variance_BallsLost()
+        public void Kurtosis_BallsLost()
         {
             data_balls_lost =
                                 from row in BasketballTeamDataTable
                                 select row.BallsLost
                                     ;
 
-            double variance_bl = data_balls_lost.VarianceSample();
+            double kurtosis_bl = data_balls_lost.Kurtosis();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(variance_bl, 24.728, 0.001);
+            Assert.AreEqual(kurtosis_bl, 2.397, 0.001);
             #elif XUNIT
-            Assert.Equal(24.728, variance_bl, 3);
+            Assert.Equal(2.397, kurtosis_bl, 3);
             #elif MSTEST
-            Assert.AreEqual(variance_bl, 24.728, 0.001);
+            Assert.AreEqual(kurtosis_bl, 2.397, 0.001);
             #endif
 
             return;
@@ -316,22 +316,22 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Test()]
-        public void Variance_BallsStolen()
+        public void Kurtosis_BallsStolen()
         {
             data_balls_stolen =
                                 from row in BasketballTeamDataTable
                                 select row.BallsStolen
                                     ;
 
-            double variance_bs = data_balls_stolen.VarianceSample();
+            double kurtosis_bs = data_balls_stolen.Kurtosis();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(variance_bs, 11.474, 0.001);
+            Assert.AreEqual(kurtosis_bs, 2.101, 0.001);
             #elif XUNIT
-            Assert.Equal(11.474, variance_bs, 3);
+            Assert.Equal(2.101, kurtosis_bs, 3);
             #elif MSTEST
-            Assert.AreEqual(variance_bs, 11.474, 0.001);
+            Assert.AreEqual(kurtosis_bs, 2.101, 0.001);
             #endif
 
             return;
@@ -339,25 +339,26 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Test()]
-        public void Variance_Blocks()
+        public void Kurtosis_Blocks()
         {
             data_blocks =
                                 from row in BasketballTeamDataTable
                                 select row.Blocks
                                     ;
 
-            double variance_block = data_blocks.VarianceSample();
+            double kurtosis_block = data_blocks.Kurtosis();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(variance_block, 5.634, 0.001);
+            Assert.AreEqual(kurtosis_block, -0.275, 0.001);
             #elif XUNIT
-            Assert.Equal(5.634, variance_block, 3);
+            Assert.Equal(-0.275, kurtosis_block, 3);
             #elif MSTEST
-            Assert.AreEqual(variance_block, 5.634, 0.001);
+            Assert.AreEqual(kurtosis_block, -0.275, 0.001);
             #endif
 
             return;
         }
+
     }
 }
