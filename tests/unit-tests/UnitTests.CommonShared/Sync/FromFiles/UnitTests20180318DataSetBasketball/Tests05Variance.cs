@@ -48,7 +48,7 @@ using TestMethod = NUnit.Framework.TestAttribute;
 using TestCleanup = NUnit.Framework.TearDownAttribute;
 using TestContext = System.Object;
 // XUnit aliases
-using Fact=NUnit.Framework.TestAttribute;
+using Fact = NUnit.Framework.TestAttribute;
 #elif MSTEST
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 // NUnit aliases
@@ -63,5 +63,28 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class UnitTests20180318DataSetBasketball
     {
+
+        [Test()]
+        public void Variance_Points2Success()
+        {
+            data_2pts_success =
+                                    from row in BasketballTeamDataTable
+                                    select row.Points2Success
+                                        ;
+
+            double variance_2s = data_2pts_success.VarianceSample();
+
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(variance_2s, 47.218, 0.001);
+            #elif XUNIT
+            Assert.Equal(47.218, variance_2s, 3);
+            #elif MSTEST
+            Assert.AreEqual(variance_2s, 47.218, 0.001);
+            #endif
+
+            return;
+        }
+
     }
 }
