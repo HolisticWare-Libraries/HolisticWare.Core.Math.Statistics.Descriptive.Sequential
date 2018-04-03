@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
@@ -16,7 +16,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\TestsFrequencyDistribution20180120.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119.Modes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\UnitTests20180213.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\KIF.Handbook.QuantitiativeMethods\Tests03Page95DescriptiveAnalysis.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\KIF.Handbook.QuantitiativeMethods\Tests03Page95DescriptiveAnalysis.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\NinaPhysicsLabPowerCalculation\UniTestsNinaPhysics20180403.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests00Data.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests01MeansAverageMedian.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests02FrequenciesModes.cs" />
@@ -68,12 +69,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp05\Tests05StandardDeviationVariance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp06\Tests05StandardDeviationVariance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\x01-Correlation-Covariance\FromFilesRandSamples.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\KIF.Handbook.QuantitiativeMethods\Tests03Page95DescriptiveAnalysis\Tests00Data.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\KIF.Handbook.QuantitiativeMethods\Tests03Page95DescriptiveAnalysis\Tests01MeanAverageMedian.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\KIF.Handbook.QuantitiativeMethods\Tests03Page95DescriptiveAnalysis\Tests02FrequenciesModes.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\KIF.Handbook.QuantitiativeMethods\Tests03Page95DescriptiveAnalysis\Tests03Moments.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\KIF.Handbook.QuantitiativeMethods\Tests03Page95DescriptiveAnalysis\Tests04SkewnessKurtosis.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\KIF.Handbook.QuantitiativeMethods\Tests03Page95DescriptiveAnalysis\Tests05StandardDeviationVariance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\KIF.Handbook.QuantitiativeMethods\Tests03Page95DescriptiveAnalysis\Tests00Data.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\KIF.Handbook.QuantitiativeMethods\Tests03Page95DescriptiveAnalysis\Tests01MeanAverageMedian.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\KIF.Handbook.QuantitiativeMethods\Tests03Page95DescriptiveAnalysis\Tests02FrequenciesModes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\KIF.Handbook.QuantitiativeMethods\Tests03Page95DescriptiveAnalysis\Tests03Moments.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\KIF.Handbook.QuantitiativeMethods\Tests03Page95DescriptiveAnalysis\Tests04SkewnessKurtosis.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\KIF.Handbook.QuantitiativeMethods\Tests03Page95DescriptiveAnalysis\Tests05StandardDeviationVariance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\Qualitative\Classes\Person.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\Qualitative\Classes\Gender.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\Qualitative\Classes\UnitTestsQualitativePersons.cs" />
@@ -104,7 +105,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Async\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Sync\" />
     <Folder Include="$(MSBuildThisFileDirectory)Xtras-BigData\" />
     <Folder Include="$(MSBuildThisFileDirectory)Xtras-SampleData\" />
     <Folder Include="$(MSBuildThisFileDirectory)0Portability\" />
@@ -117,7 +117,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp05\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp06\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\x01-Correlation-Covariance\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Sync\KIF.Handbook.QuantitiativeMethods\Tests03Page95DescriptiveAnalysis\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sync\FromFiles\KIF.Handbook.QuantitiativeMethods\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\Qualitative\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\Qualitative\Classes\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\python-website-data\" />
