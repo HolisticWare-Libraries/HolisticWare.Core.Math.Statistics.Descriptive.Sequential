@@ -67,7 +67,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_Points2Success()
         {
             data_2pts_success =
-                                from row in basketball_team_data_table
+                                from row in BasketballTeamDataTable
                                 select row.Points2Success
                                     ;
 
@@ -75,11 +75,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(new List<int> { 18 }, modes_2s);
+            CollectionAssert.AreEquivalent(new List<int> { 18 }, modes_2s);
             #elif XUNIT
             Assert.Equal(new List<int> { 18 }, modes_2s);
             #elif MSTEST
-            Assert.AreEqual(new List<int> { 18 }, modes_2s);
+            CollectionAssert.AreEquivalent(new List<int> { 18 }, modes_2s);
             #endif
 
             return;
@@ -90,7 +90,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_Points3Success()
         {
             data_3pts_success =
-                                from row in basketball_team_data_table
+                                from row in BasketballTeamDataTable
                                 select row.Points3Success
                                     ;
 
@@ -98,11 +98,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(new List<int> { 5 }, modes_3s);
+            CollectionAssert.AreEquivalent(new List<int> { 5 }, modes_3s);
             #elif XUNIT
             Assert.Equal(new List<int> { 5 }, modes_3s);
             #elif MSTEST
-            Assert.AreEqual(new List<int> { 5 }, modes_3s);
+            CollectionAssert.AreEquivalent(new List<int> { 5 }, modes_3s);
             #endif
 
             return;
@@ -113,7 +113,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_Points2Fail()
         {
             data_2pts_fail =
-                                from row in basketball_team_data_table
+                                from row in BasketballTeamDataTable
                                 select row.Points2Fail
                                     ;
 
@@ -121,11 +121,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(new List<int> { 28 }, modes_2f);
+            CollectionAssert.AreEquivalent(new List<int> { 28 }, modes_2f);
             #elif XUNIT
             Assert.Equal(new List<int> { 28 }, modes_2f);
             #elif MSTEST
-            Assert.AreEqual(new List<int> { 28 }, modes_2f);
+            CollectionAssert.AreEquivalent(new List<int> { 28 }, modes_2f);
             #endif
 
             return;
@@ -136,7 +136,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_Points3Fail()
         {
             data_3pts_fail =
-                                from row in basketball_team_data_table
+                                from row in BasketballTeamDataTable
                                 select row.Points3Fail
                                     ;
 
@@ -144,11 +144,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(new List<int> { 12 }, modes_3f);
+            CollectionAssert.AreEquivalent(new List<int> { 12 }, modes_3f);
             #elif XUNIT
             Assert.Equal(new List<int> { 12 }, modes_3f);
             #elif MSTEST
-            Assert.AreEqual(new List<int> { 12 }, modes_3f);
+            CollectionAssert.AreEquivalent(new List<int> { 12 }, modes_3f);
             #endif
 
             return;
@@ -159,7 +159,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_FreeThrowFail()
         {
             data_free_throw_fail =
-                                from row in basketball_team_data_table
+                                from row in BasketballTeamDataTable
                                 select row.FreeThrowFail
                                     ;
 
@@ -167,11 +167,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(new List<int> { 5 }, modes_ftf);
+            CollectionAssert.AreEquivalent(new List<int> { 5 }, modes_ftf);
             #elif XUNIT
             Assert.Equal(new List<int> { 5 }, modes_ftf);
             #elif MSTEST
-            Assert.AreEqual(new List<int> { 5 }, modes_ftf);
+            CollectionAssert.AreEquivalent(new List<int> { 5 }, modes_ftf);
             #endif
 
             return;
@@ -182,7 +182,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_FreeThrowSuccess()
         {
             data_free_throw_success =
-                                from row in basketball_team_data_table
+                                from row in BasketballTeamDataTable
                                 select row.FreeThrowSuccess
                                     ;
 
@@ -190,11 +190,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(new List<int> { 11, 12, 19 }, modes_fts);
+            CollectionAssert.AreEquivalent(new List<int> { 11, 12, 19 }, modes_fts);
             #elif XUNIT
             Assert.Equal(new List<int> { 11, 12, 19 }, modes_fts);
             #elif MSTEST
-            Assert.AreEqual(new List<int> { 11, 12, 19 }, modes_fts);
+            CollectionAssert.AreEquivalent(new List<int> { 11, 12, 19 }, modes_fts);
             #endif
 
             return;
@@ -205,7 +205,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_JumpsOffensive()
         {
             data_jumps_offensive =
-                                from row in basketball_team_data_table
+                                from row in BasketballTeamDataTable
                                 select row.JumpsOffensive
                                     ;
 
@@ -213,11 +213,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(new List<int> { 9, 11, 12 }, modes_off);
+            CollectionAssert.AreEquivalent(new List<int> { 9, 11, 12 }, modes_off);
             #elif XUNIT
             Assert.Equal(new List<int> { 9, 11, 12 }, modes_off);
             #elif MSTEST
-            Assert.AreEqual(new List<int> { 9, 11, 12 }, modes_off);
+            CollectionAssert.AreEquivalent(new List<int> { 9, 11, 12 }, modes_off);
             #endif
 
             return;
@@ -228,7 +228,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_JumpsDefensive()
         {
             data_jumps_defensive =
-                                from row in basketball_team_data_table
+                                from row in BasketballTeamDataTable
                                 select row.JumpsDefensive
                                     ;
 
@@ -236,11 +236,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(new List<int> { 21, 25 }, modes_def);
+            CollectionAssert.AreEquivalent(new List<int> { 21, 25 }, modes_def);
             #elif XUNIT
             Assert.Equal(new List<int> { 21, 25 }, modes_def);
             #elif MSTEST
-            Assert.AreEqual(new List<int> { 21, 25 }, modes_def);
+            CollectionAssert.AreEquivalent(new List<int> { 21, 25 }, modes_def);
             #endif
 
             return;
@@ -251,7 +251,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_Assistance()
         {
             data_assistence =
-                                from row in basketball_team_data_table
+                                from row in BasketballTeamDataTable
                                 select row.Assistence
                                     ;
 
@@ -259,11 +259,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(new List<int> { 11 }, modes_assist);
+            CollectionAssert.AreEquivalent(new List<int> { 11 }, modes_assist);
             #elif XUNIT
             Assert.Equal(new List<int> { 11 }, modes_assist);
             #elif MSTEST
-            Assert.AreEqual(new List<int> { 11 }, modes_assist);
+            CollectionAssert.AreEquivalent(new List<int> { 11 }, modes_assist);
             #endif
 
             return;
@@ -274,7 +274,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_PersonalFaults()
         {
             data_personal_faults =
-                                from row in basketball_team_data_table
+                                from row in BasketballTeamDataTable
                                 select row.PersonalFaults
                                     ;
 
@@ -282,11 +282,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(new List<int> { 19 }, modes_pf);
+            CollectionAssert.AreEquivalent(new List<int> { 19 }, modes_pf);
             #elif XUNIT
             Assert.Equal(new List<int> { 19 }, modes_pf);
             #elif MSTEST
-            Assert.AreEqual(new List<int> { 19 }, modes_pf);
+            CollectionAssert.AreEquivalent(new List<int> { 19 }, modes_pf);
             #endif
 
             return;
@@ -297,7 +297,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_BallsLost()
         {
             data_balls_lost =
-                                from row in basketball_team_data_table
+                                from row in BasketballTeamDataTable
                                 select row.BallsLost
                                     ;
 
@@ -305,11 +305,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(new List<int> { 18 }, modes_bl);
+            CollectionAssert.AreEquivalent(new List<int> { 18 }, modes_bl);
             #elif XUNIT
             Assert.Equal(new List<int> { 18 }, modes_bl);
             #elif MSTEST
-            Assert.AreEqual(new List<int> { 18 }, modes_bl);
+            CollectionAssert.AreEquivalent(new List<int> { 18 }, modes_bl);
             #endif
 
             return;
@@ -320,7 +320,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_BallsStolen()
         {
             data_balls_stolen =
-                                from row in basketball_team_data_table
+                                from row in BasketballTeamDataTable
                                 select row.BallsStolen
                                     ;
 
@@ -328,11 +328,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(new List<int> { 7 }, modes_bs);
+            CollectionAssert.AreEquivalent(new List<int> { 7 }, modes_bs);
             #elif XUNIT
             Assert.Equal(new List<int> { 7 }, modes_bs);
             #elif MSTEST
-            Assert.AreEqual(new List<int> { 7 }, modes_bs);
+            CollectionAssert.AreEquivalent(new List<int> { 7 }, modes_bs);
             #endif
 
             return;
@@ -343,7 +343,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_Blocks()
         {
             data_blocks =
-                                from row in basketball_team_data_table
+                                from row in BasketballTeamDataTable
                                 select row.Blocks
                                     ;
 
@@ -351,11 +351,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(new List<int> { 2 }, modes_block);
+            CollectionAssert.AreEquivalent(new List<int> { 2 }, modes_block);
             #elif XUNIT
             Assert.Equal(new List<int> { 2 }, modes_block);
             #elif MSTEST
-            Assert.AreEqual(new List<int> { 2 }, modes_block);
+            CollectionAssert.AreEquivalent(new List<int> { 2 }, modes_block);
             #endif
 
             return;

@@ -96,28 +96,32 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             time_run_mean = time_run.MeanArithmetic();
 
             // Assert
-#if NUNIT
+            #if NUNIT
             Assert.AreEqual(time_walk_mean, 7.24, 0.01);
             Assert.AreEqual(time_run_mean, 3.44, 0.01);
-#elif XUNIT
-            Assert.Equal(28.9, x4_max, 2);
-#elif MSTEST
-            Assert.AreEqual(x4_max, 28.9, 0.01);
-#endif
+            #elif XUNIT
+            Assert.Equal(7.24, time_walk_mean, 2);
+            Assert.Equal(3.44, time_run_mean, 2);
+            #elif MSTEST
+            Assert.AreEqual(time_walk_mean, 7.24, 0.01);
+            Assert.AreEqual(time_run_mean, 3.44, 0.01);
+            #endif
 
             // Act
             time_walk_mean = time_walk.MeanGeometric();
             time_run_mean = time_run.MeanGeometric();
 
             // Assert
-#if NUNIT
+            #if NUNIT
             Assert.AreEqual(time_walk_mean, 7.23, 0.01);
             Assert.AreEqual(time_run_mean, 3.43, 0.01);
-#elif XUNIT
-            Assert.Equal(28.9, x4_max, 2);
-#elif MSTEST
-            Assert.AreEqual(x4_max, 28.9, 0.01);
-#endif
+            #elif XUNIT
+            Assert.Equal(7.23, time_walk_mean, 2);
+            Assert.Equal(3.43, time_run_mean, 2);
+            #elif MSTEST
+            Assert.AreEqual(time_walk_mean, 7.23, 0.01);
+            Assert.AreEqual(time_run_mean, 3.43, 0.01);
+            #endif
 
 
             //====================================================================================================
