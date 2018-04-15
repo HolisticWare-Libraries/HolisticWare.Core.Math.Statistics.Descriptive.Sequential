@@ -23,5 +23,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10.csproj" />
   </ItemGroup>
+  <Import Project="..\..\..\externals\Core.Math.Samples\tests\data\HolisticWare.Core.Math.Samples\HolisticWare.Core.Math.Samples.projitems" Label="Shared" Condition="Exists('..\..\..\externals\Core.Math.Samples\tests\data\HolisticWare.Core.Math.Samples\HolisticWare.Core.Math.Samples.projitems')" />
   <Import Project="..\UnitTests.CommonShared\UnitTests.CommonShared.projitems" Label="Shared" Condition="Exists('..\UnitTests.CommonShared\UnitTests.CommonShared.projitems')" />
 </Project>
