@@ -7,3 +7,6 @@
 [submodule "externals/Core"]
 	path = externals/Core
 	url = https://github.com/moljac/HolisticWare.Core.git
+[submodule "externals/Core.Math.Samples"]
+	path = externals/Core.Math.Samples
+	url = https://github.com/moljac/HolisticWare.Core.Math.Samples.git
