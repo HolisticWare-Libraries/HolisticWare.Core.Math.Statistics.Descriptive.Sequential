@@ -5,128 +5,183 @@ Statistics library for .NET Standard 1.0.
 *   Nuget https://www.nuget.org/packages/HolisticWare.Core.Math.Statistics.Sequential/
 
 Basic Descriptive Statistics Algorithms implemented as sequential in both synchronous and
-aynchronous variants. Implementations are based on IEnumerable<T> as extension methods
-(similar to LINQ - System.Linq )
+aynchronous variants. Implementations are based on `IEnumerable<T>` as extension methods
+(similar to LINQ - `System.Linq` )
 
 NOTE: Parallel algorithms based on (TPL) can be found in 
 
-*   Nuget: 
-
 *   Repo:  https://github.com/moljac/HolisticWare.Core.Math.Statistics.Descriptive.Parallel
+
+*   Nuget: 
 
 
 ## DONE
 
 ### Algorithms
 
-*   Average (Mean) Value algorithms
+*   Central Tendencies Measures
 
-    *   Arithmetic 
+    *   Average (Mean) Value algorithms
 
-    *   Geometric
+        *   Arithmetic 
 
-    *   Harmonic
+        *   Geometric
 
-    *   Quadratic
+        *   Harmonic
 
-    *   Cubic
+        *   Quadratic
 
-    *   Generalized
+        *   Cubic
 
-    *   Weighted
+        *   Generalized
 
-*   Frequencies
+        *   Weighted
 
-*   Modes
+    *   Median
 
-*   Median
+    *   Modes
 
-*   Moment
+*   Dispersion Measures
 
-*   Standard Deviation (Sample and Population)
+    *   Moment
 
-*   Variance (Sample and Population)
+    *   Standard Deviation (Sample and Population)
 
-*   Skewness
+    *   Variance (Sample and Population)
 
-*   Kurtosis
+*   Distribution Measures
 
-*   Correlation 
+    *   Frequencies
 
-*   Covariance
+    *   Distribution Asymmetry Measures
+    
+        *   Skewness
 
-*   F Statistics
+    *   Distribution Roundness Measures
+    
+        *   Kurtosis
 
-*   Studentt Statistic
+*   Dependency Measures
 
-*   Welcht Statistic
+    *   Correlation 
+
+    *   Covariance
+
+*   Inferential Methods (will be moved to separate repo/nuget)
+
+    *   F Statistics
+
+    *   Studentt Statistic
+
+    *   Welcht Statistic
 
 
 ### Comparison Table
 
 
-|   `x = IEnumerable<T>`               |                                    |                                   |
-| ------------------------------------ | ---------------------------------- | --------------------------------- |
-|   extension methods                  |                                    |                                   |
+|                    |   `x = IEnumerable<T>`               |                             |                           |
+|--------------------| ------------------------------------ | --------------------------- | ------------------------- |
+|                    |   extension methods                  |                             |                           |
 
 
+|                    |   C# HolisticWare                    | Octave                      | R                         |
+|--------------------| ------------------------------------ | --------------------------- | ------------------------- |
+| Central Tendencies | `x.MeanArithmetic();`                | `mean(vector_list, "a")`    | `mean(vector_list)`       |
+|                    | `x.MeanGeometric();`                 | `mean(vector_list, "g")`    | `N/A (custom function)`   |
+|                    | `x.MeanGeometricNaive();`            | `mean(vector_list, "g")`    | `N/A (custom function)`   |
+|                    | `x.MeanHarmonic();`                  | `mean(vector_list, "h")`    | `???`                     |
+|                    | `x.MeanSquared();`                   | `meansq(vector_list)`       | `???`                     |
+|                    | `x.MeanCubic();`                     | `???`                       | `????`                    |
+|                    | `x.MeanWeighted();`                  | `???`                       | `????`                    |
+|                    | `x.Median();`                        | `???`                       | `????`                    |
+|                    | `x.MedianWeighted();`                | `???`                       | `????`                    |
+|                    | `x.Modes();`                         | `???`                       | `????`                    |
+|                    | `x.ModesRank();`                     | `???`                       | `????`                    |
+| Dispersion         | `x.Moment();`                        | `???`                       | `????`                    |
+|                    | `x.MomentCentral();`                 | `???`                       | `????`                    |
+|                    | `x.MomentCentralAbsolute();`         | `???`                       | `????`                    |
+|                    | `x.MomentRaw();`                     | `???`                       | `????`                    |
+|                    | `x.MomentRawAbsolute();`             | `???`                       | `????`                    |
+|                    | `x.Range();`                         | `???`                       | `????`                    |
+|                    | `x.StandardDeviationPopulation();`   | `???`                       | `????`                    |
+|                    | `x.StandardDeviationSample();`       | `???`                       | `????`                    |
+|                    | `x.VariancePopulation();`            | `???`                       | `????`                    |
+|                    | `x.Variance();`                      | `???`                       | `????`                    |
+| Distribution       | `x.FrequencyCounter();`              | `???`                       | `????`                    |
+|                    | `x.FrequencyDistribution();`         | `???`                       | `????`                    |
+|                    | `x.Frequencies();`                   | `???`                       | `????`                    |
+|                    | `x.Percentiles();`                   | `???`                       | `????`                    |
+|                    | `x.PercentilesRank();`               | `???`                       | `????`                    |
+| Distribution Asymm | `x.Skewness();`                      | `???`                       | `????`                    |
+| Distribution Round | `x.Kurtosis();`                      | `???`                       | `????`                    |
+|                    | `x.KurtosisSample();`                | `???`                       | `????`                    |
+|                    | `x.KurtosisSampleExcess();`          | `???`                       | `????`                    |
+| Dependency         | `x.Correlation(y);`                  | `???`                       | `????`                    |
+|                    | `x.CorrelationOptimized(y);`         | `???`                       | `????`                    |
+|                    | `x.Covariance(y);`                   | `???`                       | `????`                    |
+| Inferential        | `x.StudenttStatisticIndependent(y);` | `???`                       | `????`                    |
+|                    | `x.FStatistic(y);`                   | `???`                       | `????`                    |
+|                    | `x.Welcht(y);`                       | `???`                       | `????`                    |
 
 
-|   C# HolisticWare                    | Octave                             | R                                 |
-| ------------------------------------ | ---------------------------------- | --------------------------------- |
-| `x.MeanArithmetic();`                | `mean(vector_list, "a")`           | `mean(vector_list)`               |
-| `x.MeanGeometric();`                 | `mean(vector_list, "g")`           | `N/A (custom function)`           |
-| `x.MeanGeometricNaive();`            | `mean(vector_list, "g")`           | `N/A (custom function)`           |
-| `x.MeanHarmonic();`                  | `mean(vector_list, "h")`           | `???`                             |
-| `x.MeanSquared();`                   | `meansq(vector_list)`              | `???`                             |
-| `x.MeanCubic();`                     | `???`                              | `????`                            |
-| `x.MeanWeighted();`                  | `???`                              | `???`                             |
-| `x.Median();`                        | `???`                              | `???`                             |
-| `x.MedianWeighted();`                | `???`                              | `???`                             |
-| `x.Modes();`                         | `???`                              | `???`                             |
-| `x.ModesRank();`                     | `???`                              | `???`                             |
-| `x.Moment();`                        | `???`                              | `???`                             |
-| `x.MomentCentral();`                 | `???`                              | `???`                             |
-| `x.MomentCentralAbsolute();`         | `???`                              | `???`                             |
-| `x.MomentRaw();`                     | `???`                              | `???`                             |
-| `x.MomentRawAbsolute();`             | `???`                              | `???`                             |
-| `x.Range();`                         | `???`                              | `???`                             |
-| `x.FrequencyCounter();`              | `???`                              | `???`                             |
-| `x.FrequencyDistribution();`         | `???`                              | `???`                             |
-| `x.Frequencies();`                   | `???`                              | `???`                             |
-| `x.Percentiles();`                   | `???`                              | `???`                             |
-| `x.PercentilesRank();`               | `???`                              | `???`                             |
-| `x.Skewness();`                      | `???`                              | `???`                             |
-| `x.Kurtosis();`                      | `???`                              | `???`                             |
-| `x.KurtosisSample();`                | `???`                              | `???`                             |
-| `x.KurtosisSampleExcess();`          | `???`                              | `???`                             |
-| `x.StandardDeviationPopulation();`   | `???`                              | `???`                             |
-| `x.StandardDeviationSample();`       | `???`                              | `???`                             |
-| `x.Correlation(y);`                  | `???`                              | `???`                             |
-| `x.CorrelationOptimized(y);`         | `???`                              | `???`                             |
-| `x.Covariance(y);`                   | `???`                              | `???`                             |
-| `x.StudenttStatisticIndependent(y);` | `???`                              | `???`                             |
-| `x.FStatistic(y);`                   | `???`                              | `???`                             |
-| `x.Welcht(y);`                       | `???`                              | `???`                             |
+## Usage
 
+### Central Tendencies Measures
 
+### Dispersion Measures
 
+### Distribution Measures
+
+#### Distribution Asymmetry Measures
+
+### Distribution Roundness Measures
 
 ## Technical/Platform Implementation Details
 
-*   IEnumerable<T> extension methods (LINQ like)
+*   `IEnumerable<T>` extension methods (LINQ like)
 
-*   async/await API
+*   `async`/`await` API
 
     Each synchronous (blocking) method has processor bound async (TPL counterpart).
 
 *   TPL/PLINQ
 
-    Parallel versions taget .NET Standard 1.1, so they are in placed separate nuget and repo:
+    Parallel versions target .NET Standard 1.1, so they are in placed separate nuget and repo:
 
     *   https://docs.microsoft.com/en-us/dotnet/standard/parallel-programming/task-parallel-library-tpl
 
     *   https://docs.microsoft.com/en-us/dotnet/standard/parallel-programming/parallel-linq-plinq
+
+### `IEnumerable<Nullable<T>>` implementation
+
+There are 2 reasons for the lack of `IEnumerable<Nullable<T>>` implementations:
+
+####  1. Mathematical Consistency
+
+When Nullable Arithmetic is extended to LINQ implementation the results are not consistent
+
+```
+// suppose
+int? i_sum_1     = 2 + null;
+int? i_product_1 = 2 * null;
+// 
+// suppose
+int? i_sum_2     = 2 + 5 + null;
+int? i_product_2 = 2 * 5 + null;
+// generalized case (LINQ)
+// sum(i)
+int? i_sum_3     = (new[] {2, 5, null}).Sum();      //  7
+```
+
+It is possible to avoid this with `Aggregate()` extension method, but the decision was made to skip this 
+implementation, because of following reason.
+
+#### 2. Data Science Data Preparation (Data Munging/ Data Wrangling)
+
+One of the first steps in analyzing and processing data is missing data processing, where missing data
+is usually represented as `null` values. So, every `IEnumerable<Nullable<T>>` must be converted/transformed 
+to  `IEnumerable<T>` prior to further analysis and processing.
+
 
 ## Comparison
 
@@ -136,20 +191,29 @@ NOTE: Parallel algorithms based on (TPL) can be found in
 
 
 
-
 ## TODOs / Plans
 
-    *   unit tests
+*   optimizations
 
-        *   currently (2018-02-24): 48
+    *   data caching
 
-        *   online calculator sources (references / links) 
+        reuse of precalculated values
 
-            mainly used for comparing results
+    *   `async`/`await` tuning
 
-            *   https://www.easycalculation.com/statistics/measures-central-tendency.php
+    *   parallel algorithms (separate repo/nuget)
 
-            *   http://elsenaju.eu/Calculator/mean-value-calculator.htm
+*   unit tests
+
+    *   currently (2018-02-24): 48
+
+    *   online calculator sources (references / links) 
+
+        mainly used for comparing results
+
+        *   https://www.easycalculation.com/statistics/measures-central-tendency.php
+
+        *   http://elsenaju.eu/Calculator/mean-value-calculator.htm
 
         *   mathematical tools
 
