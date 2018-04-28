@@ -40,7 +40,7 @@ Sum with null resulting in null:
 i = null;
 j = 2;
 
-sum = i + j;    
+sum = i + j;
 ```
 
 Extending that to more summands:
@@ -172,15 +172,27 @@ Console.WriteLine($"list02.Sum() = {list02.Sum()}");
 
 ## Links/References
 
-*   http://www.csharp-examples.net/linq-sum/
+* http://www.csharp-examples.net/linq-sum/
 
-*   https://dzone.com/articles/null-sematics-linq%E2%80%99s-sum
+* https://dzone.com/articles/null-sematics-linq%E2%80%99s-sum
 
 `Sum()` for `IEnumerable<Nullable<T>` implementation links
 
-*   https://github.com/dotnet/corefx/tree/master/src/System.Linq
+* https://github.com/dotnet/corefx/tree/master/src/System.Linq
 
-*   https://github.com/dotnet/corefx/blob/master/src/System.Linq/src/System/Linq/Sum.cs#L30
+* https://github.com/dotnet/corefx/blob/master/src/System.Linq/src/System/Linq/Sum.cs#L30
 
-*   https://github.com/dotnet/corefx/blob/master/src/System.Linq/src/System/Linq/Sum.cs#L42-L45
+* https://github.com/dotnet/corefx/blob/master/src/System.Linq/src/System/Linq/Sum.cs#L42-L45
 
+```csharp
+// suppose
+int? i_sum_1     = 2 + null;
+int? i_product_1 = 2 * null;
+// 
+// suppose
+int? i_sum_2     = 2 + 5 + null;
+int? i_product_2 = 2 * 5 + null;
+// generalized case (LINQ)
+// sum(i)
+int? i_sum_3     = (new List<int?> {2, 5, null}).Sum();      //  7
+```
