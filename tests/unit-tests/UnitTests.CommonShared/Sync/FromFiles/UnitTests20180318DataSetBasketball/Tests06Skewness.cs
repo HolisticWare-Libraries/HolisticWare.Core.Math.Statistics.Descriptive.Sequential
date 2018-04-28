@@ -316,7 +316,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Test()]
-        public void skewness_BallsStolen()
+        public void Skewness_BallsStolen()
         {
             data_balls_stolen =
                                 from row in BasketballTeamDataTable
@@ -339,7 +339,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Test()]
-        public void skewness_Blocks()
+        public void Skewness_Blocks()
         {
             data_blocks =
                                 from row in BasketballTeamDataTable
