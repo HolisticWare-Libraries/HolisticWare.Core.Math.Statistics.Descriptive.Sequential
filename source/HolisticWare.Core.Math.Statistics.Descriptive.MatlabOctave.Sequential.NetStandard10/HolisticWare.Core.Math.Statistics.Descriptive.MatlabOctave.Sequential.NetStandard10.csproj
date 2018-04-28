@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <RootNamespace>HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential</RootNamespace>
+    <AssemblyName>HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential</AssemblyName>
+  </PropertyGroup>
+
+</Project>
