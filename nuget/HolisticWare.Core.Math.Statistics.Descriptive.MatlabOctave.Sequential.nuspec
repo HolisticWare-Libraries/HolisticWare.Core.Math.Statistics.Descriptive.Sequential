@@ -52,8 +52,6 @@
 		<requireLicenseAcceptance>
 			false
 		</requireLicenseAcceptance>
-		<frameworkAssemblies>
-		</frameworkAssemblies>
 		<dependencies> 
 			<!--
 			https://docs.microsoft.com/en-us/nuget/schema/nuspec#dependencies
@@ -63,6 +61,8 @@
 				<dependency id="HolisticWare.Core.Math.Statistics.Descriptive.Sequential" version="2018.01.21.0" />
 			</group>
 		</dependencies>
+		<frameworkAssemblies>
+		</frameworkAssemblies>
 	</metadata>
 	<files>
 		<!--
