@@ -54,9 +54,9 @@ Running Cake to Build targets
 #addin nuget:?package=Cake.FileHelpers
 
 
-// #tool nuget:?package=NUnit.ConsoleRunner
-// #tool nuget:?package=NUnit.Console&include=../Nunit.ConsoleRunner/**/*
-// #tool nuget:?package=NUnit.Runners
+#tool nuget:?package=NUnit.ConsoleRunner&version=3.8.0
+//#tool nuget:?package=NUnit.Console&version=3.8.0&include=../Nunit.ConsoleRunner/**/*
+//#tool nuget:?package=NUnit.Runners&version=3.8.0
 #tool "nuget:?package=xunit.runner.console"
 #tool "nuget:?package=OpenCover"
 #tool "nuget:?package=ReportGenerator"
@@ -108,6 +108,18 @@ BuildSpec buildSpec = new BuildSpec ()
         new NuGetInfo 
         { 
             NuSpec = "./nuget/HolisticWare.Core.Math.Statistics.Descriptive.Sequential.nuspec" 
+        },
+        new NuGetInfo 
+        { 
+            NuSpec = "./nuget/HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.nuspec" 
+        },
+        new NuGetInfo 
+        { 
+            NuSpec = "./nuget/HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.nuspec" 
+        },
+        new NuGetInfo 
+        { 
+            NuSpec = "./nuget/HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.nuspec" 
         },
     },
 };
