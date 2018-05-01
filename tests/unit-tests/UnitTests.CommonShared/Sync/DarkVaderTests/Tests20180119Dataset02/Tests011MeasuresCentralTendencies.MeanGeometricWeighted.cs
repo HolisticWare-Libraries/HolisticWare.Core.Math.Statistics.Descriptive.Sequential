@@ -309,7 +309,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             HashSet<double> data = new HashSet<double>(data01);
-            double mean = data.MeanGeometricWeighted(new double[] {1, 1, 1, 1, 1, } );
+            double[] weights1 = Enumerable.Repeat(1.0, data.Count).ToArray();
+            double mean = data.MeanGeometricWeighted(weights1);
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -342,7 +343,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             SortedSet<double> data = new SortedSet<double>(data01);
-            double mean = data.MeanGeometricWeighted(new double[] { 1, 1, 1, 1, 1, });
+            double[] weights1 = Enumerable.Repeat(1.0, data.Count).ToArray();
+            double mean = data.MeanGeometricWeighted(weights1);
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");

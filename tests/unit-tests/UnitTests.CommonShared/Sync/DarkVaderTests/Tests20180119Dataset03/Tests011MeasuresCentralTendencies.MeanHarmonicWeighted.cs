@@ -309,7 +309,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             HashSet<int> data = new HashSet<int>(data01);
-            double mean = data.MeanHarmonicWeighted(new double[] {1, 1, 1, 1, 1, } );
+            double[] weights1 = Enumerable.Repeat(1.0, data.Count).ToArray();
+            double mean = data.MeanGeometricWeighted(weights1);
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -319,11 +320,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(2.18978, mean, 0.00001);
+            Assert.AreEqual(175.63234, mean, 0.00001);
             #elif XUNIT
-            Assert.Equal(2.18978, mean, 5);
+            Assert.Equal(175.63234, mean, 5);
             #elif MSTEST
-            Assert.AreEqual(2.18978, mean, 0.00001);
+            Assert.AreEqual(175.63234, mean, 0.00001);
             #endif
             //====================================================================================================
 
@@ -342,7 +343,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             SortedSet<int> data = new SortedSet<int>(data01);
-            double mean = data.MeanHarmonicWeighted(new double[] { 1, 1, 1, 1, 1, });
+            double[] weights1 = Enumerable.Repeat(1.0, data.Count).ToArray();
+            double mean = data.MeanGeometricWeighted(weights1);
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -352,11 +354,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(2.18978, mean, 0.00001);
+            Assert.AreEqual(175.63234, mean, 0.00001);
             #elif XUNIT
-            Assert.Equal(2.18978, mean, 5);
+            Assert.Equal(175.63234, mean, 5);
             #elif MSTEST
-            Assert.AreEqual(2.18978, mean, 0.00001);
+            Assert.AreEqual(175.63234, mean, 0.00001);
             #endif
             //====================================================================================================
 

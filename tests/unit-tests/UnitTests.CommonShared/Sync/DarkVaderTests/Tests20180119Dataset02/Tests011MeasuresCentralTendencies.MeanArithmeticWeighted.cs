@@ -309,7 +309,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             HashSet<double> data = new HashSet<double>(data01);
-            double mean = data.MeanArithmeticWeighted(new double[] {1, 1, 1, 1, 1, } );
+            double[] weights1 = Enumerable.Repeat(1.0, data.Count).ToArray();
+            double mean = data.MeanGeometricWeighted(weights1);
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -318,13 +319,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Reset();
             //----------------------------------------------------------------------------------------------------
             // Assert
-            #if NUNIT
-            Assert.AreEqual(15.93, mean, 0.00001);
-            #elif XUNIT
-            Assert.Equal(15.93, mean, 5);
-            #elif MSTEST
-            Assert.AreEqual(15.93, mean, 0.00001);
-            #endif
             //====================================================================================================
 
             return;
@@ -342,7 +336,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             SortedSet<double> data = new SortedSet<double>(data01);
-            double mean = data.MeanArithmeticWeighted(new double[] { 1, 1, 1, 1, 1, });
+            double[] weights1 = Enumerable.Repeat(1.0, data.Count).ToArray();
+            double mean = data.MeanGeometricWeighted(weights1);
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
