@@ -148,6 +148,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerable\Methods-Inferential\IEnumerableExtensions.WelchtStatistic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerable\Methods-Inferential\StudenttStatisticIndependent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerable\Methods-Inferential\WelchtStatistic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-Dispersion\IEnumerableExtensions.MomentGeneralized.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)readme.md" />
