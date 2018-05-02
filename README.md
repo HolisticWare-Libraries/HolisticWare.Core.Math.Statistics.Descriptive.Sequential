@@ -193,6 +193,19 @@ to  `IEnumerable<T>` prior to further analysis and processing.
 
 ## TODOs / Plans
 
+*   C# 7.2 
+
+    stub already in : `tests/unit-tests/UnitTests.CommonShared/Sync/DarkVaderTests/Tests20180119Dataset01/Tests011MeacuresCentralTendencies.MeanArithmetic.cs`
+
+    *   `Span<T>`, 
+
+    *   `ReadOnlySpan<T>`, 
+
+    *   `Memory<T>`,
+
+    *   `ReadOnlyMemory<T>`
+
+
 *   optimizations
 
     *   data caching
