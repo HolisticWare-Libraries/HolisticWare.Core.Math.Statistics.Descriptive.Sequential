@@ -31,10 +31,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+
 #if XUNIT
 using Xunit;
 // NUnit aliases
 using Test = Xunit.FactAttribute;
+using OneTimeSetUp = HolisticWare.Core.Testing.UnitTestsCompatibilityAliasAttribute;
 // XUnit aliases
 using TestClass = HolisticWare.Core.Testing.UnitTestsCompatibilityAliasAttribute;
 #elif NUNIT
@@ -51,6 +54,7 @@ using Fact=NUnit.Framework.TestAttribute;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 // NUnit aliases
 using Test = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
+using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute;
 // XUnit aliases
 using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 #endif
@@ -59,61 +63,20 @@ using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
-    public partial class Tests20180119
+    public partial class Tests20180119Dataset02
     {
         [Test()]
-        public void Mode01()
+        public void Array_Modes()
         {
-            // Arrange
-            List<int> data01 = new List<int> { 1, 2, 2, 3, 3, 3, 3, 4, 4, 5 };
+            //====================================================================================================
+            //  Arrange
+            double[] data = data01.ToArray();
 
-            // Act
-            List<int> modes01 = data01.Modes();
-
-            // Assert
-            #if NUNIT
-            Assert.AreEqual
-                        (
-                            new List<int> { 3 },
-                            modes01
-                        );
-            #elif XUNIT
-            Assert.Equal
-                        (
-                            new List<int> { 3 },
-                            modes01
-                        );
-            #elif MSTEST
-            CollectionAssert.AreEqual
-                        (
-                            new List<int> { 3 },
-                            modes01
-                        );
-            #endif
-
-            return;
-        }
-
-        [Test()]
-        public void Mode02()
-        {
-            // Arrange
-            Stack<double> data01 =
-                new Stack<double>
-                        (
-                            new[]
-                            {
-                                25.4, 14.7, 16.4, 15.3, 17.4, 15.0, 15.0, 19.4, 17.5, 14.7,
-                                18.0, 15.2, 16.0, 13.7, 18.2, 15.9, 14.7, 13.3, 15.1, 17.6,
-                                16.1, 12.9, 12.2, 12.7, 16.2, 13.5, 11.8, 11.7, 13.4, 17.0,
-                                17.1, 13.8, 15.5, 19.3, 16.2, 16.9, 12.1, 16.8, 11.6, 13.0,
-                                12.9, 10.5, 11.3, 14.3, 19.5, 18.6, 18.6, 22.9, 19.8, 13.4,
-                                18.2, 14.5, 24.0, 16.5, 16.4, 28.9, 13.5, 13.6, 11.9, 18.2,
-                            }
-                        );
-
+            //----------------------------------------------------------------------------------------------------
             // Act
             List<double> modes01 = data01.Modes();
+
+            //----------------------------------------------------------------------------------------------------
             // Assert
             //CollectionAssert.AreEqual         // order taken into account
             //(
@@ -143,6 +106,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                             new List<double> { 14.7, 18.2 },
                             Is.EquivalentTo(modes01)
                         );
+            Assert.IsTrue
+            (
+                modes01.SequenceEqual(new List<double> { 14.7, 18.2 })
+            );
+
             #elif XUNIT
             Assert.Equal
                         (
@@ -155,58 +123,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                             new List<double> { 18.2, 14.7, },
                             modes01
                         );
+            Assert.IsTrue
+            (
+                modes01.SequenceEqual(new List<double> { 14.7, 18.2 })
+            );
+
             #endif
 
-
-            //Assert.IsTrue
-                        //(
-                        //    modes01.SequenceEqual(new List<double> { 14.7, 18.2 })
-                        //);
-            
-            return;
-        }
-
-        [Test()]
-        public void Mode03()
-        {
-            // Arange
-            Queue<int> data01 = 
-                new Queue<int> 
-                        (
-                            new[]
-                            {
-                                160, 135, 175, 170, 155, 170, 165, 150, 155, 195,
-                                175, 150, 180, 210, 180, 205, 180, 160, 170, 185,
-                                160, 195, 190, 205, 160, 185, 180, 205, 195, 180,
-                                160, 170, 155, 150, 195, 175, 175, 190, 185, 180,
-                                180, 190, 195, 175, 175, 175, 175, 150, 165, 180, 
-                                165, 195, 200, 190, 190, 165, 170, 205, 200, 180,
-                            }
-                        );
-
-            // Act
-            List<int> modes01 = data01.Modes();
-
-            // Assert
-            #if NUNIT
-            CollectionAssert.AreEquivalent
-                        (
-                            new List<int> { 180 }, 
-                            modes01
-                        );
-            #elif XUNIT
-            Assert.Equal
-                        (
-                            new List<int> { 180 }, 
-                            modes01
-                        );
-            #elif MSTEST
-            CollectionAssert.AreEquivalent
-                        (
-                            new List<int> { 180 },
-                            modes01
-                        );
-            #endif
+            //====================================================================================================
 
             return;
         }

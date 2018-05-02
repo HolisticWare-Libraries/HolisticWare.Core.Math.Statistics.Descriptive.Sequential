@@ -12,8 +12,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Async\Tests01MeanAverage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Async\Tests02Frequencies.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Async\Tests03Mode.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\TestsFrequencyDistribution20180120.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119.Modes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\UnitTests20180213.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\NinaPhysicsLabPowerCalculation\UniTestsNinaPhysics20180403.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests00Data.cs" />
@@ -126,6 +124,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresCentralTendencies.MeanHarmonic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresCentralTendencies.MeanHarmonicWeighted.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresDistribution.Frequencies.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresCentralTendencies.Modes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresDistribution.FrequencyDistribution.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresCentralTendencies.Modes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresDistribution.FrequencyDistribution.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresCentralTendencies.Modes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresDistribution.FrequencyDistribution.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Async\" />

@@ -70,13 +70,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         {
             //====================================================================================================
             //  Arrange
-            //  reading data from files
-
+            double[] data = data01.ToArray();
             sw = Stopwatch.StartNew();
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            double[] data = data01.ToArray();
             double mean = data.MeanArithmetic();
             sw.Stop();
             Console.WriteLine($"Array<double>.MeanArithmetic()");
