@@ -76,11 +76,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(skewness_2s, 0.548, 0.001);
+            Assert.AreEqual(skewness_2s, 0.548, 0.01);
             #elif XUNIT
-            Assert.Equal(0.548, skewness_2s, 3);
+            Assert.Equal(0.548, skewness_2s, 2);
             #elif MSTEST
-            Assert.AreEqual(skewness_2s, 0.548, 0.001);
+            Assert.AreEqual(skewness_2s, 0.548, 0.01);
             #endif
 
             return;

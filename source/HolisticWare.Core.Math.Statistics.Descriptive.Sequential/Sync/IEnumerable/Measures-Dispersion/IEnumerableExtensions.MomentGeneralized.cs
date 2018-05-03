@@ -7,7 +7,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsMoment
     {
         //==============================================================================================================
-        public static double Moment
+        public static double MomentGeneralized
                                 (
                                     this IEnumerable<byte> x, 
                                     int m
@@ -26,7 +26,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum / n;
         }
 
-        public static double Moment
+        public static double MomentGeneralized
                                 (
                                     this IEnumerable<short> x, 
                                     int m
@@ -45,7 +45,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum / n;
         }
 
-        public static double Moment
+        public static double MomentGeneralized
                                 (
                                     this IEnumerable<ushort> x, 
                                     int m
@@ -64,7 +64,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum / n;
         }
 
-        public static double Moment
+        public static double MomentGeneralized
                                 (
                                     this IEnumerable<int> x, 
                                     int m
@@ -83,7 +83,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum / n;
         }
 
-        public static double Moment
+        public static double MomentGeneralized
                                 (
                                     this IEnumerable<uint> x, 
                                     int m
@@ -102,7 +102,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum / n;
         }
 
-        public static double Moment
+        public static double MomentGeneralized
                                 (
                                     this IEnumerable<long> x, 
                                     int m
@@ -121,7 +121,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum / n;
         }
 
-        public static double Moment
+        public static double MomentGeneralized
                                 (
                                     this IEnumerable<ulong> x, 
                                     int m
@@ -140,7 +140,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum / n;
         }
 
-        public static double Moment
+        public static double MomentGeneralized
                                 (
                                     this IEnumerable<float> x, 
                                     int m
@@ -159,7 +159,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum / n;
         }
 
-        public static double Moment
+        public static double MomentGeneralized
                                 (
                                     this IEnumerable<double> x, 
                                     int m
@@ -178,7 +178,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return sum / n;
         }
 
-        public static decimal Moment
+        public static decimal MomentGeneralized
                                 (
                                     this IEnumerable<decimal> x, 
                                     int m
