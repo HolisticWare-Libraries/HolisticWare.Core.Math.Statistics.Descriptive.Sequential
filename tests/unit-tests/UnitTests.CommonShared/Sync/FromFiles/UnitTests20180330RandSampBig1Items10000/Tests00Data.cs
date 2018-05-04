@@ -25,14 +25,6 @@
 //    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 //    OTHER DEALINGS IN THE SOFTWARE.
 // */
-using System;
-
-using System.Collections.Generic;
-using System.Linq;
-using System.Diagnostics;
-using System.Threading.Tasks;
-using System.IO;
-using System.Reflection;
 
 #if XUNIT
 using Xunit;
@@ -61,7 +53,16 @@ using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializ
 using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 #endif
 
-using Core.Math.Statistics.Descriptive.Sequential;
+using BenchmarkDotNet.Running;
+using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Attributes.Jobs;
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.IO;
+using System.Diagnostics;
+using System.Reflection;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
@@ -88,15 +89,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         //[OneTimeSetUp] // for MSTest - ClassInitialize - public, static, void
         public static void LoadDataFromFile(TestContext tc)
         {
-            string directory_test =
-                                    #if NUNIT
-                                    TestContext.CurrentContext.TestDirectory
-                                    #elif XUNIT
-                                    Environment.CurrentDirectory
-                                    #elif MSTEST
-                                    Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)
-                                    #endif
-                                    ;
+            #if NUNIT
+            string directory_test = TestContext.CurrentContext.TestDirectory;
+            #elif XUNIT
+            string directory_test = Environment.CurrentDirectory;
+            #elif MSTEST
+            string directory_test = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            #endif
 
             string path_data = null;
             string text = null;

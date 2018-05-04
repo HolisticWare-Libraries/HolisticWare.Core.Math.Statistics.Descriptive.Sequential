@@ -71,15 +71,15 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         {
             //====================================================================================================
             // Arrange
-            List<int> data01 = new List<int>(new[] { 52, 52, 53, 54 });
+            List<int> data = new List<int>(new[] { 52, 52, 53, 54 });
 
             sw = Stopwatch.StartNew();
             // Act
-            median = data01.GroupedDataMedian();
+            median = data.GroupedDataMedian();
             sw.Stop();
             Console.WriteLine($"Queue<int>.MedianGrouped()");
             Console.WriteLine($"          median             = {median}");
-            Console.WriteLine($"          size               = {data01.Count()}");
+            Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -103,15 +103,15 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //====================================================================================================
             // https://mail.gnome.org/archives/gnumeric-list/2011-April/msg00018.html
             // Arrange
-            List<int> data01 = new List<int>(new[] { 7, 8, 8 });
+            List<int> data = new List<int>(new[] { 7, 8, 8 });
 
             sw = Stopwatch.StartNew();
             // Act
-            median = data01.GroupedDataMedian();
+            median = data.GroupedDataMedian();
             sw.Stop();
             Console.WriteLine($"Queue<int>.GroupedDataMedian()");
             Console.WriteLine($"          median             = {median}");
-            Console.WriteLine($"          size               = {data01.Count()}");
+            Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();

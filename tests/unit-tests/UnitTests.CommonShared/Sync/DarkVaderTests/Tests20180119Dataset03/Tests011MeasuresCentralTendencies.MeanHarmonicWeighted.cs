@@ -76,7 +76,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            int[] data = data01.ToArray();
+            int[] data = Tests20180119Dataset03.data.ToArray();
             double mean = data.MeanHarmonicWeighted(weights);
             sw.Stop();
             Console.WriteLine($"Array<double>.MeanHarmonicWeighted()");
@@ -110,7 +110,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            ArraySegment<int> data = new ArraySegment<int>(data01);
+            ArraySegment<int> data_array_segment = new ArraySegment<int>(data);
             double mean = data.MeanHarmonicWeighted(weights);
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
@@ -143,7 +143,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            List<int> data = new List<int>(data01);
+            List<int> data_list = new List<int>(data);
             double mean = data.MeanHarmonicWeighted(weights);
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
@@ -176,7 +176,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            Queue<int> data = new Queue<int>(data01);
+            data_queue = new Queue<int>(data);
             double mean = data.MeanHarmonicWeighted(weights);
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
@@ -209,7 +209,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            Stack<int> data = new Stack<int>(data01);
+            data_stack = new Stack<int>(data);
             double mean = data.MeanHarmonicWeighted(weights);
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
@@ -242,7 +242,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            LinkedList<int> data = new LinkedList<int>(data01);
+            LinkedList<int> data_list = new LinkedList<int>(data);
             double mean = data.MeanHarmonicWeighted(weights);
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
@@ -275,7 +275,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            ObservableCollection<int> data = new ObservableCollection<int>(data01);
+            data_observable_collection =  new ObservableCollection<int>(data);
             double mean = data.MeanHarmonicWeighted(weights);
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
@@ -308,8 +308,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            HashSet<int> data = new HashSet<int>(data01);
-            double[] weights1 = Enumerable.Repeat(1.0, data.Count).ToArray();
+            data_hash_set =  new HashSet<int>(data);
+            double[] weights1 = Enumerable.Repeat(1.0, data_hash_set.Count).ToArray();
             double mean = data.MeanGeometricWeighted(weights1);
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
@@ -342,8 +342,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            SortedSet<int> data = new SortedSet<int>(data01);
-            double[] weights1 = Enumerable.Repeat(1.0, data.Count).ToArray();
+            data_sorted_set =  new SortedSet<int>(data);
+            double[] weights1 = Enumerable.Repeat(1.0, data_sorted_set.Count).ToArray();
             double mean = data.MeanGeometricWeighted(weights1);
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");

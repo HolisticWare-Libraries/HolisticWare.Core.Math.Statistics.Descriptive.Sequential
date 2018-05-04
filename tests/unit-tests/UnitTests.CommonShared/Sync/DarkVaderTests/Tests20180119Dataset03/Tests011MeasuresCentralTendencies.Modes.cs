@@ -70,11 +70,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         {
             //====================================================================================================
             //  Arrange
-            int[] data = data01.ToArray();
+            int[] data = Tests20180119Dataset03.data.ToArray();
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            List<int> modes01 = data01.Modes();
+            List<int> modes01 = Tests20180119Dataset03.data.Modes();
 
             //----------------------------------------------------------------------------------------------------
             // Assert

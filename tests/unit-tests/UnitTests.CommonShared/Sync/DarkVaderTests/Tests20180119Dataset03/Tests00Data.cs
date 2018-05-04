@@ -33,6 +33,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using System.IO;
 using System.Reflection;
+using System.Collections.ObjectModel;
 
 #if XUNIT
 using Xunit;
@@ -67,7 +68,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
     public partial class Tests20180119Dataset03
     {
-        static int[] data01 = new[]
+        Stopwatch sw = null;
+
+        static int[] data = new[]
         {
             160, 135, 175, 170, 155, 170, 165, 150, 155, 195,
             175, 150, 180, 210, 180, 205, 180, 160, 170, 185,
@@ -76,9 +79,23 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             180, 190, 195, 175, 175, 175, 175, 150, 165, 180,
             165, 195, 200, 190, 190, 165, 170, 205, 200, 180,
         };
-        static double[] weights = Enumerable.Repeat(1.0, data01.Length).ToArray();
+        static double[] weights = Enumerable.Repeat(1.0, data.Length).ToArray();
 
+        static int[] data_array = null;
+        static ArraySegment<int> data_array_segment;
+        static List<int> data_list = null;
+        static Stack<int> data_stack = null;
+        static Queue<int> data_queue = null;
+        static ObservableCollection<int> data_observable_collection = null;
+        static HashSet<int> data_hash_set = null;
+        static SortedSet<int> data_sorted_set = null;
+        static LinkedList<int> data_linked_list = null;
 
-        Stopwatch sw = null;
+        static Tests20180119Dataset03()
+        {
+            data_array = data.ToArray();
+
+            return;
+        }
     }
 }

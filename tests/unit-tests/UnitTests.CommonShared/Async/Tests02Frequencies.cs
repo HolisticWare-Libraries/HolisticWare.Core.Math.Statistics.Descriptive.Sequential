@@ -56,13 +56,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
         public void Frequencies()
         {
             // Arrange
-            List<int> data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+            List<int> data = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
 
             sw = Stopwatch.StartNew();
             // Act
-            IEnumerable<KeyValuePair<int, uint>> frequencies01 = data01.Frequencies();
+            IEnumerable<KeyValuePair<int, uint>> frequencies01 = data.Frequencies();
             sw.Stop();
-            Console.WriteLine($"List<int>.Average() size={data01.Count()} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"List<int>.Average() size={data.Count()} elapsed[ticks]={sw.ElapsedTicks}");
             sw.Reset();
 
             #if NUNIT

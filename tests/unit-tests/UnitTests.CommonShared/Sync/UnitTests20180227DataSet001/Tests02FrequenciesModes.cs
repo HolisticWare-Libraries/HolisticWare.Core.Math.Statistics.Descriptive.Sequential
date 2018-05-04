@@ -71,7 +71,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //====================================================================================================
             // Arrange
             // Arrange
-            List<int> data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+            List<int> data_list01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
 
             sw = Stopwatch.StartNew();
             // Act
@@ -140,7 +140,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         {
             //====================================================================================================
             // Arrange
-            List<int> data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+            List<int> data_list01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
 
             sw = Stopwatch.StartNew();
             // Act

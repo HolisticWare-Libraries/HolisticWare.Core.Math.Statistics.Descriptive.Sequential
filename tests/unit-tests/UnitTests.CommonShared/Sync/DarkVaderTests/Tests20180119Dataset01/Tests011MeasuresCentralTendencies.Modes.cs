@@ -25,13 +25,7 @@
 //    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 //    OTHER DEALINGS IN THE SOFTWARE.
 // */
-using System;
-
-using System.Collections.Generic;
-using System.Linq;
-using System.Diagnostics;
-using System.Threading.Tasks;
-using System.Collections.ObjectModel;
+using BenchmarkDotNet.Attributes;
 
 #if XUNIT
 using Xunit;
@@ -59,6 +53,12 @@ using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializ
 using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 #endif
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Diagnostics;
+using System.Collections.ObjectModel;
+
 using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
@@ -69,10 +69,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode01()
         {
             // Arrange
-            List<int> data01 = new List<int> { 1, 2, 2, 3, 3, 3, 3, 4, 4, 5 };
+            List<int> data = new List<int> { 1, 2, 2, 3, 3, 3, 3, 4, 4, 5 };
 
             // Act
-            List<int> modes01 = data01.Modes();
+            List<int> modes01 = data.Modes();
 
             // Assert
             #if NUNIT

@@ -25,13 +25,7 @@
 //    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 //    OTHER DEALINGS IN THE SOFTWARE.
 // */
-using System;
-
-using System.Collections.Generic;
-using System.Linq;
-using System.Diagnostics;
-using System.Threading.Tasks;
-using System.Collections.ObjectModel;
+using BenchmarkDotNet.Attributes;
 
 #if XUNIT
 using Xunit;
@@ -59,15 +53,28 @@ using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializ
 using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 #endif
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Diagnostics;
+using System.Collections.ObjectModel;
+
 using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class Tests20180119Dataset01
     {
-        [Test]
-        public void Array_MeanArithmeticWeighted()
+        [Benchmark]
+        public double Array_MeanArithmeticWeighted()
         {
+            return data_array.MeanArithmeticWeighted(weights);
+        }
+
+        [Test]
+        public void Array_MeanArithmeticWeighted_Test()
+        {
+            Console.WriteLine($"Array_MeanArithmeticWeighted_Test");
             //====================================================================================================
             //  Arrange
             //  reading data from files
@@ -76,12 +83,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            int[] data = data01.ToArray();
-            double mean = data.MeanArithmeticWeighted(weights);
+            //      extracted to atomic Benchmark method
+            double mean = Array_MeanArithmeticWeighted();
+
             sw.Stop();
             Console.WriteLine($"Array<double>.MeanArithmeticWeighted()");
             Console.WriteLine($"          mean               = {mean}");
-            Console.WriteLine($"          size               = {data.Count()}");
+            Console.WriteLine($"          size               = {data_array.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -99,8 +107,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             return;
         }
 
+        [Benchmark]
+        public double ArraySegment_MeanArithmeticWeighted()
+        {
+            return data_array_segment.MeanArithmeticWeighted(weights);
+        }
+
         [Test]
-        public void ArraySegment_MeanArithmeticWeighted()
+        public void ArraySegment_MeanArithmeticWeighted_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -110,8 +124,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            ArraySegment<int> data = new ArraySegment<int>(data01);
-            double mean = data.MeanArithmeticWeighted(weights);
+            //      extracted to atomic Benchmark method
+            double mean = ArraySegment_MeanArithmeticWeighted();
+
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -132,8 +147,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             return;
         }
 
+        [Benchmark]
+        public double List_MeanArithmeticWeighted()
+        {
+            return data_list.MeanArithmeticWeighted(weights);
+        }
+
         [Test]
-        public void List_MeanArithmeticWeighted()
+        public void List_MeanArithmeticWeighted_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -143,8 +164,47 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            List<int> data = new List<int>(data01);
-            double mean = data.MeanArithmeticWeighted(weights);
+            //      extracted to atomic Benchmark method
+            double mean = List_MeanArithmeticWeighted();
+
+            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          size               = {data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(3.00, mean, 0.00001);
+            #elif XUNIT
+            Assert.Equal(3.00, mean, 5);
+            #elif MSTEST
+            Assert.AreEqual(3.00, mean, 0.00001);
+            #endif
+            //====================================================================================================
+
+            return;
+        }
+
+        [Benchmark]
+        public double Queue_MeanArithmeticWeighted()
+        {
+            return data_queue.MeanArithmeticWeighted(weights);
+        }
+
+        [Test]
+        public void Queue_MeanArithmeticWeighted_Test()
+        {
+            //====================================================================================================
+            //  Arrange
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            //      extracted to atomic Benchmark method
+            double mean = Queue_MeanArithmeticWeighted();
+
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -165,8 +225,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             return;
         }
 
+        [Benchmark]
+        public double Stack_MeanArithmeticWeighted()
+        {
+            return data_stack.MeanArithmeticWeighted(weights);
+        }
+
         [Test]
-        public void Queue_MeanArithmeticWeighted()
+        public void Stack_MeanArithmeticWeighted_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -176,8 +242,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            Queue<int> data = new Queue<int>(data01);
-            double mean = data.MeanArithmeticWeighted(weights);
+            //      extracted to atomic Benchmark method
+            double mean = Stack_MeanArithmeticWeighted();
+
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -198,8 +265,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             return;
         }
 
+        [Benchmark]
+        public double LinkedList_MeanArithmeticWeighted()
+        {
+            return data_linked_list.MeanArithmeticWeighted(weights);
+        }
+
         [Test]
-        public void Stack_MeanArithmeticWeighted()
+        public void LinkedList_MeanArithmeticWeighted_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -209,8 +282,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            Stack<int> data = new Stack<int>(data01);
-            double mean = data.MeanArithmeticWeighted(weights);
+            //      extracted to atomic Benchmark method
+            double mean = LinkedList_MeanArithmeticWeighted();
+
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -231,8 +305,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             return;
         }
 
+        [Benchmark]
+        public double ObservableCollection_MeanArithmeticWeighted()
+        {
+            return data_observable_collection.MeanArithmeticWeighted(weights);
+        }
+
         [Test]
-            public void LinkedList_MeanArithmeticWeighted()
+        public void ObservableCollection_MeanArithmeticWeighted_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -242,8 +322,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            LinkedList<int> data = new LinkedList<int>(data01);
-            double mean = data.MeanArithmeticWeighted(weights);
+            //      extracted to atomic Benchmark method
+            double mean = ObservableCollection_MeanArithmeticWeighted();
+
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -264,104 +345,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             return;
         }
 
-        [Test]
-        public void ObservableCollection_MeanArithmeticWeighted()
-        {
-            //====================================================================================================
-            //  Arrange
-            //  reading data from files
-
-            sw = Stopwatch.StartNew();
-
-            //----------------------------------------------------------------------------------------------------
-            // Act
-            ObservableCollection<int> data = new ObservableCollection<int>(data01);
-            double mean = data.MeanArithmeticWeighted(weights);
-            sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
-            Console.WriteLine($"          size               = {data.Count()}");
-            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
-            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
-            sw.Reset();
-            //----------------------------------------------------------------------------------------------------
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(3.00, mean, 0.00001);
-            #elif XUNIT
-            Assert.Equal(3.00, mean, 5);
-            #elif MSTEST
-            Assert.AreEqual(3.00, mean, 0.00001);
-            #endif
-            //====================================================================================================
-
-            return;
-        }
-
-        [Test]
-        public void HashSet_MeanArithmeticWeighted()
-        {
-            //====================================================================================================
-            //  Arrange
-            //  reading data from files
-
-            sw = Stopwatch.StartNew();
-
-            //----------------------------------------------------------------------------------------------------
-            // Act
-            HashSet<int> data = new HashSet<int>(data01);
-            double mean = data.MeanArithmeticWeighted(new double[] {1, 1, 1, 1, 1, } );
-            sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
-            Console.WriteLine($"          size               = {data.Count()}");
-            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
-            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
-            sw.Reset();
-            //----------------------------------------------------------------------------------------------------
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(3.00, mean, 0.00001);
-            #elif XUNIT
-            Assert.Equal(3.00, mean, 5);
-            #elif MSTEST
-            Assert.AreEqual(3.00, mean, 0.00001);
-            #endif
-            //====================================================================================================
-
-            return;
-        }
-
-        [Test]
-        public void SortedSet_MeanArithmeticWeighted()
-        {
-            //====================================================================================================
-            //  Arrange
-            //  reading data from files
-
-            sw = Stopwatch.StartNew();
-
-            //----------------------------------------------------------------------------------------------------
-            // Act
-            SortedSet<int> data = new SortedSet<int>(data01);
-            double mean = data.MeanArithmeticWeighted(new double[] { 1, 1, 1, 1, 1, });
-            sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
-            Console.WriteLine($"          size               = {data.Count()}");
-            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
-            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
-            sw.Reset();
-            //----------------------------------------------------------------------------------------------------
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(3.00, mean, 0.00001);
-            #elif XUNIT
-            Assert.Equal(3.00, mean, 5);
-            #elif MSTEST
-            Assert.AreEqual(3.00, mean, 0.00001);
-            #endif
-            //====================================================================================================
-
-            return;
-        }
 
         /*
             c# 7.2
@@ -382,9 +365,47 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            Span<int> data = data01.AsSpan().Slice(start: 20);
-            Span<int> data = new Span<int>(arr, 20, arr.Length – 20);
-            double mean = data.MeanArithmeticWeighted(weights);
+            Span<int> data = 
+                            new Span<int>(data01);
+                            //data01.AsSpan().Slice(start: 0)
+                            ;
+            double mean = data.MeanArithmeticWeighted();
+            sw.Stop();
+            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          size               = {data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(3.00, mean, 0.00001);
+            #elif XUNIT
+            Assert.Equal(3.00, mean, 5);
+            #elif MSTEST
+            Assert.AreEqual(3.00, mean, 0.00001);
+            #endif
+            //====================================================================================================
+
+            return;
+        }
+
+        [Test]
+        public void Span_MeanArithmeticWeighted()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            Memory<int> data =
+                            new Memory<int>(data01);
+                            //data01.AsSpan().Slice(start: 0)
+                            ;
+            double mean = data.MeanArithmeticWeighted();
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -405,6 +426,5 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             return;
         }
         */
-
     }
 }

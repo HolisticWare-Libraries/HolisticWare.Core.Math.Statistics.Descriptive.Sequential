@@ -25,13 +25,7 @@
 //    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 //    OTHER DEALINGS IN THE SOFTWARE.
 // */
-using System;
-
-using System.Collections.Generic;
-using System.Linq;
-using System.Diagnostics;
-using System.Threading.Tasks;
-using System.Collections.ObjectModel;
+using BenchmarkDotNet.Attributes;
 
 #if XUNIT
 using Xunit;
@@ -59,6 +53,12 @@ using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializ
 using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 #endif
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Diagnostics;
+using System.Collections.ObjectModel;
+
 using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
@@ -68,11 +68,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         [Test()]
         public void FrequencyDistribution01()
         {
-            List<int> data01 = new List<int> { 1, 2, 2, 3, 3, 3, 3, 4, 4, 5 };
+            List<int> data= new List<int> { 1, 2, 2, 3, 3, 3, 3, 4, 4, 5 };
 
-            IEnumerable<KeyValuePair<int, uint>> frequencies01 = data01.FrequencyDistribution();
+            IEnumerable<KeyValuePair<int, uint>> frequencies01 = data.FrequencyDistribution();
 
-#if NUNIT
+            #if NUNIT
             CollectionAssert.AreEquivalent
                         (
                             new Dictionary<int, uint>
@@ -86,7 +86,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 .ToList(),
                             frequencies01
                         );
-#elif XUNIT
+            #elif XUNIT
             Assert.Equal
                         (
                             new Dictionary<int, uint>
@@ -100,7 +100,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 .ToList(),
                             frequencies01
                         );
-#elif MSTEST
+            #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
                             new Dictionary<int, uint>
@@ -114,7 +114,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 .ToList(),
                             frequencies01.ToArray()
                         );
-#endif
+            #endif
 
             return;
         }

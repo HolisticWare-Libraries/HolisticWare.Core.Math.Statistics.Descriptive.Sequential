@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "library-source", "library-source", "{56123580-99E9-45AC-8300-ABF8EE1D021E}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential", "..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.shproj", "{920D7D0F-3FAE-4C77-9174-23E7A4E80E50}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10", "..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10.csproj", "{DEFACBA9-2E24-46BD-B3E0-EFF602FA05DC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests.NUnit", "UnitTests.NUnit\UnitTests.NUnit.csproj", "{04F3D823-ABEA-46DD-9EC2-56C08CA074DB}"
@@ -29,6 +27,14 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{69B20DD6-58F6-4701-B081-9B09E8B697D3}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "HolisticWare.Core.Math.Samples", "..\..\externals\Core.Math.Samples\tests\data\HolisticWare.Core.Math.Samples\HolisticWare.Core.Math.Samples.shproj", "{98411F49-CA5E-41C7-81E2-26C9ADFF255D}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential", "..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.shproj", "{97322730-7912-4331-8881-DF029EF7CDD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarks.MSTest", "Benchmarks.MSTest\Benchmarks.MSTest.csproj", "{7EA65441-5410-414C-BBB5-F415F2BA23C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarks.XUnit", "Benchmarks.XUnit\Benchmarks.XUnit.csproj", "{9F56AC68-3F8A-4AE9-9A31-BF9FC2CF57A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarks.NUnit", "Benchmarks.NUnit\Benchmarks.NUnit.csproj", "{DD4AC4FC-52B0-49F2-85DE-6E6C441F5207}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -62,16 +68,28 @@ Global
 		{A8E79CF3-AF9D-4953-92C3-0CCB80210D9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8E79CF3-AF9D-4953-92C3-0CCB80210D9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8E79CF3-AF9D-4953-92C3-0CCB80210D9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EA65441-5410-414C-BBB5-F415F2BA23C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EA65441-5410-414C-BBB5-F415F2BA23C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EA65441-5410-414C-BBB5-F415F2BA23C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EA65441-5410-414C-BBB5-F415F2BA23C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F56AC68-3F8A-4AE9-9A31-BF9FC2CF57A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F56AC68-3F8A-4AE9-9A31-BF9FC2CF57A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F56AC68-3F8A-4AE9-9A31-BF9FC2CF57A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F56AC68-3F8A-4AE9-9A31-BF9FC2CF57A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD4AC4FC-52B0-49F2-85DE-6E6C441F5207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD4AC4FC-52B0-49F2-85DE-6E6C441F5207}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD4AC4FC-52B0-49F2-85DE-6E6C441F5207}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD4AC4FC-52B0-49F2-85DE-6E6C441F5207}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{920D7D0F-3FAE-4C77-9174-23E7A4E80E50} = {56123580-99E9-45AC-8300-ABF8EE1D021E}
 		{DEFACBA9-2E24-46BD-B3E0-EFF602FA05DC} = {56123580-99E9-45AC-8300-ABF8EE1D021E}
 		{83BFBF24-CD48-42AC-ADD0-9255405EA007} = {56123580-99E9-45AC-8300-ABF8EE1D021E}
 		{69B20DD6-58F6-4701-B081-9B09E8B697D3} = {3799F198-4FDB-4BFF-811E-D12EEB39D00C}
 		{98411F49-CA5E-41C7-81E2-26C9ADFF255D} = {69B20DD6-58F6-4701-B081-9B09E8B697D3}
+		{97322730-7912-4331-8881-DF029EF7CDD1} = {56123580-99E9-45AC-8300-ABF8EE1D021E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1C1050BB-FA82-4A11-A657-2CFEF4057B3A}

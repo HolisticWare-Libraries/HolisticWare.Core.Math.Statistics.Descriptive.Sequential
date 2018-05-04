@@ -75,15 +75,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         //[OneTimeSetUp] // for MSTest - ClassInitialize - public, static, void
         public static void LoadDataFromFile()
         {
-            string directory_test =
-                                    #if NUNIT
-                                    TestContext.CurrentContext.TestDirectory
-                                    #elif XUNIT
-                                    Environment.CurrentDirectory
-                                    #elif MSTEST
-                                    Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)
-                                    #endif
-                                    ;
+            #if NUNIT
+            string directory_test = TestContext.CurrentContext.TestDirectory;
+            #elif XUNIT
+            string directory_test = Environment.CurrentDirectory;
+            #elif MSTEST
+            string directory_test = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            #endif
 
             string path_data = null;
             string text = null;

@@ -61,14 +61,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
                         {
                             //====================================================================================================
                             // Arrange
-                            List<int> data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+                            List<int> data = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
 
                             sw = Stopwatch.StartNew();
                             //----------------------------------------------------------------------------------------------------
                             // Act
-                            double mean02 = await data01.MeanArithmeticAsync();
+                            double mean02 = await data.MeanArithmeticAsync();
                             sw.Stop();
-                            Console.WriteLine($"List<int>.Average() size={data01.Count()} elapsed[ticks]={sw.ElapsedTicks}");
+                            Console.WriteLine($"List<int>.Average() size={data.Count()} elapsed[ticks]={sw.ElapsedTicks}");
                             sw.Reset();
 
                             //----------------------------------------------------------------------------------------------------
@@ -92,14 +92,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
         {
             //====================================================================================================
             // Arrange
-            List<int> data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+            List<int> data = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
 
             sw = Stopwatch.StartNew();
             //----------------------------------------------------------------------------------------------------
             // Act
-            double mean01 = data01.Average();
+            double mean01 = data.Average();
             sw.Stop();
-            Console.WriteLine($"List<int>.Average() size={data01.Count()} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"List<int>.Average() size={data.Count()} elapsed[ticks]={sw.ElapsedTicks}");
             sw.Reset();
 
             //----------------------------------------------------------------------------------------------------
@@ -114,14 +114,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
 
             //====================================================================================================
             // Arrange
-            List<int> data02 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+            List<int> data_list02 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
 
             sw = Stopwatch.StartNew();
             //----------------------------------------------------------------------------------------------------
             // Act
-            double mean02 = await data02.MeanArithmeticAsync();
+            double mean02 = await data.MeanArithmeticAsync();
             sw.Stop();
-            Console.WriteLine($"List<int>.Average() size={data01.Count()} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"List<int>.Average() size={data.Count()} elapsed[ticks]={sw.ElapsedTicks}");
             sw.Reset();
 
             //----------------------------------------------------------------------------------------------------
@@ -144,14 +144,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
             // Arrange
             // TODO: nullable
             //List<int?> data01 = new List<int?> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
-            List<int> data01 = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
+            List<int> data = new List<int> { 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 };
 
             sw = Stopwatch.StartNew();
             //----------------------------------------------------------------------------------------------------
             // Act
-            double mean01 = await data01.MeanArithmeticAsync();
+            double mean01 = await data.MeanArithmeticAsync();
             sw.Stop();
-            Console.WriteLine($"List<int>.Average() size={data01.Count()} elapsed[ticks]={sw.ElapsedTicks}");
+            Console.WriteLine($"List<int>.Average() size={data.Count()} elapsed[ticks]={sw.ElapsedTicks}");
             sw.Reset();
 
             //----------------------------------------------------------------------------------------------------
