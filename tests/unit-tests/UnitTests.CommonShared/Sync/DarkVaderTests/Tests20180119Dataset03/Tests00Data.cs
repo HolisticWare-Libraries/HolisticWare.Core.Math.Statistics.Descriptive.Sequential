@@ -87,13 +87,19 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         static Stack<int> data_stack = null;
         static Queue<int> data_queue = null;
         static ObservableCollection<int> data_observable_collection = null;
-        static HashSet<int> data_hash_set = null;
-        static SortedSet<int> data_sorted_set = null;
         static LinkedList<int> data_linked_list = null;
 
         static Tests20180119Dataset03()
         {
             data_array = data.ToArray();
+            data_array = data.ToArray();
+            data_array_segment = new ArraySegment<int>(data);
+            data_list = new List<int>(data);
+            data_queue = new Queue<int>(data);
+            data_stack = new Stack<int>(data);
+            data_linked_list = new LinkedList<int>(data);
+            data_observable_collection = new ObservableCollection<int>(data);
+
 
             return;
         }
