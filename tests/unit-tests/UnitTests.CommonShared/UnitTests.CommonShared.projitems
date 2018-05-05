@@ -15,12 +15,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\UnitTests20180213.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\NinaPhysicsLabPowerCalculation\UniTestsNinaPhysics20180403.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests00Data.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests01MeansAverageMedian.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests02FrequenciesModes.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests03Moments.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests04SkewnessKurtosis.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests05Percentiles.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests11Statistics.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet002\Tests00Data.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet002\Tests01MeanAverageMedian.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet002\Tests02FrequenciesModes.cs" />
@@ -100,7 +94,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\KIF.Handbook.QuantitiativeMethods\Tests03Page95DescriptiveAnalysis\Tests05StandardDeviationVariance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\KIF.Handbook.QuantitiativeMethods\Tests03Page95DescriptiveAnalysis.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests00Data.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests09MeacuresDispersion.StandardDeviationVariance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests09MeacuresDispersion.StandardDeviation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresCentralTendencies.MeanArithmetic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresCentralTendencies.MeanGeometric.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresCentralTendencies.MeanHarmonic.cs" />
@@ -110,26 +104,47 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests00Data.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests00Data.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresDistribution.Frequencies.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresDistribution.Frequencies.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresCentralTendencies.Modes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresDistribution.FrequencyDistribution.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests09MeacuresDispersion.Variance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresCentralTendencies.MeanArithmetic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresCentralTendencies.MeanArithmeticWeighted.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresCentralTendencies.MeanGeometric.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresCentralTendencies.MeanGeometricWeighted.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresCentralTendencies.MeanHarmonic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresCentralTendencies.MeanHarmonicWeighted.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresCentralTendencies.Modes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresDistribution.Frequencies.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresDistribution.FrequencyDistribution.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests09MeacuresDispersion.StandardDeviation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests09MeacuresDispersion.Variance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresCentralTendencies.MeanArithmetic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresCentralTendencies.MeanArithmeticWeighted.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresCentralTendencies.MeanGeometric.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresCentralTendencies.MeanGeometricWeighted.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresCentralTendencies.MeanHarmonic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresCentralTendencies.MeanHarmonicWeighted.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresDistribution.Frequencies.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresCentralTendencies.Modes.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresDistribution.FrequencyDistribution.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresCentralTendencies.Modes.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresDistribution.FrequencyDistribution.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresCentralTendencies.Modes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresDistribution.Frequencies.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresDistribution.FrequencyDistribution.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests09MeacuresDispersion.StandardDeviation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests09MeacuresDispersion.Variance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests011MeasuresCentralTendencies.MeanArithmetic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests011MeasuresCentralTendencies.MeanArithmeticWeighted.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests011MeasuresCentralTendencies.MeanGeometric.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests011MeasuresCentralTendencies.MeanGeometricWeighted.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests011MeasuresCentralTendencies.MeanHarmonic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests011MeasuresCentralTendencies.MeanHarmonicWeighted.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests011MeasuresCentralTendencies.Modes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests011MeasuresDistribution.Frequencies.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests011MeasuresDistribution.FrequencyDistribution.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests011MeasuresCentralTendencies.MeanQuadratic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests011MeasuresCentralTendencies.MeanCubic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests011MeasuresCentralTendencies.MeanGeneralized.2.0.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests011MeasuresCentralTendencies.MeanGeneralized.3.0.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests011MeasuresCentralTendencies.MeanWeighted.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests011MeasuresCentralTendencies.Median.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests011MeasuresCentralTendencies.MedianWeighted.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Async\" />
@@ -155,5 +170,14 @@
     <Folder Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests02FrequenciesModes.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests03Moments.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests04SkewnessKurtosis.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests05Percentiles.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests11Statistics.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests09MeacuresDispersion.StandardDeviation.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests09MeacuresDispersion.Variance.cs" />
   </ItemGroup>
 </Project>
