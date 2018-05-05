@@ -31,6 +31,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using System.IO;
+using System.Reflection;
+using System.Collections.ObjectModel;
 
 #if XUNIT
 using Xunit;
@@ -65,9 +68,35 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
     public partial class UnitTests20180227DataSet001
     {
-        IEnumerable<int> data01 = null;
-
         Stopwatch sw = null;
 
+        static int[] data = new[]
+        {
+            2, 4, 3, 5, 6, 7, 4, 4, 2, 1
+        };
+        static double[] weights = Enumerable.Repeat(1.0, data.Length).ToArray();
+
+        static int[] data_array = null;
+        static ArraySegment<int> data_array_segment;
+        static List<int> data_list = null;
+        static Stack<int> data_stack = null;
+        static Queue<int> data_queue = null;
+        static ObservableCollection<int> data_observable_collection = null;
+        static LinkedList<int> data_linked_list = null;
+
+        static UnitTests20180227DataSet001()
+        {
+            data_array = data.ToArray();
+            data_array = data.ToArray();
+            data_array_segment = new ArraySegment<int>(data);
+            data_list = new List<int>(data);
+            data_queue = new Queue<int>(data);
+            data_stack = new Stack<int>(data);
+            data_linked_list = new LinkedList<int>(data);
+            data_observable_collection = new ObservableCollection<int>(data);
+
+
+            return;
+        }
     }
 }

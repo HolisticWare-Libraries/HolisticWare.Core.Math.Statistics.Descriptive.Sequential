@@ -84,52 +84,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
 
-            #if NUNIT
-            CollectionAssert.AreEquivalent
-                                (
-                                    frequencies01,
-                                    new Dictionary<int, uint>()
-                                    {
-                                        { 4, 3 },
-                                        { 2, 2 },
-                                        { 3, 1 },
-                                        { 5, 1 },
-                                        { 6, 1 },
-                                        { 7, 1 },
-                                        { 1, 1 },
-                                    }
-                                );
-            #elif XUNIT
-            Assert.Equal
-                                (
-                                    frequencies01,
-                                    new Dictionary<int, uint>()
-                                    {
-                                        { 4, 3 },
-                                        { 2, 2 },
-                                        { 3, 1 },
-                                        { 5, 1 },
-                                        { 6, 1 },
-                                        { 7, 1 },
-                                        { 1, 1 },
-                                    }
-                                );
-            #elif MSTEST
-            CollectionAssert.AreEquivalent
-                                (
-                                    frequencies01.ToList(),
-                                    new Dictionary<int, uint>()
-                                    {
-                                        { 4, 3 },
-                                        { 2, 2 },
-                                        { 3, 1 },
-                                        { 5, 1 },
-                                        { 6, 1 },
-                                        { 7, 1 },
-                                        { 1, 1 },
-                                    }
-                                );
-            #endif
             //====================================================================================================
 
             return;
