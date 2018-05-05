@@ -74,19 +74,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     [ShortRunJob]
     public partial class Tests20180119Dataset01
     {
-
         Stopwatch sw = null;
 
-        static int[] data = new int[] { 1, 2, 2, 3, 3, 3, 3, 4, 4, 5 };
-        static double[] weights = new double[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
+        static int[] data = new int[] 
+        { 
+            1, 2, 2, 3, 3, 3, 3, 4, 4, 5 
+        };
+        static double[] weights = Enumerable.Repeat(1.0, data.Length).ToArray();
+
         static int[] data_array = null;
         static ArraySegment<int> data_array_segment;
         static List<int> data_list = null;
         static Stack<int> data_stack = null;
         static Queue<int> data_queue = null;
         static ObservableCollection<int> data_observable_collection = null;
-        static HashSet<int> data_hash_set = null;
-        static SortedSet<int> data_sorted_set = null;
         static LinkedList<int> data_linked_list = null;
 
         static Tests20180119Dataset01()

@@ -25,13 +25,7 @@
 //    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 //    OTHER DEALINGS IN THE SOFTWARE.
 // */
-using System;
-
-using System.Collections.Generic;
-using System.Linq;
-using System.Diagnostics;
-using System.Threading.Tasks;
-using System.Collections.ObjectModel;
+using BenchmarkDotNet.Attributes;
 
 #if XUNIT
 using Xunit;
@@ -59,14 +53,68 @@ using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializ
 using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 #endif
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Diagnostics;
+using System.Collections.ObjectModel;
+
 using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
-    public partial class Tests20180119Dataset02
+    public partial class UnitTests20180227DataSet001
     {
+        [Benchmark]
+        public double Array_MeanGeometricWeighted()
+        {
+            return data_array.MeanGeometricWeighted(weights);
+        }
+
         [Test]
-        public void Array_MeanGeometric()
+        public void Array_MeanGeometricWeighted_Test()
+        {
+            Console.WriteLine($"Array_MeanGeometricWeighted_Test");
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            //      extracted to atomic Benchmark method
+            double mean = Array_MeanGeometricWeighted();
+
+            sw.Stop();
+            Console.WriteLine($"Array<double>.MeanGeometricWeighted()");
+            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          size               = {data_array.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(3.317, mean, 0.001);
+            #elif XUNIT
+            Assert.Equal(3.317, mean, 3);
+            #elif MSTEST
+            Assert.AreEqual(3.317, mean, 0.001);
+            #endif
+            //====================================================================================================
+
+            return;
+        }
+
+        [Benchmark]
+        public double ArraySegment_MeanGeometricWeighted()
+        {
+            return data_array_segment.MeanGeometricWeighted(weights);
+        }
+
+        [Test]
+        public void ArraySegment_MeanGeometricWeighted_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -76,10 +124,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            double[] data = data01.ToArray();
-            double mean = data.MeanGeometric();
+            //      extracted to atomic Benchmark method
+            double mean = ArraySegment_MeanGeometricWeighted();
+
             sw.Stop();
-            Console.WriteLine($"Array<double>.MeanGeometric()");
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
@@ -88,19 +136,25 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(15.59708, mean, 0.00001);
+            Assert.AreEqual(3.317, mean, 0.001);
             #elif XUNIT
-            Assert.Equal(15.59708, mean, 5);
+            Assert.Equal(3.317, mean, 3);
             #elif MSTEST
-            Assert.AreEqual(15.59708, mean, 0.00001);
+            Assert.AreEqual(3.317, mean, 0.001);
             #endif
             //====================================================================================================
 
             return;
         }
 
+        [Benchmark]
+        public double List_MeanGeometricWeighted()
+        {
+            return data_list.MeanGeometricWeighted(weights);
+        }
+
         [Test]
-        public void ArraySegment_MeanGeometric()
+        public void List_MeanGeometricWeighted_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -110,8 +164,47 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            ArraySegment<double> data = new ArraySegment<double>(data01);
-            double mean = data.MeanGeometric();
+            //      extracted to atomic Benchmark method
+            double mean = List_MeanGeometricWeighted();
+
+            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          size               = {data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(3.317, mean, 0.001);
+            #elif XUNIT
+            Assert.Equal(3.317, mean, 3);
+            #elif MSTEST
+            Assert.AreEqual(3.317, mean, 0.001);
+            #endif
+            //====================================================================================================
+
+            return;
+        }
+
+        [Benchmark]
+        public double Queue_MeanGeometricWeighted()
+        {
+            return data_queue.MeanGeometricWeighted(weights);
+        }
+
+        [Test]
+        public void Queue_MeanGeometricWeighted_Test()
+        {
+            //====================================================================================================
+            //  Arrange
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            //      extracted to atomic Benchmark method
+            double mean = Queue_MeanGeometricWeighted();
+
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -121,20 +214,25 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(15.59708, mean, 0.00001);
+            Assert.AreEqual(3.317, mean, 0.001);
             #elif XUNIT
-            Assert.Equal(15.59708, mean, 5);
+            Assert.Equal(3.317, mean, 3);
             #elif MSTEST
-            Assert.AreEqual(15.59708, mean, 0.00001);
+            Assert.AreEqual(3.317, mean, 0.001);
             #endif
             //====================================================================================================
 
             return;
         }
 
-        
+        [Benchmark]
+        public double Stack_MeanGeometricWeighted()
+        {
+            return data_stack.MeanGeometricWeighted(weights);
+        }
+
         [Test]
-        public void List_MeanGeometric()
+        public void Stack_MeanGeometricWeighted_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -144,8 +242,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            List<double> data = new List<double>(data01);
-            double mean = data.MeanGeometric();
+            //      extracted to atomic Benchmark method
+            double mean = Stack_MeanGeometricWeighted();
+
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -155,19 +254,25 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(15.59708, mean, 0.00001);
+            Assert.AreEqual(3.317, mean, 0.001);
             #elif XUNIT
-            Assert.Equal(15.59708, mean, 5);
+            Assert.Equal(3.317, mean, 3);
             #elif MSTEST
-            Assert.AreEqual(15.59708, mean, 0.00001);
+            Assert.AreEqual(3.317, mean, 0.001);
             #endif
             //====================================================================================================
 
             return;
         }
 
+        [Benchmark]
+        public double LinkedList_MeanGeometricWeighted()
+        {
+            return data_linked_list.MeanGeometricWeighted(weights);
+        }
+
         [Test]
-        public void Queue_MeanGeometric()
+        public void LinkedList_MeanGeometricWeighted_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -177,8 +282,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            Queue<double> data = new Queue<double>(data01);
-            double mean = data.MeanGeometric();
+            //      extracted to atomic Benchmark method
+            double mean = LinkedList_MeanGeometricWeighted();
+
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -188,19 +294,25 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(15.59708, mean, 0.00001);
+            Assert.AreEqual(3.317, mean, 0.001);
             #elif XUNIT
-            Assert.Equal(15.59708, mean, 5);
+            Assert.Equal(3.317, mean, 3);
             #elif MSTEST
-            Assert.AreEqual(15.59708, mean, 0.00001);
+            Assert.AreEqual(3.317, mean, 0.001);
             #endif
             //====================================================================================================
 
             return;
         }
-        
+
+        [Benchmark]
+        public double ObservableCollection_MeanGeometricWeighted()
+        {
+            return data_observable_collection.MeanGeometricWeighted(weights);
+        }
+
         [Test]
-        public void Stack_MeanGeometric()
+        public void ObservableCollection_MeanGeometricWeighted_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -210,8 +322,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            Stack<double> data = new Stack<double>(data01);
-            double mean = data.MeanGeometric();
+            //      extracted to atomic Benchmark method
+            double mean = ObservableCollection_MeanGeometricWeighted();
+
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -221,19 +334,28 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(15.59708, mean, 0.00001);
+            Assert.AreEqual(3.317, mean, 0.001);
             #elif XUNIT
-            Assert.Equal(15.59708, mean, 5);
+            Assert.Equal(3.317, mean, 3);
             #elif MSTEST
-            Assert.AreEqual(15.59708, mean, 0.00001);
+            Assert.AreEqual(3.317, mean, 0.001);
             #endif
             //====================================================================================================
 
             return;
         }
 
+
+        /*
+            c# 7.2
+            Span<T>, 
+            ReadOnlySpan<T>, 
+            Memory<T> 
+            ReadOnlyMemory<T>
+        */
+        /*
         [Test]
-        public void LinkedList_MeanGeometric()
+        public void Span_MeanGeometricWeighted()
         {
             //====================================================================================================
             //  Arrange
@@ -243,8 +365,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            LinkedList<double> data = new LinkedList<double>(data01);
-            double mean = data.MeanGeometric();
+            Span<int> data = 
+                            new Span<int>(data01);
+                            //data01.AsSpan().Slice(start: 0)
+                            ;
+            double mean = data.MeanGeometricWeighted();
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -254,11 +379,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(15.59708, mean, 0.00001);
+            Assert.AreEqual(3.317, mean, 0.001);
             #elif XUNIT
-            Assert.Equal(15.59708, mean, 5);
+            Assert.Equal(3.317, mean, 3);
             #elif MSTEST
-            Assert.AreEqual(15.59708, mean, 0.00001);
+            Assert.AreEqual(3.317, mean, 0.001);
             #endif
             //====================================================================================================
 
@@ -266,7 +391,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Test]
-        public void ObservableCollection_MeanGeometric()
+        public void Span_MeanGeometricWeighted()
         {
             //====================================================================================================
             //  Arrange
@@ -276,8 +401,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            ObservableCollection<double> data = new ObservableCollection<double>(data01);
-            double mean = data.MeanGeometric();
+            Memory<int> data =
+                            new Memory<int>(data01);
+                            //data01.AsSpan().Slice(start: 0)
+                            ;
+            double mean = data.MeanGeometricWeighted();
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -287,82 +415,16 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(15.59708, mean, 0.00001);
+            Assert.AreEqual(3.317, mean, 0.001);
             #elif XUNIT
-            Assert.Equal(15.59708, mean, 5);
+            Assert.Equal(3.317, mean, 3);
             #elif MSTEST
-            Assert.AreEqual(15.59708, mean, 0.00001);
+            Assert.AreEqual(3.317, mean, 0.001);
             #endif
             //====================================================================================================
 
             return;
         }
-
-        [Test]
-        public void HashSet_MeanGeometric()
-        {
-            //====================================================================================================
-            //  Arrange
-            //  reading data from files
-
-            sw = Stopwatch.StartNew();
-
-            //----------------------------------------------------------------------------------------------------
-            // Act
-            HashSet<double> data = new HashSet<double>(data01);
-            double mean = data.MeanGeometric();
-            sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
-            Console.WriteLine($"          size               = {data.Count()}");
-            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
-            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
-            sw.Reset();
-            //----------------------------------------------------------------------------------------------------
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(2.60517, mean, 0.00001);
-            #elif XUNIT
-            Assert.Equal(2.60517, mean, 5);
-            #elif MSTEST
-            Assert.AreEqual(2.60517, mean, 0.00001);
-            #endif
-            //====================================================================================================
-
-            return;
-        }
-
-        [Test]
-        public void SortedSet_MeanGeometric()
-        {
-            //====================================================================================================
-            //  Arrange
-            //  reading data from files
-
-            sw = Stopwatch.StartNew();
-
-            //----------------------------------------------------------------------------------------------------
-            // Act
-            SortedSet<double> data = new SortedSet<double>(data01);
-            double mean = data.MeanGeometric();
-            sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
-            Console.WriteLine($"          size               = {data.Count()}");
-            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
-            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
-            sw.Reset();
-            //----------------------------------------------------------------------------------------------------
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(2.60517, mean, 0.00001);
-            #elif XUNIT
-            Assert.Equal(2.60517, mean, 5);
-            #elif MSTEST
-            Assert.AreEqual(2.60517, mean, 0.00001);
-            #endif
-            //====================================================================================================
-
-            return;
-        }
-
+        */
     }
 }

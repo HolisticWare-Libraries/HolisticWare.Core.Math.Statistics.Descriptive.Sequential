@@ -25,13 +25,7 @@
 //    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 //    OTHER DEALINGS IN THE SOFTWARE.
 // */
-using System;
-
-using System.Collections.Generic;
-using System.Linq;
-using System.Diagnostics;
-using System.Threading.Tasks;
-using System.Collections.ObjectModel;
+using BenchmarkDotNet.Attributes;
 
 #if XUNIT
 using Xunit;
@@ -59,14 +53,68 @@ using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializ
 using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 #endif
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Diagnostics;
+using System.Collections.ObjectModel;
+
 using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
-    public partial class Tests20180119Dataset02
+    public partial class UnitTests20180227DataSet001
     {
+        [Benchmark]
+        public double Array_MeanHarmonic()
+        {
+            return data_array.MeanHarmonic();
+        }
+
         [Test]
-        public void Array_MeanHarmonicWeighted()
+        public void Array_MeanHarmonic_Test()
+        {
+            Console.WriteLine($"Array_MeanHarmonic_Test");
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            //      extracted to atomic Benchmark method
+            double mean = Array_MeanHarmonic();
+
+            sw.Stop();
+            Console.WriteLine($"Array<double>.MeanHarmonic()");
+            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          size               = {data_array.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(2.783300, mean, 0.00001);
+            #elif XUNIT
+            Assert.Equal(2.783300, mean, 5);
+            #elif MSTEST
+            Assert.AreEqual(2.783300, mean, 0.00001);
+            #endif
+            //====================================================================================================
+
+            return;
+        }
+
+        [Benchmark]
+        public double ArraySegment_MeanHarmonic()
+        {
+            return data_array_segment.MeanHarmonic();
+        }
+
+        [Test]
+        public void ArraySegment_MeanHarmonic_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -76,10 +124,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            double[] data = data01.ToArray();
-            double mean = data.MeanHarmonicWeighted(weights);
+            //      extracted to atomic Benchmark method
+            double mean = ArraySegment_MeanHarmonic();
+
             sw.Stop();
-            Console.WriteLine($"Array<double>.MeanHarmonicWeighted()");
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
@@ -88,19 +136,25 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(15.29597, mean, 0.00001);
+            Assert.AreEqual(2.783300, mean, 0.00001);
             #elif XUNIT
-            Assert.Equal(15.29597, mean, 5);
+            Assert.Equal(2.783300, mean, 5);
             #elif MSTEST
-            Assert.AreEqual(15.29597, mean, 0.00001);
+            Assert.AreEqual(2.783300, mean, 0.00001);
             #endif
             //====================================================================================================
 
             return;
         }
 
+        [Benchmark]
+        public double List_MeanHarmonic()
+        {
+            return data_list.MeanHarmonic();
+        }
+
         [Test]
-        public void ArraySegment_MeanHarmonicWeighted()
+        public void List_MeanHarmonic_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -110,8 +164,47 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            ArraySegment<double> data = new ArraySegment<double>(data01);
-            double mean = data.MeanHarmonicWeighted(weights);
+            //      extracted to atomic Benchmark method
+            double mean = List_MeanHarmonic();
+
+            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          size               = {data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(2.783300, mean, 0.00001);
+            #elif XUNIT
+            Assert.Equal(2.783300, mean, 5);
+            #elif MSTEST
+            Assert.AreEqual(2.783300, mean, 0.00001);
+            #endif
+            //====================================================================================================
+
+            return;
+        }
+
+        [Benchmark]
+        public double Queue_MeanHarmonic()
+        {
+            return data_queue.MeanHarmonic();
+        }
+
+        [Test]
+        public void Queue_MeanHarmonic_Test()
+        {
+            //====================================================================================================
+            //  Arrange
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            //      extracted to atomic Benchmark method
+            double mean = Queue_MeanHarmonic();
+
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -121,19 +214,25 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(15.29597, mean, 0.00001);
+            Assert.AreEqual(2.783300, mean, 0.00001);
             #elif XUNIT
-            Assert.Equal(15.29597, mean, 5);
+            Assert.Equal(2.783300, mean, 5);
             #elif MSTEST
-            Assert.AreEqual(15.29597, mean, 0.00001);
+            Assert.AreEqual(2.783300, mean, 0.00001);
             #endif
             //====================================================================================================
 
             return;
         }
 
+        [Benchmark]
+        public double Stack_MeanHarmonic()
+        {
+            return data_stack.MeanHarmonic();
+        }
+
         [Test]
-        public void List_MeanHarmonicWeighted()
+        public void Stack_MeanHarmonic_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -143,8 +242,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            List<double> data = new List<double>(data01);
-            double mean = data.MeanHarmonicWeighted(weights);
+            //      extracted to atomic Benchmark method
+            double mean = Stack_MeanHarmonic();
+
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -154,19 +254,25 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(15.29597, mean, 0.00001);
+            Assert.AreEqual(2.783300, mean, 0.00001);
             #elif XUNIT
-            Assert.Equal(15.29597, mean, 5);
+            Assert.Equal(2.783300, mean, 5);
             #elif MSTEST
-            Assert.AreEqual(15.29597, mean, 0.00001);
+            Assert.AreEqual(2.783300, mean, 0.00001);
             #endif
             //====================================================================================================
 
             return;
         }
 
+        [Benchmark]
+        public double LinkedList_MeanHarmonic()
+        {
+            return data_linked_list.MeanHarmonic();
+        }
+
         [Test]
-        public void Queue_MeanHarmonicWeighted()
+        public void LinkedList_MeanHarmonic_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -176,8 +282,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            Queue<double> data = new Queue<double>(data01);
-            double mean = data.MeanHarmonicWeighted(weights);
+            //      extracted to atomic Benchmark method
+            double mean = LinkedList_MeanHarmonic();
+
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -187,19 +294,25 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(15.29597, mean, 0.00001);
+            Assert.AreEqual(2.783300, mean, 0.00001);
             #elif XUNIT
-            Assert.Equal(15.29597, mean, 5);
+            Assert.Equal(2.783300, mean, 5);
             #elif MSTEST
-            Assert.AreEqual(15.29597, mean, 0.00001);
+            Assert.AreEqual(2.783300, mean, 0.00001);
             #endif
             //====================================================================================================
 
             return;
         }
 
+        [Benchmark]
+        public double ObservableCollection_MeanHarmonic()
+        {
+            return data_observable_collection.MeanHarmonic();
+        }
+
         [Test]
-        public void Stack_MeanHarmonicWeighted()
+        public void ObservableCollection_MeanHarmonic_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -209,8 +322,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            Stack<double> data = new Stack<double>(data01);
-            double mean = data.MeanHarmonicWeighted(weights);
+            //      extracted to atomic Benchmark method
+            double mean = ObservableCollection_MeanHarmonic();
+
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -220,150 +334,17 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(15.29597, mean, 0.00001);
+            Assert.AreEqual(2.783300, mean, 0.00001);
             #elif XUNIT
-            Assert.Equal(15.29597, mean, 5);
+            Assert.Equal(2.783300, mean, 5);
             #elif MSTEST
-            Assert.AreEqual(15.29597, mean, 0.00001);
+            Assert.AreEqual(2.783300, mean, 0.00001);
             #endif
             //====================================================================================================
 
             return;
         }
 
-        [Test]
-            public void LinkedList_MeanHarmonicWeighted()
-        {
-            //====================================================================================================
-            //  Arrange
-            //  reading data from files
-
-            sw = Stopwatch.StartNew();
-
-            //----------------------------------------------------------------------------------------------------
-            // Act
-            LinkedList<double> data = new LinkedList<double>(data01);
-            double mean = data.MeanHarmonicWeighted(weights);
-            sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
-            Console.WriteLine($"          size               = {data.Count()}");
-            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
-            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
-            sw.Reset();
-            //----------------------------------------------------------------------------------------------------
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(15.29597, mean, 0.00001);
-            #elif XUNIT
-            Assert.Equal(15.29597, mean, 5);
-            #elif MSTEST
-            Assert.AreEqual(15.29597, mean, 0.00001);
-            #endif
-            //====================================================================================================
-
-            return;
-        }
-
-        [Test]
-        public void ObservableCollection_MeanHarmonicWeighted()
-        {
-            //====================================================================================================
-            //  Arrange
-            //  reading data from files
-
-            sw = Stopwatch.StartNew();
-
-            //----------------------------------------------------------------------------------------------------
-            // Act
-            ObservableCollection<double> data = new ObservableCollection<double>(data01);
-            double mean = data.MeanHarmonicWeighted(weights);
-            sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
-            Console.WriteLine($"          size               = {data.Count()}");
-            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
-            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
-            sw.Reset();
-            //----------------------------------------------------------------------------------------------------
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(15.29597, mean, 0.00001);
-            #elif XUNIT
-            Assert.Equal(15.29597, mean, 5);
-            #elif MSTEST
-            Assert.AreEqual(15.29597, mean, 0.00001);
-            #endif
-            //====================================================================================================
-
-            return;
-        }
-
-        [Test]
-        public void HashSet_MeanHarmonicWeighted()
-        {
-            //====================================================================================================
-            //  Arrange
-            //  reading data from files
-
-            sw = Stopwatch.StartNew();
-
-            //----------------------------------------------------------------------------------------------------
-            // Act
-            HashSet<double> data = new HashSet<double>(data01);
-            double[] weights1 = Enumerable.Repeat(1.0, data.Count).ToArray();
-            double mean = data.MeanGeometricWeighted(weights1);
-            sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
-            Console.WriteLine($"          size               = {data.Count()}");
-            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
-            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
-            sw.Reset();
-            //----------------------------------------------------------------------------------------------------
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(2.18978, mean, 0.00001);
-            #elif XUNIT
-            Assert.Equal(2.18978, mean, 5);
-            #elif MSTEST
-            Assert.AreEqual(2.18978, mean, 0.00001);
-            #endif
-            //====================================================================================================
-
-            return;
-        }
-
-        [Test]
-        public void SortedSet_MeanHarmonicWeighted()
-        {
-            //====================================================================================================
-            //  Arrange
-            //  reading data from files
-
-            sw = Stopwatch.StartNew();
-
-            //----------------------------------------------------------------------------------------------------
-            // Act
-            SortedSet<double> data = new SortedSet<double>(data01);
-            double[] weights1 = Enumerable.Repeat(1.0, data.Count).ToArray();
-            double mean = data.MeanGeometricWeighted(weights1);
-            sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
-            Console.WriteLine($"          size               = {data.Count()}");
-            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
-            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
-            sw.Reset();
-            //----------------------------------------------------------------------------------------------------
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(2.18978, mean, 0.00001);
-            #elif XUNIT
-            Assert.Equal(2.18978, mean, 5);
-            #elif MSTEST
-            Assert.AreEqual(2.18978, mean, 0.00001);
-            #endif
-            //====================================================================================================
-
-            return;
-        }
 
         /*
             c# 7.2
@@ -374,7 +355,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         */
         /*
         [Test]
-        public void Span_MeanHarmonicWeighted()
+        public void Span_MeanHarmonic()
         {
             //====================================================================================================
             //  Arrange
@@ -384,9 +365,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            Span<double> data = data01.AsSpan().Slice(start: 20);
-            Span<double> data = new Span<double>(arr, 20, arr.Length – 20);
-            double mean = data.MeanHarmonicWeighted(weights);
+            Span<int> data = 
+                            new Span<int>(data01);
+                            //data01.AsSpan().Slice(start: 0)
+                            ;
+            double mean = data.MeanHarmonic();
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -396,17 +379,52 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(15.29597, mean, 0.00001);
+            Assert.AreEqual(2.783300, mean, 0.00001);
             #elif XUNIT
-            Assert.Equal(15.29597, mean, 5);
+            Assert.Equal(2.783300, mean, 5);
             #elif MSTEST
-            Assert.AreEqual(15.29597, mean, 0.00001);
+            Assert.AreEqual(2.783300, mean, 0.00001);
+            #endif
+            //====================================================================================================
+
+            return;
+        }
+
+        [Test]
+        public void Span_MeanHarmonic()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            Memory<int> data =
+                            new Memory<int>(data01);
+                            //data01.AsSpan().Slice(start: 0)
+                            ;
+            double mean = data.MeanHarmonic();
+            sw.Stop();
+            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          size               = {data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(2.783300, mean, 0.00001);
+            #elif XUNIT
+            Assert.Equal(2.783300, mean, 5);
+            #elif MSTEST
+            Assert.AreEqual(2.783300, mean, 0.00001);
             #endif
             //====================================================================================================
 
             return;
         }
         */
-
     }
 }
