@@ -110,7 +110,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         { 1, 1 },
                                     }
                                 );
-#elif XUNIT
+            #elif XUNIT
             Assert.Equal
                                 (
                                     frequency_distribution,
@@ -125,7 +125,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         { 1, 1 },
                                     }
                                 );
-#elif MSTEST
+            #elif MSTEST
             CollectionAssert.AreEquivalent
                                 (
                                     frequency_distribution.ToList(),
@@ -140,7 +140,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         { 1, 1 },
                                     }
                                 );
-#endif
+            #endif
             //====================================================================================================
 
             return;
@@ -189,7 +189,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         { 1, 1 },
                                     }
                                 );
-#elif XUNIT
+            #elif XUNIT
             Assert.Equal
                                 (
                                     frequency_distribution,
@@ -204,7 +204,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         { 1, 1 },
                                     }
                                 );
-#elif MSTEST
+            #elif MSTEST
             CollectionAssert.AreEquivalent
                                 (
                                     frequency_distribution.ToList(),
@@ -219,7 +219,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         { 1, 1 },
                                     }
                                 );
-#endif
+            #endif
             //====================================================================================================
 
             return;
@@ -267,7 +267,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         { 1, 1 },
                                     }
                                 );
-#elif XUNIT
+            #elif XUNIT
             Assert.Equal
                                 (
                                     frequency_distribution,
@@ -282,7 +282,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         { 1, 1 },
                                     }
                                 );
-#elif MSTEST
+            #elif MSTEST
             CollectionAssert.AreEquivalent
                                 (
                                     frequency_distribution.ToList(),
@@ -297,7 +297,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         { 1, 1 },
                                     }
                                 );
-#endif
+            #endif
             //====================================================================================================
 
             return;
@@ -345,7 +345,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         { 1, 1 },
                                     }
                                 );
-#elif XUNIT
+            #elif XUNIT
             Assert.Equal
                                 (
                                     frequency_distribution,
@@ -360,7 +360,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         { 1, 1 },
                                     }
                                 );
-#elif MSTEST
+            #elif MSTEST
             CollectionAssert.AreEquivalent
                                 (
                                     frequency_distribution.ToList(),
@@ -375,7 +375,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         { 1, 1 },
                                     }
                                 );
-#endif
+            #endif
             //====================================================================================================
 
             return;
@@ -424,7 +424,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         { 1, 1 },
                                     }
                                 );
-#elif XUNIT
+            #elif XUNIT
             Assert.Equal
                                 (
                                     frequency_distribution,
@@ -439,7 +439,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         { 1, 1 },
                                     }
                                 );
-#elif MSTEST
+            #elif MSTEST
             CollectionAssert.AreEquivalent
                                 (
                                     frequency_distribution.ToList(),
@@ -454,7 +454,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         { 1, 1 },
                                     }
                                 );
-#endif
+            #endif
             //====================================================================================================
 
             return;
@@ -503,7 +503,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         { 1, 1 },
                                     }
                                 );
-#elif XUNIT
+            #elif XUNIT
             Assert.Equal
                                 (
                                     frequency_distribution,
@@ -518,7 +518,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         { 1, 1 },
                                     }
                                 );
-#elif MSTEST
+            #elif MSTEST
             CollectionAssert.AreEquivalent
                                 (
                                     frequency_distribution.ToList(),
@@ -533,7 +533,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         { 1, 1 },
                                     }
                                 );
-#endif
+            #endif
             //====================================================================================================
 
             return;
@@ -582,7 +582,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         { 1, 1 },
                                     }
                                 );
-#elif XUNIT
+            #elif XUNIT
             Assert.Equal
                                 (
                                     frequency_distribution,
@@ -597,7 +597,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         { 1, 1 },
                                     }
                                 );
-#elif MSTEST
+            #elif MSTEST
             CollectionAssert.AreEquivalent
                                 (
                                     frequency_distribution.ToList(),
@@ -612,7 +612,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         { 1, 1 },
                                     }
                                 );
-#endif
+            #endif
             //====================================================================================================
 
             return;
