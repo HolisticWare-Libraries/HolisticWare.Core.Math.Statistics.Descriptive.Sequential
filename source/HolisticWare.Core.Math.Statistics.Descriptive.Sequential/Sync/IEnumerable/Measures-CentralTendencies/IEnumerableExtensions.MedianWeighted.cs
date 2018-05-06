@@ -10,6 +10,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// <see cref="https://en.wikipedia.org/wiki/Weighted_median"/>
     /// <see cref="https://www.easycalculation.com/statistics/weighted-mean-calculator.php"/>
     /// <see cref="http://mathworld.wolfram.com/PowerMean.html"/> 
+    /// <see cref="http://elsenaju.eu/Calculator/mean-value-calculator.htm"/>
     public static partial class IEnumerableExtensionsMedianWeighted
     {
         //==============================================================================================================
@@ -19,6 +20,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                         IEnumerable<double> weights
                                     )
         {
+            throw new NotImplementedException("Work in progress!");
+
             int n = x.Count();
             int n_2 = weights.ToArray().Count();
 
@@ -33,7 +36,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             int index = -1;
 
-            for (int i = 0; i < weights.Count(); i++)
+            for (int i = 0; i < n_2; i++)
             {
                 double percentage_weight = weights.ElementAt(i) / sum_weights;
                 percentges_weight[i] = percentage_weight;
