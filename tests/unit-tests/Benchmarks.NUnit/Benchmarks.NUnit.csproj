@@ -134,10 +134,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Test.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UnitTests.NUnit\UnitTests.NUnit.csproj">

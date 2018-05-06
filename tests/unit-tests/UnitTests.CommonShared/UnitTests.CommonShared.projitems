@@ -145,6 +145,15 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests011MeasuresCentralTendencies.MeanWeighted.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests011MeasuresCentralTendencies.Median.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests011MeasuresCentralTendencies.MedianWeighted.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresDistribution.Max.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresDistribution.Min.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresDistribution.Range.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresDistribution.Max.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresDistribution.Min.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresDistribution.Range.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresDistribution.Max.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresDistribution.Min.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresDistribution.Range.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Async\" />
