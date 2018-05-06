@@ -65,7 +65,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class UnitTests20180227DataSet001
     {
-        int[] w2 = new[] { 1, 3, 4, 5, 2, 3, 2, 4, 1, 1 };
+        static int[] w2 = new[] { 1, 3, 4, 5, 2, 3, 2, 4, 1, 1 };
+        static int[] w2_r = Enumerable.Reverse(w2).ToArray();
 
         [Benchmark]
         public double Array_MedianWeighted()
@@ -230,7 +231,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         [Benchmark]
         public double Stack_MedianWeighted()
         {
-            return data_stack.MedianWeighted(w2.Select(i => (double)i));
+            return data_stack.MedianWeighted(w2_r.Select(i => (double)i));
         }
 
         [Test]

@@ -65,7 +65,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class UnitTests20180227DataSet001
     {
-        List<double> w1 = new List<double>(){ 1, 4, 3, 4, 4, 4, 5, 3, 2, 1 };
+        static List<double> w1 = new List<double>(){ 1, 4, 3, 4, 4, 4, 5, 3, 2, 1 };
+        static IEnumerable<double> w1_r = Enumerable.Reverse(w1);
 
 
         [Benchmark]
@@ -231,7 +232,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         [Benchmark]
         public double Stack_MeanWeighted()
         {
-            return data_stack.MeanWeighted(w1);
+            return data_stack.MeanWeighted(w1_r);
         }
 
         [Test]
