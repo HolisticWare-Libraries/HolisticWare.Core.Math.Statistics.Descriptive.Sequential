@@ -7,9 +7,13 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 	public static partial class IEnumerableExtensionsRange
 	{
         //==============================================================================================================
-        public async static Task<(short min, short max)> RangeAsync(this IEnumerable<byte> x, IEnumerable<byte> y)
+		public async static Task<(byte Min, byte Max, byte Delta)> RangeAsync
+                                                            (
+                                                                this IEnumerable<byte> x,
+                                                                IEnumerable<byte> y
+                                                            )
         {
-            (short min, short max) range =
+			(byte Min, byte Max, byte Delta) range =
                 await Task
                             .Run
                                 (
@@ -20,9 +24,13 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return range;
         }
 
-        public async static Task<(short min, short max)> RangeAsync(this IEnumerable<short> x, IEnumerable<short> y)
+        public async static Task<(short Min, short Max, short Delta)> RangeAsync
+		                                                    (
+			                                                    this IEnumerable<short> x, 
+			                                                    IEnumerable<short> y
+		                                                    )
         {
-            (short min, short max) range = 
+            (short Min, short Max, short Delta) range =
                 await Task
                             .Run
                                 (
@@ -33,9 +41,13 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return range;
         }
 
-        public async static Task<(ushort min, ushort max)> RangeAsync(this IEnumerable<ushort> x, IEnumerable<ushort> y)
+		public async static Task<(ushort Min, ushort Max, ushort Delta)> RangeAsync
+                                                            (
+                                                                this IEnumerable<ushort> x,
+                                                                IEnumerable<ushort> y
+                                                            )
         {
-            (ushort min, ushort max) range = 
+            (ushort Min, ushort Max, ushort Delta) range =
                 await Task
                             .Run
                                 (
@@ -46,9 +58,30 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return range;
         }
 
-        public async static Task<(int min, int max)> RangeAsync(this IEnumerable<int> x, IEnumerable<int> y)
+		public async static Task<(int Min, int Max, int Delta)> RangeAsync
+                                                            (
+                                                                this IEnumerable<int> x,
+                                                                IEnumerable<int> y
+                                                            )
         {
-            (int min, int max) range = 
+            (int Min, int Max, int Delta) range =
+                await Task
+                            .Run
+                                (
+                                    () => x.Range()
+                                )
+                            .ConfigureAwait(false);
+
+            return range;
+        }
+        
+		public async static Task<(uint Min, uint Max, uint Delta)> RangeAsync
+                                                            (
+                                                                this IEnumerable<uint> x,
+                                                                IEnumerable<uint> y
+                                                            )
+        {
+            (uint Min, uint Max, uint Delta) range =
                 await Task
                             .Run
                                 (
@@ -59,9 +92,30 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return range;
         }
 
-        public async static Task<(uint min, uint max)> RangeAsync(this IEnumerable<uint> x, IEnumerable<uint> y)
+		public async static Task<(long Min, long Max, long Delta)> RangeAsync
+                                                            (
+                                                                this IEnumerable<long> x,
+                                                                IEnumerable<long> y
+                                                            )
         {
-            (uint min, uint max) range = 
+            (long Min, long Max, long Delta) range =
+                await Task
+                            .Run
+                                (
+                                    () => x.Range()
+                                )
+                            .ConfigureAwait(false);
+
+            return range;
+        }
+        
+		public async static Task<(ulong Min, ulong Max, ulong Delta)> RangeAsync
+                                                            (
+                                                                this IEnumerable<ulong> x,
+                                                                IEnumerable<ulong> y
+                                                            )
+        {
+            (ulong Min, ulong Max, ulong Delta) range =
                 await Task
                             .Run
                                 (
@@ -72,9 +126,13 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return range;
         }
 
-        public async static Task<(long min, long max)> RangeAsync(this IEnumerable<long> x, IEnumerable<long> y)
+		public async static Task<(float Min, float Max, float Delta)> RangeAsync
+                                                            (
+                                                                this IEnumerable<float> x,
+                                                                IEnumerable<float> y
+                                                            )
         {
-            (long min, long max) range = 
+            (float Min, float Max, float Delta) range =
                 await Task
                             .Run
                                 (
@@ -85,9 +143,13 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return range;
         }
 
-        public async static Task<(ulong min, ulong max)> RangeAsync(this IEnumerable<ulong> x, IEnumerable<ulong> y)
+		public async static Task<(double Min, double Max, double Delta)> RangeAsync
+                                                            (
+                                                                this IEnumerable<double> x,
+                                                                IEnumerable<double> y
+                                                            )
         {
-            (ulong min, ulong max) range = 
+            (double Min, double Max, double Delta) range =
                 await Task
                             .Run
                                 (
@@ -98,35 +160,13 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return range;
         }
 
-        public async static Task<(float min, float max)> RangeAsync(this IEnumerable<float> x, IEnumerable<float> y)
+		public async static Task<(decimal Min, decimal Max, decimal Delta)> RangeAsync
+                                                            (
+                                                                this IEnumerable<decimal> x, 
+                                                                IEnumerable<decimal> y
+                                                            )
         {
-            (float min, float max) range = 
-                await Task
-                            .Run
-                                (
-                                    () => x.Range()
-                                )
-                            .ConfigureAwait(false);
-
-            return range;
-        }
-
-        public async static Task<(double min, double max)> RangeAsync(this IEnumerable<double> x, IEnumerable<double> y)
-        {
-            (double min, double max) range = 
-                await Task
-                            .Run
-                                (
-                                    () => x.Range()
-                                )
-                            .ConfigureAwait(false);
-
-            return range;
-        }
-
-        public async static Task<(decimal min, decimal max)> RangeAsync(this IEnumerable<decimal> x, IEnumerable<decimal> y)
-        {
-            (decimal min, decimal max) range = 
+            (decimal Min, decimal Max, decimal Delta) range =
                 await Task
                             .Run
                                 (
