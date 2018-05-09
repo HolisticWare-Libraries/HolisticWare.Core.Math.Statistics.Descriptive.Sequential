@@ -215,13 +215,13 @@ Task("unit-tests-mstest")
                     Configuration = "Debug",
                 }.WithProperty("DefineConstants", "TRACE;DEBUG;NETCOREAPP2_0;MSTEST")
             );
-            // MSTest
-            // (
-            //     "./tests/unit-tests/UnitTests.MSTest/bin/Debug/**/UnitTests.MSTest.dll", 
-            //     new MSTestSettings 
-            //     {
-            //     }
-            // );
+            MSTest
+            (
+                "./tests/unit-tests/UnitTests.MSTest/bin/Debug/**/UnitTests.MSTest.dll", 
+                new MSTestSettings 
+                {
+                }
+            );
             DotNetCoreTest
             (
                 "./tests/unit-tests/UnitTests.MSTest/UnitTests.MSTest.csproj",
