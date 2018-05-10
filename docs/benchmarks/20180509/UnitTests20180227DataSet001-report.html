@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>UnitTests20180227DataSet001</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.10.14, OS=macOS High Sierra 10.13.4 (17E202) [Darwin 17.5.0]
+Intel Core i7-7820HQ CPU 2.90GHz (Kaby Lake), 1 CPU, 8 logical and 4 physical cores
+  [Host]     : Mono 5.10.1.47 (2017-12/8eb8f7d5e74 Fri), 32bit 
+  DefaultJob : Mono 5.10.1.47 (2017-12/8eb8f7d5e74 Fri), 64bit 
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>                               Method</th><th> Mean</th><th>Error</th><th>StdDev</th>
+</tr>
+</thead><tbody><tr><td>Array_MeanArithmetic</td><td>118.28 ns</td><td>0.6952 ns</td><td>0.6503 ns</td>
+</tr><tr><td>ArraySegment_MeanArithmetic</td><td>86.14 ns</td><td>0.3699 ns</td><td>0.3460 ns</td>
+</tr><tr><td>List_MeanArithmetic</td><td>93.68 ns</td><td>0.3748 ns</td><td>0.3506 ns</td>
+</tr><tr><td>Queue_MeanArithmetic</td><td>115.72 ns</td><td>0.4723 ns</td><td>0.4418 ns</td>
+</tr><tr><td>Stack_MeanArithmetic</td><td>110.17 ns</td><td>0.6205 ns</td><td>0.5804 ns</td>
+</tr><tr><td>LinkedList_MeanArithmetic</td><td>104.16 ns</td><td>0.3275 ns</td><td>0.2903 ns</td>
+</tr><tr><td>ObservableCollection_MeanArithmetic</td><td>98.10 ns</td><td>0.6237 ns</td><td>0.5834 ns</td>
+</tr><tr><td>Array_MeanArithmeticWeighted</td><td>187.27 ns</td><td>0.9100 ns</td><td>0.8512 ns</td>
+</tr><tr><td>ArraySegment_MeanArithmeticWeighted</td><td>195.37 ns</td><td>1.0043 ns</td><td>0.8903 ns</td>
+</tr><tr><td>List_MeanArithmeticWeighted</td><td>176.86 ns</td><td>0.7677 ns</td><td>0.7181 ns</td>
+</tr><tr><td>Queue_MeanArithmeticWeighted</td><td>777.94 ns</td><td>5.5397 ns</td><td>5.1818 ns</td>
+</tr><tr><td>Stack_MeanArithmeticWeighted</td><td>738.00 ns</td><td>3.4655 ns</td><td>3.2416 ns</td>
+</tr><tr><td>LinkedList_MeanArithmeticWeighted</td><td>766.14 ns</td><td>5.2040 ns</td><td>4.8678 ns</td>
+</tr><tr><td>ObservableCollection_MeanArithmeticWeighted</td><td>200.83 ns</td><td>0.7738 ns</td><td>0.7239 ns</td>
+</tr><tr><td>Array_MeanGeometric</td><td>138.08 ns</td><td>0.5381 ns</td><td>0.4493 ns</td>
+</tr><tr><td>ArraySegment_MeanGeometric</td><td>145.64 ns</td><td>0.9575 ns</td><td>0.8957 ns</td>
+</tr><tr><td>List_MeanGeometric</td><td>132.21 ns</td><td>0.7168 ns</td><td>0.6705 ns</td>
+</tr><tr><td>Queue_MeanGeometric</td><td>678.82 ns</td><td>3.0554 ns</td><td>2.7085 ns</td>
+</tr><tr><td>Stack_MeanGeometric</td><td>661.12 ns</td><td>3.3256 ns</td><td>2.9481 ns</td>
+</tr><tr><td>LinkedList_MeanGeometric</td><td>705.84 ns</td><td>4.2402 ns</td><td>3.9663 ns</td>
+</tr><tr><td>ObservableCollection_MeanGeometric</td><td>148.93 ns</td><td>1.1522 ns</td><td>1.0777 ns</td>
+</tr><tr><td>Array_MeanGeometricWeighted</td><td>337.80 ns</td><td>1.7181 ns</td><td>1.6071 ns</td>
+</tr><tr><td>ArraySegment_MeanGeometricWeighted</td><td>346.11 ns</td><td>1.6509 ns</td><td>1.5442 ns</td>
+</tr><tr><td>List_MeanGeometricWeighted</td><td>321.27 ns</td><td>1.9255 ns</td><td>1.7069 ns</td>
+</tr><tr><td>Queue_MeanGeometricWeighted</td><td>943.65 ns</td><td>3.6073 ns</td><td>3.3743 ns</td>
+</tr><tr><td>Stack_MeanGeometricWeighted</td><td>908.78 ns</td><td>6.9230 ns</td><td>6.4758 ns</td>
+</tr><tr><td>LinkedList_MeanGeometricWeighted</td><td>982.62 ns</td><td>8.6318 ns</td><td>8.0742 ns</td>
+</tr><tr><td>ObservableCollection_MeanGeometricWeighted</td><td>361.36 ns</td><td>3.2133 ns</td><td>3.0057 ns</td>
+</tr><tr><td>Array_MeanHarmonic</td><td>116.40 ns</td><td>0.6778 ns</td><td>0.6340 ns</td>
+</tr><tr><td>ArraySegment_MeanHarmonic</td><td>111.70 ns</td><td>0.8244 ns</td><td>0.7711 ns</td>
+</tr><tr><td>List_MeanHarmonic</td><td>98.12 ns</td><td>0.8116 ns</td><td>0.7195 ns</td>
+</tr><tr><td>Queue_MeanHarmonic</td><td>686.83 ns</td><td>6.4855 ns</td><td>6.0665 ns</td>
+</tr><tr><td>Stack_MeanHarmonic</td><td>659.06 ns</td><td>4.1414 ns</td><td>3.8739 ns</td>
+</tr><tr><td>LinkedList_MeanHarmonic</td><td>682.26 ns</td><td>4.9555 ns</td><td>4.6353 ns</td>
+</tr><tr><td>ObservableCollection_MeanHarmonic</td><td>112.94 ns</td><td>0.7674 ns</td><td>0.7178 ns</td>
+</tr><tr><td>Array_MeanHarmonicWeighted</td><td>191.33 ns</td><td>1.5069 ns</td><td>1.4096 ns</td>
+</tr><tr><td>ArraySegment_MeanHarmonicWeighted</td><td>198.71 ns</td><td>1.7690 ns</td><td>1.6547 ns</td>
+</tr><tr><td>List_MeanHarmonicWeighted</td><td>184.00 ns</td><td>1.4184 ns</td><td>1.3267 ns</td>
+</tr><tr><td>Queue_MeanHarmonicWeighted</td><td>799.24 ns</td><td>6.0068 ns</td><td>5.3249 ns</td>
+</tr><tr><td>Stack_MeanHarmonicWeighted</td><td>766.75 ns</td><td>6.7534 ns</td><td>6.3171 ns</td>
+</tr><tr><td>LinkedList_MeanHarmonicWeighted</td><td>798.25 ns</td><td>7.1494 ns</td><td>6.6876 ns</td>
+</tr><tr><td>ObservableCollection_MeanHarmonicWeighted</td><td>207.29 ns</td><td>0.9604 ns</td><td>0.8514 ns</td>
+</tr><tr><td>Array_Modes</td><td>1,358.35 ns</td><td>14.5405 ns</td><td>13.6012 ns</td>
+</tr><tr><td>ArraySegment_Modes</td><td>1,338.46 ns</td><td>8.3230 ns</td><td>7.3781 ns</td>
+</tr><tr><td>List_Modes</td><td>1,338.86 ns</td><td>11.6375 ns</td><td>10.8857 ns</td>
+</tr><tr><td>Queue_Modes</td><td>1,950.67 ns</td><td>19.0049 ns</td><td>17.7772 ns</td>
+</tr><tr><td>Stack_Modes</td><td>1,900.72 ns</td><td>11.7852 ns</td><td>11.0239 ns</td>
+</tr><tr><td>LinkedList_Modes</td><td>1,954.91 ns</td><td>15.6670 ns</td><td>14.6550 ns</td>
+</tr><tr><td>ObservableCollection_Modes</td><td>1,371.27 ns</td><td>9.4561 ns</td><td>8.8452 ns</td>
+</tr><tr><td>Array_Frequencies</td><td>631.30 ns</td><td>5.6776 ns</td><td>5.0330 ns</td>
+</tr><tr><td>ArraySegment_Frequencies</td><td>624.44 ns</td><td>3.9468 ns</td><td>3.6919 ns</td>
+</tr><tr><td>List_Frequencies</td><td>614.31 ns</td><td>5.0390 ns</td><td>4.7135 ns</td>
+</tr><tr><td>Queue_Frequencies</td><td>1,240.82 ns</td><td>5.3866 ns</td><td>4.7751 ns</td>
+</tr><tr><td>Stack_Frequencies</td><td>1,193.69 ns</td><td>11.4722 ns</td><td>10.7311 ns</td>
+</tr><tr><td>LinkedList_Frequencies</td><td>1,256.14 ns</td><td>13.9528 ns</td><td>13.0515 ns</td>
+</tr><tr><td>ObservableCollection_Frequencies</td><td>680.83 ns</td><td>4.1142 ns</td><td>3.8484 ns</td>
+</tr><tr><td>Array_FrequencyDistribution</td><td>625.82 ns</td><td>3.7962 ns</td><td>3.3652 ns</td>
+</tr><tr><td>ArraySegment_FrequencyDistribution</td><td>622.71 ns</td><td>3.9369 ns</td><td>3.4900 ns</td>
+</tr><tr><td>List_FrequencyDistribution</td><td>601.54 ns</td><td>3.0776 ns</td><td>2.8788 ns</td>
+</tr><tr><td>Queue_FrequencyDistribution</td><td>1,228.24 ns</td><td>7.3241 ns</td><td>6.8509 ns</td>
+</tr><tr><td>Stack_FrequencyDistribution</td><td>1,174.62 ns</td><td>5.1918 ns</td><td>4.8564 ns</td>
+</tr><tr><td>LinkedList_FrequencyDistribution</td><td>1,227.26 ns</td><td>7.5188 ns</td><td>6.6652 ns</td>
+</tr><tr><td>ObservableCollection_FrequencyDistribution</td><td>642.15 ns</td><td>3.3877 ns</td><td>3.1688 ns</td>
+</tr><tr><td>Array_MeanQuadratic</td><td>140.17 ns</td><td>0.7416 ns</td><td>0.6937 ns</td>
+</tr><tr><td>ArraySegment_MeanQuadratic</td><td>148.80 ns</td><td>0.7586 ns</td><td>0.7096 ns</td>
+</tr><tr><td>List_MeanQuadratic</td><td>136.66 ns</td><td>0.9219 ns</td><td>0.8172 ns</td>
+</tr><tr><td>Queue_MeanQuadratic</td><td>687.77 ns</td><td>4.6897 ns</td><td>4.3868 ns</td>
+</tr><tr><td>Stack_MeanQuadratic</td><td>659.81 ns</td><td>4.7570 ns</td><td>4.4497 ns</td>
+</tr><tr><td>LinkedList_MeanQuadratic</td><td>705.19 ns</td><td>3.1187 ns</td><td>2.9172 ns</td>
+</tr><tr><td>ObservableCollection_MeanQuadratic</td><td>167.06 ns</td><td>0.5778 ns</td><td>0.5405 ns</td>
+</tr><tr><td>Array_MeanCubic</td><td>149.79 ns</td><td>0.6657 ns</td><td>0.5901 ns</td>
+</tr><tr><td>ArraySegment_MeanCubic</td><td>149.70 ns</td><td>0.5425 ns</td><td>0.5074 ns</td>
+</tr><tr><td>List_MeanCubic</td><td>138.77 ns</td><td>0.8087 ns</td><td>0.7565 ns</td>
+</tr><tr><td>Queue_MeanCubic</td><td>692.34 ns</td><td>3.9393 ns</td><td>3.4921 ns</td>
+</tr><tr><td>Stack_MeanCubic</td><td>670.20 ns</td><td>7.1328 ns</td><td>6.6720 ns</td>
+</tr><tr><td>LinkedList_MeanCubic</td><td>715.83 ns</td><td>7.2880 ns</td><td>6.8172 ns</td>
+</tr><tr><td>ObservableCollection_MeanCubic</td><td>152.56 ns</td><td>0.5292 ns</td><td>0.4419 ns</td>
+</tr><tr><td>Array_MeanGeneralized_20</td><td>412.55 ns</td><td>1.2774 ns</td><td>1.1324 ns</td>
+</tr><tr><td>ArraySegment_MeanGeneralized_20</td><td>421.27 ns</td><td>1.9590 ns</td><td>1.8325 ns</td>
+</tr><tr><td>List_MeanGeneralized_20</td><td>408.85 ns</td><td>1.4641 ns</td><td>1.3695 ns</td>
+</tr><tr><td>Queue_MeanGeneralized_20</td><td>999.12 ns</td><td>7.6526 ns</td><td>7.1583 ns</td>
+</tr><tr><td>Stack_MeanGeneralized_20</td><td>971.32 ns</td><td>7.0121 ns</td><td>6.5592 ns</td>
+</tr><tr><td>LinkedList_MeanGeneralized_20</td><td>1,020.62 ns</td><td>10.6198 ns</td><td>9.9338 ns</td>
+</tr><tr><td>ObservableCollection_MeanGeneralized_20</td><td>419.69 ns</td><td>3.5018 ns</td><td>3.2756 ns</td>
+</tr><tr><td>Array_MeanGeneralized_30</td><td>413.03 ns</td><td>2.3877 ns</td><td>2.2335 ns</td>
+</tr><tr><td>ArraySegment_MeanGeneralized_30</td><td>420.15 ns</td><td>4.0336 ns</td><td>3.7731 ns</td>
+</tr><tr><td>List_MeanGeneralized_30</td><td>407.51 ns</td><td>2.1901 ns</td><td>2.0487 ns</td>
+</tr><tr><td>Queue_MeanGeneralized_30</td><td>1,001.91 ns</td><td>5.1004 ns</td><td>4.5214 ns</td>
+</tr><tr><td>Stack_MeanGeneralized_30</td><td>970.30 ns</td><td>8.0090 ns</td><td>7.4916 ns</td>
+</tr><tr><td>LinkedList_MeanGeneralized_30</td><td>1,054.37 ns</td><td>7.4856 ns</td><td>6.6358 ns</td>
+</tr><tr><td>ObservableCollection_MeanGeneralized_30</td><td>413.72 ns</td><td>2.4004 ns</td><td>2.2453 ns</td>
+</tr><tr><td>Array_MeanWeighted</td><td>177.57 ns</td><td>1.4401 ns</td><td>1.2766 ns</td>
+</tr><tr><td>ArraySegment_MeanWeighted</td><td>197.85 ns</td><td>0.8027 ns</td><td>0.6267 ns</td>
+</tr><tr><td>List_MeanWeighted</td><td>171.88 ns</td><td>1.6787 ns</td><td>1.5702 ns</td>
+</tr><tr><td>Queue_MeanWeighted</td><td>781.11 ns</td><td>5.6266 ns</td><td>5.2631 ns</td>
+</tr><tr><td>Stack_MeanWeighted</td><td>2,527.56 ns</td><td>17.0176 ns</td><td>15.0857 ns</td>
+</tr><tr><td>LinkedList_MeanWeighted</td><td>772.64 ns</td><td>4.6702 ns</td><td>4.1400 ns</td>
+</tr><tr><td>ObservableCollection_MeanWeighted</td><td>190.58 ns</td><td>0.9607 ns</td><td>0.8516 ns</td>
+</tr><tr><td>Array_Median</td><td>1,175.78 ns</td><td>10.5072 ns</td><td>9.8284 ns</td>
+</tr><tr><td>ArraySegment_Median</td><td>1,172.00 ns</td><td>8.6088 ns</td><td>7.1887 ns</td>
+</tr><tr><td>List_Median</td><td>1,170.54 ns</td><td>13.3955 ns</td><td>12.5302 ns</td>
+</tr><tr><td>Queue_Median</td><td>1,586.23 ns</td><td>9.1895 ns</td><td>8.1462 ns</td>
+</tr><tr><td>Stack_Median</td><td>1,508.27 ns</td><td>7.8763 ns</td><td>7.3675 ns</td>
+</tr><tr><td>LinkedList_Median</td><td>1,116.10 ns</td><td>3.4473 ns</td><td>2.4926 ns</td>
+</tr><tr><td>ObservableCollection_Median</td><td>1,176.93 ns</td><td>9.4134 ns</td><td>8.3448 ns</td>
+</tr><tr><td>Array_MedianWeighted</td><td>NA</td><td>NA</td><td>NA</td>
+</tr><tr><td>ArraySegment_MedianWeighted</td><td>NA</td><td>NA</td><td>NA</td>
+</tr><tr><td>List_MedianWeighted</td><td>NA</td><td>NA</td><td>NA</td>
+</tr><tr><td>Queue_MedianWeighted</td><td>NA</td><td>NA</td><td>NA</td>
+</tr><tr><td>Stack_MedianWeighted</td><td>NA</td><td>NA</td><td>NA</td>
+</tr><tr><td>LinkedList_MedianWeighted</td><td>NA</td><td>NA</td><td>NA</td>
+</tr><tr><td>ObservableCollection_MedianWeighted</td><td>NA</td><td>NA</td><td>NA</td>
+</tr></tbody></table>
+</body>
+</html>
