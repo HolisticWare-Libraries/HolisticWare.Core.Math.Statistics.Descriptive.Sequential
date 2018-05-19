@@ -27,17 +27,47 @@
 // */
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Running;
+
+#if XUNIT
+using Xunit;
+// NUnit aliases
+using Test = Xunit.FactAttribute;
+using TestFixture = HolisticWare.Core.Testing.UnitTestsCompatibilityAliasAttribute;
+using OneTimeSetUp = HolisticWare.Core.Testing.UnitTestsCompatibilityAliasAttribute;
+// XUnit aliases
+using TestClass = HolisticWare.Core.Testing.UnitTestsCompatibilityAliasAttribute;
+#elif NUNIT
 using NUnit.Framework;
-using System;
+// MSTest aliases
+using TestInitialize = NUnit.Framework.SetUpAttribute;
+using TestProperty = NUnit.Framework.PropertyAttribute;
+using TestClass = NUnit.Framework.TestFixtureAttribute;
+using TestMethod = NUnit.Framework.TestAttribute;
+using TestCleanup = NUnit.Framework.TearDownAttribute;
+// XUnit aliases
+using Fact=NUnit.Framework.TestAttribute;
+#elif MSTEST
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+// NUnit aliases
+using Test = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
+using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute;
+// XUnit aliases
+using TestFixture = Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute;
+using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
+#endif
+
 using System.Linq;
 using UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync;
+using System.IO;
+using System.Reflection;
+using System;
 
-namespace Benchmarks.NUnit
+namespace Benchmarks.CommonShared
 {
-    [TestFixture()]
-    public class Test
+    [TestFixture]
+    public class BenchmarkTests
     {
-        [Test()]
+        [Test]
         public void Benchmark_Tests20180119Dataset01()
         {
             BenchmarkRunner

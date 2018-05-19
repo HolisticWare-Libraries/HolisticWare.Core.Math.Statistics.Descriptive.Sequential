@@ -166,10 +166,12 @@
       <Project>{DEFACBA9-2E24-46BD-B3E0-EFF602FA05DC}</Project>
       <Name>HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\externals\Core.Text\source\HolisticWare.Core.Text.NetStandard10\HolisticWare.Core.Text.NetStandard10.csproj">
+      <Project>{E03C830B-AD14-450C-8804-12E32645EDEC}</Project>
+      <Name>HolisticWare.Core.Text.NetStandard10</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Test.cs" />
-  </ItemGroup>
+  <Import Project="..\Benchmarks.CommonShared\Benchmarks.CommonShared.projitems" Label="Shared" Condition="Exists('..\Benchmarks.CommonShared\Benchmarks.CommonShared.projitems')" />
   <Import Project="..\..\Tests.CommonShared\Tests.CommonShared.projitems" Label="Shared" Condition="Exists('..\..\Tests.CommonShared\Tests.CommonShared.projitems')" />
   <Import Project="..\..\..\externals\Core.Math.Samples\tests\data\HolisticWare.Core.Math.Samples\HolisticWare.Core.Math.Samples.projitems" Label="Shared" Condition="Exists('..\..\..\externals\Core.Math.Samples\tests\data\HolisticWare.Core.Math.Samples\HolisticWare.Core.Math.Samples.projitems')" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

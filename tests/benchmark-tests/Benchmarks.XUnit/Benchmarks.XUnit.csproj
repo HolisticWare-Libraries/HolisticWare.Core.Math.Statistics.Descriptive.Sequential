@@ -7,11 +7,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DefineConstants>TRACE;DEBUG;NETCOREAPP2_0;XUNIT</DefineConstants>
+    <DefineConstants>TRACE;XUNIT;DEBUG;NETCOREAPP2_0</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType></DebugType>
-    <DefineConstants>TRACE;RELEASE;NETCOREAPP2_0;XUNIT</DefineConstants>
+    <DefineConstants>TRACE;XUNIT;RELEASE;NETCOREAPP2_0</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="BenchmarkDotNet" Version="0.10.14" />
@@ -24,6 +24,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10.csproj" />
   </ItemGroup>
+  <Import Project="..\Benchmarks.CommonShared\Benchmarks.CommonShared.projitems" Label="Shared" Condition="Exists('..\Benchmarks.CommonShared\Benchmarks.CommonShared.projitems')" />
   <Import Project="..\..\Tests.CommonShared\Tests.CommonShared.projitems" Label="Shared" Condition="Exists('..\..\Tests.CommonShared\Tests.CommonShared.projitems')" />
   <Import Project="..\..\..\externals\Core.Math.Samples\tests\data\HolisticWare.Core.Math.Samples\HolisticWare.Core.Math.Samples.projitems" Label="Shared" Condition="Exists('..\..\..\externals\Core.Math.Samples\tests\data\HolisticWare.Core.Math.Samples\HolisticWare.Core.Math.Samples.projitems')" />
 </Project>

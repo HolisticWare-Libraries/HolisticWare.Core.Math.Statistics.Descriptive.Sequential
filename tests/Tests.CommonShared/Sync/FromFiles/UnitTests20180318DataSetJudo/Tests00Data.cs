@@ -33,6 +33,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using System.IO;
 using System.Reflection;
+using Core.Text;
 
 #if XUNIT
 using Xunit;
@@ -114,33 +115,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             {
                 text = reader.ReadToEnd();
             }
-            lines = text.Split
-                            (
-                                new string[] { Environment.NewLine },
-                                StringSplitOptions.RemoveEmptyEntries
-                            );
 
-            judo_data_table = new List<JudoData>();
-            int n = lines.Count();
-            for (int i = 1; i < n; i++)
-            {
-                string s1 = lines[i].Replace("\r", "");
-
-                string[] s_parts = s1.Split(new string[] { "." }, StringSplitOptions.None);
-                JudoData jd = new JudoData()
-                {
-                    ONT = double.Parse(s_parts[0]),
-                    OUZ = double.Parse(s_parts[1]),
-                    NEB = double.Parse(s_parts[2]),
-                    SKL = double.Parse(s_parts[3]),
-                    TRB = double.Parse(s_parts[4]),
-                    CUC = double.Parse(s_parts[5]),
-                    SDM = double.Parse(s_parts[6]),
-                    BML = double.Parse(s_parts[7]),
-                };
-                judo_data_table.Add(jd);
-            }
-            //------------------------------------------------------------------
+            CharacterSeparatedValues csv = new CharacterSeparatedValues()
+			{
+                
+			}
 
             return;
         }

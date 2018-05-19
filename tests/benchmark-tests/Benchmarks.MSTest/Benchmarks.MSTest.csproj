@@ -6,6 +6,13 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DefineConstants>TRACE;DEBUG;NETCOREAPP2_0;MSTEST</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType></DebugType>
+    <DefineConstants>TRACE;RELEASE;NETCOREAPP2_0;MSTEST</DefineConstants>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Nito.AsyncEx" Version="4.0.1" />
     <PackageReference Include="System.Memory" Version="4.5.0-preview2-26406-04" />
@@ -17,7 +24,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10.csproj" />
+    <ProjectReference Include="..\..\..\externals\Core.Text\source\HolisticWare.Core.Text.NetStandard10\HolisticWare.Core.Text.NetStandard10.csproj" />
   </ItemGroup>
+  <Import Project="..\Benchmarks.CommonShared\Benchmarks.CommonShared.projitems" Label="Shared" Condition="Exists('..\Benchmarks.CommonShared\Benchmarks.CommonShared.projitems')" />
   <Import Project="..\..\Tests.CommonShared\Tests.CommonShared.projitems" Label="Shared" Condition="Exists('..\..\Tests.CommonShared\Tests.CommonShared.projitems')" />
   <Import Project="..\..\..\externals\Core.Math.Samples\tests\data\HolisticWare.Core.Math.Samples\HolisticWare.Core.Math.Samples.projitems" Label="Shared" Condition="Exists('..\..\..\externals\Core.Math.Samples\tests\data\HolisticWare.Core.Math.Samples\HolisticWare.Core.Math.Samples.projitems')" />
 </Project>

@@ -30,12 +30,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet004\Tests02FrequenciesModes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet004\Tests03Moments.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet004\Tests04SkewnessKurtosis.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)0Portability\UnitTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetJudo\Tests00Data.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetJudo\Tests01MeanAverageMedian.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetJudo\Tests02FrequenciesModes.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetJudo\Tests03Moments.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetJudo\Tests04SkewnessKurtosis.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests00Data.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests01aMeanArithmetic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests02Modes.cs" />
@@ -51,7 +46,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp01\Tests01MeanAverageMedian.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp02\Tests01MeanAverageMedian.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests04StandardDeviation.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetJudo\Tests05StandardDeviationVariance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp01\Tests05StandardDeviationVariance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp02\Tests05StandardDeviationVariance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp03\Tests05StandardDeviationVariance.cs" />
@@ -82,7 +76,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180330RandSampBig1Items100000\Tests05StandardDeviationVariance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp01\Tests02ModesFrequencies.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests01bMeanGeometric.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)0Portability\SetUpFixture.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests03Frequencies.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests05Variance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests07Kurtosis.cs" />
@@ -172,10 +165,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresCentralTendencies.MeanQuadratic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresCentralTendencies.MeanWeighted.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresCentralTendencies.Median.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\HolisticWare.UnitTests.Portability\SetUpFixture.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\HolisticWare.UnitTests.Portability\UnitTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Async\" />
-    <Folder Include="$(MSBuildThisFileDirectory)0Portability\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetJudo\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp01\" />
@@ -197,6 +191,9 @@
     <Folder Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Utilities\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Utilities\HolisticWare.UnitTests.Portability\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Utilities\HolisticWare.BenchmarkTests\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests02FrequenciesModes.cs" />
