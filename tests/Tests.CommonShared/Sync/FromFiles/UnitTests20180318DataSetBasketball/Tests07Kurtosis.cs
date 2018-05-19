@@ -76,11 +76,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(kurtosis_2s, 0.088, 0.001);
+            Assert.AreEqual(kurtosis_2s, 0.03787545+3, 0.001);
             #elif XUNIT
-            Assert.Equal(0.088, kurtosis_2s, 3);
+            Assert.Equal(0.03787545+3, kurtosis_2s, 3);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_2s, 0.088, 0.001);
+            Assert.AreEqual(kurtosis_2s, 0.03787545+3, 0.001);
             #endif
 
             return;
@@ -98,11 +98,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(kurtosis_3pts_success, 2.134, 0.001);
+            Assert.AreEqual(kurtosis_3pts_success, 2.005057+3, 0.001);
             #elif XUNIT
-            Assert.Equal(2.134, kurtosis_3pts_success, 3);
+            Assert.Equal(2.005057+3, kurtosis_3pts_success, 3);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_3pts_success, 2.134, 0.001);
+            Assert.AreEqual(kurtosis_3pts_success, 2.005057+3, 0.001);
             #endif
 
 
@@ -122,11 +122,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(kurtosis_2f, 0.235, 0.001);
+            Assert.AreEqual(kurtosis_2f, 0.1793478+3, 0.001);
             #elif XUNIT
-            Assert.Equal(0.235, kurtosis_2f, 3);
+            Assert.Equal(0.1793478+3, kurtosis_2f, 3);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_2f, 0.235, 0.001);
+            Assert.AreEqual(kurtosis_2f, 0.1793478+3, 0.001);
             #endif
 
 
@@ -146,11 +146,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(kurtosis_3f, 0.638, 0.001);
+            Assert.AreEqual(kurtosis_3f, 0.5665306+3, 0.001);
             #elif XUNIT
-            Assert.Equal(0.638, kurtosis_3f, 3);
+            Assert.Equal(0.5665306+3, kurtosis_3f, 3);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_3f, 0.638, 0.001);
+            Assert.AreEqual(kurtosis_3f, 0.5665306+3, 0.001);
             #endif
 
             return;
@@ -169,11 +169,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(kurtosis_ftf, -0.604, 0.001);
+            Assert.AreEqual(kurtosis_ftf, -0.6270205+3, 0.001);
             #elif XUNIT
-            Assert.Equal(-0.604, kurtosis_ftf, 3);
+            Assert.Equal(-0.6270205+3, kurtosis_ftf, 3);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_ftf, -0.604, 0.001);
+            Assert.AreEqual(kurtosis_ftf, -0.6270205+3, 0.001);
             #endif
 
             return;
@@ -192,11 +192,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(kurtosis_fts, -0.128, 0.001);
+            Assert.AreEqual(kurtosis_fts, -0.1698031+3, 0.001);
             #elif XUNIT
-            Assert.Equal(-0.128, kurtosis_fts, 3);
+            Assert.Equal(-0.1698031+3, kurtosis_fts, 3);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_fts, -0.128, 0.001);
+            Assert.AreEqual(kurtosis_fts, -0.1698031+3, 0.001);
             #endif
 
             return;
@@ -215,11 +215,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(kurtosis_off, 0.420, 0.001);
+            Assert.AreEqual(kurtosis_off, 0.3569787+3, 0.001);
             #elif XUNIT
-            Assert.Equal(0.420, kurtosis_off, 3);
+            Assert.Equal(0.3569787+3, kurtosis_off, 3);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_off, 0.420, 0.001);
+            Assert.AreEqual(kurtosis_off, 0.3569787+3, 0.001);
             #endif
 
             return;
@@ -237,11 +237,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(kurtosis_def, -0.494, 0.001);
+            Assert.AreEqual(kurtosis_def, -0.5216579+3, 0.001);
             #elif XUNIT
-            Assert.Equal(-0.494, kurtosis_def, 3);
+            Assert.Equal(-0.5216579+3, kurtosis_def, 3);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_def, -0.494, 0.001);
+            Assert.AreEqual(kurtosis_def, -0.5216579+3, 0.001);
             #endif
 
             return;
@@ -259,11 +259,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(kurtosis_assist, 0.909, 0.001);
+            Assert.AreEqual(kurtosis_assist, 0.8276105+3, 0.001);
             #elif XUNIT
-            Assert.Equal(0.909, kurtosis_assist, 3);
+            Assert.Equal(0.8276105+3, kurtosis_assist, 3);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_assist, 0.909, 0.001);
+            Assert.AreEqual(kurtosis_assist, 0.8276105+3, 0.001);
             #endif
 
             return;
@@ -281,11 +281,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(kurtosis_pf, 0.170, 0.001);
+            Assert.AreEqual(kurtosis_pf, 0.116669+3, 0.001);
             #elif XUNIT
-            Assert.Equal(0.170, kurtosis_pf, 3);
+            Assert.Equal(0.116669+3, kurtosis_pf, 3);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_pf, 0.170, 0.001);
+            Assert.AreEqual(kurtosis_pf, 0.116669+3, 0.001);
             #endif
 
             return;
@@ -304,11 +304,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(kurtosis_bl, 2.397, 0.001);
+            Assert.AreEqual(kurtosis_bl, 2.257583+3, 0.001);
             #elif XUNIT
-            Assert.Equal(2.397, kurtosis_bl, 3);
+            Assert.Equal(2.257583+3, kurtosis_bl, 3);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_bl, 2.397, 0.001);
+            Assert.AreEqual(kurtosis_bl, 2.257583+3, 0.001);
             #endif
 
             return;
@@ -327,11 +327,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(kurtosis_bs, 2.101, 0.001);
+            Assert.AreEqual(kurtosis_bs, 1.973338+3, 0.001);
             #elif XUNIT
-            Assert.Equal(2.101, kurtosis_bs, 3);
+            Assert.Equal(1.973338+3, kurtosis_bs, 3);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_bs, 2.101, 0.001);
+            Assert.AreEqual(kurtosis_bs, 1.973338+3, 0.001);
             #endif
 
             return;
@@ -350,11 +350,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(kurtosis_block, -0.275, 0.001);
+            Assert.AreEqual(kurtosis_block, -0.3112424+3, 0.001);
             #elif XUNIT
-            Assert.Equal(-0.275, kurtosis_block, 3);
+            Assert.Equal(-0.3112424+3, kurtosis_block, 3);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_block, -0.275, 0.001);
+            Assert.AreEqual(kurtosis_block, -0.3112424+3, 0.001);
             #endif
 
             return;
