@@ -13,6 +13,13 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsMeanWeighted
     {
         //==============================================================================================================
+        /// <summary>
+        /// Means the weighted.
+        /// </summary>
+        /// <returns>The weighted.</returns>
+        /// <param name="x">The x coordinate.</param>
+        /// <param name="w">The width.</param>
+        /// <see cref="https://ncalculators.com/statistics/weighted-mean-calculator.htm"/>
         public static double MeanWeighted
                                     (
                                         this IEnumerable<byte> x
