@@ -32,10 +32,10 @@ using System;
 using Xunit;
 // NUnit aliases
 using Test = Xunit.FactAttribute;
-using OneTimeSetUp = HolisticWare.Core.Testing.UnitTestsCompatibilityAliasAttribute;
+using OneTimeSetUp = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
 // MSTest aliases
-using TestClass = HolisticWare.Core.Testing.UnitTestsCompatibilityAliasAttribute;
-using TestContext = HolisticWare.Core.Testing.UnitTestsCompatibilityAliasAttribute;
+using TestClass = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
+using TestContext = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
 #elif NUNIT
 using NUnit.Framework;
 // MSTest aliases
@@ -55,7 +55,7 @@ using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializ
 using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 #endif
 
-namespace HolisticWare.Core.Testing
+namespace HolisticWare.Core.Testing.UnitTests
 {
     public class UnitTestsCompatibilityAliasAttribute : Attribute
     {

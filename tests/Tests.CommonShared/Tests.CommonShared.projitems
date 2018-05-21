@@ -167,6 +167,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresCentralTendencies.Median.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utilities\HolisticWare.UnitTests.Portability\SetUpFixture.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utilities\HolisticWare.UnitTests.Portability\UnitTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\HolisticWare.BenchmarkTests\BenchmarkTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Async\" />

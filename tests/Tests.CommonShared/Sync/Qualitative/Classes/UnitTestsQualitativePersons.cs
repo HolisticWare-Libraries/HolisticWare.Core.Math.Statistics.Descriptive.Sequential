@@ -36,9 +36,9 @@ using System.Threading.Tasks;
 using Xunit;
 // NUnit aliases
 using Test = Xunit.FactAttribute;
-using OneTimeSetUp = HolisticWare.Core.Testing.UnitTestsCompatibilityAliasAttribute;
+using OneTimeSetUp = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
 // XUnit aliases
-using TestClass = HolisticWare.Core.Testing.UnitTestsCompatibilityAliasAttribute;
+using TestClass = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
 #elif NUNIT
 using NUnit.Framework;
 // MSTest aliases
@@ -74,9 +74,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.Qualitative
 
             IEnumerable<KeyValuePair<EyeColor, uint>> f = data_eyecolors.Frequencies();
 
-            #if NUNIT
-            CollectionAssert.AreEquivalent
-                                (
+            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
                                     f,
                                     new Dictionary<EyeColor, uint>()
                                     {

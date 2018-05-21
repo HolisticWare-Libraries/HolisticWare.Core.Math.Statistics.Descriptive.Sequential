@@ -68,9 +68,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
             sw.Reset();
 
             // Assert
-            #if NUNIT
-            CollectionAssert.AreEquivalent
-                            (
+            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                            (
                                 new List<int> { 4 }, 
                                 modes01
                             );
@@ -101,9 +99,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
             sw.Reset();
 
             // Assert
-            #if NUNIT
-            CollectionAssert.AreEquivalent
-                            (
+            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                            (
                                 new List<int> { 4 },
                                 modes02
                             );
@@ -134,9 +130,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
             sw.Reset();
 
             // Assert
-            #if NUNIT
-            CollectionAssert.AreEquivalent
-                                    (
+            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                    (
                                         new List<int> { 4 },
                                         modes03
                                     );
@@ -167,9 +161,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
             sw.Reset();
 
             // Assert
-            #if NUNIT
-            CollectionAssert.AreEquivalent
-                                (
+            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
                                     new List<int> { 4 }, 
                                     modes04
                                 );
@@ -226,9 +218,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
             Console.WriteLine($"List<int>.Modes() size={data.Count()} elapsed[ticks]={sw.ElapsedTicks}");
 
             // Assert
-            #if NUNIT
-            CollectionAssert.AreEquivalent
-                                (
+            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
                                     new List<int> { 2, 3 },
                                     modes01
                                 );
@@ -264,9 +254,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
             Console.WriteLine($"List<int>.Modes() size={data.Count()} elapsed[ticks]={sw.ElapsedTicks}");
 
             // Assert
-            #if NUNIT
-            CollectionAssert.AreEquivalent
-                            (
+            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                            (
                                 new List<int> { 2, 3 },
                                 modes01
                             );

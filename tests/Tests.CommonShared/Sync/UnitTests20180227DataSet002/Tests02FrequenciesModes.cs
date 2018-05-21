@@ -25,20 +25,15 @@
 //    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 //    OTHER DEALINGS IN THE SOFTWARE.
 // */
-using System;
-
-using System.Collections.Generic;
-using System.Linq;
-using System.Diagnostics;
-using System.Threading.Tasks;
 
 #if XUNIT
 using Xunit;
 // NUnit aliases
 using Test = Xunit.FactAttribute;
-using OneTimeSetUp = HolisticWare.Core.Testing.UnitTestsCompatibilityAliasAttribute;
+using OneTimeSetUp = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
 // XUnit aliases
-using TestClass = HolisticWare.Core.Testing.UnitTestsCompatibilityAliasAttribute;
+using TestClass = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
+using TestContext = HolisticWare.Core.Testing.UnitTests.TestContext;
 #elif NUNIT
 using NUnit.Framework;
 // MSTest aliases
@@ -48,7 +43,7 @@ using TestClass = NUnit.Framework.TestFixtureAttribute;
 using TestMethod = NUnit.Framework.TestAttribute;
 using TestCleanup = NUnit.Framework.TearDownAttribute;
 // XUnit aliases
-using Fact=NUnit.Framework.TestAttribute;
+using Fact = NUnit.Framework.TestAttribute;
 #elif MSTEST
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 // NUnit aliases
@@ -57,6 +52,24 @@ using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializ
 // XUnit aliases
 using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 #endif
+
+#if BENCHMARKDOTNET
+using BenchmarkDotNet.Running;
+using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Attributes.Jobs;
+#else
+using Benchmark = HolisticWare.Core.Testing.BenchmarkTests.Benchmark;
+using ShortRunJob = HolisticWare.Core.Testing.BenchmarkTests.ShortRunJob;
+#endif
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using System.IO;
+using System.Reflection;
+using System.Collections.ObjectModel;
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
@@ -84,9 +97,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
 
-            #if NUNIT
-            CollectionAssert.AreEquivalent
-                                (
+            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
                                     frequencies01,
                                     new Dictionary<int, uint>()
                                     {
@@ -172,9 +183,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Reset();
 
             // Assert
-            #if NUNIT
-            CollectionAssert.AreEquivalent
-                                (
+            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
                                     new List<int> { 24, 28, 29 },
                                     modes01
                                 );
@@ -215,7 +224,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Reset();
 
             // Assert
-#if NUNIT
+            #if NUNIT && !NUNIT_LITE
             CollectionAssert.AreEquivalent
                                     (
                                         new List<int> { 24, 28, 29 },
@@ -259,9 +268,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Reset();
 
             // Assert
-            #if NUNIT
-            CollectionAssert.AreEquivalent
-                                    (
+            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                    (
                                         new List<int> { 24, 28, 29 },
                                         modes03
                                     );
@@ -303,9 +310,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Reset();
 
             // Assert
-            #if NUNIT
-            CollectionAssert.AreEquivalent
-                                    (
+            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                    (
                                         new List<int> { 24, 28, 29 },
                                         modes04
                                     );

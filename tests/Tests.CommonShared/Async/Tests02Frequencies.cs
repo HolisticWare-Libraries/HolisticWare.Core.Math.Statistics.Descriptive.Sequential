@@ -65,9 +65,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
             Console.WriteLine($"List<int>.Average() size={data.Count()} elapsed[ticks]={sw.ElapsedTicks}");
             sw.Reset();
 
-            #if NUNIT
-            CollectionAssert.AreEquivalent
-                            (
+            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                            (
                                 frequencies01,
                                 new Dictionary<int, uint>()
                                 {

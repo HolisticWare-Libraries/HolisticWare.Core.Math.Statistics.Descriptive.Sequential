@@ -37,7 +37,7 @@ using Xunit;
 // NUnit aliases
 using Test = Xunit.FactAttribute;
 // XUnit aliases
-using TestClass = HolisticWare.Core.Testing.UnitTestsCompatibilityAliasAttribute;
+using TestClass = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
 #elif NUNIT
 using NUnit.Framework;
 // MSTest aliases

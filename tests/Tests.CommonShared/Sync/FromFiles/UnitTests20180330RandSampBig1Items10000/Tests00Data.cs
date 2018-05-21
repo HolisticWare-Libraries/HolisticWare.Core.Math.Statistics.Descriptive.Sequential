@@ -30,10 +30,10 @@
 using Xunit;
 // NUnit aliases
 using Test = Xunit.FactAttribute;
-using OneTimeSetUp = HolisticWare.Core.Testing.UnitTestsCompatibilityAliasAttribute;
+using OneTimeSetUp = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
 // MSTest aliases
-using TestClass = HolisticWare.Core.Testing.UnitTestsCompatibilityAliasAttribute;
-using TestContext = HolisticWare.Core.Testing.UnitTestsCompatibilityAliasAttribute;
+using TestClass = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
+using TestContext = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
 #elif NUNIT
 using NUnit.Framework;
 // MSTest aliases
@@ -53,9 +53,11 @@ using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializ
 using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 #endif
 
+#if BENCHMARKDOTNET
 using BenchmarkDotNet.Running;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Attributes.Jobs;
+#endif
 
 using System;
 using System.Collections.Generic;
@@ -89,13 +91,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         //[OneTimeSetUp] // for MSTest - ClassInitialize - public, static, void
         public static void LoadDataFromFile(TestContext tc)
         {
-            #if NUNIT
+#if NUNIT
             string directory_test = TestContext.CurrentContext.TestDirectory;
-            #elif XUNIT
+#elif XUNIT
             string directory_test = Environment.CurrentDirectory;
-            #elif MSTEST
+#elif MSTEST
             string directory_test = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            #endif
+#endif
 
             string path_data = null;
             string text = null;
