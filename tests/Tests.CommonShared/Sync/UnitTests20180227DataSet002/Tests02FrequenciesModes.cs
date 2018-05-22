@@ -88,11 +88,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             sw = Stopwatch.StartNew();
             // Act
-            IEnumerable<KeyValuePair<int, uint>> frequencies01 = data01.Frequencies();
+            IEnumerable<KeyValuePair<int, uint>> frequencies01 = data_list.Frequencies();
             sw.Stop();
             Console.WriteLine($"List<int>.Frequencies()");
             Console.WriteLine($"          frequencies01      = {frequencies01}");
-            Console.WriteLine($"          size               = {data01.Count()}");
+            Console.WriteLine($"          size               = {data_list.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -173,11 +173,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             sw = Stopwatch.StartNew();
             // Act
-            List<int> modes01 = data01.Modes();
+            List<int> modes01 = data_list.Modes();
             sw.Stop();
             Console.WriteLine($"List<int>.MeanGeneralized()");
             Console.WriteLine($"          modes01               = {modes01}");
-            Console.WriteLine($"          size                  = {data01.Count()}");
+            Console.WriteLine($"          size                  = {data_list.Count()}");
             Console.WriteLine($"          elapsed[ticks]        = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]           = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -344,7 +344,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Stop();
             Console.WriteLine($"List<int>.MeanGeneralized()");
             Console.WriteLine($"          modes05               = {modes05}");
-            Console.WriteLine($"          size                  = {data01.Count()}");
+            Console.WriteLine($"          size                  = {data_list.Count()}");
             Console.WriteLine($"          elapsed[ticks]        = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]           = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();

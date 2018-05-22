@@ -25,6 +25,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 throw new ArgumentException($"Weight Collection {w} must have the same number of elements!");
             }
 
+            if (w.Any(w_i => w_i < 0))
+            {
+                throw new ArgumentException($"Weight Collection {w} must have non-negative elements!");
+            }
+
             double sum = 0.0;
             double sum_w = 0.0;
 
@@ -50,6 +55,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             if (n != w.Count())
             {
                 throw new ArgumentException($"Weight Collection {w} must have the same number of elements!");
+            }
+
+            if (w.Any(w_i => w_i < 0))
+            {
+                throw new ArgumentException($"Weight Collection {w} must have non-negative elements!");
             }
 
             double sum = 0.0;
@@ -79,6 +89,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 throw new ArgumentException($"Weight Collection {w} must have the same number of elements!");
             }
 
+            if (w.Any(w_i => w_i < 0))
+            {
+                throw new ArgumentException($"Weight Collection {w} must have non-negative elements!");
+            }
+
             double sum = 0.0;
             double sum_w = 0.0;
 
@@ -104,6 +119,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             if (n != w.Count())
             {
                 throw new ArgumentException($"Weight Collection {w} must have the same number of elements!");
+            }
+
+            if (w.Any(w_i => w_i < 0))
+            {
+                throw new ArgumentException($"Weight Collection {w} must have non-negative elements!");
             }
 
             double sum = 0.0;
@@ -133,6 +153,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 throw new ArgumentException($"Weight Collection {w} must have the same number of elements!");
             }
 
+            if (w.Any(w_i => w_i < 0))
+            {
+                throw new ArgumentException($"Weight Collection {w} must have non-negative elements!");
+            }
+
             double sum = 0.0;
             double sum_w = 0.0;
 
@@ -158,6 +183,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             if (n != w.Count())
             {
                 throw new ArgumentException($"Weight Collection {w} must have the same number of elements!");
+            }
+
+            if (w.Any(w_i => w_i < 0))
+            {
+                throw new ArgumentException($"Weight Collection {w} must have non-negative elements!");
             }
 
             double sum = 0.0;
@@ -187,6 +217,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 throw new ArgumentException($"Weight Collection {w} must have the same number of elements!");
             }
 
+            if (w.Any(w_i => w_i < 0))
+            {
+                throw new ArgumentException($"Weight Collection {w} must have non-negative elements!");
+            }
+
             double sum = 0.0;
             double sum_w = 0.0;
 
@@ -212,6 +247,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             if (n != w.Count())
             {
                 throw new ArgumentException($"Weight Collection {w} must have the same number of elements!");
+            }
+
+            if (w.Any(w_i => w_i < 0))
+            {
+                throw new ArgumentException($"Weight Collection {w} must have non-negative elements!");
             }
 
             double sum = 0.0;
@@ -241,6 +281,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 throw new ArgumentException($"Weight Collection {w} must have the same number of elements!");
             }
 
+            if (w.Any(w_i => w_i < 0))
+            {
+                throw new ArgumentException($"Weight Collection {w} must have non-negative elements!");
+            }
+
             double sum = 0.0;
             double sum_w = 0.0;
 
@@ -266,6 +311,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             if (n != w.Count())
             {
                 throw new ArgumentException($"Weight Collection {w} must have the same number of elements!");
+            }
+
+            if (w.Any(w_i => w_i < 0))
+            {
+                throw new ArgumentException($"Weight Collection {w} must have non-negative elements!");
             }
 
             decimal sum = 0.0M;

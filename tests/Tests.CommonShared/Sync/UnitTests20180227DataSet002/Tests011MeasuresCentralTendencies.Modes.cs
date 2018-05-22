@@ -33,7 +33,6 @@ using Test = Xunit.FactAttribute;
 using OneTimeSetUp = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
 // XUnit aliases
 using TestClass = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
-using TestContext = HolisticWare.Core.Testing.UnitTests.TestContext;
 #elif NUNIT
 using NUnit.Framework;
 // MSTest aliases
@@ -66,9 +65,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
-using System.Threading.Tasks;
-using System.IO;
-using System.Reflection;
 using System.Collections.ObjectModel;
 
 using Core.Math.Statistics.Descriptive.Sequential;
@@ -77,273 +73,450 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class UnitTests20180227DataSet002
     {
-        List<double> w_1 = null;
-
-        double average = 0;
-        double mean01 = 0;
-        double mean02 = 0;
-
-        [Test()]
-        public void Average()
+        [Benchmark]
+        public List<int> Array_Modes()
         {
+            return data_array.Modes();
+        }
+
+        [Test]
+        public void Array_Modes_Test()
+        {
+            Console.WriteLine($"Array_Modes_Test");
             //====================================================================================================
-            // Arrange
+            //  Arrange
+            //  reading data from files
 
             sw = Stopwatch.StartNew();
+
             //----------------------------------------------------------------------------------------------------
             // Act
-            average = data_list.Average();
+            //      extracted to atomic Benchmark method
+            List<int> modes = Array_Modes();
+
             sw.Stop();
-            Console.WriteLine($"List<int>.Average()");
-            Console.WriteLine($"          average            = {average}");
-            Console.WriteLine($"          size               = {data_list.Count()}");
+            Console.WriteLine($"Array<double>.Modes()");
+            Console.WriteLine($"          mean               = {modes}");
+            Console.WriteLine($"          size               = {data_array.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
-
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(28.563, average, 0.001);
+            Assert.AreEqual
+                        (
+                            new List<int> { 180 },
+                            modes
+                        );
             #elif XUNIT
-            Assert.Equal(28.5625, average, 4);
+            Assert.Equal
+                        (
+                            new List<int> { 180 },
+                            modes
+                        );
             #elif MSTEST
+            CollectionAssert.AreEqual
+                        (
+                            new List<int> { 180 },
+                            modes
+                        );
             #endif
             //====================================================================================================
 
             return;
         }
 
-        [Test()]
-        public void MeanArithmetic()
+        [Benchmark]
+        public List<int> ArraySegment_Modes()
+        {
+            return data_array_segment.Modes();
+        }
+
+        [Test]
+        public void ArraySegment_Modes_Test()
         {
             //====================================================================================================
-            // Arrange
+            //  Arrange
+            //  reading data from files
 
             sw = Stopwatch.StartNew();
+
             //----------------------------------------------------------------------------------------------------
             // Act
-            mean01 = data_list.MeanArithmetic();
+            //      extracted to atomic Benchmark method
+            List<int> modes = ArraySegment_Modes();
+
             sw.Stop();
-            Console.WriteLine($"List<int>.MeanArithmetic()");
-            Console.WriteLine($"          mean_arithmetic    = {mean01}");
-            Console.WriteLine($"          size               = {data_list.Count()}");
+            Console.WriteLine($"          mean               = {modes}");
+            Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
-
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(28.563, mean01, 0.001);
+            Assert.AreEqual
+                        (
+                            new List<int> { 180 },
+                            modes
+                        );
             #elif XUNIT
-            Assert.Equal(28.562, mean01, 3);
-            Assert.Equal(28.5625, mean01, 4);
+            Assert.Equal
+                        (
+                            new List<int> { 180 },
+                            modes
+                        );
             #elif MSTEST
+            CollectionAssert.AreEqual
+                        (
+                            new List<int> { 180 },
+                            modes
+                        );
             #endif
             //====================================================================================================
 
             return;
         }
 
-        [Test()]
-        public void MeanGeometric()
+        [Benchmark]
+        public List<int> List_Modes()
+        {
+            return data_list.Modes();
+        }
+
+        [Test]
+        public void List_Modes_Test()
         {
             //====================================================================================================
-            // Arrange
+            //  Arrange
+            //  reading data from files
 
             sw = Stopwatch.StartNew();
+
             //----------------------------------------------------------------------------------------------------
             // Act
-            mean01 = data_list.MeanGeometric();
-            sw.Stop();
-            Console.WriteLine($"List<int>.MeanArithmetic()");
-            Console.WriteLine($"          mean_arithmetic    = {mean01}");
-            Console.WriteLine($"          size               = {data_list.Count()}");
+            //      extracted to atomic Benchmark method
+            List<int> modes = List_Modes();
+
+            Console.WriteLine($"          mean               = {modes}");
+            Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
-
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(28.209, mean01, 0.001);
+            Assert.AreEqual
+                        (
+                            new List<int> { 180 },
+                            modes
+                        );
             #elif XUNIT
-            Assert.Equal(28.209, mean01, 3);
+            Assert.Equal
+                        (
+                            new List<int> { 180 },
+                            modes
+                        );
             #elif MSTEST
+            CollectionAssert.AreEqual
+                        (
+                            new List<int> { 180 },
+                            modes
+                        );
             #endif
             //====================================================================================================
 
             return;
         }
 
-        [Test()]
-        public void MeanHarmonic()
+        [Benchmark]
+        public List<int> Queue_Modes()
+        {
+            return data_queue.Modes();
+        }
+
+        [Test]
+        public void Queue_Modes_Test()
         {
             //====================================================================================================
-            // Arrange
+            //  Arrange
 
             sw = Stopwatch.StartNew();
+
             //----------------------------------------------------------------------------------------------------
             // Act
-            mean01 = data_list.MeanHarmonic();
+            //      extracted to atomic Benchmark method
+            List<int> modes = Queue_Modes();
+
             sw.Stop();
-            Console.WriteLine($"List<int>.MeanHarmonic()");
-            Console.WriteLine($"          mean_harmonic      = {mean01}");
-            Console.WriteLine($"          size               = {data_list.Count()}");
+            Console.WriteLine($"          mean               = {modes}");
+            Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
-
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(27.851, mean01, 0.001);
+            Assert.AreEqual
+                        (
+                            new List<int> { 180 },
+                            modes
+                        );
             #elif XUNIT
-            Assert.Equal(27.851, mean01, 3);
+            Assert.Equal
+                        (
+                            new List<int> { 180 },
+                            modes
+                        );
             #elif MSTEST
+            CollectionAssert.AreEqual
+                        (
+                            new List<int> { 180 },
+                            modes
+                        );
             #endif
             //====================================================================================================
 
             return;
         }
 
-        [Test()]
-        public void MeanQuadratic()
+        [Benchmark]
+        public List<int> Stack_Modes()
+        {
+            return data_stack.Modes();
+        }
+
+        [Test]
+        public void Stack_Modes_Test()
         {
             //====================================================================================================
-            // Arrange
+            //  Arrange
+            //  reading data from files
 
             sw = Stopwatch.StartNew();
+
             //----------------------------------------------------------------------------------------------------
             // Act
-            mean01 = data_list.MeanQuadratic();
+            //      extracted to atomic Benchmark method
+            List<int> modes = Stack_Modes();
+
             sw.Stop();
-            Console.WriteLine($"List<int>.MeanQuadratic()");
-            Console.WriteLine($"          mean_quadratic     = {mean01}");
-            Console.WriteLine($"          size               = {data_list.Count()}");
+            Console.WriteLine($"          mean               = {modes}");
+            Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
-
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(28.908, mean01, 0.001);
+            Assert.AreEqual
+                        (
+                            new List<int> { 180 },
+                            modes
+                        );
             #elif XUNIT
-            Assert.Equal(28.908, mean01, 3);
+            Assert.Equal
+                        (
+                            new List<int> { 180 },
+                            modes
+                        );
             #elif MSTEST
+            CollectionAssert.AreEqual
+                        (
+                            new List<int> { 180 },
+                            modes
+                        );
             #endif
             //====================================================================================================
 
             return;
         }
 
-        [Test()]
-        public void MeanCubic()
+        [Benchmark]
+        public List<int> LinkedList_Modes()
+        {
+            return data_linked_list.Modes();
+        }
+
+        [Test]
+        public void LinkedList_Modes_Test()
         {
             //====================================================================================================
-            // Arrange
-            data_list = new List<int> { 22, 24, 33, 25, 36, 27, 34, 24, 32, 21, 28, 29, 30, 35, 29, 28 };
+            //  Arrange
+            //  reading data from files
 
             sw = Stopwatch.StartNew();
+
             //----------------------------------------------------------------------------------------------------
             // Act
-            mean01 = data_list.MeanCubic();
+            //      extracted to atomic Benchmark method
+            List<int> modes = LinkedList_Modes();
+
             sw.Stop();
-            Console.WriteLine($"List<int>.MeanCubic()");
-            Console.WriteLine($"          mean_cubic         = {mean01}");
-            Console.WriteLine($"          size               = {data_list.Count()}");
+            Console.WriteLine($"          mean               = {modes}");
+            Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
-
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(29.242, mean01, 0.001);
+            Assert.AreEqual
+                        (
+                            new List<int> { 180 },
+                            modes
+                        );
             #elif XUNIT
-            Assert.Equal(29.242, mean01, 3);
+            Assert.Equal
+                        (
+                            new List<int> { 180 },
+                            modes
+                        );
             #elif MSTEST
+            CollectionAssert.AreEqual
+                        (
+                            new List<int> { 180 },
+                            modes
+                        );
             #endif
             //====================================================================================================
 
             return;
         }
 
-        [Test()]
-        public void MeanGeneralized()
+        [Benchmark]
+        public List<int> ObservableCollection_Modes()
         {
-            //====================================================================================================
-            // Arrange
-            data_list = new List<int> { 22, 24, 33, 25, 36, 27, 34, 24, 32, 21, 28, 29, 30, 35, 29, 28 };
-
-            sw = Stopwatch.StartNew();
-            //----------------------------------------------------------------------------------------------------
-            // Act
-            mean01 = data_list.MeanGeneralized(2.0);
-            mean02 = data_list.MeanGeneralized(3.0);
-            sw.Stop();
-            Console.WriteLine($"List<int>.MeanGeneralized()");
-            Console.WriteLine($"          mean_generalized(2.0) = {mean01}");
-            Console.WriteLine($"          mean_generalized(3.0) = {mean02}");
-            Console.WriteLine($"          size                  = {data_list.Count()}");
-            Console.WriteLine($"          elapsed[ticks]        = {sw.ElapsedTicks}");
-            Console.WriteLine($"          elapsed[ms]           = {sw.Elapsed.TotalMilliseconds}");
-            sw.Reset();
-
-            //----------------------------------------------------------------------------------------------------
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(28.908, mean01, 0.001);
-            Assert.AreEqual(29.242, mean02, 0.001);
-            #elif XUNIT
-            Assert.Equal(28.908, mean01, 3);
-            Assert.Equal(29.242, mean02, 3);
-            #elif MSTEST
-            #endif
-            //====================================================================================================
-
-            return;
+            return data_observable_collection.Modes();
         }
 
-        [Test()]
-        public void MeanWeighted()
+        [Test]
+        public void ObservableCollection_Modes_Test()
         {
-            //  http://elsenaju.eu/Calculator/mean-value-calculator.htm
-            //  https://ncalculators.com/statistics/weighted-mean-calculator.htm
-
             //====================================================================================================
-            // Arrange
-            data_list = new List<int> 
-                    { 22, 24, 33, 25, 36, 27, 34, 24, 32, 21, 28, 29, 30, 35, 29, 28 };
-            w1 = new List<double>()
-                    { 11, 14, 13, 14, 14, 14, 15, 13, 12, 11, 15, 16, 12, 18, 18, 11 };
+            //  Arrange
+            //  reading data from files
 
             sw = Stopwatch.StartNew();
+
             //----------------------------------------------------------------------------------------------------
             // Act
-            mean01 = data_list.MeanWeighted(w1);
+            //      extracted to atomic Benchmark method
+            List<int> modes = ObservableCollection_Modes();
+
             sw.Stop();
-            Console.WriteLine($"List<int>.MeanWeighted(weights)");
-            Console.WriteLine($"          mean_weighted      = {mean01}");
-            Console.WriteLine($"          size               = {data_list.Count()}");
+            Console.WriteLine($"          mean               = {modes}");
+            Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
-
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(28.8688, mean01, 0.0001);
+            Assert.AreEqual
+                        (
+                            new List<int> { 180 },
+                            modes
+                        );
             #elif XUNIT
-            Assert.Equal(28.8688, mean01, 4);
+            Assert.Equal
+                        (
+                            new List<int> { 180 },
+                            modes
+                        );
             #elif MSTEST
+            CollectionAssert.AreEqual
+                        (
+                            new List<int> { 180 },
+                            modes
+                        );
             #endif
             //====================================================================================================
 
             return;
         }
 
+
+        /*
+            c# 7.2
+            Span<T>, 
+            ReadOnlySpan<T>, 
+            Memory<T> 
+            ReadOnlyMemory<T>
+        */
+        /*
+        [Test]
+        public void Span_Modes()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            Span<int> data = 
+                            new Span<int>(data_list);
+                            //data_list.AsSpan().Slice(start: 0)
+                            ;
+            double mean = data.Modes();
+            sw.Stop();
+            Console.WriteLine($"          mean               = {modes}");
+            Console.WriteLine($"          size               = {data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(3.00, mean, 0.00001);
+            #elif XUNIT
+            Assert.Equal(3.00, mean, 5);
+            #elif MSTEST
+            Assert.AreEqual(3.00, mean, 0.00001);
+            #endif
+            //====================================================================================================
+
+            return;
+        }
+
+        [Test]
+        public void Span_Modes()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            Memory<int> data =
+                            new Memory<int>(data_list);
+                            //data_list.AsSpan().Slice(start: 0)
+                            ;
+            double mean = data.Modes();
+            sw.Stop();
+            Console.WriteLine($"          mean               = {modes}");
+            Console.WriteLine($"          size               = {data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(3.00, mean, 0.00001);
+            #elif XUNIT
+            Assert.Equal(3.00, mean, 5);
+            #elif MSTEST
+            Assert.AreEqual(3.00, mean, 0.00001);
+            #endif
+            //====================================================================================================
+
+            return;
+        }
+        */
     }
 }
