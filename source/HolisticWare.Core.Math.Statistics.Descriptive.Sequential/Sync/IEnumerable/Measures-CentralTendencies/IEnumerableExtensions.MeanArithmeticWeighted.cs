@@ -14,8 +14,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         //==============================================================================================================
         public static double MeanArithmeticWeighted
                                     (
-                                        this IEnumerable<byte> x
-                                        , IEnumerable<double> w
+                                        this IEnumerable<byte> x,
+                                        IEnumerable<double> w
                                     )
         {
             int n = x.Count();

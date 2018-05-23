@@ -152,6 +152,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-CentralTendencies\IEnumerableExtensions.MeanGeometricWeighted.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-CentralTendencies\IEnumerableExtensions.MeanHarmonicWeighted.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-Dispersion\IEnumerableExtensions.MomentGeneralized.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-CentralTendencies\IEnumerableExtensions.MeanArithmeticGeneralizedWeighted.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)readme.md" />
