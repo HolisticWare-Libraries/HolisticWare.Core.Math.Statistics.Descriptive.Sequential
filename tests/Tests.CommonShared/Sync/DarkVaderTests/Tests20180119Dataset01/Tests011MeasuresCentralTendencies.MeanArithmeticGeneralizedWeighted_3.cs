@@ -73,15 +73,15 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     public partial class Tests20180119Dataset01
     {
         [Benchmark]
-        public double Array_MeanWeighted()
+        public double Array_MeanArithmeticGeneralizedWeighted_3()
         {
-            return data_array.MeanWeighted(w1);
+            return data_array.MeanArithmeticGeneralizedWeighted(w1_rnd_double, 3.0);
         }
 
         [Test]
-        public void Array_MeanWeighted_Test()
+        public void Array_MeanArithmeticGeneralizedWeighted_3_Test()
         {
-            Console.WriteLine($"Array_MeanWeighted_Test");
+            Console.WriteLine($"Array_MeanArithmeticGeneralizedWeighted_3_Test");
             //====================================================================================================
             //  Arrange
             //  reading data from files
@@ -91,29 +91,27 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double mean = Array_MeanWeighted();
+            double mean = Array_MeanArithmeticGeneralizedWeighted_3();
 
             sw.Stop();
-            Console.WriteLine($"Array<double>.MeanWeighted()");
+            Console.WriteLine($"Array<double>.MeanArithmeticGeneralizedWeighted()");
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data_array.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+            double mean_cubic_check = data_array.MeanCubic();
             //----------------------------------------------------------------------------------------------------
             // Assert
-            double mean_arithmetic_1 = data_array.MeanArithmetic();
-            double mean_arithmetic_2 = data_array.MeanWeighted(w1_rnd_double);
-
             #if NUNIT
-            Assert.AreEqual(2.93548, mean, 0.00001);
-            Assert.AreEqual(mean_arithmetic_1, mean_arithmetic_2, 0.00001);
+            Assert.AreEqual(3.35607, mean, 0.00001);
+            Assert.AreEqual(mean, mean_cubic_check, 0.00001);
             #elif XUNIT
-            Assert.Equal(2.93548, mean, 5);
-            Assert.Equal(mean_arithmetic_1, mean_arithmetic_2, 5);
+            Assert.Equal(3.35607, mean, 5);
+            Assert.Equal(mean, mean_cubic_check, 5);
             #elif MSTEST
-            Assert.AreEqual(2.93548, mean, 0.00001);
-            Assert.AreEqual(mean_arithmetic_1, mean_arithmetic_2, 0.00001);
+            Assert.AreEqual(3.35607, mean, 0.00001);
+            Assert.AreEqual(mean, mean_cubic_check, 0.00001);
             #endif
             //====================================================================================================
 
@@ -121,13 +119,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double ArraySegment_MeanWeighted()
+        public double ArraySegment_MeanArithmeticGeneralizedWeighted_3()
         {
-            return data_array_segment.MeanWeighted(w1);
+            return data_array_segment.MeanArithmeticGeneralizedWeighted(w1_rnd_double,  3.0);
         }
 
         [Test]
-        public void ArraySegment_MeanWeighted_Test()
+        public void ArraySegment_MeanArithmeticGeneralizedWeighted_3_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -138,7 +136,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double mean = ArraySegment_MeanWeighted();
+            double mean = ArraySegment_MeanArithmeticGeneralizedWeighted_3();
 
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
@@ -146,14 +144,18 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+            double mean_cubic_check = data_array.MeanCubic();
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(3.35607, mean, 0.00001);
+            Assert.AreEqual(mean, mean_cubic_check, 0.00001);
             #elif XUNIT
-            Assert.Equal(2.93548, mean, 5);
+            Assert.Equal(3.35607, mean, 5);
+            Assert.Equal(mean, mean_cubic_check, 5);
             #elif MSTEST
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(3.35607, mean, 0.00001);
+            Assert.AreEqual(mean, mean_cubic_check, 0.00001);
             #endif
             //====================================================================================================
 
@@ -161,13 +163,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double List_MeanWeighted()
+        public double List_MeanArithmeticGeneralizedWeighted_3()
         {
-            return data_list.MeanWeighted(w1);
+            return data_list.MeanArithmeticGeneralizedWeighted(w1_rnd_double,  3.0);
         }
 
         [Test]
-        public void List_MeanWeighted_Test()
+        public void List_MeanArithmeticGeneralizedWeighted_3_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -178,21 +180,25 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double mean = List_MeanWeighted();
+            double mean = List_MeanArithmeticGeneralizedWeighted_3();
 
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+            double mean_cubic_check = data_array.MeanCubic();
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(3.35607, mean, 0.00001);
+            Assert.AreEqual(mean, mean_cubic_check, 0.00001);
             #elif XUNIT
-            Assert.Equal(2.93548, mean, 5);
+            Assert.Equal(3.35607, mean, 5);
+            Assert.Equal(mean, mean_cubic_check, 5);
             #elif MSTEST
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(3.35607, mean, 0.00001);
+            Assert.AreEqual(mean, mean_cubic_check, 0.00001);
             #endif
             //====================================================================================================
 
@@ -200,13 +206,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double Queue_MeanWeighted()
+        public double Queue_MeanArithmeticGeneralizedWeighted_3()
         {
-            return data_queue.MeanWeighted(w1);
+            return data_queue.MeanArithmeticGeneralizedWeighted(w1_rnd_double,  3.0);
         }
 
         [Test]
-        public void Queue_MeanWeighted_Test()
+        public void Queue_MeanArithmeticGeneralizedWeighted_3_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -216,7 +222,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double mean = Queue_MeanWeighted();
+            double mean = Queue_MeanArithmeticGeneralizedWeighted_3();
 
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
@@ -224,14 +230,18 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+            double mean_cubic_check = data_array.MeanCubic();
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(3.35607, mean, 0.00001);
+            Assert.AreEqual(mean, mean_cubic_check, 0.00001);
             #elif XUNIT
-            Assert.Equal(2.93548, mean, 5);
+            Assert.Equal(3.35607, mean, 5);
+            Assert.Equal(mean, mean_cubic_check, 5);
             #elif MSTEST
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(3.35607, mean, 0.00001);
+            Assert.AreEqual(mean, mean_cubic_check, 0.00001);
             #endif
             //====================================================================================================
 
@@ -239,53 +249,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double Stack_MeanWeighted()
+        public double Stack_MeanArithmeticGeneralizedWeighted_3()
         {
-            return data_stack.MeanWeighted(w1_r);
+            return data_stack.MeanArithmeticGeneralizedWeighted(w1_rnd_double, 3.0);
         }
 
         [Test]
-        public void Stack_MeanWeighted_Test()
-        {
-            //====================================================================================================
-            //  Arrange
-            //  reading data from files
-
-            sw = Stopwatch.StartNew();
-
-            //----------------------------------------------------------------------------------------------------
-            // Act
-            //      extracted to atomic Benchmark method
-            double mean = Stack_MeanWeighted();
-
-            sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
-            Console.WriteLine($"          size               = {data.Count()}");
-            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
-            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
-            sw.Reset();
-            //----------------------------------------------------------------------------------------------------
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(2.93548, mean, 0.00001);
-            #elif XUNIT
-            Assert.Equal(2.93548, mean, 5);
-            #elif MSTEST
-            Assert.AreEqual(2.93548, mean, 0.00001);
-            #endif
-            //====================================================================================================
-
-            return;
-        }
-
-        [Benchmark]
-        public double LinkedList_MeanWeighted()
-        {
-            return data_linked_list.MeanWeighted(w1);
-        }
-
-        [Test]
-        public void LinkedList_MeanWeighted_Test()
+        public void Stack_MeanArithmeticGeneralizedWeighted_3_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -296,7 +266,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double mean = LinkedList_MeanWeighted();
+            double mean = Stack_MeanArithmeticGeneralizedWeighted_3();
 
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
@@ -304,14 +274,18 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+            double mean_cubic_check = data_array.MeanCubic();
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(3.35607, mean, 0.00001);
+            Assert.AreEqual(mean, mean_cubic_check, 0.00001);
             #elif XUNIT
-            Assert.Equal(2.93548, mean, 5);
+            Assert.Equal(3.35607, mean, 5);
+            Assert.Equal(mean, mean_cubic_check, 5);
             #elif MSTEST
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(3.35607, mean, 0.00001);
+            Assert.AreEqual(mean, mean_cubic_check, 0.00001);
             #endif
             //====================================================================================================
 
@@ -319,13 +293,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double ObservableCollection_MeanWeighted()
+        public double LinkedList_MeanArithmeticGeneralizedWeighted_3()
         {
-            return data_observable_collection.MeanWeighted(w1);
+            return data_linked_list.MeanArithmeticGeneralizedWeighted(w1_rnd_double,  3.0);
         }
 
         [Test]
-        public void ObservableCollection_MeanWeighted_Test()
+        public void LinkedList_MeanArithmeticGeneralizedWeighted_3_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -336,7 +310,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double mean = ObservableCollection_MeanWeighted();
+            double mean = LinkedList_MeanArithmeticGeneralizedWeighted_3();
 
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
@@ -344,14 +318,62 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+            double mean_cubic_check = data_array.MeanCubic();
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(3.35607, mean, 0.00001);
+            Assert.AreEqual(mean, mean_cubic_check, 0.00001);
             #elif XUNIT
-            Assert.Equal(2.93548, mean, 5);
+            Assert.Equal(3.35607, mean, 5);
+            Assert.Equal(mean, mean_cubic_check, 5);
             #elif MSTEST
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(3.35607, mean, 0.00001);
+            Assert.AreEqual(mean, mean_cubic_check, 0.00001);
+            #endif
+            //====================================================================================================
+
+            return;
+        }
+
+        [Benchmark]
+        public double ObservableCollection_MeanArithmeticGeneralizedWeighted_3()
+        {
+            return data_observable_collection.MeanArithmeticGeneralizedWeighted(w1_rnd_double,  3.0);
+        }
+
+        [Test]
+        public void ObservableCollection_MeanArithmeticGeneralizedWeighted_3_Test()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            //      extracted to atomic Benchmark method
+            double mean = ObservableCollection_MeanArithmeticGeneralizedWeighted_3();
+
+            sw.Stop();
+            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          size               = {data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+            double mean_cubic_check = data_array.MeanCubic();
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(3.35607, mean, 0.00001);
+            Assert.AreEqual(mean, mean_cubic_check, 0.00001);
+            #elif XUNIT
+            Assert.Equal(3.35607, mean, 5);
+            Assert.Equal(mean, mean_cubic_check, 5);
+            #elif MSTEST
+            Assert.AreEqual(3.35607, mean, 0.00001);
+            Assert.AreEqual(mean, mean_cubic_check, 0.00001);
             #endif
             //====================================================================================================
 
@@ -368,7 +390,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         */
         /*
         [Test]
-        public void Span_MeanWeighted()
+        public void Span_MeanArithmeticGeneralizedWeighted_3()
         {
             //====================================================================================================
             //  Arrange
@@ -382,7 +404,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                             new Span<int>(data01);
                             //data01.AsSpan().Slice(start: 0)
                             ;
-            double mean = data.MeanWeighted(w);
+            double mean = data.MeanArithmeticGeneralizedWeighted(w);
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -392,11 +414,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(3.35607, mean, 0.00001);
             #elif XUNIT
-            Assert.Equal(2.93548, mean, 5);
+            Assert.Equal(3.35607, mean, 5);
             #elif MSTEST
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(3.35607, mean, 0.00001);
             #endif
             //====================================================================================================
 
@@ -404,7 +426,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Test]
-        public void Span_MeanWeighted()
+        public void Span_MeanArithmeticGeneralizedWeighted_3()
         {
             //====================================================================================================
             //  Arrange
@@ -418,7 +440,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                             new Memory<int>(data01);
                             //data01.AsSpan().Slice(start: 0)
                             ;
-            double mean = data.MeanWeighted(w);
+            double mean = data.MeanArithmeticGeneralizedWeighted(w);
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -428,11 +450,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(3.35607, mean, 0.00001);
             #elif XUNIT
-            Assert.Equal(2.93548, mean, 5);
+            Assert.Equal(3.35607, mean, 5);
             #elif MSTEST
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(3.35607, mean, 0.00001);
             #endif
             //====================================================================================================
 

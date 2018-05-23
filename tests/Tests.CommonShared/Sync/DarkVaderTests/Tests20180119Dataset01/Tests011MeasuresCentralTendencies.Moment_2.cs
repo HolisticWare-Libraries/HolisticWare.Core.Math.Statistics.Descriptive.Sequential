@@ -73,15 +73,15 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     public partial class Tests20180119Dataset01
     {
         [Benchmark]
-        public double Array_MeanWeighted()
+        public double Array_Moment_2()
         {
-            return data_array.MeanWeighted(w1);
+            return data_array.Moment(2);
         }
 
         [Test]
-        public void Array_MeanWeighted_Test()
+        public void Array_Moment_2_Test()
         {
-            Console.WriteLine($"Array_MeanWeighted_Test");
+            Console.WriteLine($"Array_Moment_2_Test");
             //====================================================================================================
             //  Arrange
             //  reading data from files
@@ -91,29 +91,27 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double mean = Array_MeanWeighted();
+            double moment = Array_Moment_2();
 
             sw.Stop();
-            Console.WriteLine($"Array<double>.MeanWeighted()");
-            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"Array<double>.Median()");
+            Console.WriteLine($"          moment               = {moment}");
             Console.WriteLine($"          size               = {data_array.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+            double variance = data_array.VariancePopulation();
             //----------------------------------------------------------------------------------------------------
             // Assert
-            double mean_arithmetic_1 = data_array.MeanArithmetic();
-            double mean_arithmetic_2 = data_array.MeanWeighted(w1_rnd_double);
-
             #if NUNIT
-            Assert.AreEqual(2.93548, mean, 0.00001);
-            Assert.AreEqual(mean_arithmetic_1, mean_arithmetic_2, 0.00001);
+            Assert.AreEqual(1.2, moment, 0.01);
+            Assert.AreEqual(1.2, variance, 0.01);
             #elif XUNIT
-            Assert.Equal(2.93548, mean, 5);
-            Assert.Equal(mean_arithmetic_1, mean_arithmetic_2, 5);
+            Assert.Equal(1.2, moment, 5);
+            Assert.Equal(1.2, variance, 5);
             #elif MSTEST
-            Assert.AreEqual(2.93548, mean, 0.00001);
-            Assert.AreEqual(mean_arithmetic_1, mean_arithmetic_2, 0.00001);
+            Assert.AreEqual(1.2, moment, 0.01);
+            Assert.AreEqual(1.2, variance, 5);
             #endif
             //====================================================================================================
 
@@ -121,13 +119,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double ArraySegment_MeanWeighted()
+        public double ArraySegment_Moment_2()
         {
-            return data_array_segment.MeanWeighted(w1);
+            return data_array_segment.Moment(2);
         }
 
         [Test]
-        public void ArraySegment_MeanWeighted_Test()
+        public void ArraySegment_Moment_2_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -138,22 +136,26 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double mean = ArraySegment_MeanWeighted();
+            double moment = ArraySegment_Moment_2();
 
             sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          moment               = {moment}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+            double variance = data_array.VariancePopulation();
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(1.2, moment, 0.01);
+            Assert.AreEqual(1.2, variance, 0.01);
             #elif XUNIT
-            Assert.Equal(2.93548, mean, 5);
+            Assert.Equal(1.2, moment, 5);
+            Assert.Equal(1.2, variance, 5);
             #elif MSTEST
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(1.2, moment, 0.01);
+            Assert.AreEqual(1.2, variance, 5);
             #endif
             //====================================================================================================
 
@@ -161,13 +163,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double List_MeanWeighted()
+        public double List_Moment_2()
         {
-            return data_list.MeanWeighted(w1);
+            return data_list.Moment(2);
         }
 
         [Test]
-        public void List_MeanWeighted_Test()
+        public void List_Moment_2_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -178,21 +180,25 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double mean = List_MeanWeighted();
+            double moment = List_Moment_2();
 
-            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          moment               = {moment}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+            double variance = data_array.VariancePopulation();
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(1.2, moment, 0.01);
+            Assert.AreEqual(1.2, variance, 0.01);
             #elif XUNIT
-            Assert.Equal(2.93548, mean, 5);
+            Assert.Equal(1.2, moment, 5);
+            Assert.Equal(1.2, variance, 5);
             #elif MSTEST
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(1.2, moment, 0.01);
+            Assert.AreEqual(1.2, variance, 5);
             #endif
             //====================================================================================================
 
@@ -200,13 +206,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double Queue_MeanWeighted()
+        public double Queue_Moment_2()
         {
-            return data_queue.MeanWeighted(w1);
+            return data_queue.Moment(2);
         }
 
         [Test]
-        public void Queue_MeanWeighted_Test()
+        public void Queue_Moment_2_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -216,22 +222,26 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double mean = Queue_MeanWeighted();
+            double moment = Queue_Moment_2();
 
             sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          moment               = {moment}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+            double variance = data_array.VariancePopulation();
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(1.2, moment, 0.01);
+            Assert.AreEqual(1.2, variance, 0.01);
             #elif XUNIT
-            Assert.Equal(2.93548, mean, 5);
+            Assert.Equal(1.2, moment, 5);
+            Assert.Equal(1.2, variance, 5);
             #elif MSTEST
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(1.2, moment, 0.01);
+            Assert.AreEqual(1.2, variance, 5);
             #endif
             //====================================================================================================
 
@@ -239,53 +249,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double Stack_MeanWeighted()
+        public double Stack_Moment_2()
         {
-            return data_stack.MeanWeighted(w1_r);
+            return data_stack.Moment(2);
         }
 
         [Test]
-        public void Stack_MeanWeighted_Test()
-        {
-            //====================================================================================================
-            //  Arrange
-            //  reading data from files
-
-            sw = Stopwatch.StartNew();
-
-            //----------------------------------------------------------------------------------------------------
-            // Act
-            //      extracted to atomic Benchmark method
-            double mean = Stack_MeanWeighted();
-
-            sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
-            Console.WriteLine($"          size               = {data.Count()}");
-            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
-            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
-            sw.Reset();
-            //----------------------------------------------------------------------------------------------------
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(2.93548, mean, 0.00001);
-            #elif XUNIT
-            Assert.Equal(2.93548, mean, 5);
-            #elif MSTEST
-            Assert.AreEqual(2.93548, mean, 0.00001);
-            #endif
-            //====================================================================================================
-
-            return;
-        }
-
-        [Benchmark]
-        public double LinkedList_MeanWeighted()
-        {
-            return data_linked_list.MeanWeighted(w1);
-        }
-
-        [Test]
-        public void LinkedList_MeanWeighted_Test()
+        public void Stack_Moment_2_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -296,22 +266,26 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double mean = LinkedList_MeanWeighted();
+            double moment = Stack_Moment_2();
 
             sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          moment               = {moment}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+            double variance = data_array.VariancePopulation();
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(1.2, moment, 0.01);
+            Assert.AreEqual(1.2, variance, 0.01);
             #elif XUNIT
-            Assert.Equal(2.93548, mean, 5);
+            Assert.Equal(1.2, moment, 5);
+            Assert.Equal(1.2, variance, 5);
             #elif MSTEST
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(1.2, moment, 0.01);
+            Assert.AreEqual(1.2, variance, 5);
             #endif
             //====================================================================================================
 
@@ -319,13 +293,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double ObservableCollection_MeanWeighted()
+        public double LinkedList_Moment_2()
         {
-            return data_observable_collection.MeanWeighted(w1);
+            return data_linked_list.Moment(2);
         }
 
         [Test]
-        public void ObservableCollection_MeanWeighted_Test()
+        public void LinkedList_Moment_2_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -336,22 +310,70 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double mean = ObservableCollection_MeanWeighted();
+            double moment = LinkedList_Moment_2();
 
             sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          moment               = {moment}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+            double variance = data_array.VariancePopulation();
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(1.2, moment, 0.01);
+            Assert.AreEqual(1.2, variance, 0.01);
             #elif XUNIT
-            Assert.Equal(2.93548, mean, 5);
+            Assert.Equal(1.2, moment, 5);
+            Assert.Equal(1.2, variance, 5);
             #elif MSTEST
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(1.2, moment, 0.01);
+            Assert.AreEqual(1.2, variance, 5);
+            #endif
+            //====================================================================================================
+
+            return;
+        }
+
+        [Benchmark]
+        public double ObservableCollection_Moment_2()
+        {
+            return data_observable_collection.Moment(2);
+        }
+
+        [Test]
+        public void ObservableCollection_Moment_2_Test()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            //      extracted to atomic Benchmark method
+            double moment = ObservableCollection_Moment_2();
+
+            sw.Stop();
+            Console.WriteLine($"          moment               = {moment}");
+            Console.WriteLine($"          size               = {data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+            double variance = data_array.VariancePopulation();
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(1.2, moment, 0.01);
+            Assert.AreEqual(1.2, variance, 0.01);
+            #elif XUNIT
+            Assert.Equal(1.2, moment, 5);
+            Assert.Equal(1.2, variance, 5);
+            #elif MSTEST
+            Assert.AreEqual(1.2, moment, 0.01);
+            Assert.AreEqual(1.2, variance, 5);
             #endif
             //====================================================================================================
 
@@ -368,7 +390,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         */
         /*
         [Test]
-        public void Span_MeanWeighted()
+        public void Span_Moment_2()
         {
             //====================================================================================================
             //  Arrange
@@ -382,9 +404,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                             new Span<int>(data01);
                             //data01.AsSpan().Slice(start: 0)
                             ;
-            double mean = data.MeanWeighted(w);
+            double moment = dataMoment(2);
             sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          moment               = {moment}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -392,11 +414,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(1.2, moment, 0.01);
             #elif XUNIT
-            Assert.Equal(2.93548, mean, 5);
+            Assert.Equal(1.2, moment, 5);
             #elif MSTEST
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(1.2, moment, 0.01);
             #endif
             //====================================================================================================
 
@@ -404,7 +426,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Test]
-        public void Span_MeanWeighted()
+        public void Span_Moment_2()
         {
             //====================================================================================================
             //  Arrange
@@ -418,9 +440,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                             new Memory<int>(data01);
                             //data01.AsSpan().Slice(start: 0)
                             ;
-            double mean = data.MeanWeighted(w);
+            double moment = dataMoment(2);
             sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          moment               = {moment}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -428,11 +450,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(1.2, moment, 0.01);
             #elif XUNIT
-            Assert.Equal(2.93548, mean, 5);
+            Assert.Equal(1.2, moment, 5);
             #elif MSTEST
-            Assert.AreEqual(2.93548, mean, 0.00001);
+            Assert.AreEqual(1.2, moment, 0.01);
             #endif
             //====================================================================================================
 

@@ -91,6 +91,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         static ObservableCollection<int> data_observable_collection = null;
         static LinkedList<int> data_linked_list = null;
 
+        static List<double> w1 = new List<double>() { 1, 4, 3, 4, 4, 4, 5, 3, 2, 1 };
+        static IEnumerable<double> w1_r = Enumerable.Reverse(w1);
+        static IEnumerable<double> w1_rnd_double = Enumerable.Repeat((new Random()).NextDouble(), w1.Count());
+
         static Tests20180119Dataset01()
         {
             data_array = data.ToArray();

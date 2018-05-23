@@ -188,6 +188,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet002\Tests011MeasuresDistribution.Range.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet002\Tests09MeasuresDispersion.StandardDeviation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet002\Tests09MeasuresDispersion.Variance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresCentralTendencies.MeanArithmeticGeneralizedWeighted_1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresCentralTendencies.MeanArithmeticGeneralizedWeighted_2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresCentralTendencies.MeanArithmeticGeneralizedWeighted_3.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresCentralTendencies.Moment_1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresCentralTendencies.Moment_2.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Async\" />
