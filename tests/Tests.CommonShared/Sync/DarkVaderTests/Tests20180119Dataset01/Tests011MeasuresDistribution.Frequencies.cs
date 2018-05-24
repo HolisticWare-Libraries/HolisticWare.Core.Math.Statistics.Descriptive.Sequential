@@ -72,6 +72,17 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class Tests20180119Dataset01
     {
+        Dictionary<int, uint> frequencies_calculated =
+            new Dictionary<int, uint>
+                    {
+                        { 3, 4 },
+                        { 2, 2 },
+                        { 4, 2 },
+                        { 1, 1 },
+                        { 5, 1 },
+                    };
+
+
         [Benchmark]
         public IEnumerable<KeyValuePair<int, uint>> Array_Frequencies()
         {
@@ -104,44 +115,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Assert
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<int, uint>
-                                        {
-                                            { 3, 4 },
-                                            { 2, 2 },
-                                            { 4, 2 },
-                                            { 1, 1 },
-                                            { 5, 1 },
-                                        }
-                                .ToList(),
+                            frequencies_calculated.ToList(),
                             frequencies
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<int, uint> 
-                                        {
-                                            { 3, 4 },
-                                            { 2, 2 },
-                                            { 4, 2 },
-                                            { 1, 1 },
-                                            { 5, 1 },
-                                        }
-                                .ToList(), 
+                            frequencies_calculated.ToList(),
                             frequencies
                         );
             #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            new Dictionary<int, uint>
-                                        {
-                                            { 3, 4 },
-                                            { 2, 2 },
-                                            { 4, 2 },
-                                            { 1, 1 },
-                                            { 5, 1 },
-                                        }
-                                .ToList(),
-                                frequencies.ToArray()
+                            frequencies_calculated.ToList(),
+                            frequencies.ToArray()
                         );
             #endif
             //====================================================================================================
@@ -178,44 +165,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<int, uint>
-                                        {
-                                            { 3, 4 },
-                                            { 2, 2 },
-                                            { 4, 2 },
-                                            { 1, 1 },
-                                            { 5, 1 },
-                                        }
-                                .ToList(),
+                            frequencies_calculated.ToList(),
                             frequencies
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<int, uint> 
-                                        {
-                                            { 3, 4 },
-                                            { 2, 2 },
-                                            { 4, 2 },
-                                            { 1, 1 },
-                                            { 5, 1 },
-                                        }
-                                .ToList(), 
+                            frequencies_calculated.ToList(),
                             frequencies
                         );
             #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            new Dictionary<int, uint>
-                                        {
-                                            { 3, 4 },
-                                            { 2, 2 },
-                                            { 4, 2 },
-                                            { 1, 1 },
-                                            { 5, 1 },
-                                        }
-                                .ToList(),
-                                frequencies.ToArray()
+                            frequencies_calculated.ToList(),
+                            frequencies.ToArray()
                         );
             #endif
             //====================================================================================================
@@ -251,44 +214,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<int, uint>
-                                        {
-                                            { 3, 4 },
-                                            { 2, 2 },
-                                            { 4, 2 },
-                                            { 1, 1 },
-                                            { 5, 1 },
-                                        }
-                                .ToList(),
+                            frequencies_calculated.ToList(),
                             frequencies
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<int, uint> 
-                                        {
-                                            { 3, 4 },
-                                            { 2, 2 },
-                                            { 4, 2 },
-                                            { 1, 1 },
-                                            { 5, 1 },
-                                        }
-                                .ToList(), 
+                            frequencies_calculated.ToList(),
                             frequencies
                         );
             #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            new Dictionary<int, uint>
-                                        {
-                                            { 3, 4 },
-                                            { 2, 2 },
-                                            { 4, 2 },
-                                            { 1, 1 },
-                                            { 5, 1 },
-                                        }
-                                .ToList(),
-                                frequencies.ToArray()
+                            frequencies_calculated.ToList(),
+                            frequencies.ToArray()
                         );
             #endif
             //====================================================================================================
@@ -324,44 +263,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<int, uint>
-                                        {
-                                            { 3, 4 },
-                                            { 2, 2 },
-                                            { 4, 2 },
-                                            { 1, 1 },
-                                            { 5, 1 },
-                                        }
-                                .ToList(),
+                            frequencies_calculated.ToList(),
                             frequencies
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<int, uint> 
-                                        {
-                                            { 3, 4 },
-                                            { 2, 2 },
-                                            { 4, 2 },
-                                            { 1, 1 },
-                                            { 5, 1 },
-                                        }
-                                .ToList(), 
+                            frequencies_calculated.ToList(),
                             frequencies
                         );
             #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            new Dictionary<int, uint>
-                                        {
-                                            { 3, 4 },
-                                            { 2, 2 },
-                                            { 4, 2 },
-                                            { 1, 1 },
-                                            { 5, 1 },
-                                        }
-                                .ToList(),
-                                frequencies.ToArray()
+                            frequencies_calculated.ToList(),
+                            frequencies.ToArray()
                         );
             #endif
             //====================================================================================================
@@ -398,44 +313,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<int, uint>
-                                        {
-                                            { 3, 4 },
-                                            { 2, 2 },
-                                            { 4, 2 },
-                                            { 1, 1 },
-                                            { 5, 1 },
-                                        }
-                                .ToList(),
+                            frequencies_calculated.ToList(),
                             frequencies
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<int, uint> 
-                                        {
-                                            { 3, 4 },
-                                            { 2, 2 },
-                                            { 4, 2 },
-                                            { 1, 1 },
-                                            { 5, 1 },
-                                        }
-                                .ToList(), 
+                            frequencies_calculated.ToList(),
                             frequencies
                         );
             #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            new Dictionary<int, uint>
-                                        {
-                                            { 3, 4 },
-                                            { 2, 2 },
-                                            { 4, 2 },
-                                            { 1, 1 },
-                                            { 5, 1 },
-                                        }
-                                .ToList(),
-                                frequencies.ToArray()
+                            frequencies_calculated.ToList(),
+                            frequencies.ToArray()
                         );
             #endif
             //====================================================================================================
@@ -473,44 +364,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Assert
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<int, uint>
-                                        {
-                                            { 3, 4 },
-                                            { 2, 2 },
-                                            { 4, 2 },
-                                            { 1, 1 },
-                                            { 5, 1 },
-                                        }
-                                .ToList(),
+                            frequencies_calculated.ToList(),
                             frequencies
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<int, uint> 
-                                        {
-                                            { 3, 4 },
-                                            { 2, 2 },
-                                            { 4, 2 },
-                                            { 1, 1 },
-                                            { 5, 1 },
-                                        }
-                                .ToList(), 
+                            frequencies_calculated.ToList(),
                             frequencies
                         );
             #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            new Dictionary<int, uint>
-                                        {
-                                            { 3, 4 },
-                                            { 2, 2 },
-                                            { 4, 2 },
-                                            { 1, 1 },
-                                            { 5, 1 },
-                                        }
-                                .ToList(),
-                                frequencies.ToArray()
+                            frequencies_calculated.ToList(),
+                            frequencies.ToArray()
                         );
             #endif
             //====================================================================================================
@@ -547,44 +414,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<int, uint>
-                                        {
-                                            { 3, 4 },
-                                            { 2, 2 },
-                                            { 4, 2 },
-                                            { 1, 1 },
-                                            { 5, 1 },
-                                        }
-                                .ToList(),
+                            frequencies_calculated.ToList(),
                             frequencies
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<int, uint> 
-                                        {
-                                            { 3, 4 },
-                                            { 2, 2 },
-                                            { 4, 2 },
-                                            { 1, 1 },
-                                            { 5, 1 },
-                                        }
-                                .ToList(), 
+                            frequencies_calculated.ToList(),
                             frequencies
                         );
             #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            new Dictionary<int, uint>
-                                        {
-                                            { 3, 4 },
-                                            { 2, 2 },
-                                            { 4, 2 },
-                                            { 1, 1 },
-                                            { 5, 1 },
-                                        }
-                                .ToList(),
-                                frequencies.ToArray()
+                            frequencies_calculated.ToList(),
+                            frequencies.ToArray()
                         );
             #endif
             //====================================================================================================

@@ -73,6 +73,24 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class UnitTests20180227DataSet002
     {
+        Dictionary<int, uint> frequencies_calculated =
+            new Dictionary<int, uint>
+                            {
+                                { 24, 2},
+                                { 28, 2},
+                                { 29, 2},
+                                { 22, 1},
+                                { 33, 1},
+                                { 25, 1},
+                                { 36, 1},
+                                { 27, 1},
+                                { 34, 1},
+                                { 32, 1},
+                                { 21, 1},
+                                { 30, 1},
+                                { 35, 1},
+                            };
+
         [Benchmark]
         public IEnumerable<KeyValuePair<int, uint>> Array_FrequencyDistribution()
         {
@@ -104,68 +122,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<int, uint>
-                                {
-                                    { 180, 9 },
-                                    { 175, 8 },
-                                    { 195, 6 },
-                                    { 190, 5 },
-                                    { 160, 5 },
-                                    { 170, 5 },
-                                    { 150, 4 },
-                                    { 165, 4 },
-                                    { 155, 3 },
-                                    { 205, 4 },
-                                    { 185, 3 },
-                                    { 200, 2 },
-                                    { 135, 1 },
-                                    { 210, 1 },
-                                }.ToList(),
+                            frequencies_calculated.ToList(),
                             frequency_distribution
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<int, uint>
-                            {
-                                { 180, 9 },
-                                { 175, 8 },
-                                { 195, 6 },
-                                { 190, 5 },
-                                { 160, 5 },
-                                { 170, 5 },
-                                { 150, 4 },
-                                { 165, 4 },
-                                { 155, 3 },
-                                { 205, 4 },
-                                { 185, 3 },
-                                { 200, 2 },
-                                { 135, 1 },
-                                { 210, 1 },
-                            }.ToList(),
+                            frequencies_calculated.ToList(),
                             frequency_distribution.ToList()
                         );
             #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            new Dictionary<int, uint>
-                                {
-                                    { 180, 9 },
-                                    { 175, 8 },
-                                    { 195, 6 },
-                                    { 190, 5 },
-                                    { 160, 5 },
-                                    { 170, 5 },
-                                    { 150, 4 },
-                                    { 165, 4 },
-                                    { 155, 3 },
-                                    { 205, 4 },
-                                    { 185, 3 },
-                                    { 200, 2 },
-                                    { 135, 1 },
-                                    { 210, 1 },
-                                }.ToList(),
-                                frequency_distribution.ToList()
+                            frequencies_calculated.ToList(),
+                            frequency_distribution.ToList()
                         );
             #endif            
             //====================================================================================================
@@ -202,68 +172,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<int, uint>
-                                {
-                                    { 180, 9 },
-                                    { 175, 8 },
-                                    { 195, 6 },
-                                    { 190, 5 },
-                                    { 160, 5 },
-                                    { 170, 5 },
-                                    { 150, 4 },
-                                    { 165, 4 },
-                                    { 155, 3 },
-                                    { 205, 4 },
-                                    { 185, 3 },
-                                    { 200, 2 },
-                                    { 135, 1 },
-                                    { 210, 1 },
-                                }.ToList(),
+                            frequencies_calculated.ToList(),
                             frequency_distribution
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<int, uint>
-                            {
-                                { 180, 9 },
-                                { 175, 8 },
-                                { 195, 6 },
-                                { 190, 5 },
-                                { 160, 5 },
-                                { 170, 5 },
-                                { 150, 4 },
-                                { 165, 4 },
-                                { 155, 3 },
-                                { 205, 4 },
-                                { 185, 3 },
-                                { 200, 2 },
-                                { 135, 1 },
-                                { 210, 1 },
-                            }.ToList(),
+                            frequencies_calculated.ToList(),
                             frequency_distribution.ToList()
                         );
             #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            new Dictionary<int, uint>
-                                {
-                                    { 180, 9 },
-                                    { 175, 8 },
-                                    { 195, 6 },
-                                    { 190, 5 },
-                                    { 160, 5 },
-                                    { 170, 5 },
-                                    { 150, 4 },
-                                    { 165, 4 },
-                                    { 155, 3 },
-                                    { 205, 4 },
-                                    { 185, 3 },
-                                    { 200, 2 },
-                                    { 135, 1 },
-                                    { 210, 1 },
-                                }.ToList(),
-                                frequency_distribution.ToList()
+                            frequencies_calculated.ToList(),
+                            frequency_distribution.ToList()
                         );
             #endif
             //====================================================================================================
@@ -299,68 +221,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<int, uint>
-                                {
-                                    { 180, 9 },
-                                    { 175, 8 },
-                                    { 195, 6 },
-                                    { 190, 5 },
-                                    { 160, 5 },
-                                    { 170, 5 },
-                                    { 150, 4 },
-                                    { 165, 4 },
-                                    { 155, 3 },
-                                    { 205, 4 },
-                                    { 185, 3 },
-                                    { 200, 2 },
-                                    { 135, 1 },
-                                    { 210, 1 },
-                                }.ToList(),
+                            frequencies_calculated.ToList(),
                             frequency_distribution
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<int, uint>
-                            {
-                                { 180, 9 },
-                                { 175, 8 },
-                                { 195, 6 },
-                                { 190, 5 },
-                                { 160, 5 },
-                                { 170, 5 },
-                                { 150, 4 },
-                                { 165, 4 },
-                                { 155, 3 },
-                                { 205, 4 },
-                                { 185, 3 },
-                                { 200, 2 },
-                                { 135, 1 },
-                                { 210, 1 },
-                            }.ToList(),
+                            frequencies_calculated.ToList(),
                             frequency_distribution.ToList()
                         );
             #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            new Dictionary<int, uint>
-                                {
-                                    { 180, 9 },
-                                    { 175, 8 },
-                                    { 195, 6 },
-                                    { 190, 5 },
-                                    { 160, 5 },
-                                    { 170, 5 },
-                                    { 150, 4 },
-                                    { 165, 4 },
-                                    { 155, 3 },
-                                    { 205, 4 },
-                                    { 185, 3 },
-                                    { 200, 2 },
-                                    { 135, 1 },
-                                    { 210, 1 },
-                                }.ToList(),
-                                frequency_distribution.ToList()
+                            frequencies_calculated.ToList(),
+                            frequency_distribution.ToList()
                         );
             #endif
             //====================================================================================================
@@ -396,68 +270,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<int, uint>
-                                {
-                                    { 180, 9 },
-                                    { 175, 8 },
-                                    { 195, 6 },
-                                    { 190, 5 },
-                                    { 160, 5 },
-                                    { 170, 5 },
-                                    { 150, 4 },
-                                    { 165, 4 },
-                                    { 155, 3 },
-                                    { 205, 4 },
-                                    { 185, 3 },
-                                    { 200, 2 },
-                                    { 135, 1 },
-                                    { 210, 1 },
-                                }.ToList(),
+                            frequencies_calculated.ToList(),
                             frequency_distribution
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<int, uint>
-                            {
-                                { 180, 9 },
-                                { 175, 8 },
-                                { 195, 6 },
-                                { 190, 5 },
-                                { 160, 5 },
-                                { 170, 5 },
-                                { 150, 4 },
-                                { 165, 4 },
-                                { 155, 3 },
-                                { 205, 4 },
-                                { 185, 3 },
-                                { 200, 2 },
-                                { 135, 1 },
-                                { 210, 1 },
-                            }.ToList(),
+                            frequencies_calculated.ToList(),
                             frequency_distribution.ToList()
                         );
             #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            new Dictionary<int, uint>
-                                {
-                                    { 180, 9 },
-                                    { 175, 8 },
-                                    { 195, 6 },
-                                    { 190, 5 },
-                                    { 160, 5 },
-                                    { 170, 5 },
-                                    { 150, 4 },
-                                    { 165, 4 },
-                                    { 155, 3 },
-                                    { 205, 4 },
-                                    { 185, 3 },
-                                    { 200, 2 },
-                                    { 135, 1 },
-                                    { 210, 1 },
-                                }.ToList(),
-                                frequency_distribution.ToList()
+                            frequencies_calculated.ToList(),
+                            frequency_distribution.ToList()
                         );
             #endif
             //====================================================================================================
@@ -494,68 +320,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<int, uint>
-                                {
-                                    { 180, 9 },
-                                    { 175, 8 },
-                                    { 195, 6 },
-                                    { 190, 5 },
-                                    { 160, 5 },
-                                    { 170, 5 },
-                                    { 150, 4 },
-                                    { 165, 4 },
-                                    { 155, 3 },
-                                    { 205, 4 },
-                                    { 185, 3 },
-                                    { 200, 2 },
-                                    { 135, 1 },
-                                    { 210, 1 },
-                                }.ToList(),
+                            frequencies_calculated.ToList(),
                             frequency_distribution
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<int, uint>
-                            {
-                                { 180, 9 },
-                                { 175, 8 },
-                                { 195, 6 },
-                                { 190, 5 },
-                                { 160, 5 },
-                                { 170, 5 },
-                                { 150, 4 },
-                                { 165, 4 },
-                                { 155, 3 },
-                                { 205, 4 },
-                                { 185, 3 },
-                                { 200, 2 },
-                                { 135, 1 },
-                                { 210, 1 },
-                            }.ToList(),
+                            frequencies_calculated.ToList(),
                             frequency_distribution.ToList()
                         );
             #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            new Dictionary<int, uint>
-                                {
-                                    { 180, 9 },
-                                    { 175, 8 },
-                                    { 195, 6 },
-                                    { 190, 5 },
-                                    { 160, 5 },
-                                    { 170, 5 },
-                                    { 150, 4 },
-                                    { 165, 4 },
-                                    { 155, 3 },
-                                    { 205, 4 },
-                                    { 185, 3 },
-                                    { 200, 2 },
-                                    { 135, 1 },
-                                    { 210, 1 },
-                                }.ToList(),
-                                frequency_distribution.ToList()
+                            frequencies_calculated.ToList(),
+                            frequency_distribution.ToList()
                         );
             #endif
             //====================================================================================================
@@ -592,68 +370,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<int, uint>
-                                {
-                                    { 180, 9 },
-                                    { 175, 8 },
-                                    { 195, 6 },
-                                    { 190, 5 },
-                                    { 160, 5 },
-                                    { 170, 5 },
-                                    { 150, 4 },
-                                    { 165, 4 },
-                                    { 155, 3 },
-                                    { 205, 4 },
-                                    { 185, 3 },
-                                    { 200, 2 },
-                                    { 135, 1 },
-                                    { 210, 1 },
-                                }.ToList(),
+                            frequencies_calculated.ToList(),
                             frequency_distribution
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<int, uint>
-                            {
-                                { 180, 9 },
-                                { 175, 8 },
-                                { 195, 6 },
-                                { 190, 5 },
-                                { 160, 5 },
-                                { 170, 5 },
-                                { 150, 4 },
-                                { 165, 4 },
-                                { 155, 3 },
-                                { 205, 4 },
-                                { 185, 3 },
-                                { 200, 2 },
-                                { 135, 1 },
-                                { 210, 1 },
-                            }.ToList(),
+                            frequencies_calculated.ToList(),
                             frequency_distribution.ToList()
                         );
             #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            new Dictionary<int, uint>
-                                {
-                                    { 180, 9 },
-                                    { 175, 8 },
-                                    { 195, 6 },
-                                    { 190, 5 },
-                                    { 160, 5 },
-                                    { 170, 5 },
-                                    { 150, 4 },
-                                    { 165, 4 },
-                                    { 155, 3 },
-                                    { 205, 4 },
-                                    { 185, 3 },
-                                    { 200, 2 },
-                                    { 135, 1 },
-                                    { 210, 1 },
-                                }.ToList(),
-                                frequency_distribution.ToList()
+                            frequencies_calculated.ToList(),
+                            frequency_distribution.ToList()
                         );
             #endif
             //====================================================================================================
@@ -690,68 +420,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<int, uint>
-                                {
-                                    { 180, 9 },
-                                    { 175, 8 },
-                                    { 195, 6 },
-                                    { 190, 5 },
-                                    { 160, 5 },
-                                    { 170, 5 },
-                                    { 150, 4 },
-                                    { 165, 4 },
-                                    { 155, 3 },
-                                    { 205, 4 },
-                                    { 185, 3 },
-                                    { 200, 2 },
-                                    { 135, 1 },
-                                    { 210, 1 },
-                                }.ToList(),
+                            frequencies_calculated.ToList(),
                             frequency_distribution
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<int, uint>
-                            {
-                                { 180, 9 },
-                                { 175, 8 },
-                                { 195, 6 },
-                                { 190, 5 },
-                                { 160, 5 },
-                                { 170, 5 },
-                                { 150, 4 },
-                                { 165, 4 },
-                                { 155, 3 },
-                                { 205, 4 },
-                                { 185, 3 },
-                                { 200, 2 },
-                                { 135, 1 },
-                                { 210, 1 },
-                            }.ToList(),
+                            frequencies_calculated.ToList(),
                             frequency_distribution.ToList()
                         );
             #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            new Dictionary<int, uint>
-                                {
-                                    { 180, 9 },
-                                    { 175, 8 },
-                                    { 195, 6 },
-                                    { 190, 5 },
-                                    { 160, 5 },
-                                    { 170, 5 },
-                                    { 150, 4 },
-                                    { 165, 4 },
-                                    { 155, 3 },
-                                    { 205, 4 },
-                                    { 185, 3 },
-                                    { 200, 2 },
-                                    { 135, 1 },
-                                    { 210, 1 },
-                                }.ToList(),
-                                frequency_distribution.ToList()
+                            frequencies_calculated.ToList(),
+                            frequency_distribution.ToList()
                         );
             #endif
             //====================================================================================================
