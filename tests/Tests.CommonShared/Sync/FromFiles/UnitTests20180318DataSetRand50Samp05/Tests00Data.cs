@@ -76,7 +76,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
     public partial class UnitTests20180318DataSetRand50Samp05
-
     {
         static List<double> data01 = null;
 

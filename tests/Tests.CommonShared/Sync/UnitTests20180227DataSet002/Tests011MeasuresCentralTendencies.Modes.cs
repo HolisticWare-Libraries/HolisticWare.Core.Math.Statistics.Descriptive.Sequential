@@ -73,6 +73,12 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class UnitTests20180227DataSet002
     {
+        IEnumerable<int> modes_calculated = 
+            new List<int> 
+                { 
+                    24, 28, 29 
+                };
+
         [Benchmark]
         public List<int> Array_Modes()
         {
@@ -106,20 +112,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             #if NUNIT
             Assert.AreEqual
                         (
-                            new List<int> { 180 },
-                            modes
+                            modes_calculated.OrderBy(x => x).ToArray(),
+                            modes.OrderBy(x => x).ToArray()
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            new List<int> { 180 },
-                            modes
+                            modes_calculated.OrderBy(x => x).ToArray(),
+                            modes.OrderBy(x => x).ToArray()
                         );
             #elif MSTEST
             CollectionAssert.AreEqual
                         (
-                            new List<int> { 180 },
-                            modes
+                            modes_calculated.OrderBy(x => x).ToArray(),
+                            modes.OrderBy(x => x).ToArray()
                         );
             #endif
             //====================================================================================================
@@ -158,20 +164,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             #if NUNIT
             Assert.AreEqual
                         (
-                            new List<int> { 180 },
-                            modes
+                            modes_calculated.OrderBy(x => x).ToArray(),
+                            modes.OrderBy(x => x).ToArray()
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            new List<int> { 180 },
-                            modes
+                            modes_calculated.OrderBy(x => x).ToArray(),
+                            modes.OrderBy(x => x).ToArray()
                         );
             #elif MSTEST
             CollectionAssert.AreEqual
                         (
-                            new List<int> { 180 },
-                            modes
+                            modes_calculated.OrderBy(x => x).ToArray(),
+                            modes.OrderBy(x => x).ToArray()
                         );
             #endif
             //====================================================================================================
@@ -209,20 +215,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             #if NUNIT
             Assert.AreEqual
                         (
-                            new List<int> { 180 },
-                            modes
+                            modes_calculated.OrderBy(x => x).ToArray(),
+                            modes.OrderBy(x => x).ToArray()
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            new List<int> { 180 },
-                            modes
+                            modes_calculated.OrderBy(x => x).ToArray(),
+                            modes.OrderBy(x => x).ToArray()
                         );
             #elif MSTEST
             CollectionAssert.AreEqual
                         (
-                            new List<int> { 180 },
-                            modes
+                            modes_calculated.OrderBy(x => x).ToArray(),
+                            modes.OrderBy(x => x).ToArray()
                         );
             #endif
             //====================================================================================================
@@ -260,20 +266,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             #if NUNIT
             Assert.AreEqual
                         (
-                            new List<int> { 180 },
-                            modes
+                            modes_calculated.OrderBy(x => x).ToArray(),
+                            modes.OrderBy(x => x).ToArray()
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            new List<int> { 180 },
-                            modes
+                            modes_calculated.OrderBy(x => x).ToArray(),
+                            modes.OrderBy(x => x).ToArray()
                         );
             #elif MSTEST
             CollectionAssert.AreEqual
                         (
-                            new List<int> { 180 },
-                            modes
+                            modes_calculated.OrderBy(x => x).ToArray(),
+                            modes.OrderBy(x => x).ToArray()
                         );
             #endif
             //====================================================================================================
@@ -312,20 +318,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             #if NUNIT
             Assert.AreEqual
                         (
-                            new List<int> { 180 },
-                            modes
+                            modes_calculated.OrderBy(x => x).ToArray(),
+                            modes.OrderBy(x => x).ToArray()
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            new List<int> { 180 },
-                            modes
+                            modes_calculated.OrderBy(x => x).ToArray(),
+                            modes.OrderBy(x => x).ToArray()
                         );
             #elif MSTEST
             CollectionAssert.AreEqual
                         (
-                            new List<int> { 180 },
-                            modes
+                            modes_calculated.OrderBy(x => x).ToArray(),
+                            modes.OrderBy(x => x).ToArray()
                         );
             #endif
             //====================================================================================================
@@ -364,20 +370,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             #if NUNIT
             Assert.AreEqual
                         (
-                            new List<int> { 180 },
-                            modes
+                            modes_calculated.OrderBy(x => x).ToArray(),
+                            modes.OrderBy(x => x).ToArray()
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            new List<int> { 180 },
-                            modes
+                            modes_calculated.OrderBy(x => x).ToArray(),
+                            modes.OrderBy(x => x).ToArray()
                         );
             #elif MSTEST
             CollectionAssert.AreEqual
                         (
-                            new List<int> { 180 },
-                            modes
+                            modes_calculated.OrderBy(x => x).ToArray(),
+                            modes.OrderBy(x => x).ToArray()
                         );
             #endif
             //====================================================================================================
@@ -416,20 +422,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             #if NUNIT
             Assert.AreEqual
                         (
-                            new List<int> { 180 },
-                            modes
+                            modes_calculated.OrderBy(x => x).ToArray(),
+                            modes.OrderBy(x => x).ToArray()
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            new List<int> { 180 },
-                            modes
-                        );
+                            modes_calculated.OrderBy(x => x).ToArray(),
+                            modes.OrderBy(x => x).ToArray()
+                         );
             #elif MSTEST
             CollectionAssert.AreEqual
                         (
-                            new List<int> { 180 },
-                            modes
+                            modes_calculated.OrderBy(x => x).ToArray(),
+                            modes.OrderBy(x => x).ToArray()
                         );
             #endif
             //====================================================================================================

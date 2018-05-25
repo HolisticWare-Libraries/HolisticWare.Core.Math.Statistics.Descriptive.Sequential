@@ -75,12 +75,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     {
         static List<double> w1 = new List<double>()
         {
-            1, 2, 1, 2, 2, 3, 1, 1, 2, 1,
-            1, 2, 1, 2, 2, 3, 1, 1, 2, 2,
-            1, 2, 1, 2, 2, 3, 1, 1, 2, 1,
-            1, 1, 1, 2, 2, 3, 2, 1, 2, 1,
-            1, 2, 1, 2, 2, 1, 1, 1, 2, 2,
-            1, 1, 1, 2, 2, 3, 1, 2, 2, 1,
+            2, 4, 3, 5, 6, 7, 4, 4, 2, 1, 8, 9, 0, 5, 9, 8
         };
         static IEnumerable<double> w1_r = Enumerable.Reverse(w1);
 
@@ -116,11 +111,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(177.8646, mean, 0.0001);
+            Assert.AreEqual(28.97402, mean, 0.0001);
             #elif XUNIT
-            Assert.Equal(177.8646, mean, 4);
+            Assert.Equal(28.97402, mean, 4);
             #elif MSTEST
-            Assert.AreEqual(177.8646, mean, 0.0001);
+            Assert.AreEqual(28.97402, mean, 0.0001);
             #endif
             //====================================================================================================
 
@@ -156,11 +151,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(177.8646, mean, 0.0001);
+            Assert.AreEqual(28.97402, mean, 0.0001);
             #elif XUNIT
-            Assert.Equal(177.8646, mean, 4);
+            Assert.Equal(28.97402, mean, 4);
             #elif MSTEST
-            Assert.AreEqual(177.8646, mean, 0.0001);
+            Assert.AreEqual(28.97402, mean, 0.0001);
             #endif
             //====================================================================================================
 
@@ -195,11 +190,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(177.8646, mean, 0.0001);
+            Assert.AreEqual(28.97402, mean, 0.0001);
             #elif XUNIT
-            Assert.Equal(177.8646, mean, 4);
+            Assert.Equal(28.97402, mean, 4);
             #elif MSTEST
-            Assert.AreEqual(177.8646, mean, 0.0001);
+            Assert.AreEqual(28.97402, mean, 0.0001);
             #endif
             //====================================================================================================
 
@@ -234,11 +229,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(177.8646, mean, 0.0001);
+            Assert.AreEqual(28.97402, mean, 0.0001);
             #elif XUNIT
-            Assert.Equal(177.8646, mean, 4);
+            Assert.Equal(28.97402, mean, 4);
             #elif MSTEST
-            Assert.AreEqual(177.8646, mean, 0.0001);
+            Assert.AreEqual(28.97402, mean, 0.0001);
             #endif
             //====================================================================================================
 
@@ -274,11 +269,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(177.8646, mean, 0.0001);
+            Assert.AreEqual(28.97402, mean, 0.0001);
             #elif XUNIT
-            Assert.Equal(177.8646, mean, 4);
+            Assert.Equal(28.97402, mean, 4);
             #elif MSTEST
-            Assert.AreEqual(177.8646, mean, 0.0001);
+            Assert.AreEqual(28.97402, mean, 0.0001);
             #endif
             //====================================================================================================
 
@@ -314,11 +309,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(177.8646, mean, 0.0001);
+            Assert.AreEqual(28.97402, mean, 0.0001);
             #elif XUNIT
-            Assert.Equal(177.8646, mean, 4);
+            Assert.Equal(28.97402, mean, 4);
             #elif MSTEST
-            Assert.AreEqual(177.8646, mean, 0.0001);
+            Assert.AreEqual(28.97402, mean, 0.0001);
             #endif
             //====================================================================================================
 
@@ -354,11 +349,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(177.8646, mean, 0.0001);
+            Assert.AreEqual(28.97402, mean, 0.0001);
             #elif XUNIT
-            Assert.Equal(177.8646, mean, 4);
+            Assert.Equal(28.97402, mean, 4);
             #elif MSTEST
-            Assert.AreEqual(177.8646, mean, 0.0001);
+            Assert.AreEqual(28.97402, mean, 0.0001);
             #endif
             //====================================================================================================
 
@@ -399,11 +394,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(177.8646, mean, 0.0001);
+            Assert.AreEqual(28.97402, mean, 0.0001);
             #elif XUNIT
-            Assert.Equal(177.8646, mean, 4);
+            Assert.Equal(28.97402, mean, 4);
             #elif MSTEST
-            Assert.AreEqual(177.8646, mean, 0.0001);
+            Assert.AreEqual(28.97402, mean, 0.0001);
             #endif
             //====================================================================================================
 
@@ -435,11 +430,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(177.8646, mean, 0.0001);
+            Assert.AreEqual(28.97402, mean, 0.0001);
             #elif XUNIT
-            Assert.Equal(177.8646, mean, 4);
+            Assert.Equal(28.97402, mean, 4);
             #elif MSTEST
-            Assert.AreEqual(177.8646, mean, 0.0001);
+            Assert.AreEqual(28.97402, mean, 0.0001);
             #endif
             //====================================================================================================
 

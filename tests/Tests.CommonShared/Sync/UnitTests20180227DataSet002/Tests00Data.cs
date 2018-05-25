@@ -76,6 +76,7 @@ using Core.Math.Statistics.Descriptive.Sequential;
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
+    [ShortRunJob]
     public partial class UnitTests20180227DataSet002
     {
         Stopwatch sw = null;

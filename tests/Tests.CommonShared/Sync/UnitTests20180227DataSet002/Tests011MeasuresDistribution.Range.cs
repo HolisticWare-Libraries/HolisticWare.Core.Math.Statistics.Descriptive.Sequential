@@ -104,17 +104,17 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(135.0, range.Min, 0.00001);
-            Assert.AreEqual(210.0, range.Max, 0.00001);
-			Assert.AreEqual(75.0, range.Delta, 0.00001);
+            Assert.AreEqual(21.0, range.Min, 0.00001);
+            Assert.AreEqual(36.0, range.Max, 0.00001);
+			Assert.AreEqual(15.0, range.Delta, 0.00001);
             #elif XUNIT
-			Assert.Equal(135.0, range.Min, 5);
-            Assert.Equal(210.0, range.Max, 5);
-            Assert.Equal(75.0, range.Delta, 5);
+			Assert.Equal(21.0, range.Min, 5);
+            Assert.Equal(36.0, range.Max, 5);
+            Assert.Equal(15.0, range.Delta, 5);
             #elif MSTEST
-			Assert.AreEqual(135.0, range.Min, 0.00001);
-            Assert.AreEqual(210.0, range.Max, 0.00001);
-            Assert.AreEqual(75.0, range.Delta, 0.00001);
+			Assert.AreEqual(21.0, range.Min, 0.00001);
+            Assert.AreEqual(36.0, range.Max, 0.00001);
+            Assert.AreEqual(15.0, range.Delta, 0.00001);
             #endif
             //====================================================================================================
 
@@ -150,17 +150,17 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
 			#if NUNIT
-            Assert.AreEqual(135.0, range.Min, 0.00001);
-            Assert.AreEqual(210.0, range.Max, 0.00001);
-            Assert.AreEqual(75.0, range.Delta, 0.00001);
+            Assert.AreEqual(21.0, range.Min, 0.00001);
+            Assert.AreEqual(36.0, range.Max, 0.00001);
+            Assert.AreEqual(15.0, range.Delta, 0.00001);
             #elif XUNIT
-            Assert.Equal(135.0, range.Min, 5);
-            Assert.Equal(210.0, range.Max, 5);
-            Assert.Equal(75.0, range.Delta, 5);
+            Assert.Equal(21.0, range.Min, 5);
+            Assert.Equal(36.0, range.Max, 5);
+            Assert.Equal(15.0, range.Delta, 5);
             #elif MSTEST
-            Assert.AreEqual(135.0, range.Min, 0.00001);
-            Assert.AreEqual(210.0, range.Max, 0.00001);
-            Assert.AreEqual(75.0, range.Delta, 0.00001);
+            Assert.AreEqual(21.0, range.Min, 0.00001);
+            Assert.AreEqual(36.0, range.Max, 0.00001);
+            Assert.AreEqual(15.0, range.Delta, 0.00001);
             #endif
             //====================================================================================================
 
@@ -195,17 +195,17 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
 			#if NUNIT
-            Assert.AreEqual(135.0, range.Min, 0.00001);
-            Assert.AreEqual(210.0, range.Max, 0.00001);
-            Assert.AreEqual(75.0, range.Delta, 0.00001);
+            Assert.AreEqual(21.0, range.Min, 0.00001);
+            Assert.AreEqual(36.0, range.Max, 0.00001);
+            Assert.AreEqual(15.0, range.Delta, 0.00001);
             #elif XUNIT
-            Assert.Equal(135.0, range.Min, 5);
-            Assert.Equal(210.0, range.Max, 5);
-            Assert.Equal(75.0, range.Delta, 5);
+            Assert.Equal(21.0, range.Min, 5);
+            Assert.Equal(36.0, range.Max, 5);
+            Assert.Equal(15.0, range.Delta, 5);
             #elif MSTEST
-            Assert.AreEqual(135.0, range.Min, 0.00001);
-            Assert.AreEqual(210.0, range.Max, 0.00001);
-            Assert.AreEqual(75.0, range.Delta, 0.00001);
+            Assert.AreEqual(21.0, range.Min, 0.00001);
+            Assert.AreEqual(36.0, range.Max, 0.00001);
+            Assert.AreEqual(15.0, range.Delta, 0.00001);
             #endif
             //====================================================================================================
 
@@ -240,17 +240,17 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
 			#if NUNIT
-            Assert.AreEqual(135.0, range.Min, 0.00001);
-            Assert.AreEqual(210.0, range.Max, 0.00001);
-            Assert.AreEqual(75.0, range.Delta, 0.00001);
+            Assert.AreEqual(21.0, range.Min, 0.00001);
+            Assert.AreEqual(36.0, range.Max, 0.00001);
+            Assert.AreEqual(15.0, range.Delta, 0.00001);
             #elif XUNIT
-            Assert.Equal(135.0, range.Min, 5);
-            Assert.Equal(210.0, range.Max, 5);
-            Assert.Equal(75.0, range.Delta, 5);
+            Assert.Equal(21.0, range.Min, 5);
+            Assert.Equal(36.0, range.Max, 5);
+            Assert.Equal(15.0, range.Delta, 5);
             #elif MSTEST
-            Assert.AreEqual(135.0, range.Min, 0.00001);
-            Assert.AreEqual(210.0, range.Max, 0.00001);
-            Assert.AreEqual(75.0, range.Delta, 0.00001);
+            Assert.AreEqual(21.0, range.Min, 0.00001);
+            Assert.AreEqual(36.0, range.Max, 0.00001);
+            Assert.AreEqual(15.0, range.Delta, 0.00001);
             #endif
             //====================================================================================================
 
@@ -286,17 +286,17 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
 			#if NUNIT
-            Assert.AreEqual(135.0, range.Min, 0.00001);
-            Assert.AreEqual(210.0, range.Max, 0.00001);
-            Assert.AreEqual(75.0, range.Delta, 0.00001);
+            Assert.AreEqual(21.0, range.Min, 0.00001);
+            Assert.AreEqual(36.0, range.Max, 0.00001);
+            Assert.AreEqual(15.0, range.Delta, 0.00001);
             #elif XUNIT
-            Assert.Equal(135.0, range.Min, 5);
-            Assert.Equal(210.0, range.Max, 5);
-            Assert.Equal(75.0, range.Delta, 5);
+            Assert.Equal(21.0, range.Min, 5);
+            Assert.Equal(36.0, range.Max, 5);
+            Assert.Equal(15.0, range.Delta, 5);
             #elif MSTEST
-            Assert.AreEqual(135.0, range.Min, 0.00001);
-            Assert.AreEqual(210.0, range.Max, 0.00001);
-            Assert.AreEqual(75.0, range.Delta, 0.00001);
+            Assert.AreEqual(21.0, range.Min, 0.00001);
+            Assert.AreEqual(36.0, range.Max, 0.00001);
+            Assert.AreEqual(15.0, range.Delta, 0.00001);
             #endif
             //====================================================================================================
 
@@ -332,17 +332,17 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
 			#if NUNIT
-            Assert.AreEqual(135.0, range.Min, 0.00001);
-            Assert.AreEqual(210.0, range.Max, 0.00001);
-            Assert.AreEqual(75.0, range.Delta, 0.00001);
+            Assert.AreEqual(21.0, range.Min, 0.00001);
+            Assert.AreEqual(36.0, range.Max, 0.00001);
+            Assert.AreEqual(15.0, range.Delta, 0.00001);
             #elif XUNIT
-            Assert.Equal(135.0, range.Min, 5);
-            Assert.Equal(210.0, range.Max, 5);
-            Assert.Equal(75.0, range.Delta, 5);
+            Assert.Equal(21.0, range.Min, 5);
+            Assert.Equal(36.0, range.Max, 5);
+            Assert.Equal(15.0, range.Delta, 5);
             #elif MSTEST
-            Assert.AreEqual(135.0, range.Min, 0.00001);
-            Assert.AreEqual(210.0, range.Max, 0.00001);
-            Assert.AreEqual(75.0, range.Delta, 0.00001);
+            Assert.AreEqual(21.0, range.Min, 0.00001);
+            Assert.AreEqual(36.0, range.Max, 0.00001);
+            Assert.AreEqual(15.0, range.Delta, 0.00001);
             #endif
             //====================================================================================================
 
@@ -378,17 +378,17 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
 			#if NUNIT
-            Assert.AreEqual(135.0, range.Min, 0.00001);
-            Assert.AreEqual(210.0, range.Max, 0.00001);
-            Assert.AreEqual(75.0, range.Delta, 0.00001);
+            Assert.AreEqual(21.0, range.Min, 0.00001);
+            Assert.AreEqual(36.0, range.Max, 0.00001);
+            Assert.AreEqual(15.0, range.Delta, 0.00001);
             #elif XUNIT
-            Assert.Equal(135.0, range.Min, 5);
-            Assert.Equal(210.0, range.Max, 5);
-            Assert.Equal(75.0, range.Delta, 5);
+            Assert.Equal(21.0, range.Min, 5);
+            Assert.Equal(36.0, range.Max, 5);
+            Assert.Equal(15.0, range.Delta, 5);
             #elif MSTEST
-            Assert.AreEqual(135.0, range.Min, 0.00001);
-            Assert.AreEqual(210.0, range.Max, 0.00001);
-            Assert.AreEqual(75.0, range.Delta, 0.00001);
+            Assert.AreEqual(21.0, range.Min, 0.00001);
+            Assert.AreEqual(36.0, range.Max, 0.00001);
+            Assert.AreEqual(15.0, range.Delta, 0.00001);
             #endif
             //====================================================================================================
 
@@ -429,11 +429,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(135.0, range, 0.00001);
+            Assert.AreEqual(21.0, range, 0.00001);
             #elif XUNIT
-            Assert.Equal(135.0, range, 5);
+            Assert.Equal(21.0, range, 5);
             #elif MSTEST
-            Assert.AreEqual(135.0, range, 0.00001);
+            Assert.AreEqual(21.0, range, 0.00001);
             #endif
             //====================================================================================================
 
@@ -465,11 +465,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(135.0, range, 0.00001);
+            Assert.AreEqual(21.0, range, 0.00001);
             #elif XUNIT
-            Assert.Equal(135.0, range, 5);
+            Assert.Equal(21.0, range, 5);
             #elif MSTEST
-            Assert.AreEqual(135.0, range, 0.00001);
+            Assert.AreEqual(21.0, range, 0.00001);
             #endif
             //====================================================================================================
 

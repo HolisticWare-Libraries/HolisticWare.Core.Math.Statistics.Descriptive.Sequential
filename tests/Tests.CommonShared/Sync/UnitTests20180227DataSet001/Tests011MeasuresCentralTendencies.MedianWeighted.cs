@@ -80,7 +80,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         static int[] w2_r = Enumerable.Reverse(w2).ToArray();
 
         [Benchmark]
-        public double Array_MedianWeighted()
+        public (int Index, double Value) Array_MedianWeighted()
         {
             return data_array.MedianWeighted(w2.Select(i => (double)i));
         }
@@ -98,7 +98,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double mean = Array_MedianWeighted();
+            (int Index, double Value) mean = Array_MedianWeighted();
 
             sw.Stop();
             Console.WriteLine($"Array<double>.MedianWeighted()");
@@ -110,11 +110,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(5.0, mean, 0.01);
+            Assert.AreEqual(5.0, mean.Index, 0.01);
+            Assert.AreEqual(5.0, mean.Value, 0.01);
             #elif XUNIT
-            Assert.Equal(5.0, mean, 5);
+            Assert.Equal(5.0, mean.Index, 5);
+            Assert.Equal(5.0, mean.Value, 5);
             #elif MSTEST
-            Assert.AreEqual(5.0, mean, 0.01);
+            Assert.AreEqual(5.0, mean.Index, 0.01);
+            Assert.AreEqual(5.0, mean.Value, 0.01);
             #endif
             //====================================================================================================
 
@@ -122,7 +125,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double ArraySegment_MedianWeighted()
+        public (int Index, double Value) ArraySegment_MedianWeighted()
         {
             return data_array_segment.MedianWeighted(w2.Select(i => (double)i));
         }
@@ -139,7 +142,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double mean = ArraySegment_MedianWeighted();
+            (int Index, double Value) mean = ArraySegment_MedianWeighted();
 
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
@@ -150,11 +153,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(5.0, mean, 0.01);
+            Assert.AreEqual(5.0, mean.Index, 0.01);
+            Assert.AreEqual(5.0, mean.Value, 0.01);
             #elif XUNIT
-            Assert.Equal(5.0, mean, 5);
+            Assert.Equal(5.0, mean.Index, 5);
+            Assert.Equal(5.0, mean.Value, 5);
             #elif MSTEST
-            Assert.AreEqual(5.0, mean, 0.01);
+            Assert.AreEqual(5.0, mean.Index, 0.01);
+            Assert.AreEqual(5.0, mean.Value, 0.01);
             #endif
             //====================================================================================================
 
@@ -162,7 +168,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double List_MedianWeighted()
+        public (int Index, double Value) List_MedianWeighted()
         {
             return data_list.MedianWeighted(w2.Select(i => (double)i));
         }
@@ -179,7 +185,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double mean = List_MedianWeighted();
+            (int Index, double Value) mean = List_MedianWeighted();
 
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -189,11 +195,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(5.0, mean, 0.01);
+            Assert.AreEqual(5.0, mean.Index, 0.01);
+            Assert.AreEqual(5.0, mean.Value, 0.01);
             #elif XUNIT
-            Assert.Equal(5.0, mean, 5);
+            Assert.Equal(5.0, mean.Index, 5);
+            Assert.Equal(5.0, mean.Value, 5);
             #elif MSTEST
-            Assert.AreEqual(5.0, mean, 0.01);
+            Assert.AreEqual(5.0, mean.Index, 0.01);
+            Assert.AreEqual(5.0, mean.Value, 0.01);
             #endif
             //====================================================================================================
 
@@ -201,7 +210,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double Queue_MedianWeighted()
+        public (int Index, double Value) Queue_MedianWeighted()
         {
             return data_queue.MedianWeighted(w2.Select(i => (double)i));
         }
@@ -217,7 +226,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double mean = Queue_MedianWeighted();
+            (int Index, double Value) mean = Queue_MedianWeighted();
 
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
@@ -228,11 +237,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(5.0, mean, 0.01);
+            Assert.AreEqual(5.0, mean.Index, 0.01);
+            Assert.AreEqual(5.0, mean.Value, 0.01);
             #elif XUNIT
-            Assert.Equal(5.0, mean, 5);
+            Assert.Equal(5.0, mean.Index, 5);
+            Assert.Equal(5.0, mean.Value, 5);
             #elif MSTEST
-            Assert.AreEqual(5.0, mean, 0.01);
+            Assert.AreEqual(5.0, mean.Index, 0.01);
+            Assert.AreEqual(5.0, mean.Value, 0.01);
             #endif
             //====================================================================================================
 
@@ -240,7 +252,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double Stack_MedianWeighted()
+        public (int Index, double Value) Stack_MedianWeighted()
         {
             return data_stack.MedianWeighted(w2_r.Select(i => (double)i));
         }
@@ -257,7 +269,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double mean = Stack_MedianWeighted();
+            (int Index, double Value) mean = Stack_MedianWeighted();
 
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
@@ -268,11 +280,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(5.0, mean, 0.01);
+            Assert.AreEqual(5.0, mean.Index, 0.01);
+            Assert.AreEqual(5.0, mean.Value, 0.01);
             #elif XUNIT
-            Assert.Equal(5.0, mean, 5);
+            Assert.Equal(5.0, mean.Index, 5);
+            Assert.Equal(5.0, mean.Value, 5);
             #elif MSTEST
-            Assert.AreEqual(5.0, mean, 0.01);
+            Assert.AreEqual(5.0, mean.Index, 0.01);
+            Assert.AreEqual(5.0, mean.Value, 0.01);
             #endif
             //====================================================================================================
 
@@ -280,7 +295,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double LinkedList_MedianWeighted()
+        public (int Index, double Value) LinkedList_MedianWeighted()
         {
             return data_linked_list.MedianWeighted(w2.Select(i => (double)i));
         }
@@ -297,7 +312,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double mean = LinkedList_MedianWeighted();
+            (int Index, double Value) mean = LinkedList_MedianWeighted();
 
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
@@ -308,11 +323,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(5.0, mean, 0.01);
+            Assert.AreEqual(5.0, mean.Index, 0.01);
+            Assert.AreEqual(5.0, mean.Value, 0.01);
             #elif XUNIT
-            Assert.Equal(5.0, mean, 5);
+            Assert.Equal(5.0, mean.Index, 5);
+            Assert.Equal(5.0, mean.Value, 5);
             #elif MSTEST
-            Assert.AreEqual(5.0, mean, 0.01);
+            Assert.AreEqual(5.0, mean.Index, 0.01);
+            Assert.AreEqual(5.0, mean.Value, 0.01);
             #endif
             //====================================================================================================
 
@@ -320,7 +338,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double ObservableCollection_MedianWeighted()
+        public (int Index, double Value) ObservableCollection_MedianWeighted()
         {
             return data_observable_collection.MedianWeighted(w2.Select(i => (double)i));
         }
@@ -337,7 +355,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double mean = ObservableCollection_MedianWeighted();
+            (int Index, double Value) mean = ObservableCollection_MedianWeighted();
 
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
@@ -348,11 +366,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(5.0, mean, 0.01);
+            Assert.AreEqual(5.0, mean.Index, 0.01);
+            Assert.AreEqual(5.0, mean.Value, 0.01);
             #elif XUNIT
-            Assert.Equal(5.0, mean, 5);
+            Assert.Equal(5.0, mean.Index, 5);
+            Assert.Equal(5.0, mean.Value, 5);
             #elif MSTEST
-            Assert.AreEqual(5.0, mean, 0.01);
+            Assert.AreEqual(5.0, mean.Index, 0.01);
+            Assert.AreEqual(5.0, mean.Value, 0.01);
             #endif
             //====================================================================================================
 

@@ -94,11 +94,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            (int Index, double Value) mean = Array_MedianWeighted();
+            (int Index, double Value) median = Array_MedianWeighted();
 
             sw.Stop();
             Console.WriteLine($"Array<double>.MedianWeighted()");
-            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          median               = {median}");
             Console.WriteLine($"          size               = {data_array.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -106,14 +106,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(5.0, mean.Index, 0.01);
-            Assert.AreEqual(5.0, mean.Value, 0.01);
+            Assert.AreEqual(3, median.Index);
+            Assert.AreEqual(4.0, median.Value, 0.01);
             #elif XUNIT
-            Assert.Equal(5.0, mean.Index, 5);
-            Assert.Equal(5.0, mean.Value, 5);
+            Assert.Equal(3, median.Index);
+            Assert.Equal(4.0, median.Value, 2);
             #elif MSTEST
-            Assert.AreEqual(5.0, mean.Index, 0.01);
-            Assert.AreEqual(5.0, mean.Value, 0.01);
+            Assert.AreEqual(3, median.Index);
+            Assert.AreEqual(4.0, median.Value, 0.01);
             #endif
             //====================================================================================================
 
@@ -138,10 +138,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            (int Index, double Value) mean = ArraySegment_MedianWeighted();
+            (int Index, double Value) median = ArraySegment_MedianWeighted();
 
             sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          median               = {median}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -149,14 +149,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(5.0, mean.Index, 0.01);
-            Assert.AreEqual(5.0, mean.Value, 0.01);
+            Assert.AreEqual(3, median.Index);
+            Assert.AreEqual(4.0, median.Value, 0.01);
             #elif XUNIT
-            Assert.Equal(5.0, mean.Index, 5);
-            Assert.Equal(5.0, mean.Value, 5);
+            Assert.Equal(3, median.Index);
+            Assert.Equal(4.0, median.Value, 2);
             #elif MSTEST
-            Assert.AreEqual(5.0, mean.Index, 0.01);
-            Assert.AreEqual(5.0, mean.Value, 0.01);
+            Assert.AreEqual(3, median.Index);
+            Assert.AreEqual(4.0, median.Value, 0.01);
             #endif
             //====================================================================================================
 
@@ -181,9 +181,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            (int Index, double Value) mean = List_MedianWeighted();
+            (int Index, double Value) median = List_MedianWeighted();
 
-            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          median               = {median}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -191,14 +191,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(5.0, mean.Index, 0.01);
-            Assert.AreEqual(5.0, mean.Value, 0.01);
+            Assert.AreEqual(3, median.Index);
+            Assert.AreEqual(4.0, median.Value, 0.01);
             #elif XUNIT
-            Assert.Equal(5.0, mean.Index, 5);
-            Assert.Equal(5.0, mean.Value, 5);
+            Assert.Equal(3, median.Index);
+            Assert.Equal(4.0, median.Value, 2);
             #elif MSTEST
-            Assert.AreEqual(5.0, mean.Index, 0.01);
-            Assert.AreEqual(5.0, mean.Value, 0.01);
+            Assert.AreEqual(3, median.Index);
+            Assert.AreEqual(4.0, median.Value, 0.01);
             #endif
             //====================================================================================================
 
@@ -222,10 +222,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            (int Index, double Value) mean = Queue_MedianWeighted();
+            (int Index, double Value) median = Queue_MedianWeighted();
 
             sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          median               = {median}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -233,14 +233,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(5.0, mean.Index, 0.01);
-            Assert.AreEqual(5.0, mean.Value, 0.01);
+            Assert.AreEqual(3, median.Index);
+            Assert.AreEqual(4.0, median.Value, 0.01);
             #elif XUNIT
-            Assert.Equal(5.0, mean.Index, 5);
-            Assert.Equal(5.0, mean.Value, 5);
+            Assert.Equal(3, median.Index);
+            Assert.Equal(4.0, median.Value, 2);
             #elif MSTEST
-            Assert.AreEqual(5.0, mean.Index, 0.01);
-            Assert.AreEqual(5.0, mean.Value, 0.01);
+            Assert.AreEqual(3, median.Index);
+            Assert.AreEqual(4.0, median.Value, 0.01);
             #endif
             //====================================================================================================
 
@@ -250,7 +250,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
         [Benchmark]
         public (int Index, double Value) Stack_MedianWeighted()
         {
-            return data_stack.MedianWeighted(w2_r.Select(i => (double)i));
+            return data_stack.MedianWeighted(w2_r);
         }
 
         [Test]
@@ -265,10 +265,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            (int Index, double Value) mean = Stack_MedianWeighted();
+            (int Index, double Value) median = Stack_MedianWeighted();
 
             sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          median               = {median}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -276,14 +276,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(5.0, mean.Index, 0.01);
-            Assert.AreEqual(5.0, mean.Value, 0.01);
+            Assert.AreEqual((data_stack.Count - 1) - 3, median.Index);
+            Assert.AreEqual(4.0, median.Value, 0.01);
             #elif XUNIT
-            Assert.Equal(5.0, mean.Index, 5);
-            Assert.Equal(5.0, mean.Value, 5);
+            Assert.Equal((data_stack.Count - 1) - 3, median.Index);
+            Assert.Equal(4.0, median.Value, 2);
             #elif MSTEST
-            Assert.AreEqual(5.0, mean.Index, 0.01);
-            Assert.AreEqual(5.0, mean.Value, 0.01);
+            Assert.AreEqual((data_stack.Count - 1) - 3, median.Index);
+            Assert.AreEqual(4.0, median.Value, 0.01);
             #endif
             //====================================================================================================
 
@@ -308,10 +308,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            (int Index, double Value) mean = LinkedList_MedianWeighted();
+            (int Index, double Value) median = LinkedList_MedianWeighted();
 
             sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          median               = {median}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -319,14 +319,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(5.0, mean.Index, 0.01);
-            Assert.AreEqual(5.0, mean.Value, 0.01);
+            Assert.AreEqual(3, median.Index);
+            Assert.AreEqual(4.0, median.Value, 0.01);
             #elif XUNIT
-            Assert.Equal(5.0, mean.Index, 5);
-            Assert.Equal(5.0, mean.Value, 5);
+            Assert.Equal(3, median.Index);
+            Assert.Equal(4.0, median.Value, 2);
             #elif MSTEST
-            Assert.AreEqual(5.0, mean.Index, 0.01);
-            Assert.AreEqual(5.0, mean.Value, 0.01);
+            Assert.AreEqual(3, median.Index);
+            Assert.AreEqual(4.0, median.Value, 0.01);
             #endif
             //====================================================================================================
 
@@ -351,10 +351,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            (int Index, double Value) mean = ObservableCollection_MedianWeighted();
+            (int Index, double Value) median = ObservableCollection_MedianWeighted();
 
             sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          median               = {median}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -362,14 +362,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(5.0, mean.Index, 0.01);
-            Assert.AreEqual(5.0, mean.Value, 0.01);
+            Assert.AreEqual(3, median.Index);
+            Assert.AreEqual(4.0, median.Value, 0.01);
             #elif XUNIT
-            Assert.Equal(5.0, mean.Index, 5);
-            Assert.Equal(5.0, mean.Value, 5);
+            Assert.Equal(3, median.Index);
+            Assert.Equal(4.0, median.Value, 2);
             #elif MSTEST
-            Assert.AreEqual(5.0, mean.Index, 0.01);
-            Assert.AreEqual(5.0, mean.Value, 0.01);
+            Assert.AreEqual(3, median.Index);
+            Assert.AreEqual(4.0, median.Value, 0.01);
             #endif
             //====================================================================================================
 
@@ -400,9 +400,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
                             new Span<int>(data01);
                             //data01.AsSpan().Slice(start: 0)
                             ;
-            double mean = data.MedianWeighted(w2);
+            double median = data.MedianWeighted(w2);
             sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          median               = {median}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -410,11 +410,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(5.0, mean, 0.01);
+            Assert.AreEqual(5.0, median, 0.01);
             #elif XUNIT
-            Assert.Equal(5.0, mean, 5);
+            Assert.Equal(5.0, median, 5);
             #elif MSTEST
-            Assert.AreEqual(5.0, mean, 0.01);
+            Assert.AreEqual(5.0, median, 0.01);
             #endif
             //====================================================================================================
 
@@ -436,9 +436,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
                             new Memory<int>(data01);
                             //data01.AsSpan().Slice(start: 0)
                             ;
-            double mean = data.MedianWeighted(w2);
+            double median = data.MedianWeighted(w2);
             sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          median               = {median}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -446,11 +446,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(5.0, mean, 0.01);
+            Assert.AreEqual(5.0, median, 0.01);
             #elif XUNIT
-            Assert.Equal(5.0, mean, 5);
+            Assert.Equal(5.0, median, 5);
             #elif MSTEST
-            Assert.AreEqual(5.0, mean, 0.01);
+            Assert.AreEqual(5.0, median, 0.01);
             #endif
             //====================================================================================================
 

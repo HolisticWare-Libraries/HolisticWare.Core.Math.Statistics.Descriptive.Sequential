@@ -193,6 +193,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresCentralTendencies.MeanArithmeticGeneralizedWeighted_3.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresCentralTendencies.Moment_1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresCentralTendencies.Moment_2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia01\Tests00Data.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia01\Tests011MeasuresCentralTendencies.MedianWeighted.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Async\" />
@@ -220,6 +222,8 @@
     <Folder Include="$(MSBuildThisFileDirectory)Utilities\" />
     <Folder Include="$(MSBuildThisFileDirectory)Utilities\HolisticWare.UnitTests.Portability\" />
     <Folder Include="$(MSBuildThisFileDirectory)Utilities\HolisticWare.BenchmarkTests\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia01\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests02FrequenciesModes.cs" />
