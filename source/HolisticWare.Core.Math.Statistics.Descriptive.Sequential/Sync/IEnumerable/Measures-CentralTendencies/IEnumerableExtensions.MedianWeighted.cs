@@ -14,42 +14,78 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsMedianWeighted
     {
         //==============================================================================================================
-        public static int MedianWeighted
+        public static (int Index, double Value) MedianWeighted
                                     (
                                         this IEnumerable<int> x, 
                                         IEnumerable<double> weights
                                     )
         {
-            throw new NotImplementedException("Work in progress!");
+           
+            int n_x = x.Count();
+            int n_w = weights.ToArray().Count();
 
-            int n = x.Count();
-            int n_2 = weights.ToArray().Count();
-
-            if ( n != n_2)
+            if ( n_x != n_w)
             {
                 throw new InvalidOperationException("Number of elements must match");
             }
 
             double sum_weights = weights.Sum();
-            double sum_percentage_weights = 0.0;
-            double[] percentges_weight = new double[n];
+            IEnumerable<double> weights_normalized = null;
 
-            int index = -1;
-
-            for (int i = 0; i < n_2; i++)
+            if (System.Math.Abs(sum_weights - 1.0) >= double.Epsilon)
             {
-                double percentage_weight = weights.ElementAt(i) / sum_weights;
-                percentges_weight[i] = percentage_weight;
-                sum_percentage_weights += percentage_weight;
-
-                if (sum_percentage_weights >= 0.5)
+                if (sum_weights > 1.0)
                 {
-                    index = i;
-                    break;
+                    weights_normalized = weights.Normalize();
+                }
+                else
+                {
+                    weights_normalized = weights;
                 }
             }
+            else
+            {
+                weights_normalized = weights;    
+            }
 
-            return x.ElementAt(index);
+            bool advance_lower = true;
+            bool advance_upper = true;
+
+            double sum_lower = 0.0;
+            double sum_upper = 0.0;
+            int i_lower = 0;
+            int i_upper = n_w - 1;
+
+            while (advance_lower || advance_upper)
+            {
+                sum_lower += weights_normalized.ElementAt(i_lower);
+                sum_upper += weights_normalized.ElementAt(i_upper);
+
+                if (sum_lower + weights_normalized.ElementAt(i_lower + 1) < 0.5)
+                {
+                    i_lower++;
+                }
+                else
+                {
+                    advance_lower = false;
+                }
+                if(advance_upper == true && sum_upper + weights_normalized.ElementAt(i_upper - 1) < 0.5)
+                {
+                    i_upper--;
+                }
+                else
+                {
+                    advance_upper = false;
+                }
+
+            }
+
+            int index = -1;
+            int index_lower = i_lower;
+            int index_upper = i_upper;
+            double median = double.NaN;
+
+            return (Index: index, Value: median);
         }
         //==============================================================================================================
 

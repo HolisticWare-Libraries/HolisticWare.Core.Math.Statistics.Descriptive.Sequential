@@ -9,9 +9,6 @@
     <Import_RootNamespace>Core.Math.Statistics.Descriptive.Sequential</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\FStatistics.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\StudenttStatisticIndependent.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\WelchStatistics.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AlgorithmOptions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\IEnumerableExtensions.StatisticsDescriptive.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\StatisticsDescriptive.cs" />
@@ -153,6 +150,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-CentralTendencies\IEnumerableExtensions.MeanHarmonicWeighted.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-Dispersion\IEnumerableExtensions.MomentGeneralized.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-CentralTendencies\IEnumerableExtensions.MeanArithmeticGeneralizedWeighted.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Utilities\IEnumerableExtensions.Normalization.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Methods-Inferential\FStatistics.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Methods-Inferential\StudenttStatisticIndependent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Methods-Inferential\WelchStatistics.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)readme.md" />
@@ -196,5 +197,6 @@
     <Folder Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\GroupedData\" />
     <Folder Include="$(MSBuildThisFileDirectory)DataFlows\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Utilities\" />
   </ItemGroup>
 </Project>
