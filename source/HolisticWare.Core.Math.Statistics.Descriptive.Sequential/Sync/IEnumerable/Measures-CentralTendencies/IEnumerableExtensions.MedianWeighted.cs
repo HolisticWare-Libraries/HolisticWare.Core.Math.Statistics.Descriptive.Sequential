@@ -83,7 +83,12 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             int index = -1;
             int index_lower = i_lower;
             int index_upper = i_upper;
-            double median = double.NaN;
+
+            if (i_lower + 1 == i_upper - 1)
+            {
+                index = i_lower + 1; 
+            }
+            double median = x.ElementAt(index);
 
             return (Index: index, Value: median);
         }
