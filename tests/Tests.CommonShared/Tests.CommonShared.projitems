@@ -194,7 +194,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresCentralTendencies.Moment_1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresCentralTendencies.Moment_2.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia01\Tests00Data.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia01\Tests011MeasuresCentralTendencies.MedianWeighted.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia01\Tests011MeasuresCentralTendencies.MedianWeighted.1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia02\Tests00Data.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia02\Tests011MeasuresCentralTendencies.MedianWeighted.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia01\Tests011MeasuresCentralTendencies.MedianWeighted.2.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Async\" />
@@ -224,6 +227,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)Utilities\HolisticWare.BenchmarkTests\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia01\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia02\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests02FrequenciesModes.cs" />
