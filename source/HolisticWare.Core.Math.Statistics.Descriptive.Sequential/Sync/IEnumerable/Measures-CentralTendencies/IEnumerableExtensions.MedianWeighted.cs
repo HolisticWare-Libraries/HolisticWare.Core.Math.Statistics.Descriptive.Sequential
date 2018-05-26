@@ -14,7 +14,15 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsMedianWeighted
     {
         //==============================================================================================================
-        public static (int Index, double Value) MedianWeighted
+        public static 
+                (
+                    int IndexLower, 
+                    int IndexUpper, 
+                    double ValueLower,
+                    double ValueUpper,
+                    double Median
+                ) 
+                            MedianWeighted
                                     (
                                         this IEnumerable<int> x, 
                                         IEnumerable<double> weights
@@ -61,7 +69,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 sum_lower += weights_normalized.ElementAt(i_lower);
                 sum_upper += weights_normalized.ElementAt(i_upper);
 
-                if (sum_lower + weights_normalized.ElementAt(i_lower + 1) < 0.5)
+                if (sum_lower + weights_normalized.ElementAt(i_lower + 1) <= 0.5)
                 {
                     i_lower++;
                 }
@@ -69,7 +77,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 {
                     advance_lower = false;
                 }
-                if(advance_upper == true && sum_upper + weights_normalized.ElementAt(i_upper - 1) < 0.5)
+                if(advance_upper == true && sum_upper + weights_normalized.ElementAt(i_upper - 1) <= 0.5)
                 {
                     i_upper--;
                 }
@@ -83,14 +91,42 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             int index = -1;
             int index_lower = i_lower;
             int index_upper = i_upper;
+            double median = double.NaN;
 
-            if (i_lower + 1 == i_upper - 1)
+            if (n_x % 2 != 0 && i_lower + 1 == i_upper - 1)
             {
-                index = i_lower + 1; 
+                index_lower = i_lower; 
+                index_upper = i_upper;
+                index = index_lower + 1;
+                //index = index_upper - 1;
+                median = x.ElementAt(index);
             }
-            double median = x.ElementAt(index);
+            else if(n_x % 2 == 0 && i_lower + 1 == i_upper)
+            {
+                median = (x.ElementAt(i_lower) + x.ElementAt(i_upper)) / 2.0;
+            }
+            else
+            {
+                throw new InvalidOperationException("MedianWeighted Exception");
+            }
 
-            return (Index: index, Value: median);
+            if (x.GetType().Name.Contains("Stack"))
+            {
+                index_lower = i_upper;
+                index_upper = i_lower;
+            }
+
+            double value_lower = x.ElementAt(index_lower);
+            double value_upper = x.ElementAt(index_upper);
+
+            return 
+                (
+                    IndexLower: index_lower, 
+                    IndexUpper: index_upper, 
+                    ValueLower: value_lower,
+                    ValueUpper: value_upper,
+                    Median: median
+                );
         }
         //==============================================================================================================
 
