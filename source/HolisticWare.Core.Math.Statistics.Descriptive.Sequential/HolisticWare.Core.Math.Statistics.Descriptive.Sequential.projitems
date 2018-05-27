@@ -154,6 +154,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Methods-Inferential\FStatistics.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Methods-Inferential\StudenttStatisticIndependent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Methods-Inferential\WelchStatistics.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-DistributionAsymmetry\IEnumerableExtensions.SkewnessType1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-DistributionAsymmetry\IEnumerableExtensions.SkewnessType2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-DistributionAsymmetry\IEnumerableExtensions.SkewnessType3.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-DistributionRoundness\IEnumerableExtensions.KurtosisType1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-DistributionRoundness\IEnumerableExtensions.KurtosisType3.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-DistributionRoundness\IEnumerableExtensions.KurtosisType2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)readme.md" />
