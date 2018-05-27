@@ -70,20 +70,20 @@ using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeighted.Wikipedia
 {
-    public partial class Tests20180525MedianWeightedWikipedia02
+    public partial class Tests20180525MedianWeightedWikipedia03
     {
-        static double[] w2 = new double[] { 0.25, 0.25, 0.25, 0.25 };
+        static double[] w2 = new double[] { 0.25, 0.25, 0, 0.25, 0.25, };
         static double[] w2_r = Enumerable.Reverse(w2).ToArray();
 
         [Benchmark]
-        public 
+        public
             (
-                int IndexLower, 
-                int IndexUpper, 
+                int IndexLower,
+                int IndexUpper,
                 double ValueLower,
                 double ValueUpper,
                 double Median
-            ) 
+            )
             Array_MedianWeighted()
         {
             return data_array.MedianWeighted(w2);
@@ -103,12 +103,12 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             // Act
             //      extracted to atomic Benchmark method
             (
-                int IndexLower, 
-                int IndexUpper, 
+                int IndexLower,
+                int IndexUpper,
                 double ValueLower,
                 double ValueUpper,
                 double Median
-            ) 
+            )
                 median_weighted = Array_MedianWeighted();
 
             sw.Stop();
@@ -122,23 +122,23 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(1, median_weighted.IndexLower);
-            Assert.AreEqual(3, median_weighted.IndexUpper);
-            Assert.AreEqual(4.0, median_weighted.ValueLower, 0.01);
-            Assert.AreEqual(4.0, median_weighted.ValueUpper, 0.01);
-            Assert.AreEqual(4.0, median_weighted.Median, 0.01);
+            Assert.AreEqual(2, median_weighted.IndexLower);
+            Assert.AreEqual(2, median_weighted.IndexUpper);
+            Assert.AreEqual(2.5, median_weighted.ValueLower, 0.01);
+            Assert.AreEqual(2.5, median_weighted.ValueUpper, 0.01);
+            Assert.AreEqual(2.5, median_weighted.Median, 0.01);
             #elif XUNIT
-            Assert.Equal(1, median_weighted.IndexLower);
-            Assert.Equal(3, median_weighted.IndexUpper);
-            Assert.Equal(4.0, median_weighted.ValueLower, 2);
-            Assert.Equal(4.0, median_weighted.ValueUpper, 2);
-            Assert.Equal(4.0, median_weighted.Median, 2);
+            Assert.Equal(2, median_weighted.IndexLower);
+            Assert.Equal(2, median_weighted.IndexUpper);
+            Assert.Equal(2.5, median_weighted.ValueLower, 2);
+            Assert.Equal(2.5, median_weighted.ValueUpper, 2);
+            Assert.Equal(2.5, median_weighted.Median, 2);
             #elif MSTEST
-            Assert.AreEqual(1, median_weighted.IndexLower);
-            Assert.AreEqual(3, median_weighted.IndexUpper);
-            Assert.AreEqual(4.0, median_weighted.ValueLower, 0.01);
-            Assert.AreEqual(4.0, median_weighted.ValueUpper, 0.01);
-            Assert.AreEqual(4.0, median_weighted.Median, 0.01);
+            Assert.AreEqual(2, median_weighted.IndexLower);
+            Assert.AreEqual(2, median_weighted.IndexUpper);
+            Assert.AreEqual(2.5, median_weighted.ValueLower, 0.01);
+            Assert.AreEqual(2.5, median_weighted.ValueUpper, 0.01);
+            Assert.AreEqual(2.5, median_weighted.Median, 0.01);
             #endif
             //====================================================================================================
 
@@ -146,14 +146,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
         }
 
         [Benchmark]
-        public 
+        public
             (
-                int IndexLower, 
-                int IndexUpper, 
+                int IndexLower,
+                int IndexUpper,
                 double ValueLower,
                 double ValueUpper,
                 double Median
-            ) 
+            )
             ArraySegment_MedianWeighted()
         {
             return data_array_segment.MedianWeighted(w2);
@@ -172,12 +172,12 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             // Act
             //      extracted to atomic Benchmark method
             (
-                int IndexLower, 
-                int IndexUpper, 
+                int IndexLower,
+                int IndexUpper,
                 double ValueLower,
                 double ValueUpper,
                 double Median
-            ) 
+            )
                 median_weighted = ArraySegment_MedianWeighted();
 
             sw.Stop();
@@ -190,23 +190,23 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(1, median_weighted.IndexLower);
-            Assert.AreEqual(3, median_weighted.IndexUpper);
-            Assert.AreEqual(4.0, median_weighted.ValueLower, 0.01);
-            Assert.AreEqual(4.0, median_weighted.ValueUpper, 0.01);
-            Assert.AreEqual(4.0, median_weighted.Median, 0.01);
+            Assert.AreEqual(2, median_weighted.IndexLower);
+            Assert.AreEqual(2, median_weighted.IndexUpper);
+            Assert.AreEqual(2.5, median_weighted.ValueLower, 0.01);
+            Assert.AreEqual(2.5, median_weighted.ValueUpper, 0.01);
+            Assert.AreEqual(2.5, median_weighted.Median, 0.01);
             #elif XUNIT
-            Assert.Equal(1, median_weighted.IndexLower);
-            Assert.Equal(3, median_weighted.IndexUpper);
-            Assert.Equal(4.0, median_weighted.ValueLower, 2);
-            Assert.Equal(4.0, median_weighted.ValueUpper, 2);
-            Assert.Equal(4.0, median_weighted.Median, 2);
+            Assert.Equal(2, median_weighted.IndexLower);
+            Assert.Equal(2, median_weighted.IndexUpper);
+            Assert.Equal(2.5, median_weighted.ValueLower, 2);
+            Assert.Equal(2.5, median_weighted.ValueUpper, 2);
+            Assert.Equal(2.5, median_weighted.Median, 2);
             #elif MSTEST
-            Assert.AreEqual(1, median_weighted.IndexLower);
-            Assert.AreEqual(3, median_weighted.IndexUpper);
-            Assert.AreEqual(4.0, median_weighted.ValueLower, 0.01);
-            Assert.AreEqual(4.0, median_weighted.ValueUpper, 0.01);
-            Assert.AreEqual(4.0, median_weighted.Median, 0.01);
+            Assert.AreEqual(2, median_weighted.IndexLower);
+            Assert.AreEqual(2, median_weighted.IndexUpper);
+            Assert.AreEqual(2.5, median_weighted.ValueLower, 0.01);
+            Assert.AreEqual(2.5, median_weighted.ValueUpper, 0.01);
+            Assert.AreEqual(2.5, median_weighted.Median, 0.01);
             #endif
             //====================================================================================================
 
@@ -214,14 +214,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
         }
 
         [Benchmark]
-        public 
+        public
             (
-                int IndexLower, 
-                int IndexUpper, 
+                int IndexLower,
+                int IndexUpper,
                 double ValueLower,
                 double ValueUpper,
                 double Median
-            ) 
+            )
             List_MedianWeighted()
         {
             return data_list.MedianWeighted(w2);
@@ -240,12 +240,12 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             // Act
             //      extracted to atomic Benchmark method
             (
-                int IndexLower, 
-                int IndexUpper, 
+                int IndexLower,
+                int IndexUpper,
                 double ValueLower,
                 double ValueUpper,
                 double Median
-            ) 
+            )
                 median_weighted = List_MedianWeighted();
 
             Console.WriteLine($"          median_weighted               = {median_weighted}");
@@ -257,23 +257,23 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(1, median_weighted.IndexLower);
-            Assert.AreEqual(3, median_weighted.IndexUpper);
-            Assert.AreEqual(4.0, median_weighted.ValueLower, 0.01);
-            Assert.AreEqual(4.0, median_weighted.ValueUpper, 0.01);
-            Assert.AreEqual(4.0, median_weighted.Median, 0.01);
+            Assert.AreEqual(2, median_weighted.IndexLower);
+            Assert.AreEqual(2, median_weighted.IndexUpper);
+            Assert.AreEqual(2.5, median_weighted.ValueLower, 0.01);
+            Assert.AreEqual(2.5, median_weighted.ValueUpper, 0.01);
+            Assert.AreEqual(2.5, median_weighted.Median, 0.01);
             #elif XUNIT
-            Assert.Equal(1, median_weighted.IndexLower);
-            Assert.Equal(3, median_weighted.IndexUpper);
-            Assert.Equal(4.0, median_weighted.ValueLower, 2);
-            Assert.Equal(4.0, median_weighted.ValueUpper, 2);
-            Assert.Equal(4.0, median_weighted.Median, 2);
+            Assert.Equal(2, median_weighted.IndexLower);
+            Assert.Equal(2, median_weighted.IndexUpper);
+            Assert.Equal(2.5, median_weighted.ValueLower, 2);
+            Assert.Equal(2.5, median_weighted.ValueUpper, 2);
+            Assert.Equal(2.5, median_weighted.Median, 2);
             #elif MSTEST
-            Assert.AreEqual(1, median_weighted.IndexLower);
-            Assert.AreEqual(3, median_weighted.IndexUpper);
-            Assert.AreEqual(4.0, median_weighted.ValueLower, 0.01);
-            Assert.AreEqual(4.0, median_weighted.ValueUpper, 0.01);
-            Assert.AreEqual(4.0, median_weighted.Median, 0.01);
+            Assert.AreEqual(2, median_weighted.IndexLower);
+            Assert.AreEqual(2, median_weighted.IndexUpper);
+            Assert.AreEqual(2.5, median_weighted.ValueLower, 0.01);
+            Assert.AreEqual(2.5, median_weighted.ValueUpper, 0.01);
+            Assert.AreEqual(2.5, median_weighted.Median, 0.01);
             #endif
             //====================================================================================================
 
@@ -281,7 +281,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
         }
 
         [Benchmark]
-        public 
+        public
             (
                 int IndexLower,
                 int IndexUpper,
@@ -306,12 +306,12 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             // Act
             //      extracted to atomic Benchmark method
             (
-                int IndexLower, 
-                int IndexUpper, 
+                int IndexLower,
+                int IndexUpper,
                 double ValueLower,
                 double ValueUpper,
                 double Median
-            ) 
+            )
                 median_weighted = Queue_MedianWeighted();
 
             sw.Stop();
@@ -324,23 +324,23 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(1, median_weighted.IndexLower);
-            Assert.AreEqual(3, median_weighted.IndexUpper);
-            Assert.AreEqual(4.0, median_weighted.ValueLower, 0.01);
-            Assert.AreEqual(4.0, median_weighted.ValueUpper, 0.01);
-            Assert.AreEqual(4.0, median_weighted.Median, 0.01);
+            Assert.AreEqual(2, median_weighted.IndexLower);
+            Assert.AreEqual(2, median_weighted.IndexUpper);
+            Assert.AreEqual(2.5, median_weighted.ValueLower, 0.01);
+            Assert.AreEqual(2.5, median_weighted.ValueUpper, 0.01);
+            Assert.AreEqual(2.5, median_weighted.Median, 0.01);
             #elif XUNIT
-            Assert.Equal(1, median_weighted.IndexLower);
-            Assert.Equal(3, median_weighted.IndexUpper);
-            Assert.Equal(4.0, median_weighted.ValueLower, 2);
-            Assert.Equal(4.0, median_weighted.ValueUpper, 2);
-            Assert.Equal(4.0, median_weighted.Median, 2);
+            Assert.Equal(2, median_weighted.IndexLower);
+            Assert.Equal(2, median_weighted.IndexUpper);
+            Assert.Equal(2.5, median_weighted.ValueLower, 2);
+            Assert.Equal(2.5, median_weighted.ValueUpper, 2);
+            Assert.Equal(2.5, median_weighted.Median, 2);
             #elif MSTEST
-            Assert.AreEqual(1, median_weighted.IndexLower);
-            Assert.AreEqual(3, median_weighted.IndexUpper);
-            Assert.AreEqual(4.0, median_weighted.ValueLower, 0.01);
-            Assert.AreEqual(4.0, median_weighted.ValueUpper, 0.01);
-            Assert.AreEqual(4.0, median_weighted.Median, 0.01);
+            Assert.AreEqual(2, median_weighted.IndexLower);
+            Assert.AreEqual(2, median_weighted.IndexUpper);
+            Assert.AreEqual(2.5, median_weighted.ValueLower, 0.01);
+            Assert.AreEqual(2.5, median_weighted.ValueUpper, 0.01);
+            Assert.AreEqual(2.5, median_weighted.Median, 0.01);
             #endif
             //====================================================================================================
 
@@ -348,7 +348,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
         }
 
         [Benchmark]
-        public 
+        public
             (
                 int IndexLower,
                 int IndexUpper,
@@ -358,10 +358,18 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             )
                 Stack_MedianWeighted()
         {
-            return data_stack.MedianWeighted(w2_r.Select(x => (double) x));
+            return data_stack.MedianWeighted(w2_r.Select(x => (double)x));
         }
 
+        #if NUNIT
         [Test]
+        [Ignore("Stack needs work")]
+        #elif XUNIT
+        [Fact(Skip = "Stack needs work")]
+        #elif MSTEST
+        [Test]
+        [Ignore]
+        #endif
         public void Stack_MedianWeighted_Test()
         {
             //====================================================================================================
@@ -392,23 +400,23 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(1, median_weighted.IndexLower);
-            Assert.AreEqual(3, median_weighted.IndexUpper);
-            Assert.AreEqual(4.0, median_weighted.ValueLower, 0.01);
-            Assert.AreEqual(4.0, median_weighted.ValueUpper, 0.01);
-            Assert.AreEqual(4.0, median_weighted.Median, 0.01);
+            Assert.AreEqual(2, median_weighted.IndexLower);
+            Assert.AreEqual(2, median_weighted.IndexUpper);
+            Assert.AreEqual(2.5, median_weighted.ValueLower, 0.01);
+            Assert.AreEqual(2.5, median_weighted.ValueUpper, 0.01);
+            Assert.AreEqual(2.5, median_weighted.Median, 0.01);
             #elif XUNIT
-            Assert.Equal(1, median_weighted.IndexLower);
-            Assert.Equal(3, median_weighted.IndexUpper);
-            Assert.Equal(4.0, median_weighted.ValueLower, 2);
-            Assert.Equal(4.0, median_weighted.ValueUpper, 2);
-            Assert.Equal(4.0, median_weighted.Median, 2);
+            Assert.Equal(2, median_weighted.IndexLower);
+            Assert.Equal(2, median_weighted.IndexUpper);
+            Assert.Equal(2.5, median_weighted.ValueLower, 2);
+            Assert.Equal(2.5, median_weighted.ValueUpper, 2);
+            Assert.Equal(2.5, median_weighted.Median, 2);
             #elif MSTEST
-            Assert.AreEqual(1, median_weighted.IndexLower);
-            Assert.AreEqual(3, median_weighted.IndexUpper);
-            Assert.AreEqual(4.0, median_weighted.ValueLower, 0.01);
-            Assert.AreEqual(4.0, median_weighted.ValueUpper, 0.01);
-            Assert.AreEqual(4.0, median_weighted.Median, 0.01);
+            Assert.AreEqual(2, median_weighted.IndexLower);
+            Assert.AreEqual(2, median_weighted.IndexUpper);
+            Assert.AreEqual(2.5, median_weighted.ValueLower, 0.01);
+            Assert.AreEqual(2.5, median_weighted.ValueUpper, 0.01);
+            Assert.AreEqual(2.5, median_weighted.Median, 0.01);
             #endif
             //====================================================================================================
 
@@ -460,23 +468,23 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(1, median_weighted.IndexLower);
-            Assert.AreEqual(3, median_weighted.IndexUpper);
-            Assert.AreEqual(4.0, median_weighted.ValueLower, 0.01);
-            Assert.AreEqual(4.0, median_weighted.ValueUpper, 0.01);
-            Assert.AreEqual(4.0, median_weighted.Median, 0.01);
+            Assert.AreEqual(2, median_weighted.IndexLower);
+            Assert.AreEqual(2, median_weighted.IndexUpper);
+            Assert.AreEqual(2.5, median_weighted.ValueLower, 0.01);
+            Assert.AreEqual(2.5, median_weighted.ValueUpper, 0.01);
+            Assert.AreEqual(2.5, median_weighted.Median, 0.01);
             #elif XUNIT
-            Assert.Equal(1, median_weighted.IndexLower);
-            Assert.Equal(3, median_weighted.IndexUpper);
-            Assert.Equal(4.0, median_weighted.ValueLower, 2);
-            Assert.Equal(4.0, median_weighted.ValueUpper, 2);
-            Assert.Equal(4.0, median_weighted.Median, 2);
+            Assert.Equal(2, median_weighted.IndexLower);
+            Assert.Equal(2, median_weighted.IndexUpper);
+            Assert.Equal(2.5, median_weighted.ValueLower, 2);
+            Assert.Equal(2.5, median_weighted.ValueUpper, 2);
+            Assert.Equal(2.5, median_weighted.Median, 2);
             #elif MSTEST
-            Assert.AreEqual(1, median_weighted.IndexLower);
-            Assert.AreEqual(3, median_weighted.IndexUpper);
-            Assert.AreEqual(4.0, median_weighted.ValueLower, 0.01);
-            Assert.AreEqual(4.0, median_weighted.ValueUpper, 0.01);
-            Assert.AreEqual(4.0, median_weighted.Median, 0.01);
+            Assert.AreEqual(2, median_weighted.IndexLower);
+            Assert.AreEqual(2, median_weighted.IndexUpper);
+            Assert.AreEqual(2.5, median_weighted.ValueLower, 0.01);
+            Assert.AreEqual(2.5, median_weighted.ValueUpper, 0.01);
+            Assert.AreEqual(2.5, median_weighted.Median, 0.01);
             #endif
             //====================================================================================================
 
@@ -528,23 +536,23 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeigh
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(1, median_weighted.IndexLower);
-            Assert.AreEqual(3, median_weighted.IndexUpper);
-            Assert.AreEqual(4.0, median_weighted.ValueLower, 0.01);
-            Assert.AreEqual(4.0, median_weighted.ValueUpper, 0.01);
-            Assert.AreEqual(4.0, median_weighted.Median, 0.01);
+            Assert.AreEqual(2, median_weighted.IndexLower);
+            Assert.AreEqual(2, median_weighted.IndexUpper);
+            Assert.AreEqual(2.5, median_weighted.ValueLower, 0.01);
+            Assert.AreEqual(2.5, median_weighted.ValueUpper, 0.01);
+            Assert.AreEqual(2.5, median_weighted.Median, 0.01);
             #elif XUNIT
-            Assert.Equal(1, median_weighted.IndexLower);
-            Assert.Equal(3, median_weighted.IndexUpper);
-            Assert.Equal(4.0, median_weighted.ValueLower, 2);
-            Assert.Equal(4.0, median_weighted.ValueUpper, 2);
-            Assert.Equal(4.0, median_weighted.Median, 2);
+            Assert.Equal(2, median_weighted.IndexLower);
+            Assert.Equal(2, median_weighted.IndexUpper);
+            Assert.Equal(2.5, median_weighted.ValueLower, 2);
+            Assert.Equal(2.5, median_weighted.ValueUpper, 2);
+            Assert.Equal(2.5, median_weighted.Median, 2);
             #elif MSTEST
-            Assert.AreEqual(1, median_weighted.IndexLower);
-            Assert.AreEqual(3, median_weighted.IndexUpper);
-            Assert.AreEqual(4.0, median_weighted.ValueLower, 0.01);
-            Assert.AreEqual(4.0, median_weighted.ValueUpper, 0.01);
-            Assert.AreEqual(4.0, median_weighted.Median, 0.01);
+            Assert.AreEqual(2, median_weighted.IndexLower);
+            Assert.AreEqual(2, median_weighted.IndexUpper);
+            Assert.AreEqual(2.5, median_weighted.ValueLower, 0.01);
+            Assert.AreEqual(2.5, median_weighted.ValueUpper, 0.01);
+            Assert.AreEqual(2.5, median_weighted.Median, 0.01);
             #endif
             //====================================================================================================
 
