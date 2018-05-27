@@ -7,154 +7,275 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsSkewness
     {
         //==============================================================================================================
+        /// <summary>
+        /// Skewnesses of the Type1 (unbiased under normality)
+        /// 
+        /// Used in older books.
+        /// </summary>
+        /// <returns>skewnwss of type1.</returns>
+        /// <param name="x">x data</param>
+        /// <see cref="https://en.wikipedia.org/wiki/Skewness"/>
+        /// <see cref="https://www.rdocumentation.org/packages/e1071/versions/1.6-8/topics/skewness"/>
+        /// <see cref="http://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm"/>
+        /// <see cref="https://cran.r-project.org/web/packages/e1071/e1071.pdf"/>
         public static double Skewness
                                     (
-                                        this IEnumerable<byte> x
+                                        this IEnumerable<byte> x,
+                                        int type = 3
                                     )
         {
-            double x_moment_3 = x.Moment(3);
-            double x_standard_deviation = x.StandardDeviationSample();
+            double s = double.NaN;
 
-            return
-                    x_moment_3
-                    /
-                    (x_standard_deviation * x_standard_deviation * x_standard_deviation)
-                    ;
+            switch (type)
+            {
+                case 1:
+                    s = x.SkewnessType1();
+                    break;
+                case 2:
+                    s = x.SkewnessType2();
+                    break;
+                case 3:
+                    s = x.SkewnessType3();
+                    break;
+                default:
+                    throw new InvalidOperationException($"Skewness type not supported = {type}");
+            }
+
+            return s;
         }
 
         public static double Skewness
                                     (
-                                        this IEnumerable<short> x
+                                        this IEnumerable<short> x,
+                                        int type = 3
                                     )
         {
-            double x_moment_3 = x.Moment(3);
-            double x_standard_deviation = x.StandardDeviationSample();
+            double s = double.NaN;
 
-            return
-                    x_moment_3
-                    /
-                    (x_standard_deviation * x_standard_deviation * x_standard_deviation)
-                    ;
+            switch (type)
+            {
+                case 1:
+                    s = x.SkewnessType1();
+                    break;
+                case 2:
+                    s = x.SkewnessType2();
+                    break;
+                case 3:
+                    s = x.SkewnessType3();
+                    break;
+                default:
+                    throw new InvalidOperationException($"Skewness type not supported = {type}");
+            }
+
+            return s;
         }
 
         public static double Skewness
                                     (
-                                        this IEnumerable<ushort> x
+                                        this IEnumerable<ushort> x,
+                                        int type = 3
                                     )
         {
-            double x_moment_3 = x.Moment(3);
-            double x_standard_deviation = x.StandardDeviationSample();
+            double s = double.NaN;
 
-            return
-                    x_moment_3
-                    /
-                    (x_standard_deviation * x_standard_deviation * x_standard_deviation)
-                    ;
+            switch (type)
+            {
+                case 1:
+                    s = x.SkewnessType1();
+                    break;
+                case 2:
+                    s = x.SkewnessType2();
+                    break;
+                case 3:
+                    s = x.SkewnessType3();
+                    break;
+                default:
+                    throw new InvalidOperationException($"Skewness type not supported = {type}");
+            }
+
+            return s;
         }
 
         public static double Skewness
                                     (
-                                        this IEnumerable<int> x
+                                        this IEnumerable<int> x,
+                                        int type = 3
                                     )
         {
-            double x_moment_3 = x.Moment(3);
-            double x_standard_deviation = x.StandardDeviationSample();
+            double s = double.NaN;
 
-            return
-                    x_moment_3
-                    /
-                    (x_standard_deviation * x_standard_deviation * x_standard_deviation)
-                    ;
+            switch (type)
+            {
+                case 1:
+                    s = x.SkewnessType1();
+                    break;
+                case 2:
+                    s = x.SkewnessType2();
+                    break;
+                case 3:
+                    s = x.SkewnessType3();
+                    break;
+                default:
+                    throw new InvalidOperationException($"Skewness type not supported = {type}");
+            }
+
+            return s;
         }
 
         public static double Skewness
                                     (
-                                        this IEnumerable<uint> x
+                                        this IEnumerable<uint> x,
+                                        int type = 3
                                     )
         {
-            double x_moment_3 = x.Moment(3);
-            double x_standard_deviation = x.StandardDeviationSample();
+            double s = double.NaN;
 
-            return
-                    x_moment_3
-                    /
-                    (x_standard_deviation * x_standard_deviation * x_standard_deviation)
-                    ;
+            switch (type)
+            {
+                case 1:
+                    s = x.SkewnessType1();
+                    break;
+                case 2:
+                    s = x.SkewnessType2();
+                    break;
+                case 3:
+                    s = x.SkewnessType3();
+                    break;
+                default:
+                    throw new InvalidOperationException($"Skewness type not supported = {type}");
+            }
+
+            return s;
         }
 
         public static double Skewness
                                     (
-                                        this IEnumerable<long> x
+                                        this IEnumerable<long> x,
+                                        int type = 3
                                     )
         {
-            double x_moment_3 = x.Moment(3);
-            double x_standard_deviation = x.StandardDeviationSample();
+            double s = double.NaN;
 
-            return
-                    x_moment_3
-                    /
-                    (x_standard_deviation * x_standard_deviation * x_standard_deviation)
-                    ;
+            switch (type)
+            {
+                case 1:
+                    s = x.SkewnessType1();
+                    break;
+                case 2:
+                    s = x.SkewnessType2();
+                    break;
+                case 3:
+                    s = x.SkewnessType3();
+                    break;
+                default:
+                    throw new InvalidOperationException($"Skewness type not supported = {type}");
+            }
+
+            return s;
         }
 
         public static double Skewness
                                     (
-                                        this IEnumerable<ulong> x
+                                        this IEnumerable<ulong> x,
+                                        int type = 3
                                     )
         {
-            double x_moment_3 = x.Moment(3);
-            double x_standard_deviation = x.StandardDeviationSample();
+            double s = double.NaN;
 
-            return
-                    x_moment_3
-                    /
-                    (x_standard_deviation * x_standard_deviation * x_standard_deviation)
-                    ;
+            switch (type)
+            {
+                case 1:
+                    s = x.SkewnessType1();
+                    break;
+                case 2:
+                    s = x.SkewnessType2();
+                    break;
+                case 3:
+                    s = x.SkewnessType3();
+                    break;
+                default:
+                    throw new InvalidOperationException($"Skewness type not supported = {type}");
+            }
+
+            return s;
         }
 
         public static double Skewness
                                     (
-                                        this IEnumerable<float> x
+                                        this IEnumerable<float> x,
+                                        int type = 3
                                     )
         {
-            double x_moment_3 = x.Moment(3);
-            double x_standard_deviation = x.StandardDeviationSample();
+            double s = double.NaN;
 
-            return
-                    x_moment_3
-                    /
-                    (x_standard_deviation * x_standard_deviation * x_standard_deviation)
-                    ;
+            switch (type)
+            {
+                case 1:
+                    s = x.SkewnessType1();
+                    break;
+                case 2:
+                    s = x.SkewnessType2();
+                    break;
+                case 3:
+                    s = x.SkewnessType3();
+                    break;
+                default:
+                    throw new InvalidOperationException($"Skewness type not supported = {type}");
+            }
+
+            return s;
         }
 
         public static double Skewness
                                     (
-                                        this IEnumerable<double> x
+                                        this IEnumerable<double> x,
+                                        int type = 3
                                     )
         {
-            double x_moment_3 = x.Moment(3);
-            double x_standard_deviation = x.StandardDeviationSample();
+            double s = double.NaN;
 
-            return
-                    x_moment_3
-                    /
-                    (x_standard_deviation * x_standard_deviation * x_standard_deviation)
-                    ;
+            switch (type)
+            {
+                case 1:
+                    s = x.SkewnessType1();
+                    break;
+                case 2:
+                    s = x.SkewnessType2();
+                    break;
+                case 3:
+                    s = x.SkewnessType3();
+                    break;
+                default:
+                    throw new InvalidOperationException($"Skewness type not supported = {type}");
+            }
+
+            return s;
         }
 
         public static decimal Skewness
                                     (
-                                        this IEnumerable<decimal> x
+                                        this IEnumerable<decimal> x,
+                                        int type = 3
                                     )
         {
-            decimal x_moment_3 = x.Moment(3);
-            decimal x_standard_deviation = x.StandardDeviationSample();
+            decimal? s = null;
 
-            return
-                    x_moment_3
-                    /
-                    (x_standard_deviation * x_standard_deviation * x_standard_deviation)
-                    ;
+            switch (type)
+            {
+                case 1:
+                    s = x.SkewnessType1();
+                    break;
+                case 2:
+                    s = x.SkewnessType2();
+                    break;
+                case 3:
+                    s = x.SkewnessType3();
+                    break;
+                default:
+                    throw new InvalidOperationException($"Skewness type not supported = {type}");
+            }
+
+            return s.Value;
         }
         //==============================================================================================================
     
