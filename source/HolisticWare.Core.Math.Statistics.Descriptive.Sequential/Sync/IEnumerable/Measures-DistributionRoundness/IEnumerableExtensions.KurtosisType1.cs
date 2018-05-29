@@ -14,6 +14,17 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsKurtosisType1
     {
         //==============================================================================================================
+        /// <summary>
+        /// KurtosisType1
+        /// Sharpness of the peak of a frequency-distribution curve.
+        /// Kurtosis of the Type1
+        /// 
+        /// Used in older books.
+        /// </summary>
+        /// <returns>Kurtosis of type1.</returns>
+        /// <param name="x">x data</param>
+        /// <see cref="https://www.rdocumentation.org/packages/SciencesPo/versions/1.4.1/topics/Kurtosis"/>
+        /// <see cref="https://docs.scipy.org/doc/scipy-0.7.x/reference/generated/scipy.stats.kurtosis.html"/>
         public static double KurtosisType1
                                     (
                                         this IEnumerable<byte> x
@@ -22,7 +33,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             double m2 = x.Moment(2);
             double m4 = x.Moment(4);
 
-            return m4 / (m2 * m2) -3.0;
+            return m4 / (m2 * m2) - 3.0;
         }
 
         public static double KurtosisType1

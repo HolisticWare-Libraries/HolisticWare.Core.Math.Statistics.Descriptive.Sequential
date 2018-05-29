@@ -12,7 +12,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         /// 
         /// Used in older books.
         /// </summary>
-        /// <returns>skewnwss of type1.</returns>
+        /// <returns>skewness of type1.</returns>
         /// <param name="x">x data</param>
         /// <see cref="https://en.wikipedia.org/wiki/Skewness"/>
         /// <see cref="https://www.rdocumentation.org/packages/e1071/versions/1.6-8/topics/skewness"/>
@@ -24,12 +24,14 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                     )
         {
             double x_moment_3 = x.Moment(3);
-            double x_standard_deviation = x.StandardDeviationSample();
+            double x_moment_2 = x.Moment(2);
+            //double x_standard_deviation = x.StandardDeviationSample();
 
             return
                     x_moment_3
                     /
-                    (x_standard_deviation * x_standard_deviation * x_standard_deviation)
+                    //(x_standard_deviation * x_standard_deviation * x_standard_deviation)
+                    System.Math.Pow(x_moment_2, 3.0 / 2.0)
                     ;
         }
 
@@ -39,12 +41,14 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                     )
         {
             double x_moment_3 = x.Moment(3);
-            double x_standard_deviation = x.StandardDeviationSample();
+            double x_moment_2 = x.Moment(2);
+            //double x_standard_deviation = x.StandardDeviationSample();
 
             return
                     x_moment_3
                     /
-                    (x_standard_deviation * x_standard_deviation * x_standard_deviation)
+                    //(x_standard_deviation * x_standard_deviation * x_standard_deviation)
+                    System.Math.Pow(x_moment_2, 3.0 / 2.0)
                     ;
         }
 
@@ -54,12 +58,14 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                     )
         {
             double x_moment_3 = x.Moment(3);
-            double x_standard_deviation = x.StandardDeviationSample();
+            double x_moment_2 = x.Moment(2);
+            //double x_standard_deviation = x.StandardDeviationSample();
 
             return
                     x_moment_3
                     /
-                    (x_standard_deviation * x_standard_deviation * x_standard_deviation)
+                    //(x_standard_deviation * x_standard_deviation * x_standard_deviation)
+                    System.Math.Pow(x_moment_2, 3.0 / 2.0)
                     ;
         }
 
@@ -69,12 +75,14 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                     )
         {
             double x_moment_3 = x.Moment(3);
-            double x_standard_deviation = x.StandardDeviationSample();
+            double x_moment_2 = x.Moment(2);
+            //double x_standard_deviation = x.StandardDeviationSample();
 
             return
                     x_moment_3
                     /
-                    (x_standard_deviation * x_standard_deviation * x_standard_deviation)
+                    //(x_standard_deviation * x_standard_deviation * x_standard_deviation)
+                    System.Math.Pow(x_moment_2, 3.0 / 2.0)
                     ;
         }
 
@@ -84,12 +92,14 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                     )
         {
             double x_moment_3 = x.Moment(3);
-            double x_standard_deviation = x.StandardDeviationSample();
+            double x_moment_2 = x.Moment(2);
+            //double x_standard_deviation = x.StandardDeviationSample();
 
             return
                     x_moment_3
                     /
-                    (x_standard_deviation * x_standard_deviation * x_standard_deviation)
+                    //(x_standard_deviation * x_standard_deviation * x_standard_deviation)
+                    System.Math.Pow(x_moment_2, 3.0 / 2.0)
                     ;
         }
 
@@ -99,12 +109,14 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                     )
         {
             double x_moment_3 = x.Moment(3);
-            double x_standard_deviation = x.StandardDeviationSample();
+            double x_moment_2 = x.Moment(2);
+            //double x_standard_deviation = x.StandardDeviationSample();
 
             return
                     x_moment_3
                     /
-                    (x_standard_deviation * x_standard_deviation * x_standard_deviation)
+                    //(x_standard_deviation * x_standard_deviation * x_standard_deviation)
+                    System.Math.Pow(x_moment_2, 3.0 / 2.0)
                     ;
         }
 
@@ -114,12 +126,14 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                     )
         {
             double x_moment_3 = x.Moment(3);
-            double x_standard_deviation = x.StandardDeviationSample();
+            double x_moment_2 = x.Moment(2);
+            //double x_standard_deviation = x.StandardDeviationSample();
 
             return
                     x_moment_3
                     /
-                    (x_standard_deviation * x_standard_deviation * x_standard_deviation)
+                    //(x_standard_deviation * x_standard_deviation * x_standard_deviation)
+                    System.Math.Pow(x_moment_2, 3.0 / 2.0)
                     ;
         }
 
@@ -129,12 +143,14 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                     )
         {
             double x_moment_3 = x.Moment(3);
-            double x_standard_deviation = x.StandardDeviationSample();
+            double x_moment_2 = x.Moment(2);
+            //double x_standard_deviation = x.StandardDeviationSample();
 
             return
                     x_moment_3
                     /
-                    (x_standard_deviation * x_standard_deviation * x_standard_deviation)
+                    //(x_standard_deviation * x_standard_deviation * x_standard_deviation)
+                    System.Math.Pow(x_moment_2, 3.0 / 2.0)
                     ;
         }
 
@@ -144,12 +160,14 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                     )
         {
             double x_moment_3 = x.Moment(3);
-            double x_standard_deviation = x.StandardDeviationSample();
+            double x_moment_2 = x.Moment(2);
+            //double x_standard_deviation = x.StandardDeviationSample();
 
             return
                     x_moment_3
                     /
-                    (x_standard_deviation * x_standard_deviation * x_standard_deviation)
+                    //(x_standard_deviation * x_standard_deviation * x_standard_deviation)
+                    System.Math.Pow(x_moment_2, 3.0 / 2.0)
                     ;
         }
 
@@ -159,12 +177,14 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                     )
         {
             decimal x_moment_3 = x.Moment(3);
-            decimal x_standard_deviation = x.StandardDeviationSample();
+            decimal x_moment_2 = x.Moment(2);
+            //decimal x_standard_deviation = x.StandardDeviationSample();
 
             return
                     x_moment_3
                     /
-                    (x_standard_deviation * x_standard_deviation * x_standard_deviation)
+                    //(x_standard_deviation * x_standard_deviation * x_standard_deviation)
+                    (decimal) System.Math.Pow((double) x_moment_2, 3.0 / 2.0)
                     ;
         }
         //==============================================================================================================

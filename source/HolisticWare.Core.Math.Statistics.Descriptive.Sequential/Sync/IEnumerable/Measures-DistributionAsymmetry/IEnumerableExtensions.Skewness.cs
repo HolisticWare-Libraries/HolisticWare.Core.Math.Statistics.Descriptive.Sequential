@@ -21,7 +21,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         public static double Skewness
                                     (
                                         this IEnumerable<byte> x,
-                                        int type = 3
+                                        int type = 1
                                     )
         {
             double s = double.NaN;
@@ -47,7 +47,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         public static double Skewness
                                     (
                                         this IEnumerable<short> x,
-                                        int type = 3
+                                        int type = 1
                                     )
         {
             double s = double.NaN;
@@ -73,7 +73,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         public static double Skewness
                                     (
                                         this IEnumerable<ushort> x,
-                                        int type = 3
+                                        int type = 1
                                     )
         {
             double s = double.NaN;
@@ -99,7 +99,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         public static double Skewness
                                     (
                                         this IEnumerable<int> x,
-                                        int type = 3
+                                        int type = 1
                                     )
         {
             double s = double.NaN;
@@ -125,7 +125,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         public static double Skewness
                                     (
                                         this IEnumerable<uint> x,
-                                        int type = 3
+                                        int type = 1
                                     )
         {
             double s = double.NaN;
@@ -151,7 +151,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         public static double Skewness
                                     (
                                         this IEnumerable<long> x,
-                                        int type = 3
+                                        int type = 1
                                     )
         {
             double s = double.NaN;
@@ -177,7 +177,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         public static double Skewness
                                     (
                                         this IEnumerable<ulong> x,
-                                        int type = 3
+                                        int type = 1
                                     )
         {
             double s = double.NaN;
@@ -203,7 +203,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         public static double Skewness
                                     (
                                         this IEnumerable<float> x,
-                                        int type = 3
+                                        int type = 1
                                     )
         {
             double s = double.NaN;
@@ -229,7 +229,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         public static double Skewness
                                     (
                                         this IEnumerable<double> x,
-                                        int type = 3
+                                        int type = 1
                                     )
         {
             double s = double.NaN;
@@ -255,7 +255,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         public static decimal Skewness
                                     (
                                         this IEnumerable<decimal> x,
-                                        int type = 3
+                                        int type = 1
                                     )
         {
             decimal? s = null;

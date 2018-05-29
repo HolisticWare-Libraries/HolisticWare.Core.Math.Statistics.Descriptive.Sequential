@@ -14,15 +14,26 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsKurtosisType3
     {
         //==============================================================================================================
+        /// <summary>
+        /// KurtosisType3
+        /// Sharpness of the peak of a frequency-distribution curve.
+        /// Kurtosis of the Type3
+        /// 
+        /// must have at least 4 observations in your vector to apply this function.
+        /// </summary>
+        /// <returns>Kurtosis of type3.</returns>
+        /// <param name="x">x data</param>
+        /// <see cref="https://www.rdocumentation.org/packages/SciencesPo/versions/1.4.1/topics/Kurtosis"/>
+        /// <see cref="https://docs.scipy.org/doc/scipy-0.7.x/reference/generated/scipy.stats.kurtosis.html"/>
         public static double KurtosisType3
                                     (
                                         this IEnumerable<byte> x
                                     )
         {
-            double m2 = x.Moment(2);
-            double m4 = x.Moment(4);
+            double g_2 = x.KurtosisType1();
+            int n = x.Count();
 
-            return m4 / (m2 * m2);
+            return (g_2 + 3.0) * (1.0 - 1.0 / n) * (1.0 - 1.0 / n) - 3.0;
         }
 
         public static double KurtosisType3
@@ -30,10 +41,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                         this IEnumerable<short> x
                                     )
         {
-            double m2 = x.Moment(2);
-            double m4 = x.Moment(4);
+            double g_2 = x.KurtosisType1();
+            int n = x.Count();
 
-            return m4 / (m2 * m2);
+            return (g_2 + 3.0) * (1.0 - 1.0 / n) * (1.0 - 1.0 / n) - 3.0;
         }
 
         public static double KurtosisType3
@@ -41,10 +52,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                         this IEnumerable<ushort> x
                                     )
         {
-            double m2 = x.Moment(2);
-            double m4 = x.Moment(4);
+            double g_2 = x.KurtosisType1();
+            int n = x.Count();
 
-            return m4 / (m2 * m2);
+            return (g_2 + 3.0) * (1.0 - 1.0 / n) * (1.0 - 1.0 / n) - 3.0;
         }
 
         public static double KurtosisType3
@@ -52,10 +63,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                         this IEnumerable<int> x
                                     )
         {
-            double m2 = x.Moment(2);
-            double m4 = x.Moment(4);
+            double g_2 = x.KurtosisType1();
+            int n = x.Count();
 
-            return m4 / (m2 * m2);
+            return (g_2 + 3.0) * (1.0 - 1.0 / n) * (1.0 - 1.0 / n) - 3.0;
         }
 
         public static double KurtosisType3
@@ -63,10 +74,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                         this IEnumerable<uint> x
                                     )
         {
-            double m2 = x.Moment(2);
-            double m4 = x.Moment(4);
+            double g_2 = x.KurtosisType1();
+            int n = x.Count();
 
-            return m4 / (m2 * m2);
+            return (g_2 + 3.0) * (1.0 - 1.0 / n) * (1.0 - 1.0 / n) - 3.0;
         }
 
         public static double KurtosisType3
@@ -74,10 +85,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                         this IEnumerable<long> x
                                     )
         {
-            double m2 = x.Moment(2);
-            double m4 = x.Moment(4);
+            double g_2 = x.KurtosisType1();
+            int n = x.Count();
 
-            return m4 / (m2 * m2);
+            return (g_2 + 3.0) * (1.0 - 1.0 / n) * (1.0 - 1.0 / n) - 3.0;
         }
 
         public static double KurtosisType3
@@ -85,10 +96,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                         this IEnumerable<ulong> x
                                     )
         {
-            double m2 = x.Moment(2);
-            double m4 = x.Moment(4);
+            double g_2 = x.KurtosisType1();
+            int n = x.Count();
 
-            return m4 / (m2 * m2);
+            return (g_2 + 3.0) * (1.0 - 1.0 / n) * (1.0 - 1.0 / n) - 3.0;
         }
 
         public static double KurtosisType3
@@ -96,10 +107,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                         this IEnumerable<float> x
                                     )
         {
-            double m2 = x.Moment(2);
-            double m4 = x.Moment(4);
+            double g_2 = x.KurtosisType1();
+            int n = x.Count();
 
-            return m4 / (m2 * m2);
+            return (g_2 + 3.0) * (1.0 - 1.0 / n) * (1.0 - 1.0 / n) - 3.0;
         }
 
         public static double KurtosisType3
@@ -107,10 +118,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                         this IEnumerable<double> x
                                     )
         {
-            double m2 = x.Moment(2);
-            double m4 = x.Moment(4);
+            double g_2 = x.KurtosisType1();
+            int n = x.Count();
 
-            return m4 / (m2 * m2);
+            return (g_2 + 3.0) * (1.0 - 1.0 / n) * (1.0 - 1.0 / n) - 3.0;
         }
 
         public static decimal KurtosisType3
@@ -118,10 +129,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                         this IEnumerable<decimal> x
                                     )
         {
-            decimal m2 = x.Moment(2);
-            decimal m4 = x.Moment(4);
+            decimal g_2 = x.KurtosisType1();
+            int n = x.Count();
 
-            return m4 / (m2 * m2);
+            return (g_2 + 3.0m) * (1.0m - 1.0m / n) * (1.0m - 1.0m / n) - 3.0m;
         }
         //==============================================================================================================
     }

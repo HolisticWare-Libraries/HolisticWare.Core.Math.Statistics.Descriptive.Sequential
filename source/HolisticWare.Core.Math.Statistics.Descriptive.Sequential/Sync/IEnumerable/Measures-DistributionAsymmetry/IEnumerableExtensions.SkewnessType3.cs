@@ -25,7 +25,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             int n = x.Count();
 
-            return x.SkewnessType1() * System.Math.Pow((n - 1) / n, 3 / 2);
+            return x.SkewnessType1() * System.Math.Pow((n - 1) / n, 3.0 / 2.0);
         }
 
         public static double SkewnessType3
@@ -35,7 +35,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             int n = x.Count();
 
-            return x.SkewnessType1() * System.Math.Pow((n - 1) / n, 3 / 2);
+            return x.SkewnessType1() * System.Math.Pow((n - 1) / n, 3.0 / 2.0);
         }
 
         public static double SkewnessType3
@@ -45,7 +45,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             int n = x.Count();
 
-            return x.SkewnessType1() * System.Math.Pow((n - 1) / n, 3 / 2);
+            return x.SkewnessType1() * System.Math.Pow((n - 1) / n, 3.0 / 2.0);
         }
 
         public static double SkewnessType3
@@ -55,7 +55,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             int n = x.Count();
 
-            return x.SkewnessType1() * System.Math.Pow((n - 1) / n, 3 / 2);
+            return x.SkewnessType1() * System.Math.Pow((n - 1) / n, 3.0 / 2.0);
         }
 
         public static double SkewnessType3
@@ -65,7 +65,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             int n = x.Count();
 
-            return x.SkewnessType1() * System.Math.Pow((n - 1) / n, 3 / 2);
+            return x.SkewnessType1() * System.Math.Pow((n - 1) / n, 3.0 / 2.0);
         }
 
         public static double SkewnessType3
@@ -75,7 +75,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             int n = x.Count();
 
-            return x.SkewnessType1() * System.Math.Pow((n - 1) / n, 3 / 2);
+            return x.SkewnessType1() * System.Math.Pow((n - 1) / n, 3.0 / 2.0);
         }
 
         public static double SkewnessType3
@@ -85,7 +85,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             int n = x.Count();
 
-            return x.SkewnessType1() * System.Math.Pow((n - 1) / n, 3 / 2);
+            return x.SkewnessType1() * System.Math.Pow((n - 1) / n, 3.0 / 2.0);
         }
 
         public static double SkewnessType3
@@ -95,7 +95,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             int n = x.Count();
 
-            return x.SkewnessType1() * System.Math.Pow((n - 1) / n, 3 / 2);
+            return x.SkewnessType1() * System.Math.Pow((n - 1) / n, 3.0 / 2.0);
         }
 
         public static double SkewnessType3
@@ -105,7 +105,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             int n = x.Count();
 
-            return x.SkewnessType1() * System.Math.Pow((n - 1) / n, 3 / 2);
+            return x.SkewnessType1() * System.Math.Pow((n - 1) / n, 3.0 / 2.0);
         }
 
         public static decimal SkewnessType3
@@ -115,7 +115,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             int n = x.Count();
 
-            return x.SkewnessType1() * (decimal) System.Math.Pow((n - 1) / n, 3 / 2);
+            return x.SkewnessType1() * (decimal) System.Math.Pow((n - 1) / n, 3.0 / 2.0);
         }
         //==============================================================================================================
     

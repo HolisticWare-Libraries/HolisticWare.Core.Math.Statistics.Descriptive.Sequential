@@ -14,10 +14,19 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsKurtosis
     {
         //==============================================================================================================
+        /// <summary>
+        /// Kurtosis of the Type1 (unbiased under normality)
+        /// 
+        /// Used in older books.
+        /// </summary>
+        /// <returns>Kurtosis of type1.</returns>
+        /// <param name="x">x data</param>
+        /// <see cref="https://www.rdocumentation.org/packages/SciencesPo/versions/1.4.1/topics/Kurtosis"/>
+        /// <see cref="https://docs.scipy.org/doc/scipy-0.7.x/reference/generated/scipy.stats.kurtosis.html"/>
         public static double Kurtosis
                                     (
                                         this IEnumerable<byte> x,
-                                        int type = 3
+                                        int type = 1
                                     )
         {
             double s = double.NaN;
@@ -43,7 +52,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         public static double Kurtosis
                                     (
                                         this IEnumerable<short> x,
-                                        int type = 3
+                                        int type = 1
                                     )
         {
             double s = double.NaN;
@@ -69,7 +78,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         public static double Kurtosis
                                     (
                                         this IEnumerable<ushort> x,
-                                        int type = 3
+                                        int type = 1
                                     )
         {
             double s = double.NaN;
@@ -95,7 +104,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         public static double Kurtosis
                                     (
                                         this IEnumerable<int> x,
-                                        int type = 3
+                                        int type = 1
                                     )
         {
             double s = double.NaN;
@@ -121,7 +130,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         public static double Kurtosis
                                     (
                                         this IEnumerable<uint> x,
-                                        int type = 3
+                                        int type = 1
                                     )
         {
             double s = double.NaN;
@@ -147,7 +156,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         public static double Kurtosis
                                     (
                                         this IEnumerable<long> x,
-                                        int type = 3
+                                        int type = 1
                                     )
         {
             double s = double.NaN;
@@ -173,7 +182,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         public static double Kurtosis
                                     (
                                         this IEnumerable<ulong> x,
-                                        int type = 3
+                                        int type = 1
                                     )
         {
             double s = double.NaN;
@@ -199,7 +208,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         public static double Kurtosis
                                     (
                                         this IEnumerable<float> x,
-                                        int type = 3
+                                        int type = 1
                                     )
         {
             double s = double.NaN;
@@ -225,7 +234,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         public static double Kurtosis
                                     (
                                         this IEnumerable<double> x,
-                                        int type = 3
+                                        int type = 1
                                     )
         {
             double s = double.NaN;
@@ -251,7 +260,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         public static decimal Kurtosis
                                     (
                                         this IEnumerable<decimal> x,
-                                        int type = 3
+                                        int type = 1
                                     )
         {
             decimal? s = null;
