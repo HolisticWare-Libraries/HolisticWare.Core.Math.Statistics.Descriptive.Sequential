@@ -70,7 +70,7 @@ using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
-    public partial class Tests20180119Dataset01
+    public partial class Tests20180119Dataset03
     {
         [Benchmark]
         public double Array_Skewness()
@@ -108,13 +108,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(0.0, skewness, 0.00001);
+            Assert.AreEqual(1.31, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #elif XUNIT
-            Assert.Equal(0.0, skewness, 5);
+            Assert.Equal(1.31, skewness, 5);
             Assert.Equal(skewness_check, skewness, 5);
             #elif MSTEST
-            Assert.AreEqual(0.0, skewness, 0.00001);
+            Assert.AreEqual(1.31, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #endif
             //====================================================================================================
@@ -156,13 +156,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(0.0, skewness, 0.00001);
+            Assert.AreEqual(1.31, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #elif XUNIT
-            Assert.Equal(0.0, skewness, 5);
+            Assert.Equal(1.31, skewness, 5);
             Assert.Equal(skewness_check, skewness, 5);
             #elif MSTEST
-            Assert.AreEqual(0.0, skewness, 0.00001);
+            Assert.AreEqual(1.31, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #endif
             //====================================================================================================
@@ -203,13 +203,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(0.0, skewness, 0.00001);
+            Assert.AreEqual(1.31, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #elif XUNIT
-            Assert.Equal(0.0, skewness, 5);
+            Assert.Equal(1.31, skewness, 5);
             Assert.Equal(skewness_check, skewness, 5);
             #elif MSTEST
-            Assert.AreEqual(0.0, skewness, 0.00001);
+            Assert.AreEqual(1.31, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #endif
             //====================================================================================================
@@ -250,13 +250,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(0.0, skewness, 0.00001);
+            Assert.AreEqual(1.31, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #elif XUNIT
-            Assert.Equal(0.0, skewness, 5);
+            Assert.Equal(1.31, skewness, 5);
             Assert.Equal(skewness_check, skewness, 5);
             #elif MSTEST
-            Assert.AreEqual(0.0, skewness, 0.00001);
+            Assert.AreEqual(1.31, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #endif
             //====================================================================================================
@@ -298,13 +298,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(0.0, skewness, 0.00001);
+            Assert.AreEqual(1.31, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #elif XUNIT
-            Assert.Equal(0.0, skewness, 5);
+            Assert.Equal(1.31, skewness, 5);
             Assert.Equal(skewness_check, skewness, 5);
             #elif MSTEST
-            Assert.AreEqual(0.0, skewness, 0.00001);
+            Assert.AreEqual(1.31, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #endif
             //====================================================================================================
@@ -346,13 +346,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(0.0, skewness, 0.00001);
+            Assert.AreEqual(1.31, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #elif XUNIT
-            Assert.Equal(0.0, skewness, 5);
+            Assert.Equal(1.31, skewness, 5);
             Assert.Equal(skewness_check, skewness, 5);
             #elif MSTEST
-            Assert.AreEqual(0.0, skewness, 0.00001);
+            Assert.AreEqual(1.31, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #endif
             //====================================================================================================
@@ -394,13 +394,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(0.0, skewness, 0.00001);
+            Assert.AreEqual(1.31, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #elif XUNIT
-            Assert.Equal(0.0, skewness, 5);
+            Assert.Equal(1.31, skewness, 5);
             Assert.Equal(skewness_check, skewness, 5);
             #elif MSTEST
-            Assert.AreEqual(0.0, skewness, 0.00001);
+            Assert.AreEqual(1.31, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #endif
             //====================================================================================================
@@ -442,11 +442,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(0.0, skewness, 0.00001);
+            Assert.AreEqual(1.31, skewness, 0.00001);
             #elif XUNIT
-            Assert.Equal(0.0, skewness, 5);
+            Assert.Equal(1.31, skewness, 5);
             #elif MSTEST
-            Assert.AreEqual(0.0, skewness, 0.00001);
+            Assert.AreEqual(1.31, skewness, 0.00001);
             #endif
             //====================================================================================================
 
@@ -478,11 +478,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(0.0, skewness, 0.00001);
+            Assert.AreEqual(1.31, skewness, 0.00001);
             #elif XUNIT
-            Assert.Equal(0.0, skewness, 5);
+            Assert.Equal(1.31, skewness, 5);
             #elif MSTEST
-            Assert.AreEqual(0.0, skewness, 0.00001);
+            Assert.AreEqual(1.31, skewness, 0.00001);
             #endif
             //====================================================================================================
 

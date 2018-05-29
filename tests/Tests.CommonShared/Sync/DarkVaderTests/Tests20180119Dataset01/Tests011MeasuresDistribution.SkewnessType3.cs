@@ -73,15 +73,15 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     public partial class Tests20180119Dataset01
     {
         [Benchmark]
-        public double Array_Skewness()
+        public double Array_SkewnessType3()
         {
-            return data_array.Skewness();
+            return data_array.SkewnessType3();
         }
 
         [Test]
-        public void Array_Skewness_Test()
+        public void Array_SkewnessType3_Test()
         {
-            Console.WriteLine($"Array_Skewness_Test");
+            Console.WriteLine($"Array_SkewnessType3_Test");
             //====================================================================================================
             //  Arrange
             //  reading data from files
@@ -91,20 +91,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double skewness = Array_Skewness();
+            double skewness = Array_SkewnessType3();
 
             sw.Stop();
-            Console.WriteLine($"Array<double>.Skewness()");
+            Console.WriteLine($"Array<double>.SkewnessType3()");
             Console.WriteLine($"          skewness           = {skewness}");
             Console.WriteLine($"          size               = {data_array.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
             double moment_3 = data_array.Moment(3);
-            double moment_2 = data_array.Moment(2);
+            double std_dev = data_array.StandardDeviationPopulation();
             int n = data_array.Count();
             double factor = 1.0;
-            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
+            double skewness_check = factor * moment_3 / System.Math.Pow(std_dev, 3);
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
@@ -123,13 +123,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double ArraySegment_Skewness()
+        public double ArraySegment_SkewnessType3()
         {
-            return data_array_segment.Skewness();
+            return data_array_segment.SkewnessType3();
         }
 
         [Test]
-        public void ArraySegment_Skewness_Test()
+        public void ArraySegment_SkewnessType3_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -140,7 +140,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double skewness = ArraySegment_Skewness();
+            double skewness = ArraySegment_SkewnessType3();
 
             sw.Stop();
             Console.WriteLine($"          skewness           = {skewness}");
@@ -149,10 +149,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
             double moment_3 = data_array_segment.Moment(3);
-            double moment_2 = data_array_segment.Moment(2);
+            double std_dev = data_array_segment.StandardDeviationPopulation();
             int n = data_array_segment.Count();
             double factor = 1.0;
-            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
+            double skewness_check = factor * moment_3 / System.Math.Pow(std_dev, 3);
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
@@ -171,13 +171,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double List_Skewness()
+        public double List_SkewnessType3()
         {
-            return data_list.Skewness();
+            return data_list.SkewnessType3();
         }
 
         [Test]
-        public void List_Skewness_Test()
+        public void List_SkewnessType3_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -188,7 +188,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double skewness = List_Skewness();
+            double skewness = List_SkewnessType3();
 
             Console.WriteLine($"          skewness           = {skewness}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -196,10 +196,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
             double moment_3 = data_list.Moment(3);
-            double moment_2 = data_list.Moment(2);
+            double std_dev = data_list.StandardDeviationPopulation();
             int n = data_list.Count();
             double factor = 1.0;
-            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
+            double skewness_check = factor * moment_3 / System.Math.Pow(std_dev, 3);
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
@@ -218,13 +218,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double Queue_Skewness()
+        public double Queue_SkewnessType3()
         {
-            return data_queue.Skewness();
+            return data_queue.SkewnessType3();
         }
 
         [Test]
-        public void Queue_Skewness_Test()
+        public void Queue_SkewnessType3_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -234,7 +234,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double skewness = Queue_Skewness();
+            double skewness = Queue_SkewnessType3();
 
             sw.Stop();
             Console.WriteLine($"          skewness           = {skewness}");
@@ -243,10 +243,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
             double moment_3 = data_queue.Moment(3);
-            double moment_2 = data_queue.Moment(2);
+            double std_dev = data_queue.StandardDeviationPopulation();
             int n = data_queue.Count();
             double factor = 1.0;
-            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
+            double skewness_check = factor * moment_3 / System.Math.Pow(std_dev, 3);
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
@@ -265,13 +265,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double Stack_Skewness()
+        public double Stack_SkewnessType3()
         {
-            return data_stack.Skewness();
+            return data_stack.SkewnessType3();
         }
 
         [Test]
-        public void Stack_Skewness_Test()
+        public void Stack_SkewnessType3_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -282,7 +282,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double skewness = Stack_Skewness();
+            double skewness = Stack_SkewnessType3();
 
             sw.Stop();
             Console.WriteLine($"          skewness           = {skewness}");
@@ -291,10 +291,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
             double moment_3 = data_stack.Moment(3);
-            double moment_2 = data_stack.Moment(2);
+            double std_dev = data_stack.StandardDeviationPopulation();
             int n = data_stack.Count();
             double factor = 1.0;
-            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
+            double skewness_check = factor * moment_3 / System.Math.Pow(std_dev, 3);
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
@@ -313,13 +313,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double LinkedList_Skewness()
+        public double LinkedList_SkewnessType3()
         {
-            return data_linked_list.Skewness();
+            return data_linked_list.SkewnessType3();
         }
 
         [Test]
-        public void LinkedList_Skewness_Test()
+        public void LinkedList_SkewnessType3_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -330,7 +330,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double skewness = LinkedList_Skewness();
+            double skewness = LinkedList_SkewnessType3();
 
             sw.Stop();
             Console.WriteLine($"          skewness           = {skewness}");
@@ -339,10 +339,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
             double moment_3 = data_linked_list.Moment(3);
-            double moment_2 = data_linked_list.Moment(2);
+            double std_dev = data_linked_list.StandardDeviationPopulation();
             int n = data_linked_list.Count();
             double factor = 1.0;
-            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
+            double skewness_check = factor * moment_3 / System.Math.Pow(std_dev, 3);
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
@@ -361,13 +361,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double ObservableCollection_Skewness()
+        public double ObservableCollection_SkewnessType3()
         {
-            return data_observable_collection.Skewness();
+            return data_observable_collection.SkewnessType3();
         }
 
         [Test]
-        public void ObservableCollection_Skewness_Test()
+        public void ObservableCollection_SkewnessType3_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -378,7 +378,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double skewness = ObservableCollection_Skewness();
+            double skewness = ObservableCollection_SkewnessType3();
 
             sw.Stop();
             Console.WriteLine($"          skewness           = {skewness}");
@@ -387,10 +387,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
             double moment_3 = data_observable_collection.Moment(3);
-            double moment_2 = data_observable_collection.Moment(2);
+            double std_dev = data_observable_collection.StandardDeviationPopulation();
             int n = data_observable_collection.Count();
             double factor = 1.0;
-            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
+            double skewness_check = factor * moment_3 / System.Math.Pow(std_dev, 3);
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
@@ -418,7 +418,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         */
         /*
         [Test]
-        public void Span_Skewness()
+        public void Span_SkewnessType3()
         {
             //====================================================================================================
             //  Arrange
@@ -432,7 +432,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                             new Span<double>(data01);
                             //data01.AsSpan().Slice(start: 0)
                             ;
-            double skewness = data.Skewness();
+            double skewness = data.SkewnessType3();
             sw.Stop();
             Console.WriteLine($"          skewness           = {skewness}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -454,7 +454,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Test]
-        public void Span_Skewness()
+        public void Span_SkewnessType3()
         {
             //====================================================================================================
             //  Arrange
@@ -468,7 +468,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                             new Memory<double>(data01);
                             //data01.AsSpan().Slice(start: 0)
                             ;
-            double skewness = data.Skewness();
+            double skewness = data.SkewnessType3();
             sw.Stop();
             Console.WriteLine($"          skewness           = {skewness}");
             Console.WriteLine($"          size               = {data.Count()}");

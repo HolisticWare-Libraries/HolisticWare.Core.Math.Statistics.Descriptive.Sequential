@@ -104,17 +104,17 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double moment_2 = data_array.Moment(2);
             int n = data_array.Count();
             double factor = 1.0;
-            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
+            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3.0 / 2.0);
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(1.31, skewness, 0.00001);
+            Assert.AreEqual(1.32555, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #elif XUNIT
-            Assert.Equal(1.31, skewness, 5);
+            Assert.Equal(1.32555, skewness, 5);
             Assert.Equal(skewness_check, skewness, 5);
             #elif MSTEST
-            Assert.AreEqual(1.31, skewness, 0.00001);
+            Assert.AreEqual(1.32555, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #endif
             //====================================================================================================
@@ -148,21 +148,21 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
-            double moment_3 = data_array.Moment(3);
-            double moment_2 = data_array.Moment(2);
-            int n = data_array.Count();
+            double moment_3 = data_array_segment.Moment(3);
+            double moment_2 = data_array_segment.Moment(2);
+            int n = data_array_segment.Count();
             double factor = 1.0;
-            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
+            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3.0 / 2.0);
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(1.31, skewness, 0.00001);
+            Assert.AreEqual(1.32555, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #elif XUNIT
-            Assert.Equal(1.31, skewness, 5);
+            Assert.Equal(1.32555, skewness, 5);
             Assert.Equal(skewness_check, skewness, 5);
             #elif MSTEST
-            Assert.AreEqual(1.31, skewness, 0.00001);
+            Assert.AreEqual(1.32555, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #endif
             //====================================================================================================
@@ -195,21 +195,21 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
-            double moment_3 = data_array.Moment(3);
-            double moment_2 = data_array.Moment(2);
-            int n = data_array.Count();
+            double moment_3 = data_list.Moment(3);
+            double moment_2 = data_list.Moment(2);
+            int n = data_list.Count();
             double factor = 1.0;
-            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
+            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3.0 / 2.0);
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(1.31, skewness, 0.00001);
+            Assert.AreEqual(1.32555, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #elif XUNIT
-            Assert.Equal(1.31, skewness, 5);
+            Assert.Equal(1.32555, skewness, 5);
             Assert.Equal(skewness_check, skewness, 5);
             #elif MSTEST
-            Assert.AreEqual(1.31, skewness, 0.00001);
+            Assert.AreEqual(1.32555, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #endif
             //====================================================================================================
@@ -242,21 +242,21 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
-            double moment_3 = data_array.Moment(3);
-            double moment_2 = data_array.Moment(2);
-            int n = data_array.Count();
+            double moment_3 = data_queue.Moment(3);
+            double moment_2 = data_queue.Moment(2);
+            int n = data_queue.Count();
             double factor = 1.0;
-            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
+            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3.0 / 2.0);
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(1.31, skewness, 0.00001);
+            Assert.AreEqual(1.32555, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #elif XUNIT
-            Assert.Equal(1.31, skewness, 5);
+            Assert.Equal(1.32555, skewness, 5);
             Assert.Equal(skewness_check, skewness, 5);
             #elif MSTEST
-            Assert.AreEqual(1.31, skewness, 0.00001);
+            Assert.AreEqual(1.32555, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #endif
             //====================================================================================================
@@ -290,21 +290,21 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
-            double moment_3 = data_array.Moment(3);
-            double moment_2 = data_array.Moment(2);
-            int n = data_array.Count();
+            double moment_3 = data_stack.Moment(3);
+            double moment_2 = data_stack.Moment(2);
+            int n = data_stack.Count();
             double factor = 1.0;
-            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
+            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3.0 / 2.0);
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(1.31, skewness, 0.00001);
+            Assert.AreEqual(1.32555, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #elif XUNIT
-            Assert.Equal(1.31, skewness, 5);
+            Assert.Equal(1.32555, skewness, 5);
             Assert.Equal(skewness_check, skewness, 5);
             #elif MSTEST
-            Assert.AreEqual(1.31, skewness, 0.00001);
+            Assert.AreEqual(1.32555, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #endif
             //====================================================================================================
@@ -338,21 +338,21 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
-            double moment_3 = data_array.Moment(3);
-            double moment_2 = data_array.Moment(2);
-            int n = data_array.Count();
+            double moment_3 = data_linked_list.Moment(3);
+            double moment_2 = data_linked_list.Moment(2);
+            int n = data_linked_list.Count();
             double factor = 1.0;
-            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
+            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3.0 / 2.0);
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(1.31, skewness, 0.00001);
+            Assert.AreEqual(1.32555, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #elif XUNIT
-            Assert.Equal(1.31, skewness, 5);
+            Assert.Equal(1.32555, skewness, 5);
             Assert.Equal(skewness_check, skewness, 5);
             #elif MSTEST
-            Assert.AreEqual(1.31, skewness, 0.00001);
+            Assert.AreEqual(1.32555, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #endif
             //====================================================================================================
@@ -386,21 +386,21 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
-            double moment_3 = data_array.Moment(3);
-            double moment_2 = data_array.Moment(2);
-            int n = data_array.Count();
+            double moment_3 = data_observable_collection.Moment(3);
+            double moment_2 = data_observable_collection.Moment(2);
+            int n = data_observable_collection.Count();
             double factor = 1.0;
-            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
+            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3.0 / 2.0);
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(1.31, skewness, 0.00001);
+            Assert.AreEqual(1.32555, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #elif XUNIT
-            Assert.Equal(1.31, skewness, 5);
+            Assert.Equal(1.32555, skewness, 5);
             Assert.Equal(skewness_check, skewness, 5);
             #elif MSTEST
-            Assert.AreEqual(1.31, skewness, 0.00001);
+            Assert.AreEqual(1.32555, skewness, 0.00001);
             Assert.AreEqual(skewness_check, skewness, 0.00001);
             #endif
             //====================================================================================================
@@ -442,11 +442,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(1.31, skewness, 0.00001);
+            Assert.AreEqual(1.32555, skewness, 0.00001);
             #elif XUNIT
-            Assert.Equal(1.31, skewness, 5);
+            Assert.Equal(1.32555, skewness, 5);
             #elif MSTEST
-            Assert.AreEqual(1.31, skewness, 0.00001);
+            Assert.AreEqual(1.32555, skewness, 0.00001);
             #endif
             //====================================================================================================
 
@@ -478,11 +478,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(1.31, skewness, 0.00001);
+            Assert.AreEqual(1.32555, skewness, 0.00001);
             #elif XUNIT
-            Assert.Equal(1.31, skewness, 5);
+            Assert.Equal(1.32555, skewness, 5);
             #elif MSTEST
-            Assert.AreEqual(1.31, skewness, 0.00001);
+            Assert.AreEqual(1.32555, skewness, 0.00001);
             #endif
             //====================================================================================================
 

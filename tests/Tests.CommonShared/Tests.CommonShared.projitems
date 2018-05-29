@@ -196,8 +196,35 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia01\Tests00Data.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia01\Tests011MeasuresCentralTendencies.MedianWeighted.1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia02\Tests00Data.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia02\Tests011MeasuresCentralTendencies.MedianWeighted.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia02\Tests011MeasuresCentralTendencies.MedianWeighted.1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia01\Tests011MeasuresCentralTendencies.MedianWeighted.2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia01\Tests011MeasuresCentralTendencies.MedianWeighted.3.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia02\Tests011MeasuresCentralTendencies.MedianWeighted.2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia03\Tests00Data.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia03\Tests011MeasuresCentralTendencies.MedianWeighted.1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia03\Tests011MeasuresCentralTendencies.MedianWeighted.2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia02\Tests011MeasuresCentralTendencies.MedianWeighted.3.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia02\Tests011MeasuresCentralTendencies.MedianWeighted.4.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresDistribution.Skewness.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresDistribution.Skewness.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresDistribution.SkewnessType1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresDistribution.SkewnessType2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresDistribution.SkewnessType3.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresDistribution.SkewnessType1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresDistribution.SkewnessType2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresDistribution.SkewnessType3.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresDistribution.Skewness.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresDistribution.SkewnessType1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresDistribution.SkewnessType2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresDistribution.SkewnessType3.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresDistribution.Kurtosis.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresDistribution.KurtosisType1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresDistribution.KurtosisType2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\Tests011MeasuresDistribution.KurtosisType3.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresDistribution.Kurtosis.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresDistribution.KurtosisType1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresDistribution.KurtosisType2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresDistribution.KurtosisType3.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Async\" />
@@ -228,6 +255,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia01\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia02\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia03\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests02FrequenciesModes.cs" />

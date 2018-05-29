@@ -57,7 +57,8 @@ using BenchmarkDotNet.Running;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Attributes.Jobs;
 #else
-using Benchmark = HolisticWare.Core.Testing.BenchmarkTests.Benchmark;using ShortRunJob = HolisticWare.Core.Testing.BenchmarkTests.ShortRunJob;
+using Benchmark = HolisticWare.Core.Testing.BenchmarkTests.Benchmark;
+using ShortRunJob = HolisticWare.Core.Testing.BenchmarkTests.ShortRunJob;
 #endif
 
 using System;
@@ -70,18 +71,18 @@ using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
-    public partial class Tests20180119Dataset01
+    public partial class Tests20180119Dataset02
     {
         [Benchmark]
-        public double Array_Skewness()
+        public double Array_Kurtosis()
         {
-            return data_array.Skewness();
+            return data_array.Kurtosis();
         }
 
         [Test]
-        public void Array_Skewness_Test()
+        public void Array_Kurtosis_Test()
         {
-            Console.WriteLine($"Array_Skewness_Test");
+            Console.WriteLine($"Array_Kurtosis_Test");
             //====================================================================================================
             //  Arrange
             //  reading data from files
@@ -91,11 +92,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double skewness = Array_Skewness();
+            double kurtosis = Array_Kurtosis();
 
             sw.Stop();
-            Console.WriteLine($"Array<double>.Skewness()");
-            Console.WriteLine($"          skewness           = {skewness}");
+            Console.WriteLine($"Array<double>.Kurtosis()");
+            Console.WriteLine($"          kurtosis           = {kurtosis}");
             Console.WriteLine($"          size               = {data_array.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -104,18 +105,18 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double moment_2 = data_array.Moment(2);
             int n = data_array.Count();
             double factor = 1.0;
-            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
+            double kurtosis_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(0.0, skewness, 0.00001);
-            Assert.AreEqual(skewness_check, skewness, 0.00001);
+            Assert.AreEqual(2.5 - 3.0, kurtosis, 0.00001);
+            //Assert.AreEqual(kurtosis_check, kurtosis, 0.00001);
             #elif XUNIT
-            Assert.Equal(0.0, skewness, 5);
-            Assert.Equal(skewness_check, skewness, 5);
+            Assert.Equal(2.5 - 3.0, kurtosis, 5);
+            Assert.Equal(kurtosis_check, kurtosis, 5);
             #elif MSTEST
-            Assert.AreEqual(0.0, skewness, 0.00001);
-            Assert.AreEqual(skewness_check, skewness, 0.00001);
+            Assert.AreEqual(2.5 - 3.0, kurtosis, 0.00001);
+            //Assert.AreEqual(kurtosis_check, kurtosis, 0.00001);
             #endif
             //====================================================================================================
 
@@ -123,13 +124,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double ArraySegment_Skewness()
+        public double ArraySegment_Kurtosis()
         {
-            return data_array_segment.Skewness();
+            return data_array_segment.Kurtosis();
         }
 
         [Test]
-        public void ArraySegment_Skewness_Test()
+        public void ArraySegment_Kurtosis_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -140,10 +141,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double skewness = ArraySegment_Skewness();
+            double kurtosis = ArraySegment_Kurtosis();
 
             sw.Stop();
-            Console.WriteLine($"          skewness           = {skewness}");
+            Console.WriteLine($"          kurtosis           = {kurtosis}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -152,18 +153,18 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double moment_2 = data_array_segment.Moment(2);
             int n = data_array_segment.Count();
             double factor = 1.0;
-            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
+            double kurtosis_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(0.0, skewness, 0.00001);
-            Assert.AreEqual(skewness_check, skewness, 0.00001);
+            Assert.AreEqual(2.5 - 3.0, kurtosis, 0.00001);
+            //Assert.AreEqual(kurtosis_check, kurtosis, 0.00001);
             #elif XUNIT
-            Assert.Equal(0.0, skewness, 5);
-            Assert.Equal(skewness_check, skewness, 5);
+            Assert.Equal(2.5 - 3.0, kurtosis, 5);
+            Assert.Equal(kurtosis_check, kurtosis, 5);
             #elif MSTEST
-            Assert.AreEqual(0.0, skewness, 0.00001);
-            Assert.AreEqual(skewness_check, skewness, 0.00001);
+            Assert.AreEqual(2.5 - 3.0, kurtosis, 0.00001);
+            //Assert.AreEqual(kurtosis_check, kurtosis, 0.00001);
             #endif
             //====================================================================================================
 
@@ -171,13 +172,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double List_Skewness()
+        public double List_Kurtosis()
         {
-            return data_list.Skewness();
+            return data_list.Kurtosis();
         }
 
         [Test]
-        public void List_Skewness_Test()
+        public void List_Kurtosis_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -188,9 +189,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double skewness = List_Skewness();
+            double kurtosis = List_Kurtosis();
 
-            Console.WriteLine($"          skewness           = {skewness}");
+            Console.WriteLine($"          kurtosis           = {kurtosis}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -199,18 +200,18 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double moment_2 = data_list.Moment(2);
             int n = data_list.Count();
             double factor = 1.0;
-            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
+            double kurtosis_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(0.0, skewness, 0.00001);
-            Assert.AreEqual(skewness_check, skewness, 0.00001);
+            Assert.AreEqual(2.5 - 3.0, kurtosis, 0.00001);
+            //Assert.AreEqual(kurtosis_check, kurtosis, 0.00001);
             #elif XUNIT
-            Assert.Equal(0.0, skewness, 5);
-            Assert.Equal(skewness_check, skewness, 5);
+            Assert.Equal(2.5 - 3.0, kurtosis, 5);
+            Assert.Equal(kurtosis_check, kurtosis, 5);
             #elif MSTEST
-            Assert.AreEqual(0.0, skewness, 0.00001);
-            Assert.AreEqual(skewness_check, skewness, 0.00001);
+            Assert.AreEqual(2.5 - 3.0, kurtosis, 0.00001);
+            //Assert.AreEqual(kurtosis_check, kurtosis, 0.00001);
             #endif
             //====================================================================================================
 
@@ -218,13 +219,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double Queue_Skewness()
+        public double Queue_Kurtosis()
         {
-            return data_queue.Skewness();
+            return data_queue.Kurtosis();
         }
 
         [Test]
-        public void Queue_Skewness_Test()
+        public void Queue_Kurtosis_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -234,10 +235,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double skewness = Queue_Skewness();
+            double kurtosis = Queue_Kurtosis();
 
             sw.Stop();
-            Console.WriteLine($"          skewness           = {skewness}");
+            Console.WriteLine($"          kurtosis           = {kurtosis}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -246,18 +247,18 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double moment_2 = data_queue.Moment(2);
             int n = data_queue.Count();
             double factor = 1.0;
-            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
+            double kurtosis_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(0.0, skewness, 0.00001);
-            Assert.AreEqual(skewness_check, skewness, 0.00001);
+            Assert.AreEqual(2.5 - 3.0, kurtosis, 0.00001);
+            //Assert.AreEqual(kurtosis_check, kurtosis, 0.00001);
             #elif XUNIT
-            Assert.Equal(0.0, skewness, 5);
-            Assert.Equal(skewness_check, skewness, 5);
+            Assert.Equal(2.5 - 3.0, kurtosis, 5);
+            Assert.Equal(kurtosis_check, kurtosis, 5);
             #elif MSTEST
-            Assert.AreEqual(0.0, skewness, 0.00001);
-            Assert.AreEqual(skewness_check, skewness, 0.00001);
+            Assert.AreEqual(2.5 - 3.0, kurtosis, 0.00001);
+            //Assert.AreEqual(kurtosis_check, kurtosis, 0.00001);
             #endif
             //====================================================================================================
 
@@ -265,13 +266,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double Stack_Skewness()
+        public double Stack_Kurtosis()
         {
-            return data_stack.Skewness();
+            return data_stack.Kurtosis();
         }
 
         [Test]
-        public void Stack_Skewness_Test()
+        public void Stack_Kurtosis_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -282,10 +283,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double skewness = Stack_Skewness();
+            double kurtosis = Stack_Kurtosis();
 
             sw.Stop();
-            Console.WriteLine($"          skewness           = {skewness}");
+            Console.WriteLine($"          kurtosis           = {kurtosis}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -294,18 +295,18 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double moment_2 = data_stack.Moment(2);
             int n = data_stack.Count();
             double factor = 1.0;
-            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
+            double kurtosis_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(0.0, skewness, 0.00001);
-            Assert.AreEqual(skewness_check, skewness, 0.00001);
+            Assert.AreEqual(2.5 - 3.0, kurtosis, 0.00001);
+            //Assert.AreEqual(kurtosis_check, kurtosis, 0.00001);
             #elif XUNIT
-            Assert.Equal(0.0, skewness, 5);
-            Assert.Equal(skewness_check, skewness, 5);
+            Assert.Equal(2.5 - 3.0, kurtosis, 5);
+            Assert.Equal(kurtosis_check, kurtosis, 5);
             #elif MSTEST
-            Assert.AreEqual(0.0, skewness, 0.00001);
-            Assert.AreEqual(skewness_check, skewness, 0.00001);
+            Assert.AreEqual(2.5 - 3.0, kurtosis, 0.00001);
+            //Assert.AreEqual(kurtosis_check, kurtosis, 0.00001);
             #endif
             //====================================================================================================
 
@@ -313,13 +314,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double LinkedList_Skewness()
+        public double LinkedList_Kurtosis()
         {
-            return data_linked_list.Skewness();
+            return data_linked_list.Kurtosis();
         }
 
         [Test]
-        public void LinkedList_Skewness_Test()
+        public void LinkedList_Kurtosis_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -330,10 +331,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double skewness = LinkedList_Skewness();
+            double kurtosis = LinkedList_Kurtosis();
 
             sw.Stop();
-            Console.WriteLine($"          skewness           = {skewness}");
+            Console.WriteLine($"          kurtosis           = {kurtosis}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -342,18 +343,18 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double moment_2 = data_linked_list.Moment(2);
             int n = data_linked_list.Count();
             double factor = 1.0;
-            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
+            double kurtosis_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(0.0, skewness, 0.00001);
-            Assert.AreEqual(skewness_check, skewness, 0.00001);
+            Assert.AreEqual(2.5 - 3.0, kurtosis, 0.00001);
+            //Assert.AreEqual(kurtosis_check, kurtosis, 0.00001);
             #elif XUNIT
-            Assert.Equal(0.0, skewness, 5);
-            Assert.Equal(skewness_check, skewness, 5);
+            Assert.Equal(2.5 - 3.0, kurtosis, 5);
+            Assert.Equal(kurtosis_check, kurtosis, 5);
             #elif MSTEST
-            Assert.AreEqual(0.0, skewness, 0.00001);
-            Assert.AreEqual(skewness_check, skewness, 0.00001);
+            Assert.AreEqual(2.5 - 3.0, kurtosis, 0.00001);
+            //Assert.AreEqual(kurtosis_check, kurtosis, 0.00001);
             #endif
             //====================================================================================================
 
@@ -361,13 +362,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double ObservableCollection_Skewness()
+        public double ObservableCollection_Kurtosis()
         {
-            return data_observable_collection.Skewness();
+            return data_observable_collection.Kurtosis();
         }
 
         [Test]
-        public void ObservableCollection_Skewness_Test()
+        public void ObservableCollection_Kurtosis_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -378,10 +379,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double skewness = ObservableCollection_Skewness();
+            double kurtosis = ObservableCollection_Kurtosis();
 
             sw.Stop();
-            Console.WriteLine($"          skewness           = {skewness}");
+            Console.WriteLine($"          kurtosis           = {kurtosis}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -390,18 +391,18 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double moment_2 = data_observable_collection.Moment(2);
             int n = data_observable_collection.Count();
             double factor = 1.0;
-            double skewness_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
+            double kurtosis_check = factor * moment_3 / System.Math.Pow(moment_2, 3 / 2);
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(0.0, skewness, 0.00001);
-            Assert.AreEqual(skewness_check, skewness, 0.00001);
+            Assert.AreEqual(2.5 - 3.0, kurtosis, 0.00001);
+            //Assert.AreEqual(kurtosis_check, kurtosis, 0.00001);
             #elif XUNIT
-            Assert.Equal(0.0, skewness, 5);
-            Assert.Equal(skewness_check, skewness, 5);
+            Assert.Equal(2.5 - 3.0, kurtosis, 5);
+            Assert.Equal(kurtosis_check, kurtosis, 5);
             #elif MSTEST
-            Assert.AreEqual(0.0, skewness, 0.00001);
-            Assert.AreEqual(skewness_check, skewness, 0.00001);
+            Assert.AreEqual(2.5 - 3.0, kurtosis, 0.00001);
+            //Assert.AreEqual(kurtosis_check, kurtosis, 0.00001);
             #endif
             //====================================================================================================
 
@@ -418,7 +419,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         */
         /*
         [Test]
-        public void Span_Skewness()
+        public void Span_Kurtosis()
         {
             //====================================================================================================
             //  Arrange
@@ -432,9 +433,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                             new Span<double>(data01);
                             //data01.AsSpan().Slice(start: 0)
                             ;
-            double skewness = data.Skewness();
+            double kurtosis = data.Kurtosis();
             sw.Stop();
-            Console.WriteLine($"          skewness           = {skewness}");
+            Console.WriteLine($"          kurtosis           = {kurtosis}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -442,11 +443,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(0.0, skewness, 0.00001);
+            Assert.AreEqual(2.5 - 3.0, kurtosis, 0.00001);
             #elif XUNIT
-            Assert.Equal(0.0, skewness, 5);
+            Assert.Equal(2.5 - 3.0, kurtosis, 5);
             #elif MSTEST
-            Assert.AreEqual(0.0, skewness, 0.00001);
+            Assert.AreEqual(2.5 - 3.0, kurtosis, 0.00001);
             #endif
             //====================================================================================================
 
@@ -454,7 +455,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Test]
-        public void Span_Skewness()
+        public void Span_Kurtosis()
         {
             //====================================================================================================
             //  Arrange
@@ -468,9 +469,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                             new Memory<double>(data01);
                             //data01.AsSpan().Slice(start: 0)
                             ;
-            double skewness = data.Skewness();
+            double kurtosis = data.Kurtosis();
             sw.Stop();
-            Console.WriteLine($"          skewness           = {skewness}");
+            Console.WriteLine($"          kurtosis           = {kurtosis}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -478,11 +479,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(0.0, skewness, 0.00001);
+            Assert.AreEqual(2.5 - 3.0, kurtosis, 0.00001);
             #elif XUNIT
-            Assert.Equal(0.0, skewness, 5);
+            Assert.Equal(2.5 - 3.0, kurtosis, 5);
             #elif MSTEST
-            Assert.AreEqual(0.0, skewness, 0.00001);
+            Assert.AreEqual(2.5 - 3.0, kurtosis, 0.00001);
             #endif
             //====================================================================================================
 

@@ -73,15 +73,15 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     public partial class Tests20180119Dataset01
     {
         [Benchmark]
-        public double Array_Skewness()
+        public double Array_SkewnessType1()
         {
-            return data_array.Skewness();
+            return data_array.SkewnessType1();
         }
 
         [Test]
-        public void Array_Skewness_Test()
+        public void Array_SkewnessType1_Test()
         {
-            Console.WriteLine($"Array_Skewness_Test");
+            Console.WriteLine($"Array_SkewnessType1_Test");
             //====================================================================================================
             //  Arrange
             //  reading data from files
@@ -91,10 +91,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double skewness = Array_Skewness();
+            double skewness = Array_SkewnessType1();
 
             sw.Stop();
-            Console.WriteLine($"Array<double>.Skewness()");
+            Console.WriteLine($"Array<double>.SkewnessType1()");
             Console.WriteLine($"          skewness           = {skewness}");
             Console.WriteLine($"          size               = {data_array.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
@@ -123,13 +123,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double ArraySegment_Skewness()
+        public double ArraySegment_SkewnessType1()
         {
-            return data_array_segment.Skewness();
+            return data_array_segment.SkewnessType1();
         }
 
         [Test]
-        public void ArraySegment_Skewness_Test()
+        public void ArraySegment_SkewnessType1_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -140,7 +140,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double skewness = ArraySegment_Skewness();
+            double skewness = ArraySegment_SkewnessType1();
 
             sw.Stop();
             Console.WriteLine($"          skewness           = {skewness}");
@@ -171,13 +171,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double List_Skewness()
+        public double List_SkewnessType1()
         {
-            return data_list.Skewness();
+            return data_list.SkewnessType1();
         }
 
         [Test]
-        public void List_Skewness_Test()
+        public void List_SkewnessType1_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -188,7 +188,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double skewness = List_Skewness();
+            double skewness = List_SkewnessType1();
 
             Console.WriteLine($"          skewness           = {skewness}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -218,13 +218,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double Queue_Skewness()
+        public double Queue_SkewnessType1()
         {
-            return data_queue.Skewness();
+            return data_queue.SkewnessType1();
         }
 
         [Test]
-        public void Queue_Skewness_Test()
+        public void Queue_SkewnessType1_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -234,7 +234,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double skewness = Queue_Skewness();
+            double skewness = Queue_SkewnessType1();
 
             sw.Stop();
             Console.WriteLine($"          skewness           = {skewness}");
@@ -265,13 +265,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double Stack_Skewness()
+        public double Stack_SkewnessType1()
         {
-            return data_stack.Skewness();
+            return data_stack.SkewnessType1();
         }
 
         [Test]
-        public void Stack_Skewness_Test()
+        public void Stack_SkewnessType1_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -282,7 +282,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double skewness = Stack_Skewness();
+            double skewness = Stack_SkewnessType1();
 
             sw.Stop();
             Console.WriteLine($"          skewness           = {skewness}");
@@ -313,13 +313,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double LinkedList_Skewness()
+        public double LinkedList_SkewnessType1()
         {
-            return data_linked_list.Skewness();
+            return data_linked_list.SkewnessType1();
         }
 
         [Test]
-        public void LinkedList_Skewness_Test()
+        public void LinkedList_SkewnessType1_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -330,7 +330,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double skewness = LinkedList_Skewness();
+            double skewness = LinkedList_SkewnessType1();
 
             sw.Stop();
             Console.WriteLine($"          skewness           = {skewness}");
@@ -361,13 +361,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public double ObservableCollection_Skewness()
+        public double ObservableCollection_SkewnessType1()
         {
-            return data_observable_collection.Skewness();
+            return data_observable_collection.SkewnessType1();
         }
 
         [Test]
-        public void ObservableCollection_Skewness_Test()
+        public void ObservableCollection_SkewnessType1_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -378,7 +378,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            double skewness = ObservableCollection_Skewness();
+            double skewness = ObservableCollection_SkewnessType1();
 
             sw.Stop();
             Console.WriteLine($"          skewness           = {skewness}");
@@ -418,7 +418,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         */
         /*
         [Test]
-        public void Span_Skewness()
+        public void Span_SkewnessType1()
         {
             //====================================================================================================
             //  Arrange
@@ -432,7 +432,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                             new Span<double>(data01);
                             //data01.AsSpan().Slice(start: 0)
                             ;
-            double skewness = data.Skewness();
+            double skewness = data.SkewnessType1();
             sw.Stop();
             Console.WriteLine($"          skewness           = {skewness}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -454,7 +454,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Test]
-        public void Span_Skewness()
+        public void Span_SkewnessType1()
         {
             //====================================================================================================
             //  Arrange
@@ -468,7 +468,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                             new Memory<double>(data01);
                             //data01.AsSpan().Slice(start: 0)
                             ;
-            double skewness = data.Skewness();
+            double skewness = data.SkewnessType1();
             sw.Stop();
             Console.WriteLine($"          skewness           = {skewness}");
             Console.WriteLine($"          size               = {data.Count()}");
