@@ -29,9 +29,6 @@ print ("mean_arithmetic = ", mean_arithmetic)
 mean_harmonic = stats.hmean(data)
 print ("mean_harmonic   = ", mean_harmonic)
 
-mode = statistics.mode(data)
-print ("mode  = ", mode)
-
 median = statistics.median(data)
 print ("median          = ", median)
 
@@ -43,4 +40,14 @@ print ("median_high     = ", median_high)
 
 median_grouped = statistics.median_grouped(data)
 print ("median_grouped  = ", median_grouped)
+
+try:
+    mode = statistics.mode(data)
+    print ("mode  = ", mode)
+except statistics.StatisticsError:
+    print ("No unique mode found")
+    
+
+skewness = stats.skew(data)
+print ("skewness  = ", skewness)
 
