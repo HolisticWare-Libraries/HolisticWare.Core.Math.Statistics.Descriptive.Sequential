@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10", "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10.csproj", "{DEFACBA9-2E24-46BD-B3E0-EFF602FA05DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10", "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10.csproj", "{DEFACBA9-2E24-46BD-B3E0-EFF602FA05DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard13", "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard13\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard13.csproj", "{B7852FC5-D06E-4A47-B19B-B695E6BF17C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard13", "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard13\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard13.csproj", "{B7852FC5-D06E-4A47-B19B-B695E6BF17C8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{36B9D25A-40E6-47C2-AD91-6EF9EF420571}"
 	ProjectSection(SolutionItems) = preProject
@@ -16,13 +16,13 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "HolisticWare.Core.Math.Stat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.NetStandard10", "HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.NetStandard10.csproj", "{74AFF2E3-3E45-4DF3-8A94-678D13B4A29B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10", "HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10.csproj", "{0C54645E-1C9B-4A21-B39C-2370F2F6E9D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10", "HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10.csproj", "{0C54645E-1C9B-4A21-B39C-2370F2F6E9D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard10", "HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard10.csproj", "{F9E03430-A1C5-40DD-914F-4190E1D14E80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard10", "HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard10.csproj", "{F9E03430-A1C5-40DD-914F-4190E1D14E80}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.projitems*{920d7d0f-3fae-4c77-9174-23e7a4e80e50}*SharedItemsImports = 13
+		HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.projitems*{97322730-7912-4331-8881-df029ef7cdd1}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

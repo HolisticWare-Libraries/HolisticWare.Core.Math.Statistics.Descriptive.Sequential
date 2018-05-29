@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Runtime" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10.csproj" />
   </ItemGroup>
 </Project>
