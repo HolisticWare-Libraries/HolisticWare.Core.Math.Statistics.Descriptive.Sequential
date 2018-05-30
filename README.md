@@ -79,49 +79,49 @@ NOTE: Parallel algorithms based on (TPL) can be found in
 ### Comparison Table
 
 
-|                    |   `x = IEnumerable<T>`               |                             |                           |
-|--------------------| ------------------------------------ | --------------------------- | ------------------------- |
-|                    |   extension methods                  |                             |                           |
+|                    |   `x = IEnumerable<T>`               |                             |                           |                           |
+|--------------------| ------------------------------------ | --------------------------- | ------------------------- |  ------------------------ |
+|                    |   extension methods                  |                             |                           |                           |
 
 
-|                    |   C# HolisticWare                    | Octave                      | R                         |
-|--------------------| ------------------------------------ | --------------------------- | ------------------------- |
-| Central Tendencies | `x.MeanArithmetic();`                | `mean(vector_list, "a")`    | `mean(vector_list)`       |
-|                    | `x.MeanGeometric();`                 | `mean(vector_list, "g")`    | `N/A (custom function)`   |
-|                    | `x.MeanGeometricNaive();`            | `mean(vector_list, "g")`    | `N/A (custom function)`   |
-|                    | `x.MeanHarmonic();`                  | `mean(vector_list, "h")`    | `???`                     |
-|                    | `x.MeanSquared();`                   | `meansq(vector_list)`       | `???`                     |
-|                    | `x.MeanCubic();`                     | `???`                       | `????`                    |
-|                    | `x.MeanWeighted();`                  | `???`                       | `????`                    |
-|                    | `x.Median();`                        | `???`                       | `????`                    |
-|                    | `x.MedianWeighted();`                | `???`                       | `????`                    |
-|                    | `x.Modes();`                         | `???`                       | `????`                    |
-|                    | `x.ModesRank();`                     | `???`                       | `????`                    |
-| Dispersion         | `x.Moment();`                        | `???`                       | `????`                    |
-|                    | `x.MomentCentral();`                 | `???`                       | `????`                    |
-|                    | `x.MomentCentralAbsolute();`         | `???`                       | `????`                    |
-|                    | `x.MomentRaw();`                     | `???`                       | `????`                    |
-|                    | `x.MomentRawAbsolute();`             | `???`                       | `????`                    |
-|                    | `x.Range();`                         | `???`                       | `????`                    |
-|                    | `x.StandardDeviationPopulation();`   | `???`                       | `????`                    |
-|                    | `x.StandardDeviationSample();`       | `???`                       | `????`                    |
-|                    | `x.VariancePopulation();`            | `???`                       | `????`                    |
-|                    | `x.Variance();`                      | `???`                       | `????`                    |
-| Distribution       | `x.FrequencyCounter();`              | `???`                       | `????`                    |
-|                    | `x.FrequencyDistribution();`         | `???`                       | `????`                    |
-|                    | `x.Frequencies();`                   | `???`                       | `????`                    |
-|                    | `x.Percentiles();`                   | `???`                       | `????`                    |
-|                    | `x.PercentilesRank();`               | `???`                       | `????`                    |
-| Distribution Asymm | `x.Skewness();`                      | `???`                       | `????`                    |
-| Distribution Round | `x.Kurtosis();`                      | `???`                       | `????`                    |
-|                    | `x.KurtosisSample();`                | `???`                       | `????`                    |
-|                    | `x.KurtosisSampleExcess();`          | `???`                       | `????`                    |
-| Dependency         | `x.Correlation(y);`                  | `???`                       | `????`                    |
-|                    | `x.CorrelationOptimized(y);`         | `???`                       | `????`                    |
-|                    | `x.Covariance(y);`                   | `???`                       | `????`                    |
-| Inferential        | `x.StudenttStatisticIndependent(y);` | `???`                       | `????`                    |
-|                    | `x.FStatistic(y);`                   | `???`                       | `????`                    |
-|                    | `x.Welcht(y);`                       | `???`                       | `????`                    |
+|                    |   C# HolisticWare                    | Octave                      | R                         | Python                    |
+|--------------------| ------------------------------------ | --------------------------- | ------------------------- | ------------------------- |
+| Central Tendencies | `x.MeanArithmetic();`                | `mean(vector_list, "a")`    | `mean(vector_list)`       |                           |
+|                    | `x.MeanGeometric();`                 | `mean(vector_list, "g")`    | `N/A (custom function)`   |                           |
+|                    | `x.MeanGeometricNaive();`            | `mean(vector_list, "g")`    | `N/A (custom function)`   |                           |
+|                    | `x.MeanHarmonic();`                  | `mean(vector_list, "h")`    | `???`                     |                           |
+|                    | `x.MeanSquared();`                   | `meansq(vector_list)`       | `???`                     |                           |
+|                    | `x.MeanCubic();`                     | `???`                       | `????`                    |                           |
+|                    | `x.MeanWeighted();`                  | `???`                       | `????`                    |                           |
+|                    | `x.Median();`                        | `???`                       | `????`                    |                           |
+|                    | `x.MedianWeighted();`                | `???`                       | `????`                    |                           |
+|                    | `x.Modes();`                         | `???`                       | `????`                    |                           |
+|                    | `x.ModesRank();`                     | `???`                       | `????`                    |                           |
+| Dispersion         | `x.Moment();`                        | `???`                       | `????`                    |                           |
+|                    | `x.MomentCentral();`                 | `???`                       | `????`                    |                           |
+|                    | `x.MomentCentralAbsolute();`         | `???`                       | `????`                    |                           |
+|                    | `x.MomentRaw();`                     | `???`                       | `????`                    |                           |
+|                    | `x.MomentRawAbsolute();`             | `???`                       | `????`                    |                           |
+|                    | `x.Range();`                         | `???`                       | `????`                    |                           |
+|                    | `x.StandardDeviationPopulation();`   | `???`                       | `????`                    |                           |
+|                    | `x.StandardDeviationSample();`       | `???`                       | `????`                    |                           |
+|                    | `x.VariancePopulation();`            | `???`                       | `????`                    |                           |
+|                    | `x.Variance();`                      | `???`                       | `????`                    |                           |
+| Distribution       | `x.FrequencyCounter();`              | `???`                       | `????`                    |                           |
+|                    | `x.FrequencyDistribution();`         | `???`                       | `????`                    |                           |
+|                    | `x.Frequencies();`                   | `???`                       | `????`                    |                           |
+|                    | `x.Percentiles();`                   | `???`                       | `????`                    |                           |
+|                    | `x.PercentilesRank();`               | `???`                       | `????`                    |                           |
+| Distribution Asymm | `x.Skewness();`                      | `???`                       | `????`                    |                           |
+| Distribution Round | `x.Kurtosis();`                      | `???`                       | `????`                    |                           |
+|                    | `x.KurtosisSample();`                | `???`                       | `????`                    |                           |
+|                    | `x.KurtosisSampleExcess();`          | `???`                       | `????`                    |                           |
+| Dependency         | `x.Correlation(y);`                  | `???`                       | `????`                    |                           |
+|                    | `x.CorrelationOptimized(y);`         | `???`                       | `????`                    |                           |
+|                    | `x.Covariance(y);`                   | `???`                       | `????`                    |                           |
+| Inferential        | `x.StudenttStatisticIndependent(y);` | `???`                       | `????`                    |                           |
+|                    | `x.FStatistic(y);`                   | `???`                       | `????`                    |                           |
+|                    | `x.Welcht(y);`                       | `???`                       | `????`                    |                           |
 
 
 ## Usage
@@ -192,6 +192,18 @@ to  `IEnumerable<T>` prior to further analysis and processing.
 
 
 ## TODOs / Plans
+
+*   API
+
+    *   flexible API for Skewness and Kurtosis
+
+*   testing
+
+    *   unit testing
+
+        *   Moments
+
+        *   Dispersion
 
 *   C# 7.2 
 
@@ -331,12 +343,14 @@ After benchmarks will be added and tests conducted, implementation might change 
     *   https://www.nuget.org/packages/Meta.Numerics/
 
 
-## Contributirs / Authors
+## Authors / Contributirs
 
-*   Darko Katovic - Katodix
+*   Authors
 
-    KIF (Faculty of Kinesiology, University of Zagreb, Croatia)
+    *   Darko Katovic - Katodix
 
-*   Miljenko Cvjetko - moljac
+        KIF (Faculty of Kinesiology, University of Zagreb, Croatia)
 
-    Microsoft (Xamarin Inc.), HolisticWare
+    *   Miljenko Cvjetko - moljac
+        
+        Microsoft (Xamarin Inc.), HolisticWare
