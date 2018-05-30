@@ -1,9 +1,16 @@
 #!/bin/bash
 
 # pip install statistics 
-# pip install scipy
+# pip install scipy numpy
 
-python ./python/DarkVaderTests/Tests20180119Dataset01/Tests00Data.py 
+# pip3 install statistics 
+# pip3 install scipy numpy
 
-python ./python/python-website-data/statistics_samples.py
+export PYTHON=python3
+
+$PYTHON ./python/DarkVaderTests/Tests20180119Dataset01/Tests00Data.py
+$PYTHON ./python/DarkVaderTests/Tests20180119Dataset02/Tests00Data.py
+$PYTHON ./python/DarkVaderTests/Tests20180119Dataset03/Tests00Data.py
+
+$PYTHON ./python/python-website-data/statistics_samples.py
 
