@@ -10,9 +10,9 @@ print(mean_arithmetic)
 mean_geometric = geometric.mean(data01)
 print(mean_geometric)
 mean_harmonic = mean(data01, "h");
-print(mean_harmonic
+print(mean_harmonic)
 #mean_squared = meansq(data01);
-print(mean_squared
+print(mean_squared)
 
 #median = median(data01);
 #median
