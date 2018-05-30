@@ -23,17 +23,6 @@
     <PackageReference Include="Nito.AsyncEx.Context" Version="1.1.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.NetStandard10.csproj" />
-    <ProjectReference Include="..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard10.csproj" />
-    <ProjectReference Include="..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10.csproj" />        
-  </ItemGroup>
-  <!--
-  ==================================================================================================
-  If projects for references can be found use ProjectReferences otherwise use NuGet references
-  http://laurentkempe.com/2009/12/03/ProjectReference-with-Condition-in-your-MSBuild-project-files/
-  msbuild Choose When ProjectReference Reference Include
-  -->
-  <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Choose>

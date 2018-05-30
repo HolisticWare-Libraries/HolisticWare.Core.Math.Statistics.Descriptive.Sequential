@@ -7,7 +7,7 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Tests.CommonShared", "..\Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests.NUnit", "UnitTests.NUnit\UnitTests.NUnit.csproj", "{04F3D823-ABEA-46DD-9EC2-56C08CA074DB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests.XUnit", "UnitTests.XUnit\UnitTests.XUnit.csproj", "{9F02C2A3-1007-424C-9B59-2DE1CD8AA093}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests.XUnit", "UnitTests.XUnit\UnitTests.XUnit.csproj", "{9F02C2A3-1007-424C-9B59-2DE1CD8AA093}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "library-source", "library-source", "{56123580-99E9-45AC-8300-ABF8EE1D021E}"
 EndProject
@@ -15,9 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "externals", "externals", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{69B20DD6-58F6-4701-B081-9B09E8B697D3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10", "..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10.csproj", "{DEFACBA9-2E24-46BD-B3E0-EFF602FA05DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10", "..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10.csproj", "{DEFACBA9-2E24-46BD-B3E0-EFF602FA05DC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard13", "..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard13\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard13.csproj", "{B7852FC5-D06E-4A47-B19B-B695E6BF17C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard13", "..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard13\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard13.csproj", "{B7852FC5-D06E-4A47-B19B-B695E6BF17C8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{36B9D25A-40E6-47C2-AD91-6EF9EF420571}"
 	ProjectSection(SolutionItems) = preProject
@@ -26,13 +26,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential", "..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.shproj", "{97322730-7912-4331-8881-DF029EF7CDD1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.NetStandard10", "..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.NetStandard10.csproj", "{74AFF2E3-3E45-4DF3-8A94-678D13B4A29B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10", "..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10.csproj", "{0C54645E-1C9B-4A21-B39C-2370F2F6E9D6}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard10", "..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard10.csproj", "{F9E03430-A1C5-40DD-914F-4190E1D14E80}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests.MSTest", "UnitTests.MSTest\UnitTests.MSTest.csproj", "{DEEE1AF9-3C2B-43E9-A0FC-FD8006354DE3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests.MSTest", "UnitTests.MSTest\UnitTests.MSTest.csproj", "{DEEE1AF9-3C2B-43E9-A0FC-FD8006354DE3}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "HolisticWare.Core.Math.Samples", "..\..\externals\Core.Math.Samples\tests\data\HolisticWare.Core.Math.Samples\HolisticWare.Core.Math.Samples.shproj", "{98411F49-CA5E-41C7-81E2-26C9ADFF255D}"
 EndProject
@@ -42,9 +36,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests.NUnit.XamarinIOS"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "HolisticWare.Core.Text", "..\..\externals\Core.Text\source\HolisticWare.Core.Text\HolisticWare.Core.Text.shproj", "{921CFEA5-564C-4975-A20F-8CAD32EA88E3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Text.NetStandard10", "..\..\externals\Core.Text\source\HolisticWare.Core.Text.NetStandard10\HolisticWare.Core.Text.NetStandard10.csproj", "{5B8DBA01-2E5F-457A-9895-A9A4759D1D43}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Text.NetStandard10", "..\..\externals\Core.Text\source\HolisticWare.Core.Text.NetStandard10\HolisticWare.Core.Text.NetStandard10.csproj", "{5B8DBA01-2E5F-457A-9895-A9A4759D1D43}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Text.NetStandard11", "..\..\externals\Core.Text\source\HolisticWare.Core.Text.NetStandard11\HolisticWare.Core.Text.NetStandard11.csproj", "{18C2D1F9-A0F6-4A04-9CFF-DF984242395B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Text.NetStandard11", "..\..\externals\Core.Text\source\HolisticWare.Core.Text.NetStandard11\HolisticWare.Core.Text.NetStandard11.csproj", "{18C2D1F9-A0F6-4A04-9CFF-DF984242395B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2ED06CC8-66C7-47FF-A1E4-B48B5FD3FBD0}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\README.md = ..\..\README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -113,42 +112,6 @@ Global
 		{B7852FC5-D06E-4A47-B19B-B695E6BF17C8}.Release|iPhone.Build.0 = Release|Any CPU
 		{B7852FC5-D06E-4A47-B19B-B695E6BF17C8}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{B7852FC5-D06E-4A47-B19B-B695E6BF17C8}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{74AFF2E3-3E45-4DF3-8A94-678D13B4A29B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{74AFF2E3-3E45-4DF3-8A94-678D13B4A29B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{74AFF2E3-3E45-4DF3-8A94-678D13B4A29B}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{74AFF2E3-3E45-4DF3-8A94-678D13B4A29B}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{74AFF2E3-3E45-4DF3-8A94-678D13B4A29B}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{74AFF2E3-3E45-4DF3-8A94-678D13B4A29B}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{74AFF2E3-3E45-4DF3-8A94-678D13B4A29B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{74AFF2E3-3E45-4DF3-8A94-678D13B4A29B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{74AFF2E3-3E45-4DF3-8A94-678D13B4A29B}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{74AFF2E3-3E45-4DF3-8A94-678D13B4A29B}.Release|iPhone.Build.0 = Release|Any CPU
-		{74AFF2E3-3E45-4DF3-8A94-678D13B4A29B}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{74AFF2E3-3E45-4DF3-8A94-678D13B4A29B}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{0C54645E-1C9B-4A21-B39C-2370F2F6E9D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0C54645E-1C9B-4A21-B39C-2370F2F6E9D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0C54645E-1C9B-4A21-B39C-2370F2F6E9D6}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{0C54645E-1C9B-4A21-B39C-2370F2F6E9D6}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{0C54645E-1C9B-4A21-B39C-2370F2F6E9D6}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{0C54645E-1C9B-4A21-B39C-2370F2F6E9D6}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{0C54645E-1C9B-4A21-B39C-2370F2F6E9D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0C54645E-1C9B-4A21-B39C-2370F2F6E9D6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0C54645E-1C9B-4A21-B39C-2370F2F6E9D6}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{0C54645E-1C9B-4A21-B39C-2370F2F6E9D6}.Release|iPhone.Build.0 = Release|Any CPU
-		{0C54645E-1C9B-4A21-B39C-2370F2F6E9D6}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{0C54645E-1C9B-4A21-B39C-2370F2F6E9D6}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{F9E03430-A1C5-40DD-914F-4190E1D14E80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9E03430-A1C5-40DD-914F-4190E1D14E80}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F9E03430-A1C5-40DD-914F-4190E1D14E80}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{F9E03430-A1C5-40DD-914F-4190E1D14E80}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{F9E03430-A1C5-40DD-914F-4190E1D14E80}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{F9E03430-A1C5-40DD-914F-4190E1D14E80}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{F9E03430-A1C5-40DD-914F-4190E1D14E80}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F9E03430-A1C5-40DD-914F-4190E1D14E80}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F9E03430-A1C5-40DD-914F-4190E1D14E80}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{F9E03430-A1C5-40DD-914F-4190E1D14E80}.Release|iPhone.Build.0 = Release|Any CPU
-		{F9E03430-A1C5-40DD-914F-4190E1D14E80}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{F9E03430-A1C5-40DD-914F-4190E1D14E80}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{DEEE1AF9-3C2B-43E9-A0FC-FD8006354DE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DEEE1AF9-3C2B-43E9-A0FC-FD8006354DE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEEE1AF9-3C2B-43E9-A0FC-FD8006354DE3}.Debug|iPhone.ActiveCfg = Debug|Any CPU
@@ -219,9 +182,6 @@ Global
 		{B7852FC5-D06E-4A47-B19B-B695E6BF17C8} = {56123580-99E9-45AC-8300-ABF8EE1D021E}
 		{36B9D25A-40E6-47C2-AD91-6EF9EF420571} = {56123580-99E9-45AC-8300-ABF8EE1D021E}
 		{97322730-7912-4331-8881-DF029EF7CDD1} = {56123580-99E9-45AC-8300-ABF8EE1D021E}
-		{74AFF2E3-3E45-4DF3-8A94-678D13B4A29B} = {56123580-99E9-45AC-8300-ABF8EE1D021E}
-		{0C54645E-1C9B-4A21-B39C-2370F2F6E9D6} = {56123580-99E9-45AC-8300-ABF8EE1D021E}
-		{F9E03430-A1C5-40DD-914F-4190E1D14E80} = {56123580-99E9-45AC-8300-ABF8EE1D021E}
 		{98411F49-CA5E-41C7-81E2-26C9ADFF255D} = {69B20DD6-58F6-4701-B081-9B09E8B697D3}
 		{921CFEA5-564C-4975-A20F-8CAD32EA88E3} = {3799F198-4FDB-4BFF-811E-D12EEB39D00C}
 		{5B8DBA01-2E5F-457A-9895-A9A4759D1D43} = {3799F198-4FDB-4BFF-811E-D12EEB39D00C}
