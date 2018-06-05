@@ -1,12 +1,3 @@
-#! /usr/bin/env Rscript
 
-# Rscript  Tests00Data.R
-# R -e 'source("./Tests00Data.R")'
-data <- c( 
-1, 2, 2, 3, 3, 4, 5, 6 
-)
-print(data)
-
-setwd("./")
-sys.source("Tests011MeasuresCentralTendencies.R")
-sys.source("Tests011MeasuresDistribution.R")
+data01 = [ 2, 4, 3, 5, 6, 7, 4, 4, 2, 1 ];
+data01
