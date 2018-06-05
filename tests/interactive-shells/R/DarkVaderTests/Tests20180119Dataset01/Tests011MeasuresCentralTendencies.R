@@ -5,6 +5,14 @@ library(here)
 
 if (! exists("data", inherits = FALSE))
 {
+    #initial.options <- commandArgs(trailingOnly = FALSE)
+    #file.arg.name <- "--file="
+    script.name <- sub(file.arg.name, "", initial.options[grep(file.arg.name, initial.options)])
+    script.basename <- dirname(script.name)
+
+    other.name <- paste(sep="/", script.basename, "Tests00Data.R ")
+    print(paste("Sourcing",other.name,"from",script.name))
+    #source(other.name)
 
     source(here::here('Tests00Data.R'))
 }
