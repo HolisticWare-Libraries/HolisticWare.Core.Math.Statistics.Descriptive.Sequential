@@ -32,10 +32,10 @@ using BenchmarkDotNet.Running;
 using Xunit;
 // NUnit aliases
 using Test = Xunit.FactAttribute;
-using TestFixture = HolisticWare.Core.Testing.UnitTestsCompatibilityAliasAttribute;
-using OneTimeSetUp = HolisticWare.Core.Testing.UnitTestsCompatibilityAliasAttribute;
+using TestFixture = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
+using OneTimeSetUp = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
 // XUnit aliases
-using TestClass = HolisticWare.Core.Testing.UnitTestsCompatibilityAliasAttribute;
+using TestClass = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
 #elif NUNIT
 using NUnit.Framework;
 // MSTest aliases
