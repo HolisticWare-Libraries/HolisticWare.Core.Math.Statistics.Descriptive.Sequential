@@ -1,5 +1,10 @@
 #! /usr/bin/env Rscript
 
+wd <- setwd(".")
+setwd(wd)
+print(wd)
+getSrcDirectory(function(x) {x})
+
 initial.options <- commandArgs(trailingOnly = FALSE)
 file.arg.name <- "--file="
 script.name <- sub(file.arg.name, "", initial.options[grep(file.arg.name, initial.options)])
