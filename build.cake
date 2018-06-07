@@ -398,14 +398,21 @@ RunTarget (TARGET);
 
 if(! IsRunningOnWindows())
 {
-    int exit_code = StartProcess
-                            (
-                                "tree", 
-                                new ProcessSettings
-                                { 
-                                    Arguments = @"./output"
-                                }
-                            );
+    try
+    {
+        int exit_code = StartProcess
+                                (
+                                    "tree", 
+                                    new ProcessSettings
+                                    { 
+                                        Arguments = @"./output"
+                                    }
+                                );
+    }
+    catch(Exception ex)
+    {
+        Information($"unable to start process - tree {ex.Message}");
+    }
 }
 else
 {
