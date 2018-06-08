@@ -59,6 +59,7 @@ Running Cake to Build targets
 //#tool nuget:?package=NUnit.Runners&version=3.8.0
 #tool "nuget:?package=xunit.runner.console"
 #tool "nuget:?package=OpenCover"
+#tool "nuget:?package=JetBrains.dotCover.CommandLineTools"
 #tool "nuget:?package=ReportGenerator"
 
 var TARGET = Argument ("t", Argument ("target", "Default"));
@@ -137,8 +138,8 @@ Task("unit-tests")
 
 Task("unit-tests-nunit")
     .IsDependentOn ("externals-build")	
-    .IsDependentOn ("nuget")
     .IsDependentOn ("libs")
+    .IsDependentOn ("nuget")
     .Does
     (
         () =>
@@ -165,8 +166,8 @@ Task("unit-tests-nunit")
 
 Task("unit-tests-xunit")
     .IsDependentOn ("externals-build")	
-    .IsDependentOn ("nuget")
     .IsDependentOn ("libs")
+    .IsDependentOn ("nuget")
     .Does
     (
         () =>
@@ -179,13 +180,6 @@ Task("unit-tests-xunit")
                     Configuration = "Debug",
                 }.WithProperty("DefineConstants", "TRACE;DEBUG;NETCOREAPP2_0;XUNIT")
             );
-            // XUnit2
-            // (
-            //     "./tests/unit-tests/UnitTests.XUnit/bin/Debug/**/UnitTests.XUnit.dll", 
-            //     new XUnit2Settings
-            //     {
-            //     }
-            // );
             DotNetCoreTest
             (
                 "./tests/unit-tests/UnitTests.XUnit/UnitTests.XUnit.csproj",
@@ -194,6 +188,26 @@ Task("unit-tests-xunit")
                 {
                 }
             );
+            XUnit2
+            (
+                "./tests/unit-tests/UnitTests.XUnit/bin/**/UnitTests.*.dll",
+                new XUnit2Settings 
+                {
+                    Parallelism = ParallelismOption.All,
+                    HtmlReport = false,
+                    NoAppDomain = true,
+                    XmlReport = true,
+                    OutputDirectory = "./build"
+                }
+            );
+        }
+    )
+    .ReportError
+    (
+        exception =>
+        {
+            Information("Some Unit Tests failed...");
+            ReportUnit("./build/report-err.xml", "./build/report-err.html");
 
             return;
         }
@@ -201,8 +215,8 @@ Task("unit-tests-xunit")
 
 Task("unit-tests-mstest")
     .IsDependentOn ("externals-build")	
-    .IsDependentOn ("nuget")
     .IsDependentOn ("libs")
+    .IsDependentOn ("nuget")
     .Does
     (
         () =>
@@ -234,59 +248,33 @@ Task("unit-tests-mstest")
             return;
         }
     );
-
-const string TEST_DLL_FORMAT = "../MyApp.Tests.{0}/bin/{1}/MyApp.Tests.{0}.dll";
-const string OUTPUT_DIR = "output";
  
-Task("all-tests-coverage")
-    .IsDependentOn("libs")
-    .Does
+Task ("coverage-xunit")
+    .IsDependentOn ("unit-tests-xunit")
+    .Does 
     (
         () =>
         {
-            string[] dlls = 
-            {
-                //string.Format(TEST_DLL_FORMAT, "Integration", _buildConfiguration),
-                //string.Format(TEST_DLL_FORMAT, "Unit", _buildConfiguration)
-            };
-        
-            var coverSettings = new OpenCoverSettings()
-                .WithFilter("+[MyApp.*]*")
-                .WithFilter("-[MyApp.Tests.*]*");
-            coverSettings.SkipAutoProps = true;
-            coverSettings.Register = "user";
-            coverSettings.MergeByHash = true;
-            coverSettings.NoDefaultFilters = true;
-        
-            XUnit2Settings unitSettings = new XUnit2Settings 
-            { 
-                ShadowCopy = false,
-                HtmlReport = true,
-                OutputDirectory = $"./{OUTPUT_DIR}",
-        
-                // Shows progress text as each test is executing
-                ArgumentCustomization = args => args.Append("-verbose")
-            };
-        
-            var openCoverDir = $"./{OUTPUT_DIR}/OpenCover";
-            EnsureDirectoryExists(openCoverDir);
-        
-            var resultsFilePath = new FilePath($"{openCoverDir}/_results.xml");
-            OpenCover
+            DotCoverAnalyse
             (
                 tool => 
-                { 
-                    tool.XUnit2(dlls, unitSettings); 
-                }, 
-                resultsFilePath, 
-                coverSettings
+                {
+                    tool.XUnit2
+                            (
+                                "./tests/unit-tests/UnitTests.XUnit/bin/**/UnitTests.*.dll",
+                                new XUnit2Settings 
+                                {
+                                    ShadowCopy = false
+                                }
+                            );
+                },
+                new FilePath("./result.xml"),
+                new DotCoverAnalyseSettings()
+                    //.WithFilter("+:App")
+                    //.WithFilter("-:App.Tests")
             );
-        
-            ReportGenerator(resultsFilePath, openCoverDir);
         }
     );
-
-
 
 
 
