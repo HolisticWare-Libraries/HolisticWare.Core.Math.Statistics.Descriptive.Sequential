@@ -54,13 +54,22 @@ Running Cake to Build targets
 #addin nuget:?package=Cake.FileHelpers
 
 
+//---------------------------------------------------------------------------------------
+// unit testing
 #tool nuget:?package=NUnit.ConsoleRunner&version=3.8.0
 //#tool nuget:?package=NUnit.Console&version=3.8.0&include=../Nunit.ConsoleRunner/**/*
 //#tool nuget:?package=NUnit.Runners&version=3.8.0
 #tool "nuget:?package=xunit.runner.console"
+//---------------------------------------------------------------------------------------
+// coverage
 #tool "nuget:?package=OpenCover"
-#tool "nuget:?package=JetBrains.dotCover.CommandLineTools"
+// dotCover is commercial
+// #tool "nuget:?package=JetBrains.dotCover.CommandLineTools"
+//---------------------------------------------------------------------------------------
+// reporting
+#tool "nuget:?package=ReportUnit"
 #tool "nuget:?package=ReportGenerator"
+//---------------------------------------------------------------------------------------
 
 var TARGET = Argument ("t", Argument ("target", "Default"));
 
@@ -172,44 +181,48 @@ Task("unit-tests-xunit")
     (
         () =>
         {
-            MSBuild
-            (
-                "./tests/unit-tests/UnitTests.XUnit/UnitTests.XUnit.csproj", 
-                new MSBuildSettings 
-                {
-                    Configuration = "Debug",
-                }.WithProperty("DefineConstants", "TRACE;DEBUG;NETCOREAPP2_0;XUNIT")
-            );
-            DotNetCoreTest
-            (
-                "./tests/unit-tests/UnitTests.XUnit/UnitTests.XUnit.csproj",
-                //"xunit",  "--no-build -noshadow"
-                new DotNetCoreTestSettings()
-                {
-                }
-            );
-            XUnit2
-            (
-                "./tests/unit-tests/UnitTests.XUnit/bin/**/UnitTests.*.dll",
-                new XUnit2Settings 
-                {
-                    Parallelism = ParallelismOption.All,
-                    HtmlReport = false,
-                    NoAppDomain = true,
-                    XmlReport = true,
-                    OutputDirectory = "./build"
-                }
-            );
-        }
-    )
-    .ReportError
-    (
-        exception =>
-        {
-            Information("Some Unit Tests failed...");
-            ReportUnit("./build/report-err.xml", "./build/report-err.html");
+            try
+            {
+                MSBuild
+                (
+                    "./tests/unit-tests/UnitTests.XUnit/UnitTests.XUnit.csproj", 
+                    new MSBuildSettings 
+                    {
+                        Configuration = "Debug",
+                    }.WithProperty("DefineConstants", "TRACE;DEBUG;NETCOREAPP2_0;XUNIT")
+                );
+                DotNetCoreTest
+                (
+                    "./tests/unit-tests/UnitTests.XUnit/UnitTests.XUnit.csproj",
+                    //"xunit",  "--no-build -noshadow"
+                    new DotNetCoreTestSettings()
+                    {
+                    }
+                );
+                XUnit2
+                (
+                    "./tests/unit-tests/UnitTests.XUnit/bin/**/UnitTests.*.dll",
+                    new XUnit2Settings 
+                    {
+                        Parallelism = ParallelismOption.All,
+                        HtmlReport = false,
+                        NoAppDomain = true,
+                        XmlReport = true,
+                        OutputDirectory = "./build"
+                    }
+                );
+                
+            }
+            catch (System.Exception)
+            {  
+                Error("mc++ XUnit tests failed");   
+            }
 
-            return;
+            ReportUnit
+                (
+                    "./externals/unit-tests-xunit-report.xml", 
+                    "./externals/unit-tests-xunit-report.html"
+                );
         }
     );
 
@@ -255,24 +268,43 @@ Task ("coverage-xunit")
     (
         () =>
         {
-            DotCoverAnalyse
-            (
-                tool => 
-                {
-                    tool.XUnit2
-                            (
-                                "./tests/unit-tests/UnitTests.XUnit/bin/**/UnitTests.*.dll",
-                                new XUnit2Settings 
-                                {
-                                    ShadowCopy = false
-                                }
-                            );
-                },
-                new FilePath("./result.xml"),
-                new DotCoverAnalyseSettings()
-                    //.WithFilter("+:App")
-                    //.WithFilter("-:App.Tests")
-            );
+            int exit_code = StartProcess
+                        (
+                            "./tools/OpenCover.4.6.519/tools/OpenCover.Console.exe", 
+                            new ProcessSettings
+                            { 
+                                Arguments = 
+                                @"
+                                -target:./tools/xunit.runner.console.2.3.1/tools/net452/xunit.console.exe
+                                -searchdirs:./tests/unit-tests/UnitTests.XUnit/UnitTests.*/**/UnitTests.*.dll
+                                -register:user
+                                -output:./externals/coverage-opencover-xunit-report.xml
+                                "
+                            }
+                        );
+
+
+            // OpenCover
+            //     (
+            //         tool => 
+            //         {
+            //             tool.XUnit2
+            //             (
+            //                 "./tests/unit-tests/UnitTests.XUnit/UnitTests.*/**/UnitTests.*.dll",
+            //                 new XUnit2Settings 
+            //                 {
+            //                     ShadowCopy = false
+            //                 }
+            //             );
+            //         },
+            //         new FilePath("./externals/coverage-opencover-xunit-report.xml"),
+            //         new OpenCoverSettings()
+            //             //.WithFilter("+[App]*")
+            //             //.WithFilter("-[App.Tests]*")
+            //     );
+
+
+
         }
     );
 
