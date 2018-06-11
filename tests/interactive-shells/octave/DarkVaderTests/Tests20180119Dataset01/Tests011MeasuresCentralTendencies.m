@@ -15,3 +15,4 @@ mean_squared
 median = median(data01);
 median
 
+ls
