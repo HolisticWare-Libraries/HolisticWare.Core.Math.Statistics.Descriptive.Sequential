@@ -1,18 +1,21 @@
 
-#source(Tests00Data)
-run("Tests00Data.m")
-Tests00Data
+pwd
+# source "Tests00Data.m"
+# run("Tests00Data.m")
+# Tests00Data
 
-mean_arithmetic = mean(data01, "a");
+tic ();
+mean_arithmetic = mean(data, "a");
+elapsed_time = toc ();
 mean_arithmetic
-mean_geometric = mean(data01, "g");
+elapsed_time
+
+mean_geometric = mean(data, "g");
 mean_geometric
-mean_harmonic = mean(data01, "h");
+mean_harmonic = mean(data, "h");
 mean_harmonic
-mean_squared = meansq(data01);
+mean_squared = meansq(data);
 mean_squared
 
-median = median(data01);
+median = median(data);
 median
-
-ls

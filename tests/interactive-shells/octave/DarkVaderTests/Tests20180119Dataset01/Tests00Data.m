@@ -7,3 +7,4 @@ pwd
 cd tests/interactive-shells/octave/DarkVaderTests/Tests20180119Dataset01
 pwd
 source Tests011MeasuresCentralTendencies.m
+source Tests011MeasuresDistribution.m
