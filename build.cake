@@ -138,7 +138,12 @@ Task("unit-tests")
     .IsDependentOn ("unit-tests-nunit")	
     .IsDependentOn ("unit-tests-xunit")
     .IsDependentOn ("unit-tests-mstest")
-    ;
+    .Does
+    (
+        () =>
+        {
+        }
+    );
 
 Task("unit-tests-nunit")
     .IsDependentOn ("externals-build")	
@@ -237,162 +242,68 @@ Task("unit-tests-mstest")
                     Configuration = "Debug",
                 }.WithProperty("DefineConstants", "TRACE;DEBUG;NETCOREAPP2_0;MSTEST")
             );
-
-            try
-            {
-                DotNetCoreTest
-                (
-                    "./tests/unit-tests/UnitTests.MSTest/UnitTests.MSTest.csproj",
-                    //"xunit",  "--no-build -noshadow"
-                    new DotNetCoreTestSettings()
-                    {
-                    }
-                );                
-            }
-            catch (System.Exception)
-            {
-                    Error("UnitTests failing DotNetTest for MSTest:");
-            }
-
-            if (IsRunningOnWindows())
-            {
-                try
+            MSTest
+            (
+                "./tests/unit-tests/UnitTests.MSTest/bin/Debug/**/UnitTests.MSTest.dll", 
+                new MSTestSettings 
                 {
-                    MSTest
-                    (
-                        "./tests/unit-tests/UnitTests.MSTest/bin/Debug/**/UnitTests.MSTest.dll", 
-                        new MSTestSettings 
-                        {
-                        }
-                    );
                 }
-                catch (System.Exception)
+            );
+            DotNetCoreTest
+            (
+                "./tests/unit-tests/UnitTests.MSTest/UnitTests.MSTest.csproj",
+                //"xunit",  "--no-build -noshadow"
+                new DotNetCoreTestSettings()
                 {
-                    Error("UnitTests failing MSTest:");
                 }
-            }
+            );
  
             return;
         }
     );
-
-Task ("benchmarks")
-    .IsDependentOn ("benchmark-dotnetbenchmark-xunit")
-    .IsDependentOn ("benchmark-dotnetbenchmark-nunit")
-    .IsDependentOn ("benchmark-dotnetbenchmark-mstest")
-    ;
-
-Task ("benchmark-dotnetbenchmark-xunit")
-    .IsDependentOn ("unit-tests-xunit")
-    .Does 
-    (
-        () =>
-        {
-            try
-            {
-                DotNetCoreTest
-                    (
-                        "./tests/benchmark-tests/Benchmarks.XUnit/Benchmarks.XUnit.csproj", 
-                        new DotNetCoreTestSettings 
-                        {
-                            // DO NOT DO BENCHMARKS IN DEBUG Configuration!!!
-                            Configuration = "Release", 
-                        }
-                    );                
-            }
-            catch (System.Exception)
-            {
-                Error("UnitTests failing XUnit:");
-            }
-
-        }
-    );
-
-Task ("benchmark-dotnetbenchmark-mstest")
-    .IsDependentOn ("unit-tests-mstest")
-    .Does 
-    (
-        () =>
-        {
-            try
-            {
-                DotNetCoreTest
-                    (
-                        "./tests/benchmark-tests/Benchmarks.MSTest/Benchmarks.MSTest.csproj", 
-                        new DotNetCoreTestSettings 
-                        {
-                            // DO NOT DO BENCHMARKS IN DEBUG Configuration!!!
-                            Configuration = "Release", 
-                        }
-                    );                
-            }
-            catch (System.Exception)
-            {
-                Error("UnitTests failing MSTest:");
-            }
-
-        }
-    );
-
-Task ("benchmark-dotnetbenchmark-nunit")
-    .IsDependentOn ("unit-tests-nunit")
-    .Does 
-    (
-        () =>
-        {
-            try
-            {
-            }
-            catch (System.Exception)
-            {
-                Error("UnitTests failing MSTest:");
-            }
-
-        }
-    );
-
-
+ 
 Task ("coverage-xunit")
     .IsDependentOn ("unit-tests-xunit")
     .Does 
     (
         () =>
         {
-            // int exit_code = StartProcess
-            //             (
-            //                 "./tools/OpenCover.4.6.519/tools/OpenCover.Console.exe", 
-            //                 new ProcessSettings
-            //                 { 
-            //                     Arguments = 
-            //                     @"
-            //                     -target:./tools/xunit.runner.console.2.3.1/tools/net452/xunit.console.exe
-            //                     -searchdirs:./tests/unit-tests/UnitTests.XUnit/UnitTests.*/**/UnitTests.*.dll
-            //                     -register:user
-            //                     -output:./externals/coverage-opencover-xunit-report.xml
-            //                     "
-            //                 }
-            //             );
-
-            OpenCover
-                (
-                    tool => 
-                    {
-                        tool.XUnit2
+            int exit_code = StartProcess
                         (
-                            "./tests/unit-tests/UnitTests.XUnit/UnitTests.*/**/UnitTests.*.dll",
-                            new XUnit2Settings 
-                            {
-                                ShadowCopy = false
+                            "./tools/OpenCover.4.6.519/tools/OpenCover.Console.exe", 
+                            new ProcessSettings
+                            { 
+                                Arguments = 
+                                @"
+                                -target:
+                                -output:/externals/coverage-opencover-xunit-report.xml
+                                -searchdirs:./tests/unit-tests/UnitTests.XUnit/UnitTests.*/**/UnitTests.*.dll
+                                "
                             }
                         );
-                    },
-                    new FilePath("./externals/coverage-opencover-xunit-report.xml"),
-                    new OpenCoverSettings()
-                        //.WithFilter("+[App]*")
-                        //.WithFilter("-[App.Tests]*")
-                );
 
-            return;
+
+            // OpenCover
+            //     (
+            //         tool => 
+            //         {
+            //             tool.XUnit2
+            //             (
+            //                 "./tests/unit-tests/UnitTests.XUnit/UnitTests.*/**/UnitTests.*.dll",
+            //                 new XUnit2Settings 
+            //                 {
+            //                     ShadowCopy = false
+            //                 }
+            //             );
+            //         },
+            //         new FilePath("./externals/coverage-opencover-xunit-report.xml"),
+            //         new OpenCoverSettings()
+            //             //.WithFilter("+[App]*")
+            //             //.WithFilter("-[App.Tests]*")
+            //     );
+
+
+
         }
     );
 
@@ -476,7 +387,7 @@ Task("nuget-restore")
                 Information("File: {0}", file);
                 NuGetRestore(file);
             }
-            files = GetFiles("./tests/**/HolisticWare.Core.*.sln");
+            files = GetFiles("./tests/**/*.sln");
             foreach(FilePath file in files)
             {
                 Information("File: {0}", file);
@@ -522,3 +433,16 @@ if(! IsRunningOnWindows())
         Information($"unable to start process - tree {ex.Message}");
     }
 }
+else
+{
+    // int exit_code = StartProcess
+    //                         (
+    //                             "dir", 
+    //                             new ProcessSettings
+    //                             { 
+    //                                 Arguments = @"output"
+    //                             }
+    //                         );
+    
+}
+
