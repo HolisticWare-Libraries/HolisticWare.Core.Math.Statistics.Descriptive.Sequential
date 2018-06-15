@@ -52,3 +52,40 @@ disp ("              time [\u00B5s] = "), disp(elapsed_time * 1000000)
 disp ("==================================================================================")
 
 
+disp ("==================================================================================")
+# Arrange
+tic ();
+# Act
+skewness = skewness(data, 1);
+elapsed_time = toc ();
+# Assert
+disp ("skewness                     = "), disp(skewness)
+disp ("              time [\u00B5s] = "), disp(elapsed_time * 1000000)
+#assert(mean_arithmetic == 3.8)
+disp ("==================================================================================")
+
+
+disp ("==================================================================================")
+# Arrange
+tic ();
+# Act
+kurtosis = kurtosis(data, 1);
+elapsed_time = toc ();
+# Assert
+disp ("kurtosis                     = "), disp(kurtosis)
+disp ("              time [\u00B5s] = "), disp(elapsed_time * 1000000)
+#assert(mean_arithmetic == 3.8)
+disp ("==================================================================================")
+
+
+disp ("==================================================================================")
+# Arrange
+tic ();
+# Act
+skewness0 = skewness(data, 0);
+elapsed_time = toc ();
+# Assert
+disp ("skewness0                    = "), disp(skewness0)
+disp ("              time [\u00B5s] = "), disp(elapsed_time * 1000000)
+#assert(mean_arithmetic == 3.8)
+disp ("==================================================================================")
