@@ -7,8 +7,9 @@ namespace HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential
 {
     public partial class MatlabOctave
     {
-        public MatlabOctave()
+        public static double mean(IEnumerable<byte> x, string opt)
         {
+            return x.MeanArithmetic();    
         }
     }
 }
