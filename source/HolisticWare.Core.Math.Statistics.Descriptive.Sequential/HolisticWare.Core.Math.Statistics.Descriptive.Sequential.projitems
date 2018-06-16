@@ -56,7 +56,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-CentralTendencies\IEnumerableExtensions.MedianHigh.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-CentralTendencies\IEnumerableExtensions.MedianLow.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-CentralTendencies\IEnumerableExtensions.MedianWeighted.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-CentralTendencies\IEnumerableExtensions.Modes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-Dispersion\IEnumerableExtensions.Moment.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-Dispersion\IEnumerableExtensions.MomentCentral.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-Dispersion\IEnumerableExtensions.MomentCentralAbsolute.cs" />
@@ -160,6 +159,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-DistributionRoundness\IEnumerableExtensions.KurtosisType1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-DistributionRoundness\IEnumerableExtensions.KurtosisType3.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-DistributionRoundness\IEnumerableExtensions.KurtosisType2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-Distribution\IEnumerableExtensions.Modes.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)readme.md" />
