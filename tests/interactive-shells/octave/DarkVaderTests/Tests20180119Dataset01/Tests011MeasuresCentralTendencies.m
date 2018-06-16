@@ -73,10 +73,12 @@ disp ("=========================================================================
 # Arrange
 tic ();
 # Act
-mode = mode(data);
+[M, F, C] = mode(data);
 elapsed_time = toc ();
 # Assert
-disp ("mode                         = "), disp(mode)
+disp ("mode                         = "), disp(M)
+disp ("F                            = "), disp(F)
+disp ("C                            = "), disp(C)
 disp ("              time [\u00B5s] = "), disp(elapsed_time * 1000000)
 #assert(mean_arithmetic == 3.8)
 disp ("==================================================================================")
@@ -93,3 +95,4 @@ disp ("range                        = "), disp(range1)
 disp ("              time [\u00B5s] = "), disp(elapsed_time * 1000000)
 #assert(mean_arithmetic == 3.8)
 disp ("==================================================================================")
+
