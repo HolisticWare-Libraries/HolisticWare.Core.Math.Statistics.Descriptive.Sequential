@@ -1,5 +1,12 @@
 # Descriptive statistics
 
+TODO:
+
+*   naming discussion 
+
+*   move this to repo README.md (main README.md)
+
+
 ## Measures of Central tendency
 
 * [Arithmetic mean](https://en.wikipedia.org/wiki/Arithmetic_mean)
@@ -50,3 +57,33 @@
         
 * For differences between formulas more references on [R package 'e1071'](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjDw8PLkavbAhUBApoKHf0dB4wQFggqMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fe1071%2Fe1071.pdf&usg=AOvVaw02nj4Mk-mh5km97z9ukTdc)
         , pages *`27`* and *`47`.*
+
+
+
+
+## To Consider:
+
+
+1.  Central Tendencies
+
+    OK.
+
+2.  Dispersion 
+
+    Variability seems to be OK
+
+3.  Shape 
+
+    Was named - Distribution
+
+    2 sub items
+
+    *   Asymmetry
+
+    *   Roundness
+
+4.  Dependency /Dependencies
+
+    *   Correlation 
+    
+    *   Covariance
