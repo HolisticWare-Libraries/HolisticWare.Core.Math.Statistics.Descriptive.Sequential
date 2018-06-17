@@ -225,6 +225,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresDistribution.KurtosisType1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresDistribution.KurtosisType2.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresDistribution.KurtosisType3.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\MatlabOctave-API\Tests011MeasuresCentralTendencies.mean.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Async\" />
@@ -256,6 +257,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia01\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia02\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia03\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sync\DarkVaderTests\Tests20180119Dataset01\MatlabOctave-API\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests02FrequenciesModes.cs" />

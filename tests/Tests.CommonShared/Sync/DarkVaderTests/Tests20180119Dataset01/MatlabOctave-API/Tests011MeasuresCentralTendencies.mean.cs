@@ -33,7 +33,6 @@ using Test = Xunit.FactAttribute;
 using OneTimeSetUp = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
 // XUnit aliases
 using TestClass = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
-using TestContext = HolisticWare.Core.Testing.UnitTests.TestContext;
 #elif NUNIT
 using NUnit.Framework;
 // MSTest aliases
@@ -43,7 +42,7 @@ using TestClass = NUnit.Framework.TestFixtureAttribute;
 using TestMethod = NUnit.Framework.TestAttribute;
 using TestCleanup = NUnit.Framework.TearDownAttribute;
 // XUnit aliases
-using Fact = NUnit.Framework.TestAttribute;
+using Fact=NUnit.Framework.TestAttribute;
 #elif MSTEST
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 // NUnit aliases
@@ -58,28 +57,31 @@ using BenchmarkDotNet.Running;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Attributes.Jobs;
 #else
-using Benchmark = HolisticWare.Core.Testing.BenchmarkTests.Benchmark;
-using ShortRunJob = HolisticWare.Core.Testing.BenchmarkTests.ShortRunJob;
+using Benchmark = HolisticWare.Core.Testing.BenchmarkTests.Benchmark;using ShortRunJob = HolisticWare.Core.Testing.BenchmarkTests.ShortRunJob;
 #endif
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
-using System.Threading.Tasks;
-using System.IO;
-using System.Reflection;
+using System.Collections.ObjectModel;
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
-    public partial class UnitTests20180318DataSetRand50Samp01
+    public partial class Tests20180119Dataset01
     {
-        
-        [Test]
-        public void MeanArithmetic()
+        [Benchmark]
+        public double Array_mean_a()
         {
+            return data_array.mean("a");
+        }
+
+        [Test]
+        public void Array_mean_a_Test()
+        {
+            Console.WriteLine($"Array_mean_a_Test");
             //====================================================================================================
             //  Arrange
             //  reading data from files
@@ -88,129 +90,38 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            double mean_arithmetic = Data.MeanArithmetic();
+            //      extracted to atomic Benchmark method
+            double mean = Array_mean_a();
+
             sw.Stop();
-            Console.WriteLine($"List<double>.MeanArithmetic()");
-            Console.WriteLine($"          mean_arithmetic    = {mean_arithmetic}");
-            Console.WriteLine($"          size               = {Data.Count()}");
-            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
-            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
-            sw.Reset();
-            //----------------------------------------------------------------------------------------------------
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(180.8814, mean_arithmetic, 0.00001);
-            #elif XUNIT
-            Assert.Equal(180.8814, mean_arithmetic, 5);
-            #elif MSTEST
-            Assert.AreEqual(180.8814, mean_arithmetic, 0.00001);
-            #endif
-            //====================================================================================================
-
-            return;
-        }
-
-        [Test]
-        public void MeanGeometric()
-        {
-            //====================================================================================================
-            //  Arrange
-            //  reading data from files
-
-            sw = Stopwatch.StartNew();
-
-            //----------------------------------------------------------------------------------------------------
-            // Act
-            double mean_geometric = Data.MeanGeometric();
-            sw.Stop();
-            Console.WriteLine($"List<double>.MeanGeometric()");
-            Console.WriteLine($"          mean_geometric     = {mean_geometric}");
-            Console.WriteLine($"          size               = {Data.Count()}");
-            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
-            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
-            sw.Reset();
-
-            //----------------------------------------------------------------------------------------------------
-            // Assert
-            #if NUNIT
-            Assert.That(!Double.IsInfinity(mean_geometric));
-            Assert.AreEqual(179.7796, mean_geometric, 0.0001);
-            #elif XUNIT
-            Assert.True(!Double.IsInfinity(mean_geometric));
-            Assert.Equal(179.7797, mean_geometric, 4);
-            #elif MSTEST
-            #endif
-            //====================================================================================================
-
-            return;
-        }
-
-        [Test]
-        public void MeanGeometric_Exception()
-        {
-            #if NUNIT
-            // System.OverflowException : Arithmetic operation resulted in an overflow.
-            Assert.Throws<System.OverflowException>
-                    (
-                        () =>
-                        {
-                            // TODO: System.InvalidCastException : Specified cast is not valid.
-                            decimal mean_deomatric_decimal = (Data.Select(x_i => (decimal)x_i)).MeanGeometric();
-                        }
-                    );
-            #elif XUNIT
-            // System.OverflowException : Arithmetic operation resulted in an overflow.
-            Assert.Throws<System.OverflowException>
-                    (
-                        () =>
-                        {
-                            // TODO: System.InvalidCastException : Specified cast is not valid.
-                            decimal mean_deomatric_decimal = (Data.Select(x_i => (decimal)x_i)).MeanGeometric();
-                        }
-                    );
-            #elif MSTEST
-            #endif
-
-            return;
-        }
-
-        [Test]
-        public void MeanHarmonic()
-        {
-            //====================================================================================================
-            //  Arrange
-            //  reading data from files
-
-            sw = Stopwatch.StartNew();
-
-            //----------------------------------------------------------------------------------------------------
-            // Act
-            double mean = Data.MeanHarmonic();
-            sw.Stop();
-            Console.WriteLine($"List<double>.MeanHarmonic()");
+            Console.WriteLine($"Array<double>.mean_a()");
             Console.WriteLine($"          mean               = {mean}");
-            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          size               = {data_array.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
-
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(178.6275, mean, 0.0001);
+            Assert.AreEqual(3.00, mean, 0.00001);
             #elif XUNIT
-            Assert.Equal(178.6275, mean, 4);
+            Assert.Equal(3.00, mean, 5);
             #elif MSTEST
-            Assert.AreEqual(178.6275, mean, 0.0001);
+            Assert.AreEqual(3.00, mean, 0.00001);
             #endif
             //====================================================================================================
 
             return;
         }
 
+        [Benchmark]
+        public double ArraySegment_mean_a()
+        {
+            return data_array_segment.mean("a");
+        }
 
         [Test]
-        public void MeanQuadratic()
+        public void ArraySegment_mean_a_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -220,31 +131,37 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            double mean = Data.MeanQuadratic();
+            //      extracted to atomic Benchmark method
+            double mean = ArraySegment_mean_a();
+
             sw.Stop();
-            Console.WriteLine($"List<double>.MeanQuadratic()");
             Console.WriteLine($"          mean               = {mean}");
-            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
-
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(181.9349, mean, 0.0001);
+            Assert.AreEqual(3.00, mean, 0.00001);
             #elif XUNIT
-            Assert.Equal(181.9349, mean, 4);
+            Assert.Equal(3.00, mean, 5);
             #elif MSTEST
-            Assert.AreEqual(181.9349, mean, 0.0001);
+            Assert.AreEqual(3.00, mean, 0.00001);
             #endif
             //====================================================================================================
 
             return;
         }
 
+        [Benchmark]
+        public double List_mean_a()
+        {
+            return data_list.mean("a");
+        }
+
         [Test]
-        public void MeanCubic()
+        public void List_mean_a_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -254,31 +171,75 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            double mean = Data.MeanCubic();
-            sw.Stop();
-            Console.WriteLine($"List<double>.MeanCubic()");
+            //      extracted to atomic Benchmark method
+            double mean = List_mean_a();
+
             Console.WriteLine($"          mean               = {mean}");
-            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
-
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(182.9428, mean, 0.0001);
+            Assert.AreEqual(3.00, mean, 0.00001);
             #elif XUNIT
-            Assert.Equal(182.9428, mean, 4);
+            Assert.Equal(3.00, mean, 5);
             #elif MSTEST
-            Assert.AreEqual(182.9428, mean, 0.0001);
+            Assert.AreEqual(3.00, mean, 0.00001);
             #endif
             //====================================================================================================
 
             return;
         }
 
-            [Test]
-        public void Median()
+        [Benchmark]
+        public double Queue_mean_a()
+        {
+            return data_queue.mean("a");
+        }
+
+        [Test]
+        public void Queue_mean_a_Test()
+        {
+            //====================================================================================================
+            //  Arrange
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            //      extracted to atomic Benchmark method
+            double mean = Queue_mean_a();
+
+            sw.Stop();
+            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          size               = {data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(3.00, mean, 0.00001);
+            #elif XUNIT
+            Assert.Equal(3.00, mean, 5);
+            #elif MSTEST
+            Assert.AreEqual(3.00, mean, 0.00001);
+            #endif
+            //====================================================================================================
+
+            return;
+        }
+
+        [Benchmark]
+        public double Stack_mean_a()
+        {
+            return data_stack.mean("a");
+        }
+
+        [Test]
+        public void Stack_mean_a_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -288,28 +249,156 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            double median = Data.Median();
+            //      extracted to atomic Benchmark method
+            double mean = Stack_mean_a();
+
             sw.Stop();
-            Console.WriteLine($"List<double>.Median()");
-            Console.WriteLine($"          median             = {median}");
-            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
-
             //----------------------------------------------------------------------------------------------------
             // Assert
-#if NUNIT
-#elif XUNIT
-#elif MSTEST
-#endif
+            #if NUNIT
+            Assert.AreEqual(3.00, mean, 0.00001);
+            #elif XUNIT
+            Assert.Equal(3.00, mean, 5);
+            #elif MSTEST
+            Assert.AreEqual(3.00, mean, 0.00001);
+            #endif
+            //====================================================================================================
+
+            return;
+        }
+
+        [Benchmark]
+        public double LinkedList_mean_a()
+        {
+            return data_linked_list.mean("a");
+        }
+
+        [Test]
+        public void LinkedList_mean_a_Test()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            //      extracted to atomic Benchmark method
+            double mean = LinkedList_mean_a();
+
+            sw.Stop();
+            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          size               = {data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(3.00, mean, 0.00001);
+            #elif XUNIT
+            Assert.Equal(3.00, mean, 5);
+            #elif MSTEST
+            Assert.AreEqual(3.00, mean, 0.00001);
+            #endif
+            //====================================================================================================
+
+            return;
+        }
+
+        [Benchmark]
+        public double ObservableCollection_mean_a()
+        {
+            return data_observable_collection.mean("a");
+        }
+
+        [Test]
+        public void ObservableCollection_mean_a_Test()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            //      extracted to atomic Benchmark method
+            double mean = ObservableCollection_mean_a();
+
+            sw.Stop();
+            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          size               = {data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(3.00, mean, 0.00001);
+            #elif XUNIT
+            Assert.Equal(3.00, mean, 5);
+            #elif MSTEST
+            Assert.AreEqual(3.00, mean, 0.00001);
+            #endif
+            //====================================================================================================
+
+            return;
+        }
+
+
+        /*
+            c# 7.2
+            Span<T>, 
+            ReadOnlySpan<T>, 
+            Memory<T> 
+            ReadOnlyMemory<T>
+        */
+        /*
+        [Test]
+        public void Span_mean_a()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            Span<int> data = 
+                            new Span<int>(data01);
+                            //data01.AsSpan().Slice(start: 0)
+                            ;
+            double mean = data.mean_a();
+            sw.Stop();
+            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          size               = {data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(3.00, mean, 0.00001);
+            #elif XUNIT
+            Assert.Equal(3.00, mean, 5);
+            #elif MSTEST
+            Assert.AreEqual(3.00, mean, 0.00001);
+            #endif
             //====================================================================================================
 
             return;
         }
 
         [Test]
-        public void MedianLow()
+        public void Span_mean_a()
         {
             //====================================================================================================
             //  Arrange
@@ -319,55 +408,30 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            double median = Data.MedianLow();
+            Memory<int> data =
+                            new Memory<int>(data01);
+                            //data01.AsSpan().Slice(start: 0)
+                            ;
+            double mean = data.mean_a();
             sw.Stop();
-            Console.WriteLine($"List<double>.MedianLow()");
-            Console.WriteLine($"          median             = {median}");
-            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
-
             //----------------------------------------------------------------------------------------------------
             // Assert
-#if NUNIT
-#elif XUNIT
-#elif MSTEST
-#endif
+            #if NUNIT
+            Assert.AreEqual(3.00, mean, 0.00001);
+            #elif XUNIT
+            Assert.Equal(3.00, mean, 5);
+            #elif MSTEST
+            Assert.AreEqual(3.00, mean, 0.00001);
+            #endif
             //====================================================================================================
 
             return;
         }
-
-        [Test]
-        public void MedianHigh()
-        {
-            //====================================================================================================
-            //  Arrange
-            //  reading data from files
-
-            sw = Stopwatch.StartNew();
-
-            //----------------------------------------------------------------------------------------------------
-            // Act
-            double median = Data.MedianHigh();
-            sw.Stop();
-            Console.WriteLine($"List<double>.MedianHigh()");
-            Console.WriteLine($"          median             = {median}");
-            Console.WriteLine($"          size               = {Data.Count()}");
-            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
-            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
-            sw.Reset();
-
-            //----------------------------------------------------------------------------------------------------
-            // Assert
-#if NUNIT
-#elif XUNIT
-#elif MSTEST
-#endif
-            //====================================================================================================
-
-            return;
-        }
+        */
     }
 }
