@@ -67,6 +67,7 @@ using System.Diagnostics;
 using System.Collections.ObjectModel;
 
 using Core.Math.Statistics.Descriptive.Sequential;
+using Core.Math.Statistics.Descriptive.MatlabOctave.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {

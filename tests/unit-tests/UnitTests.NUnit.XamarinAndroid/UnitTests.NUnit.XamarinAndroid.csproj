@@ -90,6 +90,22 @@
       <Project>{DEFACBA9-2E24-46BD-B3E0-EFF602FA05DC}</Project>
       <Name>HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.NetStandard10.csproj">
+      <Project>{74AFF2E3-3E45-4DF3-8A94-678D13B4A29B}</Project>
+      <Name>HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.NetStandard10</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard10.csproj">
+      <Project>{F9E03430-A1C5-40DD-914F-4190E1D14E80}</Project>
+      <Name>HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard10</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10.csproj">
+      <Project>{0C54645E-1C9B-4A21-B39C-2370F2F6E9D6}</Project>
+      <Name>HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\externals\Core.Text\source\HolisticWare.Core.Text.NetStandard10\HolisticWare.Core.Text.NetStandard10.csproj">
+      <Project>{5B8DBA01-2E5F-457A-9895-A9A4759D1D43}</Project>
+      <Name>HolisticWare.Core.Text.NetStandard10</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="..\..\Tests.CommonShared\Tests.CommonShared.projitems" Label="Shared" Condition="Exists('..\..\Tests.CommonShared\Tests.CommonShared.projitems')" />
   <Import Project="..\..\..\externals\Core.Math.Samples\tests\data\HolisticWare.Core.Math.Samples\HolisticWare.Core.Math.Samples.projitems" Label="Shared" Condition="Exists('..\..\..\externals\Core.Math.Samples\tests\data\HolisticWare.Core.Math.Samples\HolisticWare.Core.Math.Samples.projitems')" />
