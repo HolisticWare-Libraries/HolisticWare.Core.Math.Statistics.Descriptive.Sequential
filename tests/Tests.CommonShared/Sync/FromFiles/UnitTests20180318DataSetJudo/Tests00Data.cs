@@ -77,6 +77,15 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
     public partial class UnitTests20180318DataSetJudo
     {
+        IEnumerable<double> data_ONT;
+        IEnumerable<double> data_OUZ;
+        IEnumerable<double> data_NEB;
+        IEnumerable<double> data_SKL;
+        IEnumerable<double> data_TRB;
+        IEnumerable<double> data_CUC;
+        IEnumerable<double> data_SDM;
+        IEnumerable<double> data_BML;
+
         private static List<JudoData> judo_data_table = null;
 
         public static List<JudoData> JudoDataTable
@@ -123,6 +132,34 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             {
                 text = reader.ReadToEnd();
             }
+            lines = text.Split
+                            (
+                                new string[] { Environment.NewLine },
+                                StringSplitOptions.RemoveEmptyEntries
+                            );
+
+            judo_data_table = new List<JudoData>();
+            int n = lines.Count();
+            for (int i = 1; i < n; i++)
+            {
+                string s1 = lines[i].Replace("\r", "");
+
+                string[] s_parts = s1.Split(new string[] { "." }, StringSplitOptions.None);
+                JudoData bg = new JudoData()
+                {
+                    ONT = double.Parse(s_parts[0].Replace(",000", "")),
+                    OUZ = double.Parse(s_parts[1].Replace(",000", "")),
+                    NEB = double.Parse(s_parts[2].Replace(",000", "")),
+                    SKL = double.Parse(s_parts[3].Replace(",000", "")),
+                    TRB = double.Parse(s_parts[4].Replace(",000", "")),
+                    CUC = double.Parse(s_parts[5].Replace(",000", "")),
+                    SDM = double.Parse(s_parts[6].Replace(",000", "")),
+                    BML = double.Parse(s_parts[7].Replace(",000", "")),
+                };
+
+            judo_data_table.Add(bg);
+            }
+            //------------------------------------------------------------------
 
             return;
         }
