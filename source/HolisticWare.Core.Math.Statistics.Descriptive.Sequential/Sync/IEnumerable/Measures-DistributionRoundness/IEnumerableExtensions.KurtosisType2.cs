@@ -63,10 +63,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                         this IEnumerable<int> x
                                     )
         {
-            double m2 = x.Moment(2);
-            double m4 = x.Moment(4);
+            double g_2 = x.KurtosisType1();
+            int n = x.Count();
 
-            return m4 / (m2 * m2);
+            return ((n + 1.0) * g_2 + 6.0) * (n - 1.0) / (n - 2.0) * (n - 3.0);
         }
 
         public static double KurtosisType2
