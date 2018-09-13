@@ -84,7 +84,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<int, uint>> Array_Frequencies()
+        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> Array_Frequencies()
         {
             return data_array.Frequencies();
         }
@@ -102,7 +102,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, uint>> frequencies = Array_Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = Array_Frequencies();
 
             sw.Stop();
             Console.WriteLine($"Array<double>.Frequencies()");
@@ -137,7 +137,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<int, uint>> ArraySegment_Frequencies()
+        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> ArraySegment_Frequencies()
         {
             return data_array_segment.Frequencies();
         }
@@ -154,7 +154,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, uint>> frequencies = ArraySegment_Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = ArraySegment_Frequencies();
 
             sw.Stop();
             Console.WriteLine($"          frequencies        = {frequencies}");
@@ -187,7 +187,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<int, uint>> List_Frequencies()
+        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> List_Frequencies()
         {
             return data_list.Frequencies();
         }
@@ -204,7 +204,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, uint>> frequencies = List_Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = List_Frequencies();
 
             Console.WriteLine($"          frequencies        = {frequencies}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -236,7 +236,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<int, uint>> Queue_Frequencies()
+        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> Queue_Frequencies()
         {
             return data_queue.Frequencies();
         }
@@ -252,7 +252,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, uint>> frequencies = Queue_Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = Queue_Frequencies();
 
             sw.Stop();
             Console.WriteLine($"          frequencies        = {frequencies}");
@@ -285,7 +285,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<int, uint>> Stack_Frequencies()
+        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> Stack_Frequencies()
         {
             return data_stack.Frequencies();
         }
@@ -302,7 +302,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, uint>> frequencies = Stack_Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = Stack_Frequencies();
 
             sw.Stop();
             Console.WriteLine($"          frequencies        = {frequencies}");
@@ -335,7 +335,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<int, uint>> LinkedList_Frequencies()
+        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> LinkedList_Frequencies()
         {
             return data_linked_list.Frequencies();
         }
@@ -352,7 +352,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, uint>> frequencies = LinkedList_Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = LinkedList_Frequencies();
 
             sw.Stop();
             Console.WriteLine($"          frequencies        = {frequencies}");
@@ -386,7 +386,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<int, uint>> ObservableCollection_Frequencies()
+        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> ObservableCollection_Frequencies()
         {
             return data_observable_collection.Frequencies();
         }
@@ -403,7 +403,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, uint>> frequencies = ObservableCollection_Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = ObservableCollection_Frequencies();
 
             sw.Stop();
             Console.WriteLine($"          frequencies        = {frequencies}");

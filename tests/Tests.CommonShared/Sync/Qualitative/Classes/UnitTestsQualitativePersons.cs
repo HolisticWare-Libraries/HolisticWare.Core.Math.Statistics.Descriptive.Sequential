@@ -72,7 +72,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.Qualitative
                                                     from Person p in Persons
                                                     select p.EyeColor;
 
-            IEnumerable<KeyValuePair<EyeColor, uint>> f = data_eyecolors.Frequencies();
+            IEnumerable<KeyValuePair<EyeColor, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> f = data_eyecolors.Frequencies();
 
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
                                     f,

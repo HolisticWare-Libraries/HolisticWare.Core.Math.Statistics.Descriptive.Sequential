@@ -60,56 +60,57 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
 
             sw = Stopwatch.StartNew();
             // Act
-            IEnumerable<KeyValuePair<int, uint>> frequencies01 = data.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies01;
+            frequencies01 = data.Frequencies();
             sw.Stop();
             Console.WriteLine($"List<int>.Average() size={data.Count()} elapsed[ticks]={sw.ElapsedTicks}");
             sw.Reset();
 
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                            (
                                 frequencies01,
-                                new Dictionary<int, uint>()
+                                new Dictionary<int, (uint, double, uint)>()
                                 {
-                                    { 4, 3 },
-                                    { 2, 2 },
-                                    { 3, 1 },
-                                    { 5, 1 },
-                                    { 6, 1 },
-                                    { 7, 1 },
-                                    { 1, 1 },
+                                    { 4, ( 3, 0.1, 3) },
+                                    { 2, ( 2, 0.1, 2) },
+                                    { 3, ( 1, 0.1, 3) },
+                                    { 5, ( 1, 0.1, 3) },
+                                    { 6, ( 1, 0.1, 3) },
+                                    { 7, ( 1, 0.1, 3) },
+                                    { 1, ( 1, 0.1, 3) },
                                 }
                             );
-            #elif XUNIT
+#elif XUNIT
             Assert.Equal
                             (
                                 frequencies01,
-                                new Dictionary<int, uint>()
+                                new Dictionary<int, (uint, double, uint)>()
                                 {
-                                    { 4, 3 },
-                                    { 2, 2 },
-                                    { 3, 1 },
-                                    { 5, 1 },
-                                    { 6, 1 },
-                                    { 7, 1 },
-                                    { 1, 1 },
+                                    { 4, ( 3, 0.1, 3) },
+                                    { 2, ( 2, 0.1, 2) },
+                                    { 3, ( 1, 0.1, 3) },
+                                    { 5, ( 1, 0.1, 3) },
+                                    { 6, ( 1, 0.1, 3) },
+                                    { 7, ( 1, 0.1, 3) },
+                                    { 1, ( 1, 0.1, 3) },
                                 }
                             );
-            #elif MSTEST
+#elif MSTEST
             CollectionAssert.AreEquivalent
                             (
                                 frequencies01.ToArray(),
-                                new Dictionary<int, uint>()
+                                new Dictionary<int, (uint, double, uint)>()
                                 {
-                                    { 4, 3 },
-                                    { 2, 2 },
-                                    { 3, 1 },
-                                    { 5, 1 },
-                                    { 6, 1 },
-                                    { 7, 1 },
-                                    { 1, 1 },
+                                    { 4, ( 3, 0.1, 3) },
+                                    { 2, ( 2, 0.1, 2) },
+                                    { 3, ( 1, 0.1, 3) },
+                                    { 5, ( 1, 0.1, 3) },
+                                    { 6, ( 1, 0.1, 3) },
+                                    { 7, ( 1, 0.1, 3) },
+                                    { 1, ( 1, 0.1, 3) },
                                 }
                             );
-            #endif
-        return;
+#endif
+            return;
         }
 
     }

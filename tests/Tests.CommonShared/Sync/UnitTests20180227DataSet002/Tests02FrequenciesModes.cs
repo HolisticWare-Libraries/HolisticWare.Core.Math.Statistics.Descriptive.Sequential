@@ -88,7 +88,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             sw = Stopwatch.StartNew();
             // Act
-            IEnumerable<KeyValuePair<int, uint>> frequencies01 = data_list.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies01;
+            frequencies01 = data_list.Frequencies();
             sw.Stop();
             Console.WriteLine($"List<int>.Frequencies()");
             Console.WriteLine($"          frequencies01      = {frequencies01}");
@@ -99,66 +100,66 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
                                     frequencies01,
-                                    new Dictionary<int, uint>()
+                                    new Dictionary<int, (uint, double, uint)>()
                                     {
-                                        { 24, 2},
-                                        { 28, 2},
-                                        { 29, 2},
-                                        { 22, 1},
-                                        { 33, 1},
-                                        { 25, 1},
-                                        { 36, 1},
-                                        { 27, 1},
-                                        { 34, 1},
-                                        { 32, 1},
-                                        { 21, 1},
-                                        { 30, 1},
-                                        { 35, 1},
+                                        { 24, ( 2, 0.1, 3 ) },
+                                        { 28, ( 2, 0.1, 3 ) },
+                                        { 29, ( 2, 0.1, 3 ) },
+                                        { 22, ( 1, 0.1, 3 ) },
+                                        { 33, ( 1, 0.1, 3 ) },
+                                        { 25, ( 1, 0.1, 3 ) },
+                                        { 36, ( 1, 0.1, 3 ) },
+                                        { 27, ( 1, 0.1, 3 ) },
+                                        { 34, ( 1, 0.1, 3 ) },
+                                        { 32, ( 1, 0.1, 3 ) },
+                                        { 21, ( 1, 0.1, 3 ) },
+                                        { 30, ( 1, 0.1, 3 ) },
+                                        { 35, ( 1, 0.1, 3 ) },
                                     }
                                 );
-            #elif XUNIT
+#elif XUNIT
             Assert.Equal
                                 (
                                     frequencies01,
-                                    new Dictionary<int, uint>()
+                                    new Dictionary<int, (uint, double, uint)>()
                                     {
-                                        { 24, 2},
-                                        { 28, 2},
-                                        { 29, 2},
-                                        { 22, 1},
-                                        { 33, 1},
-                                        { 25, 1},
-                                        { 36, 1},
-                                        { 27, 1},
-                                        { 34, 1},
-                                        { 32, 1},
-                                        { 21, 1},
-                                        { 30, 1},
-                                        { 35, 1},
+                                        { 24, ( 2, 0.1, 3 ) },
+                                        { 28, ( 2, 0.1, 3 ) },
+                                        { 29, ( 2, 0.1, 3 ) },
+                                        { 22, ( 1, 0.1, 3 ) },
+                                        { 33, ( 1, 0.1, 3 ) },
+                                        { 25, ( 1, 0.1, 3 ) },
+                                        { 36, ( 1, 0.1, 3 ) },
+                                        { 27, ( 1, 0.1, 3 ) },
+                                        { 34, ( 1, 0.1, 3 ) },
+                                        { 32, ( 1, 0.1, 3 ) },
+                                        { 21, ( 1, 0.1, 3 ) },
+                                        { 30, ( 1, 0.1, 3 ) },
+                                        { 35, ( 1, 0.1, 3 ) },
                                     }
                                 );
-            #elif MSTEST
+#elif MSTEST
             CollectionAssert.AreEquivalent
                                 (
                                     frequencies01.ToArray(),
-                                    new Dictionary<int, uint>()
+                                    new Dictionary<int, (uint, double, uint)>()
                                     {
-                                        { 24, 2},
-                                        { 28, 2},
-                                        { 29, 2},
-                                        { 22, 1},
-                                        { 33, 1},
-                                        { 25, 1},
-                                        { 36, 1},
-                                        { 27, 1},
-                                        { 34, 1},
-                                        { 32, 1},
-                                        { 21, 1},
-                                        { 30, 1},
-                                        { 35, 1},
+                                        { 24, ( 2, 0.1, 3 ) },
+                                        { 28, ( 2, 0.1, 3 ) },
+                                        { 29, ( 2, 0.1, 3 ) },
+                                        { 22, ( 1, 0.1, 3 ) },
+                                        { 33, ( 1, 0.1, 3 ) },
+                                        { 25, ( 1, 0.1, 3 ) },
+                                        { 36, ( 1, 0.1, 3 ) },
+                                        { 27, ( 1, 0.1, 3 ) },
+                                        { 34, ( 1, 0.1, 3 ) },
+                                        { 32, ( 1, 0.1, 3 ) },
+                                        { 21, ( 1, 0.1, 3 ) },
+                                        { 30, ( 1, 0.1, 3 ) },
+                                        { 35, ( 1, 0.1, 3 ) },
                                     }
                                 );
-            #endif
+#endif
             //====================================================================================================
 
             return;
