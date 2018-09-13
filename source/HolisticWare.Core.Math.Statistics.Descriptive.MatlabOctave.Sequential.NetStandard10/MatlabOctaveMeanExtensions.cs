@@ -130,18 +130,15 @@ namespace Core.Math.Statistics.Descriptive.MatlabOctave.Sequential
         /// <summary>
         /// Mean (Statistical) calculation - Matlab/Octave API mimic
         /// </summary>
-        /// <returns>
-        /// statistical mean based on optional argument ("a", "g", "h")
-        /// </returns>
+        /// <param name="x">x - IEnumerable collection</param>
+        /// <param name="option">string textual option parameter to define mean algorithm</param>
+        /// <returns>statistical mean based on optional argument ("a", "g", "h")</returns>
         /// <example>
         /// (new int[] { 1, 2, 3, 5, 8}).mean("a");
         /// </example>
-        /// <param name="x">x - IEnumerable collection</param>
-        /// <param name="option">
-        /// string textual option parameter to define mean algorithm
-        /// </param>
         /// <see cref="https://www.mathworks.com/help/matlab/ref/mean.html"/>
         /// <see cref="https://octave.org/doc/v4.2.1/Descriptive-Statistics.html"/>
+
         public static double mean(this IEnumerable<int> x, string option = "a")
         {
             double retval_mean = double.NaN;
