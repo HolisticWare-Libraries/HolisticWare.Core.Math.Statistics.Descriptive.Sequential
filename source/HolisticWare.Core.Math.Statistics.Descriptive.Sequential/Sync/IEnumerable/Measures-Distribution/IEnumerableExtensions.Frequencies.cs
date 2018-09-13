@@ -11,163 +11,203 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsFrequencies
     {
         //==============================================================================================================
-        public static IEnumerable<KeyValuePair<T, uint>> Frequencies<T>
-                                                                    (
-                                                                        this IEnumerable<T> x
-                                                                    )
+        public static 
+            IEnumerable<KeyValuePair<T, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> 
+                Frequencies<T>
+                            (
+                                this IEnumerable<T> x
+                            )
         {
-            Dictionary<T, uint> frequencies = x.FrequencyCounter();
+            Dictionary<T, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> frequencies;
+            frequencies = x.FrequencyCounter();
 
-            IEnumerable<KeyValuePair<T, uint>> frequencies_sorted =
-                from pair in frequencies
-                orderby pair.Value descending
-                select pair
-                    ;
+            IEnumerable<KeyValuePair<T, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies_sorted;
+            frequencies_sorted =
+                                    from pair in frequencies
+                                        orderby pair.Value descending
+                                        select pair
+                                        ;
 
             return frequencies_sorted;
         }
 
-        public static IEnumerable<KeyValuePair<ushort, uint>> Frequencies
-                                                                    (
-                                                                        this IEnumerable<ushort> x
-                                                                    )
+        public static
+            IEnumerable<KeyValuePair<ushort, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> 
+                Frequencies
+                            (
+                                this IEnumerable<ushort> x
+                            )
         {
-            Dictionary<ushort, uint> frequencies = x.FrequencyCounter();
+            Dictionary<ushort, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> frequencies;
+            frequencies = x.FrequencyCounter();
 
-            IEnumerable<KeyValuePair<ushort, uint>> frequencies_sorted =
-                from pair in frequencies
-                orderby pair.Value descending
-                select pair
-                    ;
+            IEnumerable<KeyValuePair<ushort, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies_sorted;
+            frequencies_sorted =
+                                    from pair in frequencies
+                                    orderby pair.Value descending
+                                    select pair
+                                        ;
 
             return frequencies_sorted;
         }
 
-        public static IEnumerable<KeyValuePair<short, uint>> Frequencies
-                                                                    (
-                                                                        this IEnumerable<short> x
-                                                                    )
+        public static
+            IEnumerable<KeyValuePair<short, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> 
+                Frequencies
+                            (
+                                this IEnumerable<short> x
+                            )
         {
-            Dictionary<short, uint> frequencies = x.FrequencyCounter();
+            Dictionary<short, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> frequencies;
+            frequencies = x.FrequencyCounter();
 
-            IEnumerable<KeyValuePair<short, uint>> frequencies_sorted =
-                from pair in frequencies
-                orderby pair.Value descending
-                select pair
-                    ;
+            IEnumerable<KeyValuePair<short, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies_sorted;
+            frequencies_sorted =
+                                    from pair in frequencies
+                                    orderby pair.Value descending
+                                    select pair
+                                        ;
 
             return frequencies_sorted;
         }
 
-        public static IEnumerable<KeyValuePair<int, uint>> Frequencies
-                                                                    (
-                                                                        this IEnumerable<int> x
-                                                                    )
+        public static
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> 
+                Frequencies
+                            (
+                                this IEnumerable<int> x
+                            )
         {
-            Dictionary<int, uint> frequencies = x.FrequencyCounter();
+            Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> frequencies;
+            frequencies = x.FrequencyCounter();
 
-            IEnumerable<KeyValuePair<int, uint>> frequencies_sorted =
-                from pair in frequencies
-                orderby pair.Value descending
-                select pair
-                    ;
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies_sorted;
+            frequencies_sorted =
+                                    from pair in frequencies
+                                    orderby pair.Value descending
+                                    select pair
+                                        ;
 
             return frequencies_sorted;
         }
 
-        public static IEnumerable<KeyValuePair<uint, uint>> Frequencies
-                                                                    (
-                                                                        this IEnumerable<uint> x
-                                                                    )
+        public static
+            IEnumerable<KeyValuePair<uint, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> 
+                Frequencies
+                            (
+                                this IEnumerable<uint> x
+                            )
         {
-            Dictionary<uint, uint> frequencies = x.FrequencyCounter();
+            Dictionary<uint, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> frequencies;
+            frequencies = x.FrequencyCounter();
 
-            IEnumerable<KeyValuePair<uint, uint>> frequencies_sorted =
-                from pair in frequencies
-                orderby pair.Value descending
-                select pair
-                    ;
+            IEnumerable<KeyValuePair<uint, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies_sorted;
+            frequencies_sorted =
+                                    from pair in frequencies
+                                    orderby pair.Value descending
+                                    select pair
+                                        ;
 
             return frequencies_sorted;
         }
 
-        public static IEnumerable<KeyValuePair<long, uint>> Frequencies
-                                                                    (
-                                                                        this IEnumerable<long> x
-                                                                    )
+        public static
+            IEnumerable<KeyValuePair<long, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> 
+                Frequencies
+                            (
+                                this IEnumerable<long> x
+                            )
         {
-            Dictionary<long, uint> frequencies = x.FrequencyCounter();
+            Dictionary<long, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> frequencies;
+            frequencies = x.FrequencyCounter();
 
-            IEnumerable<KeyValuePair<long, uint>> frequencies_sorted =
-                from pair in frequencies
-                orderby pair.Value descending
-                select pair
-                    ;
+            IEnumerable<KeyValuePair<long, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies_sorted;
+            frequencies_sorted =
+                                    from pair in frequencies
+                                    orderby pair.Value descending
+                                    select pair
+                                        ;
 
             return frequencies_sorted;
         }
 
-        public static IEnumerable<KeyValuePair<ulong, uint>> Frequencies
-                                                                    (
-                                                                        this IEnumerable<ulong> x
-                                                                    )
+        public static
+            IEnumerable<KeyValuePair<ulong, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> 
+                Frequencies
+                            (
+                                this IEnumerable<ulong> x
+                            )
         {
-            Dictionary<ulong, uint> frequencies = x.FrequencyCounter();
+            Dictionary<ulong, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> frequencies;
+            frequencies = x.FrequencyCounter();
 
-            IEnumerable<KeyValuePair<ulong, uint>> frequencies_sorted =
-                from pair in frequencies
-                orderby pair.Value descending
-                select pair
-                    ;
+            IEnumerable<KeyValuePair<ulong, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies_sorted;
+            frequencies_sorted =
+                                    from pair in frequencies
+                                    orderby pair.Value descending
+                                    select pair
+                                        ;
 
             return frequencies_sorted;
         }
 
-        public static IEnumerable<KeyValuePair<float, uint>> Frequencies
-                                                                    (
-                                                                        this IEnumerable<float> x
-                                                                    )
+        public static
+            IEnumerable<KeyValuePair<float, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> 
+                Frequencies
+                            (
+                                this IEnumerable<float> x
+                            )
         {
-            Dictionary<float, uint> frequencies = x.FrequencyCounter();
+            Dictionary<float, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> frequencies;
+            frequencies = x.FrequencyCounter();
 
-            IEnumerable<KeyValuePair<float, uint>> frequencies_sorted =
-                from pair in frequencies
-                orderby pair.Value descending
-                select pair
-                    ;
+            IEnumerable<KeyValuePair<float, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies_sorted;
+            frequencies_sorted =
+                                    from pair in frequencies
+                                    orderby pair.Value descending
+                                    select pair
+                                        ;
 
             return frequencies_sorted;
         }
 
 
-        public static IEnumerable<KeyValuePair<double, uint>> Frequencies
-                                                                    (
-                                                                        this IEnumerable<double> x
-                                                                    )
+        public static
+            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> 
+                Frequencies
+                            (
+                                this IEnumerable<double> x
+                            )
         {
-            Dictionary<double, uint> frequencies = x.FrequencyCounter();
+            Dictionary<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> frequencies;
+            frequencies = x.FrequencyCounter();
 
-            IEnumerable<KeyValuePair<double, uint>> frequencies_sorted =
-                from pair in frequencies
-                orderby pair.Value descending
-                select pair
-                    ;
+            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies_sorted;
+            frequencies_sorted =
+                                    from pair in frequencies
+                                    orderby pair.Value descending
+                                    select pair
+                                        ;
 
             return frequencies_sorted;
         }
 
-        public static IEnumerable<KeyValuePair<decimal, uint>> Frequencies
-                                                                    (
-                                                                        this IEnumerable<decimal> x
-                                                                    )
+        public static
+            IEnumerable<KeyValuePair<decimal, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> 
+                Frequencies
+                            (
+                                this IEnumerable<decimal> x
+                            )
         {
-            Dictionary<decimal, uint> frequencies = x.FrequencyCounter();
+            Dictionary<decimal, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> frequencies;
+            frequencies = x.FrequencyCounter();
 
-            IEnumerable<KeyValuePair<decimal, uint>> frequencies_sorted =
-                from pair in frequencies
-                orderby pair.Value descending
-                select pair
-                    ;
+            IEnumerable<KeyValuePair<decimal, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies_sorted;
+            frequencies_sorted =
+                                    from pair in frequencies
+                                    orderby pair.Value descending
+                                    select pair
+                                        ;
 
             return frequencies_sorted;
         }

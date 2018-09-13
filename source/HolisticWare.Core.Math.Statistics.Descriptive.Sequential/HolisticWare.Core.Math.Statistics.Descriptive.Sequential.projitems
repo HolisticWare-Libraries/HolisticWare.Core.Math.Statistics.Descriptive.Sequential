@@ -160,7 +160,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-DistributionRoundness\IEnumerableExtensions.KurtosisType3.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-DistributionRoundness\IEnumerableExtensions.KurtosisType2.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-Distribution\IEnumerableExtensions.Modes.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-Distribution\IEnumerableExtensions.FrequenciesCumulative.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)readme.md" />
