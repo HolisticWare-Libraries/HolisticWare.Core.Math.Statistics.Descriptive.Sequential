@@ -76,6 +76,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
     public partial class UnitTests20180318DataSetBasketball
     {
+        IEnumerable<int> data_2pts_success;
+        IEnumerable<int> data_3pts_success;
+        IEnumerable<int> data_2pts_fail;
+        IEnumerable<int> data_3pts_fail;
+        IEnumerable<int> data_free_throw_fail;
+        IEnumerable<int> data_free_throw_success;
+        IEnumerable<int> data_jumps_offensive;
+        IEnumerable<int> data_jumps_defensive;
+        IEnumerable<int> data_assistence;
+        IEnumerable<int> data_personal_faults;
+        IEnumerable<int> data_balls_lost;
+        IEnumerable<int> data_balls_stolen;
+        IEnumerable<int> data_blocks;
+
         private static List<BasketballTeamData> basketball_team_data_table = null;
 
         public static List<BasketballTeamData> BasketballTeamDataTable

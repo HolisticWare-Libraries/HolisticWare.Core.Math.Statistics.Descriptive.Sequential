@@ -226,6 +226,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\01-DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresDistribution.KurtosisType2.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\01-DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresDistribution.KurtosisType3.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\01-DarkVaderTests\Tests20180119Dataset01\MatlabOctave-API\Tests011MeasuresCentralTendencies.mean.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests01aMeanHarmonic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests01Range.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetJudo\Tests01aMeanArithmetic.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Async\" />

@@ -75,15 +75,16 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class UnitTests20180318DataSetBasketball
     {
+
         [Test()]
-        public void MeanArithmetic_Points2Success()
+        public void MeanHarmonic_Points2Success()
         {
             data_2pts_success =
                                     from row in BasketballTeamDataTable
                                     select row.Points2Success
                                         ;
 
-            double mean_2s_a = data_2pts_success.MeanArithmetic();
+            double mean_2s_a = data_2pts_success.MeanHarmonic();
 
             // Assert
             #if NUNIT
@@ -100,14 +101,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         //double mean_2_a;
 
         [Test()]
-        public void MeanArithmetic_Points3Success()
+        public void MeanHarmonic_Points3Success()
         {
             data_3pts_success =
                                     from row in BasketballTeamDataTable
                                     select row.Points3Success
                                         ;
 
-            double mean_a_3pts_success = data_3pts_success.MeanArithmetic();
+            double mean_a_3pts_success = data_3pts_success.MeanHarmonic();
 
             // Assert
             #if NUNIT
@@ -124,14 +125,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Test()]
-        public void MeanArithmetic_Points2Fail()
+        public void MeanHarmonic_Points2Fail()
         {
             data_2pts_fail =
                                 from row in BasketballTeamDataTable
                                 select row.Points2Fail
                                     ;
 
-            double mean_2f_a = data_2pts_fail.MeanArithmetic();
+            double mean_2f_a = data_2pts_fail.MeanHarmonic();
 
             // Assert
             #if NUNIT
@@ -148,14 +149,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Test()]
-        public void MeanArithmetic_Points3Fail()
+        public void MeanHarmonic_Points3Fail()
         {
             data_3pts_fail =
                                 from row in BasketballTeamDataTable
                                 select row.Points3Fail
                                     ;
 
-            double mean_3f_a = data_3pts_fail.MeanArithmetic();
+            double mean_3f_a = data_3pts_fail.MeanHarmonic();
 
             // Assert
             #if NUNIT
@@ -171,14 +172,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Test()]
-        public void MeanArithmetic_FreeThrowFail()
+        public void MeanHarmonic_FreeThrowFail()
         {
             data_free_throw_fail =
                                 from row in BasketballTeamDataTable
                                 select row.FreeThrowFail
                                     ;
 
-            double mean_ftf_a = data_free_throw_fail.MeanArithmetic();
+            double mean_ftf_a = data_free_throw_fail.MeanHarmonic();
 
             // Assert
             #if NUNIT
@@ -194,14 +195,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Test()]
-        public void MeanArithmetic_FreeThrowSuccess()
+        public void MeanHarmonic_FreeThrowSuccess()
         {
             data_free_throw_success =
                                 from row in BasketballTeamDataTable
                                 select row.FreeThrowSuccess
                                     ;
 
-            double mean_fts_a = data_free_throw_success.MeanArithmetic();
+            double mean_fts_a = data_free_throw_success.MeanHarmonic();
 
             // Assert
             #if NUNIT
@@ -217,14 +218,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Test()]
-        public void MeanArithmetic_JumpsOffensive()
+        public void MeanHarmonic_JumpsOffensive()
         {
             data_jumps_offensive =
                                 from row in BasketballTeamDataTable
                                 select row.JumpsOffensive
                                     ;
 
-            double mean_off_a = data_jumps_offensive.MeanArithmetic();
+            double mean_off_a = data_jumps_offensive.MeanHarmonic();
 
             // Assert
             #if NUNIT
@@ -239,14 +240,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Test()]
-        public void MeanArithmetic_JumpsDefensive()
+        public void MeanHarmonic_JumpsDefensive()
         {
             data_jumps_defensive =
                                 from row in BasketballTeamDataTable
                                 select row.JumpsDefensive
                                     ;
 
-            double mean_def_a = data_jumps_defensive.MeanArithmetic();
+            double mean_def_a = data_jumps_defensive.MeanHarmonic();
 
             // Assert
             #if NUNIT
@@ -261,14 +262,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Test()]
-        public void MeanArithmetic_Assistence()
+        public void MeanHarmonic_Assistence()
         {
             data_assistence =
                                 from row in BasketballTeamDataTable
                                 select row.Assistence
                                     ;
 
-            double mean_assist_a = data_assistence.MeanArithmetic();
+            double mean_assist_a = data_assistence.MeanHarmonic();
 
             // Assert
             #if NUNIT
@@ -283,14 +284,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Test()]
-        public void MeanArithmetic_PersonalFaults()
+        public void MeanHarmonic_PersonalFaults()
         {
             data_personal_faults =
                                 from row in BasketballTeamDataTable
                                 select row.PersonalFaults
                                     ;
 
-            double mean_pf_a = data_personal_faults.MeanArithmetic();
+            double mean_pf_a = data_personal_faults.MeanHarmonic();
 
             // Assert
             #if NUNIT
@@ -306,14 +307,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Test()]
-        public void MeanArithmetic_BallsLost()
+        public void MeanHarmonic_BallsLost()
         {
             data_balls_lost =
                                 from row in BasketballTeamDataTable
                                 select row.BallsLost
                                     ;
 
-            double mean_bl_a = data_balls_lost.MeanArithmetic();
+            double mean_bl_a = data_balls_lost.MeanHarmonic();
 
             // Assert
             #if NUNIT
@@ -329,14 +330,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Test()]
-        public void MeanArithmetic_BallsStolen()
+        public void MeanHarmonic_BallsStolen()
         {
             data_balls_stolen =
                                 from row in BasketballTeamDataTable
                                 select row.BallsStolen
                                     ;
 
-            double mean_bs_a = data_balls_stolen.MeanArithmetic();
+            double mean_bs_a = data_balls_stolen.MeanHarmonic();
 
             // Assert
             #if NUNIT
@@ -352,14 +353,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Test()]
-        public void MeanArithmetic_Blocks()
+        public void MeanHarmonic_Blocks()
         {
             data_blocks =
                                 from row in BasketballTeamDataTable
                                 select row.Blocks
                                     ;
 
-            double mean_block_a = data_blocks.MeanArithmetic();
+            double mean_block_a = data_blocks.MeanHarmonic();
 
             // Assert
             #if NUNIT
