@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DefineConstants>TRACE;MSTEST;DEBUG;NETCOREAPP2_0</DefineConstants>
+    <DefineConstants>TRACE;MSTEST;DEBUG;NETCOREAPP;NETCOREAPP2_0</DefineConstants>
+    <DocumentationFile>bin\Debug\netcoreapp2.0\UnitTests.MSTest.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType></DebugType>
