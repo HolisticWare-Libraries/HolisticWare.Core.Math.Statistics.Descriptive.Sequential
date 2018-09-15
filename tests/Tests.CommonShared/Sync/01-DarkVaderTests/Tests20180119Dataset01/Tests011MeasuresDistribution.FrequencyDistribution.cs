@@ -75,15 +75,19 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)> fcd = 
                     new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
                                         {
-                                            { 1, ( 1, 0.2, 3 ) },
+                                            { 1, ( 1, 0.1, 1 ) },
                                             { 2, ( 2, 0.2, 3 ) },
-                                            { 3, ( 4, 0.2, 3 ) },
-                                            { 4, ( 2, 0.2, 3 ) },
-                                            { 5, ( 1, 0.2, 3 ) },
+                                            { 3, ( 4, 0.4, 7 ) },
+                                            { 4, ( 2, 0.2, 9 ) },
+                                            { 5, ( 1, 0.1, 10 ) },
                                         };
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> Array_FrequencyDistribution()
+        public 
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> 
+                Array_FrequencyDistribution
+                    (
+                    )
         {
             return data_array.FrequencyDistribution();
         }
@@ -101,11 +105,12 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequency_distribution = Array_FrequencyDistribution();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> fd;
+            fd = Array_FrequencyDistribution();
 
             sw.Stop();
             Console.WriteLine($"Array<double>.FrequencyDistribution()");
-            Console.WriteLine($"          frequency_distribution               = {frequency_distribution}");
+            Console.WriteLine($"          fd               = {fd}");
             Console.WriteLine($"          size               = {data_array.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -113,30 +118,34 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Assert
-#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
+            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
                             fcd.ToList(),
-                            frequency_distribution
+                            fd
                         );
-#elif XUNIT
+            #elif XUNIT
             Assert.Equal
                         (
                             fcd.ToList(),
-                            frequency_distribution
+                            fd
                         );
-#elif MSTEST
+            #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
                             fcd.ToList(),
-                            frequency_distribution.ToArray()
+                            fd.ToArray()
                         );
-#endif
+            #endif
             //====================================================================================================
 
             return;
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> ArraySegment_FrequencyDistribution()
+        public 
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> 
+                ArraySegment_FrequencyDistribution
+                    (
+                    )
         {
             return data_array_segment.FrequencyDistribution();
         }
@@ -153,10 +162,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequency_distribution = ArraySegment_FrequencyDistribution();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> fd;
+            fd = ArraySegment_FrequencyDistribution();
 
             sw.Stop();
-            Console.WriteLine($"          frequency_distribution               = {frequency_distribution}");
+            Console.WriteLine($"          fd               = {fd}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -165,28 +175,32 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
                             fcd.ToList(),
-                            frequency_distribution
+                            fd
                         );
-#elif XUNIT
+            #elif XUNIT
             Assert.Equal
                         (
                             fcd.ToList(),
-                            frequency_distribution
+                            fd
                         );
-#elif MSTEST
+            #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
                             fcd.ToList(),
-                            frequency_distribution.ToArray()
+                            fd.ToArray()
                         );
-#endif
+            #endif
             //====================================================================================================
 
             return;
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> List_FrequencyDistribution()
+        public 
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> 
+                List_FrequencyDistribution
+                    (
+                    )
         {
             return data_list.FrequencyDistribution();
         }
@@ -203,9 +217,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequency_distribution = List_FrequencyDistribution();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> fd;
+            fd = List_FrequencyDistribution();
 
-            Console.WriteLine($"          frequency_distribution               = {frequency_distribution}");
+            Console.WriteLine($"          fd               = {fd}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -214,28 +229,32 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
                             fcd.ToList(),
-                            frequency_distribution
+                            fd
                         );
-#elif XUNIT
+            #elif XUNIT
             Assert.Equal
                         (
                             fcd.ToList(),
-                            frequency_distribution
+                            fd
                         );
-#elif MSTEST
+            #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
                             fcd.ToList(),
-                            frequency_distribution.ToArray()
+                            fd.ToArray()
                         );
-#endif
+            #endif
             //====================================================================================================
 
             return;
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> Queue_FrequencyDistribution()
+        public 
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> 
+                Queue_FrequencyDistribution
+                    (
+                    )
         {
             return data_queue.FrequencyDistribution();
         }
@@ -251,10 +270,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequency_distribution = Queue_FrequencyDistribution();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> fd;
+            fd = Queue_FrequencyDistribution();
 
             sw.Stop();
-            Console.WriteLine($"          frequency_distribution               = {frequency_distribution}");
+            Console.WriteLine($"          fd               = {fd}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -263,28 +283,32 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
                             fcd.ToList(),
-                            frequency_distribution
+                            fd
                         );
-#elif XUNIT
+            #elif XUNIT
             Assert.Equal
                         (
                             fcd.ToList(),
-                            frequency_distribution
+                            fd
                         );
-#elif MSTEST
+            #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
                             fcd.ToList(),
-                            frequency_distribution.ToArray()
+                            fd.ToArray()
                         );
-#endif
+            #endif
             //====================================================================================================
 
             return;
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> Stack_FrequencyDistribution()
+        public 
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> 
+                Stack_FrequencyDistribution
+                    (
+                    )
         {
             return data_stack.FrequencyDistribution();
         }
@@ -301,10 +325,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequency_distribution = Stack_FrequencyDistribution();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> fd;
+            fd = Stack_FrequencyDistribution();
 
             sw.Stop();
-            Console.WriteLine($"          frequency_distribution               = {frequency_distribution}");
+            Console.WriteLine($"          fd               = {fd}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -313,28 +338,32 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
                             fcd.ToList(),
-                            frequency_distribution
+                            fd
                         );
-#elif XUNIT
+            #elif XUNIT
             Assert.Equal
                         (
                             fcd.ToList(),
-                            frequency_distribution
+                            fd
                         );
-#elif MSTEST
+            #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
                             fcd.ToList(),
-                            frequency_distribution.ToArray()
+                            fd.ToArray()
                         );
-#endif
+            #endif
             //====================================================================================================
 
             return;
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> LinkedList_FrequencyDistribution()
+        public 
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> 
+                LinkedList_FrequencyDistribution
+                    (
+                    )
         {
             return data_linked_list.FrequencyDistribution();
         }
@@ -351,10 +380,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequency_distribution = LinkedList_FrequencyDistribution();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> fd;
+            fd = LinkedList_FrequencyDistribution();
 
             sw.Stop();
-            Console.WriteLine($"          frequency_distribution               = {frequency_distribution}");
+            Console.WriteLine($"          fd               = {fd}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -362,29 +392,33 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-fcd.ToList(),
-                            frequency_distribution
+                            fcd.ToList(),
+                            fd
                         );
-#elif XUNIT
+            #elif XUNIT
             Assert.Equal
                         (
-fcd.ToList(),
-                            frequency_distribution
+                            fcd.ToList(),
+                            fd
                         );
-#elif MSTEST
+            #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-fcd.ToList(),
-                            frequency_distribution.ToArray()
+                            fcd.ToList(),
+                            fd.ToArray()
                         );
-#endif
+            #endif
             //====================================================================================================
 
             return;
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> ObservableCollection_FrequencyDistribution()
+        public
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> 
+                ObservableCollection_FrequencyDistribution
+                    (
+                    )
         {
             return data_observable_collection.FrequencyDistribution();
         }
@@ -401,10 +435,11 @@ fcd.ToList(),
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequency_distribution = ObservableCollection_FrequencyDistribution();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> fd;
+            fd = ObservableCollection_FrequencyDistribution();
 
             sw.Stop();
-            Console.WriteLine($"          frequency_distribution               = {frequency_distribution}");
+            Console.WriteLine($"          fd               = {fd}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -412,22 +447,22 @@ fcd.ToList(),
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-fcd.ToList(),
-                            frequency_distribution
+                            fcd.ToList(),
+                            fd
                         );
-#elif XUNIT
+            #elif XUNIT
             Assert.Equal
                         (
-fcd.ToList(),
-                            frequency_distribution
+                            fcd.ToList(),
+                            fd
                         );
-#elif MSTEST
+            #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-fcd.ToList(),
-                            frequency_distribution.ToArray()
+                            fcd.ToList(),
+                            fd.ToArray()
                         );
-#endif
+            #endif
             //====================================================================================================
 
             return;
@@ -457,9 +492,9 @@ fcd.ToList(),
                             new Span<int>(data01);
                             //data01.AsSpan().Slice(start: 0)
                             ;
-            double frequency_distribution = data.FrequencyDistribution();
+            double fd = data.FrequencyDistribution();
             sw.Stop();
-            Console.WriteLine($"          frequency_distribution               = {frequency_distribution}");
+            Console.WriteLine($"          fd               = {fd}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -467,11 +502,11 @@ fcd.ToList(),
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(3.00, frequency_distribution, 0.00001);
+            Assert.AreEqual(3.00, fd, 0.00001);
             #elif XUNIT
-            Assert.Equal(3.00, frequency_distribution, 5);
+            Assert.Equal(3.00, fd, 5);
             #elif MSTEST
-            Assert.AreEqual(3.00, frequency_distribution, 0.00001);
+            Assert.AreEqual(3.00, fd, 0.00001);
             #endif
             //====================================================================================================
 
@@ -493,9 +528,9 @@ fcd.ToList(),
                             new Memory<int>(data01);
                             //data01.AsSpan().Slice(start: 0)
                             ;
-            double frequency_distribution = data.FrequencyDistribution();
+            double fd = data.FrequencyDistribution();
             sw.Stop();
-            Console.WriteLine($"          frequency_distribution               = {frequency_distribution}");
+            Console.WriteLine($"          fd               = {fd}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -503,11 +538,11 @@ fcd.ToList(),
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(3.00, frequency_distribution, 0.00001);
+            Assert.AreEqual(3.00, fd, 0.00001);
             #elif XUNIT
-            Assert.Equal(3.00, frequency_distribution, 5);
+            Assert.Equal(3.00, fd, 5);
             #elif MSTEST
-            Assert.AreEqual(3.00, frequency_distribution, 0.00001);
+            Assert.AreEqual(3.00, fd, 0.00001);
             #endif
             //====================================================================================================
 
