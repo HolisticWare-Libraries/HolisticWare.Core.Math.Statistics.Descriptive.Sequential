@@ -76,6 +76,18 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class UnitTests20180227DataSet001
     {
+        Dictionary<int, (uint, double, uint)> fc =
+            new Dictionary<int, (uint, double, uint)>()
+                                    {
+                                        { 4, ( 3, 0.1, 2 ) },
+                                        { 2, ( 2, 0.1, 2 ) },
+                                        { 3, ( 1, 0.1, 2 ) },
+                                        { 5, ( 1, 0.1, 2 ) },
+                                        { 6, ( 1, 0.1, 2 ) },
+                                        { 7, ( 1, 0.1, 2 ) },
+                                        { 1, ( 1, 0.1, 2 ) },
+                                    };
+
         [Benchmark]
         public 
             IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> 
@@ -109,50 +121,24 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+
             //----------------------------------------------------------------------------------------------------
             // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
+#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
                                     frequencies,
-                                    new Dictionary<int, (uint, double, uint)>()
-                                    {
-                                        { 4, ( 3, 0.1, 2) },
-                                        { 2, ( 2, 0.1, 2) },
-                                        { 3, ( 1, 0.1, 2) },
-                                        { 5, ( 1, 0.1, 2) },
-                                        { 6, ( 1, 0.1, 2) },
-                                        { 7, ( 1, 0.1, 2) },
-                                        { 1, ( 1, 0.1, 2) },
-                                    }
+                                    fc
                                 );
 #elif XUNIT
             Assert.Equal
                                 (
                                     frequencies,
-                                    new Dictionary<int, (uint, double, uint)>()
-                                    {
-                                        { 4, ( 3, 0.1, 2) },
-                                        { 2, ( 2, 0.1, 2) },
-                                        { 3, ( 1, 0.1, 2) },
-                                        { 5, ( 1, 0.1, 2) },
-                                        { 6, ( 1, 0.1, 2) },
-                                        { 7, ( 1, 0.1, 2) },
-                                        { 1, ( 1, 0.1, 2) },
-                                    }
+                                    fc
                                 );
 #elif MSTEST
             CollectionAssert.AreEquivalent
                                 (
                                     frequencies.ToList(),
-                                    new Dictionary<int, (uint, double, uint)>()
-                                    {
-                                        { 4, ( 3, 0.1, 2) },
-                                        { 2, ( 2, 0.1, 2) },
-                                        { 3, ( 1, 0.1, 2) },
-                                        { 5, ( 1, 0.1, 2) },
-                                        { 6, ( 1, 0.1, 2) },
-                                        { 7, ( 1, 0.1, 2) },
-                                        { 1, ( 1, 0.1, 2) },
-                                    }
+                                    fc
                                 );
 #endif
             //====================================================================================================
@@ -182,7 +168,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ) >> frequencies;
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative) >> frequencies;
             frequencies = ArraySegment_Frequencies();
 
             sw.Stop();
@@ -191,52 +177,26 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+
             //----------------------------------------------------------------------------------------------------
             // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
+#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
                                     frequencies,
-                                    new Dictionary<int, uint>()
-                                    {
-                                        { 4, 3 },
-                                        { 2, 2 },
-                                        { 3, 1 },
-                                        { 5, 1 },
-                                        { 6, 1 },
-                                        { 7, 1 },
-                                        { 1, 1 },
-                                    }
-                                );
-            #elif XUNIT
+                                    fc
+                                 );
+#elif XUNIT
             Assert.Equal
                                 (
                                     frequencies,
-                                    new Dictionary<int, uint>()
-                                    {
-                                        { 4, 3 },
-                                        { 2, 2 },
-                                        { 3, 1 },
-                                        { 5, 1 },
-                                        { 6, 1 },
-                                        { 7, 1 },
-                                        { 1, 1 },
-                                    }
+                                    fc
                                 );
-            #elif MSTEST
+#elif MSTEST
             CollectionAssert.AreEquivalent
                                 (
                                     frequencies.ToList(),
-                                    new Dictionary<int, uint>()
-                                    {
-                                        { 4, 3 },
-                                        { 2, 2 },
-                                        { 3, 1 },
-                                        { 5, 1 },
-                                        { 6, 1 },
-                                        { 7, 1 },
-                                        { 1, 1 },
-                                    }
+                                    fc
                                 );
-            #endif
+#endif
             //====================================================================================================
 
             return;
@@ -244,7 +204,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
         [Benchmark]
         public 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> 
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> 
                 List_Frequencies
                         (
                         )
@@ -264,7 +224,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies;
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies;
             frequencies = List_Frequencies();
 
             Console.WriteLine($"          frequencies        = {frequencies}");
@@ -272,59 +232,33 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+
             //----------------------------------------------------------------------------------------------------
             // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
+#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
                                     frequencies,
-                                    new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>()
-                                    {
-                                        { 4, ( 3, 0.1, 3 ) },
-                                        { 2, ( 2, 0.1, 3 ) },
-                                        { 3, ( 1, 0.1, 3 ) },
-                                        { 5, ( 1, 0.1, 3 ) },
-                                        { 6, ( 1, 0.1, 3 ) },
-                                        { 7, ( 1, 0.1, 3 ) },
-                                        { 1, ( 1, 0.1, 3 ) },
-                                    }
+                                    fc
                                 );
-            #elif XUNIT
+#elif XUNIT
             Assert.Equal
                                 (
                                     frequencies,
-                                    new Dictionary<int, uint>()
-                                    {
-                                        { 4, 3 },
-                                        { 2, 2 },
-                                        { 3, 1 },
-                                        { 5, 1 },
-                                        { 6, 1 },
-                                        { 7, 1 },
-                                        { 1, 1 },
-                                    }
+                                    fc
                                 );
-            #elif MSTEST
+#elif MSTEST
             CollectionAssert.AreEquivalent
                                 (
                                     frequencies.ToList(),
-                                    new Dictionary<int, uint>()
-                                    {
-                                        { 4, 3 },
-                                        { 2, 2 },
-                                        { 3, 1 },
-                                        { 5, 1 },
-                                        { 6, 1 },
-                                        { 7, 1 },
-                                        { 1, 1 },
-                                    }
+                                    fc
                                 );
-            #endif
+#endif
             //====================================================================================================
 
             return;
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> Queue_Frequencies()
+        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> Queue_Frequencies()
         {
             return data_queue.Frequencies();
         }
@@ -340,7 +274,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = Queue_Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = Queue_Frequencies();
 
             sw.Stop();
             Console.WriteLine($"          frequencies        = {frequencies}");
@@ -348,59 +282,33 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+
             //----------------------------------------------------------------------------------------------------
             // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
+#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
                                     frequencies,
-                                    new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>()
-                                    {
-                                        { 4, ( 3, 0.1, 2 ) },
-                                        { 2, ( 2, 0.1, 2 ) },
-                                        { 3, ( 1, 0.1, 2 ) },
-                                        { 5, ( 1, 0.1, 2 ) },
-                                        { 6, ( 1, 0.1, 2 ) },
-                                        { 7, ( 1, 0.1, 2 ) },
-                                        { 1, ( 1, 0.1, 2 ) },
-                                    }
+                                    fc
                                 );
-            #elif XUNIT
+#elif XUNIT
             Assert.Equal
                                 (
                                     frequencies,
-                                    new Dictionary<int, uint>()
-                                    {
-                                        { 4, 3 },
-                                        { 2, 2 },
-                                        { 3, 1 },
-                                        { 5, 1 },
-                                        { 6, 1 },
-                                        { 7, 1 },
-                                        { 1, 1 },
-                                    }
+                                    fc
                                 );
-            #elif MSTEST
+#elif MSTEST
             CollectionAssert.AreEquivalent
                                 (
                                     frequencies.ToList(),
-                                    new Dictionary<int, uint>()
-                                    {
-                                        { 4, 3 },
-                                        { 2, 2 },
-                                        { 3, 1 },
-                                        { 5, 1 },
-                                        { 6, 1 },
-                                        { 7, 1 },
-                                        { 1, 1 },
-                                    }
+                                    fc
                                 );
-            #endif
+#endif
             //====================================================================================================
 
             return;
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> Stack_Frequencies()
+        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> Stack_Frequencies()
         {
             return data_stack.Frequencies();
         }
@@ -417,7 +325,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = Stack_Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = Stack_Frequencies();
 
             sw.Stop();
             Console.WriteLine($"          frequencies        = {frequencies}");
@@ -425,59 +333,33 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+
             //----------------------------------------------------------------------------------------------------
             // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
+#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
                                     frequencies,
-                                    new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>()
-                                    {
-                                        { 4, ( 3, 0.4, 3 ) },
-                                        { 2, ( 2, 0.4, 3 ) },
-                                        { 3, ( 1, 0.4, 3 ) },
-                                        { 5, ( 1, 0.4, 3 ) },
-                                        { 6, ( 1, 0.4, 3 ) },
-                                        { 7, ( 1, 0.4, 3 ) },
-                                        { 1, ( 1, 0.4, 3 ) },
-                                    }
+                                    fc
                                 );
-            #elif XUNIT
+#elif XUNIT
             Assert.Equal
                                 (
                                     frequencies,
-                                    new Dictionary<int, uint>()
-                                    {
-                                        { 4, 3 },
-                                        { 2, 2 },
-                                        { 3, 1 },
-                                        { 5, 1 },
-                                        { 6, 1 },
-                                        { 7, 1 },
-                                        { 1, 1 },
-                                    }
+                                    fc
                                 );
-            #elif MSTEST
+#elif MSTEST
             CollectionAssert.AreEquivalent
                                 (
                                     frequencies.ToList(),
-                                    new Dictionary<int, uint>()
-                                    {
-                                        { 4, 3 },
-                                        { 2, 2 },
-                                        { 3, 1 },
-                                        { 5, 1 },
-                                        { 6, 1 },
-                                        { 7, 1 },
-                                        { 1, 1 },
-                                    }
+                                    fc
                                 );
-            #endif
+#endif
             //====================================================================================================
 
             return;
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> LinkedList_Frequencies()
+        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> LinkedList_Frequencies()
         {
             return data_linked_list.Frequencies();
         }
@@ -494,7 +376,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = LinkedList_Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = LinkedList_Frequencies();
 
             sw.Stop();
             Console.WriteLine($"          frequencies        = {frequencies}");
@@ -502,59 +384,33 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+
             //----------------------------------------------------------------------------------------------------
             // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
+#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
                                     frequencies,
-                                    new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>()
-                                    {
-                                        { 4, ( 3, 0.2, 2 ) },
-                                        { 2, ( 2, 0.2, 2 ) },
-                                        { 3, ( 1, 0.2, 2 ) },
-                                        { 5, ( 1, 0.2, 2 ) },
-                                        { 6, ( 1, 0.2, 2 ) },
-                                        { 7, ( 1, 0.2, 2 ) },
-                                        { 1, ( 1, 0.2, 2 ) },
-                                    }
+                                    fc
                                 );
-            #elif XUNIT
+#elif XUNIT
             Assert.Equal
                                 (
                                     frequencies,
-                                    new Dictionary<int, uint>()
-                                    {
-                                        { 4, 3 },
-                                        { 2, 2 },
-                                        { 3, 1 },
-                                        { 5, 1 },
-                                        { 6, 1 },
-                                        { 7, 1 },
-                                        { 1, 1 },
-                                    }
+                                    fc
                                 );
-            #elif MSTEST
+#elif MSTEST
             CollectionAssert.AreEquivalent
                                 (
                                     frequencies.ToList(),
-                                    new Dictionary<int, uint>()
-                                    {
-                                        { 4, 3 },
-                                        { 2, 2 },
-                                        { 3, 1 },
-                                        { 5, 1 },
-                                        { 6, 1 },
-                                        { 7, 1 },
-                                        { 1, 1 },
-                                    }
+                                    fc
                                 );
-            #endif
+#endif
             //====================================================================================================
 
             return;
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> ObservableCollection_Frequencies()
+        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> ObservableCollection_Frequencies()
         {
             return data_observable_collection.Frequencies();
         }
@@ -571,7 +427,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = ObservableCollection_Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = ObservableCollection_Frequencies();
 
             sw.Stop();
             Console.WriteLine($"          frequencies        = {frequencies}");
@@ -579,52 +435,26 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+
             //----------------------------------------------------------------------------------------------------
             // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
+#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
                                     frequencies,
-                                    new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>()
-                                    {
-                                        { 4, ( 3, 0.1, 2 ) },
-                                        { 2, ( 2, 0.1, 2 ) },
-                                        { 3, ( 1, 0.1, 2 ) },
-                                        { 5, ( 1, 0.1, 2 ) },
-                                        { 6, ( 1, 0.1, 2 ) },
-                                        { 7, ( 1, 0.1, 2 ) },
-                                        { 1, ( 1, 0.1, 2 ) },
-                                    }
+                                    fc
                                 );
-            #elif XUNIT
+#elif XUNIT
             Assert.Equal
                                 (
                                     frequencies,
-                                    new Dictionary<int, uint>()
-                                    {
-                                        { 4, 3 },
-                                        { 2, 2 },
-                                        { 3, 1 },
-                                        { 5, 1 },
-                                        { 6, 1 },
-                                        { 7, 1 },
-                                        { 1, 1 },
-                                    }
+                                    fc
                                 );
-            #elif MSTEST
+#elif MSTEST
             CollectionAssert.AreEquivalent
                                 (
                                     frequencies.ToList(),
-                                    new Dictionary<int, uint>()
-                                    {
-                                        { 4, 3 },
-                                        { 2, 2 },
-                                        { 3, 1 },
-                                        { 5, 1 },
-                                        { 6, 1 },
-                                        { 7, 1 },
-                                        { 1, 1 },
-                                    }
+                                    fc
                                 );
-            #endif
+#endif
             //====================================================================================================
 
             return;

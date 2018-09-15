@@ -73,8 +73,62 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class Tests20180119Dataset02
     {
+        Dictionary<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> frequencies_calculated =
+            new Dictionary<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>
+                                {
+                                    { 18.2, ( 3, 0.1, 2) },
+                                    { 14.7, ( 3, 0.1, 2) },
+                                    { 13.5, ( 2, 0.1, 2) },
+                                    { 16.4, ( 2, 0.1, 2) },
+                                    { 13.4, ( 2, 0.1, 2) },
+                                    { 18.6, ( 2, 0.1, 2) },
+                                    { 12.9, ( 2, 0.1, 2) },
+                                    { 16.2, ( 2, 0.1, 2) },
+                                    { 15, ( 2, 0.1, 2) },
+                                    { 11.9, ( 1, 0.1, 2) },
+                                    { 13.6, ( 1, 0.1, 2) },
+                                    { 28.9, ( 1, 0.1, 2) },
+                                    { 16.5, ( 1, 0.1, 2) },
+                                    { 24, ( 1, 0.1, 2) },
+                                    { 14.5, ( 1, 0.1, 2) },
+                                    { 19.8, ( 1, 0.1, 2) },
+                                    { 22.9, ( 1, 0.1, 2) },
+                                    { 19.5, ( 1, 0.1, 2) },
+                                    { 14.3, ( 1, 0.1, 2) },
+                                    { 11.3, ( 1, 0.1, 2) },
+                                    { 10.5, ( 1, 0.1, 2) },
+                                    { 13, ( 1, 0.1, 2) },
+                                    { 11.6, ( 1, 0.1, 2) },
+                                    { 16.8, ( 1, 0.1, 2) },
+                                    { 12.1, ( 1, 0.1, 2) },
+                                    { 16.9, ( 1, 0.1, 2) },
+                                    { 19.3, ( 1, 0.1, 2) },
+                                    { 15.5, ( 1, 0.1, 2) },
+                                    { 13.8, ( 1, 0.1, 2) },
+                                    { 17.1, ( 1, 0.1, 2) },
+                                    { 17, ( 1, 0.1, 2) },
+                                    { 11.7, ( 1, 0.1, 2) },
+                                    { 11.8, ( 1, 0.1, 2) },
+                                    { 12.7, ( 1, 0.1, 2) },
+                                    { 12.2, ( 1, 0.1, 2) },
+                                    { 16.1, ( 1, 0.1, 2) },
+                                    { 17.6, ( 1, 0.1, 2) },
+                                    { 15.1, ( 1, 0.1, 2) },
+                                    { 13.3, ( 1, 0.1, 2) },
+                                    { 15.9, ( 1, 0.1, 2) },
+                                    { 13.7, ( 1, 0.1, 2) },
+                                    { 16, ( 1, 0.1, 2) },
+                                    { 15.2, ( 1, 0.1, 2) },
+                                    { 18, ( 1, 0.1, 2) },
+                                    { 17.5, ( 1, 0.1, 2) },
+                                    { 19.4, ( 1, 0.1, 2) },
+                                    { 17.4, ( 1, 0.1, 2) },
+                                    { 15.3, ( 1, 0.1, 2) },
+                                    { 25.4, ( 1, 0.1, 2) },
+                                };
+
         [Benchmark]
-        public IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> Array_Frequencies()
+        public IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> Array_Frequencies()
         {
             return data_array.Frequencies();
         }
@@ -92,7 +146,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = Array_Frequencies();
+            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = Array_Frequencies();
 
             sw.Stop();
             Console.WriteLine($"Array<double>.Frequencies()");
@@ -101,185 +155,33 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+
             //----------------------------------------------------------------------------------------------------
             // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<double, uint>
-                                {
-                                    { 18.2, 3 },
-                                    { 14.7, 3 },
-                                    { 13.5, 2 },
-                                    { 16.4, 2 },
-                                    { 13.4, 2 },
-                                    { 18.6, 2 },
-                                    { 12.9, 2 },
-                                    { 16.2, 2 },
-                                    { 15, 2 },
-                                    { 11.9, 1 },
-                                    { 13.6, 1 },
-                                    { 28.9, 1 },
-                                    { 16.5, 1 },
-                                    { 24, 1 },
-                                    { 14.5, 1 },
-                                    { 19.8, 1 },
-                                    { 22.9, 1 },
-                                    { 19.5, 1 },
-                                    { 14.3, 1 },
-                                    { 11.3, 1 },
-                                    { 10.5, 1 },
-                                    { 13, 1 },
-                                    { 11.6, 1 },
-                                    { 16.8, 1 },
-                                    { 12.1, 1 },
-                                    { 16.9, 1 },
-                                    { 19.3, 1 },
-                                    { 15.5, 1 },
-                                    { 13.8, 1 },
-                                    { 17.1, 1 },
-                                    { 17, 1 },
-                                    { 11.7, 1 },
-                                    { 11.8, 1 },
-                                    { 12.7, 1 },
-                                    { 12.2, 1 },
-                                    { 16.1, 1 },
-                                    { 17.6, 1 },
-                                    { 15.1, 1 },
-                                    { 13.3, 1 },
-                                    { 15.9, 1 },
-                                    { 13.7, 1 },
-                                    { 16, 1 },
-                                    { 15.2, 1 },
-                                    { 18, 1 },
-                                    { 17.5, 1 },
-                                    { 19.4, 1 },
-                                    { 17.4, 1 },
-                                    { 15.3, 1 },
-                                    { 25.4, 1 },
-                                }.ToList(),
+#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
+                            frequencies_calculated.ToList(),
                             frequencies
                         );
-            #elif XUNIT
+#elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<double, uint>
-                                {                
-                                    { 18.2, 3 },
-                                    { 14.7, 3 },
-                                    { 13.5, 2 },
-                                    { 16.4, 2 },
-                                    { 13.4, 2 },
-                                    { 18.6, 2 },
-                                    { 12.9, 2 },
-                                    { 16.2, 2 },
-                                    { 15, 2 },
-                                    { 11.9, 1 },
-                                    { 13.6, 1 },
-                                    { 28.9, 1 },
-                                    { 16.5, 1 },
-                                    { 24, 1 },
-                                    { 14.5, 1 },
-                                    { 19.8, 1 },
-                                    { 22.9, 1 },
-                                    { 19.5, 1 },
-                                    { 14.3, 1 },
-                                    { 11.3, 1 },
-                                    { 10.5, 1 },
-                                    { 13, 1 },
-                                    { 11.6, 1 },
-                                    { 16.8, 1 },
-                                    { 12.1, 1 },
-                                    { 16.9, 1 },
-                                    { 19.3, 1 },
-                                    { 15.5, 1 },
-                                    { 13.8, 1 },
-                                    { 17.1, 1 },
-                                    { 17, 1 },
-                                    { 11.7, 1 },
-                                    { 11.8, 1 },
-                                    { 12.7, 1 },
-                                    { 12.2, 1 },
-                                    { 16.1, 1 },
-                                    { 17.6, 1 },
-                                    { 15.1, 1 },
-                                    { 13.3, 1 },
-                                    { 15.9, 1 },
-                                    { 13.7, 1 },
-                                    { 16, 1 },
-                                    { 15.2, 1 },
-                                    { 18, 1 },
-                                    { 17.5, 1 },
-                                    { 19.4, 1 },
-                                    { 17.4, 1 },
-                                    { 15.3, 1 },
-                                    { 25.4, 1 },
-                                }.ToList(),
-                                frequencies.ToArray()
+                            frequencies_calculated.ToList(),
+                            frequencies.ToArray()
                         );
-            #elif MSTEST
+#elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            new Dictionary<double, uint>
-                                {
-                                    { 18.2, 3 },
-                                    { 14.7, 3 },
-                                    { 13.5, 2 },
-                                    { 16.4, 2 },
-                                    { 13.4, 2 },
-                                    { 18.6, 2 },
-                                    { 12.9, 2 },
-                                    { 16.2, 2 },
-                                    { 15, 2 },
-                                    { 11.9, 1 },
-                                    { 13.6, 1 },
-                                    { 28.9, 1 },
-                                    { 16.5, 1 },
-                                    { 24, 1 },
-                                    { 14.5, 1 },
-                                    { 19.8, 1 },
-                                    { 22.9, 1 },
-                                    { 19.5, 1 },
-                                    { 14.3, 1 },
-                                    { 11.3, 1 },
-                                    { 10.5, 1 },
-                                    { 13, 1 },
-                                    { 11.6, 1 },
-                                    { 16.8, 1 },
-                                    { 12.1, 1 },
-                                    { 16.9, 1 },
-                                    { 19.3, 1 },
-                                    { 15.5, 1 },
-                                    { 13.8, 1 },
-                                    { 17.1, 1 },
-                                    { 17, 1 },
-                                    { 11.7, 1 },
-                                    { 11.8, 1 },
-                                    { 12.7, 1 },
-                                    { 12.2, 1 },
-                                    { 16.1, 1 },
-                                    { 17.6, 1 },
-                                    { 15.1, 1 },
-                                    { 13.3, 1 },
-                                    { 15.9, 1 },
-                                    { 13.7, 1 },
-                                    { 16, 1 },
-                                    { 15.2, 1 },
-                                    { 18, 1 },
-                                    { 17.5, 1 },
-                                    { 19.4, 1 },
-                                    { 17.4, 1 },
-                                    { 15.3, 1 },
-                                    { 25.4, 1 },
-                                }.ToList(),
-                                frequencies.ToArray()
+                            frequencies_calculated.ToList(),
+                            frequencies.ToArray()
                         );
-            #endif
+#endif
             //====================================================================================================
 
             return;
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> ArraySegment_Frequencies()
+        public IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> ArraySegment_Frequencies()
         {
             return data_array_segment.Frequencies();
         }
@@ -296,7 +198,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = ArraySegment_Frequencies();
+            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = ArraySegment_Frequencies();
 
             sw.Stop();
             Console.WriteLine($"          frequencies        = {frequencies}");
@@ -304,186 +206,34 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+
             //----------------------------------------------------------------------------------------------------
             // Assert
             // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<double, uint>
-                                {
-                                    { 18.2, 3 },
-                                    { 14.7, 3 },
-                                    { 13.5, 2 },
-                                    { 16.4, 2 },
-                                    { 13.4, 2 },
-                                    { 18.6, 2 },
-                                    { 12.9, 2 },
-                                    { 16.2, 2 },
-                                    { 15, 2 },
-                                    { 11.9, 1 },
-                                    { 13.6, 1 },
-                                    { 28.9, 1 },
-                                    { 16.5, 1 },
-                                    { 24, 1 },
-                                    { 14.5, 1 },
-                                    { 19.8, 1 },
-                                    { 22.9, 1 },
-                                    { 19.5, 1 },
-                                    { 14.3, 1 },
-                                    { 11.3, 1 },
-                                    { 10.5, 1 },
-                                    { 13, 1 },
-                                    { 11.6, 1 },
-                                    { 16.8, 1 },
-                                    { 12.1, 1 },
-                                    { 16.9, 1 },
-                                    { 19.3, 1 },
-                                    { 15.5, 1 },
-                                    { 13.8, 1 },
-                                    { 17.1, 1 },
-                                    { 17, 1 },
-                                    { 11.7, 1 },
-                                    { 11.8, 1 },
-                                    { 12.7, 1 },
-                                    { 12.2, 1 },
-                                    { 16.1, 1 },
-                                    { 17.6, 1 },
-                                    { 15.1, 1 },
-                                    { 13.3, 1 },
-                                    { 15.9, 1 },
-                                    { 13.7, 1 },
-                                    { 16, 1 },
-                                    { 15.2, 1 },
-                                    { 18, 1 },
-                                    { 17.5, 1 },
-                                    { 19.4, 1 },
-                                    { 17.4, 1 },
-                                    { 15.3, 1 },
-                                    { 25.4, 1 },
-                                }.ToList(),
+#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
+                            frequencies_calculated.ToList(),
                             frequencies
                         );
-            #elif XUNIT
+#elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<double, uint>
-                                {                
-                                    { 18.2, 3 },
-                                    { 14.7, 3 },
-                                    { 13.5, 2 },
-                                    { 16.4, 2 },
-                                    { 13.4, 2 },
-                                    { 18.6, 2 },
-                                    { 12.9, 2 },
-                                    { 16.2, 2 },
-                                    { 15, 2 },
-                                    { 11.9, 1 },
-                                    { 13.6, 1 },
-                                    { 28.9, 1 },
-                                    { 16.5, 1 },
-                                    { 24, 1 },
-                                    { 14.5, 1 },
-                                    { 19.8, 1 },
-                                    { 22.9, 1 },
-                                    { 19.5, 1 },
-                                    { 14.3, 1 },
-                                    { 11.3, 1 },
-                                    { 10.5, 1 },
-                                    { 13, 1 },
-                                    { 11.6, 1 },
-                                    { 16.8, 1 },
-                                    { 12.1, 1 },
-                                    { 16.9, 1 },
-                                    { 19.3, 1 },
-                                    { 15.5, 1 },
-                                    { 13.8, 1 },
-                                    { 17.1, 1 },
-                                    { 17, 1 },
-                                    { 11.7, 1 },
-                                    { 11.8, 1 },
-                                    { 12.7, 1 },
-                                    { 12.2, 1 },
-                                    { 16.1, 1 },
-                                    { 17.6, 1 },
-                                    { 15.1, 1 },
-                                    { 13.3, 1 },
-                                    { 15.9, 1 },
-                                    { 13.7, 1 },
-                                    { 16, 1 },
-                                    { 15.2, 1 },
-                                    { 18, 1 },
-                                    { 17.5, 1 },
-                                    { 19.4, 1 },
-                                    { 17.4, 1 },
-                                    { 15.3, 1 },
-                                    { 25.4, 1 },
-                                }.ToList(),
-                                frequencies.ToArray()
+                            frequencies_calculated.ToList(),
+                            frequencies.ToArray()
                         );
-            #elif MSTEST
+#elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            new Dictionary<double, uint>
-                                {
-                                    { 18.2, 3 },
-                                    { 14.7, 3 },
-                                    { 13.5, 2 },
-                                    { 16.4, 2 },
-                                    { 13.4, 2 },
-                                    { 18.6, 2 },
-                                    { 12.9, 2 },
-                                    { 16.2, 2 },
-                                    { 15, 2 },
-                                    { 11.9, 1 },
-                                    { 13.6, 1 },
-                                    { 28.9, 1 },
-                                    { 16.5, 1 },
-                                    { 24, 1 },
-                                    { 14.5, 1 },
-                                    { 19.8, 1 },
-                                    { 22.9, 1 },
-                                    { 19.5, 1 },
-                                    { 14.3, 1 },
-                                    { 11.3, 1 },
-                                    { 10.5, 1 },
-                                    { 13, 1 },
-                                    { 11.6, 1 },
-                                    { 16.8, 1 },
-                                    { 12.1, 1 },
-                                    { 16.9, 1 },
-                                    { 19.3, 1 },
-                                    { 15.5, 1 },
-                                    { 13.8, 1 },
-                                    { 17.1, 1 },
-                                    { 17, 1 },
-                                    { 11.7, 1 },
-                                    { 11.8, 1 },
-                                    { 12.7, 1 },
-                                    { 12.2, 1 },
-                                    { 16.1, 1 },
-                                    { 17.6, 1 },
-                                    { 15.1, 1 },
-                                    { 13.3, 1 },
-                                    { 15.9, 1 },
-                                    { 13.7, 1 },
-                                    { 16, 1 },
-                                    { 15.2, 1 },
-                                    { 18, 1 },
-                                    { 17.5, 1 },
-                                    { 19.4, 1 },
-                                    { 17.4, 1 },
-                                    { 15.3, 1 },
-                                    { 25.4, 1 },
-                                }.ToList(),
-                                frequencies.ToArray()
+                            frequencies_calculated.ToList(),
+                            frequencies.ToArray()
                         );
-            #endif
+#endif
             //====================================================================================================
 
             return;
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> List_Frequencies()
+        public IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> List_Frequencies()
         {
             return data_list.Frequencies();
         }
@@ -500,193 +250,41 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = List_Frequencies();
+            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = List_Frequencies();
 
             Console.WriteLine($"          frequencies        = {frequencies}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+
             //----------------------------------------------------------------------------------------------------
             // Assert
             // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<double, uint>
-                                {
-                                    { 18.2, 3 },
-                                    { 14.7, 3 },
-                                    { 13.5, 2 },
-                                    { 16.4, 2 },
-                                    { 13.4, 2 },
-                                    { 18.6, 2 },
-                                    { 12.9, 2 },
-                                    { 16.2, 2 },
-                                    { 15, 2 },
-                                    { 11.9, 1 },
-                                    { 13.6, 1 },
-                                    { 28.9, 1 },
-                                    { 16.5, 1 },
-                                    { 24, 1 },
-                                    { 14.5, 1 },
-                                    { 19.8, 1 },
-                                    { 22.9, 1 },
-                                    { 19.5, 1 },
-                                    { 14.3, 1 },
-                                    { 11.3, 1 },
-                                    { 10.5, 1 },
-                                    { 13, 1 },
-                                    { 11.6, 1 },
-                                    { 16.8, 1 },
-                                    { 12.1, 1 },
-                                    { 16.9, 1 },
-                                    { 19.3, 1 },
-                                    { 15.5, 1 },
-                                    { 13.8, 1 },
-                                    { 17.1, 1 },
-                                    { 17, 1 },
-                                    { 11.7, 1 },
-                                    { 11.8, 1 },
-                                    { 12.7, 1 },
-                                    { 12.2, 1 },
-                                    { 16.1, 1 },
-                                    { 17.6, 1 },
-                                    { 15.1, 1 },
-                                    { 13.3, 1 },
-                                    { 15.9, 1 },
-                                    { 13.7, 1 },
-                                    { 16, 1 },
-                                    { 15.2, 1 },
-                                    { 18, 1 },
-                                    { 17.5, 1 },
-                                    { 19.4, 1 },
-                                    { 17.4, 1 },
-                                    { 15.3, 1 },
-                                    { 25.4, 1 },
-                                }.ToList(),
+#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
+                            frequencies_calculated.ToList(),
                             frequencies
                         );
-            #elif XUNIT
+#elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<double, uint>
-                                {                
-                                    { 18.2, 3 },
-                                    { 14.7, 3 },
-                                    { 13.5, 2 },
-                                    { 16.4, 2 },
-                                    { 13.4, 2 },
-                                    { 18.6, 2 },
-                                    { 12.9, 2 },
-                                    { 16.2, 2 },
-                                    { 15, 2 },
-                                    { 11.9, 1 },
-                                    { 13.6, 1 },
-                                    { 28.9, 1 },
-                                    { 16.5, 1 },
-                                    { 24, 1 },
-                                    { 14.5, 1 },
-                                    { 19.8, 1 },
-                                    { 22.9, 1 },
-                                    { 19.5, 1 },
-                                    { 14.3, 1 },
-                                    { 11.3, 1 },
-                                    { 10.5, 1 },
-                                    { 13, 1 },
-                                    { 11.6, 1 },
-                                    { 16.8, 1 },
-                                    { 12.1, 1 },
-                                    { 16.9, 1 },
-                                    { 19.3, 1 },
-                                    { 15.5, 1 },
-                                    { 13.8, 1 },
-                                    { 17.1, 1 },
-                                    { 17, 1 },
-                                    { 11.7, 1 },
-                                    { 11.8, 1 },
-                                    { 12.7, 1 },
-                                    { 12.2, 1 },
-                                    { 16.1, 1 },
-                                    { 17.6, 1 },
-                                    { 15.1, 1 },
-                                    { 13.3, 1 },
-                                    { 15.9, 1 },
-                                    { 13.7, 1 },
-                                    { 16, 1 },
-                                    { 15.2, 1 },
-                                    { 18, 1 },
-                                    { 17.5, 1 },
-                                    { 19.4, 1 },
-                                    { 17.4, 1 },
-                                    { 15.3, 1 },
-                                    { 25.4, 1 },
-                                }.ToList(),
-                                frequencies.ToArray()
+                            frequencies_calculated.ToList(),
+                            frequencies.ToArray()
                         );
-            #elif MSTEST
+#elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            new Dictionary<double, uint>
-                                {
-                                    { 18.2, 3 },
-                                    { 14.7, 3 },
-                                    { 13.5, 2 },
-                                    { 16.4, 2 },
-                                    { 13.4, 2 },
-                                    { 18.6, 2 },
-                                    { 12.9, 2 },
-                                    { 16.2, 2 },
-                                    { 15, 2 },
-                                    { 11.9, 1 },
-                                    { 13.6, 1 },
-                                    { 28.9, 1 },
-                                    { 16.5, 1 },
-                                    { 24, 1 },
-                                    { 14.5, 1 },
-                                    { 19.8, 1 },
-                                    { 22.9, 1 },
-                                    { 19.5, 1 },
-                                    { 14.3, 1 },
-                                    { 11.3, 1 },
-                                    { 10.5, 1 },
-                                    { 13, 1 },
-                                    { 11.6, 1 },
-                                    { 16.8, 1 },
-                                    { 12.1, 1 },
-                                    { 16.9, 1 },
-                                    { 19.3, 1 },
-                                    { 15.5, 1 },
-                                    { 13.8, 1 },
-                                    { 17.1, 1 },
-                                    { 17, 1 },
-                                    { 11.7, 1 },
-                                    { 11.8, 1 },
-                                    { 12.7, 1 },
-                                    { 12.2, 1 },
-                                    { 16.1, 1 },
-                                    { 17.6, 1 },
-                                    { 15.1, 1 },
-                                    { 13.3, 1 },
-                                    { 15.9, 1 },
-                                    { 13.7, 1 },
-                                    { 16, 1 },
-                                    { 15.2, 1 },
-                                    { 18, 1 },
-                                    { 17.5, 1 },
-                                    { 19.4, 1 },
-                                    { 17.4, 1 },
-                                    { 15.3, 1 },
-                                    { 25.4, 1 },
-                                }.ToList(),
-                                frequencies.ToArray()
+                            frequencies_calculated.ToList(),
+                            frequencies.ToArray()
                         );
-            #endif
+#endif
             //====================================================================================================
 
             return;
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> Queue_Frequencies()
+        public IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> Queue_Frequencies()
         {
             return data_queue.Frequencies();
         }
@@ -702,7 +300,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = Queue_Frequencies();
+            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = Queue_Frequencies();
 
             sw.Stop();
             Console.WriteLine($"          frequencies        = {frequencies}");
@@ -710,186 +308,34 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+
             //----------------------------------------------------------------------------------------------------
             // Assert
             // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<double, uint>
-                                {
-                                    { 18.2, 3 },
-                                    { 14.7, 3 },
-                                    { 13.5, 2 },
-                                    { 16.4, 2 },
-                                    { 13.4, 2 },
-                                    { 18.6, 2 },
-                                    { 12.9, 2 },
-                                    { 16.2, 2 },
-                                    { 15, 2 },
-                                    { 11.9, 1 },
-                                    { 13.6, 1 },
-                                    { 28.9, 1 },
-                                    { 16.5, 1 },
-                                    { 24, 1 },
-                                    { 14.5, 1 },
-                                    { 19.8, 1 },
-                                    { 22.9, 1 },
-                                    { 19.5, 1 },
-                                    { 14.3, 1 },
-                                    { 11.3, 1 },
-                                    { 10.5, 1 },
-                                    { 13, 1 },
-                                    { 11.6, 1 },
-                                    { 16.8, 1 },
-                                    { 12.1, 1 },
-                                    { 16.9, 1 },
-                                    { 19.3, 1 },
-                                    { 15.5, 1 },
-                                    { 13.8, 1 },
-                                    { 17.1, 1 },
-                                    { 17, 1 },
-                                    { 11.7, 1 },
-                                    { 11.8, 1 },
-                                    { 12.7, 1 },
-                                    { 12.2, 1 },
-                                    { 16.1, 1 },
-                                    { 17.6, 1 },
-                                    { 15.1, 1 },
-                                    { 13.3, 1 },
-                                    { 15.9, 1 },
-                                    { 13.7, 1 },
-                                    { 16, 1 },
-                                    { 15.2, 1 },
-                                    { 18, 1 },
-                                    { 17.5, 1 },
-                                    { 19.4, 1 },
-                                    { 17.4, 1 },
-                                    { 15.3, 1 },
-                                    { 25.4, 1 },
-                                }.ToList(),
+#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
+                            frequencies_calculated.ToList(),
                             frequencies
                         );
-            #elif XUNIT
+#elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<double, uint>
-                                {                
-                                    { 18.2, 3 },
-                                    { 14.7, 3 },
-                                    { 13.5, 2 },
-                                    { 16.4, 2 },
-                                    { 13.4, 2 },
-                                    { 18.6, 2 },
-                                    { 12.9, 2 },
-                                    { 16.2, 2 },
-                                    { 15, 2 },
-                                    { 11.9, 1 },
-                                    { 13.6, 1 },
-                                    { 28.9, 1 },
-                                    { 16.5, 1 },
-                                    { 24, 1 },
-                                    { 14.5, 1 },
-                                    { 19.8, 1 },
-                                    { 22.9, 1 },
-                                    { 19.5, 1 },
-                                    { 14.3, 1 },
-                                    { 11.3, 1 },
-                                    { 10.5, 1 },
-                                    { 13, 1 },
-                                    { 11.6, 1 },
-                                    { 16.8, 1 },
-                                    { 12.1, 1 },
-                                    { 16.9, 1 },
-                                    { 19.3, 1 },
-                                    { 15.5, 1 },
-                                    { 13.8, 1 },
-                                    { 17.1, 1 },
-                                    { 17, 1 },
-                                    { 11.7, 1 },
-                                    { 11.8, 1 },
-                                    { 12.7, 1 },
-                                    { 12.2, 1 },
-                                    { 16.1, 1 },
-                                    { 17.6, 1 },
-                                    { 15.1, 1 },
-                                    { 13.3, 1 },
-                                    { 15.9, 1 },
-                                    { 13.7, 1 },
-                                    { 16, 1 },
-                                    { 15.2, 1 },
-                                    { 18, 1 },
-                                    { 17.5, 1 },
-                                    { 19.4, 1 },
-                                    { 17.4, 1 },
-                                    { 15.3, 1 },
-                                    { 25.4, 1 },
-                                }.ToList(),
-                                frequencies.ToArray()
+                            frequencies_calculated.ToList(),
+                            frequencies.ToArray()
                         );
-            #elif MSTEST
+#elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            new Dictionary<double, uint>
-                                {
-                                    { 18.2, 3 },
-                                    { 14.7, 3 },
-                                    { 13.5, 2 },
-                                    { 16.4, 2 },
-                                    { 13.4, 2 },
-                                    { 18.6, 2 },
-                                    { 12.9, 2 },
-                                    { 16.2, 2 },
-                                    { 15, 2 },
-                                    { 11.9, 1 },
-                                    { 13.6, 1 },
-                                    { 28.9, 1 },
-                                    { 16.5, 1 },
-                                    { 24, 1 },
-                                    { 14.5, 1 },
-                                    { 19.8, 1 },
-                                    { 22.9, 1 },
-                                    { 19.5, 1 },
-                                    { 14.3, 1 },
-                                    { 11.3, 1 },
-                                    { 10.5, 1 },
-                                    { 13, 1 },
-                                    { 11.6, 1 },
-                                    { 16.8, 1 },
-                                    { 12.1, 1 },
-                                    { 16.9, 1 },
-                                    { 19.3, 1 },
-                                    { 15.5, 1 },
-                                    { 13.8, 1 },
-                                    { 17.1, 1 },
-                                    { 17, 1 },
-                                    { 11.7, 1 },
-                                    { 11.8, 1 },
-                                    { 12.7, 1 },
-                                    { 12.2, 1 },
-                                    { 16.1, 1 },
-                                    { 17.6, 1 },
-                                    { 15.1, 1 },
-                                    { 13.3, 1 },
-                                    { 15.9, 1 },
-                                    { 13.7, 1 },
-                                    { 16, 1 },
-                                    { 15.2, 1 },
-                                    { 18, 1 },
-                                    { 17.5, 1 },
-                                    { 19.4, 1 },
-                                    { 17.4, 1 },
-                                    { 15.3, 1 },
-                                    { 25.4, 1 },
-                                }.ToList(),
-                                frequencies.ToArray()
+                            frequencies_calculated.ToList(),
+                            frequencies.ToArray()
                         );
-            #endif
+#endif
             //====================================================================================================
 
             return;
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> Stack_Frequencies()
+        public IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> Stack_Frequencies()
         {
             return data_stack.Frequencies();
         }
@@ -906,7 +352,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = Stack_Frequencies();
+            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = Stack_Frequencies();
 
             sw.Stop();
             Console.WriteLine($"          frequencies        = {frequencies}");
@@ -914,186 +360,34 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+
             //----------------------------------------------------------------------------------------------------
             // Assert
             // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<double, uint>
-                                {
-                                    { 18.2, 3 },
-                                    { 14.7, 3 },
-                                    { 13.5, 2 },
-                                    { 16.4, 2 },
-                                    { 13.4, 2 },
-                                    { 18.6, 2 },
-                                    { 12.9, 2 },
-                                    { 16.2, 2 },
-                                    { 15, 2 },
-                                    { 11.9, 1 },
-                                    { 13.6, 1 },
-                                    { 28.9, 1 },
-                                    { 16.5, 1 },
-                                    { 24, 1 },
-                                    { 14.5, 1 },
-                                    { 19.8, 1 },
-                                    { 22.9, 1 },
-                                    { 19.5, 1 },
-                                    { 14.3, 1 },
-                                    { 11.3, 1 },
-                                    { 10.5, 1 },
-                                    { 13, 1 },
-                                    { 11.6, 1 },
-                                    { 16.8, 1 },
-                                    { 12.1, 1 },
-                                    { 16.9, 1 },
-                                    { 19.3, 1 },
-                                    { 15.5, 1 },
-                                    { 13.8, 1 },
-                                    { 17.1, 1 },
-                                    { 17, 1 },
-                                    { 11.7, 1 },
-                                    { 11.8, 1 },
-                                    { 12.7, 1 },
-                                    { 12.2, 1 },
-                                    { 16.1, 1 },
-                                    { 17.6, 1 },
-                                    { 15.1, 1 },
-                                    { 13.3, 1 },
-                                    { 15.9, 1 },
-                                    { 13.7, 1 },
-                                    { 16, 1 },
-                                    { 15.2, 1 },
-                                    { 18, 1 },
-                                    { 17.5, 1 },
-                                    { 19.4, 1 },
-                                    { 17.4, 1 },
-                                    { 15.3, 1 },
-                                    { 25.4, 1 },
-                                }.ToList(),
+#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
+                            frequencies_calculated.ToList(),
                             frequencies
                         );
-            #elif XUNIT
+#elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<double, uint>
-                                {                
-                                    { 18.2, 3 },
-                                    { 14.7, 3 },
-                                    { 13.5, 2 },
-                                    { 16.4, 2 },
-                                    { 13.4, 2 },
-                                    { 18.6, 2 },
-                                    { 12.9, 2 },
-                                    { 16.2, 2 },
-                                    { 15, 2 },
-                                    { 11.9, 1 },
-                                    { 13.6, 1 },
-                                    { 28.9, 1 },
-                                    { 16.5, 1 },
-                                    { 24, 1 },
-                                    { 14.5, 1 },
-                                    { 19.8, 1 },
-                                    { 22.9, 1 },
-                                    { 19.5, 1 },
-                                    { 14.3, 1 },
-                                    { 11.3, 1 },
-                                    { 10.5, 1 },
-                                    { 13, 1 },
-                                    { 11.6, 1 },
-                                    { 16.8, 1 },
-                                    { 12.1, 1 },
-                                    { 16.9, 1 },
-                                    { 19.3, 1 },
-                                    { 15.5, 1 },
-                                    { 13.8, 1 },
-                                    { 17.1, 1 },
-                                    { 17, 1 },
-                                    { 11.7, 1 },
-                                    { 11.8, 1 },
-                                    { 12.7, 1 },
-                                    { 12.2, 1 },
-                                    { 16.1, 1 },
-                                    { 17.6, 1 },
-                                    { 15.1, 1 },
-                                    { 13.3, 1 },
-                                    { 15.9, 1 },
-                                    { 13.7, 1 },
-                                    { 16, 1 },
-                                    { 15.2, 1 },
-                                    { 18, 1 },
-                                    { 17.5, 1 },
-                                    { 19.4, 1 },
-                                    { 17.4, 1 },
-                                    { 15.3, 1 },
-                                    { 25.4, 1 },
-                                }.ToList(),
-                                frequencies.ToArray()
+                            frequencies_calculated.ToList(),
+                            frequencies.ToArray()
                         );
-            #elif MSTEST
+#elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            new Dictionary<double, uint>
-                                {
-                                    { 18.2, 3 },
-                                    { 14.7, 3 },
-                                    { 13.5, 2 },
-                                    { 16.4, 2 },
-                                    { 13.4, 2 },
-                                    { 18.6, 2 },
-                                    { 12.9, 2 },
-                                    { 16.2, 2 },
-                                    { 15, 2 },
-                                    { 11.9, 1 },
-                                    { 13.6, 1 },
-                                    { 28.9, 1 },
-                                    { 16.5, 1 },
-                                    { 24, 1 },
-                                    { 14.5, 1 },
-                                    { 19.8, 1 },
-                                    { 22.9, 1 },
-                                    { 19.5, 1 },
-                                    { 14.3, 1 },
-                                    { 11.3, 1 },
-                                    { 10.5, 1 },
-                                    { 13, 1 },
-                                    { 11.6, 1 },
-                                    { 16.8, 1 },
-                                    { 12.1, 1 },
-                                    { 16.9, 1 },
-                                    { 19.3, 1 },
-                                    { 15.5, 1 },
-                                    { 13.8, 1 },
-                                    { 17.1, 1 },
-                                    { 17, 1 },
-                                    { 11.7, 1 },
-                                    { 11.8, 1 },
-                                    { 12.7, 1 },
-                                    { 12.2, 1 },
-                                    { 16.1, 1 },
-                                    { 17.6, 1 },
-                                    { 15.1, 1 },
-                                    { 13.3, 1 },
-                                    { 15.9, 1 },
-                                    { 13.7, 1 },
-                                    { 16, 1 },
-                                    { 15.2, 1 },
-                                    { 18, 1 },
-                                    { 17.5, 1 },
-                                    { 19.4, 1 },
-                                    { 17.4, 1 },
-                                    { 15.3, 1 },
-                                    { 25.4, 1 },
-                                }.ToList(),
-                                frequencies.ToArray()
+                            frequencies_calculated.ToList(),
+                            frequencies.ToArray()
                         );
-            #endif
+#endif
             //====================================================================================================
 
             return;
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> LinkedList_Frequencies()
+        public IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> LinkedList_Frequencies()
         {
             return data_linked_list.Frequencies();
         }
@@ -1110,7 +404,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = LinkedList_Frequencies();
+            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = LinkedList_Frequencies();
 
             sw.Stop();
             Console.WriteLine($"          frequencies        = {frequencies}");
@@ -1118,186 +412,34 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+
             //----------------------------------------------------------------------------------------------------
             // Assert
             // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<double, uint>
-                                {
-                                    { 18.2, 3 },
-                                    { 14.7, 3 },
-                                    { 13.5, 2 },
-                                    { 16.4, 2 },
-                                    { 13.4, 2 },
-                                    { 18.6, 2 },
-                                    { 12.9, 2 },
-                                    { 16.2, 2 },
-                                    { 15, 2 },
-                                    { 11.9, 1 },
-                                    { 13.6, 1 },
-                                    { 28.9, 1 },
-                                    { 16.5, 1 },
-                                    { 24, 1 },
-                                    { 14.5, 1 },
-                                    { 19.8, 1 },
-                                    { 22.9, 1 },
-                                    { 19.5, 1 },
-                                    { 14.3, 1 },
-                                    { 11.3, 1 },
-                                    { 10.5, 1 },
-                                    { 13, 1 },
-                                    { 11.6, 1 },
-                                    { 16.8, 1 },
-                                    { 12.1, 1 },
-                                    { 16.9, 1 },
-                                    { 19.3, 1 },
-                                    { 15.5, 1 },
-                                    { 13.8, 1 },
-                                    { 17.1, 1 },
-                                    { 17, 1 },
-                                    { 11.7, 1 },
-                                    { 11.8, 1 },
-                                    { 12.7, 1 },
-                                    { 12.2, 1 },
-                                    { 16.1, 1 },
-                                    { 17.6, 1 },
-                                    { 15.1, 1 },
-                                    { 13.3, 1 },
-                                    { 15.9, 1 },
-                                    { 13.7, 1 },
-                                    { 16, 1 },
-                                    { 15.2, 1 },
-                                    { 18, 1 },
-                                    { 17.5, 1 },
-                                    { 19.4, 1 },
-                                    { 17.4, 1 },
-                                    { 15.3, 1 },
-                                    { 25.4, 1 },
-                                }.ToList(),
+#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
+                            frequencies_calculated.ToList(),
                             frequencies
                         );
-            #elif XUNIT
+#elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<double, uint>
-                                {                
-                                    { 18.2, 3 },
-                                    { 14.7, 3 },
-                                    { 13.5, 2 },
-                                    { 16.4, 2 },
-                                    { 13.4, 2 },
-                                    { 18.6, 2 },
-                                    { 12.9, 2 },
-                                    { 16.2, 2 },
-                                    { 15, 2 },
-                                    { 11.9, 1 },
-                                    { 13.6, 1 },
-                                    { 28.9, 1 },
-                                    { 16.5, 1 },
-                                    { 24, 1 },
-                                    { 14.5, 1 },
-                                    { 19.8, 1 },
-                                    { 22.9, 1 },
-                                    { 19.5, 1 },
-                                    { 14.3, 1 },
-                                    { 11.3, 1 },
-                                    { 10.5, 1 },
-                                    { 13, 1 },
-                                    { 11.6, 1 },
-                                    { 16.8, 1 },
-                                    { 12.1, 1 },
-                                    { 16.9, 1 },
-                                    { 19.3, 1 },
-                                    { 15.5, 1 },
-                                    { 13.8, 1 },
-                                    { 17.1, 1 },
-                                    { 17, 1 },
-                                    { 11.7, 1 },
-                                    { 11.8, 1 },
-                                    { 12.7, 1 },
-                                    { 12.2, 1 },
-                                    { 16.1, 1 },
-                                    { 17.6, 1 },
-                                    { 15.1, 1 },
-                                    { 13.3, 1 },
-                                    { 15.9, 1 },
-                                    { 13.7, 1 },
-                                    { 16, 1 },
-                                    { 15.2, 1 },
-                                    { 18, 1 },
-                                    { 17.5, 1 },
-                                    { 19.4, 1 },
-                                    { 17.4, 1 },
-                                    { 15.3, 1 },
-                                    { 25.4, 1 },
-                                }.ToList(),
-                                frequencies.ToArray()
+                            frequencies_calculated.ToList(),
+                            frequencies.ToArray()
                         );
-            #elif MSTEST
+#elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            new Dictionary<double, uint>
-                                {
-                                    { 18.2, 3 },
-                                    { 14.7, 3 },
-                                    { 13.5, 2 },
-                                    { 16.4, 2 },
-                                    { 13.4, 2 },
-                                    { 18.6, 2 },
-                                    { 12.9, 2 },
-                                    { 16.2, 2 },
-                                    { 15, 2 },
-                                    { 11.9, 1 },
-                                    { 13.6, 1 },
-                                    { 28.9, 1 },
-                                    { 16.5, 1 },
-                                    { 24, 1 },
-                                    { 14.5, 1 },
-                                    { 19.8, 1 },
-                                    { 22.9, 1 },
-                                    { 19.5, 1 },
-                                    { 14.3, 1 },
-                                    { 11.3, 1 },
-                                    { 10.5, 1 },
-                                    { 13, 1 },
-                                    { 11.6, 1 },
-                                    { 16.8, 1 },
-                                    { 12.1, 1 },
-                                    { 16.9, 1 },
-                                    { 19.3, 1 },
-                                    { 15.5, 1 },
-                                    { 13.8, 1 },
-                                    { 17.1, 1 },
-                                    { 17, 1 },
-                                    { 11.7, 1 },
-                                    { 11.8, 1 },
-                                    { 12.7, 1 },
-                                    { 12.2, 1 },
-                                    { 16.1, 1 },
-                                    { 17.6, 1 },
-                                    { 15.1, 1 },
-                                    { 13.3, 1 },
-                                    { 15.9, 1 },
-                                    { 13.7, 1 },
-                                    { 16, 1 },
-                                    { 15.2, 1 },
-                                    { 18, 1 },
-                                    { 17.5, 1 },
-                                    { 19.4, 1 },
-                                    { 17.4, 1 },
-                                    { 15.3, 1 },
-                                    { 25.4, 1 },
-                                }.ToList(),
-                                frequencies.ToArray()
+                            frequencies_calculated.ToList(),
+                            frequencies.ToArray()
                         );
-            #endif
+#endif
             //====================================================================================================
 
             return;
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> ObservableCollection_Frequencies()
+        public IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> ObservableCollection_Frequencies()
         {
             return data_observable_collection.Frequencies();
         }
@@ -1314,7 +456,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = ObservableCollection_Frequencies();
+            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = ObservableCollection_Frequencies();
 
             sw.Stop();
             Console.WriteLine($"          frequencies        = {frequencies}");
@@ -1322,179 +464,27 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
+
             //----------------------------------------------------------------------------------------------------
             // Assert
             // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<double, uint>
-                                {
-                                    { 18.2, 3 },
-                                    { 14.7, 3 },
-                                    { 13.5, 2 },
-                                    { 16.4, 2 },
-                                    { 13.4, 2 },
-                                    { 18.6, 2 },
-                                    { 12.9, 2 },
-                                    { 16.2, 2 },
-                                    { 15, 2 },
-                                    { 11.9, 1 },
-                                    { 13.6, 1 },
-                                    { 28.9, 1 },
-                                    { 16.5, 1 },
-                                    { 24, 1 },
-                                    { 14.5, 1 },
-                                    { 19.8, 1 },
-                                    { 22.9, 1 },
-                                    { 19.5, 1 },
-                                    { 14.3, 1 },
-                                    { 11.3, 1 },
-                                    { 10.5, 1 },
-                                    { 13, 1 },
-                                    { 11.6, 1 },
-                                    { 16.8, 1 },
-                                    { 12.1, 1 },
-                                    { 16.9, 1 },
-                                    { 19.3, 1 },
-                                    { 15.5, 1 },
-                                    { 13.8, 1 },
-                                    { 17.1, 1 },
-                                    { 17, 1 },
-                                    { 11.7, 1 },
-                                    { 11.8, 1 },
-                                    { 12.7, 1 },
-                                    { 12.2, 1 },
-                                    { 16.1, 1 },
-                                    { 17.6, 1 },
-                                    { 15.1, 1 },
-                                    { 13.3, 1 },
-                                    { 15.9, 1 },
-                                    { 13.7, 1 },
-                                    { 16, 1 },
-                                    { 15.2, 1 },
-                                    { 18, 1 },
-                                    { 17.5, 1 },
-                                    { 19.4, 1 },
-                                    { 17.4, 1 },
-                                    { 15.3, 1 },
-                                    { 25.4, 1 },
-                                }.ToList(),
+#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
+                            frequencies_calculated.ToList(),
                             frequencies
                         );
-            #elif XUNIT
+#elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<double, uint>
-                                {                
-                                    { 18.2, 3 },
-                                    { 14.7, 3 },
-                                    { 13.5, 2 },
-                                    { 16.4, 2 },
-                                    { 13.4, 2 },
-                                    { 18.6, 2 },
-                                    { 12.9, 2 },
-                                    { 16.2, 2 },
-                                    { 15, 2 },
-                                    { 11.9, 1 },
-                                    { 13.6, 1 },
-                                    { 28.9, 1 },
-                                    { 16.5, 1 },
-                                    { 24, 1 },
-                                    { 14.5, 1 },
-                                    { 19.8, 1 },
-                                    { 22.9, 1 },
-                                    { 19.5, 1 },
-                                    { 14.3, 1 },
-                                    { 11.3, 1 },
-                                    { 10.5, 1 },
-                                    { 13, 1 },
-                                    { 11.6, 1 },
-                                    { 16.8, 1 },
-                                    { 12.1, 1 },
-                                    { 16.9, 1 },
-                                    { 19.3, 1 },
-                                    { 15.5, 1 },
-                                    { 13.8, 1 },
-                                    { 17.1, 1 },
-                                    { 17, 1 },
-                                    { 11.7, 1 },
-                                    { 11.8, 1 },
-                                    { 12.7, 1 },
-                                    { 12.2, 1 },
-                                    { 16.1, 1 },
-                                    { 17.6, 1 },
-                                    { 15.1, 1 },
-                                    { 13.3, 1 },
-                                    { 15.9, 1 },
-                                    { 13.7, 1 },
-                                    { 16, 1 },
-                                    { 15.2, 1 },
-                                    { 18, 1 },
-                                    { 17.5, 1 },
-                                    { 19.4, 1 },
-                                    { 17.4, 1 },
-                                    { 15.3, 1 },
-                                    { 25.4, 1 },
-                                }.ToList(),
-                                frequencies.ToArray()
+                            frequencies_calculated.ToList(),
+                            frequencies.ToArray()
                         );
-            #elif MSTEST
+#elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            new Dictionary<double, uint>
-                                {
-                                    { 18.2, 3 },
-                                    { 14.7, 3 },
-                                    { 13.5, 2 },
-                                    { 16.4, 2 },
-                                    { 13.4, 2 },
-                                    { 18.6, 2 },
-                                    { 12.9, 2 },
-                                    { 16.2, 2 },
-                                    { 15, 2 },
-                                    { 11.9, 1 },
-                                    { 13.6, 1 },
-                                    { 28.9, 1 },
-                                    { 16.5, 1 },
-                                    { 24, 1 },
-                                    { 14.5, 1 },
-                                    { 19.8, 1 },
-                                    { 22.9, 1 },
-                                    { 19.5, 1 },
-                                    { 14.3, 1 },
-                                    { 11.3, 1 },
-                                    { 10.5, 1 },
-                                    { 13, 1 },
-                                    { 11.6, 1 },
-                                    { 16.8, 1 },
-                                    { 12.1, 1 },
-                                    { 16.9, 1 },
-                                    { 19.3, 1 },
-                                    { 15.5, 1 },
-                                    { 13.8, 1 },
-                                    { 17.1, 1 },
-                                    { 17, 1 },
-                                    { 11.7, 1 },
-                                    { 11.8, 1 },
-                                    { 12.7, 1 },
-                                    { 12.2, 1 },
-                                    { 16.1, 1 },
-                                    { 17.6, 1 },
-                                    { 15.1, 1 },
-                                    { 13.3, 1 },
-                                    { 15.9, 1 },
-                                    { 13.7, 1 },
-                                    { 16, 1 },
-                                    { 15.2, 1 },
-                                    { 18, 1 },
-                                    { 17.5, 1 },
-                                    { 19.4, 1 },
-                                    { 17.4, 1 },
-                                    { 15.3, 1 },
-                                    { 25.4, 1 },
-                                }.ToList(),
-                                frequencies.ToArray()
+                            frequencies_calculated.ToList(),
+                            frequencies.ToArray()
                         );
-            #endif
+#endif
             //====================================================================================================
 
             return;

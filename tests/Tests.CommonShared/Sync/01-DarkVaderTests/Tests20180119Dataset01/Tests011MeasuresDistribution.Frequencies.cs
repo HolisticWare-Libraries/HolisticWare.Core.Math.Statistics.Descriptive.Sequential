@@ -72,19 +72,19 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class Tests20180119Dataset01
     {
-        Dictionary<int, uint> frequencies_calculated =
-            new Dictionary<int, uint>
+        Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> fc =
+            new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>
                     {
-                        { 3, 4 },
-                        { 2, 2 },
-                        { 4, 2 },
-                        { 1, 1 },
-                        { 5, 1 },
+                        { 3, ( 4, 0.2, 3 ) },
+                        { 2, ( 2, 0.2, 3 ) },
+                        { 4, ( 2, 0.2, 3 ) },
+                        { 1, ( 1, 0.2, 3 ) },
+                        { 5, ( 1, 0.2, 3 ) },
                     };
 
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> Array_Frequencies()
+        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> Array_Frequencies()
         {
             return data_array.Frequencies();
         }
@@ -102,7 +102,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = Array_Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = Array_Frequencies();
 
             sw.Stop();
             Console.WriteLine($"Array<double>.Frequencies()");
@@ -115,19 +115,19 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Assert
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            frequencies_calculated.ToList(),
+                            fc.ToList(),
                             frequencies
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            frequencies_calculated.ToList(),
+                            fc.ToList(),
                             frequencies
                         );
             #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            frequencies_calculated.ToList(),
+                            fc.ToList(),
                             frequencies.ToArray()
                         );
             #endif
@@ -137,7 +137,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> ArraySegment_Frequencies()
+        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> ArraySegment_Frequencies()
         {
             return data_array_segment.Frequencies();
         }
@@ -154,7 +154,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = ArraySegment_Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = ArraySegment_Frequencies();
 
             sw.Stop();
             Console.WriteLine($"          frequencies        = {frequencies}");
@@ -165,19 +165,19 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            frequencies_calculated.ToList(),
+                            fc.ToList(),
                             frequencies
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            frequencies_calculated.ToList(),
+                            fc.ToList(),
                             frequencies
                         );
             #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            frequencies_calculated.ToList(),
+                            fc.ToList(),
                             frequencies.ToArray()
                         );
             #endif
@@ -187,7 +187,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> List_Frequencies()
+        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> List_Frequencies()
         {
             return data_list.Frequencies();
         }
@@ -204,7 +204,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = List_Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = List_Frequencies();
 
             Console.WriteLine($"          frequencies        = {frequencies}");
             Console.WriteLine($"          size               = {data.Count()}");
@@ -214,19 +214,19 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            frequencies_calculated.ToList(),
+                            fc.ToList(),
                             frequencies
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            frequencies_calculated.ToList(),
+                            fc.ToList(),
                             frequencies
                         );
             #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            frequencies_calculated.ToList(),
+                            fc.ToList(),
                             frequencies.ToArray()
                         );
             #endif
@@ -236,7 +236,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> Queue_Frequencies()
+        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> Queue_Frequencies()
         {
             return data_queue.Frequencies();
         }
@@ -252,7 +252,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = Queue_Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = Queue_Frequencies();
 
             sw.Stop();
             Console.WriteLine($"          frequencies        = {frequencies}");
@@ -263,19 +263,19 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            frequencies_calculated.ToList(),
+                            fc.ToList(),
                             frequencies
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            frequencies_calculated.ToList(),
+                            fc.ToList(),
                             frequencies
                         );
             #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            frequencies_calculated.ToList(),
+                            fc.ToList(),
                             frequencies.ToArray()
                         );
             #endif
@@ -285,7 +285,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> Stack_Frequencies()
+        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> Stack_Frequencies()
         {
             return data_stack.Frequencies();
         }
@@ -302,7 +302,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = Stack_Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = Stack_Frequencies();
 
             sw.Stop();
             Console.WriteLine($"          frequencies        = {frequencies}");
@@ -313,19 +313,19 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            frequencies_calculated.ToList(),
+                            fc.ToList(),
                             frequencies
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            frequencies_calculated.ToList(),
+                            fc.ToList(),
                             frequencies
                         );
             #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            frequencies_calculated.ToList(),
+                            fc.ToList(),
                             frequencies.ToArray()
                         );
             #endif
@@ -335,7 +335,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> LinkedList_Frequencies()
+        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> LinkedList_Frequencies()
         {
             return data_linked_list.Frequencies();
         }
@@ -352,7 +352,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = LinkedList_Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = LinkedList_Frequencies();
 
             sw.Stop();
             Console.WriteLine($"          frequencies        = {frequencies}");
@@ -364,19 +364,19 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Assert
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            frequencies_calculated.ToList(),
+                            fc.ToList(),
                             frequencies
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            frequencies_calculated.ToList(),
+                            fc.ToList(),
                             frequencies
                         );
             #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            frequencies_calculated.ToList(),
+                            fc.ToList(),
                             frequencies.ToArray()
                         );
             #endif
@@ -386,7 +386,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> ObservableCollection_Frequencies()
+        public IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> ObservableCollection_Frequencies()
         {
             return data_observable_collection.Frequencies();
         }
@@ -403,7 +403,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = ObservableCollection_Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = ObservableCollection_Frequencies();
 
             sw.Stop();
             Console.WriteLine($"          frequencies        = {frequencies}");
@@ -414,19 +414,19 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            frequencies_calculated.ToList(),
+                            fc.ToList(),
                             frequencies
                         );
             #elif XUNIT
             Assert.Equal
                         (
-                            frequencies_calculated.ToList(),
+                            fc.ToList(),
                             frequencies
                         );
             #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            frequencies_calculated.ToList(),
+                            fc.ToList(),
                             frequencies.ToArray()
                         );
             #endif

@@ -88,7 +88,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequencies = Data.Frequencies();
+            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = Data.Frequencies();
             sw.Stop();
             Console.WriteLine($"List<double>.Frequencies()");
             Console.WriteLine($"          quencies.Count     = {frequencies.Count()}");

@@ -65,6 +65,15 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.Qualitative
     [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
     public partial class UnitTestsQualitativePersons
     {
+        Dictionary<EyeColor, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> fc =
+            new Dictionary<EyeColor, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>()
+                                    {
+                                        { EyeColor.Blue, ( 4, 0.2, 3 ) },
+                                        { EyeColor.Gray, ( 2, 0.2, 3 ) },
+                                        { EyeColor.Green, ( 1, 0.2, 3 ) },
+                                        { EyeColor.Hazel, ( 1, 0.2, 3 ) },
+                                    };
+
         [Test()]
         public void Frequencies()
         {
@@ -72,43 +81,26 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.Qualitative
                                                     from Person p in Persons
                                                     select p.EyeColor;
 
-            IEnumerable<KeyValuePair<EyeColor, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> f = data_eyecolors.Frequencies();
+            IEnumerable<KeyValuePair<EyeColor, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> f = data_eyecolors.Frequencies();
 
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
+
+#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
                                     f,
-                                    new Dictionary<EyeColor, uint>()
-                                    {
-                                        { EyeColor.Blue, 4 },
-                                        { EyeColor.Gray, 2 },
-                                        { EyeColor.Green, 1 },
-                                        { EyeColor.Hazel, 1 },
-                                    }
+                                    fc
                                 );
-            #elif XUNIT
+#elif XUNIT
             Assert.Equal
                                 (
                                     f,
-                                    new Dictionary<EyeColor, uint>()
-                                    {
-                                        { EyeColor.Blue, 4 },
-                                        { EyeColor.Gray, 2 },
-                                        { EyeColor.Green, 1 },
-                                        { EyeColor.Hazel, 1 },
-                                    }
+                                    fc
                                 );
-            #elif MSTEST
+#elif MSTEST
             CollectionAssert.AreEquivalent
                                 (
                                     f.ToList(),
-                                    new Dictionary<EyeColor, uint>()
-                                    {
-                                        { EyeColor.Blue, 4 },
-                                        { EyeColor.Gray, 2 },
-                                        { EyeColor.Green, 1 },
-                                        { EyeColor.Hazel, 1 },
-                                    }
+                                    fc
                                 );
-            #endif
+#endif
 
             return;
         }

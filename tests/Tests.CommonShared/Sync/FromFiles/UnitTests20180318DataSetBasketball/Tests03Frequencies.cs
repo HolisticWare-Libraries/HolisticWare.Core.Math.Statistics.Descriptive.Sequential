@@ -87,124 +87,125 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_2s = data_2pts_success.Frequencies();
 
+
             // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<int, uint>
+#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
+                            new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>
                                         {
-                                            { 18, 15 },
-                                            { 21, 10 },
-                                            { 16, 10 },
-                                            { 24, 9 },
-                                            { 20, 8 },
-                                            { 34, 8 },
-                                            { 26, 7 },
-                                            { 29, 6 },
-                                            { 12, 5 },
-                                            { 23, 5 },
-                                            { 22, 5 },
-                                            { 19, 5 },
-                                            { 17, 4 },
-                                            { 14, 4 },
-                                            { 13, 3 },
-                                            { 25, 3 },
-                                            { 31, 3 },
-                                            { 28, 3 },
-                                            { 32, 3 },
-                                            { 15, 2 },
-                                            { 33, 2 },
-                                            { 27, 2 },
-                                            { 9, 1 },
-                                            { 7, 1 },
-                                            { 39, 1 },
-                                            { 44, 1 },
-                                            { 30, 1 },
-                                            { 40, 1 },
+                                            { 18, ( 15, 0.2, 3 ) },
+                                            { 21, ( 10, 0.2, 3 ) },
+                                            { 16, ( 10, 0.2, 3 ) },
+                                            { 24, ( 9, 0.2, 3 ) },
+                                            { 20, ( 8, 0.2, 3 ) },
+                                            { 34, ( 8, 0.2, 3 ) },
+                                            { 26, ( 7, 0.2, 3 ) },
+                                            { 29, ( 6, 0.2, 3 ) },
+                                            { 12, ( 5, 0.2, 3 ) },
+                                            { 23, ( 5, 0.2, 3 ) },
+                                            { 22, ( 5, 0.2, 3 ) },
+                                            { 19, ( 5, 0.2, 3 ) },
+                                            { 17, ( 4, 0.2, 3 ) },
+                                            { 14, ( 4, 0.2, 3 ) },
+                                            { 13, ( 3, 0.2, 3 ) },
+                                            { 25, ( 3, 0.2, 3 ) },
+                                            { 31, ( 3, 0.2, 3 ) },
+                                            { 28, ( 3, 0.2, 3 ) },
+                                            { 32, ( 3, 0.2, 3 ) },
+                                            { 15, ( 2, 0.2, 3 ) },
+                                            { 33, ( 2, 0.2, 3 ) },
+                                            { 27, ( 2, 0.2, 3 ) },
+                                            { 9, ( 1, 0.2, 3 ) },
+                                            { 7, ( 1, 0.2, 3 ) },
+                                            { 39, ( 1, 0.2, 3 ) },
+                                            { 44, ( 1, 0.2, 3 ) },
+                                            { 30, ( 1, 0.2, 3 ) },
+                                            { 40, ( 1, 0.2, 3 ) },
                                         }
                                 .ToList(),
                             frequency_2s
                         );
-            #elif XUNIT
+#elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<int, uint>
+                            new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>
                                         {
-                                            { 18, 15 },
-                                            { 21, 10 },
-                                            { 16, 10 },
-                                            { 24, 9 },
-                                            { 20, 8 },
-                                            { 34, 8 },
-                                            { 26, 7 },
-                                            { 29, 6 },
-                                            { 12, 5 },
-                                            { 23, 5 },
-                                            { 22, 5 },
-                                            { 19, 5 },
-                                            { 17, 4 },
-                                            { 14, 4 },
-                                            { 13, 3 },
-                                            { 25, 3 },
-                                            { 31, 3 },
-                                            { 28, 3 },
-                                            { 32, 3 },
-                                            { 15, 2 },
-                                            { 33, 2 },
-                                            { 27, 2 },
-                                            { 9, 1 },
-                                            { 7, 1 },
-                                            { 39, 1 },
-                                            { 44, 1 },
-                                            { 30, 1 },
-                                            { 40, 1 },
+                                            { 18, ( 15, 0.2, 3 ) },
+                                            { 21, ( 10, 0.2, 3 ) },
+                                            { 16, ( 10, 0.2, 3 ) },
+                                            { 24, ( 9, 0.2, 3 ) },
+                                            { 20, ( 8, 0.2, 3 ) },
+                                            { 34, ( 8, 0.2, 3 ) },
+                                            { 26, ( 7, 0.2, 3 ) },
+                                            { 29, ( 6, 0.2, 3 ) },
+                                            { 12, ( 5, 0.2, 3 ) },
+                                            { 23, ( 5, 0.2, 3 ) },
+                                            { 22, ( 5, 0.2, 3 ) },
+                                            { 19, ( 5, 0.2, 3 ) },
+                                            { 17, ( 4, 0.2, 3 ) },
+                                            { 14, ( 4, 0.2, 3 ) },
+                                            { 13, ( 3, 0.2, 3 ) },
+                                            { 25, ( 3, 0.2, 3 ) },
+                                            { 31, ( 3, 0.2, 3 ) },
+                                            { 28, ( 3, 0.2, 3 ) },
+                                            { 32, ( 3, 0.2, 3 ) },
+                                            { 15, ( 2, 0.2, 3 ) },
+                                            { 33, ( 2, 0.2, 3 ) },
+                                            { 27, ( 2, 0.2, 3 ) },
+                                            { 9, ( 1, 0.2, 3 ) },
+                                            { 7, ( 1, 0.2, 3 ) },
+                                            { 39, ( 1, 0.2, 3 ) },
+                                            { 44, ( 1, 0.2, 3 ) },
+                                            { 30, ( 1, 0.2, 3 ) },
+                                            { 40, ( 1, 0.2, 3 ) },
                                         }
                                 .ToList(),
                                 frequency_2s.ToArray()
                         );
-            #elif MSTEST
+#elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            new Dictionary<int, uint>
+                            new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>
                                         {
-                                            { 18, 15 },
-                                            { 21, 10 },
-                                            { 16, 10 },
-                                            { 24, 9 },
-                                            { 20, 8 },
-                                            { 34, 8 },
-                                            { 26, 7 },
-                                            { 29, 6 },
-                                            { 12, 5 },
-                                            { 23, 5 },
-                                            { 22, 5 },
-                                            { 19, 5 },
-                                            { 17, 4 },
-                                            { 14, 4 },
-                                            { 13, 3 },
-                                            { 25, 3 },
-                                            { 31, 3 },
-                                            { 28, 3 },
-                                            { 32, 3 },
-                                            { 15, 2 },
-                                            { 33, 2 },
-                                            { 27, 2 },
-                                            { 9, 1 },
-                                            { 7, 1 },
-                                            { 39, 1 },
-                                            { 44, 1 },
-                                            { 30, 1 },
-                                            { 40, 1 },
+                                            { 18, ( 15, 0.2, 3 ) },
+                                            { 21, ( 10, 0.2, 3 ) },
+                                            { 16, ( 10, 0.2, 3 ) },
+                                            { 24, ( 9, 0.2, 3 ) },
+                                            { 20, ( 8, 0.2, 3 ) },
+                                            { 34, ( 8, 0.2, 3 ) },
+                                            { 26, ( 7, 0.2, 3 ) },
+                                            { 29, ( 6, 0.2, 3 ) },
+                                            { 12, ( 5, 0.2, 3 ) },
+                                            { 23, ( 5, 0.2, 3 ) },
+                                            { 22, ( 5, 0.2, 3 ) },
+                                            { 19, ( 5, 0.2, 3 ) },
+                                            { 17, ( 4, 0.2, 3 ) },
+                                            { 14, ( 4, 0.2, 3 ) },
+                                            { 13, ( 3, 0.2, 3 ) },
+                                            { 25, ( 3, 0.2, 3 ) },
+                                            { 31, ( 3, 0.2, 3 ) },
+                                            { 28, ( 3, 0.2, 3 ) },
+                                            { 32, ( 3, 0.2, 3 ) },
+                                            { 15, ( 2, 0.2, 3 ) },
+                                            { 33, ( 2, 0.2, 3 ) },
+                                            { 27, ( 2, 0.2, 3 ) },
+                                            { 9, ( 1, 0.2, 3 ) },
+                                            { 7, ( 1, 0.2, 3 ) },
+                                            { 39, ( 1, 0.2, 3 ) },
+                                            { 44, ( 1, 0.2, 3 ) },
+                                            { 30, ( 1, 0.2, 3 ) },
+                                            { 40, ( 1, 0.2, 3 ) },
                                         }
                                 .ToList(),
                             frequency_2s.ToArray()
                         );
-                #endif
+#endif
 
-                return;
+            return;
         }
 
 
         [Test()]
-            public void Frequency_Points3Success()
+        public void Frequency_Points3Success()
         {
             data_3pts_success =
                                 from row in BasketballTeamDataTable
@@ -213,14 +214,16 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //List<int> frequency_3s = data_3pts_success.FrequencyDistribution();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_3s = data_3pts_success.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_3s;
+
+            frequency_3s = data_3pts_success.Frequencies();
 
             return;
         }
 
 
         [Test()]
-            public void Frequency_Points2Fail()
+        public void Frequency_Points2Fail()
         {
             data_2pts_fail =
                                 from row in BasketballTeamDataTable
@@ -229,113 +232,114 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //List<int> frequency_2f = data_2pts_fail.FrequencyDistribution();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequency_2f = data_2pts_fail.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_2f = data_2pts_fail.Frequencies();
+
 
             // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<int, uint>
+#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
+                            new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>()
                                         {
-                                            { 28, 10 }, 
-                                            { 19, 9 }, 
-                                            { 22, 8 }, 
-                                            { 21, 7 }, 
-                                            { 25, 7 }, 
-                                            { 23, 7 }, 
-                                            { 20, 7 }, 
-                                            { 18, 6 }, 
-                                            { 31, 6 }, 
-                                            { 15, 6 }, 
-                                            { 16, 6 }, 
-                                            { 30, 5 }, 
-                                            { 24, 5 }, 
-                                            { 12, 5 }, 
-                                            { 26, 5 }, 
-                                            { 17, 5 }, 
-                                            { 11, 4 }, 
-                                            { 13, 4 }, 
-                                            { 27, 3 }, 
-                                            { 29, 3 }, 
-                                            { 14, 3 }, 
-                                            { 36, 2 }, 
-                                            { 9, 2 }, 
-                                            { 45, 1 }, 
-                                            { 33, 1 }, 
-                                            { 8, 1 },             
+                                            { 28, ( 10, 0.2, 3 ) }, 
+                                            { 19, ( 9, 0.2, 3 ) }, 
+                                            { 22, ( 8, 0.2, 3 ) }, 
+                                            { 21, ( 7, 0.2, 3 ) }, 
+                                            { 25, ( 7, 0.2, 3 ) }, 
+                                            { 23, ( 7, 0.2, 3 ) }, 
+                                            { 20, ( 7, 0.2, 3 ) }, 
+                                            { 18, ( 6, 0.2, 3 ) }, 
+                                            { 31, ( 6, 0.2, 3 ) }, 
+                                            { 15, ( 6, 0.2, 3 ) }, 
+                                            { 16, ( 6, 0.2, 3 ) }, 
+                                            { 30, ( 5, 0.2, 3 ) }, 
+                                            { 24, ( 5, 0.2, 3 ) }, 
+                                            { 12, ( 5, 0.2, 3 ) }, 
+                                            { 26, ( 5, 0.2, 3 ) }, 
+                                            { 17, ( 5, 0.2, 3 ) }, 
+                                            { 11, ( 4, 0.2, 3 ) }, 
+                                            { 13, ( 4, 0.2, 3 ) }, 
+                                            { 27, ( 3, 0.2, 3 ) }, 
+                                            { 29, ( 3, 0.2, 3 ) }, 
+                                            { 14, ( 3, 0.2, 3 ) }, 
+                                            { 36, ( 2, 0.2, 3 ) }, 
+                                            { 9, ( 2, 0.2, 3 ) }, 
+                                            { 45, ( 1, 0.2, 3 ) }, 
+                                            { 33, ( 1, 0.2, 3 ) }, 
+                                            { 8, ( 1, 0.2, 3 ) },             
                                         }
                                 .ToList(),
                             frequency_2f
                         );
-            #elif XUNIT
+#elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<int, uint>
+                            new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative) >
                                         {
-                                            { 28, 10 }, 
-                                            { 19, 9 }, 
-                                            { 22, 8 }, 
-                                            { 21, 7 }, 
-                                            { 25, 7 }, 
-                                            { 23, 7 }, 
-                                            { 20, 7 }, 
-                                            { 18, 6 }, 
-                                            { 31, 6 }, 
-                                            { 15, 6 }, 
-                                            { 16, 6 }, 
-                                            { 30, 5 }, 
-                                            { 24, 5 }, 
-                                            { 12, 5 }, 
-                                            { 26, 5 }, 
-                                            { 17, 5 }, 
-                                            { 11, 4 }, 
-                                            { 13, 4 }, 
-                                            { 27, 3 }, 
-                                            { 29, 3 }, 
-                                            { 14, 3 }, 
-                                            { 36, 2 }, 
-                                            { 9, 2 }, 
-                                            { 45, 1 }, 
-                                            { 33, 1 }, 
-                                            { 8, 1 },             
+                                            { 28, ( 10, 0.2, 3 ) }, 
+                                            { 19, ( 9, 0.2, 3 ) }, 
+                                            { 22, ( 8, 0.2, 3 ) }, 
+                                            { 21, ( 7, 0.2, 3 ) }, 
+                                            { 25, ( 7, 0.2, 3 ) }, 
+                                            { 23, ( 7, 0.2, 3 ) }, 
+                                            { 20, ( 7, 0.2, 3 ) }, 
+                                            { 18, ( 6, 0.2, 3 ) }, 
+                                            { 31, ( 6, 0.2, 3 ) }, 
+                                            { 15, ( 6, 0.2, 3 ) }, 
+                                            { 16, ( 6, 0.2, 3 ) }, 
+                                            { 30, ( 5, 0.2, 3 ) }, 
+                                            { 24, ( 5, 0.2, 3 ) }, 
+                                            { 12, ( 5, 0.2, 3 ) }, 
+                                            { 26, ( 5, 0.2, 3 ) }, 
+                                            { 17, ( 5, 0.2, 3 ) }, 
+                                            { 11, ( 4 , 0.2, 3 )}, 
+                                            { 13, ( 4, 0.2, 3 ) }, 
+                                            { 27, ( 3, 0.2, 3 ) }, 
+                                            { 29, ( 3, 0.2, 3 ) }, 
+                                            { 14, ( 3, 0.2, 3 ) }, 
+                                            { 36, ( 2, 0.2, 3 ) }, 
+                                            { 9, ( 2, 0.2, 3 ) }, 
+                                            { 45, ( 1, 0.2, 3 ) }, 
+                                            { 33, ( 1, 0.2, 3 ) }, 
+                                            { 8, ( 1, 0.2, 3 ) },             
                                         }
                                 .ToList(),
                                 frequency_2f.ToArray()
                         );
-            #elif MSTEST
+#elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            new Dictionary<int, uint>
+                            new Dictionary<int, ( uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>
                                         {
-                                            { 28, 10 }, 
-                                            { 19, 9 }, 
-                                            { 22, 8 }, 
-                                            { 21, 7 }, 
-                                            { 25, 7 }, 
-                                            { 23, 7 }, 
-                                            { 20, 7 }, 
-                                            { 18, 6 }, 
-                                            { 31, 6 }, 
-                                            { 15, 6 }, 
-                                            { 16, 6 }, 
-                                            { 30, 5 }, 
-                                            { 24, 5 }, 
-                                            { 12, 5 }, 
-                                            { 26, 5 }, 
-                                            { 17, 5 }, 
-                                            { 11, 4 }, 
-                                            { 13, 4 }, 
-                                            { 27, 3 }, 
-                                            { 29, 3 }, 
-                                            { 14, 3 }, 
-                                            { 36, 2 }, 
-                                            { 9, 2 }, 
-                                            { 45, 1 }, 
-                                            { 33, 1 }, 
-                                            { 8, 1 },             
+                                            { 28, ( 10, 0.2, 3 ) }, 
+                                            { 19, ( 9, 0.2, 3 ) }, 
+                                            { 22, ( 8, 0.2, 3 ) }, 
+                                            { 21, ( 7, 0.2, 3 ) }, 
+                                            { 25, ( 7, 0.2, 3 ) }, 
+                                            { 23, ( 7, 0.2, 3 ) }, 
+                                            { 20, ( 7, 0.2, 3 ) }, 
+                                            { 18, ( 6, 0.2, 3 ) }, 
+                                            { 31, ( 6, 0.2, 3 ) }, 
+                                            { 15, ( 6, 0.2, 3 ) }, 
+                                            { 16, ( 6, 0.2, 3 ) }, 
+                                            { 30, ( 5, 0.2, 3 ) }, 
+                                            { 24, ( 5, 0.2, 3 ) }, 
+                                            { 12, ( 5, 0.2, 3 ) }, 
+                                            { 26, ( 5, 0.2, 3 ) }, 
+                                            { 17, ( 5, 0.2, 3 ) }, 
+                                            { 11, ( 4, 0.2, 3 ) }, 
+                                            { 13, ( 4, 0.2, 3 ) }, 
+                                            { 27, ( 3, 0.2, 3 ) }, 
+                                            { 29, ( 3, 0.2, 3 ) }, 
+                                            { 14, ( 3, 0.2, 3 ) }, 
+                                            { 36, ( 2, 0.2, 3 ) }, 
+                                            { 9, ( 2, 0.2, 3 ) }, 
+                                            { 45, ( 1, 0.2, 3 ) }, 
+                                            { 33, ( 1, 0.2, 3 ) }, 
+                                            { 8, ( 1, 0.2, 3 ) },             
                                         }
                                 .ToList(),
                             frequency_2f.ToArray()
                         );
-            #endif
+#endif
 
             return;
         }
@@ -351,7 +355,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //List<int> frequency_3f = data_3pts_fail.FrequencyDistribution();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequency_3f = data_3pts_fail.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_3f = data_3pts_fail.Frequencies();
 
             return;
         }
@@ -367,7 +371,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //List<int> frequency_ftf = data_free_throw_fail.FrequencyDistribution();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequency_ftf = data_free_throw_fail.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_ftf = data_free_throw_fail.Frequencies();
 
             return;
         }
@@ -383,7 +387,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //List<int> frequency_fts = data_free_throw_success.FrequencyDistribution();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequency_fts = data_free_throw_success.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_fts = data_free_throw_success.Frequencies();
 
             return;
         }
@@ -399,7 +403,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //List<int> frequency_off = data_jumps_offensive.FrequencyDistribution();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequency_off = data_jumps_offensive.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_off = data_jumps_offensive.Frequencies();
 
             return;
         }
@@ -415,7 +419,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //List<int> frequency_def = data_jumps_defensive.FrequencyDistribution();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequency_def = data_jumps_defensive.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_def = data_jumps_defensive.Frequencies();
 
             return;
         }
@@ -431,7 +435,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //List<int> frequency_assist = data_assistence.FrequencyDistribution();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequency_assist = data_assistence.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_assist = data_assistence.Frequencies();
 
             return;
         }
@@ -447,7 +451,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //List<int> frequency_pf = data_personal_faults.FrequencyDistribution();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequency_pf = data_personal_faults.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_pf = data_personal_faults.Frequencies();
 
             return;
         }
@@ -463,7 +467,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //List<int> frequency_bl = data_balls_lost.FrequencyDistribution();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequency_bl = data_balls_lost.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_bl = data_balls_lost.Frequencies();
 
             return;
         }
@@ -479,7 +483,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //List<int> frequency_bs = data_balls_stolen.FrequencyDistribution();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequency_bs = data_balls_stolen.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_bs = data_balls_stolen.Frequencies();
 
             return;
         }
@@ -495,7 +499,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //List<int> frequency_block = data_blocks.FrequencyDistribution();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulativ)>> frequency_block = data_blocks.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_block = data_blocks.Frequencies();
 
             return;
         }
