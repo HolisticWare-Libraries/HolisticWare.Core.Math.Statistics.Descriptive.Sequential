@@ -79,7 +79,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void MeanArithmetic_Points2Success()
         {
             data_2pts_success =
-                                    from row in BasketballTeamDataTable
+                                    from row in JudoDataTable
                                     select row.Points2Success
                                         ;
 
@@ -103,7 +103,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void MeanArithmetic_Points3Success()
         {
             data_3pts_success =
-                                    from row in BasketballTeamDataTable
+                                    from row in JudoDataTable
                                     select row.Points3Success
                                         ;
 
@@ -127,7 +127,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void MeanArithmetic_Points2Fail()
         {
             data_2pts_fail =
-                                from row in BasketballTeamDataTable
+                                from row in JudoDataTable
                                 select row.Points2Fail
                                     ;
 
@@ -151,7 +151,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void MeanArithmetic_Points3Fail()
         {
             data_3pts_fail =
-                                from row in BasketballTeamDataTable
+                                from row in JudoDataTable
                                 select row.Points3Fail
                                     ;
 
@@ -174,7 +174,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void MeanArithmetic_FreeThrowFail()
         {
             data_free_throw_fail =
-                                from row in BasketballTeamDataTable
+                                from row in JudoDataTable
                                 select row.FreeThrowFail
                                     ;
 
@@ -197,7 +197,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void MeanArithmetic_FreeThrowSuccess()
         {
             data_free_throw_success =
-                                from row in BasketballTeamDataTable
+                                from row in JudoDataTable
                                 select row.FreeThrowSuccess
                                     ;
 
@@ -220,7 +220,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void MeanArithmetic_JumpsOffensive()
         {
             data_jumps_offensive =
-                                from row in BasketballTeamDataTable
+                                from row in JudoDataTable
                                 select row.JumpsOffensive
                                     ;
 
@@ -242,7 +242,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void MeanArithmetic_JumpsDefensive()
         {
             data_jumps_defensive =
-                                from row in BasketballTeamDataTable
+                                from row in JudoDataTable
                                 select row.JumpsDefensive
                                     ;
 
@@ -264,7 +264,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void MeanArithmetic_Assistence()
         {
             data_assistence =
-                                from row in BasketballTeamDataTable
+                                from row in JudoDataTable
                                 select row.Assistence
                                     ;
 
@@ -286,7 +286,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void MeanArithmetic_PersonalFaults()
         {
             data_personal_faults =
-                                from row in BasketballTeamDataTable
+                                from row in JudoDataTable
                                 select row.PersonalFaults
                                     ;
 
@@ -309,7 +309,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void MeanArithmetic_BallsLost()
         {
             data_balls_lost =
-                                from row in BasketballTeamDataTable
+                                from row in JudoDataTable
                                 select row.BallsLost
                                     ;
 
@@ -332,7 +332,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void MeanArithmetic_BallsStolen()
         {
             data_balls_stolen =
-                                from row in BasketballTeamDataTable
+                                from row in JudoDataTable
                                 select row.BallsStolen
                                     ;
 
@@ -355,7 +355,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void MeanArithmetic_Blocks()
         {
             data_blocks =
-                                from row in BasketballTeamDataTable
+                                from row in JudoDataTable
                                 select row.Blocks
                                     ;
 

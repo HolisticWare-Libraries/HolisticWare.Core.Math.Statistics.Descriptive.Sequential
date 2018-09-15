@@ -77,14 +77,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
     public partial class UnitTests20180318DataSetJudo
     {
-        IEnumerable<double> data_ONT;
-        IEnumerable<double> data_OUZ;
-        IEnumerable<double> data_NEB;
-        IEnumerable<double> data_SKL;
-        IEnumerable<double> data_TRB;
-        IEnumerable<double> data_CUC;
-        IEnumerable<double> data_SDM;
-        IEnumerable<double> data_BML;
+        IEnumerable<double> data_ont;
+        IEnumerable<double> data_ouz;
+        IEnumerable<double> data_neb;
+        IEnumerable<double> data_skl;
+        IEnumerable<double> data_trb;
+        IEnumerable<double> data_cuc;
+        IEnumerable<double> data_sdm;
+        IEnumerable<double> data_bml;
 
         private static List<JudoData> judo_data_table = null;
 
