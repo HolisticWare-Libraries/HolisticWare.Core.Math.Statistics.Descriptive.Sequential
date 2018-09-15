@@ -20,7 +20,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             long n = x.LongCount();
 
-            Dictionary<T, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> frequencies;
+            Dictionary<T, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)> frequencies;
 
             frequencies  = new Dictionary<T, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>((int)n);
 
@@ -30,16 +30,20 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 if (frequencies.ContainsKey(x_i))
                 {
                     uint f_absolute = frequencies[x_i].FrequencyAbsolute + 1;
-                    double f_relative = f_absolute / n;
-                    uint f_cummulative = 0;
-                    frequencies[x_i] = (f_absolute, f_relative, f_cummulative);
+                    double f_relative = (double)f_absolute / (double)n;
+                    uint f_cumulative = 0;
+                    frequencies[x_i] = (FrequencyAbsolute: f_absolute, FrequencyRelative: f_relative, FrequencyCumulative: f_cumulative);
                 }
                 else
                 {
                     uint f_absolute = 1;
-                    double f_relative = f_absolute / n;
-                    uint f_cummulative = 0;
-                    frequencies.Add(x_i, (f_absolute, f_relative, f_cummulative));
+                    double f_relative = (double) f_absolute / (double) n;
+                    uint f_cumulative = 0;
+                    frequencies.Add
+                                (
+                                    x_i, 
+                                    (FrequencyAbsolute: f_absolute, FrequencyRelative: f_relative, FrequencyCumulative: f_cumulative)
+                                );
                 }
             }
 
@@ -65,16 +69,20 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 if (frequencies.ContainsKey(x_i))
                 {
                     uint f_absolute = frequencies[x_i].FrequencyAbsolute + 1;
-                    double f_relative = f_absolute / n;
-                    uint f_cummulative = 0;
-                    frequencies[x_i] = (f_absolute, f_relative, f_cummulative);
+                    double f_relative = (double)f_absolute / (double)n;
+                    uint f_cumulative = 0;
+                    frequencies[x_i] = (FrequencyAbsolute: f_absolute, FrequencyRelative: f_relative, FrequencyCumulative: f_cumulative);
                 }
                 else
                 {
                     uint f_absolute = 1;
-                    double f_relative = f_absolute / n;
-                    uint f_cummulative = 0;
-                    frequencies.Add(x_i, (f_absolute, f_relative, f_cummulative));
+                    double f_relative = (double)f_absolute / (double)n;
+                    uint f_cumulative = 0;
+                    frequencies.Add
+                                (
+                                    x_i,
+                                    (FrequencyAbsolute: f_absolute, FrequencyRelative: f_relative, FrequencyCumulative: f_cumulative)
+                                );
                 }
             }
 
@@ -100,16 +108,20 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 if (frequencies.ContainsKey(x_i))
                 {
                     uint f_absolute = frequencies[x_i].FrequencyAbsolute + 1;
-                    double f_relative = f_absolute / n;
-                    uint f_cummulative = 0;
-                    frequencies[x_i] = (f_absolute, f_relative, f_cummulative);
+                    double f_relative = (double)f_absolute / (double)n;
+                    uint f_cumulative = 0;
+                    frequencies[x_i] = (FrequencyAbsolute: f_absolute, FrequencyRelative: f_relative, FrequencyCumulative: f_cumulative);
                 }
                 else
                 {
                     uint f_absolute = 1;
-                    double f_relative = f_absolute / n;
-                    uint f_cummulative = 0;
-                    frequencies.Add(x_i, (f_absolute, f_relative, f_cummulative));
+                    double f_relative = (double)f_absolute / (double)n;
+                    uint f_cumulative = 0;
+                    frequencies.Add
+                                (
+                                    x_i,
+                                    (FrequencyAbsolute: f_absolute, FrequencyRelative: f_relative, FrequencyCumulative: f_cumulative)
+                                );
                 }
             }
 
@@ -135,16 +147,20 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 if (frequencies.ContainsKey(x_i))
                 {
                     uint f_absolute = frequencies[x_i].FrequencyAbsolute + 1;
-                    double f_relative = f_absolute / n;
-                    uint f_cummulative = 0;
-                    frequencies[x_i] = (f_absolute, f_relative, f_cummulative);
+                    double f_relative = (double)f_absolute / (double)n;
+                    uint f_cumulative = 0;
+                    frequencies[x_i] = (FrequencyAbsolute: f_absolute, FrequencyRelative: f_relative, FrequencyCumulative: f_cumulative);
                 }
                 else
                 {
                     uint f_absolute = 1;
-                    double f_relative = f_absolute / n;
-                    uint f_cummulative = 0;
-                    frequencies.Add(x_i, (f_absolute, f_relative, f_cummulative));
+                    double f_relative = (double)f_absolute / (double)n;
+                    uint f_cumulative = 0;
+                    frequencies.Add
+                                (
+                                    x_i,
+                                    (FrequencyAbsolute: f_absolute, FrequencyRelative: f_relative, FrequencyCumulative: f_cumulative)
+                                );
                 }
             }
 
@@ -170,16 +186,20 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 if (frequencies.ContainsKey(x_i))
                 {
                     uint f_absolute = frequencies[x_i].FrequencyAbsolute + 1;
-                    double f_relative = f_absolute / n;
-                    uint f_cummulative = 0;
-                    frequencies[x_i] = (f_absolute, f_relative, f_cummulative);
+                    double f_relative = (double)f_absolute / (double)n;
+                    uint f_cumulative = 0;
+                    frequencies[x_i] = (FrequencyAbsolute: f_absolute, FrequencyRelative: f_relative, FrequencyCumulative: f_cumulative);
                 }
                 else
                 {
                     uint f_absolute = 1;
-                    double f_relative = f_absolute / n;
-                    uint f_cummulative = 0;
-                    frequencies.Add(x_i, (f_absolute, f_relative, f_cummulative));
+                    double f_relative = (double)f_absolute / (double)n;
+                    uint f_cumulative = 0;
+                    frequencies.Add
+                                (
+                                    x_i,
+                                    (FrequencyAbsolute: f_absolute, FrequencyRelative: f_relative, FrequencyCumulative: f_cumulative)
+                                );
                 }
             }
 
@@ -205,16 +225,20 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 if (frequencies.ContainsKey(x_i))
                 {
                     uint f_absolute = frequencies[x_i].FrequencyAbsolute + 1;
-                    double f_relative = f_absolute / n;
-                    uint f_cummulative = 0;
-                    frequencies[x_i] = (f_absolute, f_relative, f_cummulative);
+                    double f_relative = (double)f_absolute / (double)n;
+                    uint f_cumulative = 0;
+                    frequencies[x_i] = (FrequencyAbsolute: f_absolute, FrequencyRelative: f_relative, FrequencyCumulative: f_cumulative);
                 }
                 else
                 {
                     uint f_absolute = 1;
-                    double f_relative = f_absolute / n;
-                    uint f_cummulative = 0;
-                    frequencies.Add(x_i, (f_absolute, f_relative, f_cummulative));
+                    double f_relative = (double)f_absolute / (double)n;
+                    uint f_cumulative = 0;
+                    frequencies.Add
+                                (
+                                    x_i,
+                                    (FrequencyAbsolute: f_absolute, FrequencyRelative: f_relative, FrequencyCumulative: f_cumulative)
+                                );
                 }
             }
 
@@ -240,16 +264,20 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 if (frequencies.ContainsKey(x_i))
                 {
                     uint f_absolute = frequencies[x_i].FrequencyAbsolute + 1;
-                    double f_relative = f_absolute / n;
-                    uint f_cummulative = 0;
-                    frequencies[x_i] = (f_absolute, f_relative, f_cummulative);
+                    double f_relative = (double)f_absolute / (double)n;
+                    uint f_cumulative = 0;
+                    frequencies[x_i] = (FrequencyAbsolute: f_absolute, FrequencyRelative: f_relative, FrequencyCumulative: f_cumulative);
                 }
                 else
                 {
                     uint f_absolute = 1;
-                    double f_relative = f_absolute / n;
-                    uint f_cummulative = 0;
-                    frequencies.Add(x_i, (f_absolute, f_relative, f_cummulative));
+                    double f_relative = (double)f_absolute / (double)n;
+                    uint f_cumulative = 0;
+                    frequencies.Add
+                                (
+                                    x_i,
+                                    (FrequencyAbsolute: f_absolute, FrequencyRelative: f_relative, FrequencyCumulative: f_cumulative)
+                                );
                 }
             }
 
@@ -275,16 +303,20 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 if (frequencies.ContainsKey(x_i))
                 {
                     uint f_absolute = frequencies[x_i].FrequencyAbsolute + 1;
-                    double f_relative = f_absolute / n;
-                    uint f_cummulative = 0;
-                    frequencies[x_i] = (f_absolute, f_relative, f_cummulative);
+                    double f_relative = (double)f_absolute / (double)n;
+                    uint f_cumulative = 0;
+                    frequencies[x_i] = (FrequencyAbsolute: f_absolute, FrequencyRelative: f_relative, FrequencyCumulative: f_cumulative);
                 }
                 else
                 {
                     uint f_absolute = 1;
-                    double f_relative = f_absolute / n;
-                    uint f_cummulative = 0;
-                    frequencies.Add(x_i, (f_absolute, f_relative, f_cummulative));
+                    double f_relative = (double)f_absolute / (double)n;
+                    uint f_cumulative = 0;
+                    frequencies.Add
+                                (
+                                    x_i,
+                                    (FrequencyAbsolute: f_absolute, FrequencyRelative: f_relative, FrequencyCumulative: f_cumulative)
+                                );
                 }
             }
 
@@ -310,16 +342,20 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 if (frequencies.ContainsKey(x_i))
                 {
                     uint f_absolute = frequencies[x_i].FrequencyAbsolute + 1;
-                    double f_relative = f_absolute / n;
-                    uint f_cummulative = 0;
-                    frequencies[x_i] = (f_absolute, f_relative, f_cummulative);
+                    double f_relative = (double)f_absolute / (double)n;
+                    uint f_cumulative = 0;
+                    frequencies[x_i] = (FrequencyAbsolute: f_absolute, FrequencyRelative: f_relative, FrequencyCumulative: f_cumulative);
                 }
                 else
                 {
                     uint f_absolute = 1;
-                    double f_relative = f_absolute / n;
-                    uint f_cummulative = 0;
-                    frequencies.Add(x_i, (f_absolute, f_relative, f_cummulative));
+                    double f_relative = (double)f_absolute / (double)n;
+                    uint f_cumulative = 0;
+                    frequencies.Add
+                                (
+                                    x_i,
+                                    (FrequencyAbsolute: f_absolute, FrequencyRelative: f_relative, FrequencyCumulative: f_cumulative)
+                                );
                 }
             }
 
@@ -345,16 +381,20 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 if (frequencies.ContainsKey(x_i))
                 {
                     uint f_absolute = frequencies[x_i].FrequencyAbsolute + 1;
-                    double f_relative = f_absolute / n;
-                    uint f_cummulative = 0;
-                    frequencies[x_i] = (f_absolute, f_relative, f_cummulative);
+                    double f_relative = (double)f_absolute / (double)n;
+                    uint f_cumulative = 0;
+                    frequencies[x_i] = (FrequencyAbsolute: f_absolute, FrequencyRelative: f_relative, FrequencyCumulative: f_cumulative);
                 }
                 else
                 {
                     uint f_absolute = 1;
-                    double f_relative = f_absolute / n;
-                    uint f_cummulative = 0;
-                    frequencies.Add(x_i, (f_absolute, f_relative, f_cummulative));
+                    double f_relative = (double)f_absolute / (double)n;
+                    uint f_cumulative = 0;
+                    frequencies.Add
+                                (
+                                    x_i,
+                                    (FrequencyAbsolute: f_absolute, FrequencyRelative: f_relative, FrequencyCumulative: f_cumulative)
+                                );
                 }
             }
 
@@ -380,16 +420,20 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 if (frequencies.ContainsKey(x_i))
                 {
                     uint f_absolute = frequencies[x_i].FrequencyAbsolute + 1;
-                    double f_relative = f_absolute / n;
-                    uint f_cummulative = 0;
-                    frequencies[x_i] = (f_absolute, f_relative, f_cummulative);
+                    double f_relative = (double)f_absolute / (double)n;
+                    uint f_cumulative = 0;
+                    frequencies[x_i] = (FrequencyAbsolute: f_absolute, FrequencyRelative: f_relative, FrequencyCumulative: f_cumulative);
                 }
                 else
                 {
                     uint f_absolute = 1;
-                    double f_relative = f_absolute / n;
-                    uint f_cummulative = 0;
-                    frequencies.Add(x_i, (f_absolute, f_relative, f_cummulative));
+                    double f_relative = (double)f_absolute / (double)n;
+                    uint f_cumulative = 0;
+                    frequencies.Add
+                                (
+                                    x_i,
+                                    (FrequencyAbsolute: f_absolute, FrequencyRelative: f_relative, FrequencyCumulative: f_cumulative)
+                                );
                 }
             }
 
