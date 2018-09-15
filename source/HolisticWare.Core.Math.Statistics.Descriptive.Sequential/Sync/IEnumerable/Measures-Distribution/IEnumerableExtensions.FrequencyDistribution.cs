@@ -31,7 +31,37 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                     select pair
                                     ;
 
-            return frequencies_sorted;
+            int n = frequencies_sorted.Count();
+            int i = 0;
+
+            uint absolute = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+            double relative = frequencies_sorted.ElementAt(i).Value.FrequencyRelative;
+            uint cumulative = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+
+            uint sum = cumulative;
+
+            KeyValuePair<T, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)> kvp;
+            kvp = new KeyValuePair<T, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
+                        (
+                            frequencies_sorted.ElementAt(i).Key,
+                            (FrequencyAbsolute: absolute, FrequencyRelative: relative, FrequencyCumulative: sum)
+                        );
+
+            yield return kvp;
+
+            for (i = 1; i < n; i++)
+            {
+                absolute = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+                relative = frequencies_sorted.ElementAt(i).Value.FrequencyRelative;
+                sum += absolute;
+
+                kvp = new KeyValuePair<T, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
+                            (
+                                frequencies_sorted.ElementAt(i).Key,
+                                (FrequencyAbsolute: absolute, FrequencyRelative: relative, FrequencyCumulative: sum)
+                            );
+                yield return kvp;
+            }
         }
 
         public static
@@ -53,7 +83,37 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                 select pair
                                     ;
 
-            return frequencies_sorted;
+            int n = frequencies_sorted.Count();
+            int i = 0;
+
+            uint absolute = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+            double relative = frequencies_sorted.ElementAt(i).Value.FrequencyRelative;
+            uint cumulative = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+
+            uint sum = cumulative;
+
+            KeyValuePair<byte, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)> kvp;
+            kvp = new KeyValuePair<byte, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
+                        (
+                            frequencies_sorted.ElementAt(i).Key,
+                            (FrequencyAbsolute: absolute, FrequencyRelative: relative, FrequencyCumulative: sum)
+                        );
+
+            yield return kvp;
+
+            for (i = 1; i < n; i++)
+            {
+                absolute = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+                relative = frequencies_sorted.ElementAt(i).Value.FrequencyRelative;
+                sum += absolute;
+
+                kvp = new KeyValuePair<byte, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
+                            (
+                                frequencies_sorted.ElementAt(i).Key,
+                                (FrequencyAbsolute: absolute, FrequencyRelative: relative, FrequencyCumulative: sum)
+                            );
+                yield return kvp;
+            }
         }
 
         public static
@@ -75,7 +135,37 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                 select pair
                                     ;
 
-            return frequencies_sorted;
+            int n = frequencies_sorted.Count();
+            int i = 0;
+
+            uint absolute = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+            double relative = frequencies_sorted.ElementAt(i).Value.FrequencyRelative;
+            uint cumulative = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+
+            uint sum = cumulative;
+
+            KeyValuePair<ushort, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)> kvp;
+            kvp = new KeyValuePair<ushort, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
+                        (
+                            frequencies_sorted.ElementAt(i).Key,
+                            (FrequencyAbsolute: absolute, FrequencyRelative: relative, FrequencyCumulative: sum)
+                        );
+
+            yield return kvp;
+
+            for (i = 1; i < n; i++)
+            {
+                absolute = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+                relative = frequencies_sorted.ElementAt(i).Value.FrequencyRelative;
+                sum += absolute;
+
+                kvp = new KeyValuePair<ushort, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
+                            (
+                                frequencies_sorted.ElementAt(i).Key,
+                                (FrequencyAbsolute: absolute, FrequencyRelative: relative, FrequencyCumulative: sum)
+                            );
+                yield return kvp;
+            }
         }
 
         public static
@@ -97,7 +187,37 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                 select pair
                                     ;
 
-            return frequencies_sorted;
+            int n = frequencies_sorted.Count();
+            int i = 0;
+
+            uint absolute = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+            double relative = frequencies_sorted.ElementAt(i).Value.FrequencyRelative;
+            uint cumulative = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+
+            uint sum = cumulative;
+
+            KeyValuePair<short, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)> kvp;
+            kvp = new KeyValuePair<short, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
+                        (
+                            frequencies_sorted.ElementAt(i).Key,
+                            (FrequencyAbsolute: absolute, FrequencyRelative: relative, FrequencyCumulative: sum)
+                        );
+
+            yield return kvp;
+
+            for (i = 1; i < n; i++)
+            {
+                absolute = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+                relative = frequencies_sorted.ElementAt(i).Value.FrequencyRelative;
+                sum += absolute;
+
+                kvp = new KeyValuePair<short, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
+                            (
+                                frequencies_sorted.ElementAt(i).Key,
+                                (FrequencyAbsolute: absolute, FrequencyRelative: relative, FrequencyCumulative: sum)
+                            );
+                yield return kvp;
+            }
         }
 
         public static
@@ -119,7 +239,37 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                 select pair
                                     ;
 
-            return frequencies_sorted;
+            int n = frequencies_sorted.Count();
+            int i = 0;
+
+            uint absolute = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+            double relative = frequencies_sorted.ElementAt(i).Value.FrequencyRelative;
+            uint cumulative = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+
+            uint sum = cumulative;
+
+            KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)> kvp;
+            kvp = new KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
+                        (
+                            frequencies_sorted.ElementAt(i).Key,
+                            (FrequencyAbsolute: absolute, FrequencyRelative: relative, FrequencyCumulative: sum)
+                        );
+
+            yield return kvp;
+
+            for (i = 1; i < n; i++)
+            {
+                absolute = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+                relative = frequencies_sorted.ElementAt(i).Value.FrequencyRelative;
+                sum += absolute;
+
+                kvp = new KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
+                            (
+                                frequencies_sorted.ElementAt(i).Key,
+                                (FrequencyAbsolute: absolute, FrequencyRelative: relative, FrequencyCumulative: sum)
+                            );
+                yield return kvp;
+            }
         }
 
         public static
@@ -141,7 +291,37 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                 select pair
                                     ;
 
-            return frequencies_sorted;
+            int n = frequencies_sorted.Count();
+            int i = 0;
+
+            uint absolute = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+            double relative = frequencies_sorted.ElementAt(i).Value.FrequencyRelative;
+            uint cumulative = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+
+            uint sum = cumulative;
+
+            KeyValuePair<uint, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)> kvp;
+            kvp = new KeyValuePair<uint, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
+                        (
+                            frequencies_sorted.ElementAt(i).Key,
+                            (FrequencyAbsolute: absolute, FrequencyRelative: relative, FrequencyCumulative: sum)
+                        );
+
+            yield return kvp;
+
+            for (i = 1; i < n; i++)
+            {
+                absolute = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+                relative = frequencies_sorted.ElementAt(i).Value.FrequencyRelative;
+                sum += absolute;
+
+                kvp = new KeyValuePair<uint, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
+                            (
+                                frequencies_sorted.ElementAt(i).Key,
+                                (FrequencyAbsolute: absolute, FrequencyRelative: relative, FrequencyCumulative: sum)
+                            );
+                yield return kvp;
+            }
         }
 
         public static
@@ -163,7 +343,37 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                 select pair
                                     ;
 
-            return frequencies_sorted;
+            int n = frequencies_sorted.Count();
+            int i = 0;
+
+            uint absolute = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+            double relative = frequencies_sorted.ElementAt(i).Value.FrequencyRelative;
+            uint cumulative = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+
+            uint sum = cumulative;
+
+            KeyValuePair<long, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)> kvp;
+            kvp = new KeyValuePair<long, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
+                        (
+                            frequencies_sorted.ElementAt(i).Key,
+                            (FrequencyAbsolute: absolute, FrequencyRelative: relative, FrequencyCumulative: sum)
+                        );
+
+            yield return kvp;
+
+            for (i = 1; i < n; i++)
+            {
+                absolute = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+                relative = frequencies_sorted.ElementAt(i).Value.FrequencyRelative;
+                sum += absolute;
+
+                kvp = new KeyValuePair<long, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
+                            (
+                                frequencies_sorted.ElementAt(i).Key,
+                                (FrequencyAbsolute: absolute, FrequencyRelative: relative, FrequencyCumulative: sum)
+                            );
+                yield return kvp;
+            }
         }
 
         public static
@@ -185,7 +395,37 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                 select pair
                                     ;
 
-            return frequencies_sorted;
+            int n = frequencies_sorted.Count();
+            int i = 0;
+
+            uint absolute = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+            double relative = frequencies_sorted.ElementAt(i).Value.FrequencyRelative;
+            uint cumulative = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+
+            uint sum = cumulative;
+
+            KeyValuePair<ulong, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)> kvp;
+            kvp = new KeyValuePair<ulong, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
+                        (
+                            frequencies_sorted.ElementAt(i).Key,
+                            (FrequencyAbsolute: absolute, FrequencyRelative: relative, FrequencyCumulative: sum)
+                        );
+
+            yield return kvp;
+
+            for (i = 1; i < n; i++)
+            {
+                absolute = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+                relative = frequencies_sorted.ElementAt(i).Value.FrequencyRelative;
+                sum += absolute;
+
+                kvp = new KeyValuePair<ulong, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
+                            (
+                                frequencies_sorted.ElementAt(i).Key,
+                                (FrequencyAbsolute: absolute, FrequencyRelative: relative, FrequencyCumulative: sum)
+                            );
+                yield return kvp;
+            }
         }
 
         public static
@@ -207,7 +447,37 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                 select pair
                                     ;
 
-            return frequencies_sorted;
+            int n = frequencies_sorted.Count();
+            int i = 0;
+
+            uint absolute = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+            double relative = frequencies_sorted.ElementAt(i).Value.FrequencyRelative;
+            uint cumulative = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+
+            uint sum = cumulative;
+
+            KeyValuePair<float, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)> kvp;
+            kvp = new KeyValuePair<float, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
+                        (
+                            frequencies_sorted.ElementAt(i).Key,
+                            (FrequencyAbsolute: absolute, FrequencyRelative: relative, FrequencyCumulative: sum)
+                        );
+
+            yield return kvp;
+
+            for (i = 1; i < n; i++)
+            {
+                absolute = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+                relative = frequencies_sorted.ElementAt(i).Value.FrequencyRelative;
+                sum += absolute;
+
+                kvp = new KeyValuePair<float, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
+                            (
+                                frequencies_sorted.ElementAt(i).Key,
+                                (FrequencyAbsolute: absolute, FrequencyRelative: relative, FrequencyCumulative: sum)
+                            );
+                yield return kvp;
+            }
         }
 
         public static
@@ -229,7 +499,37 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                 select pair
                                     ;
 
-            return frequencies_sorted;
+            int n = frequencies_sorted.Count();
+            int i = 0;
+
+            uint absolute = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+            double relative = frequencies_sorted.ElementAt(i).Value.FrequencyRelative;
+            uint cumulative = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+
+            uint sum = cumulative;
+
+            KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)> kvp;
+            kvp = new KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
+                        (
+                            frequencies_sorted.ElementAt(i).Key,
+                            (FrequencyAbsolute: absolute, FrequencyRelative: relative, FrequencyCumulative: sum)
+                        );
+
+            yield return kvp;
+
+            for (i = 1; i < n; i++)
+            {
+                absolute = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+                relative = frequencies_sorted.ElementAt(i).Value.FrequencyRelative;
+                sum += absolute;
+
+                kvp = new KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
+                            (
+                                frequencies_sorted.ElementAt(i).Key,
+                                (FrequencyAbsolute: absolute, FrequencyRelative: relative, FrequencyCumulative: sum)
+                            );
+                yield return kvp;
+            }
         }
 
         public static
@@ -251,7 +551,37 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                 select pair
                                     ;
 
-            return frequencies_sorted;
+            int n = frequencies_sorted.Count();
+            int i = 0;
+
+            uint absolute = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+            double relative = frequencies_sorted.ElementAt(i).Value.FrequencyRelative;
+            uint cumulative = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+
+            uint sum = cumulative;
+
+            KeyValuePair<decimal, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)> kvp;
+            kvp = new KeyValuePair<decimal, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
+                        (
+                            frequencies_sorted.ElementAt(i).Key,
+                            (FrequencyAbsolute: absolute, FrequencyRelative: relative, FrequencyCumulative: sum)
+                        );
+
+            yield return kvp;
+
+            for (i = 1; i < n; i++)
+            {
+                absolute = frequencies_sorted.ElementAt(i).Value.FrequencyAbsolute;
+                relative = frequencies_sorted.ElementAt(i).Value.FrequencyRelative;
+                sum += absolute;
+
+                kvp = new KeyValuePair<decimal, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
+                            (
+                                frequencies_sorted.ElementAt(i).Key,
+                                (FrequencyAbsolute: absolute, FrequencyRelative: relative, FrequencyCumulative: sum)
+                            );
+                yield return kvp;
+            }
         }
         //==============================================================================================================
     }
