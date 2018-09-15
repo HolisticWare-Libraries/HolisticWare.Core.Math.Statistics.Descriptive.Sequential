@@ -65,13 +65,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.Qualitative
     [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
     public partial class UnitTestsQualitativePersons
     {
-        Dictionary<EyeColor, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> fc =
-            new Dictionary<EyeColor, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>()
+        Dictionary<EyeColor, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)> fc =
+            new Dictionary<EyeColor, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>()
                                     {
-                                        { EyeColor.Blue, ( 4, 0.2, 3 ) },
-                                        { EyeColor.Gray, ( 2, 0.2, 3 ) },
-                                        { EyeColor.Green, ( 1, 0.2, 3 ) },
-                                        { EyeColor.Hazel, ( 1, 0.2, 3 ) },
+                                        { EyeColor.Blue, ( 4, 0.500, 4 ) },
+                                        { EyeColor.Gray, ( 2, 0.250, 6 ) },
+                                        { EyeColor.Green, ( 1, 0.125, 7 ) },
+                                        { EyeColor.Hazel, ( 1, 0.125, 8 ) },
                                     };
 
         [Test()]
@@ -81,27 +81,28 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.Qualitative
                                                     from Person p in Persons
                                                     select p.EyeColor;
 
-            IEnumerable<KeyValuePair<EyeColor, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> f = data_eyecolors.Frequencies();
+            IEnumerable<KeyValuePair<EyeColor, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> f;
+            f = data_eyecolors.Frequencies();
 
 
-#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
+            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
                                     f,
                                     fc
                                 );
-#elif XUNIT
+            #elif XUNIT
             Assert.Equal
                                 (
                                     f,
                                     fc
                                 );
-#elif MSTEST
+            #elif MSTEST
             CollectionAssert.AreEquivalent
                                 (
                                     f.ToList(),
                                     fc
                                 );
-#endif
-
+            #endif
+    
             return;
         }
 
