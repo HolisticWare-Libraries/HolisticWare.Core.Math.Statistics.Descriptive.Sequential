@@ -147,16 +147,16 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(range_2f_a.Min, 7);
-            Assert.AreEqual(range_2f_a.Max, 44);
+            Assert.AreEqual(range_2f_a.Min, 8);
+            Assert.AreEqual(range_2f_a.Max, 45);
             Assert.AreEqual(range_2f_a.Delta, 37);
             #elif XUNIT
-            Assert.Equal(7, range_2f_a.Min);
-            Assert.Equal(44, range_2f_a.Max);
+            Assert.Equal(8, range_2f_a.Min);
+            Assert.Equal(45, range_2f_a.Max);
             Assert.Equal(37, range_2f_a.Delta);
             #elif MSTEST
-            Assert.AreEqual(range_2f_a.Min, 7);
-            Assert.AreEqual(range_2f_a.Max, 44);
+            Assert.AreEqual(range_2f_a.Min, 8);
+            Assert.AreEqual(range_2f_a.Max, 45);
             Assert.AreEqual(range_2f_a.Delta, 37);
             #endif
 
