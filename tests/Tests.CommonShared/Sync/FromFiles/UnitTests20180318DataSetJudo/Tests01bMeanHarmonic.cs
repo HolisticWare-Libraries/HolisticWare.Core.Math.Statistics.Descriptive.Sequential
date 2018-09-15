@@ -73,7 +73,7 @@ using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
-    public partial class UnitTests20180318DataSetBasketball
+    public partial class UnitTests20180318DataSetJudo
     {
 
         [Test()]
@@ -90,9 +90,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             #if NUNIT
             Assert.AreEqual(mean_ONT_h, 15.29, 0.01);
             #elif XUNIT
-            Assert.Equal(15.29, ONT_h, 2);
+            Assert.Equal(15.29, mean_ONT_h, 2);
             #elif MSTEST
-            Assert.AreEqual(ONT_h, 15.29, 0.01);
+            Assert.AreEqual(mean_ONT_h, 15.29, 0.01);
             #endif
 
             return;
@@ -221,7 +221,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         {
             data_sdm =
                                 from row in JudoDataTable
-                                select row.JumpsOffensive
+                                select row.SDM
                                     ;
 
             double mean_SDM_h = data_sdm.MeanHarmonic();
