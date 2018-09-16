@@ -87,7 +87,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             {
                 if (rand_samp_big1_data_table == null)
                 {
-                    LoadDataFromFile(null);
+                    LoadDataFromFile();
                 }
 
                 return rand_samp_big1_data_table;
@@ -97,7 +97,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         Stopwatch sw = null;
 
         //[OneTimeSetUp] // for MSTest - ClassInitialize - public, static, void
-        protected static void LoadDataFromFile(TestContext tc)
+        protected static void LoadDataFromFile()
         {
             #if NUNIT
             string directory_test = TestContext.CurrentContext.TestDirectory;
@@ -138,16 +138,16 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                 //        string s1 = lines[i].Replace("\r", "");
 
                 //       string[] s_parts = s1.Split(new string[] { "." }, StringSplitOptions.None);
-                //       RandSampBIG1Data bg = new JudoData()
+                //       RandSampBIG1Data bg = new RandSampBIG1Data()
                 //       {
                 //           V1 = double.Parse(s_parts[0].Replace(",000", "")),
                 //       };
 
                 //       rand_samp_big1_data_table.Add();
 
-            //------------------------------------------------------------------
+                //------------------------------------------------------------------
 
-            return;
+                return;
         }
     }
 }

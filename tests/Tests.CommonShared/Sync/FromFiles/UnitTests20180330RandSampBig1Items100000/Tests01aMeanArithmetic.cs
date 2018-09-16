@@ -25,12 +25,6 @@
 //    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 //    OTHER DEALINGS IN THE SOFTWARE.
 // */
-using System;
-
-using System.Collections.Generic;
-using System.Linq;
-using System.Diagnostics;
-using System.Threading.Tasks;
 
 #if XUNIT
 using Xunit;
@@ -58,13 +52,20 @@ using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializ
 using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 #endif
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using System.IO;
+using System.Reflection;
+
 using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class UnitTests20180330RandSampBig1Items100000
     {
-        
         [Test()]
         public void MeanArithmetic_V1()
         {
@@ -93,11 +94,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(177.25, mean_V1_a, 0.01);
+            Assert.AreEqual(mean_V1_a, 177.25, 0.01);
             #elif XUNIT
             Assert.Equal(177.25, mean_V1_a, 2);
             #elif MSTEST
-            Assert.AreEqual(177.25, mean_V1_a, 0.01);
+            Assert.AreEqual(mean_V1_a, 177.25, 0.01);
             #endif
             //====================================================================================================
 
