@@ -23,9 +23,9 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             IEnumerable<KeyValuePair<T, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequencies_sorted;
             frequencies_sorted =
-                                    from pair in frequencies
-                                        orderby pair.Value descending
-                                        select pair
+                                from pair in frequencies
+                                    orderby pair.Value descending, pair.Key ascending
+                                    select pair
                                         ;
 
             int n = frequencies_sorted.Count();
@@ -73,8 +73,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             IEnumerable<KeyValuePair<byte, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequencies_sorted;
             frequencies_sorted =
-                                    from pair in frequencies
-                                    orderby pair.Value descending
+                                from pair in frequencies
+                                    orderby pair.Value descending, pair.Key ascending
                                     select pair
                                         ;
 
@@ -123,8 +123,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             IEnumerable<KeyValuePair<ushort, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequencies_sorted;
             frequencies_sorted =
-                                    from pair in frequencies
-                                    orderby pair.Value descending
+                                from pair in frequencies
+                                    orderby pair.Value descending, pair.Key ascending
                                     select pair
                                         ;
 
@@ -173,8 +173,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             IEnumerable<KeyValuePair<short, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequencies_sorted;
             frequencies_sorted =
-                                    from pair in frequencies
-                                    orderby pair.Value descending
+                                from pair in frequencies
+                                    orderby pair.Value descending, pair.Key ascending
                                     select pair
                                         ;
 
@@ -223,8 +223,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequencies_sorted;
             frequencies_sorted =
-                                    from pair in frequencies
-                                    orderby pair.Value descending
+                                from pair in frequencies
+                                    orderby pair.Value descending, pair.Key ascending
                                     select pair
                                         ;
 
@@ -273,8 +273,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             IEnumerable<KeyValuePair<uint, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequencies_sorted;
             frequencies_sorted =
-                                    from pair in frequencies
-                                    orderby pair.Value descending
+                                from pair in frequencies
+                                    orderby pair.Value descending, pair.Key ascending
                                     select pair
                                         ;
 
@@ -324,7 +324,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             IEnumerable<KeyValuePair<long, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequencies_sorted;
             frequencies_sorted =
                                     from pair in frequencies
-                                    orderby pair.Value descending
+                                    orderby pair.Value descending, pair.Key ascending
                                     select pair
                                         ;
 
@@ -374,7 +374,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             IEnumerable<KeyValuePair<ulong, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequencies_sorted;
             frequencies_sorted =
                                     from pair in frequencies
-                                    orderby pair.Value descending
+                                    orderby pair.Value descending, pair.Key ascending
                                     select pair
                                         ;
 
@@ -424,7 +424,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             IEnumerable<KeyValuePair<float, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequencies_sorted;
             frequencies_sorted =
                                     from pair in frequencies
-                                    orderby pair.Value descending
+                                    orderby pair.Value descending, pair.Key ascending
                                     select pair
                                         ;
 
@@ -475,7 +475,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequencies_sorted;
             frequencies_sorted =
                                     from pair in frequencies
-                                    orderby pair.Value descending
+                                    orderby pair.Value descending, pair.Key ascending
                                     select pair
                                         ;
 
@@ -525,7 +525,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             IEnumerable<KeyValuePair<decimal, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequencies_sorted;
             frequencies_sorted =
                                     from pair in frequencies
-                                    orderby pair.Value descending
+                                    orderby pair.Value descending, pair.Key ascending
                                     select pair
                                         ;
 
