@@ -25,14 +25,6 @@
 //    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 //    OTHER DEALINGS IN THE SOFTWARE.
 // */
-using System;
-
-using System.Collections.Generic;
-using System.Linq;
-using System.Diagnostics;
-using System.Threading.Tasks;
-using System.IO;
-using System.Reflection;
 
 #if XUNIT
 using Xunit;
@@ -41,6 +33,7 @@ using Test = Xunit.FactAttribute;
 using OneTimeSetUp = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
 // XUnit aliases
 using TestClass = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
+using TestContext = HolisticWare.Core.Testing.UnitTests.TestContext;
 #elif NUNIT
 using NUnit.Framework;
 // MSTest aliases
@@ -50,7 +43,7 @@ using TestClass = NUnit.Framework.TestFixtureAttribute;
 using TestMethod = NUnit.Framework.TestAttribute;
 using TestCleanup = NUnit.Framework.TearDownAttribute;
 // XUnit aliases
-using Fact=NUnit.Framework.TestAttribute;
+using Fact = NUnit.Framework.TestAttribute;
 #elif MSTEST
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 // NUnit aliases
@@ -60,6 +53,23 @@ using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializ
 using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 #endif
 
+#if BENCHMARKDOTNET
+using BenchmarkDotNet.Running;
+using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Attributes.Jobs;
+#else
+using Benchmark = HolisticWare.Core.Testing.BenchmarkTests.Benchmark;
+using ShortRunJob = HolisticWare.Core.Testing.BenchmarkTests.ShortRunJob;
+#endif
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using System.IO;
+using System.Reflection;
+
 using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
@@ -67,25 +77,27 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
     public partial class UnitTests20180330RandSampBig1Items100000
     {
-        private static List<double> data = null;
+        IEnumerable<double> data_v1;
 
-        public static List<double> Data
+        private static List<RandSampBIG1Data> rand_samp_big1_data_table = null;
+
+        public static List<RandSampBIG1Data> RandSampBIG1DataTable
         {
             get
             {
-                if (data == null)
+                if (rand_samp_big1_data_table == null)
                 {
-                    LoadDataFromFile();
+                    LoadDataFromFile(null);
                 }
 
-                return data;
+                return rand_samp_big1_data_table;
             }
         }
 
         Stopwatch sw = null;
 
         //[OneTimeSetUp] // for MSTest - ClassInitialize - public, static, void
-        public static void LoadDataFromFile()
+        protected static void LoadDataFromFile(TestContext tc)
         {
             #if NUNIT
             string directory_test = TestContext.CurrentContext.TestDirectory;
@@ -119,14 +131,20 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 StringSplitOptions.RemoveEmptyEntries
                             );
 
-            data = new List<double>();
+            rand_samp_big1_data_table = new List<RandSampBIG1Data>();
             int n = lines.Count();
             for (int i = 1; i < n; i++)
-            {
-                string s1 = lines[i].Replace("\r", "");
-                double data_item = Double.Parse(s1);
-                data.Add(data_item);
-            }
+                //    {
+                //        string s1 = lines[i].Replace("\r", "");
+
+                //       string[] s_parts = s1.Split(new string[] { "." }, StringSplitOptions.None);
+                //       RandSampBIG1Data bg = new JudoData()
+                //       {
+                //           V1 = double.Parse(s_parts[0].Replace(",000", "")),
+                //       };
+
+                //       rand_samp_big1_data_table.Add();
+
             //------------------------------------------------------------------
 
             return;

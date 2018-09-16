@@ -75,6 +75,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class UnitTests20180318DataSetJudo
     {
+
         [Test()]
         public void MeanArithmetic_ONT()
         {
