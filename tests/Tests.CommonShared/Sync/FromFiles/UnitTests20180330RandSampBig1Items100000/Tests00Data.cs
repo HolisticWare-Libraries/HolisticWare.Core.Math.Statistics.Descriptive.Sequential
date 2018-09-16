@@ -94,9 +94,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             }
         }
 
-        Stopwatch sw = null;
-
-        //[OneTimeSetUp] // for MSTest - ClassInitialize - public, static, void
         protected static void LoadDataFromFile()
         {
             #if NUNIT
@@ -134,20 +131,21 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             rand_samp_big1_data_table = new List<RandSampBIG1Data>();
             int n = lines.Count();
             for (int i = 1; i < n; i++)
-                //    {
-                //        string s1 = lines[i].Replace("\r", "");
+            {
+                string s1 = lines[i].Replace("\r", "");
 
-                //       string[] s_parts = s1.Split(new string[] { "." }, StringSplitOptions.None);
-                //       RandSampBIG1Data bg = new RandSampBIG1Data()
-                //       {
-                //           V1 = double.Parse(s_parts[0].Replace(",000", "")),
-                //       };
+                string[] s_parts = s1.Split(new string[] { "." }, StringSplitOptions.None);
+                RandSampBIG1Data bg = new RandSampBIG1Data()
+                {
+                    V1 = double.Parse(s_parts[0].Replace(",000", "")),
+                };
 
-                //       rand_samp_big1_data_table.Add();
+                rand_samp_big1_data_table.Add(bg);
+            }
 
-                //------------------------------------------------------------------
+            //------------------------------------------------------------------
 
-                return;
+            return;
         }
     }
 }
