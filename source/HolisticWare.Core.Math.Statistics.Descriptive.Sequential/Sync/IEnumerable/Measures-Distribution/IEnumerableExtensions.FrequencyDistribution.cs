@@ -495,7 +495,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             frequencies_sorted =
                                 from pair in frequencies
-                                orderby pair.Key ascending
+                                orderby pair.Key ascending, pair.Value ascending
                                 select pair
                                     ;
 
