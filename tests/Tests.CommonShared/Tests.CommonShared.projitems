@@ -72,7 +72,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp03\Tests01MeanAverageMedian.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180330RandSampBig1Items10000\Tests01MeanAverageMedian.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180330RandSampBig1Items100000\Tests00Data.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180330RandSampBig1Items100000\Tests01MeanAverageMedian.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180330RandSampBig1Items100000\Tests01aMeanArithmetic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180330RandSampBig1Items100000\Tests05StandardDeviationVariance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp01\Tests02ModesFrequencies.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests01bMeanGeometric.cs" />
@@ -230,6 +230,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests01Range.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetJudo\Tests01aMeanArithmetic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetJudo\Tests01bMeanHarmonic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180330RandSampBig1Items100000\RandSampBIG1Data.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Async\" />
