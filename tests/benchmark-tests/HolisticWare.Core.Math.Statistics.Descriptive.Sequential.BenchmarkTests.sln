@@ -11,9 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "externals", "externals", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{69B20DD6-58F6-4701-B081-9B09E8B697D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10", "..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10.csproj", "{DEFACBA9-2E24-46BD-B3E0-EFF602FA05DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10", "..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10.csproj", "{DEFACBA9-2E24-46BD-B3E0-EFF602FA05DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard13", "..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard13\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard13.csproj", "{B7852FC5-D06E-4A47-B19B-B695E6BF17C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard13", "..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard13\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard13.csproj", "{B7852FC5-D06E-4A47-B19B-B695E6BF17C8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{36B9D25A-40E6-47C2-AD91-6EF9EF420571}"
 	ProjectSection(SolutionItems) = preProject
@@ -22,30 +22,33 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential", "..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.shproj", "{97322730-7912-4331-8881-DF029EF7CDD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.NetStandard10", "..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.NetStandard10.csproj", "{74AFF2E3-3E45-4DF3-8A94-678D13B4A29B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.NetStandard10", "..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.NetStandard10.csproj", "{74AFF2E3-3E45-4DF3-8A94-678D13B4A29B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10", "..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10.csproj", "{0C54645E-1C9B-4A21-B39C-2370F2F6E9D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10", "..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10.csproj", "{0C54645E-1C9B-4A21-B39C-2370F2F6E9D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard10", "..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard10.csproj", "{F9E03430-A1C5-40DD-914F-4190E1D14E80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard10", "..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard10.csproj", "{F9E03430-A1C5-40DD-914F-4190E1D14E80}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "HolisticWare.Core.Math.Samples", "..\..\externals\Core.Math.Samples\tests\data\HolisticWare.Core.Math.Samples\HolisticWare.Core.Math.Samples.shproj", "{98411F49-CA5E-41C7-81E2-26C9ADFF255D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarks.MSTest", "Benchmarks.MSTest\Benchmarks.MSTest.csproj", "{2350C347-ED7F-49E9-B3A5-6EBECD5C27C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmarks.MSTest", "Benchmarks.MSTest\Benchmarks.MSTest.csproj", "{2350C347-ED7F-49E9-B3A5-6EBECD5C27C4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarks.NUnit", "Benchmarks.NUnit\Benchmarks.NUnit.csproj", "{DD4AC4FC-52B0-49F2-85DE-6E6C441F5207}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarks.XUnit", "Benchmarks.XUnit\Benchmarks.XUnit.csproj", "{57A0B06A-7FF0-4FAA-9F73-B9CE93A354DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmarks.XUnit", "Benchmarks.XUnit\Benchmarks.XUnit.csproj", "{57A0B06A-7FF0-4FAA-9F73-B9CE93A354DE}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Benchmarks.CommonShared", "Benchmarks.CommonShared\Benchmarks.CommonShared.shproj", "{E4A99F5B-5163-43F4-9E30-4D5F88D08C7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Text.NetStandard10", "..\..\externals\Core.Text\source\HolisticWare.Core.Text.NetStandard10\HolisticWare.Core.Text.NetStandard10.csproj", "{E03C830B-AD14-450C-8804-12E32645EDEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Text.NetStandard10", "..\..\externals\Core.Text\source\HolisticWare.Core.Text.NetStandard10\HolisticWare.Core.Text.NetStandard10.csproj", "{E03C830B-AD14-450C-8804-12E32645EDEC}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		..\..\externals\Core.Math.Samples\tests\data\HolisticWare.Core.Math.Samples\HolisticWare.Core.Math.Samples.projitems*{04f3d823-abea-46dd-9ec2-56c08ca074db}*SharedItemsImports = 4
 		..\Tests.CommonShared\Tests.CommonShared.projitems*{13ab4ad2-d077-48e0-b6f2-791bc25eb413}*SharedItemsImports = 13
 		..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.projitems*{97322730-7912-4331-8881-df029ef7cdd1}*SharedItemsImports = 13
 		..\..\externals\Core.Math.Samples\tests\data\HolisticWare.Core.Math.Samples\HolisticWare.Core.Math.Samples.projitems*{98411f49-ca5e-41c7-81e2-26c9adff255d}*SharedItemsImports = 13
+		..\..\externals\Core.Math.Samples\tests\data\HolisticWare.Core.Math.Samples\HolisticWare.Core.Math.Samples.projitems*{dd4ac4fc-52b0-49f2-85de-6e6c441f5207}*SharedItemsImports = 4
+		Benchmarks.CommonShared\Benchmarks.CommonShared.projitems*{dd4ac4fc-52b0-49f2-85de-6e6c441f5207}*SharedItemsImports = 4
+		..\Tests.CommonShared\Tests.CommonShared.projitems*{dd4ac4fc-52b0-49f2-85de-6e6c441f5207}*SharedItemsImports = 4
+		Benchmarks.CommonShared\Benchmarks.CommonShared.projitems*{e4a99f5b-5163-43f4-9e30-4d5f88d08c7d}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
