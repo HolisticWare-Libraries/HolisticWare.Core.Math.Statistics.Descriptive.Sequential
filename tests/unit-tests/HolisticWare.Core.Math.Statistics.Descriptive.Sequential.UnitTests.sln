@@ -48,9 +48,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Math.Stat
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\..\externals\Core.Math.Samples\tests\data\HolisticWare.Core.Math.Samples\HolisticWare.Core.Math.Samples.projitems*{04f3d823-abea-46dd-9ec2-56c08ca074db}*SharedItemsImports = 4
 		..\Tests.CommonShared\Tests.CommonShared.projitems*{04f3d823-abea-46dd-9ec2-56c08ca074db}*SharedItemsImports = 4
 		..\Tests.CommonShared\Tests.CommonShared.projitems*{13ab4ad2-d077-48e0-b6f2-791bc25eb413}*SharedItemsImports = 13
+		..\..\externals\Core.Math.Samples\tests\data\HolisticWare.Core.Math.Samples\HolisticWare.Core.Math.Samples.projitems*{454143fe-45e8-48ce-ae04-71bfb0b413db}*SharedItemsImports = 4
 		..\Tests.CommonShared\Tests.CommonShared.projitems*{454143fe-45e8-48ce-ae04-71bfb0b413db}*SharedItemsImports = 4
+		..\..\externals\Core.Math.Samples\tests\data\HolisticWare.Core.Math.Samples\HolisticWare.Core.Math.Samples.projitems*{6144c0cb-53eb-4bfd-b30c-62566c1be10a}*SharedItemsImports = 4
 		..\Tests.CommonShared\Tests.CommonShared.projitems*{6144c0cb-53eb-4bfd-b30c-62566c1be10a}*SharedItemsImports = 4
 		..\..\externals\Core.Text\source\HolisticWare.Core.Text\HolisticWare.Core.Text.projitems*{921cfea5-564c-4975-a20f-8cad32ea88e3}*SharedItemsImports = 13
 		..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.projitems*{97322730-7912-4331-8881-df029ef7cdd1}*SharedItemsImports = 13
@@ -215,14 +218,13 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{69B20DD6-58F6-4701-B081-9B09E8B697D3} = {3799F198-4FDB-4BFF-811E-D12EEB39D00C}
-		{36B9D25A-40E6-47C2-AD91-6EF9EF420571} = {56123580-99E9-45AC-8300-ABF8EE1D021E}
+		{455500BC-A21B-4675-BA87-166BA0CD81A0} = {56123580-99E9-45AC-8300-ABF8EE1D021E}
 		{98411F49-CA5E-41C7-81E2-26C9ADFF255D} = {69B20DD6-58F6-4701-B081-9B09E8B697D3}
 		{921CFEA5-564C-4975-A20F-8CAD32EA88E3} = {3799F198-4FDB-4BFF-811E-D12EEB39D00C}
 		{5B8DBA01-2E5F-457A-9895-A9A4759D1D43} = {3799F198-4FDB-4BFF-811E-D12EEB39D00C}
 		{18C2D1F9-A0F6-4A04-9CFF-DF984242395B} = {3799F198-4FDB-4BFF-811E-D12EEB39D00C}
 		{DEFACBA9-2E24-46BD-B3E0-EFF602FA05DC} = {56123580-99E9-45AC-8300-ABF8EE1D021E}
 		{B7852FC5-D06E-4A47-B19B-B695E6BF17C8} = {56123580-99E9-45AC-8300-ABF8EE1D021E}
-		{455500BC-A21B-4675-BA87-166BA0CD81A0} = {56123580-99E9-45AC-8300-ABF8EE1D021E}
 		{97322730-7912-4331-8881-DF029EF7CDD1} = {56123580-99E9-45AC-8300-ABF8EE1D021E}
 		{74AFF2E3-3E45-4DF3-8A94-678D13B4A29B} = {56123580-99E9-45AC-8300-ABF8EE1D021E}
 		{0C54645E-1C9B-4A21-B39C-2370F2F6E9D6} = {56123580-99E9-45AC-8300-ABF8EE1D021E}
