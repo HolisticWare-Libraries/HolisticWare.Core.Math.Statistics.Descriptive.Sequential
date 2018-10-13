@@ -52,6 +52,18 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
     {
         Stopwatch sw = null;
 
+        Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)> fc = 
+                new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>()
+                                {
+                                    { 4, ( 3, 0.1, 3) },
+                                    { 2, ( 2, 0.1, 2) },
+                                    { 3, ( 1, 0.1, 3) },
+                                    { 5, ( 1, 0.1, 3) },
+                                    { 6, ( 1, 0.1, 3) },
+                                    { 7, ( 1, 0.1, 3) },
+                                    { 1, ( 1, 0.1, 3) },
+                                };
+
         [Test()]
         public void Frequencies()
         {
@@ -60,57 +72,107 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Async
 
             sw = Stopwatch.StartNew();
             // Act
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies01;
-            frequencies01 = data.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> f;
+            f = data.Frequencies();
+
             sw.Stop();
             Console.WriteLine($"List<int>.Average() size={data.Count()} elapsed[ticks]={sw.ElapsedTicks}");
             sw.Reset();
 
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                            (
-                                frequencies01,
-                                new Dictionary<int, (uint, double, uint)>()
-                                {
-                                    { 4, ( 3, 0.1, 3) },
-                                    { 2, ( 2, 0.1, 2) },
-                                    { 3, ( 1, 0.1, 3) },
-                                    { 5, ( 1, 0.1, 3) },
-                                    { 6, ( 1, 0.1, 3) },
-                                    { 7, ( 1, 0.1, 3) },
-                                    { 1, ( 1, 0.1, 3) },
-                                }
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT && !NUNIT_LITE
+            //CollectionAssert.AreEquivalent
+                                     //(
+                                     //    fc.ToList(),
+                                     //    f
+                                     //);
+            Assert.AreEqual(fc.Count(), f.Count());
+            for (int i = 0; i < fc.Count(); i++)
+            {
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Key, 
+                                fc.ElementAt(i).Key 
                             );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute, 
+                                fc.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                fc.ElementAt(i).Value.FrequencyRelative,
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                fc.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
 #elif XUNIT
-            Assert.Equal
+            //Assert.Equal
+            //(
+            //    fc.ToList(),
+            //    f.ToArray()
+            //);
+            Assert.Equal(fc.Count(), f.Count());
+            for (int i = 0; i < fc.Count(); i++)
+            {
+                Assert.Equal
                             (
-                                frequencies01,
-                                new Dictionary<int, (uint, double, uint)>()
-                                {
-                                    { 4, ( 3, 0.1, 3) },
-                                    { 2, ( 2, 0.1, 2) },
-                                    { 3, ( 1, 0.1, 3) },
-                                    { 5, ( 1, 0.1, 3) },
-                                    { 6, ( 1, 0.1, 3) },
-                                    { 7, ( 1, 0.1, 3) },
-                                    { 1, ( 1, 0.1, 3) },
-                                }
+                                f.ElementAt(i).Key,
+                                fc.ElementAt(i).Key
                             );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute,
+                                fc.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                fc.ElementAt(i).Value.FrequencyRelative,
+                                5
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                fc.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
 #elif MSTEST
-            CollectionAssert.AreEquivalent
+            Assert.AreEqual(fc.Count(), f.Count());
+            for (int i = 0; i < fc.Count(); i++)
+            {
+                Assert.AreEqual
                             (
-                                frequencies01.ToArray(),
-                                new Dictionary<int, (uint, double, uint)>()
-                                {
-                                    { 4, ( 3, 0.1, 3) },
-                                    { 2, ( 2, 0.1, 2) },
-                                    { 3, ( 1, 0.1, 3) },
-                                    { 5, ( 1, 0.1, 3) },
-                                    { 6, ( 1, 0.1, 3) },
-                                    { 7, ( 1, 0.1, 3) },
-                                    { 1, ( 1, 0.1, 3) },
-                                }
+                                f.ElementAt(i).Key,
+                                fc.ElementAt(i).Key
                             );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute,
+                                fc.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                fc.ElementAt(i).Value.FrequencyRelative,
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                fc.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
 #endif
-            return;
+            //====================================================================================================
+           
+             return;
         }
 
     }

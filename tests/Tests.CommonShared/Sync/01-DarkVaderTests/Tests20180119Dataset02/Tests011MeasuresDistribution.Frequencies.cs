@@ -73,62 +73,66 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class Tests20180119Dataset02
     {
-        Dictionary<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> frequencies_calculated =
-            new Dictionary<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>
+        Dictionary<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)> frequencies_calculated =
+            new Dictionary<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
                                 {
-                                    { 18.2, ( 3, 0.1, 2) },
-                                    { 14.7, ( 3, 0.1, 2) },
-                                    { 13.5, ( 2, 0.1, 2) },
-                                    { 16.4, ( 2, 0.1, 2) },
-                                    { 13.4, ( 2, 0.1, 2) },
-                                    { 18.6, ( 2, 0.1, 2) },
-                                    { 12.9, ( 2, 0.1, 2) },
-                                    { 16.2, ( 2, 0.1, 2) },
-                                    { 15, ( 2, 0.1, 2) },
-                                    { 11.9, ( 1, 0.1, 2) },
-                                    { 13.6, ( 1, 0.1, 2) },
-                                    { 28.9, ( 1, 0.1, 2) },
-                                    { 16.5, ( 1, 0.1, 2) },
-                                    { 24, ( 1, 0.1, 2) },
-                                    { 14.5, ( 1, 0.1, 2) },
-                                    { 19.8, ( 1, 0.1, 2) },
-                                    { 22.9, ( 1, 0.1, 2) },
-                                    { 19.5, ( 1, 0.1, 2) },
-                                    { 14.3, ( 1, 0.1, 2) },
-                                    { 11.3, ( 1, 0.1, 2) },
-                                    { 10.5, ( 1, 0.1, 2) },
-                                    { 13, ( 1, 0.1, 2) },
-                                    { 11.6, ( 1, 0.1, 2) },
-                                    { 16.8, ( 1, 0.1, 2) },
-                                    { 12.1, ( 1, 0.1, 2) },
-                                    { 16.9, ( 1, 0.1, 2) },
-                                    { 19.3, ( 1, 0.1, 2) },
-                                    { 15.5, ( 1, 0.1, 2) },
-                                    { 13.8, ( 1, 0.1, 2) },
-                                    { 17.1, ( 1, 0.1, 2) },
-                                    { 17, ( 1, 0.1, 2) },
-                                    { 11.7, ( 1, 0.1, 2) },
-                                    { 11.8, ( 1, 0.1, 2) },
-                                    { 12.7, ( 1, 0.1, 2) },
-                                    { 12.2, ( 1, 0.1, 2) },
-                                    { 16.1, ( 1, 0.1, 2) },
-                                    { 17.6, ( 1, 0.1, 2) },
-                                    { 15.1, ( 1, 0.1, 2) },
-                                    { 13.3, ( 1, 0.1, 2) },
-                                    { 15.9, ( 1, 0.1, 2) },
-                                    { 13.7, ( 1, 0.1, 2) },
-                                    { 16, ( 1, 0.1, 2) },
-                                    { 15.2, ( 1, 0.1, 2) },
-                                    { 18, ( 1, 0.1, 2) },
-                                    { 17.5, ( 1, 0.1, 2) },
-                                    { 19.4, ( 1, 0.1, 2) },
-                                    { 17.4, ( 1, 0.1, 2) },
-                                    { 15.3, ( 1, 0.1, 2) },
-                                    { 25.4, ( 1, 0.1, 2) },
+                                    { 14.7, ( 3, 0.05, 3 ) },
+                                    { 18.2, ( 3, 0.05, 6 ) },
+                                    { 12.9, ( 2, 0.0333333333333333, 8 ) },
+                                    { 13.4, ( 2, 0.0333333333333333, 10 ) },
+                                    { 13.5, ( 2, 0.0333333333333333, 12 ) },
+                                    { 15, ( 2, 0.0333333333333333, 14 ) },
+                                    { 16.2, ( 2, 0.0333333333333333, 16 ) },
+                                    { 16.4, ( 2, 0.0333333333333333, 18 ) },
+                                    { 18.6, ( 2, 0.0333333333333333, 20 ) },
+                                    { 10.5, ( 1, 0.0166666666666667, 21 ) },
+                                    { 11.3, ( 1, 0.0166666666666667, 22 ) },
+                                    { 11.6, ( 1, 0.0166666666666667, 23 ) },
+                                    { 11.7, ( 1, 0.0166666666666667, 24 ) },
+                                    { 11.8, ( 1, 0.0166666666666667, 25 ) },
+                                    { 11.9, ( 1, 0.0166666666666667, 26 ) },
+                                    { 12.1, ( 1, 0.0166666666666667, 27 ) },
+                                    { 12.2, ( 1, 0.0166666666666667, 28 ) },
+                                    { 12.7, ( 1, 0.0166666666666667, 29 ) },
+                                    { 13, ( 1, 0.0166666666666667, 30 ) },
+                                    { 13.3, ( 1, 0.0166666666666667, 31 ) },
+                                    { 13.6, ( 1, 0.0166666666666667, 32 ) },
+                                    { 13.7, ( 1, 0.0166666666666667, 33 ) },
+                                    { 13.8, ( 1, 0.0166666666666667, 34 ) },
+                                    { 14.3, ( 1, 0.0166666666666667, 35 ) },
+                                    { 14.5, ( 1, 0.0166666666666667, 36 ) },
+                                    { 15.1, ( 1, 0.0166666666666667, 37 ) },
+                                    { 15.2, ( 1, 0.0166666666666667, 38 ) },
+                                    { 15.3, ( 1, 0.0166666666666667, 39 ) },
+                                    { 15.5, ( 1, 0.0166666666666667, 40 ) },
+                                    { 15.9, ( 1, 0.0166666666666667, 41 ) },
+                                    { 16, ( 1, 0.0166666666666667, 42 ) },
+                                    { 16.1, ( 1, 0.0166666666666667, 43 ) },
+                                    { 16.5, ( 1, 0.0166666666666667, 44 ) },
+                                    { 16.8, ( 1, 0.0166666666666667, 45 ) },
+                                    { 16.9, ( 1, 0.0166666666666667, 46 ) },
+                                    { 17, ( 1, 0.0166666666666667, 47 ) },
+                                    { 17.1, ( 1, 0.0166666666666667, 48 ) },
+                                    { 17.4, ( 1, 0.0166666666666667, 49 ) },
+                                    { 17.5, ( 1, 0.0166666666666667, 50 ) },
+                                    { 17.6, ( 1, 0.0166666666666667, 51 ) },
+                                    { 18, ( 1, 0.0166666666666667, 52 ) },
+                                    { 19.3, ( 1, 0.0166666666666667, 53 ) },
+                                    { 19.4, ( 1, 0.0166666666666667, 54 ) },
+                                    { 19.5, ( 1, 0.0166666666666667, 55 ) },
+                                    { 19.8, ( 1, 0.0166666666666667, 56 ) },
+                                    { 22.9, ( 1, 0.0166666666666667, 57 ) },
+                                    { 24, ( 1, 0.0166666666666667, 58 ) },
+                                    { 25.4, ( 1, 0.0166666666666667, 59 ) },
+                                    { 28.9, ( 1, 0.0166666666666667, 60 ) },
                                 };
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> Array_Frequencies()
+        public 
+            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> 
+                Array_Frequencies
+                    (
+                    )
         {
             return data_array.Frequencies();
         }
@@ -146,42 +150,122 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = Array_Frequencies();
+            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> f;
+            f = Array_Frequencies();
 
             sw.Stop();
             Console.WriteLine($"Array<double>.Frequencies()");
-            Console.WriteLine($"          frequencies        = {frequencies}");
+            Console.WriteLine($"          frequencies        = {f}");
             Console.WriteLine($"          size               = {data_array.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
 
+
             //----------------------------------------------------------------------------------------------------
             // Assert
-#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            frequencies_calculated.ToList(),
-                            frequencies
-                        );
-#elif XUNIT
-            Assert.Equal
-                        (
-                            frequencies_calculated.ToList(),
-                            frequencies.ToArray()
-                        );
-#elif MSTEST
-            CollectionAssert.AreEquivalent
-                        (
-                            frequencies_calculated.ToList(),
-                            frequencies.ToArray()
-                        );
-#endif
+            #if NUNIT && !NUNIT_LITE            //CollectionAssert.AreEquivalent
+                                     //(
+                                     //    frequencies_calculated.ToList(),
+                                     //    f
+                                     //);
+            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
+            for (int i = 0; i < frequencies_calculated.Count(); i++)
+            {
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Key, 
+                                frequencies_calculated.ElementAt(i).Key, 
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute, 
+                                frequencies_calculated.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyRelative,
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
+            #elif XUNIT
+            //Assert.Equal
+                        //(
+                        //    frequencies_calculated.ToList(),
+                        //    f.ToArray()
+                        //);
+            Assert.Equal(frequencies_calculated.Count(), f.Count());
+            for (int i = 0; i < frequencies_calculated.Count(); i++)
+            {
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Key, 
+                                frequencies_calculated.ElementAt(i).Key,
+                                5
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute, 
+                                frequencies_calculated.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyRelative,
+                                5
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
+            #elif MSTEST
+            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
+            for (int i = 0; i < frequencies_calculated.Count(); i++)
+            {
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Key, 
+                                frequencies_calculated.ElementAt(i).Key, 
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute, 
+                                frequencies_calculated.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyRelative,
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
+            #endif
             //====================================================================================================
 
             return;
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> ArraySegment_Frequencies()
+        public 
+            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> 
+                ArraySegment_Frequencies
+                    (
+                    )
         {
             return data_array_segment.Frequencies();
         }
@@ -198,42 +282,114 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = ArraySegment_Frequencies();
+            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> f;
+            f = ArraySegment_Frequencies();
 
             sw.Stop();
-            Console.WriteLine($"          frequencies        = {frequencies}");
+            Console.WriteLine($"          frequencies        = {f}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
 
+
+
+
             //----------------------------------------------------------------------------------------------------
             // Assert
             // Assert
-#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            frequencies_calculated.ToList(),
-                            frequencies
-                        );
-#elif XUNIT
-            Assert.Equal
-                        (
-                            frequencies_calculated.ToList(),
-                            frequencies.ToArray()
-                        );
-#elif MSTEST
-            CollectionAssert.AreEquivalent
-                        (
-                            frequencies_calculated.ToList(),
-                            frequencies.ToArray()
-                        );
-#endif
+            #if NUNIT && !NUNIT_LITE            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
+            for (int i = 0; i < frequencies_calculated.Count(); i++)
+            {
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Key,
+                                frequencies_calculated.ElementAt(i).Key,
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyRelative,
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
+            #elif XUNIT
+            Assert.Equal(frequencies_calculated.Count(), f.Count());
+            for (int i = 0; i < frequencies_calculated.Count(); i++)
+            {
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Key,
+                                frequencies_calculated.ElementAt(i).Key,
+                                5
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyRelative,
+                                5
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
+            #elif MSTEST
+            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
+            for (int i = 0; i < frequencies_calculated.Count(); i++)
+            {
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Key, 
+                                frequencies_calculated.ElementAt(i).Key, 
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute, 
+                                frequencies_calculated.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyRelative,
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
+            #endif
             //====================================================================================================
 
             return;
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> List_Frequencies()
+        public 
+            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> 
+                List_Frequencies
+                    (
+                    )
         {
             return data_list.Frequencies();
         }
@@ -250,41 +406,108 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = List_Frequencies();
+            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> f;
+            f = List_Frequencies();
 
-            Console.WriteLine($"          frequencies        = {frequencies}");
+            Console.WriteLine($"          frequencies        = {f}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
 
+
+
+
             //----------------------------------------------------------------------------------------------------
             // Assert
-            // Assert
-#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            frequencies_calculated.ToList(),
-                            frequencies
-                        );
-#elif XUNIT
-            Assert.Equal
-                        (
-                            frequencies_calculated.ToList(),
-                            frequencies.ToArray()
-                        );
-#elif MSTEST
-            CollectionAssert.AreEquivalent
-                        (
-                            frequencies_calculated.ToList(),
-                            frequencies.ToArray()
-                        );
-#endif
+#if NUNIT && !NUNIT_LITE            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
+            for (int i = 0; i < frequencies_calculated.Count(); i++)
+            {
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Key,
+                                frequencies_calculated.ElementAt(i).Key,
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyRelative,
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
+            #elif XUNIT
+            Assert.Equal(frequencies_calculated.Count(), f.Count());
+            for (int i = 0; i < frequencies_calculated.Count(); i++)
+            {
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Key,
+                                frequencies_calculated.ElementAt(i).Key,
+                                5
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyRelative,
+                                5
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
+            #elif MSTEST
+            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
+            for (int i = 0; i < frequencies_calculated.Count(); i++)
+            {
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Key, 
+                                frequencies_calculated.ElementAt(i).Key, 
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute, 
+                                frequencies_calculated.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyRelative,
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
+            #endif
             //====================================================================================================
 
             return;
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> Queue_Frequencies()
+        public IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> Queue_Frequencies()
         {
             return data_queue.Frequencies();
         }
@@ -300,42 +523,113 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = Queue_Frequencies();
+            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> f = Queue_Frequencies();
 
             sw.Stop();
-            Console.WriteLine($"          frequencies        = {frequencies}");
+            Console.WriteLine($"          frequencies        = {f}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
 
+
+
+
             //----------------------------------------------------------------------------------------------------
             // Assert
             // Assert
-#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            frequencies_calculated.ToList(),
-                            frequencies
-                        );
-#elif XUNIT
-            Assert.Equal
-                        (
-                            frequencies_calculated.ToList(),
-                            frequencies.ToArray()
-                        );
-#elif MSTEST
-            CollectionAssert.AreEquivalent
-                        (
-                            frequencies_calculated.ToList(),
-                            frequencies.ToArray()
-                        );
-#endif
+#if NUNIT && !NUNIT_LITE            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
+            for (int i = 0; i < frequencies_calculated.Count(); i++)
+            {
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Key,
+                                frequencies_calculated.ElementAt(i).Key,
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyRelative,
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
+            #elif XUNIT
+            Assert.Equal(frequencies_calculated.Count(), f.Count());
+            for (int i = 0; i < frequencies_calculated.Count(); i++)
+            {
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Key, 
+                                frequencies_calculated.ElementAt(i).Key,
+                                5
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute, 
+                                frequencies_calculated.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyRelative,
+                                5
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
+            #elif MSTEST
+            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
+            for (int i = 0; i < frequencies_calculated.Count(); i++)
+            {
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Key, 
+                                frequencies_calculated.ElementAt(i).Key, 
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute, 
+                                frequencies_calculated.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyRelative,
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
+            #endif
             //====================================================================================================
 
             return;
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> Stack_Frequencies()
+        public 
+            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> 
+                Stack_Frequencies
+                    (
+                    )
         {
             return data_stack.Frequencies();
         }
@@ -352,42 +646,113 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = Stack_Frequencies();
+            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> f;
+            f = Stack_Frequencies();
 
             sw.Stop();
-            Console.WriteLine($"          frequencies        = {frequencies}");
+            Console.WriteLine($"          frequencies        = {f}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
 
+
+
+
             //----------------------------------------------------------------------------------------------------
             // Assert
-            // Assert
-#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            frequencies_calculated.ToList(),
-                            frequencies
-                        );
-#elif XUNIT
-            Assert.Equal
-                        (
-                            frequencies_calculated.ToList(),
-                            frequencies.ToArray()
-                        );
-#elif MSTEST
-            CollectionAssert.AreEquivalent
-                        (
-                            frequencies_calculated.ToList(),
-                            frequencies.ToArray()
-                        );
-#endif
+            #if NUNIT && !NUNIT_LITE            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
+            for (int i = 0; i < frequencies_calculated.Count(); i++)
+            {
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Key,
+                                frequencies_calculated.ElementAt(i).Key,
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyRelative,
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
+            #elif XUNIT
+            Assert.Equal(frequencies_calculated.Count(), f.Count());
+            for (int i = 0; i < frequencies_calculated.Count(); i++)
+            {
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Key, 
+                                frequencies_calculated.ElementAt(i).Key,
+                                5
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute, 
+                                frequencies_calculated.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyRelative,
+                                5
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
+            #elif MSTEST
+            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
+            for (int i = 0; i < frequencies_calculated.Count(); i++)
+            {
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Key, 
+                                frequencies_calculated.ElementAt(i).Key, 
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute, 
+                                frequencies_calculated.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyRelative,
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
+            #endif
             //====================================================================================================
 
             return;
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> LinkedList_Frequencies()
+        public 
+            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> 
+                LinkedList_Frequencies
+                    (
+                    )
         {
             return data_linked_list.Frequencies();
         }
@@ -404,42 +769,113 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = LinkedList_Frequencies();
+            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> f;
+            f = LinkedList_Frequencies();
 
             sw.Stop();
-            Console.WriteLine($"          frequencies        = {frequencies}");
+            Console.WriteLine($"          frequencies        = {f}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
 
+
+
+
             //----------------------------------------------------------------------------------------------------
             // Assert
-            // Assert
-#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            frequencies_calculated.ToList(),
-                            frequencies
-                        );
-#elif XUNIT
-            Assert.Equal
-                        (
-                            frequencies_calculated.ToList(),
-                            frequencies.ToArray()
-                        );
-#elif MSTEST
-            CollectionAssert.AreEquivalent
-                        (
-                            frequencies_calculated.ToList(),
-                            frequencies.ToArray()
-                        );
-#endif
+            #if NUNIT && !NUNIT_LITE            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
+            for (int i = 0; i < frequencies_calculated.Count(); i++)
+            {
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Key,
+                                frequencies_calculated.ElementAt(i).Key,
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyRelative,
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
+            #elif XUNIT
+            Assert.Equal(frequencies_calculated.Count(), f.Count());
+            for (int i = 0; i < frequencies_calculated.Count(); i++)
+            {
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Key, 
+                                frequencies_calculated.ElementAt(i).Key,
+                                5
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute, 
+                                frequencies_calculated.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyRelative,
+                                5
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
+            #elif MSTEST
+            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
+            for (int i = 0; i < frequencies_calculated.Count(); i++)
+            {
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Key, 
+                                frequencies_calculated.ElementAt(i).Key, 
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute, 
+                                frequencies_calculated.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyRelative,
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
+            #endif
             //====================================================================================================
 
             return;
         }
 
         [Benchmark]
-        public IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> ObservableCollection_Frequencies()
+        public 
+            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> 
+                ObservableCollection_Frequencies
+                    (
+                    )
         {
             return data_observable_collection.Frequencies();
         }
@@ -456,35 +892,102 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies = ObservableCollection_Frequencies();
+            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> f;
+            f = ObservableCollection_Frequencies();
 
             sw.Stop();
-            Console.WriteLine($"          frequencies        = {frequencies}");
+            Console.WriteLine($"          frequencies        = {f}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
 
+
+
+
             //----------------------------------------------------------------------------------------------------
             // Assert
-            // Assert
-#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            frequencies_calculated.ToList(),
-                            frequencies
-                        );
-#elif XUNIT
-            Assert.Equal
-                        (
-                            frequencies_calculated.ToList(),
-                            frequencies.ToArray()
-                        );
-#elif MSTEST
-            CollectionAssert.AreEquivalent
-                        (
-                            frequencies_calculated.ToList(),
-                            frequencies.ToArray()
-                        );
-#endif
+            #if NUNIT && !NUNIT_LITE            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
+            for (int i = 0; i < frequencies_calculated.Count(); i++)
+            {
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Key,
+                                frequencies_calculated.ElementAt(i).Key,
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyRelative,
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
+            #elif XUNIT
+            Assert.Equal(frequencies_calculated.Count(), f.Count());
+            for (int i = 0; i < frequencies_calculated.Count(); i++)
+            {
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Key, 
+                                frequencies_calculated.ElementAt(i).Key,
+                                5
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute, 
+                                frequencies_calculated.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyRelative,
+                                5
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
+            #elif MSTEST
+            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
+            for (int i = 0; i < frequencies_calculated.Count(); i++)
+            {
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Key, 
+                                frequencies_calculated.ElementAt(i).Key, 
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute, 
+                                frequencies_calculated.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyRelative,
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                frequencies_calculated.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
+            #endif
             //====================================================================================================
 
             return;
@@ -514,9 +1017,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                             new Span<double>(data01);
                             //data01.AsSpan().Slice(start: 0)
                             ;
-            double frequencies = data.Frequencies();
+            double f = data.Frequencies();
             sw.Stop();
-            Console.WriteLine($"          frequencies               = {frequencies}");
+            Console.WriteLine($"          frequencies               = {f}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
@@ -550,9 +1053,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                             new Memory<double>(data01);
                             //data01.AsSpan().Slice(start: 0)
                             ;
-            double frequencies = data.Frequencies();
+            double f = data.Frequencies();
             sw.Stop();
-            Console.WriteLine($"          frequencies               = {frequencies}");
+            Console.WriteLine($"          frequencies               = {f}");
             Console.WriteLine($"          size               = {data.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");

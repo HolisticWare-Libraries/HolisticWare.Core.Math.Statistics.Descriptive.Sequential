@@ -79,18 +79,18 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Frequency_Points2Success()
         {
             data_2pts_success =
-                                from row in BasketballTeamDataTable
+                                from row in JudoDataTable
                                     select row.Points2Success
                                     ;
 
             //List<int> frequency_2s = data_2pts_success.Frequencies();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_2s = data_2pts_success.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequency_2s = data_2pts_success.Frequencies();
 
 
             // Assert
 #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>
+                            new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
                                         {
                                             { 18, ( 15, 0.2, 3 ) },
                                             { 21, ( 10, 0.2, 3 ) },
@@ -127,7 +127,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 #elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>
+                            new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
                                         {
                                             { 18, ( 15, 0.2, 3 ) },
                                             { 21, ( 10, 0.2, 3 ) },
@@ -164,7 +164,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>
+                            new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
                                         {
                                             { 18, ( 15, 0.2, 3 ) },
                                             { 21, ( 10, 0.2, 3 ) },
@@ -208,13 +208,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Frequency_Points3Success()
         {
             data_3pts_success =
-                                from row in BasketballTeamDataTable
+                                from row in JudoDataTable
                                     select row.Points3Success
                                     ;
 
             //List<int> frequency_3s = data_3pts_success.FrequencyDistribution();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_3s;
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequency_3s;
 
             frequency_3s = data_3pts_success.Frequencies();
 
@@ -226,18 +226,18 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Frequency_Points2Fail()
         {
             data_2pts_fail =
-                                from row in BasketballTeamDataTable
+                                from row in JudoDataTable
                                     select row.Points2Fail
                                     ;
 
             //List<int> frequency_2f = data_2pts_fail.FrequencyDistribution();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_2f = data_2pts_fail.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequency_2f = data_2pts_fail.Frequencies();
 
 
             // Assert
 #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>()
+                            new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>()
                                         {
                                             { 28, ( 10, 0.2, 3 ) }, 
                                             { 19, ( 9, 0.2, 3 ) }, 
@@ -272,7 +272,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 #elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative) >
+                            new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative) >
                                         {
                                             { 28, ( 10, 0.2, 3 ) }, 
                                             { 19, ( 9, 0.2, 3 ) }, 
@@ -307,7 +307,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
-                            new Dictionary<int, ( uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>
+                            new Dictionary<int, ( uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
                                         {
                                             { 28, ( 10, 0.2, 3 ) }, 
                                             { 19, ( 9, 0.2, 3 ) }, 
@@ -349,13 +349,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_Points3Fail()
         {
             data_3pts_fail =
-                                from row in BasketballTeamDataTable
+                                from row in JudoDataTable
                                     select row.Points3Fail
                                     ;
 
             //List<int> frequency_3f = data_3pts_fail.FrequencyDistribution();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_3f = data_3pts_fail.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequency_3f = data_3pts_fail.Frequencies();
 
             return;
         }
@@ -365,13 +365,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_FreeThrowFail()
         {
             data_free_throw_fail =
-                                from row in BasketballTeamDataTable
+                                from row in JudoDataTable
                                     select row.FreeThrowFail
                                     ;
 
             //List<int> frequency_ftf = data_free_throw_fail.FrequencyDistribution();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_ftf = data_free_throw_fail.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequency_ftf = data_free_throw_fail.Frequencies();
 
             return;
         }
@@ -381,13 +381,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_FreeThrowSuccess()
         {
             data_free_throw_success =
-                                from row in BasketballTeamDataTable
+                                from row in JudoDataTable
                                     select row.FreeThrowSuccess
                                     ;
 
             //List<int> frequency_fts = data_free_throw_success.FrequencyDistribution();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_fts = data_free_throw_success.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequency_fts = data_free_throw_success.Frequencies();
 
             return;
         }
@@ -397,13 +397,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_JumpsOffensive()
         {
             data_jumps_offensive =
-                                from row in BasketballTeamDataTable
+                                from row in JudoDataTable
                                     select row.JumpsOffensive
                                     ;
 
             //List<int> frequency_off = data_jumps_offensive.FrequencyDistribution();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_off = data_jumps_offensive.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequency_off = data_jumps_offensive.Frequencies();
 
             return;
         }
@@ -413,13 +413,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_JumpsDefensive()
         {
             data_jumps_defensive =
-                                from row in BasketballTeamDataTable
+                                from row in JudoDataTable
                                     select row.JumpsDefensive
                                     ;
 
             //List<int> frequency_def = data_jumps_defensive.FrequencyDistribution();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_def = data_jumps_defensive.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequency_def = data_jumps_defensive.Frequencies();
 
             return;
         }
@@ -429,13 +429,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Frequency_Assistance()
         {
             data_assistence =
-                                from row in BasketballTeamDataTable
+                                from row in JudoDataTable
                                     select row.Assistence
                                     ;
 
             //List<int> frequency_assist = data_assistence.FrequencyDistribution();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_assist = data_assistence.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequency_assist = data_assistence.Frequencies();
 
             return;
         }
@@ -445,13 +445,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_PersonalFaults()
         {
             data_personal_faults =
-                                from row in BasketballTeamDataTable
+                                from row in JudoDataTable
                                     select row.PersonalFaults
                                     ;
 
             //List<int> frequency_pf = data_personal_faults.FrequencyDistribution();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_pf = data_personal_faults.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequency_pf = data_personal_faults.Frequencies();
 
             return;
         }
@@ -461,13 +461,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_BallsLost()
         {
             data_balls_lost =
-                                from row in BasketballTeamDataTable
+                                from row in JudoDataTable
                                     select row.BallsLost
                                     ;
 
             //List<int> frequency_bl = data_balls_lost.FrequencyDistribution();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_bl = data_balls_lost.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequency_bl = data_balls_lost.Frequencies();
 
             return;
         }
@@ -477,13 +477,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_BallsStolen()
         {
             data_balls_stolen =
-                                from row in BasketballTeamDataTable
+                                from row in JudoDataTable
                                     select row.BallsStolen
                                     ;
 
             //List<int> frequency_bs = data_balls_stolen.FrequencyDistribution();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_bs = data_balls_stolen.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequency_bs = data_balls_stolen.Frequencies();
 
             return;
         }
@@ -493,13 +493,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_Blocks()
         {
             data_blocks =
-                                from row in BasketballTeamDataTable
+                                from row in JudoDataTable
                                     select row.Blocks
                                     ;
 
             //List<int> frequency_block = data_blocks.FrequencyDistribution();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequency_block = data_blocks.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequency_block = data_blocks.Frequencies();
 
             return;
         }

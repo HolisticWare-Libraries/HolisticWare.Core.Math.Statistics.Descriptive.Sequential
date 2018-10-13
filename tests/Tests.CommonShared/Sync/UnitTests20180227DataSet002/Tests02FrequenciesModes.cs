@@ -77,7 +77,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class UnitTests20180227DataSet002
     {
-
         [Test()]
         public void Frequencies()
         {
@@ -88,77 +87,107 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             sw = Stopwatch.StartNew();
             // Act
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies01;
-            frequencies01 = data_list.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> f;
+            f = data_list.Frequencies();
+
             sw.Stop();
             Console.WriteLine($"List<int>.Frequencies()");
-            Console.WriteLine($"          frequencies01      = {frequencies01}");
+            Console.WriteLine($"          f      = {f}");
             Console.WriteLine($"          size               = {data_list.Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
 
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
-                                    frequencies01,
-                                    new Dictionary<int, (uint, double, uint)>()
-                                    {
-                                        { 24, ( 2, 0.1, 3 ) },
-                                        { 28, ( 2, 0.1, 3 ) },
-                                        { 29, ( 2, 0.1, 3 ) },
-                                        { 22, ( 1, 0.1, 3 ) },
-                                        { 33, ( 1, 0.1, 3 ) },
-                                        { 25, ( 1, 0.1, 3 ) },
-                                        { 36, ( 1, 0.1, 3 ) },
-                                        { 27, ( 1, 0.1, 3 ) },
-                                        { 34, ( 1, 0.1, 3 ) },
-                                        { 32, ( 1, 0.1, 3 ) },
-                                        { 21, ( 1, 0.1, 3 ) },
-                                        { 30, ( 1, 0.1, 3 ) },
-                                        { 35, ( 1, 0.1, 3 ) },
-                                    }
-                                );
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+#if NUNIT && !NUNIT_LITE
+            //CollectionAssert.AreEquivalent
+            //(
+            //    fc.ToList(),
+            //    f
+            //);
+            Assert.AreEqual(fc.Count(), f.Count());
+            for (int i = 0; i < fc.Count(); i++)
+            {
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Key,
+                                fc.ElementAt(i).Key
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute,
+                                fc.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                fc.ElementAt(i).Value.FrequencyRelative,
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                fc.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
 #elif XUNIT
-            Assert.Equal
-                                (
-                                    frequencies01,
-                                    new Dictionary<int, (uint, double, uint)>()
-                                    {
-                                        { 24, ( 2, 0.1, 3 ) },
-                                        { 28, ( 2, 0.1, 3 ) },
-                                        { 29, ( 2, 0.1, 3 ) },
-                                        { 22, ( 1, 0.1, 3 ) },
-                                        { 33, ( 1, 0.1, 3 ) },
-                                        { 25, ( 1, 0.1, 3 ) },
-                                        { 36, ( 1, 0.1, 3 ) },
-                                        { 27, ( 1, 0.1, 3 ) },
-                                        { 34, ( 1, 0.1, 3 ) },
-                                        { 32, ( 1, 0.1, 3 ) },
-                                        { 21, ( 1, 0.1, 3 ) },
-                                        { 30, ( 1, 0.1, 3 ) },
-                                        { 35, ( 1, 0.1, 3 ) },
-                                    }
-                                );
+            //Assert.Equal
+            //(
+            //    fc.ToList(),
+            //    f.ToArray()
+            //);
+            Assert.Equal(fc.Count(), f.Count());
+            for (int i = 0; i < fc.Count(); i++)
+            {
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Key,
+                                fc.ElementAt(i).Key
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute,
+                                fc.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                fc.ElementAt(i).Value.FrequencyRelative,
+                                5
+                            );
+                Assert.Equal
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                fc.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
 #elif MSTEST
-            CollectionAssert.AreEquivalent
-                                (
-                                    frequencies01.ToArray(),
-                                    new Dictionary<int, (uint, double, uint)>()
-                                    {
-                                        { 24, ( 2, 0.1, 3 ) },
-                                        { 28, ( 2, 0.1, 3 ) },
-                                        { 29, ( 2, 0.1, 3 ) },
-                                        { 22, ( 1, 0.1, 3 ) },
-                                        { 33, ( 1, 0.1, 3 ) },
-                                        { 25, ( 1, 0.1, 3 ) },
-                                        { 36, ( 1, 0.1, 3 ) },
-                                        { 27, ( 1, 0.1, 3 ) },
-                                        { 34, ( 1, 0.1, 3 ) },
-                                        { 32, ( 1, 0.1, 3 ) },
-                                        { 21, ( 1, 0.1, 3 ) },
-                                        { 30, ( 1, 0.1, 3 ) },
-                                        { 35, ( 1, 0.1, 3 ) },
-                                    }
-                                );
+            Assert.AreEqual(fc.Count(), f.Count());
+            for (int i = 0; i < fc.Count(); i++)
+            {
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Key, 
+                                fc.ElementAt(i).Key
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyAbsolute, 
+                                fc.ElementAt(i).Value.FrequencyAbsolute
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyRelative,
+                                fc.ElementAt(i).Value.FrequencyRelative,
+                                0.000001
+                            );
+                Assert.AreEqual
+                            (
+                                f.ElementAt(i).Value.FrequencyCumulative,
+                                fc.ElementAt(i).Value.FrequencyCumulative
+                            );
+            }
 #endif
             //====================================================================================================
 
@@ -183,25 +212,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ms]           = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
 
-            // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
-                                    new List<int> { 24, 28, 29 },
-                                    modes01
-                                );
-            #elif XUNIT
-            Assert.Equal
-                                (
-                                    new List<int> { 24, 28, 29 },
-                                    modes01
-                                );
-            #elif MSTEST
-            CollectionAssert.AreEquivalent
-                                (
-                                    new List<int> { 24, 28, 29 },
-                                    modes01
-                                );
-            #endif
-            //====================================================================================================
 
             return;
         }
@@ -224,28 +234,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ms]           = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
 
-            // Assert
-            #if NUNIT && !NUNIT_LITE
-            CollectionAssert.AreEquivalent
-                                    (
-                                        new List<int> { 24, 28, 29 },
-                                        modes02
-                                    );
-            #elif XUNIT
-            modes02.Sort();
-            Assert.Equal
-                                    (
-                                        new List<int> { 24, 28, 29 },
-                                        modes02
-                                    );
-            #elif MSTEST
-            CollectionAssert.AreEquivalent
-                                    (
-                                        new List<int> { 24, 28, 29 },
-                                        modes02
-                                    );
-            #endif
-            //====================================================================================================
 
             return;
         }
@@ -268,25 +256,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ms]           = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
 
-            // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                    (
-                                        new List<int> { 24, 28, 29 },
-                                        modes03
-                                    );
-            #elif XUNIT
-            Assert.Equal
-                                    (
-                                        new List<int> { 24, 28, 29 },
-                                        modes03
-                                    );
-            #elif MSTEST
-            CollectionAssert.AreEquivalent
-                                    (
-                                        new List<int> { 24, 28, 29 },
-                                        modes03
-                                    );
-            #endif
-            //====================================================================================================
 
             return;
         }
@@ -310,25 +279,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ms]           = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
 
-            // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                    (
-                                        new List<int> { 24, 28, 29 },
-                                        modes04
-                                    );
-            #elif XUNIT
-            Assert.Equal
-                                    (
-                                        new List<int> { 24, 28, 29 },
-                                        modes04
-                                    );
-            #elif MSTEST
-            CollectionAssert.AreEquivalent
-                                    (
-                                        new List<int> { 24, 28, 29 },
-                                        modes04
-                                    );
-            #endif
-            //====================================================================================================
+
+            return;
         }
 
         [Test()]

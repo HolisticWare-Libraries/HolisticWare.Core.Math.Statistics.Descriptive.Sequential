@@ -77,22 +77,22 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     {
 
         [Test()]
-        public void MeanArithmetic_ONT()
+        public void MeanHarmonic_ONT()
         {
             data_ont =
                                     from row in JudoDataTable
                                     select row.ONT
                                         ;
 
-            double mean_ONT_a = data_ont.MeanArithmetic();
+            double mean_ONT_h = data_ont.MeanHarmonic();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_ONT_a, 15.93, 0.01);
+            Assert.AreEqual(mean_ONT_h, 15.29, 0.01);
             #elif XUNIT
-            Assert.Equal(15.93, mean_ONT_a, 2);
+            Assert.Equal(15.29, mean_ONT_h, 2);
             #elif MSTEST
-            Assert.AreEqual(mean_ONT_a, 15.93, 0.01);
+            Assert.AreEqual(mean_ONT_h, 15.29, 0.01);
             #endif
 
             return;
@@ -100,68 +100,70 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Test()]
-        public void MeanArithmetic_OUZ()
+        public void MeanHarmonic_OUZ()
         {
             data_ouz =
                                     from row in JudoDataTable
                                     select row.OUZ
                                         ;
 
-            double mean_OUZ_a = data_ouz.MeanArithmetic();
+            double mean_OUZ_h = data_ouz.MeanHarmonic();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_OUZ_a, 3.90, 0.01);
+            Assert.AreEqual(mean_OUZ_h, 3.82, 0.01);
             #elif XUNIT
-            Assert.Equal(3.90, mean_OUZ_a, 2);
+            Assert.Equal(3.82, mean_OUZ_h, 2);
             #elif MSTEST
-            Assert.AreEqual(mean_OUZ_a, 3.90, 0.01);
+            Assert.AreEqual(mean_OUZ_h, 3.82, 0.01);
             #endif
+
 
             return;
         }
 
 
         [Test()]
-        public void MeanArithmetic_NEB()
+        public void MeanHarmonic_NEB()
         {
             data_neb =
-                                    from row in JudoDataTable
-                                    select row.NEB
-                                        ;
+                                from row in JudoDataTable
+                                select row.NEB
+                                    ;
 
-            double mean_NEB_a = data_neb.MeanArithmetic();
+            double mean_NEB_h = data_neb.MeanHarmonic();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_NEB_a, 10.10, 0.01);
+            Assert.AreEqual(mean_NEB_h, 8.65, 0.01);
             #elif XUNIT
-            Assert.Equal(10.10, mean_NEB_a, 2);
+            Assert.Equal(8.65, mean_NEB_h, 2);
             #elif MSTEST
-            Assert.AreEqual(mean_NEB_a, 10.10, 0.01);
+            Assert.AreEqual(mean_NEB_h, 8.65, 0.01);
             #endif
+
 
             return;
         }
 
 
         [Test()]
-        public void MeanArithmetic_SKL()
+        public void MeanHarmonic_SKL()
         {
             data_skl =
-                                    from row in JudoDataTable
-                                    select row.SKL
-                                        ;
+                                from row in JudoDataTable
+                                select row.SKL
+                                    ;
 
-            double mean_SKL_a = data_skl.MeanArithmetic();
+            double mean_SKL_h = data_skl.MeanHarmonic();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_SKL_a, 16.57, 0.01);
+            Assert.AreEqual(mean_SKL_h, 8.67, 0.01);
             #elif XUNIT
-            Assert.Equal(16.57, mean_SKL_a, 2);
+            Assert.Equal(8.67, mean_SKL_h, 2);
             #elif MSTEST
-            Assert.AreEqual(mean_SKL_a, 16.57, 0.01);
+            Assert.AreEqual(mean_SKL_h, 8.67, 0.01);
             #endif
 
             return;
@@ -169,22 +171,22 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Test()]
-        public void MeanArithmetic_TRB()
+        public void MeanHarmonic_TRB()
         {
             data_trb =
-                                    from row in JudoDataTable
-                                    select row.TRB
-                                        ;
+                                from row in JudoDataTable
+                                select row.TRB
+                                    ;
 
-            double mean_TRB_a = data_trb.MeanArithmetic();
+            double mean_TRB_h = data_trb.MeanHarmonic();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_TRB_a, 35.38, 0.01);
+            Assert.AreEqual(mean_TRB_h, 27.97, 0.01);
             #elif XUNIT
-            Assert.Equal(35.38, mean_TRB_a, 2);
+            Assert.Equal(27.97, mean_TRB_h, 2);
             #elif MSTEST
-            Assert.AreEqual(mean_TRB_a, 35.38, 0.01);
+            Assert.AreEqual(mean_TRB_h, 27.97, 0.01);
             #endif
 
             return;
@@ -192,22 +194,22 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Test()]
-        public void MeanArithmetic_CUC()
+        public void MeanHarmonic_CUC()
         {
             data_cuc =
-                                    from row in JudoDataTable
-                                    select row.CUC
-                                        ;
+                                from row in JudoDataTable
+                                select row.CUC
+                                    ;
 
-            double mean_CUC_a = data_cuc.MeanArithmetic();
+            double mean_CUC_h = data_cuc.MeanHarmonic();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_CUC_a, 210.40, 0.01);
+            Assert.AreEqual(mean_CUC_h, 166.05, 0.01);
             #elif XUNIT
-            Assert.Equal(210.40, mean_CUC_a, 2);
+            Assert.Equal(166.05, mean_CUC_h, 2);
             #elif MSTEST
-            Assert.AreEqual(mean_CUC_a, 210.40, 0.01);
+            Assert.AreEqual(mean_CUC_h, 166.05, 0.01);
             #endif
 
             return;
@@ -215,45 +217,44 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Test()]
-        public void MeanArithmetic_SDM()
+        public void MeanHarmonic_SDM()
         {
             data_sdm =
-                                    from row in JudoDataTable
-                                    select row.SDM
-                                        ;
+                                from row in JudoDataTable
+                                select row.SDM
+                                    ;
 
-            double mean_SDM_a = data_sdm.MeanArithmetic();
+            double mean_SDM_h = data_sdm.MeanHarmonic();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_SDM_a, 177.30, 0.01);
+            Assert.AreEqual(mean_SDM_h, 175.63, 0.01);
             #elif XUNIT
-            Assert.Equal(177.33, mean_SDM_a, 2);
+            Assert.Equal(175.63, mean_SDM_h, 2);
             #elif MSTEST
-            Assert.AreEqual(mean_SDM_a, 177.30, 0.01);
+            Assert.AreEqual(mean_SDM_h, 175.63, 0.01);
             #endif
 
             return;
         }
 
-
         [Test()]
-        public void MeanArithmetic_BML()
+        public void MeanHarmonic_BML()
         {
             data_bml =
-                                    from row in JudoDataTable
-                                    select row.BML
-                                        ;
+                                from row in JudoDataTable
+                                select row.BML
+                                    ;
 
-            double mean_BML_a = data_bml.MeanArithmetic();
+            double mean_BML_h = data_bml.MeanHarmonic();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_BML_a, 530.20, 0.01);
+            Assert.AreEqual(mean_BML_h, 512.91, 0.01);
             #elif XUNIT
-            Assert.Equal(530.20, mean_BML_a, 2);
+            Assert.Equal(512.91, mean_BML_h, 2);
             #elif MSTEST
-            Assert.AreEqual(mean_BML_a, 530.20, 0.01);
+            Assert.AreEqual(mean_BML_h, 512.91, 0.01);
             #endif
 
             return;
