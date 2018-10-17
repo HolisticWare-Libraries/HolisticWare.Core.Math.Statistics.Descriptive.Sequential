@@ -17,7 +17,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests00Data.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet002\Tests00Data.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet002\Tests01MeanAverageMedian.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet002\Tests02FrequenciesModes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet002\Tests03Moments.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet002\Tests04SkewnessKurtosis.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet003\Tests00Data.cs" />

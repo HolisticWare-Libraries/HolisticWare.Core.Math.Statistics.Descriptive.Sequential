@@ -134,6 +134,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                 double data_item = Double.Parse(s);
                 data.Add(data_item);
             }
+
+            global::Core.Text.CharacterSeparatedValues csv = new global::Core.Text.CharacterSeparatedValues();
+            //csv.Parse(())
             //------------------------------------------------------------------
 
             return;

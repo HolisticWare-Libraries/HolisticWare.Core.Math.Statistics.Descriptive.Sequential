@@ -91,6 +91,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         static ObservableCollection<int> data_observable_collection = null;
         static LinkedList<int> data_linked_list = null;
 
+        //Span<int> data_span =
+                        //new Span<int>(data)
+                        ////data01.AsSpan().Slice(start: 0)
+                        //;
+
         static List<double> w1 = new List<double>() 
         { 
             1, 4, 3, 4, 4, 4, 5, 3, 2, 1 

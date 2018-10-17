@@ -243,7 +243,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             //      extracted to atomic Benchmark method
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> fd = ArraySegment_FrequencyDistribution();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> fd;
+            fd = ArraySegment_FrequencyDistribution();
 
             sw.Stop();
             Console.WriteLine($"          fd               = {fd}");
@@ -254,7 +255,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Assert
-#if NUNIT && !NUNIT_LITE
+            #if NUNIT && !NUNIT_LITE
             //CollectionAssert.AreEquivalent
             //(
             //    fdc.ToList(),
@@ -285,7 +286,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 fdc.ElementAt(i).Value.FrequencyCumulative
                             );
             }
-#elif XUNIT
+            #elif XUNIT
             //Assert.Equal
             //(
             //    fdc.ToList(),
@@ -316,7 +317,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 fdc.ElementAt(i).Value.FrequencyCumulative
                             );
             }
-#elif MSTEST
+            #elif MSTEST
             Assert.AreEqual(fdc.Count(), fd.Count());
             for (int i = 0; i < fdc.Count(); i++)
             {
@@ -342,7 +343,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 fdc.ElementAt(i).Value.FrequencyCumulative
                             );
             }
-#endif
+            #endif
             //====================================================================================================
 
             return;
@@ -381,7 +382,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Assert
-#if NUNIT && !NUNIT_LITE
+            #if NUNIT && !NUNIT_LITE
             //CollectionAssert.AreEquivalent
             //(
             //    fdc.ToList(),
@@ -412,7 +413,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 fdc.ElementAt(i).Value.FrequencyCumulative
                             );
             }
-#elif XUNIT
+            #elif XUNIT
             //Assert.Equal
             //(
             //    fdc.ToList(),
@@ -443,7 +444,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 fdc.ElementAt(i).Value.FrequencyCumulative
                             );
             }
-#elif MSTEST
+            #elif MSTEST
             Assert.AreEqual(fdc.Count(), fd.Count());
             for (int i = 0; i < fdc.Count(); i++)
             {
@@ -469,7 +470,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 fdc.ElementAt(i).Value.FrequencyCumulative
                             );
             }
-#endif
+            #endif
             //====================================================================================================
 
             return;
@@ -508,7 +509,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Assert
-#if NUNIT && !NUNIT_LITE
+            #if NUNIT && !NUNIT_LITE
             //CollectionAssert.AreEquivalent
             //(
             //    fdc.ToList(),
@@ -539,7 +540,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 fdc.ElementAt(i).Value.FrequencyCumulative
                             );
             }
-#elif XUNIT
+            #elif XUNIT
             //Assert.Equal
             //(
             //    fdc.ToList(),
@@ -570,7 +571,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 fdc.ElementAt(i).Value.FrequencyCumulative
                             );
             }
-#elif MSTEST
+            #elif MSTEST
             Assert.AreEqual(fdc.Count(), fd.Count());
             for (int i = 0; i < fdc.Count(); i++)
             {
@@ -596,7 +597,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 fdc.ElementAt(i).Value.FrequencyCumulative
                             );
             }
-#endif
+            #endif
             //====================================================================================================
 
             return;
@@ -636,7 +637,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Assert
-#if NUNIT && !NUNIT_LITE
+            #if NUNIT && !NUNIT_LITE
             //CollectionAssert.AreEquivalent
             //(
             //    fdc.ToList(),
@@ -667,7 +668,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 fdc.ElementAt(i).Value.FrequencyCumulative
                             );
             }
-#elif XUNIT
+            #elif XUNIT
             //Assert.Equal
             //(
             //    fdc.ToList(),
@@ -698,7 +699,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 fdc.ElementAt(i).Value.FrequencyCumulative
                             );
             }
-#elif MSTEST
+            #elif MSTEST
             Assert.AreEqual(fdc.Count(), fd.Count());
             for (int i = 0; i < fdc.Count(); i++)
             {
@@ -724,7 +725,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 fdc.ElementAt(i).Value.FrequencyCumulative
                             );
             }
-#endif
+            #endif
             //====================================================================================================
 
             return;
@@ -764,7 +765,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Assert
-#if NUNIT && !NUNIT_LITE
+            #if NUNIT && !NUNIT_LITE
             //CollectionAssert.AreEquivalent
             //(
             //    fdc.ToList(),
@@ -795,7 +796,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 fdc.ElementAt(i).Value.FrequencyCumulative
                             );
             }
-#elif XUNIT
+            #elif XUNIT
             //Assert.Equal
             //(
             //    fdc.ToList(),
@@ -826,7 +827,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 fdc.ElementAt(i).Value.FrequencyCumulative
                             );
             }
-#elif MSTEST
+            #elif MSTEST
             Assert.AreEqual(fdc.Count(), fd.Count());
             for (int i = 0; i < fdc.Count(); i++)
             {
@@ -852,7 +853,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 fdc.ElementAt(i).Value.FrequencyCumulative
                             );
             }
-#endif
+            #endif
             //====================================================================================================
 
             return;
@@ -892,7 +893,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Assert
-#if NUNIT && !NUNIT_LITE
+            #if NUNIT && !NUNIT_LITE
             //CollectionAssert.AreEquivalent
             //(
             //    fdc.ToList(),
@@ -923,7 +924,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 fdc.ElementAt(i).Value.FrequencyCumulative
                             );
             }
-#elif XUNIT
+            #elif XUNIT
             //Assert.Equal
             //(
             //    fdc.ToList(),
@@ -954,7 +955,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 fdc.ElementAt(i).Value.FrequencyCumulative
                             );
             }
-#elif MSTEST
+            #elif MSTEST
             Assert.AreEqual(fdc.Count(), fd.Count());
             for (int i = 0; i < fdc.Count(); i++)
             {

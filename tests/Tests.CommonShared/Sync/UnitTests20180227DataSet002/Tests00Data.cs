@@ -85,6 +85,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         {
             22, 24, 33, 25, 36, 27, 34, 24, 32, 21, 28, 29, 30, 35, 29, 28
         };
+
+
         static double[] weights = Enumerable.Repeat(1.0, data.Length).ToArray();
 
         static int[] data_array = null;

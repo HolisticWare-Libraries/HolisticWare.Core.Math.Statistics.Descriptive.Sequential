@@ -360,78 +360,84 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Memory<T> 
             ReadOnlyMemory<T>
         */
+        #if !__ANDROID__ && !__IOS__
         /*
-        [Test]
-        public void Span_MeanGeneralized_20()
-        {
-            //====================================================================================================
-            //  Arrange
-            //  reading data from files
-
-            sw = Stopwatch.StartNew();
-
-            //----------------------------------------------------------------------------------------------------
-            // Act
-            Span<int> data = 
-                            new Span<int>(data01);
-                            //data01.AsSpan().Slice(start: 0)
-                            ;
-            double mean = data.MeanGeneralized_20();
-            sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
-            Console.WriteLine($"          size               = {data.Count()}");
-            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
-            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
-            sw.Reset();
-            //----------------------------------------------------------------------------------------------------
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(3.19374, mean, 0.001);
-            #elif XUNIT
-            Assert.Equal(3.19374, mean, 3);
-            #elif MSTEST
-            Assert.AreEqual(3.19374, mean, 0.001);
-            #endif
-            //====================================================================================================
-
-            return;
-        }
-
-        [Test]
-        public void Span_MeanGeneralized_20()
-        {
-            //====================================================================================================
-            //  Arrange
-            //  reading data from files
-
-            sw = Stopwatch.StartNew();
-
-            //----------------------------------------------------------------------------------------------------
-            // Act
-            Memory<int> data =
-                            new Memory<int>(data01);
-                            //data01.AsSpan().Slice(start: 0)
-                            ;
-            double mean = data.MeanGeneralized_20();
-            sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
-            Console.WriteLine($"          size               = {data.Count()}");
-            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
-            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
-            sw.Reset();
-            //----------------------------------------------------------------------------------------------------
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(3.19374, mean, 0.001);
-            #elif XUNIT
-            Assert.Equal(3.19374, mean, 3);
-            #elif MSTEST
-            Assert.AreEqual(3.19374, mean, 0.001);
-            #endif
-            //====================================================================================================
-
-            return;
-        }
+        Error CS0122: 'Span<T>' is inaccessible due to its protection level (CS0122) (UnitTests.NUnit.XamarinAndroid)
+        Error CS0122: 'Span<T>' is inaccessible due to its protection level (CS0122) (UnitTests.NUnit.XamarinIOS)
+        Error CS0122: 'Memory<T>' is inaccessible due to its protection level (CS0122) (UnitTests.NUnit.XamarinAndroid)
+        Error CS0122: 'Memory<T>' is inaccessible due to its protection level (CS0122) (UnitTests.NUnit.XamarinIOS)
         */
+        [Test]
+        public void Span_MeanGeneralized_20()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            Span<int> d = 
+                            new Span<int>(data);
+                            //data01.AsSpan().Slice(start: 0)
+                            ;
+            double mean = data.MeanGeneralized(2.0);
+            sw.Stop();
+            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          size               = {data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(3.19374, mean, 0.001);
+            #elif XUNIT
+            Assert.Equal(3.19374, mean, 3);
+            #elif MSTEST
+            Assert.AreEqual(3.19374, mean, 0.001);
+            #endif
+            //====================================================================================================
+
+            return;
+        }
+
+        [Test]
+        public void Memory_MeanGeneralized_20()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            Memory<int> d =
+                            new Memory<int>(data);
+                            //data01.AsSpan().Slice(start: 0)
+                            ;
+            double mean = data.MeanGeneralized(2.0);
+            sw.Stop();
+            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          size               = {data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(3.19374, mean, 0.001);
+            #elif XUNIT
+            Assert.Equal(3.19374, mean, 3);
+            #elif MSTEST
+            Assert.AreEqual(3.19374, mean, 0.001);
+            #endif
+            //====================================================================================================
+
+            return;
+        }
+        #endif
     }
 }

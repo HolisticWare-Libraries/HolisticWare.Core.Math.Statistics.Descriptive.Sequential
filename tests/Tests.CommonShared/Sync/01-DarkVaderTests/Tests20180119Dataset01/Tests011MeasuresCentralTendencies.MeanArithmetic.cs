@@ -352,7 +352,6 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             return;
         }
 
-
         /*
             c# 7.2
             Span<T>, 
@@ -360,78 +359,109 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Memory<T> 
             ReadOnlyMemory<T>
         */
+        #if !__ANDROID__ && !__IOS__ && ! SKIP_TEST_CSHARP_7X
         /*
-        [Test]
-        public void Span_MeanArithmetic()
-        {
-            //====================================================================================================
-            //  Arrange
-            //  reading data from files
-
-            sw = Stopwatch.StartNew();
-
-            //----------------------------------------------------------------------------------------------------
-            // Act
-            Span<int> data = 
-                            new Span<int>(data01);
-                            //data01.AsSpan().Slice(start: 0)
-                            ;
-            double mean = data.MeanArithmetic();
-            sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
-            Console.WriteLine($"          size               = {data.Count()}");
-            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
-            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
-            sw.Reset();
-            //----------------------------------------------------------------------------------------------------
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(3.00, mean, 0.00001);
-            #elif XUNIT
-            Assert.Equal(3.00, mean, 5);
-            #elif MSTEST
-            Assert.AreEqual(3.00, mean, 0.00001);
-            #endif
-            //====================================================================================================
-
-            return;
-        }
-
-        [Test]
-        public void Span_MeanArithmetic()
-        {
-            //====================================================================================================
-            //  Arrange
-            //  reading data from files
-
-            sw = Stopwatch.StartNew();
-
-            //----------------------------------------------------------------------------------------------------
-            // Act
-            Memory<int> data =
-                            new Memory<int>(data01);
-                            //data01.AsSpan().Slice(start: 0)
-                            ;
-            double mean = data.MeanArithmetic();
-            sw.Stop();
-            Console.WriteLine($"          mean               = {mean}");
-            Console.WriteLine($"          size               = {data.Count()}");
-            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
-            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
-            sw.Reset();
-            //----------------------------------------------------------------------------------------------------
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(3.00, mean, 0.00001);
-            #elif XUNIT
-            Assert.Equal(3.00, mean, 5);
-            #elif MSTEST
-            Assert.AreEqual(3.00, mean, 0.00001);
-            #endif
-            //====================================================================================================
-
-            return;
-        }
+        Error CS0122: 'Span<T>' is inaccessible due to its protection level (CS0122) (UnitTests.NUnit.XamarinAndroid)
+        Error CS0122: 'Span<T>' is inaccessible due to its protection level (CS0122) (UnitTests.NUnit.XamarinIOS)
+        Error CS0122: 'Memory<T>' is inaccessible due to its protection level (CS0122) (UnitTests.NUnit.XamarinAndroid)
+        Error CS0122: 'Memory<T>' is inaccessible due to its protection level (CS0122) (UnitTests.NUnit.XamarinIOS)
         */
+        [Benchmark]
+        public double Span_MeanArithmetic()
+        {
+            return new DataRefStruct().DataAsSpan.ToArray().MeanArithmetic();
+        }
+
+        /*
+        Error CS8107: 
+            Feature 'ref structs' is not available in C# 7.0. Please use language version 7.2 or greater.
+        */
+        public ref struct DataRefStruct
+        {
+            /*
+            Error CS0573: 'Tests20180119Dataset01.DataRefStruct': cannot have instance property or field initializers in structs 
+            */
+            public Span<int> DataAsSpan; //= new Span<int> (data);
+        }
+
+        [Test]
+        public void Span_MeanArithmetic_Test()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            DataRefStruct drs = new DataRefStruct()
+            {
+                DataAsSpan =
+                                new Span<int>(data)
+                                //data01.AsSpan().Slice(start: 0)
+            };
+
+            double mean =
+                            //drs.DataAsSpan.MeanArithmetic()
+                            data.MeanArithmetic()
+                            ;
+            sw.Stop();
+            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          size               = {data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(3.00, mean, 0.00001);
+            #elif XUNIT
+            Assert.Equal(3.00, mean, 5);
+            #elif MSTEST
+            Assert.AreEqual(3.00, mean, 0.00001);
+            #endif
+            //====================================================================================================
+
+            return;
+        }
+
+        [Test]
+        public void Memory_MeanArithmetic()
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            Memory<int> d =
+                            new Memory<int>(data)
+                            //data01.AsSpan().Slice(start: 0)
+                            ;
+            double mean = data.MeanArithmetic();
+            sw.Stop();
+            Console.WriteLine($"          mean               = {mean}");
+            Console.WriteLine($"          size               = {data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(3.00, mean, 0.00001);
+            #elif XUNIT
+            Assert.Equal(3.00, mean, 5);
+            #elif MSTEST
+            Assert.AreEqual(3.00, mean, 0.00001);
+            #endif
+            //====================================================================================================
+
+            return;
+        }
+        #endif
+
     }
 }
