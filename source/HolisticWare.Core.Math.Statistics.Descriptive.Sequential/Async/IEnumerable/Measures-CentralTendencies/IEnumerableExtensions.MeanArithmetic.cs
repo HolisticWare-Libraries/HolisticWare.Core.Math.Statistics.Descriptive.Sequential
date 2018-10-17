@@ -11,13 +11,19 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double mean =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MeanArithmetic()
                                 )
                             .ConfigureAwait(false);
 
             return mean;
+        }
+
+        public async static Task<double> MeanArithmeticTaskAsync(this IEnumerable<byte> x)
+        {
+            return x.MeanArithmetic();
         }
 
         public async static Task<double> MeanArithmeticAsync(this IEnumerable<short> x)

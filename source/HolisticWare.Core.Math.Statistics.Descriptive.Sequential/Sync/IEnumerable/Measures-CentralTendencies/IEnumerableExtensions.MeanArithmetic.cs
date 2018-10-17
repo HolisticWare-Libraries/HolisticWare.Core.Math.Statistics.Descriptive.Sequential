@@ -93,6 +93,5 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return x.Average();
         }
         //==============================================================================================================
-
     }
 }
