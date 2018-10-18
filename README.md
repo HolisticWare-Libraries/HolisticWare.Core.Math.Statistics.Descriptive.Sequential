@@ -54,11 +54,11 @@ NOTE: Parallel algorithms based on (TPL) can be found in
     *   Frequencies
 
     *   Distribution Asymmetry Measures
-    
+
         *   Skewness
 
     *   Distribution Roundness Measures
-    
+
         *   Kurtosis
 
 *   Dependency Measures
@@ -143,6 +143,10 @@ NOTE: Parallel algorithms based on (TPL) can be found in
 *   `async`/`await` API
 
     Each synchronous (blocking) method has processor bound async (TPL counterpart).
+
+    https://docs.microsoft.com/en-us/dotnet/csharp/async#recognize-cpu-bound-and-io-bound-work
+
+    
 
 *   TPL/PLINQ
 
