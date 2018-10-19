@@ -11,7 +11,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double correlation =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.Covariance(y)
                                 )
@@ -24,7 +25,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double correlation =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.Covariance(y)
                                 )
@@ -37,7 +39,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double correlation =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.Covariance(y)
                                 )
@@ -63,7 +66,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double correlation =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.Covariance(y)
                                 )
@@ -76,7 +80,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double correlation =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.Covariance(y)
                                 )
@@ -89,7 +94,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double correlation =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.Covariance(y)
                                 )
@@ -102,7 +108,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double correlation =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.Covariance(y)
                                 )
@@ -115,7 +122,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double correlation =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.Covariance(y)
                                 )
@@ -128,7 +136,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             decimal correlation =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.Covariance(y)
                                 )
