@@ -11,7 +11,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double moment =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MomentCentral(m)
                                 )
@@ -24,7 +25,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double moment = 
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MomentCentral(m)
                                 )
@@ -37,7 +39,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double moment = 
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MomentCentral(m)
                                 )
@@ -50,7 +53,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double moment = 
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MomentCentral(m)
                                 )
@@ -63,7 +67,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double moment = 
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MomentCentral(m)
                                 )
@@ -76,7 +81,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double moment = 
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MomentCentral(m)
                                 )
@@ -89,7 +95,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double moment = 
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MomentCentral(m)
                                 )
@@ -102,7 +109,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double moment = 
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MomentCentral(m)
                                 )
@@ -115,7 +123,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double moment = 
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MomentCentral(m)
                                 )
@@ -128,7 +137,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             decimal moment = 
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MomentCentral(m)
                                 )

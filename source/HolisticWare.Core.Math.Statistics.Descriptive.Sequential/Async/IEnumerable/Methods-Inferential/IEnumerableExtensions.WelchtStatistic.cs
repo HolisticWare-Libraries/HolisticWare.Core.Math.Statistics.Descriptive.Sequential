@@ -15,7 +15,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             (double welch_t, double degrees_of_freedom) statistic =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.WelchtStatistic(y)
                                 )
@@ -32,7 +33,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             (double welch_t, double degrees_of_freedom) statistic =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.WelchtStatistic(y)
                                 )
@@ -49,7 +51,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             (double welch_t, double degrees_of_freedom) statistic =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.WelchtStatistic(y)
                                 )
@@ -66,7 +69,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             (double welch_t, double degrees_of_freedom) statistic =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.WelchtStatistic(y)
                                 )
@@ -83,7 +87,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             (double welch_t, double degrees_of_freedom) statistic =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.WelchtStatistic(y)
                                 )
@@ -100,7 +105,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             (double welch_t, double degrees_of_freedom) statistic =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.WelchtStatistic(y)
                                 )
@@ -117,7 +123,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             (double welch_t, double degrees_of_freedom) statistic =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.WelchtStatistic(y)
                                 )
@@ -134,7 +141,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             (double welch_t, double degrees_of_freedom) statistic =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.WelchtStatistic(y)
                                 )
@@ -151,7 +159,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             (double welch_t, double degrees_of_freedom) statistic =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.WelchtStatistic(y)
                                 )
@@ -168,7 +177,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             (decimal welch_t, decimal degrees_of_freedom) statistic =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.WelchtStatistic(y)
                                 )

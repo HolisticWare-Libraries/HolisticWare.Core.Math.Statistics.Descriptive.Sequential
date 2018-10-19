@@ -11,7 +11,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double statistics =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.StudenttStatisticIndependent(y)
                                 )
@@ -24,7 +25,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double statistics =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.StudenttStatisticIndependent(y)
                                 )
@@ -37,7 +39,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double statistics =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.StudenttStatisticIndependent(y)
                                 )
@@ -50,7 +53,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double statistics =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.StudenttStatisticIndependent(y)
                                 )
@@ -63,7 +67,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double statistics =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.StudenttStatisticIndependent(y)
                                 )
@@ -76,7 +81,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double statistics =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.StudenttStatisticIndependent(y)
                                 )
@@ -89,7 +95,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double statistics =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.StudenttStatisticIndependent(y)
                                 )
@@ -102,7 +109,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double statistics =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.StudenttStatisticIndependent(y)
                                 )
@@ -115,7 +123,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double statistics =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.StudenttStatisticIndependent(y)
                                 )
@@ -128,7 +137,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             decimal statistics =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.StudenttStatisticIndependent(y)
                                 )

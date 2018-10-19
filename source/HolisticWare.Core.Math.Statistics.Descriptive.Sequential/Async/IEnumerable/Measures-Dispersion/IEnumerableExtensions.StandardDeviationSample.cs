@@ -11,7 +11,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double standard_deviation =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.StandardDeviationSample()
                                 )
@@ -24,7 +25,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double standard_deviation =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.StandardDeviationSample()
                                 )
@@ -37,7 +39,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double standard_deviation =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.StandardDeviationSample()
                                 )
@@ -50,7 +53,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double standard_deviation =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.StandardDeviationSample()
                                 )
@@ -63,7 +67,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double standard_deviation =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.StandardDeviationSample()
                                 )
@@ -76,7 +81,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double standard_deviation =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.StandardDeviationSample()
                                 )
@@ -89,7 +95,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double standard_deviation =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.StandardDeviationSample()
                                 )
@@ -102,7 +109,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double standard_deviation =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.StandardDeviationSample()
                                 )
@@ -115,7 +123,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double standard_deviation =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.StandardDeviationSample()
                                 )
@@ -128,7 +137,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             decimal standard_deviation =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.StandardDeviationSample()
                                 )
