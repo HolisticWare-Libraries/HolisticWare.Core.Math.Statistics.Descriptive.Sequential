@@ -1,15 +1,17 @@
 # Statistics
 
-| Descriptive statistics |
-| ------------------------------------------------------------  |
+| Descriptive statistics                                        |
+| ------------------------------------------------------------- |
+
+
 TODO:
 
 * naming discussion
 
 * move this to repo README.md (main README.md)
 
-| Measures of Central tendency |
-| ---------------------------- |
+| Measures of Central tendency                                   |
+| -------------------------------------------------------------- |
 
 * [x] [Arithmetic mean](https://en.wikipedia.org/wiki/Arithmetic_mean)
 
@@ -33,12 +35,12 @@ TODO:
 
   * generalised
   * central
-  * central apsolute
+  * central absolute
   * row
-  * row apsolute
+  * row absolute
 
-|Measures of Variability|
-| --------------------- |
+|Measures of Variability                                         |
+| -------------------------------------------------------------- |
 
 * [x] [Range](https://en.wikipedia.org/wiki/Range_(statistics))
 
@@ -54,8 +56,8 @@ TODO:
 
 * [ ] [Quartile coefficient of dispersion](https://en.wikipedia.org/wiki/Quartile_coefficient_of_dispersion)
 
-| Measures of Shape |
-| ----------------- |
+| Measures of Shape                                              |
+| -------------------------------------------------------------- |
 
 * [x] [Skewnes (Alpha 3)](https://en.wikipedia.org/wiki/Skewness)
 
@@ -69,11 +71,11 @@ TODO:
 
   * _Differences between formulas: more references on [R package 'e1071'](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjDw8PLkavbAhUBApoKHf0dB4wQFggqMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fe1071%2Fe1071.pdf&usg=AOvVaw02nj4Mk-mh5km97z9ukTdc), pages -  `27`-  and -  `47`._
 
-|                   | |
-| ------------------|-----------------|
-| To Consider:      | |
-| Central Tendencies | **OK** |
-| Dispersion | *Variability seems to be* **OK** |
-| Shape | *Was named* - **Distribution**<br>*Asymmetry*<br>*Roundness*|
-| Central Tendencies | **OK** |
-| Dependency /Dependencies | ***Correlation***<br>***Covariance***|
+|                                          |                                                             |
+| -----------------------------------------|-------------------------------------------------------------|
+| To Consider:                             |                                                             |
+| Central Tendencies                       | **OK**                                                      |
+| Dispersion                               | *Variability seems to be* **OK**                            |
+| Shape                                    | *Was named* - **Distribution**<br>*Asymmetry*<br>*Roundness*|
+| Central Tendencies                       | **OK**                                                      |
+| Dependency /Dependencies                 | ***Correlation***<br>***Covariance***                       |
