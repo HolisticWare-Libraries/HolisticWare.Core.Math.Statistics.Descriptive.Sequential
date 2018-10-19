@@ -11,7 +11,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double mean =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MeanQuadratic()
                                 )
@@ -24,7 +25,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double mean =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MeanQuadratic()
                                 )
@@ -37,7 +39,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double mean =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MeanQuadratic()
                                 )
@@ -50,7 +53,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double mean =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MeanQuadratic()
                                 )
@@ -63,7 +67,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double mean =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MeanQuadratic()
                                 )
@@ -76,7 +81,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double mean =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MeanQuadratic()
                                 )
@@ -89,7 +95,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double mean =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MeanQuadratic()
                                 )
@@ -102,7 +109,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double mean =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MeanQuadratic()
                                 )
@@ -115,7 +123,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double mean =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MeanQuadratic()
                                 )
@@ -128,7 +137,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             decimal mean =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MeanQuadratic()
                                 )

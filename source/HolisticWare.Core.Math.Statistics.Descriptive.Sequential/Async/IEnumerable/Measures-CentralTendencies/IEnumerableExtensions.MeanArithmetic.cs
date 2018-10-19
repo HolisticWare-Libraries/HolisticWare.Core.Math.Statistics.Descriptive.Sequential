@@ -21,16 +21,12 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return mean;
         }
 
-        public async static Task<double> MeanArithmeticTaskAsync(this IEnumerable<byte> x)
-        {
-            return x.MeanArithmetic();
-        }
-
         public async static Task<double> MeanArithmeticAsync(this IEnumerable<short> x)
         {
             double mean =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MeanArithmetic()
                                 )
@@ -56,7 +52,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double mean =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MeanArithmetic()
                                 )
@@ -69,7 +66,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double mean =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MeanArithmetic()
                                 )
@@ -82,7 +80,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double mean =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MeanArithmetic()
                                 )
@@ -95,7 +94,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double mean =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MeanArithmetic()
                                 )
@@ -108,7 +108,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double mean =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MeanArithmetic()
                                 )
@@ -121,7 +122,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             double mean =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MeanArithmetic()
                                 )
@@ -134,7 +136,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             decimal mean =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.MeanArithmetic()
                                 )

@@ -11,7 +11,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             List<byte> modes =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.Modes()
                                 )
@@ -24,7 +25,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             List<short> modes =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.Modes()
                                 )
@@ -37,7 +39,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             List<ushort> modes =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.Modes()
                                 )
@@ -50,7 +53,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             List<int> modes =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.Modes()
                                 )
@@ -63,7 +67,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             List<uint> modes =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.Modes()
                                 )
@@ -76,7 +81,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             List<long> modes =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.Modes()
                                 )
@@ -89,7 +95,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             List<ulong> modes =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.Modes()
                                 )
@@ -102,7 +109,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             List<float> modes =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.Modes()
                                 )
@@ -115,7 +123,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             List<double> modes =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.Modes()
                                 )
@@ -128,7 +137,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             List<decimal> modes =
                 await Task
-                            .Run
+                            //.Run
+                            .Factory.StartNew
                                 (
                                     () => x.Modes()
                                 )
