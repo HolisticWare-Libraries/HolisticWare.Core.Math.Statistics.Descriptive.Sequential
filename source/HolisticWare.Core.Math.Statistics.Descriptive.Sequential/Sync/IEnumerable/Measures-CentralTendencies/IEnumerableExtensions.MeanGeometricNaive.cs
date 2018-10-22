@@ -10,7 +10,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// Mean (Average) Geometric
     /// </summary>
     /// <see cref="https://en.wikipedia.org/wiki/Average"/>
-    public static partial class IEnumerableExtensionsMeanGeometricNaiveNaive
+    public static partial class IEnumerableExtensionsMeanGeometricNaive
     {
         //==============================================================================================================
         public static double MeanGeometricNaive

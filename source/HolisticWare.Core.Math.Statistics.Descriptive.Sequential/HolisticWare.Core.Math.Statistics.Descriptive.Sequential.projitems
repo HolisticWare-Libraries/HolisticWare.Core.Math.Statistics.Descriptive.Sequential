@@ -160,6 +160,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-DistributionRoundness\IEnumerableExtensions.KurtosisType3.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-DistributionRoundness\IEnumerableExtensions.KurtosisType2.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\IEnumerable\Measures-Distribution\IEnumerableExtensions.Modes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerable\Measures-CentralTendencies\IEnumerableExtensions.MeanArithmeticGeneralizedWeighted.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerable\Measures-CentralTendencies\IEnumerableExtensions.MeanArithmeticWeighted.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerable\Measures-CentralTendencies\IEnumerableExtensions.MeanGeometricNaive.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IEnumerable\Measures-CentralTendencies\IEnumerableExtensions.MeanGeometricWeighted.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)readme.md" />
