@@ -146,6 +146,10 @@ NOTE: Parallel algorithms based on (TPL) can be found in
 
     https://docs.microsoft.com/en-us/dotnet/csharp/async#recognize-cpu-bound-and-io-bound-work
 
+    https://docs.microsoft.com/en-us/dotnet/standard/async-in-depth
+
+    
+
 *   TPL/PLINQ
 
     Parallel versions target .NET Standard 1.1, so they are in placed separate nuget and repo:
