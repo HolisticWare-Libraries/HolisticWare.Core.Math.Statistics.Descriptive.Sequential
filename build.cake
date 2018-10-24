@@ -48,9 +48,6 @@ Running Cake to Build targets
 
 #########################################################################################
 */
-#addin nuget:?package=Cake.XCode
-#addin nuget:?package=Cake.Xamarin.Build
-#addin nuget:?package=Cake.Xamarin
 #addin nuget:?package=Cake.FileHelpers
 
 
@@ -73,66 +70,165 @@ Running Cake to Build targets
 
 var TARGET = Argument ("t", Argument ("target", "Default"));
 
+FilePathCollection LibSourceSolutions = GetFiles($"./source/**/*.sln");
+FilePathCollection LibSourceProjects = GetFiles($"./source/**/*.csproj");
 
-BuildSpec buildSpec = new BuildSpec () 
-{
-    Libs = new ISolutionBuilder [] 
-    {
-        new DefaultSolutionBuilder 
+
+Task("libs")
+    .IsDependentOn ("libs-msbuild-solutions")
+    .IsDependentOn ("libs-msbuild-projects")
+    .IsDependentOn ("libs-dotnet-solutions")
+    .IsDependentOn ("libs-dotnet-projects")
+    .Does
+    (
+        () =>
         {
-            SolutionPath = "./source/HolisticWare.Core.Math.Statistics.Descriptive.Sequential.Source.sln",
-            OutputFiles = new [] 
-            { 
-                new OutputFileCopy 
-                { 
-                    FromFile = "./source/HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10/bin/Release/netstandard1.0/HolisticWare.Core.Math.Statistics.Descriptive.Sequential.dll",
-                    ToDirectory = "output/netstandard1.0/",
-                },
-                new OutputFileCopy 
-                { 
-                    FromFile = "./source/HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard13/bin/Release/netstandard1.3/HolisticWare.Core.Math.Statistics.Descriptive.Sequential.dll",
-                    ToDirectory = "output/netstandard1.3/",
-                },
+            return;
+        }
+    );
+
+Task("libs-msbuild-solutions")
+    .Does
+    (
+        () =>
+        {
+            foreach(FilePath sln in LibSourceSolutions)
+            {
+                MSBuild
+                (
+                    sln.ToString(),
+                    new MSBuildSettings 
+                    {
+                        Configuration = "Debug",
+                    }
+                    //.WithProperty("DefineConstants", "TRACE;DEBUG;NETCOREAPP2_0;NUNIT")
+                );
+                MSBuild
+                (
+                    sln.ToString(),
+                    new MSBuildSettings 
+                    {
+                        Configuration = "Release",
+                    }
+                    //.WithProperty("DefineConstants", "TRACE;DEBUG;NETCOREAPP2_0;NUNIT")
+                );
             }
-        },
-    },
 
-    Samples = new ISolutionBuilder [] 
-    {
-        new DefaultSolutionBuilder 
-        { 
-            SolutionPath = "./samples/Samples.sln" 
-        },	
-    },
+            return;
+        }
+    );
 
-    Components = new []
-    {
-        new Component 
-        { 
-            ManifestDirectory = "./component" 
-        },
-    },
+Task("libs-dotnet-solutions")
+    .Does
+    (
+        () =>
+        {
+            foreach(FilePath sln in LibSourceSolutions)
+            {
+                DotNetCoreBuild
+                (
+                    sln.ToString(),
+                    new DotNetCoreBuildSettings
+                    {
+                        Configuration = "Debug",
+                    }
+                    //.WithProperty("DefineConstants", "TRACE;DEBUG;NETCOREAPP2_0;NUNIT")
+                );
+                DotNetCoreBuild
+                (
+                    sln.ToString(),
+                    new DotNetCoreBuildSettings 
+                    {
+                        Configuration = "Release",
+                    }
+                    //.WithProperty("DefineConstants", "TRACE;DEBUG;NETCOREAPP2_0;NUNIT")
+                );
+            }
 
-    NuGets = new [] 
-    {
-        new NuGetInfo 
-        { 
-            NuSpec = "./nuget/HolisticWare.Core.Math.Statistics.Descriptive.Sequential.nuspec" 
-        },
-        new NuGetInfo 
-        { 
-            NuSpec = "./nuget/HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.nuspec" 
-        },
-        new NuGetInfo 
-        { 
-            NuSpec = "./nuget/HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.nuspec" 
-        },
-        new NuGetInfo 
-        { 
-            NuSpec = "./nuget/HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.nuspec" 
-        },
-    },
-};
+            return;
+        }
+    );
+
+Task("libs-msbuild-projects")
+    .Does
+    (
+        () =>
+        {
+            foreach(FilePath prj in LibSourceProjects)
+            {
+                MSBuild
+                (
+                    prj.ToString(),
+                    new MSBuildSettings 
+                    {
+                        Configuration = "Debug",
+                    }
+                    //.WithProperty("DefineConstants", "TRACE;DEBUG;NETCOREAPP2_0;NUNIT")
+                );
+                MSBuild
+                (
+                    prj.ToString(),
+                    new MSBuildSettings 
+                    {
+                        Configuration = "Release",
+                    }
+                    //.WithProperty("DefineConstants", "TRACE;DEBUG;NETCOREAPP2_0;NUNIT")
+                );
+            }
+
+            return;
+        }
+    );
+
+Task("libs-dotnet-projects")
+    .Does
+    (
+        () =>
+        {
+            FilePathCollection LibSourceProjects = GetFiles($"./source/**/*.csproj");
+
+            foreach(FilePath prj in LibSourceProjects)
+            {
+                DotNetCoreBuild
+                (
+                    prj.ToString(),
+                    new DotNetCoreBuildSettings 
+                    {
+                        Configuration = "Debug",
+                    }
+                    //.WithProperty("DefineConstants", "TRACE;DEBUG;NETCOREAPP2_0;NUNIT")
+                );
+                DotNetCoreBuild
+                (
+                    prj.ToString(),
+                    new DotNetCoreBuildSettings 
+                    {
+                        Configuration = "Release",
+                    }
+                    //.WithProperty("DefineConstants", "TRACE;DEBUG;NETCOREAPP2_0;NUNIT")
+                );
+            }
+
+            return;
+        }
+    );
+
+Task("nuget")
+    .Does
+    (
+        () =>
+        {
+            return;
+        }
+    );
+
+
+FilePathCollection UnitTestsSolutions = GetFiles($"./tests/unit-tests/**/*.sln");
+FilePathCollection UnitTestsProjects = GetFiles($"./tests/unit-tests/**/*.csproj");
+FilePathCollection UnitTestsNUnitProjects = GetFiles($"./tests/unit-tests/**/*.NUnit.csproj");
+FilePathCollection UnitTestsNUnitMobileProjects = GetFiles($"./tests/unit-tests/**/*.NUnit.Xamarin*.csproj");
+FilePathCollection UnitTestsXUnitProjects = GetFiles($"./tests/unit-tests/**/*.XUnit.csproj");
+FilePathCollection UnitTestsMSTestProjects = GetFiles($"./tests/unit-tests/**/*.NUnit.csproj");
 
 Task("unit-tests")
     .IsDependentOn ("unit-tests-nunit")	
@@ -142,6 +238,7 @@ Task("unit-tests")
     (
         () =>
         {
+            return;
         }
     );
 
@@ -153,22 +250,30 @@ Task("unit-tests-nunit")
     (
         () =>
         {
-            MSBuild
-            (
-                "./tests/unit-tests/UnitTests.NUnit/UnitTests.NUnit.csproj", 
-                new MSBuildSettings 
-                {
-                    Configuration = "Debug",
-                }.WithProperty("DefineConstants", "TRACE;DEBUG;NETCOREAPP2_0;NUNIT")
-            );
-            NUnit3
-            (
-                "./tests/unit-tests/UnitTests.NUnit/bin/Debug/**/UnitTests.NUnit.dll", 
-                new NUnit3Settings 
-                {
-                }
-            );
- 
+            foreach(FilePath sln in UnitTestsSolutions)
+            {
+                MSBuild
+                (
+                    sln.ToString(), 
+                    new MSBuildSettings 
+                    {
+                        Configuration = "Debug",
+                    }.WithProperty("DefineConstants", "TRACE;DEBUG;NETCOREAPP2_0;NUNIT")
+                );
+            }
+
+            foreach(FilePath prj in UnitTestsProjects)
+            {
+                MSBuild
+                (
+                    prj.ToString(), 
+                    new MSBuildSettings 
+                    {
+                        Configuration = "Debug",
+                    }.WithProperty("DefineConstants", "TRACE;DEBUG;NETCOREAPP2_0;NUNIT")
+                );
+            }
+
             return;
         }
     );
@@ -262,6 +367,48 @@ Task("unit-tests-mstest")
         }
     );
  
+Task("bechmark-tests")
+    .IsDependentOn ("bechmark-tests-nunit")	
+    .IsDependentOn ("bechmark-tests-xunit")
+    .IsDependentOn ("bechmark-tests-mstest")
+    .Does
+    (
+        () =>
+        {
+            return;
+        }
+    );
+
+Task ("bechmark-tests-nunit")
+    .IsDependentOn ("unit-tests-nunit")
+    .Does
+    (
+        () =>
+        {
+            return;
+        }
+    );
+
+Task ("bechmark-tests-xunit")
+    .IsDependentOn ("unit-tests-xunit")
+    .Does
+    (
+        () =>
+        {
+            return;
+        }
+    );
+
+Task ("bechmark-tests-mstest")
+    .IsDependentOn ("unit-tests-mstest")
+    .Does
+    (
+        () =>
+        {
+            return;
+        }
+    );
+
 Task ("coverage-xunit")
     .IsDependentOn ("unit-tests-xunit")
     .Does 
@@ -311,7 +458,7 @@ Task ("coverage-xunit")
 
 
 Task ("externals")
-    .IsDependentOn ("externals-base")
+    //.IsDependentOn ("externals-base")
     // .WithCriteria (!FileExists ("./externals/HolisticWare.Core.Math.Statistics.aar"))
     .Does 
     (
@@ -399,7 +546,6 @@ Task("nuget-restore")
     );
 
 Task ("clean")
-    .IsDependentOn ("clean-base")
     .Does
     (
         () => 
@@ -408,10 +554,10 @@ Task ("clean")
             {
                 DeleteDirectory ("./externals", true);
             }
+
+            return;
         }
     );
-
-SetupXamarinBuildTasks (buildSpec, Tasks, Task);
 
 RunTarget (TARGET);
 
