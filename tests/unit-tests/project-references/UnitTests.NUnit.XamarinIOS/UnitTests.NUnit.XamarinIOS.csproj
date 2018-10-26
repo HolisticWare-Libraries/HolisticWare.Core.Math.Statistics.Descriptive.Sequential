@@ -142,7 +142,6 @@
       <Name>HolisticWare.Core.Text.NetStandard10</Name>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="..\..\Tests.CommonShared\Tests.CommonShared.projitems" Label="Shared" Condition="Exists('..\..\Tests.CommonShared\Tests.CommonShared.projitems')" />
   <Import Project="..\..\..\..\externals\Core.Math.Samples\tests\data\HolisticWare.Core.Math.Samples\HolisticWare.Core.Math.Samples.projitems" Label="Shared" Condition="Exists('..\..\..\externals\Core.Math.Samples\tests\data\HolisticWare.Core.Math.Samples\HolisticWare.Core.Math.Samples.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

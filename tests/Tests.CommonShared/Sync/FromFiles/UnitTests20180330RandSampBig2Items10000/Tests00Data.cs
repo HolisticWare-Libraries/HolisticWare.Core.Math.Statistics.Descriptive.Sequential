@@ -96,9 +96,18 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                                 $@"Rand_SampBIG2_100000.csv",
                                             }
                                     );
-            using (StreamReader reader = new StreamReader(path_data))
+            try
             {
-                text = reader.ReadToEnd();
+                using (StreamReader reader = new StreamReader(path_data))
+                {
+                    text = reader.ReadToEnd();
+                }
+            }
+            catch(Exception exc)
+            {
+                Debug.WriteLine($" exc = {exc}");
+
+                throw;
             }
             lines = text.Split
                             (

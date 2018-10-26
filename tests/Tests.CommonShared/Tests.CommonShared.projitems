@@ -224,12 +224,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\01-DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresDistribution.KurtosisType1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\01-DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresDistribution.KurtosisType2.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\01-DarkVaderTests\Tests20180119Dataset02\Tests011MeasuresDistribution.KurtosisType3.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\01-DarkVaderTests\Tests20180119Dataset01\MatlabOctave-API\Tests011MeasuresCentralTendencies.mean.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests01cMeanHarmonic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests01Range.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetJudo\Tests01aMeanArithmetic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetJudo\Tests01bMeanHarmonic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180330RandSampBig1Items100000\RandSampBIG1Data.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\01-DarkVaderTests\Tests20180119Dataset01\API-Wrappers\MatlabOctave\Tests011MeasuresCentralTendencies.mean.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\01-DarkVaderTests\Tests20180119Dataset01\API-Wrappers\R\Tests011MeasuresCentralTendencies.mean.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\01-DarkVaderTests\Tests20180119Dataset01\API-Wrappers\Python\Tests011MeasuresCentralTendencies.mean.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Async\" />
@@ -261,7 +263,10 @@
     <Folder Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia01\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia02\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia03\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Sync\01-DarkVaderTests\Tests20180119Dataset01\MatlabOctave-API\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sync\01-DarkVaderTests\Tests20180119Dataset01\API-Wrappers\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sync\01-DarkVaderTests\Tests20180119Dataset01\API-Wrappers\MatlabOctave\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sync\01-DarkVaderTests\Tests20180119Dataset01\API-Wrappers\R\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sync\01-DarkVaderTests\Tests20180119Dataset01\API-Wrappers\Python\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet001\Tests02FrequenciesModes.cs" />
