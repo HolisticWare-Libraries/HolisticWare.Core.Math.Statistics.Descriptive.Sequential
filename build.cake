@@ -223,12 +223,9 @@ Task("nuget")
     );
 
 
-FilePathCollection UnitTestsSolutions = GetFiles($"./tests/unit-tests/**/*.sln");
-FilePathCollection UnitTestsProjects = GetFiles($"./tests/unit-tests/**/*.csproj");
-FilePathCollection UnitTestsNUnitProjects = GetFiles($"./tests/unit-tests/**/*.NUnit.csproj");
-FilePathCollection UnitTestsNUnitMobileProjects = GetFiles($"./tests/unit-tests/**/*.NUnit.Xamarin*.csproj");
-FilePathCollection UnitTestsXUnitProjects = GetFiles($"./tests/unit-tests/**/*.XUnit.csproj");
-FilePathCollection UnitTestsMSTestProjects = GetFiles($"./tests/unit-tests/**/*.NUnit.csproj");
+// FilePathCollection UnitTestsNUnitMobileProjects = GetFiles($"./tests/unit-tests/**/*.NUnit.Xamarin*.csproj");
+// FilePathCollection UnitTestsXUnitProjects = GetFiles($"./tests/unit-tests/**/*.XUnit.csproj");
+// FilePathCollection UnitTestsMSTestProjects = GetFiles($"./tests/unit-tests/**/*.NUnit.csproj");
 
 Task("unit-tests")
     .IsDependentOn ("unit-tests-nunit")	
@@ -243,45 +240,70 @@ Task("unit-tests")
     );
 
 Task("unit-tests-nunit")
-    .IsDependentOn ("externals-build")	
-    .IsDependentOn ("libs")
-    .IsDependentOn ("nuget")
     .Does
     (
         () =>
         {
-            foreach(FilePath sln in UnitTestsSolutions)
-            {
-                MSBuild
-                (
-                    sln.ToString(), 
-                    new MSBuildSettings 
-                    {
-                        Configuration = "Debug",
-                    }.WithProperty("DefineConstants", "TRACE;DEBUG;NETCOREAPP2_0;NUNIT")
-                );
-            }
+            FilePathCollection UnitTestsNUnitAssemblies;
+            FilePathCollection UnitTestsNUnitProjects = GetFiles($"./tests/unit-tests/**/*.NUnit.csproj");
 
-            foreach(FilePath prj in UnitTestsProjects)
+            foreach(FilePath prj in UnitTestsNUnitProjects)
             {
+                Information($"MSBuild ........................ {prj}");
                 MSBuild
                 (
                     prj.ToString(), 
                     new MSBuildSettings 
                     {
                         Configuration = "Debug",
-                    }.WithProperty("DefineConstants", "TRACE;DEBUG;NETCOREAPP2_0;NUNIT")
+                    }
+                    .WithProperty("DefineConstants", "TRACE;DEBUG;NUNIT")
+                );
+                MSBuild
+                (
+                    prj.ToString(), 
+                    new MSBuildSettings 
+                    {
+                        Configuration = "Release",
+                    }
+                    .WithProperty("DefineConstants", "TRACE;NUNIT")
                 );
             }
+  
+            UnitTestsNUnitAssemblies = GetFiles($"./tests/unit-tests/**/bin/Debug/*.NUnit.dll");
 
+            foreach(FilePath asm in UnitTestsNUnitAssemblies)
+            {
+                Information($"testing ................ {asm}");
+            }
+
+            NUnit3
+            (
+                UnitTestsNUnitAssemblies, 
+                new NUnit3Settings 
+                {
+                }
+            );
+
+            UnitTestsNUnitAssemblies = GetFiles($"./tests/unit-tests/**/bin/Release/*.NUnit.dll");
+
+            foreach(FilePath asm in UnitTestsNUnitAssemblies)
+            {
+                Information($"testing ................ {asm}");
+            }
+
+            NUnit3
+            (
+                UnitTestsNUnitAssemblies, 
+                new NUnit3Settings 
+                {
+                }
+            );
             return;
         }
     );
 
 Task("unit-tests-xunit")
-    .IsDependentOn ("externals-build")	
-    .IsDependentOn ("libs")
-    .IsDependentOn ("nuget")
     .Does
     (
         () =>
@@ -332,9 +354,6 @@ Task("unit-tests-xunit")
     );
 
 Task("unit-tests-mstest")
-    .IsDependentOn ("externals-build")	
-    .IsDependentOn ("libs")
-    .IsDependentOn ("nuget")
     .Does
     (
         () =>
