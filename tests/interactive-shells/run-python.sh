@@ -6,11 +6,19 @@
 # pip3 install statistics 
 # pip3 install scipy numpy
 
-export PYTHON=python3
+export EXECUTABLE=python3
 
-$PYTHON ./python/DarkVaderTests/Tests20180119Dataset01/Tests00Data.py
-$PYTHON ./python/DarkVaderTests/Tests20180119Dataset02/Tests00Data.py
-$PYTHON ./python/DarkVaderTests/Tests20180119Dataset03/Tests00Data.py
+# $PYTHON \
+#     -m pip install --trusted-host pypi.python.org mglearn
 
-$PYTHON ./python/python-website-data/statistics_samples.py
+$EXECUTABLE \
+    ./interactive-shells/python/python-website-data/statistics_samples.py
+
+
+$EXECUTABLE \
+    ./interactive-shells/python/01-DarkVaderTests/Tests20180119Dataset01/Tests00Data.py 
+
+$EXECUTABLE \
+    ./interactive-shells/python/01-DarkVaderTests/Tests20180119Dataset01/Tests011MeasuresCentralTendencies.py
+
 
