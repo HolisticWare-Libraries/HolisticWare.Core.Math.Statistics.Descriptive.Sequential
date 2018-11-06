@@ -80,7 +80,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Variance_Points2Success()
         {
             data_2pts_success =
-                                    from row in JudoDataTable
+                                    from row in BasketballTeamDataTable
                                     select row.Points2Success
                                         ;
 
@@ -102,7 +102,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Variance_Points3Success()
         {
             data_3pts_success =
-                                    from row in JudoDataTable
+                                    from row in BasketballTeamDataTable
                                     select row.Points3Success
                                         ;
 
@@ -126,7 +126,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Variance_Points2Fail()
         {
             data_2pts_fail =
-                                from row in JudoDataTable
+                                from row in BasketballTeamDataTable
                                 select row.Points2Fail
                                     ;
 
@@ -150,7 +150,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Variance_Points3Fail()
         {
             data_3pts_fail =
-                                from row in JudoDataTable
+                                from row in BasketballTeamDataTable
                                 select row.Points3Fail
                                     ;
 
@@ -173,7 +173,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Variance_FreeThrowFail()
         {
             data_free_throw_fail =
-                                from row in JudoDataTable
+                                from row in BasketballTeamDataTable
                                 select row.FreeThrowFail
                                     ;
 
@@ -196,7 +196,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Variance_FreeThrowSuccess()
         {
             data_free_throw_success =
-                                from row in JudoDataTable
+                                from row in BasketballTeamDataTable
                                 select row.FreeThrowSuccess
                                     ;
 
@@ -219,7 +219,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Variance_JumpsOffensive()
         {
             data_jumps_offensive =
-                                from row in JudoDataTable
+                                from row in BasketballTeamDataTable
                                 select row.JumpsOffensive
                                     ;
 
@@ -241,7 +241,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Variance_JumpsDefensive()
         {
             data_jumps_defensive =
-                                from row in JudoDataTable
+                                from row in BasketballTeamDataTable
                                 select row.JumpsDefensive
                                     ;
 
@@ -263,7 +263,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Variance_Assistence()
         {
             data_assistence =
-                                from row in JudoDataTable
+                                from row in BasketballTeamDataTable
                                 select row.Assistence
                                     ;
 
@@ -285,7 +285,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Variance_PersonalFaults()
         {
             data_personal_faults =
-                                from row in JudoDataTable
+                                from row in BasketballTeamDataTable
                                 select row.PersonalFaults
                                     ;
 
@@ -308,7 +308,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Variance_BallsLost()
         {
             data_balls_lost =
-                                from row in JudoDataTable
+                                from row in BasketballTeamDataTable
                                 select row.BallsLost
                                     ;
 
@@ -331,7 +331,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Variance_BallsStolen()
         {
             data_balls_stolen =
-                                from row in JudoDataTable
+                                from row in BasketballTeamDataTable
                                 select row.BallsStolen
                                     ;
 
@@ -354,7 +354,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Variance_Blocks()
         {
             data_blocks =
-                                from row in JudoDataTable
+                                from row in BasketballTeamDataTable
                                 select row.Blocks
                                     ;
 

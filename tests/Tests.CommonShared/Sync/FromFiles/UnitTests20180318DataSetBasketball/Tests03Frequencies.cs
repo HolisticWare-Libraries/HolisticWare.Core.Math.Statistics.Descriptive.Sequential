@@ -79,7 +79,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Frequency_Points2Success()
         {
             data_2pts_success =
-                                from row in BasketballTeamData
+                                from row in BasketballTeamDataTable
                                     select row.Points2Success
                                     ;
 
@@ -208,8 +208,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Frequency_Points3Success()
         {
             data_3pts_success =
-                                from row in JudoDataTable
-                                    select row.Points3Success
+                                from row in BasketballTeamDataTable
+                                select row.Points3Success
                                     ;
 
             //List<int> frequency_3s = data_3pts_success.FrequencyDistribution();
@@ -226,8 +226,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Frequency_Points2Fail()
         {
             data_2pts_fail =
-                                from row in JudoDataTable
-                                    select row.Points2Fail
+                                from row in BasketballTeamDataTable
+                                select row.Points2Fail
                                     ;
 
             //List<int> frequency_2f = data_2pts_fail.FrequencyDistribution();
@@ -349,8 +349,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_Points3Fail()
         {
             data_3pts_fail =
-                                from row in JudoDataTable
-                                    select row.Points3Fail
+                                from row in BasketballTeamDataTable
+                                select row.Points3Fail
                                     ;
 
             //List<int> frequency_3f = data_3pts_fail.FrequencyDistribution();
@@ -365,8 +365,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_FreeThrowFail()
         {
             data_free_throw_fail =
-                                from row in JudoDataTable
-                                    select row.FreeThrowFail
+                                from row in BasketballTeamDataTable
+                                select row.FreeThrowFail
                                     ;
 
             //List<int> frequency_ftf = data_free_throw_fail.FrequencyDistribution();
@@ -381,8 +381,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_FreeThrowSuccess()
         {
             data_free_throw_success =
-                                from row in JudoDataTable
-                                    select row.FreeThrowSuccess
+                                from row in BasketballTeamDataTable
+                                select row.FreeThrowSuccess
                                     ;
 
             //List<int> frequency_fts = data_free_throw_success.FrequencyDistribution();
@@ -397,8 +397,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_JumpsOffensive()
         {
             data_jumps_offensive =
-                                from row in JudoDataTable
-                                    select row.JumpsOffensive
+                                from row in BasketballTeamDataTable
+                                select row.JumpsOffensive
                                     ;
 
             //List<int> frequency_off = data_jumps_offensive.FrequencyDistribution();
@@ -413,8 +413,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_JumpsDefensive()
         {
             data_jumps_defensive =
-                                from row in JudoDataTable
-                                    select row.JumpsDefensive
+                                from row in BasketballTeamDataTable
+                                select row.JumpsDefensive
                                     ;
 
             //List<int> frequency_def = data_jumps_defensive.FrequencyDistribution();
@@ -429,8 +429,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Frequency_Assistance()
         {
             data_assistence =
-                                from row in JudoDataTable
-                                    select row.Assistence
+                                from row in BasketballTeamDataTable
+                                select row.Assistence
                                     ;
 
             //List<int> frequency_assist = data_assistence.FrequencyDistribution();
@@ -445,8 +445,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_PersonalFaults()
         {
             data_personal_faults =
-                                from row in JudoDataTable
-                                    select row.PersonalFaults
+                                from row in BasketballTeamDataTable
+                                select row.PersonalFaults
                                     ;
 
             //List<int> frequency_pf = data_personal_faults.FrequencyDistribution();
@@ -461,8 +461,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_BallsLost()
         {
             data_balls_lost =
-                                from row in JudoDataTable
-                                    select row.BallsLost
+                                from row in BasketballTeamDataTable
+                                select row.BallsLost
                                     ;
 
             //List<int> frequency_bl = data_balls_lost.FrequencyDistribution();
@@ -477,8 +477,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_BallsStolen()
         {
             data_balls_stolen =
-                                from row in JudoDataTable
-                                    select row.BallsStolen
+                                from row in BasketballTeamDataTable
+                                select row.BallsStolen
                                     ;
 
             //List<int> frequency_bs = data_balls_stolen.FrequencyDistribution();
@@ -493,8 +493,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_Blocks()
         {
             data_blocks =
-                                from row in JudoDataTable
-                                    select row.Blocks
+                                from row in BasketballTeamDataTable
+                                select row.Blocks
                                     ;
 
             //List<int> frequency_block = data_blocks.FrequencyDistribution();

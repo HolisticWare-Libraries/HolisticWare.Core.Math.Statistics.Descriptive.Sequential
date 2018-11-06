@@ -92,7 +92,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
         private static List<BasketballTeamData> basketball_team_data_table = null;
 
-        public static List<BasketballTeamData> JudoDataTable
+        public static List<BasketballTeamData> BasketballTeamDataTable
         {
             get
             {
