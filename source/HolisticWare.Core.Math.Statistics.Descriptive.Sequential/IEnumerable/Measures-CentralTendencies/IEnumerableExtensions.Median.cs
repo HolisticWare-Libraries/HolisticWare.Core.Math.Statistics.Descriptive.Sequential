@@ -17,12 +17,13 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             int n = x.Count();
             IOrderedEnumerable<byte> x_ordered = x.OrderBy(x_i => x_i);
-            int n2 = n / 2 - 1;
 
             if (n % 2 == 1)
             {
                 return x_ordered.ElementAt((n + 1) / 2 - 1);
             }
+
+            int n2 = n / 2 - 1;
 
             return 0.5 * (x_ordered.ElementAt(n2) + x_ordered.ElementAt(n2 + 1));
         }
@@ -34,12 +35,13 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             int n = x.Count();
             IOrderedEnumerable<short> x_ordered = x.OrderBy(x_i => x_i);
-            int n2 = n / 2 - 1;
 
             if (n % 2 == 1)
             {
                 return x_ordered.ElementAt((n + 1) / 2 - 1);
             }
+
+            int n2 = n / 2 - 1;
 
             return 0.5 * (x_ordered.ElementAt(n2) + x_ordered.ElementAt(n2 + 1));
         }
@@ -51,12 +53,13 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             int n = x.Count();
             IOrderedEnumerable<ushort> x_ordered = x.OrderBy(x_i => x_i);
-            int n2 = n / 2 - 1;
 
             if (n % 2 == 1)
             {
                 return x_ordered.ElementAt((n + 1) / 2 - 1);
             }
+
+            int n2 = n / 2 - 1;
 
             return 0.5 * (x_ordered.ElementAt(n2) + x_ordered.ElementAt(n2 + 1));
         }
@@ -68,12 +71,13 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             int n = x.Count();
             IOrderedEnumerable<int> x_ordered = x.OrderBy(x_i => x_i);
-            int n2 = n / 2 - 1;
 
             if (n % 2 == 1)
             {
                 return x_ordered.ElementAt((n + 1) / 2 - 1);
             }
+
+            int n2 = n / 2 - 1;
 
             return 0.5 * (x_ordered.ElementAt(n2) + x_ordered.ElementAt(n2 + 1));
         }
@@ -85,12 +89,13 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             int n = x.Count();
             IOrderedEnumerable<uint> x_ordered = x.OrderBy(x_i => x_i);
-            int n2 = n / 2 - 1;
 
             if (n % 2 == 1)
             {
                 return x_ordered.ElementAt((n + 1) / 2 - 1);
             }
+
+            int n2 = n / 2 - 1;
 
             return 0.5 * (x_ordered.ElementAt(n2) + x_ordered.ElementAt(n2 + 1));
         }
@@ -102,12 +107,13 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             int n = x.Count();
             IOrderedEnumerable<long> x_ordered = x.OrderBy(x_i => x_i);
-            int n2 = n / 2 - 1;
 
             if (n % 2 == 1)
             {
                 return x_ordered.ElementAt((n + 1) / 2 - 1);
             }
+
+            int n2 = n / 2 - 1;
 
             return 0.5 * (x_ordered.ElementAt(n2) + x_ordered.ElementAt(n2 + 1));
         }
@@ -119,12 +125,13 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             int n = x.Count();
             IOrderedEnumerable<ulong> x_ordered = x.OrderBy(x_i => x_i);
-            int n2 = n / 2 - 1;
 
             if (n % 2 == 1)
             {
                 return x_ordered.ElementAt((n + 1) / 2 - 1);
             }
+
+            int n2 = n / 2 - 1;
 
             return 0.5 * (x_ordered.ElementAt(n2) + x_ordered.ElementAt(n2 + 1));
         }
@@ -136,12 +143,13 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             int n = x.Count();
             IOrderedEnumerable<float> x_ordered = x.OrderBy(x_i => x_i);
-            int n2 = n / 2 - 1;
 
             if (n % 2 == 1)
             {
                 return x_ordered.ElementAt((n + 1) / 2 - 1);
             }
+
+            int n2 = n / 2 - 1;
 
             return 0.5 * (x_ordered.ElementAt(n2) + x_ordered.ElementAt(n2 + 1));
         }
@@ -153,12 +161,13 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             int n = x.Count();
             IOrderedEnumerable<double> x_ordered = x.OrderBy(x_i => x_i);
-            int n2 = n / 2 - 1;
 
             if (n % 2 == 1)
             {
                 return x_ordered.ElementAt((n + 1) / 2 - 1);
             }
+
+            int n2 = n / 2 - 1;
 
             return 0.5 * (x_ordered.ElementAt(n2) + x_ordered.ElementAt(n2 + 1));
         }
@@ -170,12 +179,13 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         {
             int n = x.Count();
             IOrderedEnumerable<decimal> x_ordered = x.OrderBy(x_i => x_i);
-            int n2 = n / 2 - 1;
 
             if (n % 2 == 1)
             {
                 return x_ordered.ElementAt((n + 1) / 2 - 1);
             }
+
+            int n2 = n / 2 - 1;
 
             return 0.5M * (x_ordered.ElementAt(n2) + x_ordered.ElementAt(n2 + 1));
         }

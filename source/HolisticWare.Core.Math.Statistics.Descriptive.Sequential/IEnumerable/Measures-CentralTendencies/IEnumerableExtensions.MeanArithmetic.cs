@@ -13,6 +13,18 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     public static partial class IEnumerableExtensionsMeanArithmetic
     {
         //==============================================================================================================
+        /// <summary>
+        /// Calculates Arithmetic Mean of the IEnumerable (Collection)
+        /// </summary>
+        /// <returns>
+        /// Arithmetic Mean as double
+        /// </returns>
+        /// <param name="x">
+        /// Data as IEnumerable (Collection)
+        /// </param>
+        /// <example>
+        /// double mean = (new byte[] { 1, 4, 6, 7, 9 }).MeanArithmetic();
+        /// </example>
         public static double MeanArithmetic
                                     (
                                         this IEnumerable<byte> x
