@@ -79,7 +79,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_Points2Success()
         {
             data_2pts_success =
-                                from row in JudoDataTable
+                                from row in BasketballTeamDataTable
                                 select row.Points2Success
                                     ;
 
@@ -102,7 +102,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_Points3Success()
         {
             data_3pts_success =
-                                from row in JudoDataTable
+                                from row in BasketballTeamDataTable
                                 select row.Points3Success
                                     ;
 
@@ -125,7 +125,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_Points2Fail()
         {
             data_2pts_fail =
-                                from row in JudoDataTable
+                                from row in BasketballTeamDataTable
                                 select row.Points2Fail
                                     ;
 
@@ -148,7 +148,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_Points3Fail()
         {
             data_3pts_fail =
-                                from row in JudoDataTable
+                                from row in BasketballTeamDataTable
                                 select row.Points3Fail
                                     ;
 
@@ -171,7 +171,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_FreeThrowFail()
         {
             data_free_throw_fail =
-                                from row in JudoDataTable
+                                from row in BasketballTeamDataTable
                                 select row.FreeThrowFail
                                     ;
 
@@ -194,7 +194,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_FreeThrowSuccess()
         {
             data_free_throw_success =
-                                from row in JudoDataTable
+                                from row in BasketballTeamDataTable
                                 select row.FreeThrowSuccess
                                     ;
 
@@ -217,7 +217,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_JumpsOffensive()
         {
             data_jumps_offensive =
-                                from row in JudoDataTable
+                                from row in BasketballTeamDataTable
                                 select row.JumpsOffensive
                                     ;
 
@@ -240,7 +240,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_JumpsDefensive()
         {
             data_jumps_defensive =
-                                from row in JudoDataTable
+                                from row in BasketballTeamDataTable
                                 select row.JumpsDefensive
                                     ;
 
@@ -263,7 +263,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_Assistance()
         {
             data_assistence =
-                                from row in JudoDataTable
+                                from row in BasketballTeamDataTable
                                 select row.Assistence
                                     ;
 
@@ -286,7 +286,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_PersonalFaults()
         {
             data_personal_faults =
-                                from row in JudoDataTable
+                                from row in BasketballTeamDataTable
                                 select row.PersonalFaults
                                     ;
 
@@ -309,7 +309,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_BallsLost()
         {
             data_balls_lost =
-                                from row in JudoDataTable
+                                from row in BasketballTeamDataTable
                                 select row.BallsLost
                                     ;
 
@@ -332,7 +332,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_BallsStolen()
         {
             data_balls_stolen =
-                                from row in JudoDataTable
+                                from row in BasketballTeamDataTable
                                 select row.BallsStolen
                                     ;
 
@@ -355,7 +355,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Mode_Blocks()
         {
             data_blocks =
-                                from row in JudoDataTable
+                                from row in BasketballTeamDataTable
                                 select row.Blocks
                                     ;
 

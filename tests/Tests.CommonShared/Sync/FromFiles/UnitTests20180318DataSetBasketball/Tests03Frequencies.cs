@@ -79,7 +79,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Frequency_Points2Success()
         {
             data_2pts_success =
-                                from row in JudoDataTable
+                                from row in BasketballTeamDataTable
                                     select row.Points2Success
                                     ;
 
@@ -92,71 +92,71 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
                             new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
                                         {
-                                            { 18, ( 15, 0.2, 3 ) },
-                                            { 21, ( 10, 0.2, 3 ) },
-                                            { 16, ( 10, 0.2, 3 ) },
-                                            { 24, ( 9, 0.2, 3 ) },
-                                            { 20, ( 8, 0.2, 3 ) },
-                                            { 34, ( 8, 0.2, 3 ) },
-                                            { 26, ( 7, 0.2, 3 ) },
-                                            { 29, ( 6, 0.2, 3 ) },
-                                            { 12, ( 5, 0.2, 3 ) },
-                                            { 23, ( 5, 0.2, 3 ) },
-                                            { 22, ( 5, 0.2, 3 ) },
-                                            { 19, ( 5, 0.2, 3 ) },
-                                            { 17, ( 4, 0.2, 3 ) },
-                                            { 14, ( 4, 0.2, 3 ) },
-                                            { 13, ( 3, 0.2, 3 ) },
-                                            { 25, ( 3, 0.2, 3 ) },
-                                            { 31, ( 3, 0.2, 3 ) },
-                                            { 28, ( 3, 0.2, 3 ) },
-                                            { 32, ( 3, 0.2, 3 ) },
-                                            { 15, ( 2, 0.2, 3 ) },
-                                            { 33, ( 2, 0.2, 3 ) },
-                                            { 27, ( 2, 0.2, 3 ) },
-                                            { 9, ( 1, 0.2, 3 ) },
-                                            { 7, ( 1, 0.2, 3 ) },
-                                            { 39, ( 1, 0.2, 3 ) },
-                                            { 44, ( 1, 0.2, 3 ) },
-                                            { 30, ( 1, 0.2, 3 ) },
-                                            { 40, ( 1, 0.2, 3 ) },
+                                            {7, ( 1, 0.0078125, 1 ) },
+                                            {9, ( 1, 0.0078125, 2 ) },
+                                            {12, ( 5, 0.0390625, 7 ) },
+                                            {13, ( 3, 0.0234375, 10 ) },
+                                            {14, ( 4, 0.0312500, 14 ) },
+                                            {15, ( 2, 0.0156250, 16 ) },
+                                            {16, ( 10, 0.0781250, 26 ) },
+                                            {17, ( 4, 0.0312500, 30 ) },
+                                            {18, ( 15, 0.1171875, 45 ) },
+                                            {19, ( 5, 0.0390625, 50 ) },
+                                            {20, ( 8, 0.0625000, 58 ) },
+                                            {21, ( 10, 0.0781250, 68 ) },
+                                            {22, ( 5, 0.0390625, 73 ) },
+                                            {23, ( 5, 0.0390625, 78 ) },
+                                            {24, ( 9, 0.0703125, 87 ) },
+                                            {25, ( 3, 0.0234375, 90 ) },
+                                            {26, ( 7, 0.0546875, 97 ) },
+                                            {27, ( 2, 0.0156250, 99 ) },
+                                            {28, ( 3, 0.0234375, 102 ) },
+                                            {29, ( 6, 0.0468750, 108 ) },
+                                            {30, ( 1, 0.0078125, 109 ) },
+                                            {31, ( 3, 0.0234375, 112 ) },
+                                            {32, ( 3, 0.0234375, 115 ) },
+                                            {33, ( 2, 0.0156250, 117 ) },
+                                            {34, ( 8, 0.0625000, 125 ) },
+                                            {39, ( 1, 0.0078125, 126 ) },
+                                            {40, ( 1, 0.0078125, 127 ) },
+                                            {44, ( 1, 0.0078125, 128 ) },
                                         }
                                 .ToList(),
-                            frequency_2s
+                            frequency_2s.ToArray()
                         );
 #elif XUNIT
             Assert.Equal
                         (
                             new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
                                         {
-                                            { 18, ( 15, 0.2, 3 ) },
-                                            { 21, ( 10, 0.2, 3 ) },
-                                            { 16, ( 10, 0.2, 3 ) },
-                                            { 24, ( 9, 0.2, 3 ) },
-                                            { 20, ( 8, 0.2, 3 ) },
-                                            { 34, ( 8, 0.2, 3 ) },
-                                            { 26, ( 7, 0.2, 3 ) },
-                                            { 29, ( 6, 0.2, 3 ) },
-                                            { 12, ( 5, 0.2, 3 ) },
-                                            { 23, ( 5, 0.2, 3 ) },
-                                            { 22, ( 5, 0.2, 3 ) },
-                                            { 19, ( 5, 0.2, 3 ) },
-                                            { 17, ( 4, 0.2, 3 ) },
-                                            { 14, ( 4, 0.2, 3 ) },
-                                            { 13, ( 3, 0.2, 3 ) },
-                                            { 25, ( 3, 0.2, 3 ) },
-                                            { 31, ( 3, 0.2, 3 ) },
-                                            { 28, ( 3, 0.2, 3 ) },
-                                            { 32, ( 3, 0.2, 3 ) },
-                                            { 15, ( 2, 0.2, 3 ) },
-                                            { 33, ( 2, 0.2, 3 ) },
-                                            { 27, ( 2, 0.2, 3 ) },
-                                            { 9, ( 1, 0.2, 3 ) },
-                                            { 7, ( 1, 0.2, 3 ) },
-                                            { 39, ( 1, 0.2, 3 ) },
-                                            { 44, ( 1, 0.2, 3 ) },
-                                            { 30, ( 1, 0.2, 3 ) },
-                                            { 40, ( 1, 0.2, 3 ) },
+                                            {7, ( 1, 0.0078125, 1 ) },
+                                            {9, ( 1, 0.0078125, 2 ) },
+                                            {12, ( 5, 0.0390625, 7 ) },
+                                            {13, ( 3, 0.0234375, 10 ) },
+                                            {14, ( 4, 0.0312500, 14 ) },
+                                            {15, ( 2, 0.0156250, 16 ) },
+                                            {16, ( 10, 0.0781250, 26 ) },
+                                            {17, ( 4, 0.0312500, 30 ) },
+                                            {18, ( 15, 0.1171875, 45 ) },
+                                            {19, ( 5, 0.0390625, 50 ) },
+                                            {20, ( 8, 0.0625000, 58 ) },
+                                            {21, ( 10, 0.0781250, 68 ) },
+                                            {22, ( 5, 0.0390625, 73 ) },
+                                            {23, ( 5, 0.0390625, 78 ) },
+                                            {24, ( 9, 0.0703125, 87 ) },
+                                            {25, ( 3, 0.0234375, 90 ) },
+                                            {26, ( 7, 0.0546875, 97 ) },
+                                            {27, ( 2, 0.0156250, 99 ) },
+                                            {28, ( 3, 0.0234375, 102 ) },
+                                            {29, ( 6, 0.0468750, 108 ) },
+                                            {30, ( 1, 0.0078125, 109 ) },
+                                            {31, ( 3, 0.0234375, 112 ) },
+                                            {32, ( 3, 0.0234375, 115 ) },
+                                            {33, ( 2, 0.0156250, 117 ) },
+                                            {34, ( 8, 0.0625000, 125 ) },
+                                            {39, ( 1, 0.0078125, 126 ) },
+                                            {40, ( 1, 0.0078125, 127 ) },
+                                            {44, ( 1, 0.0078125, 128 ) },
                                         }
                                 .ToList(),
                                 frequency_2s.ToArray()
@@ -166,34 +166,34 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                         (
                             new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
                                         {
-                                            { 18, ( 15, 0.2, 3 ) },
-                                            { 21, ( 10, 0.2, 3 ) },
-                                            { 16, ( 10, 0.2, 3 ) },
-                                            { 24, ( 9, 0.2, 3 ) },
-                                            { 20, ( 8, 0.2, 3 ) },
-                                            { 34, ( 8, 0.2, 3 ) },
-                                            { 26, ( 7, 0.2, 3 ) },
-                                            { 29, ( 6, 0.2, 3 ) },
-                                            { 12, ( 5, 0.2, 3 ) },
-                                            { 23, ( 5, 0.2, 3 ) },
-                                            { 22, ( 5, 0.2, 3 ) },
-                                            { 19, ( 5, 0.2, 3 ) },
-                                            { 17, ( 4, 0.2, 3 ) },
-                                            { 14, ( 4, 0.2, 3 ) },
-                                            { 13, ( 3, 0.2, 3 ) },
-                                            { 25, ( 3, 0.2, 3 ) },
-                                            { 31, ( 3, 0.2, 3 ) },
-                                            { 28, ( 3, 0.2, 3 ) },
-                                            { 32, ( 3, 0.2, 3 ) },
-                                            { 15, ( 2, 0.2, 3 ) },
-                                            { 33, ( 2, 0.2, 3 ) },
-                                            { 27, ( 2, 0.2, 3 ) },
-                                            { 9, ( 1, 0.2, 3 ) },
-                                            { 7, ( 1, 0.2, 3 ) },
-                                            { 39, ( 1, 0.2, 3 ) },
-                                            { 44, ( 1, 0.2, 3 ) },
-                                            { 30, ( 1, 0.2, 3 ) },
-                                            { 40, ( 1, 0.2, 3 ) },
+                                            {7, ( 1, 0.0078125, 1 ) },
+                                            {9, ( 1, 0.0078125, 2 ) },
+                                            {12, ( 5, 0.0390625, 7 ) },
+                                            {13, ( 3, 0.0234375, 10 ) },
+                                            {14, ( 4, 0.0312500, 14 ) },
+                                            {15, ( 2, 0.0156250, 16 ) },
+                                            {16, ( 10, 0.0781250, 26 ) },
+                                            {17, ( 4, 0.0312500, 30 ) },
+                                            {18, ( 15, 0.1171875, 45 ) },
+                                            {19, ( 5, 0.0390625, 50 ) },
+                                            {20, ( 8, 0.0625000, 58 ) },
+                                            {21, ( 10, 0.0781250, 68 ) },
+                                            {22, ( 5, 0.0390625, 73 ) },
+                                            {23, ( 5, 0.0390625, 78 ) },
+                                            {24, ( 9, 0.0703125, 87 ) },
+                                            {25, ( 3, 0.0234375, 90 ) },
+                                            {26, ( 7, 0.0546875, 97 ) },
+                                            {27, ( 2, 0.0156250, 99 ) },
+                                            {28, ( 3, 0.0234375, 102 ) },
+                                            {29, ( 6, 0.0468750, 108 ) },
+                                            {30, ( 1, 0.0078125, 109 ) },
+                                            {31, ( 3, 0.0234375, 112 ) },
+                                            {32, ( 3, 0.0234375, 115 ) },
+                                            {33, ( 2, 0.0156250, 117 ) },
+                                            {34, ( 8, 0.0625000, 125 ) },
+                                            {39, ( 1, 0.0078125, 126 ) },
+                                            {40, ( 1, 0.0078125, 127 ) },
+                                            {44, ( 1, 0.0078125, 128 ) },
                                         }
                                 .ToList(),
                             frequency_2s.ToArray()
@@ -208,8 +208,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Frequency_Points3Success()
         {
             data_3pts_success =
-                                from row in JudoDataTable
-                                    select row.Points3Success
+                                from row in BasketballTeamDataTable
+                                select row.Points3Success
                                     ;
 
             //List<int> frequency_3s = data_3pts_success.FrequencyDistribution();
@@ -226,8 +226,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Frequency_Points2Fail()
         {
             data_2pts_fail =
-                                from row in JudoDataTable
-                                    select row.Points2Fail
+                                from row in BasketballTeamDataTable
+                                select row.Points2Fail
                                     ;
 
             //List<int> frequency_2f = data_2pts_fail.FrequencyDistribution();
@@ -349,8 +349,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_Points3Fail()
         {
             data_3pts_fail =
-                                from row in JudoDataTable
-                                    select row.Points3Fail
+                                from row in BasketballTeamDataTable
+                                select row.Points3Fail
                                     ;
 
             //List<int> frequency_3f = data_3pts_fail.FrequencyDistribution();
@@ -365,8 +365,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_FreeThrowFail()
         {
             data_free_throw_fail =
-                                from row in JudoDataTable
-                                    select row.FreeThrowFail
+                                from row in BasketballTeamDataTable
+                                select row.FreeThrowFail
                                     ;
 
             //List<int> frequency_ftf = data_free_throw_fail.FrequencyDistribution();
@@ -381,8 +381,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_FreeThrowSuccess()
         {
             data_free_throw_success =
-                                from row in JudoDataTable
-                                    select row.FreeThrowSuccess
+                                from row in BasketballTeamDataTable
+                                select row.FreeThrowSuccess
                                     ;
 
             //List<int> frequency_fts = data_free_throw_success.FrequencyDistribution();
@@ -397,8 +397,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_JumpsOffensive()
         {
             data_jumps_offensive =
-                                from row in JudoDataTable
-                                    select row.JumpsOffensive
+                                from row in BasketballTeamDataTable
+                                select row.JumpsOffensive
                                     ;
 
             //List<int> frequency_off = data_jumps_offensive.FrequencyDistribution();
@@ -413,8 +413,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_JumpsDefensive()
         {
             data_jumps_defensive =
-                                from row in JudoDataTable
-                                    select row.JumpsDefensive
+                                from row in BasketballTeamDataTable
+                                select row.JumpsDefensive
                                     ;
 
             //List<int> frequency_def = data_jumps_defensive.FrequencyDistribution();
@@ -429,8 +429,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public void Frequency_Assistance()
         {
             data_assistence =
-                                from row in JudoDataTable
-                                    select row.Assistence
+                                from row in BasketballTeamDataTable
+                                select row.Assistence
                                     ;
 
             //List<int> frequency_assist = data_assistence.FrequencyDistribution();
@@ -445,8 +445,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_PersonalFaults()
         {
             data_personal_faults =
-                                from row in JudoDataTable
-                                    select row.PersonalFaults
+                                from row in BasketballTeamDataTable
+                                select row.PersonalFaults
                                     ;
 
             //List<int> frequency_pf = data_personal_faults.FrequencyDistribution();
@@ -461,8 +461,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_BallsLost()
         {
             data_balls_lost =
-                                from row in JudoDataTable
-                                    select row.BallsLost
+                                from row in BasketballTeamDataTable
+                                select row.BallsLost
                                     ;
 
             //List<int> frequency_bl = data_balls_lost.FrequencyDistribution();
@@ -477,8 +477,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_BallsStolen()
         {
             data_balls_stolen =
-                                from row in JudoDataTable
-                                    select row.BallsStolen
+                                from row in BasketballTeamDataTable
+                                select row.BallsStolen
                                     ;
 
             //List<int> frequency_bs = data_balls_stolen.FrequencyDistribution();
@@ -493,8 +493,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             public void Frequency_Blocks()
         {
             data_blocks =
-                                from row in JudoDataTable
-                                    select row.Blocks
+                                from row in BasketballTeamDataTable
+                                select row.Blocks
                                     ;
 
             //List<int> frequency_block = data_blocks.FrequencyDistribution();
