@@ -211,6 +211,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             }
         }
 
+        /// <summary>
+        /// Frequyency Distribution as DEMO for DARK VEJDER
+        /// </summary>
+        /// <returns>IENumerable of Tuples with Absolute, Relative and Cumulative Frequencies</returns>
+        /// <param name="x">IEnumerable x (data sample)</param>
         public static
             IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> 
                 Frequencies

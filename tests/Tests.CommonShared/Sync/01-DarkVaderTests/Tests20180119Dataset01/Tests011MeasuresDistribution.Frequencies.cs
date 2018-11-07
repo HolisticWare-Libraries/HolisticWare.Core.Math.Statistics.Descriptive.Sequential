@@ -90,7 +90,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                     (
                     )
         {
-            return data_array.Frequencies();
+            return data_array.Frequencies<int>();
         }
 
         [Test]

@@ -7,6 +7,9 @@
     <AssemblyName>HolisticWare.Core.Math.Statistics.Descriptive.Sequential</AssemblyName>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DocumentationFile>bin\Debug\netstandard1.0\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.xml</DocumentationFile>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
     <PackageReference Include="System.Threading.Tasks.Dataflow" Version="4.9.0" />

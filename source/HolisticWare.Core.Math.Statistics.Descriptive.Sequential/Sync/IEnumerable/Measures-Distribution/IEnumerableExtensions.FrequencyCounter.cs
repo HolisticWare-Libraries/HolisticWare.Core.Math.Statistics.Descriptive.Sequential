@@ -50,6 +50,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             return frequencies;
         }
 
+
         public static
             Dictionary<byte, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
                 FrequencyCounter
