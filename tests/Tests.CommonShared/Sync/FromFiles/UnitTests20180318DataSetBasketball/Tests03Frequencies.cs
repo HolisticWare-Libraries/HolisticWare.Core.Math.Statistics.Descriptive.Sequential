@@ -75,6 +75,39 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class UnitTests20180318DataSetBasketball
     {
+        Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)> frequency_2s_calculated =
+            new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
+                        {
+                            {7, ( 1, 0.0078125, 1 ) },
+                            {9, ( 1, 0.0078125, 2 ) },
+                            {12, ( 5, 0.0390625, 7 ) },
+                            {13, ( 3, 0.0234375, 10 ) },
+                            {14, ( 4, 0.0312500, 14 ) },
+                            {15, ( 2, 0.0156250, 16 ) },
+                            {16, ( 10, 0.0781250, 26 ) },
+                            {17, ( 4, 0.0312500, 30 ) },
+                            {18, ( 15, 0.1171875, 45 ) },
+                            {19, ( 5, 0.0390625, 50 ) },
+                            {20, ( 8, 0.0625000, 58 ) },
+                            {21, ( 10, 0.0781250, 68 ) },
+                            {22, ( 5, 0.0390625, 73 ) },
+                            {23, ( 5, 0.0390625, 78 ) },
+                            {24, ( 9, 0.0703125, 87 ) },
+                            {25, ( 3, 0.0234375, 90 ) },
+                            {26, ( 7, 0.0546875, 97 ) },
+                            {27, ( 2, 0.0156250, 99 ) },
+                            {28, ( 3, 0.0234375, 102 ) },
+                            {29, ( 6, 0.0468750, 108 ) },
+                            {30, ( 1, 0.0078125, 109 ) },
+                            {31, ( 3, 0.0234375, 112 ) },
+                            {32, ( 3, 0.0234375, 115 ) },
+                            {33, ( 2, 0.0156250, 117 ) },
+                            {34, ( 8, 0.0625000, 125 ) },
+                            {39, ( 1, 0.0078125, 126 ) },
+                            {40, ( 1, 0.0078125, 127 ) },
+                            {44, ( 1, 0.0078125, 128 ) },
+                        };
+
         [Test()]
         public void Frequency_Points2Success()
         {
@@ -85,120 +118,29 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //List<int> frequency_2s = data_2pts_success.Frequencies();
 
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequency_2s = data_2pts_success.Frequencies();
+            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> frequency_2s; 
+
+            frequency_2s = data_2pts_success.FrequencyDistribution();
 
 
             // Assert
-#if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
-                            new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
-                                        {
-                                            {7, ( 1, 0.0078125, 1 ) },
-                                            {9, ( 1, 0.0078125, 2 ) },
-                                            {12, ( 5, 0.0390625, 7 ) },
-                                            {13, ( 3, 0.0234375, 10 ) },
-                                            {14, ( 4, 0.0312500, 14 ) },
-                                            {15, ( 2, 0.0156250, 16 ) },
-                                            {16, ( 10, 0.0781250, 26 ) },
-                                            {17, ( 4, 0.0312500, 30 ) },
-                                            {18, ( 15, 0.1171875, 45 ) },
-                                            {19, ( 5, 0.0390625, 50 ) },
-                                            {20, ( 8, 0.0625000, 58 ) },
-                                            {21, ( 10, 0.0781250, 68 ) },
-                                            {22, ( 5, 0.0390625, 73 ) },
-                                            {23, ( 5, 0.0390625, 78 ) },
-                                            {24, ( 9, 0.0703125, 87 ) },
-                                            {25, ( 3, 0.0234375, 90 ) },
-                                            {26, ( 7, 0.0546875, 97 ) },
-                                            {27, ( 2, 0.0156250, 99 ) },
-                                            {28, ( 3, 0.0234375, 102 ) },
-                                            {29, ( 6, 0.0468750, 108 ) },
-                                            {30, ( 1, 0.0078125, 109 ) },
-                                            {31, ( 3, 0.0234375, 112 ) },
-                                            {32, ( 3, 0.0234375, 115 ) },
-                                            {33, ( 2, 0.0156250, 117 ) },
-                                            {34, ( 8, 0.0625000, 125 ) },
-                                            {39, ( 1, 0.0078125, 126 ) },
-                                            {40, ( 1, 0.0078125, 127 ) },
-                                            {44, ( 1, 0.0078125, 128 ) },
-                                        }
-                                .ToList(),
+            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
+                            frequency_2s_calculated.ToList(),
                             frequency_2s.ToArray()
                         );
-#elif XUNIT
+            #elif XUNIT
             Assert.Equal
                         (
-                            new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
-                                        {
-                                            {7, ( 1, 0.0078125, 1 ) },
-                                            {9, ( 1, 0.0078125, 2 ) },
-                                            {12, ( 5, 0.0390625, 7 ) },
-                                            {13, ( 3, 0.0234375, 10 ) },
-                                            {14, ( 4, 0.0312500, 14 ) },
-                                            {15, ( 2, 0.0156250, 16 ) },
-                                            {16, ( 10, 0.0781250, 26 ) },
-                                            {17, ( 4, 0.0312500, 30 ) },
-                                            {18, ( 15, 0.1171875, 45 ) },
-                                            {19, ( 5, 0.0390625, 50 ) },
-                                            {20, ( 8, 0.0625000, 58 ) },
-                                            {21, ( 10, 0.0781250, 68 ) },
-                                            {22, ( 5, 0.0390625, 73 ) },
-                                            {23, ( 5, 0.0390625, 78 ) },
-                                            {24, ( 9, 0.0703125, 87 ) },
-                                            {25, ( 3, 0.0234375, 90 ) },
-                                            {26, ( 7, 0.0546875, 97 ) },
-                                            {27, ( 2, 0.0156250, 99 ) },
-                                            {28, ( 3, 0.0234375, 102 ) },
-                                            {29, ( 6, 0.0468750, 108 ) },
-                                            {30, ( 1, 0.0078125, 109 ) },
-                                            {31, ( 3, 0.0234375, 112 ) },
-                                            {32, ( 3, 0.0234375, 115 ) },
-                                            {33, ( 2, 0.0156250, 117 ) },
-                                            {34, ( 8, 0.0625000, 125 ) },
-                                            {39, ( 1, 0.0078125, 126 ) },
-                                            {40, ( 1, 0.0078125, 127 ) },
-                                            {44, ( 1, 0.0078125, 128 ) },
-                                        }
-                                .ToList(),
-                                frequency_2s.ToArray()
-                        );
-#elif MSTEST
-            CollectionAssert.AreEquivalent
-                        (
-                            new Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
-                                        {
-                                            {7, ( 1, 0.0078125, 1 ) },
-                                            {9, ( 1, 0.0078125, 2 ) },
-                                            {12, ( 5, 0.0390625, 7 ) },
-                                            {13, ( 3, 0.0234375, 10 ) },
-                                            {14, ( 4, 0.0312500, 14 ) },
-                                            {15, ( 2, 0.0156250, 16 ) },
-                                            {16, ( 10, 0.0781250, 26 ) },
-                                            {17, ( 4, 0.0312500, 30 ) },
-                                            {18, ( 15, 0.1171875, 45 ) },
-                                            {19, ( 5, 0.0390625, 50 ) },
-                                            {20, ( 8, 0.0625000, 58 ) },
-                                            {21, ( 10, 0.0781250, 68 ) },
-                                            {22, ( 5, 0.0390625, 73 ) },
-                                            {23, ( 5, 0.0390625, 78 ) },
-                                            {24, ( 9, 0.0703125, 87 ) },
-                                            {25, ( 3, 0.0234375, 90 ) },
-                                            {26, ( 7, 0.0546875, 97 ) },
-                                            {27, ( 2, 0.0156250, 99 ) },
-                                            {28, ( 3, 0.0234375, 102 ) },
-                                            {29, ( 6, 0.0468750, 108 ) },
-                                            {30, ( 1, 0.0078125, 109 ) },
-                                            {31, ( 3, 0.0234375, 112 ) },
-                                            {32, ( 3, 0.0234375, 115 ) },
-                                            {33, ( 2, 0.0156250, 117 ) },
-                                            {34, ( 8, 0.0625000, 125 ) },
-                                            {39, ( 1, 0.0078125, 126 ) },
-                                            {40, ( 1, 0.0078125, 127 ) },
-                                            {44, ( 1, 0.0078125, 128 ) },
-                                        }
-                                .ToList(),
+                            frequency_2s_calculated.ToList(),
                             frequency_2s.ToArray()
                         );
-#endif
+            #elif MSTEST
+            CollectionAssert.AreEquivalent
+                        (
+                            frequency_2s_calculated.ToList(),
+                            frequency_2s.ToArray()
+                        );
+            #endif
 
             return;
         }
