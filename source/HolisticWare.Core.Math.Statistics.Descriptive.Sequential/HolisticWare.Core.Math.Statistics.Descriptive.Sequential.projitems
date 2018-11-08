@@ -10,33 +10,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)AlgorithmOptions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\IEnumerableExtensions.StatisticsDescriptive.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\StatisticsDescriptive.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\StatisticsDescriptive.DataMissing.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\GroupedData\IEnumerableExtensions.GroupedDataGroups.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\GroupedData\IEnumerableExtensions.GroupedDataMedian.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ArrayList\Measures-CentralTendencies\IEnumerableExtensions.MeanArithmetic.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ArrayList\Measures-CentralTendencies\IEnumerableExtensions.MeanGeometric.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ArrayList\Measures-CentralTendencies\IEnumerableExtensions.Median.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ArrayList\Measures-CentralTendencies\IEnumerableExtensions.Modes.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
-    <Compile Include="$(MSBuildThisFileDirectory)ArrayList\Measures-Dependency\IEnumerableExtensions.Corellation.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ArrayList\Measures-Dependency\IEnumerableExtensions.Covariance.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ArrayList\Measures-Dispersion\IEnumerableExtensions.Moment.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ArrayList\Measures-Dispersion\IEnumerableExtensions.StandardDeviationPopulation.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ArrayList\Measures-Dispersion\IEnumerableExtensions.StandardDeviationSample.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ArrayList\Measures-Dispersion\IEnumerableExtensions.VariancePopulation.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ArrayList\Measures-Dispersion\IEnumerableExtensions.VarianceSample.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ArrayList\Measures-Distribution\IEnumerableExtensions.Frequencies.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
-    <Compile Include="$(MSBuildThisFileDirectory)ArrayList\Measures-Distribution\IEnumerableExtensions.FrequencyCounter.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
-    <Compile Include="$(MSBuildThisFileDirectory)ArrayList\Measures-Distribution\IEnumerableExtensions.FrequencyDistributions.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
-    <Compile Include="$(MSBuildThisFileDirectory)ArrayList\Measures-Distribution\IEnumerableExtensions.Range.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ArrayList\Measures-DistributionAsymmetry\IEnumerableExtensions.Skewness.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ArrayList\Measures-DistributionRoundness\IEnumerableExtensions.Kurtosis.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ArrayList\Measures-DistributionRoundness\IEnumerableExtensions.KurtosisExcess.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ArrayList\Measures-DistributionRoundness\IEnumerableExtensions.KurtosisSampleExcess.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ArrayList\Methods-Inferential\IEnumerableExtensions.FStatistics.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ArrayList\Methods-Inferential\IEnumerableExtensions.StudentStatisticIdenpendent.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ArrayList\Methods-Inferential\IEnumerableExtensions.WelchStatistics.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\" />
+    <Folder Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\GroupedData\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ICollection\" />
+    <Folder Include="$(MSBuildThisFileDirectory)IEnumerable\" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.0'">  
+    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-CentralTendencies\IEnumerableExtensions.Median.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-CentralTendencies\IEnumerableExtensions.MeanArithmetic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-CentralTendencies\IEnumerableExtensions.MeanArithmeticGeneralizedWeighted.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-CentralTendencies\IEnumerableExtensions.MeanArithmeticWeighted.cs" />
@@ -49,15 +36,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-CentralTendencies\IEnumerableExtensions.MeanHarmonicWeighted.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-CentralTendencies\IEnumerableExtensions.MeanQuadratic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-CentralTendencies\IEnumerableExtensions.MeanWeighted.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-CentralTendencies\IEnumerableExtensions.Median.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-CentralTendencies\IEnumerableExtensions.MedianHigh.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-CentralTendencies\IEnumerableExtensions.MedianLow.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-CentralTendencies\IEnumerableExtensions.MedianWeighted.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-Dependency\Correlation.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-Dependency\Covariance.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-Dependency\IEnumerableExtensions.Correlation.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-Dependency\IEnumerableExtensions.CorrelationOptimized.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-Dependency\IEnumerableExtensions.Covariance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-Dispersion\IEnumerableExtensions.Moment.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-Dispersion\IEnumerableExtensions.MomentCentral.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-Dispersion\IEnumerableExtensions.MomentCentralAbsolute.cs" />
@@ -88,6 +69,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-DistributionRoundness\IEnumerableExtensions.KurtosisType1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-DistributionRoundness\IEnumerableExtensions.KurtosisType2.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-DistributionRoundness\IEnumerableExtensions.KurtosisType3.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-Dependency\Correlation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-Dependency\Covariance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-Dependency\IEnumerableExtensions.Correlation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-Dependency\IEnumerableExtensions.CorrelationOptimized.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Measures-Dependency\IEnumerableExtensions.Covariance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Methods-Inferential\FStatistics.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Methods-Inferential\IEnumerableExtensions.FStatistic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Methods-Inferential\IEnumerableExtensions.StudenttStatisticIndependent.cs" />
@@ -95,43 +81,66 @@
     <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Methods-Inferential\StudenttStatisticIndependent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Methods-Inferential\WelchStatistics.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\Utilities\IEnumerableExtensions.Normalization.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\Correlation.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\Covarinace.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\FStatistics.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\IEnumerableExtensions.Correlation.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\IEnumerableExtensions.CorrelationOptimized.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\IEnumerableExtensions.Covariance.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\IEnumerableExtensions.Frequencies.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\IEnumerableExtensions.FrequencyCounter.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\IEnumerableExtensions.FrequencyDistribution.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\IEnumerableExtensions.FStatistic.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\IEnumerableExtensions.Kurtosis.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\IEnumerableExtensions.KurtosisExcess.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\IEnumerableExtensions.KurtosisSampleExcess.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\IEnumerableExtensions.MeanArithmetic.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\IEnumerableExtensions.MeanGeometric.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\IEnumerableExtensions.Median.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\IEnumerableExtensions.Modes.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\IEnumerableExtensions.Moment.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\IEnumerableExtensions.Range.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\IEnumerableExtensions.Skewness.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\IEnumerableExtensions.StandardDeviationPopulation.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\IEnumerableExtensions.StandardDeviationSample.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\IEnumerableExtensions.StudenttStatisticIndependent.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\IEnumerableExtensions.VariancePopulation.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\IEnumerableExtensions.VarianceSample.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\IEnumerableExtensions.WelchtStatistic.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\StudenttStatisticIndependent.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IEnumerable\xtras-Nullable\WelchStatistics.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\GroupedData\IEnumerableExtensions.GroupedDataGroups.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\GroupedData\IEnumerableExtensions.GroupedDataMedian.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)readme.md" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Sync\" />
-    <Folder Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\" />
-    <Folder Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\GroupedData\" />
-    <Folder Include="$(MSBuildThisFileDirectory)ArrayList\" />
-    <Folder Include="$(MSBuildThisFileDirectory)IEnumerable\" />
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.3'">  
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MeanArithmetic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MeanArithmeticGeneralizedWeighted.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MeanArithmeticWeighted.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MeanCubic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MeanGeneralized.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MeanGeometric.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MeanGeometricNaive.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MeanGeometricWeighted.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MeanHarmonic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MeanHarmonicWeighted.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MeanQuadratic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MeanWeighted.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.Median.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MedianHigh.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MedianLow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MedianWeighted.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dependency\ArrayList.Correlation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dependency\ArrayList.CorrelationOptimized.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dependency\ArrayList.Covariance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dependency\Correlation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dependency\Covariance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dispersion\ArrayList.Moment.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dispersion\ArrayList.MomentCentral.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dispersion\ArrayList.MomentCentralAbsolute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dispersion\ArrayList.MomentGeneralized.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dispersion\ArrayList.MomentRaw.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dispersion\ArrayList.MomentRawAbsolute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dispersion\ArrayList.StandardDeviationPopulation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dispersion\ArrayList.StandardDeviationSample.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dispersion\ArrayList.VarianceMedianPopulation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dispersion\ArrayList.VarianceMedianSample.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dispersion\ArrayList.VariancePopulation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dispersion\ArrayList.VarianceSample.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Distribution\ArrayList.Frequencies.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Distribution\ArrayList.FrequencyCounter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Distribution\ArrayList.FrequencyDistribution.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Distribution\ArrayList.Modes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Distribution\ArrayList.Percentile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Distribution\ArrayList.PercentileRank.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Distribution\ArrayList.Range.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-DistributionAsymmetry\ArrayList.Skewness.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-DistributionAsymmetry\ArrayList.SkewnessFisherPearsonAdjusted.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-DistributionAsymmetry\ArrayList.SkewnessType1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-DistributionAsymmetry\ArrayList.SkewnessType2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-DistributionAsymmetry\ArrayList.SkewnessType3.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-DistributionRoundness\ArrayList.Kurtosis.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-DistributionRoundness\ArrayList.KurtosisExcess.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-DistributionRoundness\ArrayList.KurtosisSampleExcess.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-DistributionRoundness\ArrayList.KurtosisType1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-DistributionRoundness\ArrayList.KurtosisType2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-DistributionRoundness\ArrayList.KurtosisType3.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Methods-Inferential\FStatistics.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Methods-Inferential\ArrayList.FStatistic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Methods-Inferential\ArrayList.StudenttStatisticIndependent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Methods-Inferential\ArrayList.WelchtStatistic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Methods-Inferential\StudenttStatisticIndependent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Methods-Inferential\WelchStatistics.cs" />
   </ItemGroup>
 </Project>
