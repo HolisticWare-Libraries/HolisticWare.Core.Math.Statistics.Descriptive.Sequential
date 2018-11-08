@@ -29,6 +29,7 @@
     <ProjectReference Include="..\..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard10.csproj" />
     <ProjectReference Include="..\..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10.csproj" />
     <ProjectReference Include="..\..\..\..\externals\Core.Text\source\HolisticWare.Core.Text.NetStandard10\HolisticWare.Core.Text.NetStandard10.csproj" />
+    <ProjectReference Include="..\..\..\..\externals\Core.Math.Samples\data\HolisticWare.Core.Sample.Data\HolisticWare.Core.Sample.Data.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Remove=".DS_Store" />
@@ -50,6 +51,5 @@
   ==================================================================================================
   -->
 
-  <Import Project="..\..\..\..\externals\Core.Math.Samples\tests\data\HolisticWare.Core.Math.Samples\HolisticWare.Core.Math.Samples.projitems" Label="Shared" Condition="Exists('..\..\..\..\externals\Core.Math.Samples\tests\data\HolisticWare.Core.Math.Samples\HolisticWare.Core.Math.Samples.projitems')" />
   <Import Project="..\..\..\Tests.CommonShared\Tests.CommonShared.projitems" Label="Shared" Condition="Exists('..\..\..\Tests.CommonShared\Tests.CommonShared.projitems')" />
 </Project>

@@ -32,7 +32,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests02Modes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests08Moments.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\Tests06Skewness.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetBasketball\BasketballTeamData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp01\Tests00Data.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp02\Tests00Data.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetRand50Samp03\Tests00Data.cs" />
@@ -56,7 +55,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\Qualitative\Classes\EyeColor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\python-website-data\Tests00Data.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\python-website-data\Tests01MeansAverageMedian.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetJudo\JudoData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\02-GroupedData\Tests01MeansAverageMedian.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\02-GroupedData\Tests00Data.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180330RandSampBig1Items10000\Tests00Data.cs" />
