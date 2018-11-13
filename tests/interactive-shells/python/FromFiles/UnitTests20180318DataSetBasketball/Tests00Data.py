@@ -27,18 +27,24 @@ data_pandas = pandas.read_csv(csv_filename)
 print(data_pandas)
 #-------------------------------------------------------------------------------------------
 
-data = \
-[ \
-    1, 2, 2, 3, 3, 3, 3, 4, 4, 5 \
-]
+series = data_pandas['SUT_2_US']  # as a Series
+numpy_array = data_pandas['SUT_2_US'].values  # as a numpy array
 
-# Add the directory containing your module to the Python path (wants absolute paths)
-scriptpath2 = "./Tests011MeasuresDistribution.py"
-sys.path.append(os.path.abspath(scriptpath2))
-import Tests011MeasuresDistribution
+print(series)
+print(numpy_array)
 
-# Add the directory containing your module to the Python path (wants absolute paths)
-scriptpath1 = "./Tests011MeasuresCentralTendencies.py"
-sys.path.append(os.path.abspath(scriptpath1))
-import Tests011MeasuresCentralTendencies
+# data = \
+# [ \
+#     1, 2, 2, 3, 3, 3, 3, 4, 4, 5 \
+# ]
+# 
+# # Add the directory containing your module to the Python path (wants absolute paths)
+# scriptpath2 = "./Tests011MeasuresDistribution.py"
+# sys.path.append(os.path.abspath(scriptpath2))
+# import Tests011MeasuresDistribution
+# 
+# # Add the directory containing your module to the Python path (wants absolute paths)
+# scriptpath1 = "./Tests011MeasuresCentralTendencies.py"
+# sys.path.append(os.path.abspath(scriptpath1))
+# import Tests011MeasuresCentralTendencies
 
