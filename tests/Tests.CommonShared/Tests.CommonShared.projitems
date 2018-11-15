@@ -159,9 +159,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\01-DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresCentralTendencies.MeanQuadratic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\01-DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresCentralTendencies.MeanWeighted.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\01-DarkVaderTests\Tests20180119Dataset03\Tests011MeasuresCentralTendencies.Median.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Utilities\HolisticWare.UnitTests.Portability\SetUpFixture.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Utilities\HolisticWare.UnitTests.Portability\UnitTests.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Utilities\HolisticWare.BenchmarkTests\BenchmarkTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet002\Tests011MeasuresCentralTendencies.MeanArithmetic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet002\Tests011MeasuresCentralTendencies.MeanArithmeticWeighted.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\UnitTests20180227DataSet002\Tests011MeasuresCentralTendencies.MeanCubic.cs" />
@@ -252,8 +249,6 @@
     <Folder Include="$(MSBuildThisFileDirectory)Sync\01-DarkVaderTests\Tests20180119Dataset02\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\01-DarkVaderTests\Tests20180119Dataset03\" />
     <Folder Include="$(MSBuildThisFileDirectory)Utilities\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Utilities\HolisticWare.UnitTests.Portability\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Utilities\HolisticWare.BenchmarkTests\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia01\" />
     <Folder Include="$(MSBuildThisFileDirectory)Sync\04-MedianWeighted\Wikipedia02\" />
