@@ -47,5 +47,6 @@
   If projects for references can be found use ProjectReferences otherwise use NuGet references
   ==================================================================================================
   -->
+  <Import Project="..\..\UnitTests.Common.Utils.Shared\UnitTests.Common.Utils.Shared.projitems" Label="Shared" Condition="Exists('..\..\UnitTests.Common.Utils.Shared\UnitTests.Common.Utils.Shared.projitems')" />
   <Import Project="..\..\..\Tests.CommonShared\Tests.CommonShared.projitems" Label="Shared" />
 </Project>

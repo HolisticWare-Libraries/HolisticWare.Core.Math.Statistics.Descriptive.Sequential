@@ -48,6 +48,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{69B20DD6-5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Sample.Data", "..\..\..\externals\Core.Math.Samples\data\HolisticWare.Core.Sample.Data\HolisticWare.Core.Sample.Data.csproj", "{77693571-4115-4F66-BDA5-E198F6EE5DF8}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "UnitTests.Common.Utils.Shared", "..\UnitTests.Common.Utils.Shared\UnitTests.Common.Utils.Shared.shproj", "{E390F6DA-9F4B-43A4-8ABF-F9434DF2C70D}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		..\..\externals\Core.Math.Samples\tests\data\HolisticWare.Core.Math.Samples\HolisticWare.Core.Math.Samples.projitems*{04f3d823-abea-46dd-9ec2-56c08ca074db}*SharedItemsImports = 4

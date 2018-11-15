@@ -146,5 +146,7 @@
       <Name>HolisticWare.Core.Sample.Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <Import Project="..\..\UnitTests.Common.Utils.Shared\UnitTests.Common.Utils.Shared.projitems" Label="Shared" Condition="Exists('..\..\UnitTests.Common.Utils.Shared\UnitTests.Common.Utils.Shared.projitems')" />
+  <Import Project="..\..\..\Tests.CommonShared\Tests.CommonShared.projitems" Label="Shared" Condition="Exists('..\..\..\Tests.CommonShared\Tests.CommonShared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
