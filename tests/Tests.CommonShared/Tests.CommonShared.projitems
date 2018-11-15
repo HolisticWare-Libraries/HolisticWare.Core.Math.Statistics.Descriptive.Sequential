@@ -227,6 +227,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\01-DarkVaderTests\Tests20180119Dataset01\API-Wrappers\MatlabOctave\Tests011MeasuresCentralTendencies.mean.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\01-DarkVaderTests\Tests20180119Dataset01\API-Wrappers\R\Tests011MeasuresCentralTendencies.mean.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\01-DarkVaderTests\Tests20180119Dataset01\API-Wrappers\Python\Tests011MeasuresCentralTendencies.mean.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetJudo\Tests02Frequencies.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Sync\FromFiles\UnitTests20180318DataSetJudo\" />
