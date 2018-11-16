@@ -98,9 +98,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             #elif XUNIT
             Assert.Equal(x4_average, 15.93, 2);
             #elif MSTEST
+            Assert.AreEqual(x4_average, 15.93, 0.01);
             #endif
 
-			sw = Stopwatch.StartNew();
+            sw = Stopwatch.StartNew();
 			// Act
 			double x4_standard_deviation = x4.StandardDeviationSample();
 			sw.Stop();
