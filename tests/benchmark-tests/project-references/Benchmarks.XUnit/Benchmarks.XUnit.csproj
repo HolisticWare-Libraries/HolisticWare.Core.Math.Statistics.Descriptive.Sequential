@@ -35,6 +35,7 @@
     <ProjectReference Include="..\..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10.csproj" />
     <ProjectReference Include="..\..\..\..\externals\Core.Text\source\HolisticWare.Core.Text.NetStandard10\HolisticWare.Core.Text.NetStandard10.csproj" />
   </ItemGroup>
+  <Import Project="..\..\..\unit-tests\UnitTests.Common.Utils.Shared\UnitTests.Common.Utils.Shared.projitems" Label="Shared" Condition="Exists('..\..\..\unit-tests\UnitTests.Common.Utils.Shared\UnitTests.Common.Utils.Shared.projitems')" />
   <Import Project="..\..\..\Tests.CommonShared\Tests.CommonShared.projitems" Label="Shared" Condition="Exists('..\..\..\Tests.CommonShared\Tests.CommonShared.projitems')" />
   <Import Project="..\..\Benchmarks.Common.Utils.Shared\Benchmarks.Common.Utils.Shared.projitems" Label="Shared" Condition="Exists('..\..\Benchmarks.Common.Utils.Shared\Benchmarks.Common.Utils.Shared.projitems')" />
 </Project>
