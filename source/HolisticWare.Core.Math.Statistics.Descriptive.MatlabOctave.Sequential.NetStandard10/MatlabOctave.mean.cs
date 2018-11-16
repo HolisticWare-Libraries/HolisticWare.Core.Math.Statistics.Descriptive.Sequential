@@ -11,5 +11,10 @@ namespace Core.Math.Statistics.Descriptive.MatlabOctave.Sequential
         {
             return x.mean(option);
         }
+
+        public static double mean(IEnumerable<byte> x, char option)
+        {
+            return x.mean(new string(new char[] { option } ));
+        }
     }
 }

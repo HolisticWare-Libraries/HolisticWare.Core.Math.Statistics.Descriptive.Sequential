@@ -29,15 +29,12 @@ namespace Core.Math.Statistics.Descriptive.MatlabOctave.Sequential
             switch(option.ToLower())
             {
                 case "a":
-                case "arithmetic":
                     retval_mean = x.MeanArithmetic();
                     break;
                 case "g":
-                case "geometric":
                     retval_mean = x.MeanGeometric();
                     break;
                 case "h":
-                case "harmonic":
                     retval_mean = x.MeanHarmonic();
                     break;
                 default:
@@ -69,15 +66,12 @@ namespace Core.Math.Statistics.Descriptive.MatlabOctave.Sequential
             switch (option.ToLower())
             {
                 case "a":
-                case "arithmetic":
                     retval_mean = x.MeanArithmetic();
                     break;
                 case "g":
-                case "geometric":
                     retval_mean = x.MeanGeometric();
                     break;
                 case "h":
-                case "harmonic":
                     retval_mean = x.MeanHarmonic();
                     break;
                 default:
@@ -109,15 +103,12 @@ namespace Core.Math.Statistics.Descriptive.MatlabOctave.Sequential
             switch (option.ToLower())
             {
                 case "a":
-                case "arithmetic":
                     retval_mean = x.MeanArithmetic();
                     break;
                 case "g":
-                case "geometric":
                     retval_mean = x.MeanGeometric();
                     break;
                 case "h":
-                case "harmonic":
                     retval_mean = x.MeanHarmonic();
                     break;
                 default:
@@ -146,15 +137,12 @@ namespace Core.Math.Statistics.Descriptive.MatlabOctave.Sequential
             switch (option.ToLower())
             {
                 case "a":
-                case "arithmetic":
                     retval_mean = x.MeanArithmetic();
                     break;
                 case "g":
-                case "geometric":
                     retval_mean = x.MeanGeometric();
                     break;
                 case "h":
-                case "harmonic":
                     retval_mean = x.MeanHarmonic();
                     break;
                 default:
@@ -186,15 +174,12 @@ namespace Core.Math.Statistics.Descriptive.MatlabOctave.Sequential
             switch (option.ToLower())
             {
                 case "a":
-                case "arithmetic":
                     retval_mean = x.MeanArithmetic();
                     break;
                 case "g":
-                case "geometric":
                     retval_mean = x.MeanGeometric();
                     break;
                 case "h":
-                case "harmonic":
                     retval_mean = x.MeanHarmonic();
                     break;
                 default:
@@ -226,15 +211,12 @@ namespace Core.Math.Statistics.Descriptive.MatlabOctave.Sequential
             switch (option.ToLower())
             {
                 case "a":
-                case "arithmetic":
                     retval_mean = x.MeanArithmetic();
                     break;
                 case "g":
-                case "geometric":
                     retval_mean = x.MeanGeometric();
                     break;
                 case "h":
-                case "harmonic":
                     retval_mean = x.MeanHarmonic();
                     break;
                 default:
@@ -266,15 +248,12 @@ namespace Core.Math.Statistics.Descriptive.MatlabOctave.Sequential
             switch (option.ToLower())
             {
                 case "a":
-                case "arithmetic":
                     retval_mean = x.MeanArithmetic();
                     break;
                 case "g":
-                case "geometric":
                     retval_mean = x.MeanGeometric();
                     break;
                 case "h":
-                case "harmonic":
                     retval_mean = x.MeanHarmonic();
                     break;
                 default:
@@ -306,15 +285,12 @@ namespace Core.Math.Statistics.Descriptive.MatlabOctave.Sequential
             switch (option.ToLower())
             {
                 case "a":
-                case "arithmetic":
                     retval_mean = x.MeanArithmetic();
                     break;
                 case "g":
-                case "geometric":
                     retval_mean = x.MeanGeometric();
                     break;
                 case "h":
-                case "harmonic":
                     retval_mean = x.MeanHarmonic();
                     break;
                 default:
@@ -346,15 +322,12 @@ namespace Core.Math.Statistics.Descriptive.MatlabOctave.Sequential
             switch (option.ToLower())
             {
                 case "a":
-                case "arithmetic":
                     retval_mean = x.MeanArithmetic();
                     break;
                 case "g":
-                case "geometric":
                     retval_mean = x.MeanGeometric();
                     break;
                 case "h":
-                case "harmonic":
                     retval_mean = x.MeanHarmonic();
                     break;
                 default:
@@ -386,15 +359,12 @@ namespace Core.Math.Statistics.Descriptive.MatlabOctave.Sequential
             switch (option.ToLower())
             {
                 case "a":
-                case "arithmetic":
                     retval_mean = x.MeanArithmetic();
                     break;
                 case "g":
-                case "geometric":
                     retval_mean = x.MeanGeometric();
                     break;
                 case "h":
-                case "harmonic":
                     retval_mean = x.MeanHarmonic();
                     break;
                 default:
