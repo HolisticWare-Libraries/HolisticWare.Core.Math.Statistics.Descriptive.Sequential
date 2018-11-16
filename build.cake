@@ -223,18 +223,38 @@ Task("nuget")
     );
 
 
-// FilePathCollection UnitTestsNUnitMobileProjects = GetFiles($"./tests/unit-tests/**/*.NUnit.Xamarin*.csproj");
-// FilePathCollection UnitTestsXUnitProjects = GetFiles($"./tests/unit-tests/**/*.XUnit.csproj");
-// FilePathCollection UnitTestsMSTestProjects = GetFiles($"./tests/unit-tests/**/*.NUnit.csproj");
+// FilePathCollection UnitTestsNUnitMobileProjects = GetFiles($"./tests/unit-tests/project-references/**/*.NUnit.Xamarin*.csproj");
+// FilePathCollection UnitTestsXUnitProjects = GetFiles($"./tests/unit-tests/project-references/**/*.XUnit.csproj");
+// FilePathCollection UnitTestsMSTestProjects = GetFiles($"./tests/unit-tests/project-references/**/*.NUnit.csproj");
 
 Task("unit-tests")
-    .IsDependentOn ("unit-tests-nunit")	
-    .IsDependentOn ("unit-tests-xunit")
-    .IsDependentOn ("unit-tests-mstest")
+    .IsDependentOn("libs")
     .Does
     (
         () =>
         {
+            try
+            {
+                RunTarget("unit-tests-nunit");
+            }
+            catch (System.Exception)
+            {
+            }
+            try
+            {
+                RunTarget("unit-tests-xunit");
+            }
+            catch (System.Exception)
+            {
+            }
+            try
+            {
+                RunTarget("unit-tests-mstest");
+            }
+            catch (System.Exception)
+            {
+            }
+
             return;
         }
     );
@@ -245,7 +265,7 @@ Task("unit-tests-nunit")
         () =>
         {
             FilePathCollection UnitTestsNUnitAssemblies;
-            FilePathCollection UnitTestsNUnitProjects = GetFiles($"./tests/unit-tests/**/*.NUnit.csproj");
+            FilePathCollection UnitTestsNUnitProjects = GetFiles($"./tests/unit-tests/project-references/**/*.NUnit.csproj");
 
             foreach(FilePath prj in UnitTestsNUnitProjects)
             {
@@ -270,7 +290,7 @@ Task("unit-tests-nunit")
                 );
             }
   
-            UnitTestsNUnitAssemblies = GetFiles($"./tests/unit-tests/**/bin/Debug/*.NUnit.dll");
+            UnitTestsNUnitAssemblies = GetFiles($"./tests/unit-tests/project-references/**/bin/Debug/*.NUnit.dll");
 
             foreach(FilePath asm in UnitTestsNUnitAssemblies)
             {
@@ -282,10 +302,12 @@ Task("unit-tests-nunit")
                 UnitTestsNUnitAssemblies, 
                 new NUnit3Settings 
                 {
+                    OutputFile = "Nunit.Results.mc++.txt",
+
                 }
             );
 
-            UnitTestsNUnitAssemblies = GetFiles($"./tests/unit-tests/**/bin/Release/*.NUnit.dll");
+            UnitTestsNUnitAssemblies = GetFiles($"./tests/unit-tests/project-references/**/bin/Release/*.NUnit.dll");
 
             foreach(FilePath asm in UnitTestsNUnitAssemblies)
             {
@@ -312,7 +334,7 @@ Task("unit-tests-xunit")
             {
                 MSBuild
                 (
-                    "./tests/unit-tests/UnitTests.XUnit/UnitTests.XUnit.csproj", 
+                    "./tests/unit-tests/project-references/UnitTests.XUnit/UnitTests.XUnit.csproj", 
                     new MSBuildSettings 
                     {
                         Configuration = "Debug",
@@ -320,7 +342,7 @@ Task("unit-tests-xunit")
                 );
                 DotNetCoreTest
                 (
-                    "./tests/unit-tests/UnitTests.XUnit/UnitTests.XUnit.csproj",
+                    "./tests/unit-tests/project-references/UnitTests.XUnit/UnitTests.XUnit.csproj",
                     //"xunit",  "--no-build -noshadow"
                     new DotNetCoreTestSettings()
                     {
@@ -328,7 +350,7 @@ Task("unit-tests-xunit")
                 );
                 XUnit2
                 (
-                    "./tests/unit-tests/UnitTests.XUnit/bin/**/UnitTests.*.dll",
+                    "./tests/unit-tests/project-references/UnitTests.XUnit/bin/**/UnitTests.*.dll",
                     new XUnit2Settings 
                     {
                         Parallelism = ParallelismOption.All,
@@ -360,7 +382,7 @@ Task("unit-tests-mstest")
         {
             MSBuild
             (
-                "./tests/unit-tests/UnitTests.MSTest/UnitTests.MSTest.csproj", 
+                "./tests/unit-tests/project-references/UnitTests.MSTest/UnitTests.MSTest.csproj", 
                 new MSBuildSettings 
                 {
                     Configuration = "Debug",
@@ -368,14 +390,14 @@ Task("unit-tests-mstest")
             );
             MSTest
             (
-                "./tests/unit-tests/UnitTests.MSTest/bin/Debug/**/UnitTests.MSTest.dll", 
+                "./tests/unit-tests/project-references/UnitTests.MSTest/bin/Debug/**/UnitTests.MSTest.dll", 
                 new MSTestSettings 
                 {
                 }
             );
             DotNetCoreTest
             (
-                "./tests/unit-tests/UnitTests.MSTest/UnitTests.MSTest.csproj",
+                "./tests/unit-tests/project-references/UnitTests.MSTest/UnitTests.MSTest.csproj",
                 //"xunit",  "--no-build -noshadow"
                 new DotNetCoreTestSettings()
                 {
@@ -443,7 +465,7 @@ Task ("coverage-xunit")
                                 @"
                                 -target:
                                 -output:/externals/coverage-opencover-xunit-report.xml
-                                -searchdirs:./tests/unit-tests/UnitTests.XUnit/UnitTests.*/**/UnitTests.*.dll
+                                -searchdirs:./tests/unit-tests/project-references/UnitTests.XUnit/UnitTests.*/**/UnitTests.*.dll
                                 "
                             }
                         );
@@ -455,7 +477,7 @@ Task ("coverage-xunit")
             //         {
             //             tool.XUnit2
             //             (
-            //                 "./tests/unit-tests/UnitTests.XUnit/UnitTests.*/**/UnitTests.*.dll",
+            //                 "./tests/unit-tests/project-references/UnitTests.XUnit/UnitTests.*/**/UnitTests.*.dll",
             //                 new XUnit2Settings 
             //                 {
             //                     ShadowCopy = false
@@ -575,6 +597,15 @@ Task ("clean")
             }
 
             return;
+        }
+    );
+
+Task("Default")
+.Does
+    (
+        () => 
+        {
+            RunTarget("unit-tests");
         }
     );
 
