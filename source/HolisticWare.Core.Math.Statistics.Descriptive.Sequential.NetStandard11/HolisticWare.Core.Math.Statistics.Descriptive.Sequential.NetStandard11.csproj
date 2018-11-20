@@ -109,12 +109,31 @@
   <ItemGroup>
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
     <PackageReference Include="System.Threading.Tasks.Dataflow" Version="4.9.0" />
-    <PackageReference Include="System.Memory" Version="4.5.0" />        
+    <PackageReference Include="System.Memory" Version="4.5.1" />        
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Sync\" />
-    <Folder Include="Sync\System.Memory\" />
-    <Folder Include="Sync\System.Memory\Span\" />
+    <Folder Include="System.Memory\" />
+    <Folder Include="System.Memory\Measures-CentralTendencies\" />
+    <Folder Include="System.Memory\Utilities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanArithmetic.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanArithmeticGeneralizedWeighted.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanArithmeticWeighted.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanCubic.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanGeneralized.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanGeometric.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanGeometricNaive.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanGeometricWeighted.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanHarmonic.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanHarmonicWeighted.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanQuadratic.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanWeighted.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.Median.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MedianHigh.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MedianLow.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MedianWeighted.cs" />
+    <Compile Include="System.Memory\Utilities\IEnumerableExtensions.Normalization.cs" />
   </ItemGroup>
   <Import Project="..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.projitems" Label="Shared" Condition="Exists('..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.projitems')" />
 </Project>

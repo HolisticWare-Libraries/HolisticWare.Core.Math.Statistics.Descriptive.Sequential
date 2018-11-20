@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.0</TargetFramework>
+    <TargetFramework>netstandard1.1</TargetFramework>
     <RootNamespace>HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential</RootNamespace>
     <AssemblyName>HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential</AssemblyName>
     <GenerateDocumentationFile>true</GenerateDocumentationFile> 
@@ -12,7 +12,7 @@
   </ItemGroup>  
   
   <ItemGroup>
-    <ProjectReference Include="..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10.csproj" />
+    <ProjectReference Include="..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard11\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard11.csproj" />
   </ItemGroup>
   <Import Project="..\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.projitems" Label="Shared" Condition="Exists('..\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.projitems')" />
 </Project>

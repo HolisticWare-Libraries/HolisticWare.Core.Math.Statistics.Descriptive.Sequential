@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.0</TargetFramework>
+    <TargetFramework>netstandard1.1</TargetFramework>
     <RootNamespace>Core.Math.Statistics.Descriptive.MatlabOctave.Sequential</RootNamespace>
     <AssemblyName>HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential</AssemblyName>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>     
@@ -9,7 +9,7 @@
 
  
   <ItemGroup>
-    <ProjectReference Include="..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10.csproj" />
+    <ProjectReference Include="..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard11\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard11.csproj" />
   </ItemGroup>
   <Import Project="..\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.projitems" Label="Shared" Condition="Exists('..\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.projitems')" />
 </Project>
