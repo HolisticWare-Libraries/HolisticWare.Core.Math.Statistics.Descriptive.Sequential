@@ -26,7 +26,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)UnitTests20180227DataSet004\Tests02FrequenciesModes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UnitTests20180227DataSet004\Tests03Moments.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UnitTests20180227DataSet004\Tests04SkewnessKurtosis.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetJudo\Tests00Data.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetBasketball\Tests00Data.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetBasketball\Tests01aMeanArithmetic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetBasketball\Tests02Modes.cs" />

@@ -43,25 +43,29 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.NetStandard10.csproj">
-      <Project>{74aff2e3-3e45-4df3-8a94-678d13b4a29b}</Project>
-      <Name>HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.NetStandard10</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard10.csproj">
-      <Project>{f9e03430-a1c5-40dd-914f-4190e1d14e80}</Project>
-      <Name>HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard10</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10.csproj">
-      <Project>{0c54645e-1c9b-4a21-b39c-2370f2f6e9d6}</Project>
-      <Name>HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard10</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10.csproj">
-      <Project>{DEFACBA9-2E24-46BD-B3E0-EFF602FA05DC}</Project>
-      <Name>HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\externals\Core.Text\source\HolisticWare.Core.Text.NetStandard10\HolisticWare.Core.Text.NetStandard10.csproj">
+    <ProjectReference Include="..\..\..\..\..\externals\Core.Text\source\HolisticWare.Core.Text.NetStandard10\HolisticWare.Core.Text.NetStandard10.csproj">
       <Project>{E03C830B-AD14-450C-8804-12E32645EDEC}</Project>
       <Name>HolisticWare.Core.Text.NetStandard10</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.NetStandard11\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.NetStandard11.csproj">
+      <Project>{EA0927A5-B664-4578-9A65-AE9F1A88E793}</Project>
+      <Name>HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.NetStandard11</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard11\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard11.csproj">
+      <Project>{B6C2916B-C57D-4A3B-884D-BB2E44B10710}</Project>
+      <Name>HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.NetStandard11</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard11\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard11.csproj">
+      <Project>{DEC4BC62-E64A-4C50-8C92-48BB3487A8BF}</Project>
+      <Name>HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard11</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard11\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard11.csproj">
+      <Project>{F9A8A0E3-4FC5-484B-857C-1D6F07DB40C7}</Project>
+      <Name>HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard11</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\externals\Core.Math.Samples\data\HolisticWare.Core.Sample.Data\HolisticWare.Core.Sample.Data.csproj">
+      <Project>{68C77835-7AC4-4702-B3E7-A6C2BBD7CC06}</Project>
+      <Name>HolisticWare.Core.Sample.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -134,5 +138,8 @@
       <Version>4.5.1</Version>
     </PackageReference>
   </ItemGroup>
+  <Import Project="..\..\..\..\unit-tests\UnitTests.Common.Utils.Shared\UnitTests.Common.Utils.Shared.projitems" Label="Shared" Condition="Exists('..\..\..\..\unit-tests\UnitTests.Common.Utils.Shared\UnitTests.Common.Utils.Shared.projitems')" />
+  <Import Project="..\..\..\..\Tests.CommonShared\Tests.CommonShared.projitems" Label="Shared" Condition="Exists('..\..\..\..\Tests.CommonShared\Tests.CommonShared.projitems')" />
+  <Import Project="..\..\..\Benchmarks.Common.Utils.Shared\Benchmarks.Common.Utils.Shared.projitems" Label="Shared" Condition="Exists('..\..\..\Benchmarks.Common.Utils.Shared\Benchmarks.Common.Utils.Shared.projitems')" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

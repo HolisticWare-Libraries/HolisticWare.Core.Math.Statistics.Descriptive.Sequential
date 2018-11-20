@@ -259,6 +259,9 @@ Task("unit-tests")
         }
     );
 
+var reports = Directory("./externals/results/unit-tests/");
+
+
 Task("unit-tests-nunit")
     .Does
     (
@@ -302,8 +305,7 @@ Task("unit-tests-nunit")
                 UnitTestsNUnitAssemblies, 
                 new NUnit3Settings 
                 {
-                    OutputFile = "Nunit.Results.mc++.txt",
-
+                    OutputFile = "./externals/results/unit-tests/Nunit3.1.txt",
                 }
             );
 
@@ -319,6 +321,7 @@ Task("unit-tests-nunit")
                 UnitTestsNUnitAssemblies, 
                 new NUnit3Settings 
                 {
+                    OutputFile = "./externals/results/unit-tests/Nunit3.2.txt",
                 }
             );
             return;
@@ -346,6 +349,7 @@ Task("unit-tests-xunit")
                     //"xunit",  "--no-build -noshadow"
                     new DotNetCoreTestSettings()
                     {
+                        ResultsDirectory = reports,
                     }
                 );
                 XUnit2
@@ -354,24 +358,24 @@ Task("unit-tests-xunit")
                     new XUnit2Settings 
                     {
                         Parallelism = ParallelismOption.All,
-                        HtmlReport = false,
                         NoAppDomain = true,
+                        ReportName = "XUnit.Results",
+                        HtmlReport = true,
                         XmlReport = true,
-                        OutputDirectory = "./build"
+                        NUnitReport = true,
+                        OutputDirectory = reports,
                     }
                 );
-                
             }
             catch (System.Exception)
             {  
-                Error("mc++ XUnit tests failed");   
+                Error("mc++ XUnit tests have failed");   
             }
-
-            ReportUnit
-                (
-                    "./externals/unit-tests-xunit-report.xml", 
-                    "./externals/unit-tests-xunit-report.html"
-                );
+            finally 
+            {
+                ReportUnit(reports);
+            }
+            MoveFile("TestResult.xml", "./externals/results/unit-tests/TestResult.xml");
         }
     );
 
@@ -393,6 +397,7 @@ Task("unit-tests-mstest")
                 "./tests/unit-tests/project-references/UnitTests.MSTest/bin/Debug/**/UnitTests.MSTest.dll", 
                 new MSTestSettings 
                 {
+                    ResultsFile = "./externals/results/unit-tests/MSTest.txt",
                 }
             );
             DotNetCoreTest
@@ -401,6 +406,7 @@ Task("unit-tests-mstest")
                 //"xunit",  "--no-build -noshadow"
                 new DotNetCoreTestSettings()
                 {
+                    ResultsDirectory = reports,
                 }
             );
  
@@ -464,7 +470,7 @@ Task ("coverage-xunit")
                                 Arguments = 
                                 @"
                                 -target:
-                                -output:/externals/coverage-opencover-xunit-report.xml
+                                -output:./externals/coverage-opencover-xunit-report.xml
                                 -searchdirs:./tests/unit-tests/project-references/UnitTests.XUnit/UnitTests.*/**/UnitTests.*.dll
                                 "
                             }
@@ -507,9 +513,20 @@ Task ("externals")
         {
             Information("externals ...");
 
-            if (!DirectoryExists ("./externals/"))
+            string [] folders = new string[]
             {
-                CreateDirectory ("./externals");
+                "./externals/",
+                "./externals/results/",
+                "./externals/results/unit-tests/",
+            };
+
+            foreach(string folder in folders)
+            {
+                Information($"    creating ...{folder}");
+                if (!DirectoryExists (folder))
+                {
+                    CreateDirectory (folder);
+                }
             }
 
             Information("    downloading ...");
@@ -527,7 +544,7 @@ Task("externals-build")
     (
         () => 
         {
-            FilePathCollection files = GetFiles("./external/**/build.cake");
+            FilePathCollection files = GetFiles("./external*/**/build.cake");
             foreach(FilePath file in files)
             {
                 Information("File: {0}", file);
