@@ -38,7 +38,7 @@ using NUnit.Framework;
 // MSTest aliases
 using TestInitialize = NUnit.Framework.SetUpAttribute;
 using TestProperty = NUnit.Framework.PropertyAttribute;
-using TestClass = NUnit.Framework.TestFixtureAttribute;
+using TestClass = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
 using TestMethod = NUnit.Framework.TestAttribute;
 using TestCleanup = NUnit.Framework.TearDownAttribute;
 // XUnit aliases
@@ -359,7 +359,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Memory<T> 
             ReadOnlyMemory<T>
         */
-        #if !__ANDROID__ && !__IOS__ && ! SKIP_TEST_CSHARP_7X
+        #if !__ANDROID__ && !__IOS__ 
         /*
         Error CS0122: 'Span<T>' is inaccessible due to its protection level (CS0122) (UnitTests.NUnit.XamarinAndroid)
         Error CS0122: 'Span<T>' is inaccessible due to its protection level (CS0122) (UnitTests.NUnit.XamarinIOS)

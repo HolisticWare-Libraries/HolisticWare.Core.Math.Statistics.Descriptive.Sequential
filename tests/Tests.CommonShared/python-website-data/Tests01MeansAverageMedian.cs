@@ -44,7 +44,7 @@ using NUnit.Framework;
 // MSTest aliases
 using TestInitialize = NUnit.Framework.SetUpAttribute;
 using TestProperty = NUnit.Framework.PropertyAttribute;
-using TestClass = NUnit.Framework.TestFixtureAttribute;
+using TestClass = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
 using TestMethod = NUnit.Framework.TestAttribute;
 using TestCleanup = NUnit.Framework.TearDownAttribute;
 // XUnit aliases
