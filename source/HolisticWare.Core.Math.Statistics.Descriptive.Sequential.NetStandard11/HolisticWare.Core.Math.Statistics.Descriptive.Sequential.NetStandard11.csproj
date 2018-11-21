@@ -184,6 +184,7 @@
     <Compile Include="System.Memory\Utilities\IEnumerableExtensions.Normalization.cs" />
     <Compile Include="System.Memory\GroupedData\IEnumerableExtensions.GroupedDataGroups.cs" />
     <Compile Include="System.Memory\GroupedData\IEnumerableExtensions.GroupedDataMedian.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\SpanExtensions.MeanArithmetic.cs" />
   </ItemGroup>
   <Import Project="..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.projitems" Label="Shared" Condition="Exists('..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.projitems')" />
 </Project>
