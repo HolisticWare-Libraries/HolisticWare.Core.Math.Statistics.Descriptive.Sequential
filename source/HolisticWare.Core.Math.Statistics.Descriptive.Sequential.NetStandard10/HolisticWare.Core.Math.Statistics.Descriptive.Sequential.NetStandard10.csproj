@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <Folder Include="IEnumerable\" />
+    <Folder Include="IEnumerable\GroupedData\" />
   </ItemGroup>
   <Import Project="..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.projitems" Label="Shared" Condition="Exists('..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.projitems')" />
 </Project>

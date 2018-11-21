@@ -17,11 +17,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\" />
-    <Folder Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\GroupedData\" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.0'">  
-    <Compile Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\GroupedData\IEnumerableExtensions.GroupedDataGroups.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)StatisticsDescriptive\GroupedData\IEnumerableExtensions.GroupedDataMedian.cs" />
-  </ItemGroup>
 </Project>
