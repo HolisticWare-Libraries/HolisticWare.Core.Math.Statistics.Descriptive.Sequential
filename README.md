@@ -22,7 +22,7 @@ and maintenance.
 
 Implemented and planned (TODOs):
 
-1.    [x] Measures of Central Tendency
+1.  [x] Measures of Central Tendency
 
     1.   Average (Mean) Value algorithms
 
