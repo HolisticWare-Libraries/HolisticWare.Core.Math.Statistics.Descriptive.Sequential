@@ -25,15 +25,17 @@ and maintenance.
 
 Implemented and planned (TODOs):
 
-1.    [x] Measures of Central Tendency                                   |
+1.    [x] Measures of Central Tendency
 
     *   Average (Mean) Value algorithms
 
-        *   Arithmetic 
+        *   [x] [Arithmetic mean](https://en.wikipedia.org/wiki/Arithmetic_mean)
 
-        *   Geometric
+        *   [x] [Weighted aritmetic mean](https://en.wikipedia.org/wiki/Weighted_arithmetic_mean)
 
-        *   Harmonic
+        *   [x] [Geometric mean](https://en.wikipedia.org/wiki/Geometric_mean)
+
+        *   [x] [Harmonic mean](https://en.wikipedia.org/wiki/Harmonic_mean)
 
         *   Quadratic
 
@@ -42,14 +44,6 @@ Implemented and planned (TODOs):
         *   Generalized
 
         *   Weighted
-
-    *   [x] [Arithmetic mean](https://en.wikipedia.org/wiki/Arithmetic_mean)
-
-    *   [x] [Weighted aritmetic mean](https://en.wikipedia.org/wiki/Weighted_arithmetic_mean)
-
-    *   [x] [Harmonic mean](https://en.wikipedia.org/wiki/Harmonic_mean)
-
-    *   [x] [Geometric mean](https://en.wikipedia.org/wiki/Geometric_mean)
 
     *   [x] [Median](https://en.wikipedia.org/wiki/Median)
 
@@ -72,11 +66,6 @@ Implemented and planned (TODOs):
         * row
 
         * row absolute
-
-    *   Median
-
-    *   Modes
-
 
 3.  [ ] Measures of Assymetry (Shape) Distribution                                              
 
