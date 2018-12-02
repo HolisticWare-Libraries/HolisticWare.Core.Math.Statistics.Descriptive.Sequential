@@ -14,10 +14,7 @@ NOTE: Parallel algorithms based on (TPL) can be found in
 
 *   Nuget: 
 
-
-## DONE
-
-### Algorithms
+## Algorithms
 
 Group categorization might be wrong (accepting comments as issues), but the idea was just to simplify implementation
 and maintenance.
@@ -27,23 +24,23 @@ Implemented and planned (TODOs):
 
 1.    [x] Measures of Central Tendency
 
-    *   Average (Mean) Value algorithms
+    1.   Average (Mean) Value algorithms
 
-        *   [x] [Arithmetic mean](https://en.wikipedia.org/wiki/Arithmetic_mean)
+        1.  [x] [Arithmetic mean](https://en.wikipedia.org/wiki/Arithmetic_mean)
 
-        *   [x] [Weighted aritmetic mean](https://en.wikipedia.org/wiki/Weighted_arithmetic_mean)
+        2.  [x] [Weighted aritmetic mean](https://en.wikipedia.org/wiki/Weighted_arithmetic_mean)
 
-        *   [x] [Geometric mean](https://en.wikipedia.org/wiki/Geometric_mean)
+        3.  [x] [Geometric mean](https://en.wikipedia.org/wiki/Geometric_mean)
 
-        *   [x] [Harmonic mean](https://en.wikipedia.org/wiki/Harmonic_mean)
+        4.  [x] [Harmonic mean](https://en.wikipedia.org/wiki/Harmonic_mean)
 
-        *   Quadratic
+        5.  Quadratic
 
-        *   Cubic
+        6.  Cubic
 
-        *   Generalized
+        7.  Generalized
 
-        *   Weighted
+        8.  Weighted
 
     *   [x] [Median](https://en.wikipedia.org/wiki/Median)
 
