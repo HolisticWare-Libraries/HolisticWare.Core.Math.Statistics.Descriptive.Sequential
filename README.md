@@ -22,17 +22,17 @@ and maintenance.
 
 Implemented and planned (TODOs):
 
-1.  [x] Measures of Central Tendency
+1  [x] Measures of Central Tendency
 
-    1.   Average (Mean) Value algorithms
+    1   Average (Mean) Value algorithms
 
-        1.  [x] [Arithmetic mean](https://en.wikipedia.org/wiki/Arithmetic_mean)
+        1   [x] [Arithmetic mean](https://en.wikipedia.org/wiki/Arithmetic_mean)
 
-        2.  [x] [Weighted aritmetic mean](https://en.wikipedia.org/wiki/Weighted_arithmetic_mean)
+        2   [x] [Weighted aritmetic mean](https://en.wikipedia.org/wiki/Weighted_arithmetic_mean)
 
-        3.  [x] [Geometric mean](https://en.wikipedia.org/wiki/Geometric_mean)
+        3   [x] [Geometric mean](https://en.wikipedia.org/wiki/Geometric_mean)
 
-        4.  [x] [Harmonic mean](https://en.wikipedia.org/wiki/Harmonic_mean)
+        4   [x] [Harmonic mean](https://en.wikipedia.org/wiki/Harmonic_mean)
 
         5.  Quadratic
 
