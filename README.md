@@ -30,13 +30,17 @@ Implemented and planned (TODOs):
 
     1.  Average (Mean) Value algorithms
         
-        1.  [Arithmetic mean](https://en.wikipedia.org/wiki/Arithmetic_mean)
+        1.  Arithmetic mean
+        
+            *   https://en.wikipedia.org/wiki/Arithmetic_mean
 
-            [x] Implemented
+            *   [x] Implemented
 
-            [x] Tested
+            *   [x] Tested
 
-        2.  [Weighted aritmetic mean](https://en.wikipedia.org/wiki/Weighted_arithmetic_mean)
+        2.  Weighted aritmetic mean
+        
+            https://en.wikipedia.org/wiki/Weighted_arithmetic_mean
 
             [x] Implemented
 
