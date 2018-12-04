@@ -24,9 +24,9 @@ Implemented and planned (TODOs):
 
 1.  Measures of Central Tendency
 
-    [x] Implemented
+    *   [x] Implemented
 
-    [x] Tested
+    *   [x] Tested
 
     1.  Average (Mean) Value algorithms
         
@@ -40,55 +40,99 @@ Implemented and planned (TODOs):
 
         2.  Weighted aritmetic mean
         
-            https://en.wikipedia.org/wiki/Weighted_arithmetic_mean
+            *   https://en.wikipedia.org/wiki/Weighted_arithmetic_mean
 
-            [x] Implemented
+            *   [x] Implemented
 
-            [x] Tested
+            *   [x] Tested
 
-        3.  [Geometric mean](https://en.wikipedia.org/wiki/Geometric_mean)
+        3.  Geometric mean
 
-            [x] Implemented
+            *   https://en.wikipedia.org/wiki/Geometric_mean
 
-            [x] Tested
+            *   [x] Implemented
 
-        4   [Harmonic mean](https://en.wikipedia.org/wiki/Harmonic_mean)
+            *   [x] Tested
 
-        5.  Quadratic
+        4.   Harmonic Mean
 
-        6.  Cubic
+            *   https://en.wikipedia.org/wiki/Harmonic_mean
 
-        7.  Generalized
+            *   [x] Implemented
 
-        8.  Weighted
+            *   [x] Tested
 
-    *   [x] [Median](https://en.wikipedia.org/wiki/Median)
+        5.  Quadratic AKA Root Mean Square
 
-    *   [x] [Mode](https://en.wikipedia.org/wiki/Mode_(statistics))
+            *   https://en.wikipedia.org/wiki/Root_mean_square
 
-    *   [ ] [Quantile](https://en.wikipedia.org/wiki/Quantile)
+            *   https://en.wiktionary.org/wiki/quadratic_mean
 
-    *   [ ] [Quartile](https://en.wikipedia.org/wiki/Quartile)
+            *   [x] Implemented
 
-    *   [ ] [Percentile](https://en.wikipedia.org/wiki/Percentile)
+            *   [x] Tested
 
-    *   [ ] [Moments](https://en.wikipedia.org/wiki/Moment_(mathematics))
+        6.  Cubic Mean
 
-        * generalised
+            *   https://en.wikipedia.org/wiki/Cubic_mean
 
-        * central
+            *   [x] Implemented
 
-        * central absolute
+            *   [x] Tested
 
-        * row
+        7.  Generalized AKA Power Mean
 
-        * row absolute
+            *   https://en.wikipedia.org/wiki/Generalized_mean
 
-3.  [ ] Measures of Assymetry (Shape) Distribution                                              
+            *   [x] Implemented
+
+            *   [x] Tested
+
+        8.  Weighted Generalized Mean
+
+            *   [x] Implemented
+
+            *   [x] Tested
+
+    *   Median
+
+        *   https://en.wikipedia.org/wiki/Median
+
+        *   [x] Implemented
+
+        *   [x] Tested
+
+    *   [x] Modes
+
+        *   https://en.wikipedia.org/wiki/Mode_(statistics)
+
+        *   [x] Implemented
+
+        *   [x] Tested
+
+2.  [x] Distribution (Shape) Measures
 
     *   [x] Frequencies
 
-    *   [] Distribution Asymmetry Measures
+        *   [x] Frequency Counter
+
+            *   [x] Implemented
+
+            *   [x] Tested
+
+        *   [x] Frequencies
+
+            *   [x] Implemented
+
+            *   [x] Tested
+
+        *   [x] Frequency Distribution
+
+            *   [x] Implemented
+
+            *   [x] Tested
+
+    3.1.  [ ] Distribution (Shape) Assymetry Measures
 
         *   [] Skewness
 
@@ -97,10 +141,10 @@ Implemented and planned (TODOs):
                 *   _Pearson's moment coefficient of skewness_
 
                 *   _Pearson's first skewness coefficient (mode skewness)_
-            
+
                 *   _Pearson's second skewness coefficient (median skewness)_
 
-        *   Distribution Roundness Measures
+    3.2.  [ ] Distribution (Shape) Roundness Measures
 
             *   [ ] Kurtosis
 
@@ -108,16 +152,57 @@ Implemented and planned (TODOs):
 
                 * _Differences between formulas: more references on [R package 'e1071'](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjDw8PLkavbAhUBApoKHf0dB4wQFggqMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fe1071%2Fe1071.pdf&usg=AOvVaw02nj4Mk-mh5km97z9ukTdc), pages -  `27`-  and -  `47`._
 
-4.   [x] Variability/Dispersion Measures
+3.  Dispersion / Variability Measures
 
-    *   Moments
+    *   [] Moments
 
-    *   Standard Deviation (Sample and Population)
+        *   https://en.wikipedia.org/wiki/Moment_(mathematics)
 
-    *   Variance (Sample and Population)
+        *   [] Implemented
 
-2.   [x] Measures of Variability
+        *   [] Tested
 
+        *   Generalised
+
+            *   [] Implemented
+
+            *   [] Tested
+
+        *   Central
+
+            *   [] Implemented
+
+            *   [] Tested
+
+        *   Central Absolute
+
+            *   [] Implemented
+
+            *   [] Tested
+
+        *   Row
+
+            *   [] Implemented
+
+            *   [] Tested
+
+        * row absolute
+
+            *   [] Implemented
+
+            *   [] Tested
+
+    *   [] Variance (Sample and Population)
+
+    *   [] Standard Deviation (Sample and Population)
+
+    *   Standard Deviation 
+
+    *   [] Range
+
+    *   [] Variability
+
+ 
     *   [x] [Range](https://en.wikipedia.org/wiki/Range_(statistics))
 
     *   [ ] [Interquartile range](https://en.wikipedia.org/wiki/Interquartile_range)
@@ -131,6 +216,30 @@ Implemented and planned (TODOs):
     *   [ ] [Coefficient of variation](https://en.wikipedia.org/wiki/Coefficient_of_variation)
 
     *   [ ] [Quartile coefficient of dispersion](https://en.wikipedia.org/wiki/Quartile_coefficient_of_dispersion)
+    
+    *   [] Quantile
+
+        *   https://en.wikipedia.org/wiki/Quantile
+
+        *   [] Implemented
+
+        *   [] Tested
+
+    *   [] Quartile
+
+        *   https://en.wikipedia.org/wiki/Quartile
+
+        *   [] Implemented
+
+        *   [] Tested
+
+    *   [] Percentile
+
+        *   https://en.wikipedia.org/wiki/Percentile
+
+        *   [] Implemented
+
+        *   [] Tested
 
 4.   Dependency Measures
 
