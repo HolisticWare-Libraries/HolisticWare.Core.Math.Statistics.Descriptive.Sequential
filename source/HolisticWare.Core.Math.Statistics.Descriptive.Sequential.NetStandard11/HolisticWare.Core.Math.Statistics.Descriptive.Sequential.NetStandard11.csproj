@@ -106,6 +106,9 @@
 		</iconUrl>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD;NETSTANDARD1_1;METHODIMPL_OPTIONS_AGRESSIVE_INLINING</DefineConstants>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
     <PackageReference Include="System.Threading.Tasks.Dataflow" Version="4.9.0" />
@@ -185,6 +188,7 @@
     <Compile Include="System.Memory\GroupedData\IEnumerableExtensions.GroupedDataGroups.cs" />
     <Compile Include="System.Memory\GroupedData\IEnumerableExtensions.GroupedDataMedian.cs" />
     <Compile Include="System.Memory\Measures-CentralTendencies\SpanExtensions.MeanArithmetic.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\ReadOnlySpanExtensions.MeanArithmetic.cs" />
   </ItemGroup>
   <Import Project="..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.projitems" Label="Shared" Condition="Exists('..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.projitems')" />
 </Project>

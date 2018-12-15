@@ -10,7 +10,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// Mean (Average) Arithmetic
     /// </summary>
     /// <see cref="https://en.wikipedia.org/wiki/Average"/>
-    public static partial class IEnumerableExtensionsMeanArithmetic
+    public static partial class ReadOnlySpanExtensionsMeanArithmetic
     {
         //==============================================================================================================
         /// <summary>
@@ -30,17 +30,15 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         #endif
         public static double MeanArithmetic
                                     (
-                                        this IEnumerable<byte> x
+                                        this ReadOnlySpan<byte> x
                                     )
         {
-            ReadOnlySpan<byte> x_new = x.ToArray<byte>().AsSpan<byte>();
-
             double sum = 0.0;
-            int n = x_new.Length;
+            int n = x.Length;
 
             for (int i = 0; i < n; i++)
             {
-                sum += x_new[i]; 
+                sum += x[i]; 
             }
 
             return sum / n;
@@ -51,17 +49,15 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         #endif
         public static double MeanArithmetic
                                     (
-                                        this IEnumerable<ushort> x
+                                        this ReadOnlySpan<ushort> x
                                     )
         {
-            ReadOnlySpan<ushort> x_new = x.ToArray<ushort>().AsSpan<ushort>();
-
             double sum = 0.0;
-            int n = x_new.Length;
+            int n = x.Length;
 
             for (int i = 0; i < n; i++)
             {
-                sum += x_new[i];
+                sum += x[i];
             }
 
             return sum / n;
@@ -72,17 +68,15 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         #endif
         public static double MeanArithmetic
                                     (
-                                        this IEnumerable<short> x
+                                        this ReadOnlySpan<short> x
                                     )
         {
-            ReadOnlySpan<short> x_new = x.ToArray<short>().AsSpan<short>();
-
             double sum = 0.0;
-            int n = x_new.Length;
+            int n = x.Length;
 
             for (int i = 0; i < n; i++)
             {
-                sum += x_new[i];
+                sum += x[i];
             }
 
             return sum / n;
@@ -93,17 +87,15 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         #endif
         public static double MeanArithmetic
                                     (
-                                        this IEnumerable<int> x
+                                        this ReadOnlySpan<int> x
                                     )
         {
-            ReadOnlySpan<int> x_new = x.ToArray<int>().AsSpan<int>();
-
             double sum = 0.0;
-            int n = x_new.Length;
+            int n = x.Length;
 
             for (int i = 0; i < n; i++)
             {
-                sum += x_new[i];
+                sum += x[i];
             }
 
             return sum / n;
@@ -114,17 +106,15 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         #endif
         public static double MeanArithmetic
                                     (
-                                        this IEnumerable<uint> x
+                                        this ReadOnlySpan<uint> x
                                     )        
         {
-            ReadOnlySpan<uint> x_new = x.ToArray<uint>().AsSpan<uint>();
-
             double sum = 0.0;
-            int n = x_new.Length;
+            int n = x.Length;
 
             for (int i = 0; i < n; i++)
             {
-                sum += x_new[i];
+                sum += x[i];
             }
 
             return sum / n;
@@ -135,17 +125,15 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         #endif
         public static double MeanArithmetic
                                     (
-                                        this IEnumerable<long> x
+                                        this ReadOnlySpan<long> x
                                     )
         {
-            ReadOnlySpan<long> x_new = x.ToArray<long>().AsSpan<long>();
-
             double sum = 0.0;
-            int n = x_new.Length;
+            int n = x.Length;
 
             for (int i = 0; i < n; i++)
             {
-                sum += x_new[i];
+                sum += x[i];
             }
 
             return sum / n;
@@ -156,17 +144,15 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         #endif
         public static double MeanArithmetic
                                     (
-                                        this IEnumerable<ulong> x
+                                        this ReadOnlySpan<ulong> x
                                     )
         {
-            ReadOnlySpan<ulong> x_new = x.ToArray<ulong>().AsSpan<ulong>();
-
             double sum = 0.0;
-            int n = x_new.Length;
+            int n = x.Length;
 
             for (int i = 0; i < n; i++)
             {
-                sum += x_new[i];
+                sum += x[i];
             }
 
             return sum / n;
@@ -177,17 +163,15 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         #endif
         public static double MeanArithmetic
                                     (
-                                        this IEnumerable<float> x
+                                        this ReadOnlySpan<float> x
                                     )
         {
-            ReadOnlySpan<float> x_new = x.ToArray<float>().AsSpan<float>();
-
             double sum = 0.0;
-            int n = x_new.Length;
+            int n = x.Length;
 
             for (int i = 0; i < n; i++)
             {
-                sum += x_new[i];
+                sum += x[i];
             }
 
             return sum / n;
@@ -198,17 +182,15 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         #endif
         public static double MeanArithmetic
                                     (
-                                        this IEnumerable<double> x
+                                        this ReadOnlySpan<double> x
                                     )
         {
-            ReadOnlySpan<double> x_new = x.ToArray<double>().AsSpan<double>();
-
             double sum = 0.0;
-            int n = x_new.Length;
+            int n = x.Length;
 
             for (int i = 0; i < n; i++)
             {
-                sum += x_new[i];
+                sum += x[i];
             }
 
             return sum / n;
@@ -219,17 +201,15 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         #endif
         public static decimal MeanArithmetic
                                     (
-                                        this IEnumerable<decimal> x
+                                        this ReadOnlySpan<decimal> x
                                     )
         {
-            ReadOnlySpan<decimal> x_new = x.ToArray<decimal>().AsSpan<decimal>();
-
             decimal sum = 0.0M;
-            int n = x_new.Length;
+            int n = x.Length;
 
             for (int i = 0; i < n; i++)
             {
-                sum += x_new[i];
+                sum += x[i];
             }
 
             return sum / n;
