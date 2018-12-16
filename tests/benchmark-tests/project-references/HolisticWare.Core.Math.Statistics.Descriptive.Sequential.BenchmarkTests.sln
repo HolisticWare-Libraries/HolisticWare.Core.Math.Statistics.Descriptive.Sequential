@@ -11,11 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "externals", "externals", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{69B20DD6-58F6-4701-B081-9B09E8B697D3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmarks.MSTest", "target-netstandard10\Benchmarks.MSTest\Benchmarks.MSTest.csproj", "{2350C347-ED7F-49E9-B3A5-6EBECD5C27C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmarks.MSTest", "netstandard10\Benchmarks.MSTest\Benchmarks.MSTest.csproj", "{2350C347-ED7F-49E9-B3A5-6EBECD5C27C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarks.NUnit", "target-netstandard11\Benchmarks.NUnit\Benchmarks.NUnit.csproj", "{DD4AC4FC-52B0-49F2-85DE-6E6C441F5207}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarks.NUnit", "netstandard11\Benchmarks.NUnit\Benchmarks.NUnit.csproj", "{DD4AC4FC-52B0-49F2-85DE-6E6C441F5207}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmarks.XUnit", "target-netstandard10\Benchmarks.XUnit\Benchmarks.XUnit.csproj", "{57A0B06A-7FF0-4FAA-9F73-B9CE93A354DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmarks.XUnit", "netstandard10\Benchmarks.XUnit\Benchmarks.XUnit.csproj", "{57A0B06A-7FF0-4FAA-9F73-B9CE93A354DE}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Benchmarks.Common.Utils.Shared", "..\Benchmarks.Common.Utils.Shared\Benchmarks.Common.Utils.Shared.shproj", "{E4A99F5B-5163-43F4-9E30-4D5F88D08C7D}"
 EndProject
@@ -25,13 +25,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Sample.Da
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "UnitTests.Common.Utils.Shared", "..\..\unit-tests\UnitTests.Common.Utils.Shared\UnitTests.Common.Utils.Shared.shproj", "{E390F6DA-9F4B-43A4-8ABF-F9434DF2C70D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "target-netstandard10", "target-netstandard10", "{6C13D081-0562-42D0-BD37-966F9A357919}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "netstandard10", "netstandard10", "{6C13D081-0562-42D0-BD37-966F9A357919}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "target-netstandard11", "target-netstandard11", "{E9A7E9D8-69BA-4003-8C48-A6C717BF3715}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "netstandard11", "netstandard11", "{E9A7E9D8-69BA-4003-8C48-A6C717BF3715}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmarks.XUnit", "target-netstandard11\Benchmarks.XUnit\Benchmarks.XUnit.csproj", "{57C9EE38-F0D1-425E-8E14-49621768F3D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmarks.XUnit", "netstandard11\Benchmarks.XUnit\Benchmarks.XUnit.csproj", "{57C9EE38-F0D1-425E-8E14-49621768F3D6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmarks.MSTest", "target-netstandard11\Benchmarks.MSTest\Benchmarks.MSTest.csproj", "{9C858A94-BA25-4329-8427-8005A12C5AC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmarks.MSTest", "netstandard11\Benchmarks.MSTest\Benchmarks.MSTest.csproj", "{9C858A94-BA25-4329-8427-8005A12C5AC0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10", "..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10.csproj", "{DEFACBA9-2E24-46BD-B3E0-EFF602FA05DC}"
 EndProject
@@ -64,7 +64,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Math.Stat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard11", "..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard11\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard11.csproj", "{DEC4BC62-E64A-4C50-8C92-48BB3487A8BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarks.NUnit", "target-netstandard10\Benchmarks.NUnit\Benchmarks.NUnit.csproj", "{DD4AC4FC-52B0-49F2-85DE-6E6C441F5207}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarks.NUnit", "netstandard10\Benchmarks.NUnit\Benchmarks.NUnit.csproj", "{DD4AC4FC-52B0-49F2-85DE-6E6C441F5207}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
