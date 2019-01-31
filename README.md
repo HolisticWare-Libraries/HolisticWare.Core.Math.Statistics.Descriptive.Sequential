@@ -5,8 +5,42 @@ Statistics library for .NET Standard 1.0.
 *   Nuget https://www.nuget.org/packages/HolisticWare.Core.Math.Statistics.Sequential/
 
 Basic Descriptive Statistics Algorithms implemented as sequential in both synchronous and
-aynchronous variants. Implementations are based on `IEnumerable<T>` as extension methods
-(similar to LINQ - `System.Linq` )
+aynchronous variants. 
+
+Implementations are based on:
+
+*   `IEnumerable<T>` as extension methods (LINQ - `System.Linq`)
+
+    *   `netstandard1.0`
+
+    *   Implementation [DONE]
+
+    *   Tests [INPROGRESS]
+
+*   `Span<T>` and `Memory<T>` from `System.Memory`
+
+    *   `netstandard1.1`
+
+    *   Implementation [INPROGRESS]
+
+    *   Tests [INPROGRESS]
+
+*   `IAsyncEnumerable<T>` from ``
+
+    *   `netstandard1.0`
+
+    *   Implementation [INPROGRESS]
+
+    *   Tests [INPROGRESS]
+
+*   `ArrayList` not encouraged, just as an option fro those that must use it in legacy code
+
+    *   `netstandard1.3`
+
+    *   Implementation [INPROGRESS]
+
+    *   Tests [INPROGRESS]
+    
 
 NOTE: Parallel algorithms based on (TPL) can be found in 
 
