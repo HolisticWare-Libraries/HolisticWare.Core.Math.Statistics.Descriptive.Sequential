@@ -73,7 +73,7 @@ var TARGET = Argument ("t", Argument ("target", "Default"));
 FilePathCollection LibSourceSolutions = GetFiles($"./source/**/*.sln");
 FilePathCollection LibSourceProjects = GetFiles($"./source/**/*.csproj");
 
-
+//---------------------------------------------------------------------------------------
 Task("libs")
     .IsDependentOn ("libs-msbuild-solutions")
     .IsDependentOn ("libs-msbuild-projects")
@@ -212,6 +212,7 @@ Task("libs-dotnet-projects")
             return;
         }
     );
+//---------------------------------------------------------------------------------------
 
 Task("nuget")
     .Does
