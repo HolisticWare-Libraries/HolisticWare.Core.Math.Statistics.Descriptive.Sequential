@@ -98,7 +98,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         public static void LoadDataFromFile(TestContext tc)
         {
             #if NUNIT
-            string directory_test = TestContext.CurrentContext.TestDirectory;
+            string directory_test =
+                            // TestContext.CurrentContext.TestDirectory
+                            Path.GetDirectoryName(typeof(UnitTests20180318DataSetRand50Samp03).Assembly.Location); 
+                            ;
             #elif XUNIT
             string directory_test = Environment.CurrentDirectory;
             #elif MSTEST
