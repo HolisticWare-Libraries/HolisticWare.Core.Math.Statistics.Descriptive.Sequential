@@ -1,4 +1,4 @@
-﻿// /*
+// /*
 //    Copyright (c) 2017-12
 //
 //    moljac
@@ -88,11 +88,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_ONT_a, 159.3, 0.01);
+            Assert.AreEqual(mean_ONT_a, 15.93, 0.01);
             #elif XUNIT
-            Assert.Equal(159.3, mean_ONT_a, 2);
+            Assert.Equal(15.93, mean_ONT_a, 2);
             #elif MSTEST
-            Assert.AreEqual(mean_ONT_a, 159.3, 0.01);
+            Assert.AreEqual(mean_ONT_a, 15.93, 0.01);
             #endif
 
             return;
