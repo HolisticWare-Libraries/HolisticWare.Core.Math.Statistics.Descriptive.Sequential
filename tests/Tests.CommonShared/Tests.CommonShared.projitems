@@ -225,6 +225,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)01-DarkVaderTests\Tests20180119Dataset01\API-Wrappers\Python\Tests011MeasuresCentralTendencies.mean.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetJudo\Tests02Frequencies.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetJudo\Tests00Data.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetJudo\Test03Correlation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetJudo\" />

@@ -1,4 +1,4 @@
-﻿// /*
+// /*
 //    Copyright (c) 2017-12
 //
 //    moljac
@@ -93,7 +93,36 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         ;
 
 
-            double correlation_ONT_OUZ = data_ont.correlation(data_ouz);
+            double correlation_ONT_OUZ = data_ont.Correlation(data_ouz);
+
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(0.657, correlation_ONT_OUZ, 0.001);
+            #elif XUNIT
+            Assert.Equal(0.657, correlation_ONT_OUZ, 3);
+            #elif MSTEST
+            Assert.AreEqual(0.657, correlation_ONT_OUZ, 0.001);
+            #endif
+
+            return;
+        }
+
+        [Test()]
+        public void CorrelationOptimized_ONT_OUZ() 
+        {
+
+            data_ont =
+                                    from row in JudoDataTable
+                                    select row.ONT
+                                        ;
+
+            data_ouz =
+                                    from row in JudoDataTable
+                                    select row.OUZ
+                                        ;
+
+
+            double correlation_ONT_OUZ = data_ont.CorrelationOptimized(data_ouz);
 
             // Assert
             #if NUNIT
