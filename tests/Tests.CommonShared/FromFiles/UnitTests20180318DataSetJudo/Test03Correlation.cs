@@ -33,6 +33,7 @@ using Test = Xunit.FactAttribute;
 using OneTimeSetUp = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
 // XUnit aliases
 using TestClass = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
+using TestContext = HolisticWare.Core.Testing.UnitTests.TestContext;
 #elif NUNIT
 using NUnit.Framework;
 // MSTest aliases
@@ -68,6 +69,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using System.IO;
 using System.Reflection;
+using System.Collections.ObjectModel;
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
@@ -77,68 +79,58 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     {
 
         [Test()]
-        public void MeanArithmetic_ONT()
+        public void Correlation_ONT_OUZ()
         {
+
             data_ont =
                                     from row in JudoDataTable
                                     select row.ONT
                                         ;
 
-            double mean_ONT_a = data_ont.MeanArithmetic();
-
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(mean_ONT_a, 15.93, 0.01);
-            #elif XUNIT
-            Assert.Equal(15.93, mean_ONT_a, 2);
-            #elif MSTEST
-            Assert.AreEqual(mean_ONT_a, 15.93, 0.01);
-            #endif
-
-            return;
-        }
-
-
-        [Test()]
-        public void MeanArithmetic_OUZ()
-        {
             data_ouz =
                                     from row in JudoDataTable
                                     select row.OUZ
                                         ;
 
-            double mean_OUZ_a = data_ouz.MeanArithmetic();
+
+            double correlation_ONT_OUZ = data_ont.Correlation(data_ouz);
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_OUZ_a, 3.90, 0.01);
+            Assert.AreEqual(correlation_ONT_OUZ, 0.657, 0.001);
             #elif XUNIT
-            Assert.Equal(3.90, mean_OUZ_a, 2);
+            Assert.Equal(0.657, correlation_ONT_OUZ, 3);
             #elif MSTEST
-            Assert.AreEqual(mean_OUZ_a, 3.90, 0.01);
+            Assert.AreEqual(correlation_ONT_OUZ, 0.657, 0.001);
             #endif
 
             return;
         }
 
-
         [Test()]
-        public void MeanArithmetic_NEB()
+        public void Correlation_ONT_NEB() 
         {
+
+            data_ont =
+                                    from row in JudoDataTable
+                                    select row.ONT
+                                        ;
+
             data_neb =
                                     from row in JudoDataTable
                                     select row.NEB
                                         ;
 
-            double mean_NEB_a = data_neb.MeanArithmetic();
+
+            double correlation_ONT_NEB = data_ont.Correlation(data_neb.Cast<double>());
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_NEB_a, 10.10, 0.01);
+            Assert.AreEqual(correlation_ONT_NEB, -0.357, 0.001);
             #elif XUNIT
-            Assert.Equal(10.10, mean_NEB_a, 2);
+            Assert.Equal(-0.357, correlation_ONT_NEB, 3);
             #elif MSTEST
-            Assert.AreEqual(mean_NEB_a, 10.10, 0.01);
+            Assert.AreEqual(correlation_ONT_NEB, -0.357, 0.001);
             #endif
 
             return;
@@ -146,22 +138,29 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Test()]
-        public void MeanArithmetic_SKL()
+        public void Correlation_ONT_SKL() 
         {
+
+            data_ont =
+                                    from row in JudoDataTable
+                                    select row.ONT
+                                        ;
+
             data_skl =
                                     from row in JudoDataTable
                                     select row.SKL
                                         ;
 
-            double mean_SKL_a = data_skl.MeanArithmetic();
+
+            double correlation_ONT_SKL = data_ont.Correlation(data_skl.Cast<double>());
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_SKL_a, 16.57, 0.01);
+            Assert.AreEqual(correlation_ONT_SKL, -0.348, 0.001);
             #elif XUNIT
-            Assert.Equal(16.57, mean_SKL_a, 2);
+            Assert.Equal(-0.348, correlation_ONT_SKL, 3);
             #elif MSTEST
-            Assert.AreEqual(mean_SKL_a, 16.57, 0.01);
+            Assert.AreEqual(correlation_ONT_SKL, -0.348, 0.001);
             #endif
 
             return;
@@ -169,91 +168,29 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Test()]
-        public void MeanArithmetic_TRB()
+        public void Correlation_ONT_TRB() 
         {
+
+            data_ont =
+                                    from row in JudoDataTable
+                                    select row.ONT
+                                        ;
+
             data_trb =
                                     from row in JudoDataTable
                                     select row.TRB
                                         ;
 
-            double mean_TRB_a = data_trb.MeanArithmetic();
+
+            double correlation_ONT_TRB = data_ont.Correlation(data_trb.Cast<double>());
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_TRB_a, 35.38, 0.01);
+            Assert.AreEqual(correlation_ONT_TRB, -0.252, 0.001);
             #elif XUNIT
-            Assert.Equal(35.38, mean_TRB_a, 2);
+            Assert.Equal(-0.252, correlation_ONT_TRB, 3);
             #elif MSTEST
-            Assert.AreEqual(mean_TRB_a, 35.38, 0.01);
-            #endif
-
-            return;
-        }
-
-
-        [Test()]
-        public void MeanArithmetic_CUC()
-        {
-            data_cuc =
-                                    from row in JudoDataTable
-                                    select row.CUC
-                                        ;
-
-            double mean_CUC_a = data_cuc.MeanArithmetic();
-
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(mean_CUC_a, 210.417, 0.01);
-            #elif XUNIT
-            Assert.Equal(210.417, mean_CUC_a, 2);
-            #elif MSTEST
-            Assert.AreEqual(mean_CUC_a, 210.417, 0.01);
-            #endif
-
-            return;
-        }
-
-
-        [Test()]
-        public void MeanArithmetic_SDM()
-        {
-            data_sdm =
-                                    from row in JudoDataTable
-                                    select row.SDM
-                                        ;
-
-            double mean_SDM_a = data_sdm.MeanArithmetic();
-
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(mean_SDM_a, 177.30, 0.01);
-            #elif XUNIT
-            Assert.Equal(177.33, mean_SDM_a, 2);
-            #elif MSTEST
-            Assert.AreEqual(mean_SDM_a, 177.30, 0.01);
-            #endif
-
-            return;
-        }
-
-
-        [Test()]
-        public void MeanArithmetic_BML()
-        {
-            data_bml =
-                                    from row in JudoDataTable
-                                    select row.BML
-                                        ;
-
-            double mean_BML_a = data_bml.MeanArithmetic();
-
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(mean_BML_a, 530.16, 0.01);
-            #elif XUNIT
-            Assert.Equal(530.16, mean_BML_a, 2);
-            #elif MSTEST
-            Assert.AreEqual(mean_BML_a, 530.16, 0.01);
+            Assert.AreEqual(correlation_ONT_TRB, -0.252, 0.001);
             #endif
 
             return;

@@ -1,4 +1,4 @@
-﻿// /*
+// /*
 //    Copyright (c) 2017-12
 //
 //    moljac
@@ -729,26 +729,25 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
             // Assert
-#if NUNIT && !NUNIT_LITE            
+            #if NUNIT && !NUNIT_LITE            
             CollectionAssert.AreEquivalent
                         (
                             frequency_distribution_bml_calculated.ToList(),
                             frequency_bml.ToArray()
                         );
-#elif XUNIT
-
+            #elif XUNIT
             Assert.Equal
                         (
                             frequency_distribution_bml_calculated.ToList(),
                             frequency_bml.ToArray()
                         );
-#elif MSTEST
+            #elif MSTEST
             CollectionAssert.AreEquivalent
                         (
                             frequency_distribution_bml_calculated.ToList(),
                             frequency_bml.ToArray()
                         );
-#endif
+            #endif
 
             return;
         }

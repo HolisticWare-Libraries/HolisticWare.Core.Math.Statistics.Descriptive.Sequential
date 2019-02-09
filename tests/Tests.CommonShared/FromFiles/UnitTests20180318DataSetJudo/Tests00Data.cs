@@ -1,4 +1,4 @@
-﻿// /*
+// /*
 //    Copyright (c) 2017-12
 //
 //    moljac
@@ -144,7 +144,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             {
                 string s1 = lines[i].Replace("\r", "");
 
-                string[] s_parts = s1.Split(new string[] { "." }, StringSplitOptions.None);
+                string[] s_parts = s1.Split(new string[] { "," }, StringSplitOptions.None);
                 JudoData bg = new JudoData()
                 {
                     ONT = double.Parse(s_parts[0].Replace(",000", "")),
