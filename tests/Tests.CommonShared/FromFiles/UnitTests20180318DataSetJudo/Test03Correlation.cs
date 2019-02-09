@@ -121,8 +121,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                     select row.NEB
                                         ;
 
-
-            double correlation_ONT_NEB = data_ont.Correlation(data_neb.Cast<double>());
+            IEnumerable<double> data_neb_tmp = data_neb.Cast<double>();
+            double correlation_ONT_NEB = data_ont.Correlation(data_neb_tmp);
 
             // Assert
             #if NUNIT
