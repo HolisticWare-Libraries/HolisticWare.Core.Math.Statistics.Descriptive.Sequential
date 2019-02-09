@@ -226,6 +226,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetJudo\Tests02Frequencies.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetJudo\Tests00Data.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetJudo\Test03Correlation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetJudo\Test04Covariance.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetJudo\" />

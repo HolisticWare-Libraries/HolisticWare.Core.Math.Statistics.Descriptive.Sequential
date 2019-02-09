@@ -97,18 +97,18 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(0.657, correlation_ONT_OUZ, 0.001);
+            Assert.AreEqual(correlation_ONT_OUZ, 0.657, 0.001);
             #elif XUNIT
             Assert.Equal(0.657, correlation_ONT_OUZ, 3);
             #elif MSTEST
-            Assert.AreEqual(0.657, correlation_ONT_OUZ, 0.001);
+            Assert.AreEqual(correlation_ONT_OUZ, 0.657, 0.001);
             #endif
 
             return;
         }
 
         [Test()]
-        public void CorrelationOptimized_ONT_OUZ() 
+        public void Correlation_ONT_NEB() 
         {
 
             data_ont =
@@ -116,21 +116,81 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                     select row.ONT
                                         ;
 
-            data_ouz =
+            data_neb =
                                     from row in JudoDataTable
-                                    select row.OUZ
+                                    select row.NEB
                                         ;
 
 
-            double correlation_ONT_OUZ = data_ont.CorrelationOptimized(data_ouz);
+            double correlation_ONT_NEB = data_ont.Correlation(data_neb);
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(0.657, correlation_ONT_OUZ, 0.001);
+            Assert.AreEqual(correlation_ONT_NEB, -0.357, 0.001);
             #elif XUNIT
-            Assert.Equal(0.657, correlation_ONT_OUZ, 3);
+            Assert.Equal(-0.357, correlation_ONT_NEB, 3);
             #elif MSTEST
-            Assert.AreEqual(0.657, correlation_ONT_OUZ, 0.001);
+            Assert.AreEqual(correlation_ONT_NEB, -0.357, 0.001);
+            #endif
+
+            return;
+        }
+
+
+        [Test()]
+        public void Correlation_ONT_SKL() 
+        {
+
+            data_ont =
+                                    from row in JudoDataTable
+                                    select row.ONT
+                                        ;
+
+            data_skl =
+                                    from row in JudoDataTable
+                                    select row.SKL
+                                        ;
+
+
+            double correlation_ONT_SKL = data_ont.Correlation(data_skl);
+
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(correlation_ONT_SKL, -0.348, 0.001);
+            #elif XUNIT
+            Assert.Equal(-0.348, correlation_ONT_SKL, 3);
+            #elif MSTEST
+            Assert.AreEqual(correlation_ONT_SKL, -0.348, 0.001);
+            #endif
+
+            return;
+        }
+
+
+        [Test()]
+        public void Correlation_ONT_TRB() 
+        {
+
+            data_ont =
+                                    from row in JudoDataTable
+                                    select row.ONT
+                                        ;
+
+            data_trb =
+                                    from row in JudoDataTable
+                                    select row.TRB
+                                        ;
+
+
+            double correlation_ONT_TRB = data_ont.Correlation(data_trb);
+
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(correlation_ONT_TRB, -0.252, 0.001);
+            #elif XUNIT
+            Assert.Equal(-0.252, correlation_ONT_TRB, 3);
+            #elif MSTEST
+            Assert.AreEqual(correlation_ONT_TRB, -0.252, 0.001);
             #endif
 
             return;
