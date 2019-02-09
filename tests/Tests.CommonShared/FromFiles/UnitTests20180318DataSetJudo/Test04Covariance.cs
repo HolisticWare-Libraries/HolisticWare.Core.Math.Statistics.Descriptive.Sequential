@@ -118,7 +118,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync {
                                         ;
 
 
-            double covariance_ONT_NEB = data_ont.Covariance(data_neb);
+            double covariance_ONT_NEB = data_ont.Covariance(data_neb.Cast<double>());
 
             // Assert
             #if NUNIT
@@ -147,7 +147,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync {
                                         ;
 
 
-            double covariance_ONT_SKL = data_ont.Covariance(data_skl);
+            double covariance_ONT_SKL = data_ont.Covariance(data_skl.Cast<double>());
 
             // Assert
             #if NUNIT
@@ -176,7 +176,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync {
                                         ;
 
 
-            double covariance_ONT_TRB = data_ont.Covariance(data_trb);
+            double covariance_ONT_TRB = data_ont.Covariance(data_trb.Cast<double>());
 
             // Assert
             #if NUNIT

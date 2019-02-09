@@ -122,7 +122,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         ;
 
 
-            double correlation_ONT_NEB = data_ont.Correlation(data_neb);
+            double correlation_ONT_NEB = data_ont.Correlation(data_neb.Cast<double>());
 
             // Assert
             #if NUNIT
@@ -152,7 +152,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         ;
 
 
-            double correlation_ONT_SKL = data_ont.Correlation(data_skl);
+            double correlation_ONT_SKL = data_ont.Correlation(data_skl.Cast<double>());
 
             // Assert
             #if NUNIT
@@ -182,7 +182,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         ;
 
 
-            double correlation_ONT_TRB = data_ont.Correlation(data_trb);
+            double correlation_ONT_TRB = data_ont.Correlation(data_trb.Cast<double>());
 
             // Assert
             #if NUNIT
