@@ -33,6 +33,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using System.IO;
 using System.Reflection;
+using HolisticWare.Core.SampleData;
 
 #if XUNIT
 using Xunit;

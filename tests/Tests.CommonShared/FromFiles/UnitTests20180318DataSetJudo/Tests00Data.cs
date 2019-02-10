@@ -71,6 +71,7 @@ using System.IO;
 using System.Reflection;
 
 using Core.Math.Statistics.Descriptive.Sequential;
+using HolisticWare.Core.SampleData;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
