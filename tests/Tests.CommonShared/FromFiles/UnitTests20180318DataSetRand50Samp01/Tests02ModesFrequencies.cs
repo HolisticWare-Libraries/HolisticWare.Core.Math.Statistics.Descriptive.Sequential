@@ -1,4 +1,4 @@
-﻿// /*
+// /*
 //    Copyright (c) 2017-12
 //
 //    moljac
@@ -89,12 +89,12 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Act
             IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>> f;
-            f = Data.Frequencies();
+            f = (RandSamp1DataTable.Select(i => i.rVAR1)).Frequencies();
 
             sw.Stop();
             Console.WriteLine($"List<double>.Frequencies()");
             Console.WriteLine($"          quencies.Count     = {f.Count()}");
-            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          size               = {(RandSamp1DataTable.Select(i => i.rVAR1)).Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -120,11 +120,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            List<double> modes = Data.Modes();
+            List<double> modes = (RandSamp1DataTable.Select(i => i.rVAR1)).Modes();
             sw.Stop();
             Console.WriteLine($"List<double>.Modes()");
             Console.WriteLine($"          modes              = {modes}");
-            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          size               = {(RandSamp1DataTable.Select(i => i.rVAR1)).Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();

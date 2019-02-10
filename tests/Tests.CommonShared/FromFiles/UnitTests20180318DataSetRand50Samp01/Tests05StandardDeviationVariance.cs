@@ -1,4 +1,4 @@
-﻿// /*
+// /*
 //    Copyright (c) 2017-12
 //
 //    moljac
@@ -87,11 +87,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            double standard_deviation_s = Data.StandardDeviationSample();
+            double standard_deviation_s = (RandSamp1DataTable.Select(i => i.rVAR1)).StandardDeviationSample();
             sw.Stop();
             Console.WriteLine($"List<double>.StandardDeviationSample()");
             Console.WriteLine($"          standard_deviation = {standard_deviation_s}");
-            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          size               = {(RandSamp1DataTable.Select(i => i.rVAR1)).Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -120,11 +120,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            double standard_deviation_p = Data.StandardDeviationPopulation();
+            double standard_deviation_p = (RandSamp1DataTable.Select(i => i.rVAR1)).StandardDeviationPopulation();
             sw.Stop();
             Console.WriteLine($"List<double>.StandardDeviationPopulation()");
             Console.WriteLine($"          standard_deviation = {standard_deviation_p}");
-            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          size               = {(RandSamp1DataTable.Select(i => i.rVAR1)).Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -153,11 +153,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            double variance_s = Data.VarianceSample();
+            double variance_s = (RandSamp1DataTable.Select(i => i.rVAR1)).VarianceSample();
             sw.Stop();
             Console.WriteLine($"List<double>.VarianceSample()");
             Console.WriteLine($"          variance           = {variance_s}");
-            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          size               = {(RandSamp1DataTable.Select(i => i.rVAR1)).Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -186,11 +186,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            double variance_p = Data.VariancePopulation();
+            double variance_p = (RandSamp1DataTable.Select(i => i.rVAR1)).VariancePopulation();
             sw.Stop();
             Console.WriteLine($"List<double>.VariancePopulation()");
             Console.WriteLine($"          variance           = {variance_p}");
-            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          size               = {(RandSamp1DataTable.Select(i => i.rVAR1)).Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();

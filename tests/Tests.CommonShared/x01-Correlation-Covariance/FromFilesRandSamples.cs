@@ -1,4 +1,4 @@
-﻿// /*
+// /*
 //    Copyright (c) 2017-12
 //
 //    moljac
@@ -79,7 +79,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     public partial class FromFilesRandSamples
     {
         Stopwatch sw = null;
-        List<double> data01 = null;
+        List<RandSamp1Data> data01 = null;
         List<double> data02 = null;
 
         [Test]
@@ -88,14 +88,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //====================================================================================================
             //  Arrange
             //  reading data from files
-            data01 = UnitTests20180318DataSetRand50Samp01.Data;
+            data01 = UnitTests20180318DataSetRand50Samp01.RandSamp1DataTable;
             data02 = UnitTests20180318DataSetRand50Samp02.Data;
 
             sw = Stopwatch.StartNew();
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            double correlation_data01_data02 = data01.Correlation(data02);
+            double correlation_data01_data02 = (data01.Select(i => i.rVAR1)).Correlation(data02);
             sw.Stop();
             Console.WriteLine($"List<double>.Correlation(List<double>)");
             Console.WriteLine($"          correlation        = {correlation_data01_data02}");
@@ -123,14 +123,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //====================================================================================================
             //  Arrange
             //  reading data from files
-            data01 = UnitTests20180318DataSetRand50Samp01.Data;
+            data01 = UnitTests20180318DataSetRand50Samp01.RandSamp1DataTable;
             data02 = UnitTests20180318DataSetRand50Samp02.Data;
 
             sw = Stopwatch.StartNew();
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            double correlation_data02_data01 = data02.Correlation(data01);
+            double correlation_data02_data01 = data02.Correlation(data01.Select(i => i.rVAR1));
             sw.Stop();
             Console.WriteLine($"List<double>.Correlation(List<double>)");
             Console.WriteLine($"          correlation        = {correlation_data02_data01}");
@@ -141,7 +141,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            double correlation_data01_data02 = data01.Correlation(data02);
+            double correlation_data01_data02 = (data01.Select(i => i.rVAR1)).Correlation(data02);
             sw.Stop();
             Console.WriteLine($"List<double>.Correlation(List<double>)");
             Console.WriteLine($"          correlation        = {correlation_data02_data01}");
@@ -152,7 +152,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            double correlation_data01_data01_01 = data01.Correlation(data01);
+            double correlation_data01_data01_01 = (data01.Select(i => i.rVAR1)).Correlation((data01.Select(i => i.rVAR1)));
             sw.Stop();
             Console.WriteLine($"List<double>.Correlation(List<double>)");
             Console.WriteLine($"          correlation        = {correlation_data02_data01}");
@@ -204,13 +204,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //====================================================================================================
             //  Arrange
             //  reading data from files
-            data01 = UnitTests20180318DataSetRand50Samp01.Data;
+            data01 = UnitTests20180318DataSetRand50Samp01.RandSamp1DataTable;
 
             sw = Stopwatch.StartNew();
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            double correlation_data01_data01 = data01.Correlation(data01);
+            double correlation_data01_data01 = (data01.Select(i => i.rVAR1)).Correlation((data01.Select(i => i.rVAR1)));
             sw.Stop();
             Console.WriteLine($"List<double>.Correlation(List<double>)");
             Console.WriteLine($"          correlation        = {correlation_data01_data01}");

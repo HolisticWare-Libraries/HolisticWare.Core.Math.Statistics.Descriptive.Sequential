@@ -79,60 +79,29 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     {
 
         [Test()]
-        public void Correlation_ONT_OUZ() {
+        public void Correlation() 
+        {
 
-            data_ont =
-                                    from row in JudoDataTable
-                                    select row.ONT
+            var data =
+                                    from row in RandSamp1DataTable
+                                    select row.rVAR1
                                         ;
+                                    
 
-            data_ouz =
-                                    from row in JudoDataTable
-                                    select row.OUZ
-                                        ;
-
-
-            double correlation_ONT_OUZ = data_ont.Correlation(data_ouz);
+            double correlation = data.Correlation(data);
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(correlation_ONT_OUZ, 0.657, 0.001);
+            Assert.AreEqual(correlation, 0.657, 0.001);
             #elif XUNIT
-            Assert.Equal(0.657, correlation_ONT_OUZ, 3);
+            Assert.Equal(0.657, correlation, 3);
             #elif MSTEST
-            Assert.AreEqual(correlation_ONT_OUZ, 0.657, 0.001);
+            Assert.AreEqual(correlation, 0.657, 0.001);
             #endif
 
             return;
         }
 
 
-        [Test()]
-        public void Covariance_ONT_OUZ() {
-
-            data_ont =
-                                    from row in JudoDataTable
-                                    select row.ONT
-                                        ;
-
-            data_ouz =
-                                    from row in JudoDataTable
-                                    select row.OUZ
-                                        ;
-
-
-            double covariance_ONT_OUZ = data_ont.Covariance(data_ouz);
-
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(covariance_ONT_OUZ, 1.248, 0.001);
-            #elif XUNIT
-            Assert.Equal(1.248, covariance_ONT_OUZ, 3);
-            #elif MSTEST
-            Assert.AreEqual(covariance_ONT_OUZ, 1.248, 0.001);
-            #endif
-
-            return;
-        }
     }
 }

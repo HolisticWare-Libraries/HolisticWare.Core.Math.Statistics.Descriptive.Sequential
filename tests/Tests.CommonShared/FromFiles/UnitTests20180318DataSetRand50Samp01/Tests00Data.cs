@@ -1,4 +1,4 @@
-﻿// /*
+// /*
 //    Copyright (c) 2017-12
 //
 //    moljac
@@ -97,7 +97,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         Stopwatch sw = null;
 
         //[OneTimeSetUp]
-        private static void LoadDataFromFile(TestContext tc)
+        private static void LoadDataFromFile()
         {
             #if NUNIT
             string directory_test = TestContext.CurrentContext.TestDirectory;
