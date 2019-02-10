@@ -94,8 +94,10 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             }
         }
         
-        private static void LoadDataFromFile(TestContext tc)
+        Stopwatch sw = null;
 
+        //[OneTimeSetUp]
+        private static void LoadDataFromFile(TestContext tc)
         {
             #if NUNIT
             string directory_test = TestContext.CurrentContext.TestDirectory;
@@ -139,7 +141,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                     RandSamp1Data bg = new RandSamp1Data() 
 
                     {
-                        rVAR1 = int.Parse(s_parts[0].Replace(",000", "")),
+                        rVAR1 = double.Parse(s_parts[0].Replace(",000", "")),
                     };
 
                     rand_samp1_data_table.Add(bg);
