@@ -19,6 +19,8 @@ Installing
         rm -fr tools/; mkdir ./tools/ ; \
         cp cake.packages.config ./tools/packages.config ; \
         curl -Lsfo build.sh http://cakebuild.net/download/bootstrapper/osx ; \
+        sh ./build.sh
+
         chmod +x ./build.sh ;
         ./build.sh
 
