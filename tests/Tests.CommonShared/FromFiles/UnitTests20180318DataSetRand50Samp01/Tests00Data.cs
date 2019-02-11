@@ -132,7 +132,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                             );
             rand_samp1_data_table = new List<RandSamp1Data>();
             int n = lines.Count();
-            for (int i = 1; i < n; i++) 
+            for (int i = 0; i < n; i++) 
             {
                 string s1 = lines[i].Replace("\r", "");
 

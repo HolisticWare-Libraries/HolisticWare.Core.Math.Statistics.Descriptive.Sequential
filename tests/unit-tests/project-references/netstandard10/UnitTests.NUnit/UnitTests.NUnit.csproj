@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\externals\Core.Math.Samples\data\HolisticWare.Core.Sample.Data\HolisticWare.Core.Sample.Data.csproj">
-      <Project>{68C77835-7AC4-4702-B3E7-A6C2BBD7CC06}</Project>
+      <Project>{77693571-4115-4F66-BDA5-E198F6EE5DF8}</Project>
       <Name>HolisticWare.Core.Sample.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.NetStandard10.csproj">
@@ -64,7 +64,7 @@
       <Name>HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\..\externals\Core.Text\source\HolisticWare.Core.Text.NetStandard10\HolisticWare.Core.Text.NetStandard10.csproj">
-      <Project>{E03C830B-AD14-450C-8804-12E32645EDEC}</Project>
+      <Project>{5B8DBA01-2E5F-457A-9895-A9A4759D1D43}</Project>
       <Name>HolisticWare.Core.Text.NetStandard10</Name>
     </ProjectReference>
   </ItemGroup>
@@ -138,8 +138,7 @@
       <Version>4.5.1</Version>
     </PackageReference>
   </ItemGroup>
-  <Import Project="..\..\..\..\unit-tests\UnitTests.Common.Utils.Shared\UnitTests.Common.Utils.Shared.projitems" Label="Shared" Condition="Exists('..\..\..\..\unit-tests\UnitTests.Common.Utils.Shared\UnitTests.Common.Utils.Shared.projitems')" />
+  <Import Project="..\..\..\UnitTests.Common.Utils.Shared\UnitTests.Common.Utils.Shared.projitems" Label="Shared" Condition="Exists('..\..\..\UnitTests.Common.Utils.Shared\UnitTests.Common.Utils.Shared.projitems')" />
   <Import Project="..\..\..\..\Tests.CommonShared\Tests.CommonShared.projitems" Label="Shared" Condition="Exists('..\..\..\..\Tests.CommonShared\Tests.CommonShared.projitems')" />
-  <Import Project="..\..\..\Benchmarks.Common.Utils.Shared\Benchmarks.Common.Utils.Shared.projitems" Label="Shared" Condition="Exists('..\..\..\Benchmarks.Common.Utils.Shared\Benchmarks.Common.Utils.Shared.projitems')" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

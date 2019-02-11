@@ -107,10 +107,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(0.1882, correlation_data01_data02, 0.0001);
+            Assert.AreEqual(0.1871, correlation_data01_data02, 0.0001);
             #elif XUNIT
-            Assert.Equal(0.1882, (double)correlation_data01_data02, 4);
+            Assert.Equal(0.1871, (double)correlation_data01_data02, 4);
             #elif MSTEST
+            Assert.AreEqual(0.1871, correlation_data01_data02, 0.0001);
             #endif
             //====================================================================================================
 
@@ -163,11 +164,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             #if NUNIT
-            Assert.AreEqual(0.1882, correlation_data02_data01, 0.0001);
+            Assert.AreEqual(0.1871, correlation_data01_data02, 0.0001);
             #elif XUNIT
-            Assert.Equal(0.1882, correlation_data02_data01, 4);
+            Assert.Equal(0.1871, (double)correlation_data01_data02, 4);
             #elif MSTEST
-            Assert.AreEqual(0.1882, correlation_data02_data01, 0.0001);
+            Assert.AreEqual(0.1871, correlation_data01_data02, 0.0001);
             #endif
             //====================================================================================================
 
