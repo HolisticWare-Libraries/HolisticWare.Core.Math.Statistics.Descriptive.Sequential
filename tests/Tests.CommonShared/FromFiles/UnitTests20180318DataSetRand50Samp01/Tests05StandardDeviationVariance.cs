@@ -85,9 +85,12 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             sw = Stopwatch.StartNew();
 
+
             //----------------------------------------------------------------------------------------------------
             // Act
+
             double standard_deviation_s = (RandSamp1DataTable.Select(i => i.rVAR1)).StandardDeviationSample();
+
             sw.Stop();
             Console.WriteLine($"List<double>.StandardDeviationSample()");
             Console.WriteLine($"          standard_deviation = {standard_deviation_s}");
