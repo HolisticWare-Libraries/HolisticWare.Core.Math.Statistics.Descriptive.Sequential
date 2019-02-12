@@ -1,4 +1,4 @@
-// /*
+﻿// /*
 //    Copyright (c) 2017-12
 //
 //    moljac
@@ -406,7 +406,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         [Benchmark]
         public double Memory_MeanGeneralized_30() 
         {
-            return 2.0;  //data_memory.MeanGeneralized(3.0);
+            return 2.0;//data_memory.MeanGeneralized(3.0);
         }
 
         Memory<int> data_memory = null;

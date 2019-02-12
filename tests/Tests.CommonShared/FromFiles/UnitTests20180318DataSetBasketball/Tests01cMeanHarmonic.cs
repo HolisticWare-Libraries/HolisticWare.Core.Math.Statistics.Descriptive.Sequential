@@ -1,4 +1,4 @@
-﻿// /*
+// /*
 //    Copyright (c) 2017-12
 //
 //    moljac
@@ -88,11 +88,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_2s_a, 22.30, 0.01);
+            Assert.AreEqual(mean_2s_a, 17.131655756557, 0.01);
             #elif XUNIT
-            Assert.Equal(22.30, mean_2s_a, 2);
+            Assert.Equal(17.131655756557, mean_2s_a, 2);
             #elif MSTEST
-            Assert.AreEqual(mean_2s_a, 22.30, 0.01);
+            Assert.AreEqual(mean_2s_a, 17.131655756557, 0.01);
             #endif
 
             return;
@@ -112,11 +112,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_a_3pts_success, 6.68, 0.01);
+            Assert.AreEqual(mean_a_3pts_success, 5.4427234762383, 0.01);
             #elif XUNIT
-            Assert.Equal(6.68, mean_a_3pts_success, 2);
+            Assert.Equal(5.4427234762383, mean_a_3pts_success, 2);
             #elif MSTEST
-            Assert.AreEqual(mean_a_3pts_success, 6.68, 0.01);
+            Assert.AreEqual(mean_a_3pts_success, 5.4427234762383, 0.01);
             #endif
 
 
@@ -136,11 +136,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_2f_a, 21.54, 0.01);
+            Assert.AreEqual(mean_2f_a, 21.929072412632, 0.01);
             #elif XUNIT
-            Assert.Equal(21.54, mean_2f_a, 2);
+            Assert.Equal(21.929072412632, mean_2f_a, 2);
             #elif MSTEST
-            Assert.AreEqual(mean_2f_a, 21.54, 0.01);
+            Assert.AreEqual(mean_2f_a, 21.929072412632, 0.01);
             #endif
 
 
@@ -160,11 +160,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_3f_a, 11.73, 0.01);
+            Assert.AreEqual(mean_3f_a, 11.672470007897, 0.01);
             #elif XUNIT
-            Assert.Equal(11.73, mean_3f_a, 2);
+            Assert.Equal(11.672470007897, mean_3f_a, 2);
             #elif MSTEST
-            Assert.AreEqual(mean_3f_a, 11.73, 0.01);
+            Assert.AreEqual(mean_3f_a, 11.672470007897, 0.01);
             #endif
 
             return;
@@ -273,11 +273,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_assist_a, 12.65, 0.01);
+            Assert.AreEqual(mean_assist_a, 9.721627982856, 0.01);
             #elif XUNIT
-            Assert.Equal(12.65, mean_assist_a, 2);
+            Assert.Equal(9.721627982856, mean_assist_a, 2);
             #elif MSTEST
-            Assert.AreEqual(mean_assist_a, 12.65, 0.01);
+            Assert.AreEqual(mean_assist_a, 9.721627982856, 0.01);
             #endif
 
             return;
@@ -373,5 +373,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             return;
         }
+
+
     }
 }

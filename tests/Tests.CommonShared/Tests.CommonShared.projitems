@@ -229,6 +229,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetJudo\Test04Covariance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetRand50Samp01\Test03CorrelationCovariance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetRand50Samp01\Test04RangeStandardDeviation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Manual\HarmonicMeanTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetJudo\" />
@@ -260,6 +261,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)01-DarkVaderTests\Tests20180119Dataset01\API-Wrappers\MatlabOctave\" />
     <Folder Include="$(MSBuildThisFileDirectory)01-DarkVaderTests\Tests20180119Dataset01\API-Wrappers\R\" />
     <Folder Include="$(MSBuildThisFileDirectory)01-DarkVaderTests\Tests20180119Dataset01\API-Wrappers\Python\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Manual\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)UnitTests20180227DataSet001\Tests02FrequenciesModes.cs" />
