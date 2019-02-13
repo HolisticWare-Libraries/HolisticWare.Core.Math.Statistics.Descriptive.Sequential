@@ -226,11 +226,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_SDM_a, 177.30, 0.01);
+            Assert.AreEqual(mean_SDM_a, 177.25, 0.01);
             #elif XUNIT
-            Assert.Equal(177.33, mean_SDM_a, 2);
+            Assert.Equal(177.25, mean_SDM_a, 2);
             #elif MSTEST
-            Assert.AreEqual(mean_SDM_a, 177.30, 0.01);
+            Assert.AreEqual(mean_SDM_a, 177.25, 0.01);
             #endif
 
             return;

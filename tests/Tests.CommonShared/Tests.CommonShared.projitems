@@ -230,6 +230,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetRand50Samp01\Test03CorrelationCovariance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetRand50Samp01\Test04RangeStandardDeviation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Manual\HarmonicMeanTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetRand50Samp01\Test06HarmonicMean.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetJudo\" />
