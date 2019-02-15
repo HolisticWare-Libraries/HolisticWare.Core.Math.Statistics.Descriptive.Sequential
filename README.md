@@ -304,6 +304,16 @@ TODO:
 
 ### Comparison Table
 
+Comparison of this library with
+
+*   vanilla R (no special libs)
+
+*   vanilla Python (no special libs)
+
+*   Matlab/Octave
+
+    https://octave.org/octave.pdf
+
 
 |                    |   `x = IEnumerable<T>`               |                             |                           |                           |
 |--------------------| ------------------------------------ | --------------------------- | ------------------------- |  ------------------------ |
