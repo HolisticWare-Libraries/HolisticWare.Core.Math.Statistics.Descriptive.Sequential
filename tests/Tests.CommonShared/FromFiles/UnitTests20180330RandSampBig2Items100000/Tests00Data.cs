@@ -25,15 +25,6 @@
 //    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 //    OTHER DEALINGS IN THE SOFTWARE.
 // */
-using System;
-
-using System.Collections.Generic;
-using System.Linq;
-using System.Diagnostics;
-using System.Threading.Tasks;
-using System.IO;
-using System.Reflection;
-using HolisticWare.Core.SampleData;
 
 #if XUNIT
 using Xunit;
@@ -42,6 +33,7 @@ using Test = Xunit.FactAttribute;
 using OneTimeSetUp = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
 // XUnit aliases
 using TestClass = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
+using TestContext = HolisticWare.Core.Testing.UnitTests.TestContext;
 #elif NUNIT
 using NUnit.Framework;
 // MSTest aliases
@@ -61,6 +53,23 @@ using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializ
 using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 #endif
 
+#if BENCHMARKDOTNET
+using BenchmarkDotNet.Running;
+using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Attributes.Jobs;
+#else
+using Benchmark = HolisticWare.Core.Testing.BenchmarkTests.Benchmark;
+using ShortRunJob = HolisticWare.Core.Testing.BenchmarkTests.ShortRunJob;
+#endif
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using System.IO;
+using System.Reflection;
+
 using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
@@ -68,12 +77,25 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
     public partial class UnitTests20180330RandSampBig2Items100000
     {
-        static List<BasketballTeamData> data01 = null;
+        private static List<double> data = null;
+
+        public static List<double> Data 
+        {
+            get {
+                if (data == null) 
+                {
+                    LoadDataFromFile(null);
+                }
+
+                return data;
+            }
+        }
+
 
         Stopwatch sw = null;
 
         //[OneTimeSetUp] // for MSTest - ClassInitialize - public, static, void
-        public static void LoadDataFromFile()
+        public static void LoadDataFromFile(TestContext tc)
         {
             #if NUNIT
             string directory_test = TestContext.CurrentContext.TestDirectory;
@@ -93,11 +115,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                         new string[]
                                             {
                                                 directory_test,
-                                                $@"Xtras-SampleData",
+                                                $@"Xtras-BigData",
                                                 $@"Rand_SampBIG2_100000.csv",
                                             }
                                     );
-            using (StreamReader reader = new StreamReader(path_data))
+            using (StreamReader reader = new StreamReader(path_data)) 
             {
                 text = reader.ReadToEnd();
             }
@@ -106,34 +128,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 new string[] { Environment.NewLine },
                                 StringSplitOptions.RemoveEmptyEntries
                             );
-
-            data01 = new List<BasketballTeamData>();
-            int n = lines.Count();
-            for (int i = 1; i < n; i++)
-
+            data = new List<double>();
+            foreach (string s in lines) 
             {
-                string s1 = lines[i].Replace("\r", "");
-
-                string[] s_parts = s1.Split(new string[] { "." }, StringSplitOptions.None);
-                BasketballTeamData bg = new BasketballTeamData()
-                {
-                    Points2Success = int.Parse(s_parts[0].Replace(",000", "")),
-                    Points2Fail = int.Parse(s_parts[1].Replace(",000", "")),
-                    Points3Success = int.Parse(s_parts[2].Replace(",000", "")),
-                    Points3Fail = int.Parse(s_parts[3].Replace(",000", "")),
-                    FreeThrowSuccess = int.Parse(s_parts[4].Replace(",000", "")),
-                    FreeThrowFail = int.Parse(s_parts[5].Replace(",000", "")),
-                    JumpsOffensive = int.Parse(s_parts[6].Replace(",000", "")),
-                    JumpsDefensive = int.Parse(s_parts[7].Replace(",000", "")),
-                    Assistence = int.Parse(s_parts[8].Replace(",000", "")),
-                    BallsLost = int.Parse(s_parts[9].Replace(",000", "")),
-                    BallsStolen = int.Parse(s_parts[10].Replace(",000", "")),
-                    Blocks = int.Parse(s_parts[11].Replace(",000", "")),
-                    Criteria01 = int.Parse(s_parts[12].Replace(",000", "")),
-                    Criteria02 = int.Parse(s_parts[13].Replace(",000", "")),
-                };
-
-                data01.Add(bg);
+                double data_item = Double.Parse(s);
+                data.Add(data_item);
             }
             //------------------------------------------------------------------
 
