@@ -77,24 +77,26 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
     public partial class UnitTests20180330RandSampBig1Items100000
     {
-        IEnumerable<double> data_v1;
+        private static List<double> data = null;
 
-        private static List<RandSampBIG1Data> rand_samp_big1_data_table = null;
-
-        public static List<RandSampBIG1Data> RandSampBIG1DataTable
+        public static List<double> Data
         {
             get
             {
-                if (rand_samp_big1_data_table == null)
+                if (data == null)
                 {
-                    LoadDataFromFile();
+                    LoadDataFromFile(null);
                 }
 
-                return rand_samp_big1_data_table;
+                return data;
             }
         }
 
-        protected static void LoadDataFromFile()
+
+        Stopwatch sw = null;
+
+        //[OneTimeSetUp] // for MSTest - ClassInitialize - public, static, void
+        public static void LoadDataFromFile(TestContext tc)
         {
             #if NUNIT
             string directory_test = TestContext.CurrentContext.TestDirectory;
@@ -128,21 +130,12 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 StringSplitOptions.RemoveEmptyEntries
                             );
 
-            rand_samp_big1_data_table = new List<RandSampBIG1Data>();
-            int n = lines.Count();
-            for (int i = 1; i < n; i++)
+            data = new List<double>();
+            foreach (string s in lines) 
             {
-                string s1 = lines[i].Replace("\r", "");
-
-                string[] s_parts = s1.Split(new string[] { "." }, StringSplitOptions.None);
-                RandSampBIG1Data bg = new RandSampBIG1Data()
-                {
-                    V1 = double.Parse(s_parts[0].Replace(",000", "")),
-                };
-
-                rand_samp_big1_data_table.Add(bg);
+                double data_item = Double.Parse(s);
+                data.Add(data_item);
             }
-
             //------------------------------------------------------------------
 
             return;
