@@ -69,39 +69,47 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using System.IO;
 using System.Reflection;
-using System.Collections.ObjectModel;
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync 
 {
-    public partial class UnitTests20180318DataSetRand50Samp01 
+    public partial class UnitTests20180318DataSetRand50Samp02 
     {
-
-        [Test()]
-        public void Correlation() 
+        [Test]
+        public void Skewness() 
         {
 
-            data_rVAR1 =
-                                    from row in RandSamp1DataTable
-                                    select row.rVAR1
-                                        ;
-                                    
-
-            double correlation_rVAR1 = data_rVAR1.Correlation(data_rVAR1);
+            double skewness = Data.Skewness();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(correlation_rVAR1, 1.000, 0.001);
+            Assert.AreEqual(0.110957, skewness, 0.000001);
             #elif XUNIT
-            Assert.Equal(1.000, correlation_rVAR1, 3);
+            Assert.Equal(0.110957, skewness, 6);
             #elif MSTEST
-            Assert.AreEqual(correlation_rVAR1, 1.000, 0.001);
+            Assert.AreEqual(0.110957, skewness, 0.000001);
             #endif
 
             return;
         }
 
+        [Test]
+        public void Kurtosis() 
+        {
 
+            double kurtosis = Data.Kurtosis();
+
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(-0.5835756, kurtosis, 0.0000001);
+            #elif XUNIT
+            Assert.Equal(-0.5835756, kurtosis, 7);
+            #elif MSTEST
+            Assert.AreEqual(-0.5835756, kurtosis, 0.0000001);
+            #endif
+
+            return;
+        }
     }
 }

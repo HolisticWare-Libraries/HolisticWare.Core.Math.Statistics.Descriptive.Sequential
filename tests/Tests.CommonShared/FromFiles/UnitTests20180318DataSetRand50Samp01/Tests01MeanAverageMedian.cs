@@ -83,12 +83,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //====================================================================================================
             //  Arrange
             //  reading data from files
-
             sw = Stopwatch.StartNew();
-
             //----------------------------------------------------------------------------------------------------
+
             // Act
+
             double mean_arithmetic = (RandSamp1DataTable.Select(i => i.rVAR1)).MeanArithmetic();
+
             sw.Stop();
             Console.WriteLine($"List<double>.MeanArithmetic()");
             Console.WriteLine($"          mean_arithmetic    = {mean_arithmetic}");
@@ -97,6 +98,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
             //----------------------------------------------------------------------------------------------------
+
+
             // Assert
             #if NUNIT
             Assert.AreEqual(180.8814, mean_arithmetic, 0.00001);

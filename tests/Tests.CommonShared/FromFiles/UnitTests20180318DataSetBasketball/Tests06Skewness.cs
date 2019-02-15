@@ -87,12 +87,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double skewness_2s = data_2pts_success.Skewness();
 
             // Assert
+            // Skewness calculation according R library(e1071) "type 1"
             #if NUNIT
-            Assert.AreEqual(skewness_2s, 0.5411305, 0.001);
+            Assert.AreEqual(skewness_2s, 0.5475344, 0.0000001);
             #elif XUNIT
-            Assert.Equal(0.5411305, skewness_2s, 3);
+            Assert.Equal(0.5475344, skewness_2s, 7);
             #elif MSTEST
-            Assert.AreEqual(skewness_2s, 0.5411305, 0.001);
+            Assert.AreEqual(skewness_2s, 0.5475344, 0.0000001);
             #endif
 
             return;
@@ -109,12 +110,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double skewness_3pts_success = data_3pts_success.Skewness();
 
             // Assert
+            // Skewness calculation according R library(e1071) "type 1"
             #if NUNIT
-            Assert.AreEqual(skewness_3pts_success, 1.208662, 0.001);
+            Assert.AreEqual(skewness_3pts_success, 1.222966, 0.000001);
             #elif XUNIT
-            Assert.Equal(1.208662, skewness_3pts_success, 3);
+            Assert.Equal(1.222966, skewness_3pts_success, 6);
             #elif MSTEST
-            Assert.AreEqual(skewness_3pts_success, 1.208662, 0.001);
+            Assert.AreEqual(skewness_3pts_success, 1.222966, 0.000001);
             #endif
 
 
@@ -133,12 +135,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double skewness_2f = data_2pts_fail.Skewness();
 
             // Assert
+            // Skewness calculation according R library(e1071) "type 1"
             #if NUNIT
-            Assert.AreEqual(skewness_2f, 0.3056877, 0.001);
+            Assert.AreEqual(skewness_2f, 0.3093053, 0.0000001);
             #elif XUNIT
-            Assert.Equal(0.3056877, skewness_2f, 3);
+            Assert.Equal(0.3093053, skewness_2f, 7);
             #elif MSTEST
-            Assert.AreEqual(skewness_2f, 0.3056877, 0.001);
+            Assert.AreEqual(skewness_2f, 0.3093053, 0.0000001);
             #endif
 
 
@@ -157,12 +160,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double skewness_3f = data_3pts_fail.Skewness();
 
             // Assert
+            // Skewness calculation according R library(e1071) "type 1"
             #if NUNIT
-            Assert.AreEqual(skewness_3f, 0.6463584, 0.001);
+            Assert.AreEqual(skewness_3f, 0.6540075, 0.0000001);
             #elif XUNIT
-            Assert.Equal(0.6463584, skewness_3f, 3);
+            Assert.Equal(0.6540075, skewness_3f, 7);
             #elif MSTEST
-            Assert.AreEqual(skewness_3f, 0.6463584, 0.001);
+            Assert.AreEqual(skewness_3f, 0.6540075, 0.0000001);
             #endif
 
             return;
@@ -180,12 +184,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double skewness_ftf = data_free_throw_fail.Skewness();
 
             // Assert
+            // Skewness calculation according R library(e1071) "type 1"
             #if NUNIT
-            Assert.AreEqual(skewness_ftf, 0.144665, 0.001);
+            Assert.AreEqual(skewness_ftf, 0.146377, 0.000001);
             #elif XUNIT
-            Assert.Equal(0.144665, skewness_ftf, 3);
+            Assert.Equal(0.146377, skewness_ftf, 6);
             #elif MSTEST
-            Assert.AreEqual(skewness_ftf, 0.144665, 0.001);
+            Assert.AreEqual(skewness_ftf, 0.146377, 0.000001);
             #endif
 
             return;
@@ -203,12 +208,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double skewness_fts = data_free_throw_success.Skewness();
 
             // Assert
+            // Skewness calculation according R library(e1071) "type 1"
             #if NUNIT
-            Assert.AreEqual(skewness_fts, 0.5059557, 0.001);
+            Assert.AreEqual(skewness_fts, 0.5119433, 0.0000001);
             #elif XUNIT
-            Assert.Equal(0.5059557, skewness_fts, 3);
+            Assert.Equal(0.5119433, skewness_fts, 7);
             #elif MSTEST
-            Assert.AreEqual(skewness_fts, 0.5059557, 0.001);
+            Assert.AreEqual(skewness_fts, 0.5119433, 0.0000001);
             #endif
 
             return;
@@ -226,12 +232,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double skewness_off = data_jumps_offensive.Skewness();
 
             // Assert
+            // Skewness calculation according R library(e1071) "type 1"
             #if NUNIT
-            Assert.AreEqual(skewness_off, 0.5065307, 0.001);
+            Assert.AreEqual(skewness_off, 0.5125251, 0.0000001);
             #elif XUNIT
-            Assert.Equal(0.5065307, skewness_off, 3);
+            Assert.Equal(0.5125251, skewness_off, 7);
             #elif MSTEST
-            Assert.AreEqual(skewness_off, 0.5065307, 0.001);
+            Assert.AreEqual(skewness_off, 0.5125251, 0.0000001);
             #endif
 
             return;
@@ -248,12 +255,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double skewness_def = data_jumps_defensive.Skewness();
 
             // Assert
+            // Skewness calculation according R library(e1071) "type 1"
             #if NUNIT
-            Assert.AreEqual(skewness_def, -0.09947046, 0.001);
+            Assert.AreEqual(skewness_def, -0.1006476, 0.0000001);
             #elif XUNIT
-            Assert.Equal(-0.09947046, skewness_def, 3);
+            Assert.Equal(-0.1006476, skewness_def, 7);
             #elif MSTEST
-            Assert.AreEqual(skewness_def, -0.09947046, 0.001);
+            Assert.AreEqual(skewness_def, -0.1006476, 0.0000001);
             #endif
 
             return;
@@ -270,12 +278,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double skewness_assist = data_assistence.Skewness();
 
             // Assert
+            // Skewness calculation according R library(e1071) "type 1"
             #if NUNIT
-            Assert.AreEqual(skewness_assist, 0.7188676, 0.001);
+            Assert.AreEqual(skewness_assist, 0.7273748, 0.0000001);
             #elif XUNIT
-            Assert.Equal(0.7188676, skewness_assist, 3);
+            Assert.Equal(0.7273748, skewness_assist, 7);
             #elif MSTEST
-            Assert.AreEqual(skewness_assist, 0.7188676, 0.001);
+            Assert.AreEqual(skewness_assist, 0.7273748, 0.0000001);
             #endif
 
             return;
@@ -292,12 +301,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double skewness_pf = data_personal_faults.Skewness();
 
             // Assert
+            // Skewness calculation according R library(e1071) "type 1"
             #if NUNIT
-            Assert.AreEqual(skewness_pf, 0.4994338, 0.001);
+            Assert.AreEqual(skewness_pf, 0.5053442, 0.0000001);
             #elif XUNIT
-            Assert.Equal(0.4994338, skewness_pf, 3);
+            Assert.Equal(0.5053442, skewness_pf, 7);
             #elif MSTEST
-            Assert.AreEqual(skewness_pf, 0.4994338, 0.001);
+            Assert.AreEqual(skewness_pf, 0.5053442, 0.0000001);
             #endif
 
             return;
@@ -315,12 +325,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double skewness_bl = data_balls_lost.Skewness();
 
             // Assert
+            // Skewness calculation according R library(e1071) "type 1"
             #if NUNIT
-            Assert.AreEqual(skewness_bl, 0.9810865, 0.001);
+            Assert.AreEqual(skewness_bl, 0.9926969, 0.0000001);
             #elif XUNIT
-            Assert.Equal(0.9810865, skewness_bl, 3);
+            Assert.Equal(0.9926969, skewness_bl, 7);
             #elif MSTEST
-            Assert.AreEqual(skewness_bl, 0.9810865, 0.001);
+            Assert.AreEqual(skewness_bl, 0.9926969, 0.0000001);
             #endif
 
             return;
@@ -338,12 +349,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double skewness_bs = data_balls_stolen.Skewness();
 
             // Assert
+            // Skewness calculation according R library(e1071) "type 1"
             #if NUNIT
-            Assert.AreEqual(skewness_bs, 0.8221946, 0.001);
+            Assert.AreEqual(skewness_bs, 0.8319246, 0.0000001);
             #elif XUNIT
-            Assert.Equal(0.8221946, skewness_bs, 3);
+            Assert.Equal(0.8319246, skewness_bs, 7);
             #elif MSTEST
-            Assert.AreEqual(skewness_bs, 0.8221946, 0.001);
+            Assert.AreEqual(skewness_bs, 0.8319246, 0.0000001);
             #endif
 
             return;
@@ -361,12 +373,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double skewness_block = data_blocks.Skewness();
 
             // Assert
+            // Skewness calculation according R library(e1071) "type 1"
             #if NUNIT
-            Assert.AreEqual(skewness_block, 0.6764246, 0.001);
+            Assert.AreEqual(skewness_block, 0.6844296, 0.0000001);
             #elif XUNIT
-            Assert.Equal(0.6764246, skewness_block, 3);
+            Assert.Equal(0.6844296, skewness_block, 7);
             #elif MSTEST
-            Assert.AreEqual(skewness_block, 0.6764246, 0.001);
+            Assert.AreEqual(skewness_block, 0.6844296, 0.0000001);
             #endif
 
             return;

@@ -71,6 +71,7 @@ using System.IO;
 using System.Reflection;
 
 using Core.Math.Statistics.Descriptive.Sequential;
+using HolisticWare.Core.SampleData;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
@@ -132,11 +133,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                             );
             rand_samp1_data_table = new List<RandSamp1Data>();
             int n = lines.Count();
-            for (int i = 0; i < n; i++) 
+            for (int i = 1; i < n; i++) 
             {
                 string s1 = lines[i].Replace("\r", "");
 
-                string[] s_parts = s1.Split(new string[] { "." }, StringSplitOptions.None);
+                string[] s_parts = s1.Split(new string[] { "," }, StringSplitOptions.None);
 
                     RandSamp1Data bg = new RandSamp1Data() 
 

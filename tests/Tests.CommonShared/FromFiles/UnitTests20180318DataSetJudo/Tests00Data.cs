@@ -95,7 +95,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             {
                 if (judo_data_table == null)
                 {
-                    LoadDataFromFile(null);
+                    LoadDataFromFile();
                 }
 
                 return judo_data_table;
@@ -104,8 +104,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
         Stopwatch sw = null;
 
-        //[OneTimeSetUp]
-        protected static void LoadDataFromFile(TestContext tc)
+        private static void LoadDataFromFile() 
         {
             #if NUNIT
             string directory_test = TestContext.CurrentContext.TestDirectory;
@@ -158,7 +157,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                     BML = int.Parse(s_parts[7].Replace(",000", "")),
                 };
 
-            judo_data_table.Add(bg);
+                judo_data_table.Add(bg);
             }
             //------------------------------------------------------------------
 

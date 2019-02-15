@@ -33,7 +33,6 @@ using Test = Xunit.FactAttribute;
 using OneTimeSetUp = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
 // XUnit aliases
 using TestClass = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
-using TestContext = HolisticWare.Core.Testing.UnitTests.TestContext;
 #elif NUNIT
 using NUnit.Framework;
 // MSTest aliases
@@ -69,7 +68,6 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using System.IO;
 using System.Reflection;
-using System.Collections.ObjectModel;
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
@@ -79,29 +77,27 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     {
 
         [Test()]
-        public void Correlation() 
+        public void Kurtosis_rVAR1() 
         {
-
             data_rVAR1 =
                                     from row in RandSamp1DataTable
                                     select row.rVAR1
                                         ;
-                                    
 
-            double correlation_rVAR1 = data_rVAR1.Correlation(data_rVAR1);
+            double kurtosis_rVAR1 = data_rVAR1.Kurtosis();
 
             // Assert
+            // Kurtosis calculation according R library(e1071) "type 1"
+
             #if NUNIT
-            Assert.AreEqual(correlation_rVAR1, 1.000, 0.001);
+            Assert.AreEqual(kurtosis_rVAR1, -0.1196376, 0.0000001);
             #elif XUNIT
-            Assert.Equal(1.000, correlation_rVAR1, 3);
+            Assert.Equal(-0.1196376, kurtosis_rVAR1, 7);
             #elif MSTEST
-            Assert.AreEqual(correlation_rVAR1, 1.000, 0.001);
+            Assert.AreEqual(kurtosis_rVAR1, -0.1196376, 0.0000001);
             #endif
 
             return;
         }
-
-
     }
 }

@@ -33,7 +33,6 @@ using Test = Xunit.FactAttribute;
 using OneTimeSetUp = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
 // XUnit aliases
 using TestClass = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
-using TestContext = HolisticWare.Core.Testing.UnitTests.TestContext;
 #elif NUNIT
 using NUnit.Framework;
 // MSTest aliases
@@ -69,39 +68,35 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using System.IO;
 using System.Reflection;
-using System.Collections.ObjectModel;
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
-namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync 
+namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     public partial class UnitTests20180318DataSetRand50Samp01 
     {
 
         [Test()]
-        public void Correlation() 
-        {
+        public void MeanHarmonic_rVAR1()
 
+        {
             data_rVAR1 =
                                     from row in RandSamp1DataTable
                                     select row.rVAR1
                                         ;
-                                    
 
-            double correlation_rVAR1 = data_rVAR1.Correlation(data_rVAR1);
+            double mean_harmonic_rVAR1 = data_rVAR1.MeanHarmonic();
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(correlation_rVAR1, 1.000, 0.001);
+            Assert.AreEqual(mean_harmonic_rVAR1, 178.6275 , 0.0001);
             #elif XUNIT
-            Assert.Equal(1.000, correlation_rVAR1, 3);
+            Assert.Equal(178.6275 , mean_harmonic_rVAR1, 4);
             #elif MSTEST
-            Assert.AreEqual(correlation_rVAR1, 1.000, 0.001);
+            Assert.AreEqual(mean_harmonic_rVAR1, 178.6275, 0.0001);
             #endif
 
             return;
         }
-
-
     }
 }

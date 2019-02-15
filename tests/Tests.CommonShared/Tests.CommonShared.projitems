@@ -65,7 +65,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetRand50Samp03\Tests01MeanAverageMedian.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180330RandSampBig1Items10000\Tests01MeanAverageMedian.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180330RandSampBig1Items100000\Tests00Data.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180330RandSampBig1Items100000\Tests01aMeanArithmetic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180330RandSampBig1Items100000\Tests05StandardDeviationVariance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetRand50Samp01\Tests02ModesFrequencies.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetBasketball\Tests01bMeanGeometric.cs" />
@@ -219,7 +218,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetBasketball\Tests01Range.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetJudo\Tests01aMeanArithmetic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetJudo\Tests01bMeanHarmonic.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180330RandSampBig1Items100000\RandSampBIG1Data.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)01-DarkVaderTests\Tests20180119Dataset01\API-Wrappers\MatlabOctave\Tests011MeasuresCentralTendencies.mean.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)01-DarkVaderTests\Tests20180119Dataset01\API-Wrappers\R\Tests011MeasuresCentralTendencies.mean.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)01-DarkVaderTests\Tests20180119Dataset01\API-Wrappers\Python\Tests011MeasuresCentralTendencies.mean.cs" />
@@ -230,6 +228,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetRand50Samp01\Test03CorrelationCovariance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetRand50Samp01\Test04RangeStandardDeviation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Manual\HarmonicMeanTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetRand50Samp01\Test06HarmonicMean.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetRand50Samp01\TestNEWMean.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetJudo\Test05Kurtosis.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetRand50Samp01\Test07Kurtosis.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetRand50Samp02\Test06SkewnessKurtosis.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EmptyClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)FromFiles\UnitTests20180318DataSetJudo\" />
