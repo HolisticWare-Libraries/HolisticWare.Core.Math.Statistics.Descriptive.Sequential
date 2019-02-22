@@ -1,4 +1,4 @@
-﻿// /*
+// /*
 //    Copyright (c) 2017-12
 //
 //    moljac
@@ -69,74 +69,95 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using System.IO;
 using System.Reflection;
+using System.Collections.ObjectModel;
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
-namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
+namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync 
 {
-    [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
-    public partial class UnitTests20180330RandSampBig1Items100000
-    {
-        private static List<double> data = null;
-
-        public static List<double> Data
+    public partial class UnitTests20180318DataSetRand50Samp01 
+    
         {
-            get
-            {
-                if (data == null)
-                {
-                    LoadDataFromFile(null);
-                }
 
-                return data;
-            }
+        [Test()]
+        public void Range_rVAR1() 
+        
+        {
+
+            data_rVAR1 =
+                                    from row in RandSamp1DataTable
+                                    select row.rVAR1
+                                        ;
+
+
+            (double Min, double Max, double Delta) range_rVAR1 = data_rVAR1.Range();
+
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(range_rVAR1.Min, 126.11);
+            Assert.AreEqual(range_rVAR1.Max, 220.07);
+            Assert.AreEqual(range_rVAR1.Delta, 93.96);
+            #elif XUNIT
+            Assert.Equal(126.11, range_rVAR1.Min);
+            Assert.Equal(220.07, range_rVAR1.Max);
+            Assert.Equal(93.96, range_rVAR1.Delta);
+            #elif MSTEST
+            Assert.AreEqual(range_rVAR1.Min, 126.11);
+            Assert.AreEqual(range_rVAR1.Max, 220.07);
+            Assert.AreEqual(range_rVAR1.Delta, 93.96);
+            #endif
+
+            return;
         }
 
 
-        Stopwatch sw = null;
-
-        //[OneTimeSetUp] // for MSTest - ClassInitialize - public, static, void
-        public static void LoadDataFromFile(TestContext tc)
+        [Test()]
+        public void StandardDeviationSample_rVAR1() 
+        
         {
+
+            data_rVAR1 =
+                                    from row in RandSamp1DataTable
+                                    select row.rVAR1
+                                        ;
+
+
+            double standard_deviation_sample_rVAR1 = data_rVAR1.StandardDeviationSample();
+
+            // Assert
             #if NUNIT
-            string directory_test = TestContext.CurrentContext.TestDirectory;
+            Assert.AreEqual(standard_deviation_sample_rVAR1, 19.74941, 0.00001);
             #elif XUNIT
-            string directory_test = Environment.CurrentDirectory;
+            Assert.Equal(19.74941, standard_deviation_sample_rVAR1, 5);
             #elif MSTEST
-            string directory_test = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            Assert.AreEqual(standard_deviation_sample_rVAR1, 19.74941, 0.00001);
             #endif
 
-            string path_data = null;
-            string text = null;
-            string[] lines = null;
+            return;
+        }
 
-            //------------------------------------------------------------------
-            path_data = System.IO.Path.Combine
-                                    (
-                                        new string[]
-                                            {
-                                                directory_test,
-                                                $@"Xtras-BigData",
-                                                $@"Rand_SampBIG1_100000.csv",
-                                            }
-                                    );
-            using (StreamReader reader = new StreamReader(path_data))
-            {
-                text = reader.ReadToEnd();
-            }
-            lines = text.Split
-                            (
-                                new string[] { Environment.NewLine },
-                                StringSplitOptions.RemoveEmptyEntries
-                            );
 
-            data = new List<double>();
-            foreach (string s in lines) 
-            {
-                double data_item = Double.Parse(s);
-                data.Add(data_item);
-            }
-            //------------------------------------------------------------------
+        [Test()]
+        public void StandardDeviationPopulation_rVAR1() 
+        
+        {
+
+            data_rVAR1 =
+                                    from row in RandSamp1DataTable
+                                    select row.rVAR1
+                                        ;
+
+
+            double standard_deviation_population_rVAR1 = data_rVAR1.StandardDeviationPopulation();
+
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(standard_deviation_population_rVAR1, 19.55092, 0.00001);
+            #elif XUNIT
+            Assert.Equal(19.55092, standard_deviation_population_rVAR1, 5);
+            #elif MSTEST
+            Assert.AreEqual(standard_deviation_population_rVAR1, 19.55092, 0.00001);
+            #endif
 
             return;
         }

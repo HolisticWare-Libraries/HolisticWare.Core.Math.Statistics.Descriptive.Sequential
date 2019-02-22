@@ -87,12 +87,14 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double kurtosis_2s = data_2pts_success.Kurtosis();
 
             // Assert
+            // Kurtosis calculation according R library(e1071) "type 1"
+
             #if NUNIT
-            Assert.AreEqual(kurtosis_2s, 0.03787545+3, 0.001);
+            Assert.AreEqual(kurtosis_2s, 0.03787545, 0.00000001);
             #elif XUNIT
-            Assert.Equal(0.03787545+3, kurtosis_2s, 3);
+            Assert.Equal(0.03787545, kurtosis_2s, 8);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_2s, 0.03787545+3, 0.001);
+            Assert.AreEqual(kurtosis_2s, 0.03787545, 0.00000001);
             #endif
 
             return;
@@ -109,12 +111,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double kurtosis_3pts_success = data_3pts_success.Kurtosis();
 
             // Assert
+            // Kurtosis calculation according R library(e1071) "type 1"
             #if NUNIT
-            Assert.AreEqual(kurtosis_3pts_success, 2.005057+3, 0.001);
+            Assert.AreEqual(kurtosis_3pts_success, 2.005057, 0.000001);
             #elif XUNIT
-            Assert.Equal(2.005057+3, kurtosis_3pts_success, 3);
+            Assert.Equal(2.005057, kurtosis_3pts_success, 6);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_3pts_success, 2.005057+3, 0.001);
+            Assert.AreEqual(kurtosis_3pts_success, 2.005057, 0.000001);
             #endif
 
 
@@ -133,12 +136,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double kurtosis_2f = data_2pts_fail.Kurtosis();
 
             // Assert
+            // Kurtosis calculation according R library(e1071) "type 1"
             #if NUNIT
-            Assert.AreEqual(kurtosis_2f, 0.1793478+3, 0.001);
+            Assert.AreEqual(kurtosis_2f, 0.1793478, 0.0000001);
             #elif XUNIT
-            Assert.Equal(0.1793478+3, kurtosis_2f, 3);
+            Assert.Equal(0.1793478, kurtosis_2f, 7);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_2f, 0.1793478+3, 0.001);
+            Assert.AreEqual(kurtosis_2f, 0.1793478, 0.0000001);
             #endif
 
 
@@ -157,12 +161,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double kurtosis_3f = data_3pts_fail.Kurtosis();
 
             // Assert
+            // Kurtosis calculation according R library(e1071) "type 1"
             #if NUNIT
-            Assert.AreEqual(kurtosis_3f, 0.5665306+3, 0.001);
+            Assert.AreEqual(kurtosis_3f, 0.5665306, 0.0000001);
             #elif XUNIT
-            Assert.Equal(0.5665306+3, kurtosis_3f, 3);
+            Assert.Equal(0.5665306, kurtosis_3f, 7);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_3f, 0.5665306+3, 0.001);
+            Assert.AreEqual(kurtosis_3f, 0.5665306, 0.0000001);
             #endif
 
             return;
@@ -180,12 +185,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double kurtosis_ftf = data_free_throw_fail.Kurtosis();
 
             // Assert
+            // Kurtosis calculation according R library(e1071) "type 1"
             #if NUNIT
-            Assert.AreEqual(kurtosis_ftf, -0.6270205+3, 0.001);
+            Assert.AreEqual(kurtosis_ftf, -0.6270205, 0.0000001);
             #elif XUNIT
-            Assert.Equal(-0.6270205+3, kurtosis_ftf, 3);
+            Assert.Equal(-0.6270205, kurtosis_ftf, 7);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_ftf, -0.6270205+3, 0.001);
+            Assert.AreEqual(kurtosis_ftf, -0.6270205, 0.0000001);
             #endif
 
             return;
@@ -203,12 +209,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double kurtosis_fts = data_free_throw_success.Kurtosis();
 
             // Assert
+            // Kurtosis calculation according R library(e1071) "type 1"
             #if NUNIT
-            Assert.AreEqual(kurtosis_fts, -0.1698031+3, 0.001);
+            Assert.AreEqual(kurtosis_fts, -0.1698031, 0.0000001);
             #elif XUNIT
-            Assert.Equal(-0.1698031+3, kurtosis_fts, 3);
+            Assert.Equal(-0.1698031+3, kurtosis_fts, 7);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_fts, -0.1698031+3, 0.001);
+            Assert.AreEqual(kurtosis_fts, -0.1698031, 0.0000001);
             #endif
 
             return;
@@ -226,12 +233,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double kurtosis_off = data_jumps_offensive.Kurtosis();
 
             // Assert
+            // Kurtosis calculation according R library(e1071) "type 1"
             #if NUNIT
-            Assert.AreEqual(kurtosis_off, 0.3569787+3, 0.001);
+            Assert.AreEqual(kurtosis_off, 0.3569787, 0.0000001);
             #elif XUNIT
-            Assert.Equal(0.3569787+3, kurtosis_off, 3);
+            Assert.Equal(0.3569787, kurtosis_off, 7);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_off, 0.3569787+3, 0.001);
+            Assert.AreEqual(kurtosis_off, 0.3569787, 0.0000001);
             #endif
 
             return;
@@ -248,12 +256,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double kurtosis_def = data_jumps_defensive.Kurtosis();
 
             // Assert
+            // Kurtosis calculation according R library(e1071) "type 1"
             #if NUNIT
-            Assert.AreEqual(kurtosis_def, -0.5216579+3, 0.001);
+            Assert.AreEqual(kurtosis_def, -0.5216579, 0.0000001);
             #elif XUNIT
-            Assert.Equal(-0.5216579+3, kurtosis_def, 3);
+            Assert.Equal(-0.5216579, kurtosis_def, 7);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_def, -0.5216579+3, 0.001);
+            Assert.AreEqual(kurtosis_def, -0.5216579, 0.0000001);
             #endif
 
             return;
@@ -270,12 +279,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double kurtosis_assist = data_assistence.Kurtosis();
 
             // Assert
+            // Kurtosis calculation according R library(e1071) "type 1"
             #if NUNIT
-            Assert.AreEqual(kurtosis_assist, 0.8276105+3, 0.001);
+            Assert.AreEqual(kurtosis_assist, 0.8276105, 0.0000001);
             #elif XUNIT
-            Assert.Equal(0.8276105+3, kurtosis_assist, 3);
+            Assert.Equal(0.8276105, kurtosis_assist, 7);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_assist, 0.8276105+3, 0.001);
+            Assert.AreEqual(kurtosis_assist, 0.8276105, 0.0000001);
             #endif
 
             return;
@@ -292,12 +302,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double kurtosis_pf = data_personal_faults.Kurtosis();
 
             // Assert
+            // Kurtosis calculation according R library(e1071) "type 1"
             #if NUNIT
-            Assert.AreEqual(kurtosis_pf, 0.116669+3, 0.001);
+            Assert.AreEqual(kurtosis_pf, 0.116669, 0.0000001);
             #elif XUNIT
-            Assert.Equal(0.116669+3, kurtosis_pf, 3);
+            Assert.Equal(0.116669, kurtosis_pf, 7);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_pf, 0.116669+3, 0.001);
+            Assert.AreEqual(kurtosis_pf, 0.116669, 0.0000001);
             #endif
 
             return;
@@ -315,12 +326,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double kurtosis_bl = data_balls_lost.Kurtosis();
 
             // Assert
+            // Kurtosis calculation according R library(e1071) "type 1"
             #if NUNIT
-            Assert.AreEqual(kurtosis_bl, 2.257583+3, 0.001);
+            Assert.AreEqual(kurtosis_bl, 2.257583, 0.0000001);
             #elif XUNIT
-            Assert.Equal(2.257583+3, kurtosis_bl, 3);
+            Assert.Equal(2.257583, kurtosis_bl, 7);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_bl, 2.257583+3, 0.001);
+            Assert.AreEqual(kurtosis_bl, 2.257583, 0.0000001);
             #endif
 
             return;
@@ -338,12 +350,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double kurtosis_bs = data_balls_stolen.Kurtosis();
 
             // Assert
+            // Kurtosis calculation according R library(e1071) "type 1"
             #if NUNIT
-            Assert.AreEqual(kurtosis_bs, 1.973338+3, 0.001);
+            Assert.AreEqual(kurtosis_bs, 1.973338, 0.000001);
             #elif XUNIT
-            Assert.Equal(1.973338+3, kurtosis_bs, 3);
+            Assert.Equal(1.973338, kurtosis_bs, 6);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_bs, 1.973338+3, 0.001);
+            Assert.AreEqual(kurtosis_bs, 1.973338, 0.000001);
             #endif
 
             return;
@@ -361,12 +374,13 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             double kurtosis_block = data_blocks.Kurtosis();
 
             // Assert
+            // Kurtosis calculation according R library(e1071) "type 1"
             #if NUNIT
-            Assert.AreEqual(kurtosis_block, -0.3112424+3, 0.001);
+            Assert.AreEqual(kurtosis_block, -0.3112424, 0.0000001);
             #elif XUNIT
-            Assert.Equal(-0.3112424+3, kurtosis_block, 3);
+            Assert.Equal(-0.3112424, kurtosis_block, 7);
             #elif MSTEST
-            Assert.AreEqual(kurtosis_block, -0.3112424+3, 0.001);
+            Assert.AreEqual(kurtosis_block, -0.3112424, 0.0000001);
             #endif
 
             return;

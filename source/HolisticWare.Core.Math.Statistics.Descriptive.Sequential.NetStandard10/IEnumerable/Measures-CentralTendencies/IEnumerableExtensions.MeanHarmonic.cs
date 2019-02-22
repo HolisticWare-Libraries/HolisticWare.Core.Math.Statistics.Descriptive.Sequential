@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,6 +10,9 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// Mean (Average) Harmonic
     /// </summary>
     /// <see cref="https://en.wikipedia.org/wiki/Average"/>
+    /// https://www.hackmath.net/en/calculator/harmonic-mean
+    /// http://www.alcula.com/calculators/statistics/harmonic-mean/
+    /// https://ncalculators.com/statistics/harmonic-mean-calculator.htm
     public static partial class IEnumerableExtensionsMeanHarmonic
     {
         //==============================================================================================================
@@ -21,13 +24,13 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             int n = x.Count();
             double sum = 0.0;
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < n; i++) 
             {
-                byte x_i = x.ElementAt(i);
+                double x_i = x.ElementAt(i);
                 sum += 1.0 / x_i;
             }
 
-            return n / sum;
+            return ((double)n) / sum;
         }
 
         public static double MeanHarmonic
@@ -38,13 +41,13 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             int n = x.Count();
             double sum = 0.0;
 
-            for(int i = 0; i < n; i++)
+            for (int i = 0; i < n; i++) 
             {
-                ushort x_i = x.ElementAt(i);
+                double x_i = x.ElementAt(i);
                 sum += 1.0 / x_i;
             }
 
-            return n / sum;
+            return ((double)n) / sum;
         }
 
         public static double MeanHarmonic
@@ -55,13 +58,13 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             int n = x.Count();
             double sum = 0.0;
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < n; i++) 
             {
-                short x_i = x.ElementAt(i);
+                double x_i = x.ElementAt(i);
                 sum += 1.0 / x_i;
             }
 
-            return n / sum;
+            return ((double)n) / sum;
         }
 
         public static double MeanHarmonic
@@ -74,11 +77,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             for (int i = 0; i < n; i++)
             {
-                int x_i = x.ElementAt(i);
+                double x_i = x.ElementAt(i);
                 sum += 1.0 / x_i;
             }
 
-            return n / sum;
+            return ((double)n) / sum;
         }
 
         public static double MeanHarmonic
@@ -89,13 +92,13 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             int n = x.Count();
             double sum = 0.0;
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < n; i++) 
             {
-                uint x_i = x.ElementAt(i);
+                double x_i = x.ElementAt(i);
                 sum += 1.0 / x_i;
             }
 
-            return n / sum;
+            return ((double)n) / sum;
         }
 
         public static double MeanHarmonic
@@ -106,13 +109,13 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             int n = x.Count();
             double sum = 0.0;
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < n; i++) 
             {
-                long x_i = x.ElementAt(i);
+                double x_i = x.ElementAt(i);
                 sum += 1.0 / x_i;
             }
 
-            return n / sum;
+            return ((double)n) / sum;
         }
 
         public static double MeanHarmonic
@@ -123,13 +126,13 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             int n = x.Count();
             double sum = 0.0;
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < n; i++) 
             {
-                ulong x_i = x.ElementAt(i);
+                double x_i = x.ElementAt(i);
                 sum += 1.0 / x_i;
             }
 
-            return n / sum;
+            return ((double)n) / sum;
         }
 
         public static double MeanHarmonic
@@ -140,13 +143,13 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             int n = x.Count();
             double sum = 0.0;
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < n; i++) 
             {
-                float x_i = x.ElementAt(i);
+                double x_i = x.ElementAt(i);
                 sum += 1.0 / x_i;
             }
 
-            return n / sum;
+            return ((double)n) / sum;
         }
 
         public static double MeanHarmonic
@@ -180,7 +183,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 sum += 1.0M / x_i;
             }
 
-            return n / sum;
+            return ((decimal) n) / sum;
         }
         //==============================================================================================================
 

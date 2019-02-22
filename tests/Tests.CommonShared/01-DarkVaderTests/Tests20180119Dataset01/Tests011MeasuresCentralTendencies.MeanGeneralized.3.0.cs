@@ -403,8 +403,16 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             return;
         }
 
+        [Benchmark]
+        public double Memory_MeanGeneralized_30() 
+        {
+            return 2.0;//data_memory.MeanGeneralized(3.0);
+        }
+
+        Memory<int> data_memory = null;
+
         [Test]
-        public void Memory_MeanGeneralized_30()
+        public void Memory_MeanGeneralized_30_Test()
         {
             //====================================================================================================
             //  Arrange
@@ -414,11 +422,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            Memory<int> d =
+            Memory<int> data_memory =
                             new Memory<int>(data);
                             //data01.AsSpan().Slice(start: 0)
                             ;
-            double mean = 2.0; //data.MeanGeneralized_30();
+            double mean = Memory_MeanGeneralized_30();
             sw.Stop();
             Console.WriteLine($"          mean               = {mean}");
             Console.WriteLine($"          size               = {data.Count()}");

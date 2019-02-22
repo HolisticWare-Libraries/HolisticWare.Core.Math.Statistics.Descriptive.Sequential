@@ -125,6 +125,9 @@
     <Folder Include="System.Memory\Methods-Inferential\" />
     <Folder Include="System.Memory\Utilities\" />
     <Folder Include="System.Memory\GroupedData\" />
+    <Folder Include="System.Memory\Measures-CentralTendencies\Span\" />
+    <Folder Include="System.Memory\Measures-CentralTendencies\ReadOnlySpan\" />
+    <Folder Include="System.Memory\Measures-CentralTendencies\Memory\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanArithmetic.cs" />
@@ -187,8 +190,10 @@
     <Compile Include="System.Memory\Utilities\IEnumerableExtensions.Normalization.cs" />
     <Compile Include="System.Memory\GroupedData\IEnumerableExtensions.GroupedDataGroups.cs" />
     <Compile Include="System.Memory\GroupedData\IEnumerableExtensions.GroupedDataMedian.cs" />
-    <Compile Include="System.Memory\Measures-CentralTendencies\SpanExtensions.MeanArithmetic.cs" />
-    <Compile Include="System.Memory\Measures-CentralTendencies\ReadOnlySpanExtensions.MeanArithmetic.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\Span\SpanExtensions.MeanArithmetic.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\ReadOnlySpan\ReadOnlySpanExtensions.MeanArithmetic.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\Memory\MemoryExtensions.MeanArithmetic.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\Memory\MemoryExtensions.MeanGeneralized.cs" />
   </ItemGroup>
   <Import Project="..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.projitems" Label="Shared" Condition="Exists('..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.projitems')" />
 </Project>

@@ -60,9 +60,147 @@ using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
-namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
-{
-    public partial class UnitTests20180330RandSampBig1Items100000
-    {
+namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync {
+    public partial class UnitTests20180330RandSampBig1Items100000 {
+        [Test]
+        public void StandardDeviationSample() 
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+
+            double standard_deviation_s = Data.StandardDeviationSample();
+
+            sw.Stop();
+            Console.WriteLine($"List<double>.StandardDeviationSample()");
+            Console.WriteLine($"          standard_deviation = {standard_deviation_s}");
+            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(standard_deviation_s, 16.86001, 0.00001);
+            #elif XUNIT
+            Assert.Equal(16.86001, standard_deviation_s, 5);
+            #elif MSTEST
+            Assert.AreEqual(standard_deviation_s, 16.86001, 0.00001);
+            #endif
+            //====================================================================================================
+
+            return;
+        }
+
+        [Test]
+        public void StandardDeviationPopulation() 
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double standard_deviation_p = Data.StandardDeviationPopulation();
+
+            sw.Stop();
+            Console.WriteLine($"List<double>.StandardDeviationPopulation()");
+            Console.WriteLine($"          standard_deviation = {standard_deviation_p}");
+            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(standard_deviation_p, 16.85992, 0.00001);
+            #elif XUNIT
+            Assert.Equal(16.85992, standard_deviation_p, 5);
+            #elif MSTEST
+            Assert.AreEqual(standard_deviation_p, 16.85992, 0.00001);
+            #endif
+            //====================================================================================================
+
+            return;
+        }
+
+        [Test]
+        public void VarianceSample() 
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double variance_s = Data.VarianceSample();
+
+            sw.Stop();
+            Console.WriteLine($"List<double>.VarianceSample()");
+            Console.WriteLine($"          variance           = {variance_s}");
+            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(variance_s, 284.2599, 0.0001);
+            #elif XUNIT
+            Assert.Equal(284.2599, variance_s, 4);
+            #elif MSTEST
+            Assert.AreEqual(variance_s, 284.2599, 0.0001);
+            #endif
+            //====================================================================================================
+
+            return;
+        }
+
+        [Test]
+        public void VariancePopulation() 
+        {
+            //====================================================================================================
+            //  Arrange
+            //  reading data from files
+
+            sw = Stopwatch.StartNew();
+
+            //----------------------------------------------------------------------------------------------------
+            // Act
+            double variance_p = Data.VariancePopulation();
+
+            sw.Stop();
+            Console.WriteLine($"List<double>.VariancePopulation()");
+            Console.WriteLine($"          variance           = {variance_p}");
+            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
+            Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
+            sw.Reset();
+
+            //----------------------------------------------------------------------------------------------------
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(variance_p, 284.2570, 0.0001);
+            #elif XUNIT
+            Assert.Equal(284.2570, variance_p, 4);
+            #elif MSTEST
+            Assert.AreEqual(variance_p, 284.2570, 0.0001);
+            #endif
+            //====================================================================================================
+
+            return;
+        }
     }
 }

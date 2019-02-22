@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -310,9 +310,16 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             double sum = 0.0;
 
-            int n = x.Count();
+            int n_x = x.Count();
+            int n_y = y.Count();
 
-            for (int i = 0; i < n; i++)
+            if (n_x != n_y) 
+            {
+                string msg = "Cannot calculate Correlation for IEnumerables of different Lengths / Counts!";
+                throw new InvalidOperationException($"{msg}"); 
+            }
+
+            for (int i = 0; i < n_x; i++)
             {
                 sum += x.ElementAt(i) * y.ElementAt(i);
             }
@@ -321,9 +328,9 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             double y_mean_average_arithmetic = y.Average();
 
             return
-                (sum - n * x_mean_average_arithmetic * y_mean_average_arithmetic)
+                (sum - n_x * x_mean_average_arithmetic * y_mean_average_arithmetic)
                 /
-                ((n - 1) * standard_deviation_x * standard_deviation_y)
+                ((n_x - 1) * standard_deviation_x * standard_deviation_y)
                 ;
         }
 
@@ -353,7 +360,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             for (int i = 0; i < n; i++)
             {
-                sum += x.ElementAt(i) * y.ElementAt(i);
+                double x_i = x.ElementAt(i);
+                double y_i = y.ElementAt(i);
+
+                sum += x_i * y_i;
             }
 
             double x_mean_average_arithmetic = x.Average();

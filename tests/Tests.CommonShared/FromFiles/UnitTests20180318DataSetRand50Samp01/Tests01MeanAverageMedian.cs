@@ -1,4 +1,4 @@
-﻿// /*
+// /*
 //    Copyright (c) 2017-12
 //
 //    moljac
@@ -83,20 +83,23 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //====================================================================================================
             //  Arrange
             //  reading data from files
-
             sw = Stopwatch.StartNew();
-
             //----------------------------------------------------------------------------------------------------
+
             // Act
-            double mean_arithmetic = Data.MeanArithmetic();
+
+            double mean_arithmetic = (RandSamp1DataTable.Select(i => i.rVAR1)).MeanArithmetic();
+
             sw.Stop();
             Console.WriteLine($"List<double>.MeanArithmetic()");
             Console.WriteLine($"          mean_arithmetic    = {mean_arithmetic}");
-            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          size               = {(RandSamp1DataTable.Select(i => i.rVAR1)).Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
             //----------------------------------------------------------------------------------------------------
+
+
             // Assert
             #if NUNIT
             Assert.AreEqual(180.8814, mean_arithmetic, 0.00001);
@@ -121,11 +124,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            double mean_geometric = Data.MeanGeometric();
+            double mean_geometric = (RandSamp1DataTable.Select(i => i.rVAR1)).MeanGeometric();
             sw.Stop();
             Console.WriteLine($"List<double>.MeanGeometric()");
             Console.WriteLine($"          mean_geometric     = {mean_geometric}");
-            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          size               = {(RandSamp1DataTable.Select(i => i.rVAR1)).Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -155,7 +158,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                         () =>
                         {
                             // TODO: System.InvalidCastException : Specified cast is not valid.
-                            decimal mean_deomatric_decimal = (Data.Select(x_i => (decimal)x_i)).MeanGeometric();
+                            decimal mean_deomatric_decimal = ((RandSamp1DataTable.Select(i => i.rVAR1)).Select(x_i => (decimal)x_i)).MeanGeometric();
                         }
                     );
             #elif XUNIT
@@ -165,7 +168,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                         () =>
                         {
                             // TODO: System.InvalidCastException : Specified cast is not valid.
-                            decimal mean_deomatric_decimal = (Data.Select(x_i => (decimal)x_i)).MeanGeometric();
+                            decimal mean_deomatric_decimal = ((RandSamp1DataTable.Select(i => i.rVAR1)).Select(x_i => (decimal)x_i)).MeanGeometric();
                         }
                     );
             #elif MSTEST
@@ -185,11 +188,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            double mean = Data.MeanHarmonic();
+            double mean = (RandSamp1DataTable.Select(i => i.rVAR1)).MeanHarmonic();
             sw.Stop();
             Console.WriteLine($"List<double>.MeanHarmonic()");
             Console.WriteLine($"          mean               = {mean}");
-            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          size               = {(RandSamp1DataTable.Select(i => i.rVAR1)).Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -220,11 +223,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            double mean = Data.MeanQuadratic();
+            double mean = (RandSamp1DataTable.Select(i => i.rVAR1)).MeanQuadratic();
             sw.Stop();
             Console.WriteLine($"List<double>.MeanQuadratic()");
             Console.WriteLine($"          mean               = {mean}");
-            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          size               = {(RandSamp1DataTable.Select(i => i.rVAR1)).Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -254,11 +257,11 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            double mean = Data.MeanCubic();
+            double mean = (RandSamp1DataTable.Select(i => i.rVAR1)).MeanCubic();
             sw.Stop();
             Console.WriteLine($"List<double>.MeanCubic()");
             Console.WriteLine($"          mean               = {mean}");
-            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          size               = {(RandSamp1DataTable.Select(i => i.rVAR1)).Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
@@ -288,21 +291,21 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            double median = Data.Median();
+            double median = (RandSamp1DataTable.Select(i => i.rVAR1)).Median();
             sw.Stop();
             Console.WriteLine($"List<double>.Median()");
             Console.WriteLine($"          median             = {median}");
-            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          size               = {(RandSamp1DataTable.Select(i => i.rVAR1)).Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
 
             //----------------------------------------------------------------------------------------------------
             // Assert
-#if NUNIT
-#elif XUNIT
-#elif MSTEST
-#endif
+            #if NUNIT
+            #elif XUNIT
+            #elif MSTEST
+            #endif
             //====================================================================================================
 
             return;
@@ -319,21 +322,21 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            double median = Data.MedianLow();
+            double median = (RandSamp1DataTable.Select(i => i.rVAR1)).MedianLow();
             sw.Stop();
             Console.WriteLine($"List<double>.MedianLow()");
             Console.WriteLine($"          median             = {median}");
-            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          size               = {(RandSamp1DataTable.Select(i => i.rVAR1)).Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
 
             //----------------------------------------------------------------------------------------------------
             // Assert
-#if NUNIT
-#elif XUNIT
-#elif MSTEST
-#endif
+            #if NUNIT
+            #elif XUNIT
+            #elif MSTEST
+            #endif
             //====================================================================================================
 
             return;
@@ -350,21 +353,21 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Act
-            double median = Data.MedianHigh();
+            double median = (RandSamp1DataTable.Select(i => i.rVAR1)).MedianHigh();
             sw.Stop();
             Console.WriteLine($"List<double>.MedianHigh()");
             Console.WriteLine($"          median             = {median}");
-            Console.WriteLine($"          size               = {Data.Count()}");
+            Console.WriteLine($"          size               = {(RandSamp1DataTable.Select(i => i.rVAR1)).Count()}");
             Console.WriteLine($"          elapsed[ticks]     = {sw.ElapsedTicks}");
             Console.WriteLine($"          elapsed[ms]        = {sw.Elapsed.TotalMilliseconds}");
             sw.Reset();
 
             //----------------------------------------------------------------------------------------------------
             // Assert
-#if NUNIT
-#elif XUNIT
-#elif MSTEST
-#endif
+            #if NUNIT
+            #elif XUNIT
+            #elif MSTEST
+            #endif
             //====================================================================================================
 
             return;

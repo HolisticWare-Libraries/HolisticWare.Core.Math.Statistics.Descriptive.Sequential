@@ -1,8 +1,8 @@
-﻿// /*
-//    Copyright (c) 2017-12
+// /*
+//    Copyright (c) 2019-2
 //
 //    moljac
-//    Test.cs
+//    EmptyClass.cs
 //
 //    Permission is hereby granted, free of charge, to any person
 //    obtaining a copy of this software and associated documentation
@@ -33,7 +33,6 @@ using Test = Xunit.FactAttribute;
 using OneTimeSetUp = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
 // XUnit aliases
 using TestClass = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
-using TestContext = HolisticWare.Core.Testing.UnitTests.TestContext;
 #elif NUNIT
 using NUnit.Framework;
 // MSTest aliases
@@ -72,71 +71,22 @@ using System.Reflection;
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
-namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
+namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync 
 {
-    [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
-    public partial class UnitTests20180330RandSampBig1Items100000
+    public class HarmonicMeanTests 
     {
-        private static List<double> data = null;
+        [Test()]
+        public void MeanHarmonic_ZZ_Manual() {
+            double mean_h_m = new int[] { 10, 12, 16, 8 }.MeanHarmonic();
 
-        public static List<double> Data
-        {
-            get
-            {
-                if (data == null)
-                {
-                    LoadDataFromFile(null);
-                }
-
-                return data;
-            }
-        }
-
-
-        Stopwatch sw = null;
-
-        //[OneTimeSetUp] // for MSTest - ClassInitialize - public, static, void
-        public static void LoadDataFromFile(TestContext tc)
-        {
+            // Assert
             #if NUNIT
-            string directory_test = TestContext.CurrentContext.TestDirectory;
+            Assert.AreEqual(mean_h_m, 10.7865168539, 0.01);
             #elif XUNIT
-            string directory_test = Environment.CurrentDirectory;
+            Assert.Equal(10.7865168539, mean_h_m, 2);
             #elif MSTEST
-            string directory_test = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            Assert.AreEqual(mean_h_m, 10.7865168539, 0.01);
             #endif
-
-            string path_data = null;
-            string text = null;
-            string[] lines = null;
-
-            //------------------------------------------------------------------
-            path_data = System.IO.Path.Combine
-                                    (
-                                        new string[]
-                                            {
-                                                directory_test,
-                                                $@"Xtras-BigData",
-                                                $@"Rand_SampBIG1_100000.csv",
-                                            }
-                                    );
-            using (StreamReader reader = new StreamReader(path_data))
-            {
-                text = reader.ReadToEnd();
-            }
-            lines = text.Split
-                            (
-                                new string[] { Environment.NewLine },
-                                StringSplitOptions.RemoveEmptyEntries
-                            );
-
-            data = new List<double>();
-            foreach (string s in lines) 
-            {
-                double data_item = Double.Parse(s);
-                data.Add(data_item);
-            }
-            //------------------------------------------------------------------
 
             return;
         }

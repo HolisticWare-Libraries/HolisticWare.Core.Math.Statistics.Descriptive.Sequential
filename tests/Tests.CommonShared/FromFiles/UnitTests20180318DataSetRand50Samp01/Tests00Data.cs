@@ -1,4 +1,4 @@
-﻿// /*
+// /*
 //    Copyright (c) 2017-12
 //
 //    moljac
@@ -71,31 +71,34 @@ using System.IO;
 using System.Reflection;
 
 using Core.Math.Statistics.Descriptive.Sequential;
+using HolisticWare.Core.SampleData;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
     [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
     public partial class UnitTests20180318DataSetRand50Samp01
     {
-        private static List<double> data = null;
+        IEnumerable<double> data_rVAR1;
 
-        public static List<double> Data
+        private static List<RandSamp1Data> rand_samp1_data_table = null;
+
+        public static List<RandSamp1Data> RandSamp1DataTable
         {
             get
             {
-                if (data == null)
+                if (rand_samp1_data_table == null)
                 {
-                    LoadDataFromFile(null);   
+                    LoadDataFromFile();   
                 }
 
-                return data;
+                return rand_samp1_data_table;
             }
         }
-
+        
         Stopwatch sw = null;
 
-        //[OneTimeSetUp] // for MSTest - ClassInitialize - public, static, void
-        public static void LoadDataFromFile(TestContext tc)
+        //[OneTimeSetUp]
+        private static void LoadDataFromFile()
         {
             #if NUNIT
             string directory_test = TestContext.CurrentContext.TestDirectory;
@@ -128,15 +131,22 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                                 new string[] { Environment.NewLine },
                                 StringSplitOptions.RemoveEmptyEntries
                             );
-            data = new List<double>();
-            foreach (string s in lines)
+            rand_samp1_data_table = new List<RandSamp1Data>();
+            int n = lines.Count();
+            for (int i = 0; i < n; i++) 
             {
-                double data_item = Double.Parse(s);
-                data.Add(data_item);
-            }
+                string s1 = lines[i].Replace("\r", "");
 
-            global::Core.Text.CharacterSeparatedValues csv = new global::Core.Text.CharacterSeparatedValues();
-            //csv.Parse(())
+                string[] s_parts = s1.Split(new string[] { "," }, StringSplitOptions.None);
+
+                    RandSamp1Data bg = new RandSamp1Data() 
+
+                    {
+                        rVAR1 = double.Parse(s_parts[0].Replace(",000", "")),
+                    };
+
+                    rand_samp1_data_table.Add(bg);
+            }
             //------------------------------------------------------------------
 
             return;

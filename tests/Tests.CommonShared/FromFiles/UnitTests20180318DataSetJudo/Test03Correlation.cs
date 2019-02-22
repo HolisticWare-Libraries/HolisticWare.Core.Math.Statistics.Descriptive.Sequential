@@ -1,4 +1,4 @@
-﻿// /*
+// /*
 //    Copyright (c) 2017-12
 //
 //    moljac
@@ -33,6 +33,7 @@ using Test = Xunit.FactAttribute;
 using OneTimeSetUp = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
 // XUnit aliases
 using TestClass = HolisticWare.Core.Testing.UnitTests.UnitTestsCompatibilityAliasAttribute;
+using TestContext = HolisticWare.Core.Testing.UnitTests.TestContext;
 #elif NUNIT
 using NUnit.Framework;
 // MSTest aliases
@@ -68,6 +69,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using System.IO;
 using System.Reflection;
+using System.Collections.ObjectModel;
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
@@ -77,93 +79,91 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     {
 
         [Test()]
-        public void MeanHarmonic_ONT()
+        public void Correlation_ONT_OUZ()
         {
+
             data_ont =
                                     from row in JudoDataTable
                                     select row.ONT
                                         ;
 
-            double mean_ONT_h = data_ont.MeanHarmonic();
-
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(mean_ONT_h, 15.295971 , 0.000001);
-            #elif XUNIT
-            Assert.Equal(15.295971 , mean_ONT_h, 6);
-            #elif MSTEST
-            Assert.AreEqual(mean_ONT_h, 15.295971, 0.000001);
-            #endif
-
-            return;
-        }
-
-
-        [Test()]
-        public void MeanHarmonic_OUZ()
-        {
             data_ouz =
                                     from row in JudoDataTable
                                     select row.OUZ
                                         ;
 
-            double mean_OUZ_h = data_ouz.MeanHarmonic();
+
+            double correlation_ONT_OUZ = data_ont.Correlation(data_ouz);
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_OUZ_h, 3.829041, 0.000001);
+            Assert.AreEqual(correlation_ONT_OUZ, 0.657, 0.001);
             #elif XUNIT
-            Assert.Equal(3.829041, mean_OUZ_h, 6);
+            Assert.Equal(0.657, correlation_ONT_OUZ, 3);
             #elif MSTEST
-            Assert.AreEqual(mean_OUZ_h, 3.829041, 0.000001);
+            Assert.AreEqual(correlation_ONT_OUZ, 0.657, 0.001);
             #endif
-
 
             return;
         }
 
-
         [Test()]
-        public void MeanHarmonic_NEB()
+        public void Correlation_ONT_NEB() 
         {
+
+            data_ont =
+                                    from row in JudoDataTable
+                                    select row.ONT
+                                        ;
+
             data_neb =
-                                from row in JudoDataTable
-                                select row.NEB
-                                    ;
+                                    from row in JudoDataTable
+                                    select row.NEB
+                                        ;
 
-            double mean_NEB_h = data_neb.MeanHarmonic();
+            IEnumerable<double> data_neb_tmp = 
+                                                //data_neb.Cast<double>()
+                                                data_neb.Select(i => (double) i)
+                                                ;
+            double correlation_ONT_NEB = data_ont.CorrelationOptimized(data_neb.Select(i => (double)i));
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_NEB_h, 8.657896, 0.000001);
+            Assert.AreEqual(correlation_ONT_NEB, -0.357, 0.001);
             #elif XUNIT
-            Assert.Equal(8.657896, mean_NEB_h, 6);
+            Assert.Equal(-0.357, correlation_ONT_NEB, 3);
             #elif MSTEST
-            Assert.AreEqual(mean_NEB_h, 8.657896, 0.000001);
+            Assert.AreEqual(correlation_ONT_NEB, -0.357, 0.001);
             #endif
-
 
             return;
         }
 
 
         [Test()]
-        public void MeanHarmonic_SKL()
+        public void Correlation_ONT_SKL() 
         {
+
+            data_ont =
+                                    from row in JudoDataTable
+                                    select row.ONT
+                                        ;
+
             data_skl =
-                                from row in JudoDataTable
-                                select row.SKL
-                                    ;
+                                    from row in JudoDataTable
+                                    select row.SKL
+                                        ;
 
-            double mean_SKL_h = data_skl.MeanHarmonic();
+
+            double correlation_ONT_SKL = data_ont.Correlation(data_skl.Cast<double>());
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_SKL_h, 8.676955, 0.000001);
+            Assert.AreEqual(correlation_ONT_SKL, -0.348, 0.001);
             #elif XUNIT
-            Assert.Equal(8.676955, mean_SKL_h, 6);
+            Assert.Equal(-0.348, correlation_ONT_SKL, 3);
             #elif MSTEST
-            Assert.AreEqual(mean_SKL_h, 8.676955, 0.000001);
+            Assert.AreEqual(correlation_ONT_SKL, -0.348, 0.001);
             #endif
 
             return;
@@ -171,90 +171,29 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
 
         [Test()]
-        public void MeanHarmonic_TRB()
+        public void Correlation_ONT_TRB() 
         {
+
+            data_ont =
+                                    from row in JudoDataTable
+                                    select row.ONT
+                                        ;
+
             data_trb =
-                                from row in JudoDataTable
-                                select row.TRB
-                                    ;
-
-            double mean_TRB_h = data_trb.MeanHarmonic();
-
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(mean_TRB_h, 27.976833, 0.000001);
-            #elif XUNIT
-            Assert.Equal(27.976833, mean_TRB_h, 6);
-            #elif MSTEST
-            Assert.AreEqual(mean_TRB_h, 27.976833, 0.000001);
-            #endif
-
-            return;
-        }
+                                    from row in JudoDataTable
+                                    select row.TRB
+                                        ;
 
 
-        [Test()]
-        public void MeanHarmonic_CUC()
-        {
-            data_cuc =
-                                from row in JudoDataTable
-                                select row.CUC
-                                    ;
-
-            double mean_CUC_h = data_cuc.MeanHarmonic();
+            double correlation_ONT_TRB = data_ont.Correlation(data_trb.Cast<double>());
 
             // Assert
             #if NUNIT
-            Assert.AreEqual(mean_CUC_h, 166.059364, 0.000001);
+            Assert.AreEqual(correlation_ONT_TRB, -0.252, 0.001);
             #elif XUNIT
-            Assert.Equal(166.059364, mean_CUC_h, 6);
+            Assert.Equal(-0.252, correlation_ONT_TRB, 3);
             #elif MSTEST
-            Assert.AreEqual(mean_CUC_h, 166.059364, 0.000001);
-            #endif
-
-            return;
-        }
-
-
-        [Test()]
-        public void MeanHarmonic_SDM()
-        {
-            data_sdm =
-                                from row in JudoDataTable
-                                select row.SDM
-                                    ;
-
-            double mean_SDM_h = data_sdm.MeanHarmonic();
-
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(mean_SDM_h, 175.632345, 0.000001);
-            #elif XUNIT
-            Assert.Equal(175.632345, mean_SDM_h, 6);
-            #elif MSTEST
-            Assert.AreEqual(mean_SDM_h, 175.632345, 0.000001);
-            #endif
-
-            return;
-        }
-
-        [Test()]
-        public void MeanHarmonic_BML()
-        {
-            data_bml =
-                                from row in JudoDataTable
-                                select row.BML
-                                    ;
-
-            double mean_BML_h = data_bml.MeanHarmonic();
-
-            // Assert
-            #if NUNIT
-            Assert.AreEqual(mean_BML_h, 512.914237, 0.000001);
-            #elif XUNIT
-            Assert.Equal(512.914237, mean_BML_h, 6);
-            #elif MSTEST
-            Assert.AreEqual(mean_BML_h, 512.914237, 0.000001);
+            Assert.AreEqual(correlation_ONT_TRB, -0.252, 0.001);
             #endif
 
             return;

@@ -1,4 +1,4 @@
-﻿// /*
+// /*
 //    Copyright (c) 2017-12
 //
 //    moljac
@@ -70,6 +70,7 @@ using System.IO;
 using System.Reflection;
 
 using Core.Math.Statistics.Descriptive.Sequential;
+using HolisticWare.Core.SampleData;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
@@ -146,6 +147,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                 string s1 = lines[i].Replace("\r", "");
 
                 string[] s_parts = s1.Split(new string[] { "." }, StringSplitOptions.None);
+
                 BasketballTeamData bg = new BasketballTeamData()
                 {
                     Points2Success = int.Parse(s_parts[0].Replace(",000", "")),

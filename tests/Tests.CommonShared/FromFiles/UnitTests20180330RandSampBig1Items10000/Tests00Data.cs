@@ -91,13 +91,16 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
         //[OneTimeSetUp] // for MSTest - ClassInitialize - public, static, void
         public static void LoadDataFromFile(TestContext tc)
         {
-#if NUNIT
-            string directory_test = TestContext.CurrentContext.TestDirectory;
-#elif XUNIT
+            #if NUNIT
+            string directory_test =
+                            // TestContext.CurrentContext.TestDirectory
+                            Path.GetDirectoryName(typeof(UnitTests20180330RandSampBig1Items10000).Assembly.Location);
+                            ;
+            #elif XUNIT
             string directory_test = Environment.CurrentDirectory;
-#elif MSTEST
+            #elif MSTEST
             string directory_test = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-#endif
+            #endif
 
             string path_data = null;
             string text = null;

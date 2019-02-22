@@ -33,7 +33,7 @@ Implementations are based on:
 
     *   Tests [INPROGRESS]
 
-*   `ArrayList` not encouraged, just as an option fro those that must use it in legacy code
+*   `ArrayList` not encouraged, just as an option for those that must use it in legacy code
 
     *   `netstandard1.3`
 
@@ -144,7 +144,7 @@ Implemented and planned (TODOs):
 
         *   [x] Tested
 
-2.  [x] Distribution (Shape) Measures
+2.  [x] Summary tables
 
     *   [x] Frequencies
 
@@ -166,75 +166,71 @@ Implemented and planned (TODOs):
 
             *   [x] Tested
 
-    3.1.  [ ] Distribution (Shape) Assymetry Measures
+3.  [ ] Shape of a probability distribution
 
-        *   [] Skewness
+    *   [ ] Skewness
 
-            *   [x] [Skewnes (Alpha 3)](https://en.wikipedia.org/wiki/Skewness)
+        *   [x] [Skewnes (Alpha 3)](https://en.wikipedia.org/wiki/Skewness)
 
-                *   _Pearson's moment coefficient of skewness_
+            *   _Pearson's moment coefficient of skewness_
 
-                *   _Pearson's first skewness coefficient (mode skewness)_
+            *   _Pearson's first skewness coefficient (mode skewness)_
 
-                *   _Pearson's second skewness coefficient (median skewness)_
+            *   _Pearson's second skewness coefficient (median skewness)_
 
-    3.2.  [ ] Distribution (Shape) Roundness Measures
+        *   [ ] Kurtosis
 
-            *   [ ] Kurtosis
+            *   [x] [Kurtosis (Alpha 4)](https://en.wikipedia.org/wiki/Kurtosis#Mesokurtic)
 
-                *   [x] [Kurtosis (Alpha 4)](https://en.wikipedia.org/wiki/Kurtosis#Mesokurtic)
+            * _Differences between formulas: more references on [R package 'e1071'](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjDw8PLkavbAhUBApoKHf0dB4wQFggqMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fe1071%2Fe1071.pdf&usg=AOvVaw02nj4Mk-mh5km97z9ukTdc), pages -  `27`-  and -  `47`._
 
-                * _Differences between formulas: more references on [R package 'e1071'](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjDw8PLkavbAhUBApoKHf0dB4wQFggqMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fe1071%2Fe1071.pdf&usg=AOvVaw02nj4Mk-mh5km97z9ukTdc), pages -  `27`-  and -  `47`._
+3.  Measures of Dispersion
 
-3.  Dispersion / Variability Measures
-
-    *   [] Moments
+    *   [ ] Moments
 
         *   https://en.wikipedia.org/wiki/Moment_(mathematics)
 
-        *   [] Implemented
+        *   [ ] Implemented
 
-        *   [] Tested
+        *   [ ] Tested
 
         *   Generalised
 
-            *   [] Implemented
+            *   [ ] Implemented
 
-            *   [] Tested
+            *   [ ] Tested
 
         *   Central
 
-            *   [] Implemented
+            *   [ ] Implemented
 
-            *   [] Tested
+            *   [ ] Tested
 
         *   Central Absolute
 
-            *   [] Implemented
+            *   [ ] Implemented
 
-            *   [] Tested
+            *   [ ] Tested
 
         *   Row
 
-            *   [] Implemented
+            *   [ ] Implemented
 
-            *   [] Tested
+            *   [ ] Tested
 
         * row absolute
 
-            *   [] Implemented
+            *   [ ] Implemented
 
-            *   [] Tested
+            *   [ ] Tested
 
-    *   [] Variance (Sample and Population)
+    *   [ ] Variance (Sample and Population)
 
-    *   [] Standard Deviation (Sample and Population)
+    *   [ ] Standard Deviation (Sample and Population) 
 
-    *   Standard Deviation 
+    *   [ ] Range
 
-    *   [] Range
-
-    *   [] Variability
+    *   [ ] Coefficient of variation
 
  
     *   [x] [Range](https://en.wikipedia.org/wiki/Range_(statistics))
@@ -251,7 +247,7 @@ Implemented and planned (TODOs):
 
     *   [ ] [Quartile coefficient of dispersion](https://en.wikipedia.org/wiki/Quartile_coefficient_of_dispersion)
     
-    *   [] Quantile
+    *   [ ] Quantile
 
         *   https://en.wikipedia.org/wiki/Quantile
 
@@ -259,25 +255,39 @@ Implemented and planned (TODOs):
 
         *   [] Tested
 
-    *   [] Quartile
+    *   [ ] Quartile
 
         *   https://en.wikipedia.org/wiki/Quartile
 
-        *   [] Implemented
+        *   [ ] Implemented
 
-        *   [] Tested
+        *   [ ] Tested
 
     *   [] Percentile
 
         *   https://en.wikipedia.org/wiki/Percentile
 
-        *   [] Implemented
+        *   [ ] Implemented
 
-        *   [] Tested
+        *   [ ] Tested
+
+    *   [ ] Interquartile range
+
+        *   https://en.wikipedia.org/wiki/Interquartile_range
+
+        *   [ ] Implemented
+
+        *   [ ] Tested
 
 4.   Dependency Measures
 
     *   Correlation 
+    
+        *   [ ] Pearson product-moment correlation
+
+        *   [ ] Spearman's rho
+
+        *   [ ] Kendall's tau
 
     *   Covariance
 
@@ -303,6 +313,16 @@ TODO:
 | Dependency /Dependencies                 | ***Correlation***<br>***Covariance***                       |
 
 ### Comparison Table
+
+Comparison of this library with
+
+*   vanilla R (no special libs)
+
+*   vanilla Python (no special libs)
+
+*   Matlab/Octave
+
+    https://octave.org/octave.pdf
 
 
 |                    |   `x = IEnumerable<T>`               |                             |                           |                           |

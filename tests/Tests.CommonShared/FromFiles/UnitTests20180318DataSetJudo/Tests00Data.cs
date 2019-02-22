@@ -1,4 +1,4 @@
-﻿// /*
+// /*
 //    Copyright (c) 2017-12
 //
 //    moljac
@@ -71,6 +71,7 @@ using System.IO;
 using System.Reflection;
 
 using Core.Math.Statistics.Descriptive.Sequential;
+using HolisticWare.Core.SampleData;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
@@ -94,7 +95,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             {
                 if (judo_data_table == null)
                 {
-                    LoadDataFromFile(null);
+                    LoadDataFromFile();
                 }
 
                 return judo_data_table;
@@ -103,8 +104,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
         Stopwatch sw = null;
 
-        //[OneTimeSetUp]
-        protected static void LoadDataFromFile(TestContext tc)
+        private static void LoadDataFromFile() 
         {
             #if NUNIT
             string directory_test = TestContext.CurrentContext.TestDirectory;
@@ -144,7 +144,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             {
                 string s1 = lines[i].Replace("\r", "");
 
-                string[] s_parts = s1.Split(new string[] { "." }, StringSplitOptions.None);
+                string[] s_parts = s1.Split(new string[] { "," }, StringSplitOptions.None);
                 JudoData bg = new JudoData()
                 {
                     ONT = double.Parse(s_parts[0].Replace(",000", "")),
@@ -157,7 +157,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
                     BML = int.Parse(s_parts[7].Replace(",000", "")),
                 };
 
-            judo_data_table.Add(bg);
+                judo_data_table.Add(bg);
             }
             //------------------------------------------------------------------
 

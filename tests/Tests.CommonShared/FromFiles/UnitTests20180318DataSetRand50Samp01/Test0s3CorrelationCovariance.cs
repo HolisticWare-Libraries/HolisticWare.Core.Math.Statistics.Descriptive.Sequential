@@ -1,4 +1,4 @@
-﻿// /*
+// /*
 //    Copyright (c) 2017-12
 //
 //    moljac
@@ -69,76 +69,39 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using System.IO;
 using System.Reflection;
+using System.Collections.ObjectModel;
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
-namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
+namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync 
 {
-    [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
-    public partial class UnitTests20180330RandSampBig1Items100000
+    public partial class UnitTests20180318DataSetRand50Samp01 
     {
-        private static List<double> data = null;
 
-        public static List<double> Data
+        [Test()]
+        public void Correlation() 
         {
-            get
-            {
-                if (data == null)
-                {
-                    LoadDataFromFile(null);
-                }
 
-                return data;
-            }
-        }
+            data_rVAR1 =
+                                    from row in RandSamp1DataTable
+                                    select row.rVAR1
+                                        ;
+                                    
 
+            double correlation_rVAR1 = data_rVAR1.Correlation(data_rVAR1);
 
-        Stopwatch sw = null;
-
-        //[OneTimeSetUp] // for MSTest - ClassInitialize - public, static, void
-        public static void LoadDataFromFile(TestContext tc)
-        {
+            // Assert
             #if NUNIT
-            string directory_test = TestContext.CurrentContext.TestDirectory;
+            Assert.AreEqual(correlation_rVAR1, 1.000, 0.001);
             #elif XUNIT
-            string directory_test = Environment.CurrentDirectory;
+            Assert.Equal(1.000, correlation_rVAR1, 3);
             #elif MSTEST
-            string directory_test = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            Assert.AreEqual(correlation_rVAR1, 1.000, 0.001);
             #endif
-
-            string path_data = null;
-            string text = null;
-            string[] lines = null;
-
-            //------------------------------------------------------------------
-            path_data = System.IO.Path.Combine
-                                    (
-                                        new string[]
-                                            {
-                                                directory_test,
-                                                $@"Xtras-BigData",
-                                                $@"Rand_SampBIG1_100000.csv",
-                                            }
-                                    );
-            using (StreamReader reader = new StreamReader(path_data))
-            {
-                text = reader.ReadToEnd();
-            }
-            lines = text.Split
-                            (
-                                new string[] { Environment.NewLine },
-                                StringSplitOptions.RemoveEmptyEntries
-                            );
-
-            data = new List<double>();
-            foreach (string s in lines) 
-            {
-                double data_item = Double.Parse(s);
-                data.Add(data_item);
-            }
-            //------------------------------------------------------------------
 
             return;
         }
+
+
     }
 }

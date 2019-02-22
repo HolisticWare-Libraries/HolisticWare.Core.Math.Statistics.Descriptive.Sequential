@@ -1,4 +1,4 @@
-﻿// /*
+// /*
 //    Copyright (c) 2017-12
 //
 //    moljac
@@ -72,71 +72,42 @@ using System.Reflection;
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
-namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
+namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync 
 {
-    [TestClass] // for MSTest - NUnit [TestFixture] and XUnit not needed
-    public partial class UnitTests20180330RandSampBig1Items100000
+    public partial class UnitTests20180318DataSetRand50Samp02 
     {
-        private static List<double> data = null;
-
-        public static List<double> Data
+        [Test]
+        public void Skewness() 
         {
-            get
-            {
-                if (data == null)
-                {
-                    LoadDataFromFile(null);
-                }
 
-                return data;
-            }
-        }
+            double skewness = Data.Skewness();
 
-
-        Stopwatch sw = null;
-
-        //[OneTimeSetUp] // for MSTest - ClassInitialize - public, static, void
-        public static void LoadDataFromFile(TestContext tc)
-        {
+            // Assert
             #if NUNIT
-            string directory_test = TestContext.CurrentContext.TestDirectory;
+            Assert.AreEqual(0.110957, skewness, 0.000001);
             #elif XUNIT
-            string directory_test = Environment.CurrentDirectory;
+            Assert.Equal(0.110957, skewness, 6);
             #elif MSTEST
-            string directory_test = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            Assert.AreEqual(0.110957, skewness, 0.000001);
             #endif
 
-            string path_data = null;
-            string text = null;
-            string[] lines = null;
+            return;
+        }
 
-            //------------------------------------------------------------------
-            path_data = System.IO.Path.Combine
-                                    (
-                                        new string[]
-                                            {
-                                                directory_test,
-                                                $@"Xtras-BigData",
-                                                $@"Rand_SampBIG1_100000.csv",
-                                            }
-                                    );
-            using (StreamReader reader = new StreamReader(path_data))
-            {
-                text = reader.ReadToEnd();
-            }
-            lines = text.Split
-                            (
-                                new string[] { Environment.NewLine },
-                                StringSplitOptions.RemoveEmptyEntries
-                            );
+        [Test]
+        public void Kurtosis() 
+        {
 
-            data = new List<double>();
-            foreach (string s in lines) 
-            {
-                double data_item = Double.Parse(s);
-                data.Add(data_item);
-            }
-            //------------------------------------------------------------------
+            double kurtosis = Data.Kurtosis();
+
+            // Assert
+            #if NUNIT
+            Assert.AreEqual(-0.5835756, kurtosis, 0.0000001);
+            #elif XUNIT
+            Assert.Equal(-0.5835756, kurtosis, 7);
+            #elif MSTEST
+            Assert.AreEqual(-0.5835756, kurtosis, 0.0000001);
+            #endif
 
             return;
         }
