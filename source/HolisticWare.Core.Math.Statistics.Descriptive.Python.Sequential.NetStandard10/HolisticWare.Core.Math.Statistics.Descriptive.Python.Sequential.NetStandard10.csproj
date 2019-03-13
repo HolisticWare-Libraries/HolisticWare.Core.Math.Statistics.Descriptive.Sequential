@@ -4,13 +4,15 @@
     <TargetFramework>netstandard1.0</TargetFramework>
     <RootNamespace>HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential</RootNamespace>
     <AssemblyName>HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential</AssemblyName>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile> 
   </PropertyGroup>
-
+    
   <ItemGroup>
     <PackageReference Include="System.Runtime" Version="4.3.0" />
   </ItemGroup>
-
+    
   <ItemGroup>
     <ProjectReference Include="..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10.csproj" />
   </ItemGroup>
+  <Import Project="..\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.projitems" Label="Shared" Condition="Exists('..\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.projitems')" />
 </Project>

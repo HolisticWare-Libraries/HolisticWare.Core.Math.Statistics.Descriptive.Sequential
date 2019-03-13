@@ -19,6 +19,8 @@ Installing
         rm -fr tools/; mkdir ./tools/ ; \
         cp cake.packages.config ./tools/packages.config ; \
         curl -Lsfo build.sh http://cakebuild.net/download/bootstrapper/osx ; \
+        sh ./build.sh
+
         chmod +x ./build.sh ;
         ./build.sh
 
@@ -73,7 +75,7 @@ var TARGET = Argument ("t", Argument ("target", "Default"));
 FilePathCollection LibSourceSolutions = GetFiles($"./source/**/*.sln");
 FilePathCollection LibSourceProjects = GetFiles($"./source/**/*.csproj");
 
-
+//---------------------------------------------------------------------------------------
 Task("libs")
     .IsDependentOn ("libs-msbuild-solutions")
     .IsDependentOn ("libs-msbuild-projects")
@@ -212,6 +214,7 @@ Task("libs-dotnet-projects")
             return;
         }
     );
+//---------------------------------------------------------------------------------------
 
 Task("nuget")
     .Does
@@ -223,21 +226,44 @@ Task("nuget")
     );
 
 
-// FilePathCollection UnitTestsNUnitMobileProjects = GetFiles($"./tests/unit-tests/**/*.NUnit.Xamarin*.csproj");
-// FilePathCollection UnitTestsXUnitProjects = GetFiles($"./tests/unit-tests/**/*.XUnit.csproj");
-// FilePathCollection UnitTestsMSTestProjects = GetFiles($"./tests/unit-tests/**/*.NUnit.csproj");
+// FilePathCollection UnitTestsNUnitMobileProjects = GetFiles($"./tests/unit-tests/project-references/**/*.NUnit.Xamarin*.csproj");
+// FilePathCollection UnitTestsXUnitProjects = GetFiles($"./tests/unit-tests/project-references/**/*.XUnit.csproj");
+// FilePathCollection UnitTestsMSTestProjects = GetFiles($"./tests/unit-tests/project-references/**/*.NUnit.csproj");
 
 Task("unit-tests")
-    .IsDependentOn ("unit-tests-nunit")	
-    .IsDependentOn ("unit-tests-xunit")
-    .IsDependentOn ("unit-tests-mstest")
+    .IsDependentOn("libs")
     .Does
     (
         () =>
         {
+            try
+            {
+                RunTarget("unit-tests-nunit");
+            }
+            catch (System.Exception)
+            {
+            }
+            try
+            {
+                RunTarget("unit-tests-xunit");
+            }
+            catch (System.Exception)
+            {
+            }
+            try
+            {
+                RunTarget("unit-tests-mstest");
+            }
+            catch (System.Exception)
+            {
+            }
+
             return;
         }
     );
+
+var reports = Directory("./externals/results/unit-tests/");
+
 
 Task("unit-tests-nunit")
     .Does
@@ -245,7 +271,7 @@ Task("unit-tests-nunit")
         () =>
         {
             FilePathCollection UnitTestsNUnitAssemblies;
-            FilePathCollection UnitTestsNUnitProjects = GetFiles($"./tests/unit-tests/**/*.NUnit.csproj");
+            FilePathCollection UnitTestsNUnitProjects = GetFiles($"./tests/unit-tests/project-references/**/*.NUnit.csproj");
 
             foreach(FilePath prj in UnitTestsNUnitProjects)
             {
@@ -270,7 +296,7 @@ Task("unit-tests-nunit")
                 );
             }
   
-            UnitTestsNUnitAssemblies = GetFiles($"./tests/unit-tests/**/bin/Debug/*.NUnit.dll");
+            UnitTestsNUnitAssemblies = GetFiles($"./tests/unit-tests/project-references/**/bin/Debug/*.NUnit.dll");
 
             foreach(FilePath asm in UnitTestsNUnitAssemblies)
             {
@@ -282,10 +308,11 @@ Task("unit-tests-nunit")
                 UnitTestsNUnitAssemblies, 
                 new NUnit3Settings 
                 {
+                    OutputFile = "./externals/results/unit-tests/Nunit3.1.txt",
                 }
             );
 
-            UnitTestsNUnitAssemblies = GetFiles($"./tests/unit-tests/**/bin/Release/*.NUnit.dll");
+            UnitTestsNUnitAssemblies = GetFiles($"./tests/unit-tests/project-references/**/bin/Release/*.NUnit.dll");
 
             foreach(FilePath asm in UnitTestsNUnitAssemblies)
             {
@@ -297,6 +324,7 @@ Task("unit-tests-nunit")
                 UnitTestsNUnitAssemblies, 
                 new NUnit3Settings 
                 {
+                    OutputFile = "./externals/results/unit-tests/Nunit3.2.txt",
                 }
             );
             return;
@@ -312,7 +340,7 @@ Task("unit-tests-xunit")
             {
                 MSBuild
                 (
-                    "./tests/unit-tests/UnitTests.XUnit/UnitTests.XUnit.csproj", 
+                    "./tests/unit-tests/project-references/UnitTests.XUnit/UnitTests.XUnit.csproj", 
                     new MSBuildSettings 
                     {
                         Configuration = "Debug",
@@ -320,36 +348,37 @@ Task("unit-tests-xunit")
                 );
                 DotNetCoreTest
                 (
-                    "./tests/unit-tests/UnitTests.XUnit/UnitTests.XUnit.csproj",
+                    "./tests/unit-tests/project-references/UnitTests.XUnit/UnitTests.XUnit.csproj",
                     //"xunit",  "--no-build -noshadow"
                     new DotNetCoreTestSettings()
                     {
+                        ResultsDirectory = reports,
                     }
                 );
                 XUnit2
                 (
-                    "./tests/unit-tests/UnitTests.XUnit/bin/**/UnitTests.*.dll",
+                    "./tests/unit-tests/project-references/UnitTests.XUnit/bin/**/UnitTests.*.dll",
                     new XUnit2Settings 
                     {
                         Parallelism = ParallelismOption.All,
-                        HtmlReport = false,
                         NoAppDomain = true,
+                        ReportName = "XUnit.Results",
+                        HtmlReport = true,
                         XmlReport = true,
-                        OutputDirectory = "./build"
+                        NUnitReport = true,
+                        OutputDirectory = reports,
                     }
                 );
-                
             }
             catch (System.Exception)
             {  
-                Error("mc++ XUnit tests failed");   
+                Error("mc++ XUnit tests have failed");   
             }
-
-            ReportUnit
-                (
-                    "./externals/unit-tests-xunit-report.xml", 
-                    "./externals/unit-tests-xunit-report.html"
-                );
+            finally 
+            {
+                ReportUnit(reports);
+            }
+            MoveFile("TestResult.xml", "./externals/results/unit-tests/TestResult.xml");
         }
     );
 
@@ -360,7 +389,7 @@ Task("unit-tests-mstest")
         {
             MSBuild
             (
-                "./tests/unit-tests/UnitTests.MSTest/UnitTests.MSTest.csproj", 
+                "./tests/unit-tests/project-references/UnitTests.MSTest/UnitTests.MSTest.csproj", 
                 new MSBuildSettings 
                 {
                     Configuration = "Debug",
@@ -368,17 +397,19 @@ Task("unit-tests-mstest")
             );
             MSTest
             (
-                "./tests/unit-tests/UnitTests.MSTest/bin/Debug/**/UnitTests.MSTest.dll", 
+                "./tests/unit-tests/project-references/UnitTests.MSTest/bin/Debug/**/UnitTests.MSTest.dll", 
                 new MSTestSettings 
                 {
+                    ResultsFile = "./externals/results/unit-tests/MSTest.txt",
                 }
             );
             DotNetCoreTest
             (
-                "./tests/unit-tests/UnitTests.MSTest/UnitTests.MSTest.csproj",
+                "./tests/unit-tests/project-references/UnitTests.MSTest/UnitTests.MSTest.csproj",
                 //"xunit",  "--no-build -noshadow"
                 new DotNetCoreTestSettings()
                 {
+                    ResultsDirectory = reports,
                 }
             );
  
@@ -442,8 +473,8 @@ Task ("coverage-xunit")
                                 Arguments = 
                                 @"
                                 -target:
-                                -output:/externals/coverage-opencover-xunit-report.xml
-                                -searchdirs:./tests/unit-tests/UnitTests.XUnit/UnitTests.*/**/UnitTests.*.dll
+                                -output:./externals/coverage-opencover-xunit-report.xml
+                                -searchdirs:./tests/unit-tests/project-references/UnitTests.XUnit/UnitTests.*/**/UnitTests.*.dll
                                 "
                             }
                         );
@@ -455,7 +486,7 @@ Task ("coverage-xunit")
             //         {
             //             tool.XUnit2
             //             (
-            //                 "./tests/unit-tests/UnitTests.XUnit/UnitTests.*/**/UnitTests.*.dll",
+            //                 "./tests/unit-tests/project-references/UnitTests.XUnit/UnitTests.*/**/UnitTests.*.dll",
             //                 new XUnit2Settings 
             //                 {
             //                     ShadowCopy = false
@@ -485,9 +516,20 @@ Task ("externals")
         {
             Information("externals ...");
 
-            if (!DirectoryExists ("./externals/"))
+            string [] folders = new string[]
             {
-                CreateDirectory ("./externals");
+                "./externals/",
+                "./externals/results/",
+                "./externals/results/unit-tests/",
+            };
+
+            foreach(string folder in folders)
+            {
+                Information($"    creating ...{folder}");
+                if (!DirectoryExists (folder))
+                {
+                    CreateDirectory (folder);
+                }
             }
 
             Information("    downloading ...");
@@ -505,7 +547,7 @@ Task("externals-build")
     (
         () => 
         {
-            FilePathCollection files = GetFiles("./external/**/build.cake");
+            FilePathCollection files = GetFiles("./external*/**/build.cake");
             foreach(FilePath file in files)
             {
                 Information("File: {0}", file);
@@ -575,6 +617,15 @@ Task ("clean")
             }
 
             return;
+        }
+    );
+
+Task("Default")
+.Does
+    (
+        () => 
+        {
+            RunTarget("unit-tests");
         }
     );
 

@@ -5,8 +5,42 @@ Statistics library for .NET Standard 1.0.
 *   Nuget https://www.nuget.org/packages/HolisticWare.Core.Math.Statistics.Sequential/
 
 Basic Descriptive Statistics Algorithms implemented as sequential in both synchronous and
-aynchronous variants. Implementations are based on `IEnumerable<T>` as extension methods
-(similar to LINQ - `System.Linq` )
+aynchronous variants. 
+
+Implementations are based on:
+
+*   `IEnumerable<T>` as extension methods (LINQ - `System.Linq`)
+
+    *   `netstandard1.0`
+
+    *   Implementation [DONE]
+
+    *   Tests [INPROGRESS]
+
+*   `Span<T>` and `Memory<T>` from `System.Memory`
+
+    *   `netstandard1.1`
+
+    *   Implementation [INPROGRESS]
+
+    *   Tests [INPROGRESS]
+
+*   `IAsyncEnumerable<T>` from ``
+
+    *   `netstandard1.0`
+
+    *   Implementation [INPROGRESS]
+
+    *   Tests [INPROGRESS]
+
+*   `ArrayList` not encouraged, just as an option for those that must use it in legacy code
+
+    *   `netstandard1.3`
+
+    *   Implementation [INPROGRESS]
+
+    *   Tests [INPROGRESS]
+    
 
 NOTE: Parallel algorithms based on (TPL) can be found in 
 
@@ -14,60 +48,250 @@ NOTE: Parallel algorithms based on (TPL) can be found in
 
 *   Nuget: 
 
+## Algorithms
 
-## DONE
+Group categorization might be wrong (accepting comments as issues), but the idea was just to simplify implementation
+and maintenance.
 
-### Algorithms
 
-*   Central Tendencies Measures
+Implemented and planned (TODOs):
 
-    *   Average (Mean) Value algorithms
+1.  Measures of Central Tendency
 
-        *   Arithmetic 
+    *   [x] Implemented
 
-        *   Geometric
+    *   [x] Tested
 
-        *   Harmonic
+    1.  Average (Mean) Value algorithms
+        
+        1.  Arithmetic mean
+        
+            *   https://en.wikipedia.org/wiki/Arithmetic_mean
 
-        *   Quadratic
+            *   [x] Implemented
 
-        *   Cubic
+            *   [x] Tested
 
-        *   Generalized
+        2.  Weighted aritmetic mean
+        
+            *   https://en.wikipedia.org/wiki/Weighted_arithmetic_mean
 
-        *   Weighted
+            *   [x] Implemented
+
+            *   [x] Tested
+
+        3.  Geometric mean
+
+            *   https://en.wikipedia.org/wiki/Geometric_mean
+
+            *   [x] Implemented
+
+            *   [x] Tested
+
+        4.   Harmonic Mean
+
+            *   https://en.wikipedia.org/wiki/Harmonic_mean
+
+            *   [x] Implemented
+
+            *   [x] Tested
+
+        5.  Quadratic AKA Root Mean Square
+
+            *   https://en.wikipedia.org/wiki/Root_mean_square
+
+            *   https://en.wiktionary.org/wiki/quadratic_mean
+
+            *   [x] Implemented
+
+            *   [x] Tested
+
+        6.  Cubic Mean
+
+            *   https://en.wikipedia.org/wiki/Cubic_mean
+
+            *   [x] Implemented
+
+            *   [x] Tested
+
+        7.  Generalized AKA Power Mean
+
+            *   https://en.wikipedia.org/wiki/Generalized_mean
+
+            *   [x] Implemented
+
+            *   [x] Tested
+
+        8.  Weighted Generalized Mean
+
+            *   [x] Implemented
+
+            *   [x] Tested
 
     *   Median
 
-    *   Modes
+        *   https://en.wikipedia.org/wiki/Median
 
-*   Dispersion Measures
+        *   [x] Implemented
 
-    *   Moment
+        *   [x] Tested
 
-    *   Standard Deviation (Sample and Population)
+    *   [x] Modes
 
-    *   Variance (Sample and Population)
+        *   https://en.wikipedia.org/wiki/Mode_(statistics)
 
-*   Distribution Measures
+        *   [x] Implemented
 
-    *   Frequencies
+        *   [x] Tested
 
-    *   Distribution Asymmetry Measures
+2.  [x] Summary tables
 
-        *   Skewness
+    *   [x] Frequencies
 
-    *   Distribution Roundness Measures
+        *   [x] Frequency Counter
 
-        *   Kurtosis
+            *   [x] Implemented
 
-*   Dependency Measures
+            *   [x] Tested
+
+        *   [x] Frequencies
+
+            *   [x] Implemented
+
+            *   [x] Tested
+
+        *   [x] Frequency Distribution
+
+            *   [x] Implemented
+
+            *   [x] Tested
+
+3.  [ ] Shape of a probability distribution
+
+    *   [ ] Skewness
+
+        *   [x] [Skewnes (Alpha 3)](https://en.wikipedia.org/wiki/Skewness)
+
+            *   _Pearson's moment coefficient of skewness_
+
+            *   _Pearson's first skewness coefficient (mode skewness)_
+
+            *   _Pearson's second skewness coefficient (median skewness)_
+
+        *   [ ] Kurtosis
+
+            *   [x] [Kurtosis (Alpha 4)](https://en.wikipedia.org/wiki/Kurtosis#Mesokurtic)
+
+            * _Differences between formulas: more references on [R package 'e1071'](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjDw8PLkavbAhUBApoKHf0dB4wQFggqMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fe1071%2Fe1071.pdf&usg=AOvVaw02nj4Mk-mh5km97z9ukTdc), pages -  `27`-  and -  `47`._
+
+3.  Measures of Dispersion
+
+    *   [ ] Moments
+
+        *   https://en.wikipedia.org/wiki/Moment_(mathematics)
+
+        *   [ ] Implemented
+
+        *   [ ] Tested
+
+        *   Generalised
+
+            *   [ ] Implemented
+
+            *   [ ] Tested
+
+        *   Central
+
+            *   [ ] Implemented
+
+            *   [ ] Tested
+
+        *   Central Absolute
+
+            *   [ ] Implemented
+
+            *   [ ] Tested
+
+        *   Row
+
+            *   [ ] Implemented
+
+            *   [ ] Tested
+
+        * row absolute
+
+            *   [ ] Implemented
+
+            *   [ ] Tested
+
+    *   [ ] Variance (Sample and Population)
+
+    *   [ ] Standard Deviation (Sample and Population) 
+
+    *   [ ] Range
+
+    *   [ ] Coefficient of variation
+
+ 
+    *   [x] [Range](https://en.wikipedia.org/wiki/Range_(statistics))
+
+    *   [ ] [Interquartile range](https://en.wikipedia.org/wiki/Interquartile_range)
+
+    *   [x] [Mean absolute difference](https://en.wikipedia.org/wiki/Mean_absolute_difference)
+
+    *   [x] [Variance](https://en.wikipedia.org/wiki/Variance)
+
+    *   [x] [Standard deviation](https://en.wikipedia.org/wiki/Standard_deviation)
+
+    *   [ ] [Coefficient of variation](https://en.wikipedia.org/wiki/Coefficient_of_variation)
+
+    *   [ ] [Quartile coefficient of dispersion](https://en.wikipedia.org/wiki/Quartile_coefficient_of_dispersion)
+    
+    *   [ ] Quantile
+
+        *   https://en.wikipedia.org/wiki/Quantile
+
+        *   [] Implemented
+
+        *   [] Tested
+
+    *   [ ] Quartile
+
+        *   https://en.wikipedia.org/wiki/Quartile
+
+        *   [ ] Implemented
+
+        *   [ ] Tested
+
+    *   [] Percentile
+
+        *   https://en.wikipedia.org/wiki/Percentile
+
+        *   [ ] Implemented
+
+        *   [ ] Tested
+
+    *   [ ] Interquartile range
+
+        *   https://en.wikipedia.org/wiki/Interquartile_range
+
+        *   [ ] Implemented
+
+        *   [ ] Tested
+
+4.   Dependency Measures
 
     *   Correlation 
+    
+        *   [ ] Pearson product-moment correlation
+
+        *   [ ] Spearman's rho
+
+        *   [ ] Kendall's tau
 
     *   Covariance
 
-*   Inferential Methods (will be moved to separate repo/nuget)
+5.   Inferential Methods (will be moved to separate repo/nuget)
 
     *   F Statistics
 
@@ -75,8 +299,30 @@ NOTE: Parallel algorithms based on (TPL) can be found in
 
     *   Welcht Statistic
 
+TODO:
+
+* naming discussion
+
+|                                          |                                                             |
+| -----------------------------------------|-------------------------------------------------------------|
+| To Consider:                             |                                                             |
+| Central Tendencies                       | **OK**                                                      |
+| Dispersion                               | *Variability seems to be* **OK**                            |
+| Shape                                    | *Was named* - **Distribution**<br>*Asymmetry*<br>*Roundness*|
+| Central Tendencies                       | **OK**                                                      |
+| Dependency /Dependencies                 | ***Correlation***<br>***Covariance***                       |
 
 ### Comparison Table
+
+Comparison of this library with
+
+*   vanilla R (no special libs)
+
+*   vanilla Python (no special libs)
+
+*   Matlab/Octave
+
+    https://octave.org/octave.pdf
 
 
 |                    |   `x = IEnumerable<T>`               |                             |                           |                           |

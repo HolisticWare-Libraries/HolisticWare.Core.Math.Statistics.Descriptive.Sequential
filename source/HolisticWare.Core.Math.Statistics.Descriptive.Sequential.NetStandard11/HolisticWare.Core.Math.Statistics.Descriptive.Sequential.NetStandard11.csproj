@@ -10,6 +10,26 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
+  <!-- 
+  =================================================================================================================
+  SourceLink
+  https://github.com/dotnet/sourcelink
+  -->
+  <PropertyGroup>
+    <!-- Optional: Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+ 
+    <!-- Optional: Embed source files that are not tracked by the source control manager in the PDB -->
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+
+    <!-- Optional: Include the PDB in the built .nupkg -->
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+  </PropertyGroup>
+  <!-- 
+  SourceLink
+  =================================================================================================================
+  -->
+  
   <PropertyGroup>
     <PackOnBuild>true</PackOnBuild>
     <!-- 
@@ -86,15 +106,94 @@
 		</iconUrl>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD;NETSTANDARD1_1;METHODIMPL_OPTIONS_AGRESSIVE_INLINING</DefineConstants>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
     <PackageReference Include="System.Threading.Tasks.Dataflow" Version="4.9.0" />
-    <PackageReference Include="System.Memory" Version="4.5.0" />        
+    <PackageReference Include="System.Memory" Version="4.5.1" />        
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Sync\" />
-    <Folder Include="Sync\System.Memory\" />
-    <Folder Include="Sync\System.Memory\Span\" />
+    <Folder Include="System.Memory\" />
+    <Folder Include="System.Memory\Measures-CentralTendencies\" />
+    <Folder Include="System.Memory\Measures-Dependency\" />
+    <Folder Include="System.Memory\Measures-Dispersion\" />
+    <Folder Include="System.Memory\Measures-Distribution\" />
+    <Folder Include="System.Memory\Measures-DistributionAsymmetry\" />
+    <Folder Include="System.Memory\Measures-DistributionRoundness\" />
+    <Folder Include="System.Memory\Methods-Inferential\" />
+    <Folder Include="System.Memory\Utilities\" />
+    <Folder Include="System.Memory\GroupedData\" />
+    <Folder Include="System.Memory\Measures-CentralTendencies\Span\" />
+    <Folder Include="System.Memory\Measures-CentralTendencies\ReadOnlySpan\" />
+    <Folder Include="System.Memory\Measures-CentralTendencies\Memory\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanArithmetic.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanArithmeticGeneralizedWeighted.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanArithmeticWeighted.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanCubic.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanGeneralized.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanGeometric.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanGeometricNaive.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanGeometricWeighted.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanHarmonic.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanHarmonicWeighted.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanQuadratic.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanWeighted.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.Median.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MedianHigh.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MedianLow.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MedianWeighted.cs" />
+    <Compile Include="System.Memory\Measures-Dependency\Correlation.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-Dependency\Covariance.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-Dependency\IEnumerableExtensions.Correlation.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-Dependency\IEnumerableExtensions.CorrelationOptimized.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-Dependency\IEnumerableExtensions.Covariance.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-Dispersion\IEnumerableExtensions.Moment.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-Dispersion\IEnumerableExtensions.MomentCentral.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-Dispersion\IEnumerableExtensions.MomentCentralAbsolute.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-Dispersion\IEnumerableExtensions.MomentGeneralized.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-Dispersion\IEnumerableExtensions.MomentRaw.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-Dispersion\IEnumerableExtensions.MomentRawAbsolute.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-Dispersion\IEnumerableExtensions.StandardDeviationPopulation.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-Dispersion\IEnumerableExtensions.StandardDeviationSample.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-Dispersion\IEnumerableExtensions.VarianceMedianPopulation.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-Dispersion\IEnumerableExtensions.VarianceMedianSample.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-Dispersion\IEnumerableExtensions.VariancePopulation.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-Dispersion\IEnumerableExtensions.VarianceSample.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-Distribution\IEnumerableExtensions.Frequencies.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-Distribution\IEnumerableExtensions.FrequencyCounter.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-Distribution\IEnumerableExtensions.FrequencyDistribution.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-Distribution\IEnumerableExtensions.Modes.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-Distribution\IEnumerableExtensions.Percentile.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-Distribution\IEnumerableExtensions.PercentileRank.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-Distribution\IEnumerableExtensions.Range.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-DistributionAsymmetry\IEnumerableExtensions.Skewness.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-DistributionAsymmetry\IEnumerableExtensions.SkewnessFisherPearsonAdjusted.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-DistributionAsymmetry\IEnumerableExtensions.SkewnessType1.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-DistributionAsymmetry\IEnumerableExtensions.SkewnessType2.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-DistributionAsymmetry\IEnumerableExtensions.SkewnessType3.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-DistributionRoundness\IEnumerableExtensions.Kurtosis.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-DistributionRoundness\IEnumerableExtensions.KurtosisExcess.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-DistributionRoundness\IEnumerableExtensions.KurtosisSampleExcess.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-DistributionRoundness\IEnumerableExtensions.KurtosisType1.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-DistributionRoundness\IEnumerableExtensions.KurtosisType2.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Measures-DistributionRoundness\IEnumerableExtensions.KurtosisType3.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Methods-Inferential\FStatistics.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Methods-Inferential\IEnumerableExtensions.FStatistic.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Methods-Inferential\IEnumerableExtensions.StudenttStatisticIndependent.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Methods-Inferential\IEnumerableExtensions.WelchtStatistic.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Methods-Inferential\StudenttStatisticIndependent.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Methods-Inferential\WelchStatistics.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="System.Memory\Utilities\IEnumerableExtensions.Normalization.cs" />
+    <Compile Include="System.Memory\GroupedData\IEnumerableExtensions.GroupedDataGroups.cs" />
+    <Compile Include="System.Memory\GroupedData\IEnumerableExtensions.GroupedDataMedian.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\Span\SpanExtensions.MeanArithmetic.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\ReadOnlySpan\ReadOnlySpanExtensions.MeanArithmetic.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\Memory\MemoryExtensions.MeanArithmetic.cs" />
+    <Compile Include="System.Memory\Measures-CentralTendencies\Memory\MemoryExtensions.MeanGeneralized.cs" />
   </ItemGroup>
   <Import Project="..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.projitems" Label="Shared" Condition="Exists('..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.projitems')" />
 </Project>

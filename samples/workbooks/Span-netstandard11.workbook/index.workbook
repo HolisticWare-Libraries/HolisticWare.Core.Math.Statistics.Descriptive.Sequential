@@ -1,0 +1,39 @@
+---
+packages:
+- id: System.Memory
+  version: 4.5.1
+uti: com.xamarin.workbook
+id: 28a89b5a-0bff-492f-a72f-022e604c6630
+title: Untitled
+platforms:
+- Console
+---
+
+```csharp
+#r "../../../source/HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard11/bin/Release/netstandard1.1/HolisticWare.Core.Math.Statistics.Descriptive.Sequential.dll"
+#r "System.Memory"
+
+using System;
+using System.Linq;
+using System.Collections.Generic;
+```
+
+```csharp
+// namespace inclusion (using) necessary for LINQ Extension methods
+using Core.Math.Statistics.Descriptive.Sequential;
+```
+
+```csharp
+int[] data01 = new int[]
+{
+    1,
+    2,
+    4,
+    5
+};
+```
+
+```csharp
+double mean_arithmetic_01 = data01.MeanArithmetic();
+Console.WriteLine($"mean_arithmetic_01   = {mean_arithmetic_01}");
+```

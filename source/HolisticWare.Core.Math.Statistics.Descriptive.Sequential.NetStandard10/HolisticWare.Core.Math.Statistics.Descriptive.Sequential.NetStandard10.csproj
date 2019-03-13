@@ -5,11 +5,25 @@
     <LangVersion>Latest</LangVersion>
     <RootNamespace>Core.Math.Statistics.Descriptive.Sequential</RootNamespace>
     <AssemblyName>HolisticWare.Core.Math.Statistics.Descriptive.Sequential</AssemblyName>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile> 
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DocumentationFile>bin\Debug\netstandard1.0\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.xml</DocumentationFile>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType></DebugType>
+    <DefineConstants>TRACE;RELEASE;NETSTANDARD;NETSTANDARD1_0;METHODIMPL_OPTIONS_AGRESSIVE_INLINING</DefineConstants>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
     <PackageReference Include="System.Threading.Tasks.Dataflow" Version="4.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="IEnumerable\" />
+    <Folder Include="IEnumerable\GroupedData\" />
   </ItemGroup>
   <Import Project="..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.projitems" Label="Shared" Condition="Exists('..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.projitems')" />
 </Project>
