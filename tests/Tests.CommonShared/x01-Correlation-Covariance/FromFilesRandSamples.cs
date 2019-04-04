@@ -79,7 +79,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
     public partial class FromFilesRandSamples
     {
         Stopwatch sw = null;
-        List<double> data01 = null;
+        List<RandSamp1Data> data01 = null;
         List<double> data02 = null;
 
         [Test]
