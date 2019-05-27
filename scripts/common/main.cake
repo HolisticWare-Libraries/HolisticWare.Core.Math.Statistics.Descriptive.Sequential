@@ -35,17 +35,17 @@ Task ("clean-folders")
 
                     if (DirectoryExists (dp))
                     {
-                        DeleteDirectory 
+                        DeleteDirectory
                                     (
-                                        dp, 
-                                        new DeleteDirectorySettings 
+                                        dp,
+                                        new DeleteDirectorySettings
                                         {
                                             Recursive = true,
                                             Force = true
                                         }
                                     );
                     }
-                }                
+                }
             }
 
 
@@ -69,7 +69,7 @@ Task ("clean-files")
                     {
                         DeleteFile (fp);
                     }
-                }                
+                }
             }
 
 

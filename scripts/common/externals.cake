@@ -1,6 +1,7 @@
-#load "./externals.private.cake"
-#load "./nuget-restore.cake"
+#load "./../private-protected-sensitive/externals.private.cake"
+#load "./../common/nuget-restore.cake"
 
+//---------------------------------------------------------------------------------------
 Task ("externals")
     //.IsDependentOn ("externals-base")
     // .WithCriteria (!FileExists ("./externals/HolisticWare.Core.Math.Statistics.aar"))
@@ -92,5 +93,6 @@ public partial class Externals
 
         return;
     }
-    
+
 }
+//---------------------------------------------------------------------------------------
