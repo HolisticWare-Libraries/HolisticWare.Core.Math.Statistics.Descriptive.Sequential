@@ -4,13 +4,13 @@ using System.Linq;
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
-namespace Core.Math.Statistics.Descriptive.Sequential
+namespace Core.Collections.Generic
 {
     /// <summary>
-    /// Mean (Average) Arithmetic
+    /// Normalizations
     /// </summary>
     /// <see cref="https://en.wikipedia.org/wiki/Average"/>
-    public static partial class IEnumerableExtensionsMeanArithmetic
+    public static partial class IEnumerableExtensionsNormalize
     {
         //==============================================================================================================
         public static IEnumerable<double> Normalize

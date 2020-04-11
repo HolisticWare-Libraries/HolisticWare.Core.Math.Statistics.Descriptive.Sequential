@@ -10,6 +10,10 @@
  
   <ItemGroup>
     <ProjectReference Include="..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard11\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard11.csproj" />
+    <ProjectReference Include="..\HolisticWare.Core.Memory.netstandard11\HolisticWare.Core.Memory.netstandard11.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Memory" Version="4.5.4" />
   </ItemGroup>
   <Import Project="..\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.projitems" Label="Shared" Condition="Exists('..\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.projitems')" />
 </Project>

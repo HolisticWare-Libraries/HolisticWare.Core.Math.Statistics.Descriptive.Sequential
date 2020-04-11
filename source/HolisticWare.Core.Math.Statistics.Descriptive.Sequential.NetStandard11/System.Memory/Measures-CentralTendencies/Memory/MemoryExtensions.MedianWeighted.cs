@@ -1,6 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+
+using Core.Memory;
 
 namespace Core.Math.Statistics.Descriptive.Sequential
 {
@@ -13,6 +14,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// <see cref="http://elsenaju.eu/Calculator/mean-value-calculator.htm"/>
     public static partial class MemoryExtensionsMedianWeighted
     {
+        /*
         //==============================================================================================================
         /// <summary>
         /// Weighted Median
@@ -73,10 +75,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             while (advance_lower || advance_upper)
             {
-                sum_lower += weights_normalized.ElementAt(i_lower);
-                sum_upper += weights_normalized.ElementAt(i_upper);
+                sum_lower += weights_normalized.Span[i_lower];
+                sum_upper += weights_normalized.Span[i_upper];
 
-                if (sum_lower + weights_normalized.ElementAt(i_lower + 1) <= 0.5)
+                if (sum_lower + weights_normalized.Span[i_lower + 1] <= 0.5)
                 {
                     i_lower++;
                 }
@@ -84,7 +86,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 {
                     advance_lower = false;
                 }
-                if(advance_upper == true && sum_upper + weights_normalized.ElementAt(i_upper - 1) <= 0.5)
+                if(advance_upper == true && sum_upper + weights_normalized.Span[i_upper - 1] <= 0.5)
                 {
                     i_upper--;
                 }
@@ -106,11 +108,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 index_upper = i_upper;
                 index = index_lower + 1;
                 //index = index_upper - 1;
-                median = x.ElementAt(index);
+                median = x.Span[index];
             }
             else if(n_x % 2 == 0 && i_lower + 1 == i_upper)
             {
-                median = (x.ElementAt(i_lower) + x.ElementAt(i_upper)) / 2.0;
+                median = (x.Span[i_lower] + x.Span[i_upper]) / 2.0;
             }
             else
             {
@@ -123,8 +125,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             //    index_upper = i_lower;
             //}
 
-            double value_lower = x.ElementAt(index_lower);
-            double value_upper = x.ElementAt(index_upper);
+            double value_lower = x.Span[index_lower];
+            double value_upper = x.Span[index_upper];
 
             return 
                 (
@@ -188,10 +190,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
 
             while (advance_lower || advance_upper)
             {
-                sum_lower += weights_normalized.ElementAt(i_lower);
-                sum_upper += weights_normalized.ElementAt(i_upper);
+                sum_lower += weights_normalized.Span[i_lower];
+                sum_upper += weights_normalized.Span[i_upper];
 
-                if (sum_lower + weights_normalized.ElementAt(i_lower + 1) <= 0.5)
+                if (sum_lower + weights_normalized.Span[i_lower + 1] <= 0.5)
                 {
                     i_lower++;
                 }
@@ -199,7 +201,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 {
                     advance_lower = false;
                 }
-                if (advance_upper == true && sum_upper + weights_normalized.ElementAt(i_upper - 1) <= 0.5)
+                if (advance_upper == true && sum_upper + weights_normalized.Span[i_upper - 1] <= 0.5)
                 {
                     i_upper--;
                 }
@@ -221,7 +223,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 index_upper = i_upper;
                 index = index_lower + 1;
                 //index = index_upper - 1;
-                median = x.ElementAt(index);
+                median = x.Span[index];
             }
             else if ((n_x % 2 != 0) && i_lower == i_upper)
             {
@@ -229,11 +231,11 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                 index_upper = i_upper;
                 index = index_lower;
                 //index = index_upper;
-                median = x.ElementAt(index);
+                median = x.Span[index];
             }
             else if (n_x % 2 == 0 && i_lower + 1 == i_upper)
             {
-                median = (x.ElementAt(i_lower) + x.ElementAt(i_upper)) / 2.0;
+                median = (x.Span[i_lower] + x.Span[i_upper]) / 2.0;
             }
             else
             {
@@ -246,8 +248,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
             //    index_upper = i_lower;
             //}
 
-            double value_lower = x.ElementAt(index_lower);
-            double value_upper = x.ElementAt(index_upper);
+            double value_lower = x.Span[index_lower];
+            double value_upper = x.Span[index_upper];
 
             return
                 (
@@ -258,7 +260,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                     Median: median
                 );
         }
-
+        */
         //==============================================================================================================
 
     }

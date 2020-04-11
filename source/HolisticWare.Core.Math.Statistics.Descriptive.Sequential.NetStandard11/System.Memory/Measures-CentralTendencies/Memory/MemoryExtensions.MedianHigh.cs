@@ -16,7 +16,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                 )
         {
             int n = x.Length;
-            IOrderedEnumerable<byte> x_ordered = x.OrderBy(x_i => x_i);
+            IOrderedEnumerable<byte> x_ordered = x.ToArray().OrderBy(x_i => x_i);
             int n2 = n / 2 - 1;
 
             if (n % 2 == 1)
@@ -33,7 +33,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                 )
         {
             int n = x.Length;
-            IOrderedEnumerable<short> x_ordered = x.OrderBy(x_i => x_i);
+            IOrderedEnumerable<short> x_ordered = x.ToArray().OrderBy(x_i => x_i);
             int n2 = n / 2 - 1;
 
             if (n % 2 == 1)
@@ -50,7 +50,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                 )
         {
             int n = x.Length;
-            IOrderedEnumerable<ushort> x_ordered = x.OrderBy(x_i => x_i);
+            IOrderedEnumerable<ushort> x_ordered = x.ToArray().OrderBy(x_i => x_i);
             int n2 = n / 2 - 1;
 
             if (n % 2 == 1)
@@ -67,7 +67,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                 )
         {
             int n = x.Length;
-            IOrderedEnumerable<int> x_ordered = x.OrderBy(x_i => x_i);
+            IOrderedEnumerable<int> x_ordered = x.ToArray().OrderBy(x_i => x_i);
             int n2 = n / 2 - 1;
 
             if (n % 2 == 1)
@@ -84,7 +84,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                 )
         {
             int n = x.Length;
-            IOrderedEnumerable<uint> x_ordered = x.OrderBy(x_i => x_i);
+            IOrderedEnumerable<uint> x_ordered = x.ToArray().OrderBy(x_i => x_i);
             int n2 = n / 2 - 1;
 
             if (n % 2 == 1)
@@ -101,7 +101,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                 )
         {
             int n = x.Length;
-            IOrderedEnumerable<long> x_ordered = x.OrderBy(x_i => x_i);
+            IOrderedEnumerable<long> x_ordered = x.ToArray().OrderBy(x_i => x_i);
             int n2 = n / 2 - 1;
 
             if (n % 2 == 1)
@@ -118,7 +118,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                 )
         {
             int n = x.Length;
-            IOrderedEnumerable<ulong> x_ordered = x.OrderBy(x_i => x_i);
+            IOrderedEnumerable<ulong> x_ordered = x.ToArray().OrderBy(x_i => x_i);
             int n2 = n / 2 - 1;
 
             if (n % 2 == 1)
@@ -135,7 +135,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                 )
         {
             int n = x.Length;
-            IOrderedEnumerable<float> x_ordered = x.OrderBy(x_i => x_i);
+            IOrderedEnumerable<float> x_ordered = x.ToArray().OrderBy(x_i => x_i);
             int n2 = n / 2 - 1;
 
             if (n % 2 == 1)
@@ -152,7 +152,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                 )
         {
             int n = x.Length;
-            IOrderedEnumerable<double> x_ordered = x.OrderBy(x_i => x_i);
+            IOrderedEnumerable<double> x_ordered = x.ToArray().OrderBy(x_i => x_i);
             int n2 = n / 2 - 1;
 
             if (n % 2 == 1)
@@ -169,7 +169,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
                                 )
         {
             int n = x.Length;
-            IOrderedEnumerable<decimal> x_ordered = x.OrderBy(x_i => x_i);
+            IOrderedEnumerable<decimal> x_ordered = x.ToArray().OrderBy(x_i => x_i);
             int n2 = n / 2 - 1;
 
             if (n % 2 == 1)

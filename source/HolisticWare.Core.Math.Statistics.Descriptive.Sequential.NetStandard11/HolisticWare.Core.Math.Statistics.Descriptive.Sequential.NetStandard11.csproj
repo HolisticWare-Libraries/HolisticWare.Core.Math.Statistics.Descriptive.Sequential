@@ -111,8 +111,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
-    <PackageReference Include="System.Threading.Tasks.Dataflow" Version="4.9.0" />
-    <PackageReference Include="System.Memory" Version="4.5.1" />        
+    <PackageReference Include="System.Threading.Tasks.Dataflow" Version="4.11.0" />
+    <PackageReference Include="System.Memory" Version="4.5.4" />        
   </ItemGroup>
   <ItemGroup>
     <Folder Include="System.Memory\" />
@@ -205,7 +205,7 @@
     <None Include="System.Memory\Measures-Dependency\Memory\MemoryExtensions.Covariance.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\externals\Core.Linq\source\HolisticWare.Core.Linq.NetStandard11\HolisticWare.Core.Linq.NetStandard11.csproj" />
+    <ProjectReference Include="..\HolisticWare.Core.Memory.netstandard11\HolisticWare.Core.Memory.netstandard11.csproj" />
   </ItemGroup>
   <Import Project="..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.projitems" Label="Shared" Condition="Exists('..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.projitems')" />
 </Project>

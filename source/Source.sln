@@ -34,6 +34,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Math.Stat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard11", "HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard11\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.NetStandard11.csproj", "{DEC4BC62-E64A-4C50-8C92-48BB3487A8BF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "externals", "externals", "{C01900DD-CEE2-48CD-A01C-34857D3BD639}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Memory.netstandard11", "HolisticWare.Core.Memory.netstandard11\HolisticWare.Core.Memory.netstandard11.csproj", "{C78DDDA0-90FC-4A31-9AE6-9D5096D0C56F}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.projitems*{97322730-7912-4331-8881-df029ef7cdd1}*SharedItemsImports = 13
@@ -79,6 +83,10 @@ Global
 		{DEC4BC62-E64A-4C50-8C92-48BB3487A8BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEC4BC62-E64A-4C50-8C92-48BB3487A8BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEC4BC62-E64A-4C50-8C92-48BB3487A8BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C78DDDA0-90FC-4A31-9AE6-9D5096D0C56F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C78DDDA0-90FC-4A31-9AE6-9D5096D0C56F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C78DDDA0-90FC-4A31-9AE6-9D5096D0C56F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C78DDDA0-90FC-4A31-9AE6-9D5096D0C56F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
