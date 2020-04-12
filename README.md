@@ -370,6 +370,12 @@ Comparison of this library with
 |                    | `x.Welcht(y);`                       | `???`                       | `????`                    |                           |
 
 
+*   https://rosettacode.org/wiki/Averages/Pythagorean_means
+
+*   Numerical Methods, Algorithms and Tools in C#
+
+    *   https://books.google.hr/books?id=dFHvBQAAQBAJ&pg=PA440&lpg=PA440&dq=harmonic+mean+c%23&source=bl&ots=TCxBVtx4vl&sig=ACfU3U1l9YxQACiHq_sCzmwLkM4_vFKDnA&hl=en&sa=X&ved=2ahUKEwiUoaKfk7fgAhWCs3EKHYemAt4Q6AEwEXoECAUQAQ#v=onepage&q=harmonic%20mean%20c%23&f=false
+
 ## Usage
 
 ### Central Tendencies Measures
