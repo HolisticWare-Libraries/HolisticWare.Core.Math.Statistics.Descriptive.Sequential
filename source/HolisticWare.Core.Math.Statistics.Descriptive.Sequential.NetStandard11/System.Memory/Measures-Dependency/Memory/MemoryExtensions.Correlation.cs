@@ -9,8 +9,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// <summary>
     /// Correlation
     /// </summary>
-    /// <see cref="https://en.wikipedia.org/wiki/Correlation_and_dependence"/> 
-    /// <see cref="http://www.mathsisfun.com/data/correlation.html"/>
+    /// <see href="https://en.wikipedia.org/wiki/Correlation_and_dependence"/> 
+    /// <see href="http://www.mathsisfun.com/data/correlation.html"/>
     public static partial class IEnumerableExtensionsCorrelation
     {
         //==============================================================================================================

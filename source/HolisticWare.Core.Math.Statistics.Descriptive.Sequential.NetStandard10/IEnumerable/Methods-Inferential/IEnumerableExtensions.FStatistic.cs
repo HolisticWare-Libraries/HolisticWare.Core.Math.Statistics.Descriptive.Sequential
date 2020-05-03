@@ -9,7 +9,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// A value you get when you run an ANOVA test or a regression analysis to 
     /// find out if the means between two populations are significantly 
     /// </summary>
-    /// <see cref="https://en.wikipedia.org/wiki/F-test"/>
+    /// <see href="https://en.wikipedia.org/wiki/F-test"/>
     public static partial class IEnumerableExtensionsFStatistic
     {
         //==============================================================================================================

@@ -8,9 +8,9 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// Kurtosis Sample Excess
     /// Excel KURT()
     /// </summary>
-    /// <see cref="https://en.wikipedia.org/wiki/Kurtosis"/>
-    /// <see cref="https://brownmath.com/stat/shape.htm"/>
-    /// <see cref="https://cran.r-project.org/web/packages/e1071/e1071.pdf"/>
+    /// <see href="https://en.wikipedia.org/wiki/Kurtosis"/>
+    /// <see href="https://brownmath.com/stat/shape.htm"/>
+    /// <see href="https://cran.r-project.org/web/packages/e1071/e1071.pdf"/>
    public static partial class ICollectionExtensionsKurtosisSampleExcess
     {
         //==============================================================================================================

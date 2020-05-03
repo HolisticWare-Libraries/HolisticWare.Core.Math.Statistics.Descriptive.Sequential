@@ -9,7 +9,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// <summary>
     /// Correlation
     /// </summary>
-    /// <see cref="https://ncalculators.com/statistics/weighted-mean-calculator.htm"/>
+    /// <see href="https://ncalculators.com/statistics/weighted-mean-calculator.htm"/>
     public static partial class MemoryExtensionsMeanWeighted
     {
         //==============================================================================================================
@@ -19,7 +19,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         /// <returns>The weighted.</returns>
         /// <param name="x">The x coordinate.</param>
         /// <param name="w">The width.</param>
-        /// <see cref="https://ncalculators.com/statistics/weighted-mean-calculator.htm"/>
+        /// <see href="https://ncalculators.com/statistics/weighted-mean-calculator.htm"/>
         public static double MeanWeighted
                                     (
                                         this Memory<byte> x

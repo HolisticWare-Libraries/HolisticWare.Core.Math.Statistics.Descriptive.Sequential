@@ -9,9 +9,9 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// <summary>
     /// Correlation
     /// </summary>
-    /// <see cref="https://en.wikipedia.org/wiki/Percentile"/>
-    /// <see cref="https://www.emathhelp.net/calculators/probability-statistics/percentile-calculator"/>
-    /// <see cref="https://www.emathhelp.net/calculators/probability-statistics/percentile-class-rank-calculator"/> 
+    /// <see href="https://en.wikipedia.org/wiki/Percentile"/>
+    /// <see href="https://www.emathhelp.net/calculators/probability-statistics/percentile-calculator"/>
+    /// <see href="https://www.emathhelp.net/calculators/probability-statistics/percentile-class-rank-calculator"/> 
     public static partial class IEnumerableExtensionsPercentiles
     {
         //==============================================================================================================

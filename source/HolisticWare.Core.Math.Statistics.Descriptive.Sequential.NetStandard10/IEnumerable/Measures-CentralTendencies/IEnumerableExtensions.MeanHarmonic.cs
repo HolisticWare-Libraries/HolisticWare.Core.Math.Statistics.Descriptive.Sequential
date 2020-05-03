@@ -9,7 +9,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// <summary>
     /// Mean (Average) Harmonic
     /// </summary>
-    /// <see cref="https://en.wikipedia.org/wiki/Average"/>
+    /// <see href="https://en.wikipedia.org/wiki/Average"/>
     /// https://www.hackmath.net/en/calculator/harmonic-mean
     /// http://www.alcula.com/calculators/statistics/harmonic-mean/
     /// https://ncalculators.com/statistics/harmonic-mean-calculator.htm

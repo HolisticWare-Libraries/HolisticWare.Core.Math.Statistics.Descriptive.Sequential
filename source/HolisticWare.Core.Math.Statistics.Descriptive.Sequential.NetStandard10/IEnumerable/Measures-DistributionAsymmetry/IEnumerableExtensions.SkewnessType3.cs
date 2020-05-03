@@ -14,10 +14,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         /// </summary>
         /// <returns>skewnwss of type1.</returns>
         /// <param name="x">x data</param>
-        /// <see cref="https://en.wikipedia.org/wiki/Skewness"/>
-        /// <see cref="https://www.rdocumentation.org/packages/e1071/versions/1.6-8/topics/skewness"/>
-        /// <see cref="http://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm"/>
-        /// <see cref="https://cran.r-project.org/web/packages/e1071/e1071.pdf"/>
+        /// <see href="https://en.wikipedia.org/wiki/Skewness"/>
+        /// <see href="https://www.rdocumentation.org/packages/e1071/versions/1.6-8/topics/skewness"/>
+        /// <see href="http://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm"/>
+        /// <see href="https://cran.r-project.org/web/packages/e1071/e1071.pdf"/>
         public static double SkewnessType3
                                     (
                                         this IEnumerable<byte> x

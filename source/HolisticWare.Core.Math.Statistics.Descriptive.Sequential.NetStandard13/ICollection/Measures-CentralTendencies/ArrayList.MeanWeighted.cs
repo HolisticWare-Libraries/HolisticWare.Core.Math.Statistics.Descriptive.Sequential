@@ -9,7 +9,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// <summary>
     /// Correlation
     /// </summary>
-    /// <see cref="https://ncalculators.com/statistics/weighted-mean-calculator.htm"/>
+    /// <see href="https://ncalculators.com/statistics/weighted-mean-calculator.htm"/>
     public static partial class ICollectionExtensionsMeanWeighted
     {
         //==============================================================================================================

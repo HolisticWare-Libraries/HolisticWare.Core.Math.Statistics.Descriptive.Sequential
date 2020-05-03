@@ -8,10 +8,10 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// <summary>
     /// Median Weighted
     /// </summary>
-    /// <see cref="https://en.wikipedia.org/wiki/Weighted_median"/>
-    /// <see cref="https://www.easycalculation.com/statistics/weighted-mean-calculator.php"/>
-    /// <see cref="http://mathworld.wolfram.com/PowerMean.html"/> 
-    /// <see cref="http://elsenaju.eu/Calculator/mean-value-calculator.htm"/>
+    /// <see href="https://en.wikipedia.org/wiki/Weighted_median"/>
+    /// <see href="https://www.easycalculation.com/statistics/weighted-mean-calculator.php"/>
+    /// <see href="http://mathworld.wolfram.com/PowerMean.html"/> 
+    /// <see href="http://elsenaju.eu/Calculator/mean-value-calculator.htm"/>
     public static partial class MemoryExtensionsMedianWeighted
     {
         /*
@@ -22,7 +22,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         /// <returns>Weighted median Tuple</returns>
         /// <param name="x">x data</param>
         /// <param name="weights">Weights.</param>
-        /// <see cref="https://www.rdocumentation.org/packages/spatstat/versions/1.55-1/topics/weighted.median"/>
+        /// <see href="https://www.rdocumentation.org/packages/spatstat/versions/1.55-1/topics/weighted.median"/>
         public static 
                 (
                     int IndexLower, 

@@ -20,8 +20,8 @@ namespace Core.Math.Statistics.Descriptive.MatlabOctave.Sequential
         /// <param name="option">
         /// string textual option parameter to define mean algorithm
         /// </param>
-        /// <see cref="https://www.mathworks.com/help/matlab/ref/mean.html"/>
-        /// <see cref="https://octave.org/doc/v4.2.1/Descriptive-Statistics.html"/>
+        /// <see href="https://www.mathworks.com/help/matlab/ref/mean.html"/>
+        /// <see href="https://octave.org/doc/v4.2.1/Descriptive-Statistics.html"/>
         public static double mean(this IEnumerable<byte> x, string option = "a")
         {
             double retval_mean = double.NaN;
@@ -57,8 +57,8 @@ namespace Core.Math.Statistics.Descriptive.MatlabOctave.Sequential
         /// <param name="option">
         /// string textual option parameter to define mean algorithm
         /// </param>
-        /// <see cref="https://www.mathworks.com/help/matlab/ref/mean.html"/>
-        /// <see cref="https://octave.org/doc/v4.2.1/Descriptive-Statistics.html"/>
+        /// <see href="https://www.mathworks.com/help/matlab/ref/mean.html"/>
+        /// <see href="https://octave.org/doc/v4.2.1/Descriptive-Statistics.html"/>
         public static double mean(this IEnumerable<ushort> x, string option = "a")
         {
             double retval_mean = double.NaN;
@@ -94,8 +94,8 @@ namespace Core.Math.Statistics.Descriptive.MatlabOctave.Sequential
         /// <param name="option">
         /// string textual option parameter to define mean algorithm
         /// </param>
-        /// <see cref="https://www.mathworks.com/help/matlab/ref/mean.html"/>
-        /// <see cref="https://octave.org/doc/v4.2.1/Descriptive-Statistics.html"/>
+        /// <see href="https://www.mathworks.com/help/matlab/ref/mean.html"/>
+        /// <see href="https://octave.org/doc/v4.2.1/Descriptive-Statistics.html"/>
         public static double mean(this IEnumerable<short> x, string option = "a")
         {
             double retval_mean = double.NaN;
@@ -127,8 +127,8 @@ namespace Core.Math.Statistics.Descriptive.MatlabOctave.Sequential
         /// <example>
         /// (new int[] { 1, 2, 3, 5, 8}).mean("a");
         /// </example>
-        /// <see cref="https://www.mathworks.com/help/matlab/ref/mean.html"/>
-        /// <see cref="https://octave.org/doc/v4.2.1/Descriptive-Statistics.html"/>
+        /// <see href="https://www.mathworks.com/help/matlab/ref/mean.html"/>
+        /// <see href="https://octave.org/doc/v4.2.1/Descriptive-Statistics.html"/>
 
         public static double mean(this IEnumerable<int> x, string option = "a")
         {
@@ -165,8 +165,8 @@ namespace Core.Math.Statistics.Descriptive.MatlabOctave.Sequential
         /// <param name="option">
         /// string textual option parameter to define mean algorithm
         /// </param>
-        /// <see cref="https://www.mathworks.com/help/matlab/ref/mean.html"/>
-        /// <see cref="https://octave.org/doc/v4.2.1/Descriptive-Statistics.html"/>
+        /// <see href="https://www.mathworks.com/help/matlab/ref/mean.html"/>
+        /// <see href="https://octave.org/doc/v4.2.1/Descriptive-Statistics.html"/>
         public static double mean(this IEnumerable<uint> x, string option = "a")
         {
             double retval_mean = double.NaN;
@@ -202,8 +202,8 @@ namespace Core.Math.Statistics.Descriptive.MatlabOctave.Sequential
         /// <param name="option">
         /// string textual option parameter to define mean algorithm
         /// </param>
-        /// <see cref="https://www.mathworks.com/help/matlab/ref/mean.html"/>
-        /// <see cref="https://octave.org/doc/v4.2.1/Descriptive-Statistics.html"/>
+        /// <see href="https://www.mathworks.com/help/matlab/ref/mean.html"/>
+        /// <see href="https://octave.org/doc/v4.2.1/Descriptive-Statistics.html"/>
         public static double mean(this IEnumerable<long> x, string option = "a")
         {
             double retval_mean = double.NaN;
@@ -239,8 +239,8 @@ namespace Core.Math.Statistics.Descriptive.MatlabOctave.Sequential
         /// <param name="option">
         /// string textual option parameter to define mean algorithm
         /// </param>
-        /// <see cref="https://www.mathworks.com/help/matlab/ref/mean.html"/>
-        /// <see cref="https://octave.org/doc/v4.2.1/Descriptive-Statistics.html"/>
+        /// <see href="https://www.mathworks.com/help/matlab/ref/mean.html"/>
+        /// <see href="https://octave.org/doc/v4.2.1/Descriptive-Statistics.html"/>
         public static double mean(this IEnumerable<ulong> x, string option = "a")
         {
             double retval_mean = double.NaN;
@@ -276,8 +276,8 @@ namespace Core.Math.Statistics.Descriptive.MatlabOctave.Sequential
         /// <param name="option">
         /// string textual option parameter to define mean algorithm
         /// </param>
-        /// <see cref="https://www.mathworks.com/help/matlab/ref/mean.html"/>
-        /// <see cref="https://octave.org/doc/v4.2.1/Descriptive-Statistics.html"/>
+        /// <see href="https://www.mathworks.com/help/matlab/ref/mean.html"/>
+        /// <see href="https://octave.org/doc/v4.2.1/Descriptive-Statistics.html"/>
         public static double mean(this IEnumerable<float> x, string option = "a")
         {
             double retval_mean = double.NaN;
@@ -313,8 +313,8 @@ namespace Core.Math.Statistics.Descriptive.MatlabOctave.Sequential
         /// <param name="option">
         /// string textual option parameter to define mean algorithm
         /// </param>
-        /// <see cref="https://www.mathworks.com/help/matlab/ref/mean.html"/>
-        /// <see cref="https://octave.org/doc/v4.2.1/Descriptive-Statistics.html"/>
+        /// <see href="https://www.mathworks.com/help/matlab/ref/mean.html"/>
+        /// <see href="https://octave.org/doc/v4.2.1/Descriptive-Statistics.html"/>
         public static double mean(this IEnumerable<double> x, string option = "a")
         {
             double retval_mean = double.NaN;
@@ -350,8 +350,8 @@ namespace Core.Math.Statistics.Descriptive.MatlabOctave.Sequential
         /// <param name="option">
         /// string textual option parameter to define mean algorithm
         /// </param>
-        /// <see cref="https://www.mathworks.com/help/matlab/ref/mean.html"/>
-        /// <see cref="https://octave.org/doc/v4.2.1/Descriptive-Statistics.html"/>
+        /// <see href="https://www.mathworks.com/help/matlab/ref/mean.html"/>
+        /// <see href="https://octave.org/doc/v4.2.1/Descriptive-Statistics.html"/>
         public static decimal? mean(this IEnumerable<decimal> x, string option = "a")
         {
             decimal? retval_mean = null;

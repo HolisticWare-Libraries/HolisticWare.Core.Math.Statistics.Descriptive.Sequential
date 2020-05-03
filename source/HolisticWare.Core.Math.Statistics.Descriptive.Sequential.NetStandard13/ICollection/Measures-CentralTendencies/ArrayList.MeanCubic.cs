@@ -9,7 +9,7 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// <summary>
     /// Mean (Average) Cubic
     /// </summary>
-    /// <see cref="https://en.wikipedia.org/wiki/Average"/>
+    /// <see href="https://en.wikipedia.org/wiki/Average"/>
     public static partial class ICollectionExtensionsMeanCubic
     {
         //==============================================================================================================

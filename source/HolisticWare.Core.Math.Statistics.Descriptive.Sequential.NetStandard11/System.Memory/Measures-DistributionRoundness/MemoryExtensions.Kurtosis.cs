@@ -8,9 +8,9 @@ namespace Core.Math.Statistics.Descriptive.Sequential
     /// Kurtosis
     /// Sharpness of the peak of a frequency-distribution curve.
     /// </summary>
-    /// <see cref="https://en.wikipedia.org/wiki/Kurtosis"/>
-    /// <see cref="http://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm"/>
-    /// <see cref="https://cran.r-project.org/web/packages/e1071/e1071.pdf"/>
+    /// <see href="https://en.wikipedia.org/wiki/Kurtosis"/>
+    /// <see href="http://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm"/>
+    /// <see href="https://cran.r-project.org/web/packages/e1071/e1071.pdf"/>
     public static partial class IEnumerableExtensionsKurtosis
     {
         //==============================================================================================================
@@ -21,8 +21,8 @@ namespace Core.Math.Statistics.Descriptive.Sequential
         /// </summary>
         /// <returns>Kurtosis of type1.</returns>
         /// <param name="x">x data</param>
-        /// <see cref="https://www.rdocumentation.org/packages/SciencesPo/versions/1.4.1/topics/Kurtosis"/>
-        /// <see cref="https://docs.scipy.org/doc/scipy-0.7.x/reference/generated/scipy.stats.kurtosis.html"/>
+        /// <see href="https://www.rdocumentation.org/packages/SciencesPo/versions/1.4.1/topics/Kurtosis"/>
+        /// <see href="https://docs.scipy.org/doc/scipy-0.7.x/reference/generated/scipy.stats.kurtosis.html"/>
         public static double Kurtosis
                                     (
                                         this Memory<byte> x,

@@ -7,9 +7,9 @@ namespace Core.Memory
     /// <summary>
     /// Normalize
     /// </summary>
-    /// <see cref="https://www.statisticshowto.com/normalized/"/>
-    /// <see cref="https://medium.com/@swethalakshmanan14/how-when-and-why-should-you-normalize-standardize-rescale-your-data-3f083def38ff"/>
-    /// <see cref="https://en.wikipedia.org/wiki/Normalization_(statistics)"/>
+    /// <see href="https://www.statisticshowto.com/normalized/"/>
+    /// <see href="https://medium.com/@swethalakshmanan14/how-when-and-why-should-you-normalize-standardize-rescale-your-data-3f083def38ff"/>
+    /// <see href="https://en.wikipedia.org/wiki/Normalization_(statistics)"/>
     /// @TODO: Normalizing, Scaling, Rescaling
     /// @TODO: move to Core.Data
     public static partial class MemoryExtensionsNormalize

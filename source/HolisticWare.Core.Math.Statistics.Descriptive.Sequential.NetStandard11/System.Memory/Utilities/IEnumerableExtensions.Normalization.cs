@@ -9,7 +9,7 @@ namespace Core.Collections.Generic
     /// <summary>
     /// Normalizations
     /// </summary>
-    /// <see cref="https://en.wikipedia.org/wiki/Average"/>
+    /// <see href="https://en.wikipedia.org/wiki/Average"/>
     public static partial class IEnumerableExtensionsNormalize
     {
         //==============================================================================================================
