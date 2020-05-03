@@ -71,12 +71,14 @@ using System.Reflection;
 
 using Core.Math.Statistics.Descriptive.Sequential;
 
-namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync 
+namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
-    public class HarmonicMeanTests 
+    public class HarmonicMeanTests
     {
         [Test()]
-        public void MeanHarmonic_ZZ_Manual() {
+        public void MeanHarmonic_ZZ_Manual()
+        {
+            #if NETSTANDARD1_0
             double mean_h_m = new int[] { 10, 12, 16, 8 }.MeanHarmonic();
 
             // Assert
@@ -89,6 +91,7 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             #endif
 
             return;
+            #endif
         }
     }
 }
