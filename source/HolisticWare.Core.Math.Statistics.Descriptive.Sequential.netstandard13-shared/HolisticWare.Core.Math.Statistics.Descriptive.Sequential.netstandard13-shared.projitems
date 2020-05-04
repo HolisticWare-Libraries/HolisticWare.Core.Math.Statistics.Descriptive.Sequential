@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{FCBEE8CE-0757-4FF9-A0A0-1D1DA62BDFDF}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard13-shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MeanArithmetic.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MeanArithmeticGeneralizedWeighted.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MeanArithmeticWeighted.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MeanCubic.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MeanGeneralized.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MeanGeometric.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MeanGeometricNaive.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MeanGeometricWeighted.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MeanHarmonic.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MeanHarmonicWeighted.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MeanQuadratic.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MeanWeighted.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.Median.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MedianHigh.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MedianLow.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-CentralTendencies\ArrayList.MedianWeighted.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dependency\ArrayList.Correlation.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dependency\ArrayList.CorrelationOptimized.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dependency\ArrayList.Covariance.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dependency\Correlation.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dependency\Covariance.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dispersion\ArrayList.Moment.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dispersion\ArrayList.MomentCentral.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dispersion\ArrayList.MomentCentralAbsolute.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dispersion\ArrayList.MomentGeneralized.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dispersion\ArrayList.MomentRaw.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dispersion\ArrayList.MomentRawAbsolute.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dispersion\ArrayList.StandardDeviationPopulation.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dispersion\ArrayList.StandardDeviationSample.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dispersion\ArrayList.VarianceMedianPopulation.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dispersion\ArrayList.VarianceMedianSample.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dispersion\ArrayList.VariancePopulation.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Dispersion\ArrayList.VarianceSample.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Distribution\ArrayList.Frequencies.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Distribution\ArrayList.FrequencyCounter.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Distribution\ArrayList.FrequencyDistribution.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Distribution\ArrayList.Modes.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Distribution\ArrayList.Percentile.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Distribution\ArrayList.PercentileRank.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-Distribution\ArrayList.Range.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-DistributionAsymmetry\ArrayList.Skewness.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-DistributionAsymmetry\ArrayList.SkewnessFisherPearsonAdjusted.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-DistributionAsymmetry\ArrayList.SkewnessType1.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-DistributionAsymmetry\ArrayList.SkewnessType2.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-DistributionAsymmetry\ArrayList.SkewnessType3.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-DistributionRoundness\ArrayList.Kurtosis.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-DistributionRoundness\ArrayList.KurtosisExcess.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-DistributionRoundness\ArrayList.KurtosisSampleExcess.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-DistributionRoundness\ArrayList.KurtosisType1.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-DistributionRoundness\ArrayList.KurtosisType2.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Measures-DistributionRoundness\ArrayList.KurtosisType3.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Methods-Inferential\ArrayList.FStatistic.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Methods-Inferential\ArrayList.StudenttStatisticIndependent.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Methods-Inferential\ArrayList.WelchtStatistic.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Methods-Inferential\FStatistics.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Methods-Inferential\StudenttStatisticIndependent.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="$(MSBuildThisFileDirectory)ICollection\Methods-Inferential\WelchStatistics.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)ICollection\" />
+  </ItemGroup>
+</Project>

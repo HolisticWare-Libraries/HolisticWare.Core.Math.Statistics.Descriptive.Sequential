@@ -14,5 +14,4 @@
   <ItemGroup>
     <ProjectReference Include="..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10.csproj" />
   </ItemGroup>
-  <Import Project="..\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.projitems" Label="Shared" Condition="Exists('..\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.projitems')" />
 </Project>
