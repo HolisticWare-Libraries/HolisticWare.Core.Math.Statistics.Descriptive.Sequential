@@ -33,6 +33,10 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\externals\Core.Math.Samples\data\HolisticWare.Core.Sample.Data\HolisticWare.Core.Sample.Data.csproj" />
     <ProjectReference Include="..\..\..\..\..\externals\Core.Text\source\HolisticWare.Core.Text.NetStandard11\HolisticWare.Core.Text.NetStandard11.csproj" />
+    <ProjectReference Include="..\..\..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.netstandard11\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.netstandard11.csproj" />
+    <ProjectReference Include="..\..\..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.netstandard11\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.netstandard11.csproj" />
+    <ProjectReference Include="..\..\..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard11\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard11.csproj" />
+    <ProjectReference Include="..\..\..\..\..\source\HolisticWare.Core.Memory.netstandard11\HolisticWare.Core.Memory.netstandard11.csproj" />
   </ItemGroup>
   <Choose>
     <When Condition="! exists('..\..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard10.csproj')">
