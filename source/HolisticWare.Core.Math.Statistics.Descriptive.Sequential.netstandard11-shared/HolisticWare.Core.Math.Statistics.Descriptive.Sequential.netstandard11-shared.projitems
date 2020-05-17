@@ -9,8 +9,6 @@
     <Import_RootNamespace>HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard11-shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)System.Memory\GroupedData\IEnumerableExtensions.GroupedDataGroups.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)System.Memory\GroupedData\IEnumerableExtensions.GroupedDataMedian.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)System.Memory\Measures-CentralTendencies\Memory\MemoryExtensions.MeanArithmetic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)System.Memory\Measures-CentralTendencies\Memory\MemoryExtensions.MeanArithmeticGeneralizedWeighted.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)System.Memory\Measures-CentralTendencies\Memory\MemoryExtensions.MeanArithmeticWeighted.cs" />
@@ -29,7 +27,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)System.Memory\Measures-CentralTendencies\Memory\MemoryExtensions.MedianWeighted.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)System.Memory\Measures-CentralTendencies\ReadOnlySpan\ReadOnlySpanExtensions.MeanArithmetic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)System.Memory\Measures-CentralTendencies\Span\SpanExtensions.MeanArithmetic.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)System.Memory\Utilities\IEnumerableExtensions.Normalization.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System.Memory\Utilities\MemoryExtensions.Normalization.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)System.Memory\Measures-Dependency\Memory\Correlation.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
@@ -76,5 +74,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)System.Memory\" />
+    <Folder Include="$(MSBuildThisFileDirectory)System.Memory\GroupedData\" />
   </ItemGroup>
 </Project>

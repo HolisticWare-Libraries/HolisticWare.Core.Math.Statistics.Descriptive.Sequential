@@ -55,55 +55,55 @@
     <!-- 
     nuget packaging
     -->
-		<id>
-			HolisticWare.Core.Math.Statistics.Descriptive.Sequential
-		</id>
-		<title>
-			HolisticWare.Core.Math.Statistics.Descriptive.Sequential
-		</title>
-		<authors>
-			moljac / Miljenko Cvjetko / HolisticWare / Xamarin / Microsoft
-		</authors>
-		<owners>
-			moljac / Miljenko Cvjetko / HolisticWare / Xamarin
-		</owners>
-		<copyright>
-			Copyright 2013-2018
-		</copyright>
-		<version>
-			2018.10.22.0
-		</version>
-		<description>
-			Mathematical Utiltities - Statistics (Descriptive Statitstics) Algorithms
+        <id>
+            HolisticWare.Core.Math.Statistics.Descriptive.Sequential
+        </id>
+        <title>
+            HolisticWare.Core.Math.Statistics.Descriptive.Sequential
+        </title>
+        <authors>
+            moljac / Miljenko Cvjetko / HolisticWare / Xamarin / Microsoft
+        </authors>
+        <owners>
+            moljac / Miljenko Cvjetko / HolisticWare / Xamarin
+        </owners>
+        <copyright>
+            Copyright 2013-2018
+        </copyright>
+        <version>
+            2018.10.22.0
+        </version>
+        <description>
+            Mathematical Utiltities - Statistics (Descriptive Statitstics) Algorithms
 
-			Statistics (Descriptive Statistics) Algorithms based on IEnumerable&lt;T&gt; - Sequential
+            Statistics (Descriptive Statistics) Algorithms based on IEnumerable&lt;T&gt; - Sequential
 
-			Xplat (cross platform) 
-			.NET Standard 1.0 (netstandard1.0) implementation 
-			.NET Standard 1.1 (netstandard1.1) implementation 
-			.NET Standard 1.3 (netstandard1.3) implementation 
-		</description>
-		<summary>
-			Mathematical Utiltities - Statistics implementation
-		</summary>
-		<tags>
-			Math, Statistics, Descriptive, IEnumerable&lt;T&gt;, Parallel
-			.NET Standard 1.0, netstandard1.0
-			.NET Standard 1.1, netstandard1.1
-			.NET Standard 1.3, netstandard1.3
-		</tags>
-		<releaseNotes>
-			Implementation split into 2 nugets (Sequential and Parallel)
-		</releaseNotes>
-		<licenseUrl>
-			https://github.com/moljac/HolisticWare.Core.Math.Statistics.Descriptive.Sequential/blob/master/LICENSE.md
-		</licenseUrl>
-		<projectUrl>
-			https://github.com/moljac/HolisticWare.Core.Math.Statistics.Descriptive.Sequential
-		</projectUrl>
-		<iconUrl>
-			https://raw.githubusercontent.com/moljac/HolisticWare.Branding/master/pngs/holisticware/component/HolisticWare.svg.512x512.png
-		</iconUrl>
+            Xplat (cross platform) 
+            .NET Standard 1.0 (netstandard1.0) implementation 
+            .NET Standard 1.1 (netstandard1.1) implementation 
+            .NET Standard 1.3 (netstandard1.3) implementation 
+        </description>
+        <summary>
+            Mathematical Utiltities - Statistics implementation
+        </summary>
+        <tags>
+            Math, Statistics, Descriptive, IEnumerable&lt;T&gt;, Parallel
+            .NET Standard 1.0, netstandard1.0
+            .NET Standard 1.1, netstandard1.1
+            .NET Standard 1.3, netstandard1.3
+        </tags>
+        <releaseNotes>
+            Implementation split into 2 nugets (Sequential and Parallel)
+        </releaseNotes>
+        <licenseUrl>
+            https://github.com/moljac/HolisticWare.Core.Math.Statistics.Descriptive.Sequential/blob/master/LICENSE.md
+        </licenseUrl>
+        <projectUrl>
+            https://github.com/moljac/HolisticWare.Core.Math.Statistics.Descriptive.Sequential
+        </projectUrl>
+        <iconUrl>
+            https://raw.githubusercontent.com/moljac/HolisticWare.Branding/master/pngs/holisticware/component/HolisticWare.svg.512x512.png
+        </iconUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -114,15 +114,6 @@
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
     <PackageReference Include="System.Threading.Tasks.Dataflow" Version="4.11.0" />
     <PackageReference Include="System.Memory" Version="4.5.4" />        
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="System.Memory\Measures-CentralTendencies\IEnumerableExtensions.MeanArithmetic.cs" />
-    <Compile Remove="System.Memory\Measures-CentralTendencies\Memory\IEnumerableExtensions.MeanGeneralized.cs" />
-    <Compile Remove="..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard10\obj\Debug\netstandard1.0\.NETStandard,Version=v1.0.AssemblyAttributes.cs" />
-    <Compile Remove="..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard10\obj\Debug\netstandard1.0\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard10.AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="../HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard10/**/*.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HolisticWare.Core.Memory.netstandard11\HolisticWare.Core.Memory.netstandard11.csproj" />
