@@ -29,6 +29,7 @@
     <ProjectReference Include="..\..\..\..\..\externals\Core.Math.Samples\data\HolisticWare.Core.Sample.Data\HolisticWare.Core.Sample.Data.csproj" />
     <ProjectReference Include="..\..\..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.netstandard11\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.netstandard11.csproj" />
     <ProjectReference Include="..\..\..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.netstandard11\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.netstandard11.csproj" />
+    <ProjectReference Include="..\..\..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.netstandard11\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.netstandard11.csproj" />
     <ProjectReference Include="..\..\..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard11\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard11.csproj" />
   </ItemGroup>
   <Choose>
