@@ -118,4 +118,5 @@
   <ItemGroup>
     <ProjectReference Include="..\HolisticWare.Core.Memory.netstandard11\HolisticWare.Core.Memory.netstandard11.csproj" />
   </ItemGroup>
+  <Import Project="..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard11-shared\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard11-shared.projitems" Label="Shared" />
 </Project>

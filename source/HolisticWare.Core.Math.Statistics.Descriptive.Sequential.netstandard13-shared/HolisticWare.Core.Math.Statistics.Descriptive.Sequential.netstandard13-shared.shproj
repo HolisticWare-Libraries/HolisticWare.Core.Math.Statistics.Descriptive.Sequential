@@ -3,9 +3,12 @@
   <PropertyGroup>
     <ProjectGuid>{FCBEE8CE-0757-4FF9-A0A0-1D1DA62BDFDF}</ProjectGuid>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)\**\*.cs" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\CodeSharing\Microsoft.CodeSharing.Common.Default.props" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\CodeSharing\Microsoft.CodeSharing.Common.props" />
-  <Import Project="HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard13-common-shared.projitems" Label="Shared" />
+  <Import Project="HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard13-shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\CodeSharing\Microsoft.CodeSharing.CSharp.targets" />
 </Project>

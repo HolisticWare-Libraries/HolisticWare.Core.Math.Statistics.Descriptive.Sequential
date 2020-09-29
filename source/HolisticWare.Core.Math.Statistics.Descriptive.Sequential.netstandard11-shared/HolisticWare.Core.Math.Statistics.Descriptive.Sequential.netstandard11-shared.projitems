@@ -3,14 +3,13 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <HasSharedItems>true</HasSharedItems>
-    <SharedGUID>{F397F3AE-7B7B-49F3-9BA4-8DED2C63813A}</SharedGUID>
+    <SharedGUID>{8C5A835E-F9AE-44F2-912D-FFB4D8FF2785}</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential</Import_RootNamespace>
+    <Import_RootNamespace>Core.Math.Statistics.Descriptive.Sequential</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)readme.md" />
+    <Folder Include="$(MSBuildThisFileDirectory)System.Memory\" />
+    <Folder Include="$(MSBuildThisFileDirectory)System.Memory\GroupedData\" />
   </ItemGroup>
 </Project>
