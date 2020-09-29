@@ -74,4 +74,8 @@
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)IEnumerable\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard10-common-shared.shproj" />
+    <None Include="$(MSBuildThisFileDirectory)HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard10-common-shared.projitems" />
+  </ItemGroup>
 </Project>

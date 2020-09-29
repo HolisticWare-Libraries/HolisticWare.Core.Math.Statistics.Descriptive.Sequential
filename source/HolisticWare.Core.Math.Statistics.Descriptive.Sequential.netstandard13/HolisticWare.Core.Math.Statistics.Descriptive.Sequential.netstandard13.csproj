@@ -15,6 +15,5 @@
   <ItemGroup>
     <PackageReference Include="System.Collections.NonGeneric" Version="4.3.0" />
   </ItemGroup>
-  <Import Project="..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard13-shared\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard13-shared.projitems" Label="Shared" Condition="Exists('..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard13-shared\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard13-shared.projitems')" />
   <Import Project="..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.common-shared\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.common-shared.projitems" Label="Shared" Condition="Exists('..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.common-shared\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.common-shared.projitems')" />
 </Project>
