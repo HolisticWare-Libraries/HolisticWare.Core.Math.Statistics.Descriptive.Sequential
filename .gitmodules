@@ -1,5 +1,5 @@
-[submodule "externals/Core.Math"]
-	path = externals/Core.Math
+[submodule "externals/Coe.Math"]
+	path = externals/Coe.Math
 	url = https://github.com/moljac/HolisticWare.Core.Math.git
 [submodule "externals/Core"]
 	path = externals/Core
@@ -7,9 +7,6 @@
 [submodule "externals/Core.Math.Samples"]
 	path = externals/Core.Math.Samples
 	url = https://github.com/moljac/HolisticWare.Core.Math.Samples.git
-[submodule "externals/Core.Text"]
-	path = externals/Core.Text
-	url = https://github.com/HolisticWare/HolisticWare.Core.Text.git
 [submodule "externals/Core.Linq"]
 	path = externals/Core.Linq
 	url = https://github.com/HolisticWare/HolisticWare.Core.Linq.git
