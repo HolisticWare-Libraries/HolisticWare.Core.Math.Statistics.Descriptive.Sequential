@@ -20,5 +20,4 @@
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
     <PackageReference Include="System.Threading.Tasks.Dataflow" Version="4.11.0" />
   </ItemGroup>
-  <Import Project="..\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard10-shared\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard10-shared.projitems" Label="Shared" />
 </Project>
