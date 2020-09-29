@@ -98,8 +98,8 @@ Task("Default")
     (
         () =>
         {
-            RunTarget("libs");
-            //RunTarget("unit-tests");
+            //RunTarget("libs");
+            RunTarget("unit-tests");
         }
     );
 
