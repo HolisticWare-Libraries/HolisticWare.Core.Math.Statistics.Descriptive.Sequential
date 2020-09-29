@@ -43,22 +43,6 @@
       <Project>{18C2D1F9-A0F6-4A04-9CFF-DF984242395B}</Project>
       <Name>HolisticWare.Core.Text.NetStandard11</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.netstandard10\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.netstandard10.csproj">
-      <Project>{9ff4b3a0-de75-4322-8d35-e35650d9011d}</Project>
-      <Name>HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.Sequential.netstandard10</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.netstandard10\HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.netstandard10.csproj">
-      <Project>{ee24d849-ffb7-4582-8fe5-f4bbb575cc74}</Project>
-      <Name>HolisticWare.Core.Math.Statistics.Descriptive.Python.Sequential.netstandard10</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.netstandard10\HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.netstandard10.csproj">
-      <Project>{ee2fb370-174c-48e5-9fe4-8b0237cabc58}</Project>
-      <Name>HolisticWare.Core.Math.Statistics.Descriptive.R.Sequential.netstandard10</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard11\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard11.csproj">
-      <Project>{169c37e6-b0c7-43d6-b68a-f93224acbf56}</Project>
-      <Name>HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard11</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
