@@ -1,15 +1,20 @@
 using DataFrames, CSV, Statistics, StatsBase
 data = CSV.read("Pejcic_318.csv", copycols = true)
 
-# println(size(data),"\n")
-#println(names(data),"\n")
-# println(first(data, 6),"\n")
-# println(describe(data),"\n")
-
 # @show data.ATV
 # println()
 
-println("Sample Mean: ", mean(data))
+for col in eachcol(data,true); 
+    if  (
+        eltype(col[2]) <: Real) 
+        println(mean(col[2])
+        ); 
+    end; 
+end;
+
+# println(names(data),"\n")
+
+println("Sample Mean: ", mean(data[:ATT]))
 # println("Harmonic <= Geometric <= Arithmetic ",(harmmean(data), geomean(data), mean(data)))
 # println("Sample Variance: ",var(data))
 # println("Sample Standard Deviation: ",std(data))
@@ -20,4 +25,3 @@ println("Sample Mean: ", mean(data))
 # println("0.95 quantile: ", quantile(data, 0.95))
 # println("Interquartile range: ", iqr(data),"\n")
 
-# describe(data[:ATT])
