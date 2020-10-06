@@ -5,8 +5,8 @@ Pkg.add("LazyJSON")
 import JSON3;
 import LazyJSON;
 
-open("array_02_numeric.json", "r") do f
-    global dicttxt = read(f,String)  # file information to string
+open("array_02_numeric.json", "r") do file
+    global dicttxt = read(file, String)  # file information to string
     global a1 = LazyJSON.value(dicttxt)  # parse and transform data
 end
 
