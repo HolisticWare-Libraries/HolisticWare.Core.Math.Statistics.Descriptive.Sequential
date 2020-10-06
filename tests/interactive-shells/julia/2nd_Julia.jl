@@ -3,10 +3,10 @@
 
 # ERROR: LoadError: ArgumentError: Package DataFrames not found in current path:
 # - Run `import Pkg; Pkg.add("DataFrames")` to install the DataFrames package.
-import Pkg; Pkg.add("DataFrames")
+# import Pkg; Pkg.add("DataFrames")
 # import Pkg; 
-Pkg.add("CSV")
-Pkg.add("StatsBase")
+# Pkg.add("CSV")
+# Pkg.add("StatsBase")
 
 #-----------------------------------------------------------------------------------------------
 using DataFrames, CSV, Statistics, StatsBase
@@ -25,7 +25,7 @@ end;
 
 # println(names(data),"\n")
 
-println("Sample Mean: ", mean(data[:ATT]))
+# println("Sample Mean: ", mean(data[:ATT]))
 # println("Harmonic <= Geometric <= Arithmetic ",(harmmean(data), geomean(data), mean(data)))
 # println("Sample Variance: ",var(data))
 # println("Sample Standard Deviation: ",std(data))
