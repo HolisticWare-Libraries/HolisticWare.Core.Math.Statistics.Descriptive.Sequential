@@ -24,7 +24,7 @@ stringdata = JSON.json(dict1)
 # write the file with the stringdata variable information
 open("write_read.json", "w") do f
         write(f, stringdata)
-     end
+end
 
 ###################
 ### Read data #####
