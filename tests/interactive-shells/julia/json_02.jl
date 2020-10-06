@@ -13,5 +13,15 @@ end
 a2 = JSON3.read(dicttxt)
 
 println(a2)
-
 println(a1)
+
+
+import Pkg; 
+Pkg.add("Statistics")
+using Statistics; 
+
+#m1 = mean(a1)
+m2 = mean(a2)
+
+#println(m1)
+println("mean arithmetic = ", m2)
