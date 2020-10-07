@@ -1,16 +1,18 @@
-# pkg install -forge io
+pkg install -forge io
 
 pkg load io
 
-# if "OpenJDK 64-Bit Server VM warning..." then javaMethod ("getProperty", "java.lang.System", "MyProperty");
+# javaMethod ("getProperty", "java.lang.System", "MyProperty");
+
+# if "OpenJDK 64-Bit Server VM warning..." then: javaMethod ("getProperty", "java.lang.System", "MyProperty");
 
 addpath('../../../externals/Core.Math.Samples/data')
 
-d = csv2cell('Pejcic_318.csv')
+data = csv2cell('Pejcic_318.csv')
 
-d(1, :) %
+data(1, :) %
 
-d(2:end, :) %
+data(2:end, :) %
 
 # dlmread ('Pejcic_318.csv',',',2,0)
 
