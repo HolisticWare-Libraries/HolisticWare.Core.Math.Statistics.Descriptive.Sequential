@@ -1,64 +1,72 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.30105.148
+VisualStudioVersion = 16.0.30524.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{36B9D25A-40E6-47C2-AD91-6EF9EF420571}"
 	ProjectSection(SolutionItems) = preProject
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.shared", "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.shared\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.shared.shproj", "{97322730-7912-4331-8881-DF029EF7CDD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential", "HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.csproj", "{4E44FD8F-8AE0-4F08-B765-F818666F7F06}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard10-shared", "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard10-shared\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard10-shared.shproj", "{9A0C2E7A-54C7-4C2D-B32C-86CDF4CDB81B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "externals", "externals", "{5EA6F703-ADC1-4150-A30E-55DCB34A9489}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard11-shared", "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard11-shared\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard11-shared.shproj", "{8C5A835E-F9AE-44F2-912D-FFB4D8FF2785}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core.LINQ", "Core.LINQ", "{9AE372A0-FCD3-41D1-A963-D16223DAA544}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard13-shared", "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard13-shared\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard13-shared.shproj", "{FCBEE8CE-0757-4FF9-A0A0-1D1DA62BDFDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Linq.NetStandard11", "..\externals\Core.Linq\source\HolisticWare.Core.Linq.NetStandard11\HolisticWare.Core.Linq.NetStandard11.csproj", "{C7AC153E-49ED-4B1D-95B4-A02916A1470D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard10", "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard10\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard10.csproj", "{AA9D0357-6A77-41D4-BB7A-CC4111EC1501}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Linq.NetStandard10", "..\externals\Core.Linq\source\HolisticWare.Core.Linq.NetStandard10\HolisticWare.Core.Linq.NetStandard10.csproj", "{D01F9C50-609D-48C7-A5A5-F1ABB797E249}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard11", "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard11\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard11.csproj", "{169C37E6-B0C7-43D6-B68A-F93224ACBF56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Linq.ReImplemented.NetStandard10", "..\externals\Core.Linq\source\HolisticWare.Core.Linq.ReImplemented.NetStandard10\HolisticWare.Core.Linq.ReImplemented.NetStandard10.csproj", "{32F9E105-7AE4-4896-8D44-410669613305}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard13", "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard13\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard13.csproj", "{2745EF70-09F1-4297-9C0F-4294F37A1D75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Linq", "..\externals\Core.Linq\source\HolisticWare.Core.Linq\HolisticWare.Core.Linq.csproj", "{A0F0C91C-DFA4-41AA-9FA7-0A208E068A1C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Memory.netstandard11", "HolisticWare.Core.Memory.netstandard11\HolisticWare.Core.Memory.netstandard11.csproj", "{D98FDBAC-B38C-4AA3-9916-FCC383068A80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Linq.Memory", "..\externals\Core.Linq\source\HolisticWare.Core.Linq.Memory\HolisticWare.Core.Linq.Memory.csproj", "{FF96CB51-3CC4-43FF-9494-CC0084BA1BB9}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard11-shared\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard11-shared.projitems*{169c37e6-b0c7-43d6-b68a-f93224acbf56}*SharedItemsImports = 5
-		HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard11-shared\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard11-shared.projitems*{8c5a835e-f9ae-44f2-912d-ffb4d8ff2785}*SharedItemsImports = 13
-		HolisticWare.Core.Math.Statistics.Descriptive.Sequential.shared\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.shared.projitems*{97322730-7912-4331-8881-df029ef7cdd1}*SharedItemsImports = 13
-		HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard10-shared\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard10-shared.projitems*{9a0c2e7a-54c7-4c2d-b32c-86cdf4cdb81b}*SharedItemsImports = 13
-		HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard10-shared\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard10-shared.projitems*{aa9d0357-6a77-41d4-bb7a-cc4111ec1501}*SharedItemsImports = 5
-		HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard13-shared\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.netstandard13-shared.projitems*{fcbee8ce-0757-4ff9-a0a0-1d1da62bdfdf}*SharedItemsImports = 13
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AA9D0357-6A77-41D4-BB7A-CC4111EC1501}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA9D0357-6A77-41D4-BB7A-CC4111EC1501}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA9D0357-6A77-41D4-BB7A-CC4111EC1501}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA9D0357-6A77-41D4-BB7A-CC4111EC1501}.Release|Any CPU.Build.0 = Release|Any CPU
-		{169C37E6-B0C7-43D6-B68A-F93224ACBF56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{169C37E6-B0C7-43D6-B68A-F93224ACBF56}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{169C37E6-B0C7-43D6-B68A-F93224ACBF56}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{169C37E6-B0C7-43D6-B68A-F93224ACBF56}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2745EF70-09F1-4297-9C0F-4294F37A1D75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2745EF70-09F1-4297-9C0F-4294F37A1D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2745EF70-09F1-4297-9C0F-4294F37A1D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2745EF70-09F1-4297-9C0F-4294F37A1D75}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D98FDBAC-B38C-4AA3-9916-FCC383068A80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D98FDBAC-B38C-4AA3-9916-FCC383068A80}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D98FDBAC-B38C-4AA3-9916-FCC383068A80}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D98FDBAC-B38C-4AA3-9916-FCC383068A80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E44FD8F-8AE0-4F08-B765-F818666F7F06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E44FD8F-8AE0-4F08-B765-F818666F7F06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E44FD8F-8AE0-4F08-B765-F818666F7F06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E44FD8F-8AE0-4F08-B765-F818666F7F06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7AC153E-49ED-4B1D-95B4-A02916A1470D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7AC153E-49ED-4B1D-95B4-A02916A1470D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7AC153E-49ED-4B1D-95B4-A02916A1470D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7AC153E-49ED-4B1D-95B4-A02916A1470D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D01F9C50-609D-48C7-A5A5-F1ABB797E249}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D01F9C50-609D-48C7-A5A5-F1ABB797E249}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D01F9C50-609D-48C7-A5A5-F1ABB797E249}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D01F9C50-609D-48C7-A5A5-F1ABB797E249}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32F9E105-7AE4-4896-8D44-410669613305}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32F9E105-7AE4-4896-8D44-410669613305}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32F9E105-7AE4-4896-8D44-410669613305}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32F9E105-7AE4-4896-8D44-410669613305}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0F0C91C-DFA4-41AA-9FA7-0A208E068A1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0F0C91C-DFA4-41AA-9FA7-0A208E068A1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0F0C91C-DFA4-41AA-9FA7-0A208E068A1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0F0C91C-DFA4-41AA-9FA7-0A208E068A1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF96CB51-3CC4-43FF-9494-CC0084BA1BB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF96CB51-3CC4-43FF-9494-CC0084BA1BB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF96CB51-3CC4-43FF-9494-CC0084BA1BB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF96CB51-3CC4-43FF-9494-CC0084BA1BB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9AE372A0-FCD3-41D1-A963-D16223DAA544} = {5EA6F703-ADC1-4150-A30E-55DCB34A9489}
+		{C7AC153E-49ED-4B1D-95B4-A02916A1470D} = {9AE372A0-FCD3-41D1-A963-D16223DAA544}
+		{D01F9C50-609D-48C7-A5A5-F1ABB797E249} = {9AE372A0-FCD3-41D1-A963-D16223DAA544}
+		{32F9E105-7AE4-4896-8D44-410669613305} = {9AE372A0-FCD3-41D1-A963-D16223DAA544}
+		{A0F0C91C-DFA4-41AA-9FA7-0A208E068A1C} = {9AE372A0-FCD3-41D1-A963-D16223DAA544}
+		{FF96CB51-3CC4-43FF-9494-CC0084BA1BB9} = {9AE372A0-FCD3-41D1-A963-D16223DAA544}
+	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {3B165F4A-1231-4BFC-9444-C78C86D57DF5}
+		SolutionGuid = {D407CCD4-3E13-4090-84BA-9DE5B3A8F357}
 	EndGlobalSection
 EndGlobal

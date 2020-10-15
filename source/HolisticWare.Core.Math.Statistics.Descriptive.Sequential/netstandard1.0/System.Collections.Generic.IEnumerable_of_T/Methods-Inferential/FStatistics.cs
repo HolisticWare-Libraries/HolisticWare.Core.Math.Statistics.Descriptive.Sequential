@@ -1,0 +1,107 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+using Core.Math.Statistics;
+
+namespace Core.Math.Statistics.Descriptive
+{
+    /// <summary>
+    /// Correlation
+    /// </summary>
+    public static partial class FStatistic
+    {
+        //==============================================================================================================
+        public static double Calculate
+                                    (
+                                        IEnumerable<byte> x, 
+                                        IEnumerable<byte> y
+                                    )
+        {
+            return x.FStatistic(y);
+        }
+
+        public static double Calculate
+                                    (
+                                        IEnumerable<short> x, 
+                                        IEnumerable<short> y
+                                    )
+        {
+            return x.FStatistic(y);
+        }
+
+        public static double Calculate
+                                    (
+                                        IEnumerable<ushort> x, 
+                                        IEnumerable<ushort> y
+                                    )
+        {
+            return x.FStatistic(y);
+        }
+
+        public static double Calculate
+                                    (
+                                        IEnumerable<int> x, 
+                                        IEnumerable<int> y
+                                    )
+        {
+            return x.FStatistic(y);
+        }
+
+        public static double Calculate
+                                    (
+                                        IEnumerable<uint> x, 
+                                        IEnumerable<uint> y
+                                    )
+        {
+            return x.FStatistic(y);
+        }
+
+        public static double Calculate
+                                    (
+                                        IEnumerable<long> x, 
+                                        IEnumerable<long> y
+                                    )
+        {
+            return x.FStatistic(y);
+        }
+
+        public static double Calculate
+                                    (
+                                        IEnumerable<ulong> x, 
+                                        IEnumerable<ulong> y
+                                    )
+        {
+            return x.FStatistic(y);
+        }
+       
+        public static double Calculate
+                                    (
+                                        IEnumerable<float> x, 
+                                        IEnumerable<float> y
+                                    )
+        {
+            return x.FStatistic(y);
+        }
+
+        public static double Calculate
+                                    (
+                                        IEnumerable<double> x, 
+                                        IEnumerable<double> y
+                                    )
+        {
+            return x.FStatistic(y);
+        }
+
+        public static decimal Calculate
+                                    (
+                                        IEnumerable<decimal> x, 
+                                        IEnumerable<decimal> y
+                                    )
+        {
+            return x.FStatistic(y);
+        }
+        //==============================================================================================================
+
+    }
+}
