@@ -51,6 +51,10 @@
       <Project>{5B8DBA01-2E5F-457A-9895-A9A4759D1D43}</Project>
       <Name>HolisticWare.Core.Text.NetStandard10</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.csproj">
+      <Project>{4e44fd8f-8ae0-4f08-b765-f818666f7f06}</Project>
+      <Name>HolisticWare.Core.Math.Statistics.Descriptive.Sequential</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="BenchmarkDotNet">
