@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{13AB4AD2-D077-48E0-B6F2-791BC25EB413}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Tests.CommonShared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Linq\UnitTestsMemory01\UnitTestsMemory01.Even.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Linq\UnitTestsMemory01\UnitTestsMemory01.Odd.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Linq\UnitTestsMemory01\UnitTestsMemory01.OddBitwiseAndOperator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Linq\UnitTestsMemory01\UnitTestsMemory01.OddDivision.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Linq\UnitTestsMemory01\UnitTestsMemory01.OddModulo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Linq\UnitTestsMemory01\UnitTestsMemory01.OddShiftOperators.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Linq\UnitTestsSpan01\UnitTestsSpan01.Even.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Linq\UnitTestsSpan01\UnitTestsSpan01.Odd.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Linq\UnitTestsSpan01\UnitTestsSpan01.OddBitwiseAndOperator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Linq\UnitTestsSpan01\UnitTestsSpan01.OddDivision.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Linq\UnitTestsSpan01\UnitTestsSpan01.OddModulo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Linq\UnitTestsSpan01\UnitTestsSpan01.OddShiftOperators.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Linq\UnitTestsSpan02\UnitTestsSpan02.00.Data.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Linq\UnitTestsSpan02\UnitTestsSpan02.Average.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Linq\UnitTestsSpan02\UnitTestsSpan02.Max.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Linq\UnitTestsSpan02\UnitTestsSpan02.Min.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Linq\UnitTestsSpan02\UnitTestsSpan02.Sum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Linq\UnitTestsMemory01\UnitTestsMemory01.Data.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Linq\UnitTestsSpan01\UnitTestsSpan01.Data.cs" />
+  </ItemGroup>
+</Project>

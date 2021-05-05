@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneHourLinq", "OneHourLinq\OneHourLinq.csproj", "{2302F5D2-6FC6-4497-AD88-04F1E5224B9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneHourLinq.Tests", "OneHourLinq.Tests\OneHourLinq.Tests.csproj", "{1B2A3A7B-B05D-45E7-BF7A-167B982F170A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		LinqToObjects|Any CPU = LinqToObjects|Any CPU
+		OneHourLinq|Any CPU = OneHourLinq|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2302F5D2-6FC6-4497-AD88-04F1E5224B9E}.LinqToObjects|Any CPU.ActiveCfg = LinqToObjects|Any CPU
+		{2302F5D2-6FC6-4497-AD88-04F1E5224B9E}.LinqToObjects|Any CPU.Build.0 = LinqToObjects|Any CPU
+		{2302F5D2-6FC6-4497-AD88-04F1E5224B9E}.OneHourLinq|Any CPU.ActiveCfg = OneHourLinq|Any CPU
+		{2302F5D2-6FC6-4497-AD88-04F1E5224B9E}.OneHourLinq|Any CPU.Build.0 = OneHourLinq|Any CPU
+		{1B2A3A7B-B05D-45E7-BF7A-167B982F170A}.LinqToObjects|Any CPU.ActiveCfg = LinqToObjects|Any CPU
+		{1B2A3A7B-B05D-45E7-BF7A-167B982F170A}.LinqToObjects|Any CPU.Build.0 = LinqToObjects|Any CPU
+		{1B2A3A7B-B05D-45E7-BF7A-167B982F170A}.OneHourLinq|Any CPU.ActiveCfg = OneHourLinq|Any CPU
+		{1B2A3A7B-B05D-45E7-BF7A-167B982F170A}.OneHourLinq|Any CPU.Build.0 = OneHourLinq|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
