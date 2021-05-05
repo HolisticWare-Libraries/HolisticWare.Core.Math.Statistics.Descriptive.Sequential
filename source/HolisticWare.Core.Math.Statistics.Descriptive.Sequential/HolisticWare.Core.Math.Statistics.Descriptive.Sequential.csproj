@@ -20,6 +20,7 @@
         <DefineConstants>NETCORE;NETSTANDARD;NETSTANDARD1_0</DefineConstants>
     </PropertyGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.0'">
+        <Compile Include="$(MSBuildProjectDirectory)\common-shared\**\*.cs" />
         <Compile Include="$(MSBuildProjectDirectory)\netstandard1.0\**\*.cs" />
     </ItemGroup>
 
@@ -28,6 +29,7 @@
         <DefineConstants>NETCORE;NETSTANDARD;NETSTANDARD1_1</DefineConstants>
     </PropertyGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.1'">
+        <Compile Include="$(MSBuildProjectDirectory)\common-shared\**\*.cs" />
         <Compile Include="$(MSBuildProjectDirectory)\netstandard1.0\**\*.cs" />
         <Compile Include="$(MSBuildProjectDirectory)\netstandard1.1\**\*.cs" />
     </ItemGroup>
@@ -40,6 +42,7 @@
         <DefineConstants>NETCORE;NETSTANDARD;NETSTANDARD1_3</DefineConstants>
     </PropertyGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3'">
+        <Compile Include="$(MSBuildProjectDirectory)\common-shared\**\*.cs" />
         <Compile Include="$(MSBuildProjectDirectory)\netstandard1.0\**\*.cs" />
         <Compile Include="$(MSBuildProjectDirectory)\netstandard1.1\**\*.cs" />
         <Compile Include="$(MSBuildProjectDirectory)\netstandard1.3\**\*.cs" />
