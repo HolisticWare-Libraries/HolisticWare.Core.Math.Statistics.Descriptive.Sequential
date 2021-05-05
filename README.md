@@ -585,6 +585,8 @@ After benchmarks will be added and tests conducted, implementation might change 
 
         *   http://www.mathsisfun.com/data/correlation.html
 
+    *   https://en.wikipedia.org/wiki/Mathematical_operators_and_symbols_in_Unicode
+
 
 ### Alternatives
 
@@ -612,3 +614,5 @@ After benchmarks will be added and tests conducted, implementation might change 
     *   Miljenko Cvjetko - moljac
         
         Microsoft (Xamarin Inc.), HolisticWare
+
+
