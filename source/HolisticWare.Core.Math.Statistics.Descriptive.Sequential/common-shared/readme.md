@@ -2,18 +2,21 @@
 
 Code based on:
 
+    *   personal work in C++
+
     *   https://code.msdn.microsoft.com/Basic-C-Statistics-Library-26ac5403/sourcecode?fileId=145263&pathId=196059644
 
 Modifications:
 
     *   algorithms as IEnumerable<T> extensions
+
     *   tuples
 
 TODOs:
 
     *   optimizations and code reduction based on specific type used
+
     *   aync/await
-    *   
 
 
 ## Integer Data Types
@@ -50,6 +53,7 @@ TODOs:
 
  ## Numeric Data Types
 
+```csharp
     byte
     sbyte
     short
@@ -61,3 +65,4 @@ TODOs:
     float
     double
     decimal
+```

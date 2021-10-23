@@ -8,7 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential", "HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.csproj", "{4E44FD8F-8AE0-4F08-B765-F818666F7F06}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential", "HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.csproj", "{4E44FD8F-8AE0-4F08-B765-F818666F7F06}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "externals", "externals", "{5EA6F703-ADC1-4150-A30E-55DCB34A9489}"
 EndProject
@@ -23,6 +23,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Linq", "..\externals\Core.Linq\source\HolisticWare.Core.Linq\HolisticWare.Core.Linq.csproj", "{A0F0C91C-DFA4-41AA-9FA7-0A208E068A1C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolisticWare.Core.Linq.Memory", "..\externals\Core.Linq\source\HolisticWare.Core.Linq.Memory\HolisticWare.Core.Linq.Memory.csproj", "{FF96CB51-3CC4-43FF-9494-CC0084BA1BB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NonGeneric", "HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NonGeneric\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NonGeneric.csproj", "{F4C46C09-DC61-4EE6-840A-D574D3F08991}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +56,10 @@ Global
 		{FF96CB51-3CC4-43FF-9494-CC0084BA1BB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF96CB51-3CC4-43FF-9494-CC0084BA1BB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF96CB51-3CC4-43FF-9494-CC0084BA1BB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4C46C09-DC61-4EE6-840A-D574D3F08991}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4C46C09-DC61-4EE6-840A-D574D3F08991}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4C46C09-DC61-4EE6-840A-D574D3F08991}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4C46C09-DC61-4EE6-840A-D574D3F08991}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
