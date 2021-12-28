@@ -616,3 +616,18 @@ After benchmarks will be added and tests conducted, implementation might change 
         Microsoft (Xamarin Inc.), HolisticWare
 
 
+
+## Usage
+
+```
+git submodule update --recursive
+git submodule update --recursive --init
+git submodule foreach --recursive git fetch
+git submodule foreach git merge origin master
+git submodule update --recursive --remote --merge
+```
+
+
+```
+git push --recurse-submodules=on-demand
+```
