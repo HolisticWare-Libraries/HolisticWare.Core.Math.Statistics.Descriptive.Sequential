@@ -47,7 +47,7 @@ Task ("externals")
         }
     );
 
-Task("externals-libs")
+Task("externals-build")
     .IsDependentOn ("nuget-restore")
     .Does
     (
