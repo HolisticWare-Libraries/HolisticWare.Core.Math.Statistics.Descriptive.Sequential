@@ -6,7 +6,7 @@
         <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
         -->
         <RootNamespace>Core.Math.Statistic.Descriptive</RootNamespace>
-        <AssemblyName>HolisticWare.Core.Math.Statistic.Descriptive</AssemblyName>
+        <AssemblyName>HolisticWare.$(RootNamespace)</AssemblyName>
     </PropertyGroup>
 
     <!--
@@ -47,6 +47,7 @@
         ===============================================================================================================
         .NET Standard 1.1 references, compilation flags and build options
     -->
+    <!--
     <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.1'">
         <DefineConstants>NETCORE;NETSTANDARD;NETSTANDARD1_1</DefineConstants>
     </PropertyGroup>
@@ -65,8 +66,9 @@
             Include="..\..\externals-submodules\Core.LINQ\source\HolisticWare.Core.LINQ.Memory\HolisticWare.Core.LINQ.Memory.csproj"
             />
     </ItemGroup>
+    -->
     <!--
-        .NET Standard 1.0 references, compilation flags and build options
+        .NET Standard 1.1 references, compilation flags and build options
         ===============================================================================================================
     -->
 
