@@ -64,7 +64,7 @@
       <Name>HolisticWare.Core.Math.Statistics.Descriptive.Sequential.NetStandard11</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\..\externals\Core.Math.Samples\data\HolisticWare.Core.Sample.Data\HolisticWare.Core.Sample.Data.csproj">
-      <Project>{68C77835-7AC4-4702-B3E7-A6C2BBD7CC06}</Project>
+      <Project>{D3D77271-0ED5-441F-864D-186E3FE3D4E1}</Project>
       <Name>HolisticWare.Core.Sample.Data</Name>
     </ProjectReference>
   </ItemGroup>
