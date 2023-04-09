@@ -110,7 +110,7 @@
       <Name>HolisticWare.Core.Text.NetStandard10</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\..\externals\Core.Math.Samples\data\HolisticWare.Core.Sample.Data\HolisticWare.Core.Sample.Data.csproj">
-      <Project>{77693571-4115-4F66-BDA5-E198F6EE5DF8}</Project>
+      <Project>{70A770A0-BF3D-4B63-BD3E-3FD721FAD992}</Project>
       <Name>HolisticWare.Core.Sample.Data</Name>
     </ProjectReference>
   </ItemGroup>
