@@ -17,7 +17,7 @@
     -->
     <!-- common NuGet package refs that affect all projects -->
     <ItemGroup>
-        <PackageReference Include="System.ValueTuple" Version="*" />
+        <PackageReference Include="System.ValueTuple" />
     </ItemGroup>
 
     <!--
@@ -31,14 +31,17 @@
     <!--
         ===============================================================================================================
         .NET Standard 1.0 references, compilation flags and build options
+        https://learn.microsoft.com/en-us/dotnet/standard/frameworks#preprocessor-symbols
     -->
     <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.0'">
         <DefineConstants>NETCORE;NETSTANDARD;NETSTANDARD1_0</DefineConstants>
     </PropertyGroup>
-    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.0'">
-        <Compile Include=".\common-shared\**\*.cs" />
-        <Compile Include=".\netstandard1.0\**\*.cs" />
-    </ItemGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.0'">
+	</ItemGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.0'">
+		<Compile Include=".\common-shared\**\*.cs" />
+		<Compile Include=".\netstandard1.0\**\*.cs" />
+	</ItemGroup>
     <!--
         .NET Standard 1.0 references, compilation flags and build options
         ===============================================================================================================
@@ -46,32 +49,99 @@
     <!--
         ===============================================================================================================
         .NET Standard 1.1 references, compilation flags and build options
+        https://learn.microsoft.com/en-us/dotnet/standard/frameworks#preprocessor-symbols
     -->
-    <!--
     <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.1'">
         <DefineConstants>NETCORE;NETSTANDARD;NETSTANDARD1_1</DefineConstants>
     </PropertyGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.1'">
+        <PackageReference Include="System.Memory" />
+	</ItemGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.1'">
         <Compile Include=".\common-shared\**\*.cs" />
         <Compile Include=".\netstandard1.0\**\*.cs" />
+        <!--
         <Compile Include=".\netstandard1.1\**\*.cs" />
+        -->
     </ItemGroup>
-    <ItemGroup>
-        <PackageReference
-            Condition=" '$(TargetFramework)' == 'netstandard1.1'"
-            Include="System.Memory" Version="*"
-            />
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.1'">
+        <!--
         <ProjectReference
-            Condition=" '$(TargetFramework)' == 'netstandard1.1'"
             Include="..\..\externals-submodules\Core.LINQ\source\HolisticWare.Core.LINQ.Memory\HolisticWare.Core.LINQ.Memory.csproj"
             />
+        -->
     </ItemGroup>
-    -->
     <!--
         .NET Standard 1.1 references, compilation flags and build options
         ===============================================================================================================
     -->
 
+    <!--
+        .NET Standard 1.3 references, compilation flags and build options
+        ===============================================================================================================
+    -->
+    <!--
+        ===============================================================================================================
+        .NET Standard 1.3 references, compilation flags and build options
+        https://learn.microsoft.com/en-us/dotnet/standard/frameworks#preprocessor-symbols
+    -->
+    <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.3'">
+        <DefineConstants>NETCORE;NETSTANDARD;NETSTANDARD1_1</DefineConstants>
+    </PropertyGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3'">
+        <PackageReference Include="System.Memory" />
+	</ItemGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3'">
+        <Compile Include=".\common-shared\**\*.cs" />
+        <Compile Include=".\netstandard1.0\**\*.cs" />
+        <!--
+        <Compile Include=".\netstandard1.1\**\*.cs" />
+        <Compile Include=".\netstandard1.3\**\*.cs" />
+        -->
+    </ItemGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3'">
+        <!--
+        <ProjectReference
+            Include="..\..\externals-submodules\Core.LINQ\source\HolisticWare.Core.LINQ.Memory\HolisticWare.Core.LINQ.Memory.csproj"
+            />
+        -->
+    </ItemGroup>
+    <!--
+        .NET Standard 1.1 references, compilation flags and build options
+        ===============================================================================================================
+    -->
+
+    <!--
+        ===============================================================================================================
+        .NET 6 references, compilation flags and build options
+        https://learn.microsoft.com/en-us/dotnet/standard/frameworks#preprocessor-symbols
+    -->
+    <PropertyGroup Condition=" '$(TargetFramework)' == 'net6'">
+        <DefineConstants>NET6_0</DefineConstants>
+    </PropertyGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net6'">
+        <PackageReference Include="System.Runtime.Extensions" />
+	</ItemGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net6'">
+        <Compile Include=".\common-shared\**\*.cs" />
+        <Compile Include=".\netstandard1.0\**\*.cs" />
+        <!--
+        <Compile Include=".\netstandard1.1\**\*.cs" />
+        <Compile Include=".\netstandard1.3\**\*.cs" />
+        <Compile Include=".\net6\**\*.cs" />
+        -->
+    </ItemGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net6'">
+        <!--
+        <ProjectReference
+            Include="..\..\externals-submodules\Core.LINQ\source\HolisticWare.Core.LINQ.Memory\HolisticWare.Core.LINQ.Memory.csproj"
+            />
+        -->
+    </ItemGroup>
+    <!--
+        .NET 6 references, compilation flags and build options
+        ===============================================================================================================
+    -->
 
 
 </Project>
