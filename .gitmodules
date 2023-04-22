@@ -7,6 +7,6 @@
 [submodule "externals-submodules/Core.Math.Samples"]
 	path = externals-submodules/Core.Math.Samples
 	url = https://github.com/moljac/HolisticWare.Core.Math.Samples.git
-[submodule "externals-submodules/Core.Linq"]
-	path = externals-submodules/Core.Linq
-	url = https://github.com/HolisticWare/HolisticWare.Core.Linq.git
+[submodule "externals-submodules/Core.LINQ"]
+	path = externals-submodules/Core.LINQ
+	url = https://github.com/HolisticWare/HolisticWare.Core.LINQ.git
