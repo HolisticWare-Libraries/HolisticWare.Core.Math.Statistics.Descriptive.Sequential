@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Math.Stat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.LINQ.Memory", "..\externals-submodules\Core.LINQ\source\HolisticWare.Core.LINQ.Memory\HolisticWare.Core.LINQ.Memory.csproj", "{E958E716-EDC1-4007-8FE1-B16EA9FE296C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "library-source", "library-source", "{6FE17277-3E98-46D0-9C03-CD6C2FC68292}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{9AE372A0-FCD3-41D1-A963-D16223DAA544} = {5EA6F703-ADC1-4150-A30E-55DCB34A9489}
 		{E958E716-EDC1-4007-8FE1-B16EA9FE296C} = {9AE372A0-FCD3-41D1-A963-D16223DAA544}
+		{B080C361-4404-41EB-8C23-53A06ACA895A} = {6FE17277-3E98-46D0-9C03-CD6C2FC68292}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D407CCD4-3E13-4090-84BA-9DE5B3A8F357}

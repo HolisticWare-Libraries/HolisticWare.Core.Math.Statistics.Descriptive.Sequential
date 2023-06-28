@@ -7,7 +7,7 @@ namespace Core.Math.Statistics.Descriptive
     /// <summary>
     /// 
     /// </summary>
-    public static partial class IEnumerableExtensionsMedianHighHigh
+    public static partial class IEnumerableExtensionsMedianHigh
     {
         //==============================================================================================================
         public static double MedianHigh

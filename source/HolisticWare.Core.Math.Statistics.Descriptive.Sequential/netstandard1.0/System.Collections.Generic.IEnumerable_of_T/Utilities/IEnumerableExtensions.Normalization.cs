@@ -13,11 +13,13 @@ namespace Core.Math.Statistics.Descriptive
     public static partial class IEnumerableExtensionsMeanArithmetic
     {
         //==============================================================================================================
-        public static IEnumerable<double> Normalize
-                                    (
-                                        this IEnumerable<byte> x,
-                                        double? value = null
-                                    )
+        public static
+            IEnumerable<double>
+                                        Normalize
+                                        (
+                                            this IEnumerable<byte> x,
+                                            double? value = null
+                                        )
         {
             int n = x.Count();
             double sum;
@@ -37,11 +39,13 @@ namespace Core.Math.Statistics.Descriptive
             }
         }
 
-        public static IEnumerable<double> Normalize
-                                    (
-                                        this IEnumerable<ushort> x,
-                                        double? value = null
-                                    )
+        public static
+            IEnumerable<double>
+                                        Normalize
+                                        (
+                                            this IEnumerable<ushort> x,
+                                            double? value = null
+                                        )
         {
             int n = x.Count();
             double sum;
@@ -61,11 +65,13 @@ namespace Core.Math.Statistics.Descriptive
             }
         }
 
-        public static IEnumerable<double> Normalize
-                                    (
-                                        this IEnumerable<short> x,
-                                        double? value = null
-                                    )
+        public static
+            IEnumerable<double>
+                                        Normalize
+                                        (
+                                            this IEnumerable<short> x,
+                                            double? value = null
+                                        )
         {
             int n = x.Count();
             double sum;
@@ -85,11 +91,13 @@ namespace Core.Math.Statistics.Descriptive
             }
         }
 
-        public static IEnumerable<double> Normalize
-                                    (
-                                        this IEnumerable<int> x,
-                                        double? value = null
-                                    )
+        public static
+            IEnumerable<double>
+                                        Normalize
+                                        (
+                                            this IEnumerable<int> x,
+                                            double? value = null
+                                        )
         {
             int n = x.Count();
             double sum;
@@ -109,11 +117,13 @@ namespace Core.Math.Statistics.Descriptive
             }
         }
 
-        public static IEnumerable<double> Normalize
-                                    (
-                                        this IEnumerable<uint> x,
-                                        double? value = null
-                                    )
+        public static
+            IEnumerable<double>
+                                        Normalize
+                                        (
+                                            this IEnumerable<uint> x,
+                                            double? value = null
+                                        )
         {
             int n = x.Count();
             double sum;
@@ -133,11 +143,13 @@ namespace Core.Math.Statistics.Descriptive
             }
         }
 
-        public static IEnumerable<double> Normalize
-                                    (
-                                        this IEnumerable<long> x,
-                                        double? value = null
-                                    )
+        public static
+            IEnumerable<double>
+                                        Normalize
+                                        (
+                                            this IEnumerable<long> x,
+                                            double? value = null
+                                        )
         {
             int n = x.Count();
             double sum;
@@ -157,11 +169,13 @@ namespace Core.Math.Statistics.Descriptive
             }
         }
 
-        public static IEnumerable<double> Normalize
-                                    (
-                                        this IEnumerable<ulong> x,
-                                        double? value = null
-                                    )
+        public static
+            IEnumerable<double>
+                                        Normalize
+                                        (
+                                            this IEnumerable<ulong> x,
+                                            double? value = null
+                                        )
         {
             int n = x.Count();
             double sum;
@@ -181,11 +195,13 @@ namespace Core.Math.Statistics.Descriptive
             }
         }
 
-        public static IEnumerable<double> Normalize
-                                    (
-                                        this IEnumerable<float> x,
-                                        double? value = null
-                                    )
+        public static
+            IEnumerable<double>
+                                        Normalize
+                                        (
+                                            this IEnumerable<float> x,
+                                            double? value = null
+                                        )
         {
             int n = x.Count();
             double sum;
@@ -205,11 +221,13 @@ namespace Core.Math.Statistics.Descriptive
             }
         }
          
-        public static IEnumerable<double> Normalize
-                                    (
-                                        this IEnumerable<double> x,
-                                        double? value = null
-                                    )
+        public static
+            IEnumerable<double>
+                                        Normalize
+                                        (
+                                            this IEnumerable<double> x,
+                                            double? value = null
+                                        )
         {
             int n = x.Count();
             double sum;
@@ -229,11 +247,13 @@ namespace Core.Math.Statistics.Descriptive
             }
         }
 
-        public static IEnumerable<decimal> Normalize
-                                    (
-                                        this IEnumerable<decimal> x,
-                                        decimal? value = null
-                                    )
+        public static
+            IEnumerable<decimal>
+                                        Normalize
+                                        (
+                                            this IEnumerable<decimal> x,
+                                            decimal? value = null
+                                        )
         {
             int n = x.Count();
             decimal sum;

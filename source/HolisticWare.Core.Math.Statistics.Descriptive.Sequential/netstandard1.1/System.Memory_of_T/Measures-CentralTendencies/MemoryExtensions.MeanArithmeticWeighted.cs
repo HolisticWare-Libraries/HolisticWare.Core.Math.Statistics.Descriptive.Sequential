@@ -11,11 +11,13 @@ namespace Core.Math.Statistics.Descriptive
     public static partial class MemoryExtensionsMeanArithmeticWeighted 
     {
         //==============================================================================================================
-        public static double MeanArithmeticWeighted
-                                    (
-                                        this Memory<byte> x,
-                                        Memory<double> w
-                                    )
+        public static
+            double
+                                        MeanArithmeticWeighted
+                                        (
+                                            this Memory<byte> x,
+                                            Memory<double> w
+                                        )
         {
             int n = x.Length;
 
@@ -43,11 +45,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / sum_w;
         }
 
-        public static double MeanArithmeticWeighted
-                                    (
-                                        this Memory<short> x,
-                                        Memory<double> w
-                                    )
+        public static
+            double
+                                        MeanArithmeticWeighted
+                                        (
+                                            this Memory<short> x,
+                                            Memory<double> w
+                                        )
         {
             int n = x.Length;
 
@@ -75,11 +79,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / sum_w;
         }
 
-        public static double MeanArithmeticWeighted
-                                    (
-                                        this Memory<ushort> x,
-                                        Memory<double> w
-                                    )
+        public static
+            double
+                                        MeanArithmeticWeighted
+                                        (
+                                            this Memory<ushort> x,
+                                            Memory<double> w
+                                        )
         {
             int n = x.Length;
 
@@ -107,11 +113,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / sum_w;
         }
 
-        public static double MeanArithmeticWeighted
-                                    (
-                                        this Memory<int> x,
-                                        Memory<double> w
-                                    )
+        public static
+            double
+                                        MeanArithmeticWeighted
+                                        (
+                                            this Memory<int> x,
+                                            Memory<double> w
+                                        )
         {
             int n = x.Length;
 
@@ -139,11 +147,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / sum_w;
         }
 
-        public static double MeanArithmeticWeighted
-                                    (
-                                        this Memory<uint> x,
-                                        Memory<double> w
-                                    )
+        public static
+            double
+                                        MeanArithmeticWeighted
+                                        (
+                                            this Memory<uint> x,
+                                            Memory<double> w
+                                        )
         {
             int n = x.Length;
 
@@ -171,11 +181,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / sum_w;
         }
 
-        public static double MeanArithmeticWeighted
-                                    (
-                                        this Memory<long> x,
-                                        Memory<double> w
-                                    )
+        public static
+            double
+                                        MeanArithmeticWeighted
+                                        (
+                                            this Memory<long> x,
+                                            Memory<double> w
+                                        )
         {
             int n = x.Length;
 
@@ -203,11 +215,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / sum_w;
         }
 
-        public static double MeanArithmeticWeighted
-                                    (
-                                        this Memory<ulong> x,
-                                        Memory<double> w
-                                    )
+        public static
+            double
+                                        MeanArithmeticWeighted
+                                        (
+                                            this Memory<ulong> x,
+                                            Memory<double> w
+                                        )
         {
             int n = x.Length;
 
@@ -235,11 +249,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / sum_w;
         }
 
-        public static double MeanArithmeticWeighted
-                                    (
-                                        this Memory<float> x,
-                                        Memory<double> w
-                                    )
+        public static
+            double
+                                        MeanArithmeticWeighted
+                                        (
+                                            this Memory<float> x,
+                                            Memory<double> w
+                                        )
         {
             int n = x.Length;
 
@@ -267,11 +283,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / sum_w;
         }
 
-        public static double MeanArithmeticWeighted
-                                    (
-                                        this Memory<double> x,
-                                        Memory<double> w
-                                    )
+        public static
+            double
+                                        MeanArithmeticWeighted
+                                        (
+                                            this Memory<double> x,
+                                            Memory<double> w
+                                        )
         {
             int n = x.Length;
 
@@ -299,11 +317,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / sum_w;
         }
 
-        public static decimal MeanArithmeticWeighted
-                                    (
-                                        this Memory<decimal> x,
-                                        Memory<double> w
-                                    )
+        public static
+            decimal
+                                        MeanArithmeticWeighted
+                                        (
+                                            this Memory<decimal> x,
+                                            Memory<double> w
+                                        )
         {
             int n = x.Length;
 
@@ -330,7 +350,6 @@ namespace Core.Math.Statistics.Descriptive
 
             return sum / sum_w;
         }
-
         //==============================================================================================================
 
     }

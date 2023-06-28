@@ -15,7 +15,9 @@ namespace Core.Math.Statistics.Descriptive
     public static partial class IEnumerableExtensionsPercentiles
     {
         //==============================================================================================================
-        public static double PercentileRank
+        public static
+            double
+                                        PercentileRank
                                         (
                                             this IEnumerable<int> x, 
                                             double p

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Core.Math.Statistics.Descriptive
 {
@@ -10,10 +11,26 @@ namespace Core.Math.Statistics.Descriptive
     public static partial class IEnumerableExtensionsGroupedDataGroups
     {
         //==============================================================================================================
-        public static Dictionary<Tuple<double, double>, uint> GroupedDataGroups
-                                (
-                                    this IEnumerable<byte> x
-                                )
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="x">IEnumerable<byte></param>
+        /// <returns>Dictionary<Tuple<double, double>, uint></returns>
+        ///
+        /// 
+        /// <code>
+        /// Dictionary<Tuple<double, double>, uint> result = await Task.Run(() => x.GroupedDataGroups());
+        /// </code>
+        /// 
+        /// <code>
+        /// Dictionary<Tuple<double, double>, uint> result = await x.GroupedDataGroups());
+        /// </code>
+        public static
+            Dictionary<Tuple<double, double>, uint>
+                                        GroupedDataGroups
+                                        (
+                                            this IEnumerable<byte> x
+                                        )
         {
             int n = x.Count();
             IOrderedEnumerable<byte> x_ordered = x.OrderBy(x_i => x_i);
@@ -23,8 +40,6 @@ namespace Core.Math.Statistics.Descriptive
 
             return grouped_data_frequencies;
         }
-
         //==============================================================================================================
-
     }
 }

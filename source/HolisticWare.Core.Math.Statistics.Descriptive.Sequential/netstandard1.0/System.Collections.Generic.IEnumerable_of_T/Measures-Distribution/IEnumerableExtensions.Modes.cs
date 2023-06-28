@@ -20,10 +20,10 @@ namespace Core.Math.Statistics.Descriptive
         //==============================================================================================================
         public static 
             List<T> 
-                Modes<T>
-                    (
-                        this IEnumerable<T> x
-                    )
+                                        Modes<T>
+                                        (
+                                            this IEnumerable<T> x
+                                        )
         {
             IEnumerable<KeyValuePair<T, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies;
             frequencies = x.Frequencies();
@@ -45,10 +45,10 @@ namespace Core.Math.Statistics.Descriptive
 
         public static 
             List<byte> 
-                Modes
-                    (
-                        this IEnumerable<byte> x
-                    )
+                                        Modes
+                                        (
+                                            this IEnumerable<byte> x
+                                        )
         {
             IEnumerable<KeyValuePair<byte, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies;
             frequencies = x.Frequencies();
@@ -70,10 +70,10 @@ namespace Core.Math.Statistics.Descriptive
 
         public static
             List<ushort>
-                Modes
-                    (
-                        this IEnumerable<ushort> x
-                    )
+                                        Modes
+                                        (
+                                            this IEnumerable<ushort> x
+                                        )
         {
             IEnumerable<KeyValuePair<ushort, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies;
             frequencies = x.Frequencies();
@@ -95,10 +95,10 @@ namespace Core.Math.Statistics.Descriptive
 
         public static
             List<short>
-                Modes
-                    (
-                        this IEnumerable<short> x
-                    )
+                                        Modes
+                                        (
+                                            this IEnumerable<short> x
+                                        )
         {
             IEnumerable<KeyValuePair<short, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies;
             frequencies = x.Frequencies();
@@ -120,10 +120,10 @@ namespace Core.Math.Statistics.Descriptive
 
         public static
             List<int>
-                Modes
-                    (
-                        this IEnumerable<int> x
-                    )
+                                        Modes
+                                        (
+                                            this IEnumerable<int> x
+                                        )
         {
             IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies;
             frequencies = x.Frequencies();
@@ -145,10 +145,10 @@ namespace Core.Math.Statistics.Descriptive
 
         public static
             List<uint>
-                Modes
-                    (
-                        this IEnumerable<uint> x
-                    )
+                                        Modes
+                                        (
+                                            this IEnumerable<uint> x
+                                        )
         {
             IEnumerable<KeyValuePair<uint, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies;
             frequencies = x.Frequencies();
@@ -170,10 +170,10 @@ namespace Core.Math.Statistics.Descriptive
 
         public static
             List<long>
-                Modes
-                    (
-                        this IEnumerable<long> x
-                    )
+                                        Modes
+                                        (
+                                            this IEnumerable<long> x
+                                        )
         {
             IEnumerable<KeyValuePair<long, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies;
             frequencies = x.Frequencies();
@@ -195,10 +195,10 @@ namespace Core.Math.Statistics.Descriptive
 
         public static
             List<ulong>
-                Modes
-                    (
-                        this IEnumerable<ulong> x
-                    )
+                                        Modes
+                                        (
+                                            this IEnumerable<ulong> x
+                                        )
         {
             IEnumerable<KeyValuePair<ulong, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies;
             frequencies = x.Frequencies();
@@ -220,10 +220,10 @@ namespace Core.Math.Statistics.Descriptive
 
         public static
             List<float>
-                Modes
-                    (
-                        this IEnumerable<float> x
-                    )
+                                        Modes
+                                        (
+                                            this IEnumerable<float> x
+                                        )
         {
             IEnumerable<KeyValuePair<float, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies;
             frequencies = x.Frequencies();
@@ -245,10 +245,10 @@ namespace Core.Math.Statistics.Descriptive
 
         public static
             List<double>
-                Modes
-                    (
-                        this IEnumerable<double> x
-                    )
+                                        Modes
+                                        (
+                                            this IEnumerable<double> x
+                                        )
         {
             IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies;
             frequencies = x.Frequencies();
@@ -270,10 +270,10 @@ namespace Core.Math.Statistics.Descriptive
 
         public static
             List<decimal>
-                Modes
-                    (
-                        this IEnumerable<decimal> x
-                    )
+                                        Modes
+                                        (
+                                            this IEnumerable<decimal> x
+                                        )
         {
             IEnumerable<KeyValuePair<decimal, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> frequencies;
             frequencies = x.Frequencies();
@@ -294,35 +294,32 @@ namespace Core.Math.Statistics.Descriptive
         }
         //==============================================================================================================
 
-        /*
         //==============================================================================================================
-        #if NETSTANDARD1_3
-        // [Obsolete("Performance issue (boxing)")]
-        public static 
-            System.Collections.ArrayList 
-                Modes
-                    (
-                        this System.Collections.ArrayList x
-                    )
-        {
-            IEnumerable<KeyValuePair<object, uint>> frequencies = x.Frequencies();
+        //[Obsolete("Performance issue (boxing)")]
+        //public static 
+        //    System.Collections.ArrayList 
+        //                                Modes
+        //                                (
+        //                                    this System.Collections.ArrayList x
+        //                                )
+        //{
+        //    IEnumerable<KeyValuePair<object, uint>> frequencies = x.Frequencies();
 
-            System.Collections.ArrayList modes = new System.Collections.ArrayList();
+        //    System.Collections.ArrayList modes = new System.Collections.ArrayList();
 
-            uint occurences = ((KeyValuePair<object, uint>)frequencies?.ElementAt(0)).Value;
+        //    uint occurences = ((KeyValuePair<object, uint>)frequencies?.ElementAt(0)).Value;
 
-            foreach (KeyValuePair<object, uint> kvp in frequencies)
-            {
-                if (occurences == kvp.Value)
-                {
-                    modes.Add(kvp.Key);
-                }
-            }
+        //    foreach (KeyValuePair<object, uint> kvp in frequencies)
+        //    {
+        //        if (occurences == kvp.Value)
+        //        {
+        //            modes.Add(kvp.Key);
+        //        }
+        //    }
 
-            return modes;
-        }
-        #endif
+        //    return modes;
+        //}
         //==============================================================================================================
-        */
+        // /
     }
 }
