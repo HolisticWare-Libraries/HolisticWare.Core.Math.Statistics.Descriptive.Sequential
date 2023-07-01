@@ -29,10 +29,12 @@ namespace Core.Math.Statistics.Descriptive
         #if METHODIMPL_OPTIONS_AGRESSIVE_INLINING
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         #endif
-        public static double MeanArithmetic
-                                    (
-                                        this IEnumerable<byte> x
-                                    )
+        public static
+            double
+                                        MeanArithmetic
+                                        (
+                                            this IEnumerable<byte> x
+                                        )
         {
             return x.Select(x_i => (int)x_i).Average();
         }
@@ -40,10 +42,12 @@ namespace Core.Math.Statistics.Descriptive
         #if METHODIMPL_OPTIONS_AGRESSIVE_INLINING
         [MethodImpl(MethodImplOptions.AggressiveInlining)]  
         #endif
-        public static double MeanArithmetic
-                                    (
-                                        this IEnumerable<ushort> x
-                                    )
+        public static
+            double
+                                        MeanArithmetic
+                                        (
+                                            this IEnumerable<ushort> x
+                                        )
         {
             return x.Select(x_i => (int)x_i).Average();
         }
@@ -51,10 +55,12 @@ namespace Core.Math.Statistics.Descriptive
         #if METHODIMPL_OPTIONS_AGRESSIVE_INLINING
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         #endif
-        public static double MeanArithmetic
-                                    (
-                                        this IEnumerable<short> x
-                                    )
+        public static
+            double
+                                        MeanArithmetic
+                                        (
+                                            this IEnumerable<short> x
+                                        )
         {
             return x.Select(x_i => (int)x_i).Average();
         }
@@ -62,10 +68,12 @@ namespace Core.Math.Statistics.Descriptive
         #if METHODIMPL_OPTIONS_AGRESSIVE_INLINING
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         #endif
-        public static double MeanArithmetic
-                                    (
-                                        this IEnumerable<int> x
-                                    )
+        public static
+            double
+                                        MeanArithmetic
+                                        (
+                                            this IEnumerable<int> x
+                                        )
         {
             return x.Average();
         }
@@ -73,10 +81,12 @@ namespace Core.Math.Statistics.Descriptive
         #if METHODIMPL_OPTIONS_AGRESSIVE_INLINING
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         #endif
-        public static double MeanArithmetic
-                                    (
-                                        this IEnumerable<uint> x
-                                    )        
+        public static
+            double
+                                        MeanArithmetic
+                                        (
+                                            this IEnumerable<uint> x
+                                        )        
         {
             return x.Select(x_i => (long)x_i).Average();
         }
@@ -84,10 +94,12 @@ namespace Core.Math.Statistics.Descriptive
         #if METHODIMPL_OPTIONS_AGRESSIVE_INLINING
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         #endif
-        public static double MeanArithmetic
-                                    (
-                                        this IEnumerable<long> x
-                                    )
+        public static
+            double
+                                        MeanArithmetic
+                                        (
+                                            this IEnumerable<long> x
+                                        )
         {
             return x.Average();
         }
@@ -95,10 +107,12 @@ namespace Core.Math.Statistics.Descriptive
         #if METHODIMPL_OPTIONS_AGRESSIVE_INLINING
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         #endif
-        public static double MeanArithmetic
-                                    (
-                                        this IEnumerable<ulong> x
-                                    )
+        public static
+            double
+                                        MeanArithmetic
+                                        (
+                                            this IEnumerable<ulong> x
+                                        )
         {
             return x.Select(x_i => (double)x_i).Average();
         }
@@ -106,10 +120,12 @@ namespace Core.Math.Statistics.Descriptive
         #if METHODIMPL_OPTIONS_AGRESSIVE_INLINING
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         #endif
-        public static double MeanArithmetic
-                                    (
-                                        this IEnumerable<float> x
-                                    )
+        public static
+            double
+                                        MeanArithmetic
+                                        (
+                                            this IEnumerable<float> x
+                                        )
         {
             return x.Average();
         }
@@ -117,10 +133,12 @@ namespace Core.Math.Statistics.Descriptive
         #if METHODIMPL_OPTIONS_AGRESSIVE_INLINING
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         #endif
-        public static double MeanArithmetic
-                                    (
-                                        this IEnumerable<double> x
-                                    )
+        public static
+            double
+                                        MeanArithmetic
+                                        (
+                                            this IEnumerable<double> x
+                                        )
         {
             return x.Average();
         }
@@ -128,10 +146,12 @@ namespace Core.Math.Statistics.Descriptive
         #if METHODIMPL_OPTIONS_AGRESSIVE_INLINING
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         #endif
-        public static decimal MeanArithmetic
-                                    (
-                                        this IEnumerable<decimal> x
-                                    )
+        public static
+            decimal
+                                        MeanArithmetic
+                                        (
+                                            this IEnumerable<decimal> x
+                                        )
         {
             return x.Average();
         }
