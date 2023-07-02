@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>AverageArray-20230702-175948</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.5, OS=macOS Ventura 13.4.1 (22F82) [Darwin 22.5.0]
+Intel Core i9-9880H CPU 2.30GHz, 1 CPU, 16 logical and 8 physical cores
+.NET SDK=8.0.100-preview.4.23260.5
+  [Host]     : .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+  DefaultJob : .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>                Method</th><th>Mean</th><th>Error</th><th>StdDev</th>
+</tr>
+</thead><tbody><tr><td>Foreach</td><td>2.825 ns</td><td>0.0839 ns</td><td>0.0932 ns</td>
+</tr><tr><td>For_Length_Recalculated</td><td>3.400 ns</td><td>0.0573 ns</td><td>0.0478 ns</td>
+</tr><tr><td>For_Length_PreCalculted_long</td><td>4.775 ns</td><td>0.1086 ns</td><td>0.2992 ns</td>
+</tr><tr><td>For_Length_PreCalculted_int</td><td>4.672 ns</td><td>0.1127 ns</td><td>0.1055 ns</td>
+</tr><tr><td>LINQ_Method_Syntax</td><td>38.845 ns</td><td>0.7963 ns</td><td>1.3947 ns</td>
+</tr><tr><td>LINQ_Query_Syntax</td><td>69.964 ns</td><td>1.4160 ns</td><td>1.5738 ns</td>
+</tr></tbody></table>
+</body>
+</html>
