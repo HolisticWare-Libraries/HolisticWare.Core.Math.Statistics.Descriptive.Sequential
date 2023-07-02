@@ -164,7 +164,9 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Pow(sum / sum_w, 1.0 / power);
         }
 
-        public static double MeanArithmeticGeneralizedWeighted
+        public static
+            double
+                                        MeanArithmeticGeneralizedWeighted
                                         (
                                             this IEnumerable<ulong> x,
                                             IEnumerable<double> w,
@@ -187,7 +189,9 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Pow(sum / sum_w, 1.0 / power);
         }
 
-        public static double MeanArithmeticGeneralizedWeighted
+        public static
+            double
+                                        MeanArithmeticGeneralizedWeighted
                                         (
                                             this IEnumerable<float> x,
                                             IEnumerable<double> w,
