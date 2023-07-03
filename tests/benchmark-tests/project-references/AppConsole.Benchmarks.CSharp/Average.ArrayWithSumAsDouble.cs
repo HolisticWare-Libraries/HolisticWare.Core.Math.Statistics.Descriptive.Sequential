@@ -1,12 +1,10 @@
     public partial class
-                                        AverageArray
-                                        :
                                         Average
     {
         [BenchmarkDotNet.Attributes.Benchmark]
         public
             double
-                                        Foreach
+                                        Foreach_Over_Array_Sum_As_Double
                                         (
                                         )
         {
@@ -25,7 +23,7 @@
         [BenchmarkDotNet.Attributes.Benchmark]
         public
             double
-                                        For_Length_Recalculated
+                                        For_Over_Array_Sum_As_Double_Length_Recalculated
                                         (
                                         )
         {
@@ -45,7 +43,7 @@
     [BenchmarkDotNet.Attributes.Benchmark]
     public
         double
-                                    For_Length_PreCalculted_long
+                                    For_Over_Array_Sum_As_Double_Length_PreCalculted_long
                                     (
                                     )
     {
@@ -66,7 +64,7 @@
     [BenchmarkDotNet.Attributes.Benchmark]
     public
         double
-                                    For_Length_PreCalculted_int
+                                    For_Over_Array_Sum_As_Double_Length_PreCalculted_int
                                     (
                                     )
     {
@@ -87,7 +85,7 @@
     [BenchmarkDotNet.Attributes.Benchmark]
     public
         double
-                                    LINQ_Method_Syntax
+                                    LINQ_Method_Syntax_Over_Array
                                     (
                                     )
     {
@@ -100,7 +98,7 @@
     [BenchmarkDotNet.Attributes.Benchmark]
     public
         double
-                                    LINQ_Query_Syntax
+                                    LINQ_Query_Syntax_Over_Array_
                                     (
                                     )
     {

@@ -2,20 +2,11 @@
 BenchmarkDotNet.Reports.Summary summary = null;
 
 summary = BenchmarkDotNet.Running
-                           .BenchmarkRunner.Run<AverageArray>();
+                           .BenchmarkRunner.Run<Average>();
 System.IO.File.Move
                 (
                     summary.LogFilePath,
-                    System.IO.Path.Combine("..", "..", "..", "AverageArray.log"),
-                    true
-                );
-
-summary = BenchmarkDotNet.Running
-                           .BenchmarkRunner.Run<AverageMemory>();
-System.IO.File.Move
-                (
-                    summary.LogFilePath,
-                    System.IO.Path.Combine("..", "..", "..", "AverageMemory.log"),
+                    System.IO.Path.Combine("..", "..", "..", "Average.log"),
                     true
                 );
 

@@ -1,43 +1,41 @@
     public partial class
-                                        AverageMemory
-                                        :
                                         Average
     {
-    //[BenchmarkDotNet.Attributes.Benchmark]
-    //public
-    //    double
-    //                                Foreach
-    //                                (
-    //                                )
-    //{
-    //    double sum = 0.0;
+        [BenchmarkDotNet.Attributes.Benchmark]
+        public
+        double
+                                    Foreach_Over_Span_With_Sum_As_Double
+                                    (
+                                    )
+        {
+            double sum = 0.0;
 
-    //    Memory<int> memory_data_10 = data_10.AsMemory();
+            Span<int> span_data_10 = data_10.AsSpan();
 
-    //    foreach (int item in memory_data_10)
-    //    {
-    //        sum += item;
-    //    }
+            foreach (int item in span_data_10)
+            {
+                sum += item;
+            }
 
-    //    double average = sum / data_10.Length;
+            double average = sum / data_10.Length;
 
-    //    return average;
-    //}
+            return average;
+        }
 
     [BenchmarkDotNet.Attributes.Benchmark]
     public
         double
-                                    For_Length_Recalculated_Span
+                                    For_Over_Span_With_Sum_As_Double_Length_Recalculated
                                     (
                                     )
     {
         double sum = 0.0;
 
-        Span<int> memory_data_10 = data_10.AsSpan();
+        Span<int> span_data_10 = data_10.AsSpan();
 
-        for (int i = 0; i < memory_data_10.Length; i++)
+        for (int i = 0; i < span_data_10.Length; i++)
         {
-            sum += memory_data_10[i];
+            sum += span_data_10[i];
         }
 
         double average = sum / data_10.Length;
@@ -49,18 +47,18 @@
     [BenchmarkDotNet.Attributes.Benchmark]
     public
         double
-                                    For_Length_PreCalculted_long_Span
+                                    For_Over_Span_With_Sum_As_Double_Length_PreCalculted_long
                                     (
                                     )
     {
         double  sum = 0.0;
         long    size = data_10.LongLength;
 
-        Span<int> memory_data_10 = data_10.AsSpan();
+        Span<int> span_data_10 = data_10.AsSpan();
 
         for (int i = 0; i < size; i++)
         {
-            sum += memory_data_10[i];
+            sum += span_data_10[i];
         }
 
         double average = sum / data_10.Length;
@@ -72,18 +70,18 @@
     [BenchmarkDotNet.Attributes.Benchmark]
     public
         double
-                                    For_Length_PreCalculted_int_Span
+                                    For_Over_Span_With_Sum_As_Double_Length_PreCalculted_int
                                     (
                                     )
     {
         double sum = 0.0;
         int size = data_10.Length;
 
-        Span<int> memory_data_10 = data_10.AsSpan();
+        Span<int> span_data_10 = data_10.AsSpan();
 
         for (int i = 0; i < size; i++)
         {
-            sum += memory_data_10[i];
+            sum += span_data_10[i];
         }
 
         double average = sum / data_10.Length;
