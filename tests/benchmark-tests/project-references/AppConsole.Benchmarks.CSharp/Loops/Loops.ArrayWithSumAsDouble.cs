@@ -1,5 +1,5 @@
     public partial class
-                                        Average
+                                        Loops
     {
         [BenchmarkDotNet.Attributes.Benchmark]
         public

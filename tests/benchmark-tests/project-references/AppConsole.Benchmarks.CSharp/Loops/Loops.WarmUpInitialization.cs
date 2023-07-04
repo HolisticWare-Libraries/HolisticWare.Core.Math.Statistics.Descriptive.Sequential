@@ -1,5 +1,5 @@
     public partial class
-                                        Average
+                                        Loops
     {
         protected const int N_10      = 10;
         protected const int N_100     = 100;
@@ -12,7 +12,7 @@
         protected readonly int[] data_10000;
 
         public
-                                        Average
+                                        Loops
                                         (
                                         )
         {
@@ -24,7 +24,7 @@
             Random randNum = new Random();
 
             data_10 = Enumerable
-                            .Repeat(0, 5)
+                            .Repeat(0, N_10)
                             .Select(i => randNum.Next(-10, 10))
                             .ToArray();
 

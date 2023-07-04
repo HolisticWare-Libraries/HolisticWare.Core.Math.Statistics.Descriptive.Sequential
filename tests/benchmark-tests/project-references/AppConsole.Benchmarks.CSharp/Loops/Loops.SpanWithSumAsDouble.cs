@@ -1,12 +1,12 @@
     public partial class
-                                        Average
+                                        Loops
     {
         [BenchmarkDotNet.Attributes.Benchmark]
         public
         double
-                                    Foreach_Over_Span_With_Sum_As_Double
-                                    (
-                                    )
+                                        Foreach_Over_Span_With_Sum_As_Double
+                                        (
+                                        )
         {
             double sum = 0.0;
 
@@ -25,9 +25,9 @@
     [BenchmarkDotNet.Attributes.Benchmark]
     public
         double
-                                    For_Over_Span_With_Sum_As_Double_Length_Recalculated
-                                    (
-                                    )
+                                        For_Over_Span_With_Sum_As_Double_Length_Recalculated
+                                        (
+                                        )
     {
         double sum = 0.0;
 
@@ -47,9 +47,9 @@
     [BenchmarkDotNet.Attributes.Benchmark]
     public
         double
-                                    For_Over_Span_With_Sum_As_Double_Length_PreCalculted_long
-                                    (
-                                    )
+                                        For_Over_Span_With_Sum_As_Double_Length_PreCalculted_long
+                                        (
+                                        )
     {
         double  sum = 0.0;
         long    size = data_10.LongLength;
