@@ -18,7 +18,7 @@ System.IO.File.Move
                 );
 
 summary = BenchmarkDotNet.Running
-                           .BenchmarkRunner.Run<ControlStructures_vs_PatternMatching>();
+                           .BenchmarkRunner.Run<ControlStructures>();
 System.IO.File.Move
                 (
                     summary.LogFilePath,
