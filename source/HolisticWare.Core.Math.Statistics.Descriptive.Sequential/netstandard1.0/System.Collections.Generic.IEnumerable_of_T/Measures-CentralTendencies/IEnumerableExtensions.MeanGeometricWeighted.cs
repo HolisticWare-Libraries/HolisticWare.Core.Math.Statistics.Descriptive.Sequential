@@ -9,14 +9,17 @@ namespace Core.Math.Statistics.Descriptive
     /// <summary>
     /// Correlation
     /// </summary>
-    public static partial class IEnumerableExtensionsMeanGeometricWeighted
+    public static partial class
+                                        IEnumerableExtensionsMeanGeometricWeighted
     {
         //==============================================================================================================
-        public static double MeanGeometricWeighted
-                                    (
-                                        this IEnumerable<byte> x
-                                        , IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanGeometricWeighted
+                                        (
+                                            this IEnumerable<byte> x
+                                            , IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -39,11 +42,13 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Exp(sum / sum_w);
         }
 
-        public static double MeanGeometricWeighted
-                                    (
-                                        this IEnumerable<short> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanGeometricWeighted
+                                        (
+                                            this IEnumerable<short> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -66,11 +71,13 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Exp(sum / sum_w);
         }
 
-        public static double MeanGeometricWeighted
-                                    (
-                                        this IEnumerable<ushort> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanGeometricWeighted
+                                        (
+                                            this IEnumerable<ushort> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -93,11 +100,13 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Exp(sum / sum_w);
         }
 
-        public static double MeanGeometricWeighted
-                                    (
-                                        this IEnumerable<int> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanGeometricWeighted
+                                        (
+                                            this IEnumerable<int> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -120,11 +129,13 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Exp(sum / sum_w);
         }
 
-        public static double MeanGeometricWeighted
-                                    (
-                                        this IEnumerable<uint> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanGeometricWeighted
+                                        (
+                                            this IEnumerable<uint> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -147,11 +158,13 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Exp(sum / sum_w);
         }
 
-        public static double MeanGeometricWeighted
-                                    (
-                                        this IEnumerable<long> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanGeometricWeighted
+                                        (
+                                            this IEnumerable<long> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -174,11 +187,13 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Exp(sum / sum_w);
         }
 
-        public static double MeanGeometricWeighted
-                                    (
-                                        this IEnumerable<ulong> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanGeometricWeighted
+                                        (
+                                            this IEnumerable<ulong> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -201,11 +216,13 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Exp(sum / sum_w);
         }
 
-        public static double MeanGeometricWeighted
-                                    (
-                                        this IEnumerable<float> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanGeometricWeighted
+                                        (
+                                            this IEnumerable<float> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -228,11 +245,13 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Exp(sum / sum_w);
         }
 
-        public static double MeanGeometricWeighted
-                                    (
-                                        this IEnumerable<double> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanGeometricWeighted
+                                        (
+                                            this IEnumerable<double> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -255,11 +274,13 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Exp(sum / sum_w);
         }
 
-        public static decimal MeanGeometricWeighted
-                                    (
-                                        this IEnumerable<decimal> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            decimal
+                                        MeanGeometricWeighted
+                                        (
+                                            this IEnumerable<decimal> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -281,7 +302,6 @@ namespace Core.Math.Statistics.Descriptive
 
             return (decimal) System.Math.Exp((double)(sum / sum_w));
         }
-
         //==============================================================================================================
 
     }

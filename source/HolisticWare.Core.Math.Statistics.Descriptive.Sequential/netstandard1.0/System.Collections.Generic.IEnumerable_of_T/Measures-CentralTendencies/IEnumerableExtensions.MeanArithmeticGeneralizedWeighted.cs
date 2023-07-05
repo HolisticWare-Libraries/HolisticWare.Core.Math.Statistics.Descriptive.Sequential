@@ -11,7 +11,8 @@ namespace Core.Math.Statistics.Descriptive
     /// </summary>
     /// <see href="https://en.wikipedia.org/wiki/Average"/>
     /// <see href="https://en.wikipedia.org/wiki/Generalized_mean"/>
-    public static partial class IEnumerableExtensionsMeanArithmeticGeneralizedWeighted
+    public static partial class
+                                        IEnumerableExtensionsMeanArithmeticGeneralizedWeighted
     {
         //==============================================================================================================
         public static
@@ -214,7 +215,9 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Pow(sum / sum_w, 1.0 / power);
         }
 
-        public static double MeanArithmeticGeneralizedWeighted
+        public static
+            double
+                                        MeanArithmeticGeneralizedWeighted
                                         (
                                             this IEnumerable<double> x,
                                             IEnumerable<double> w,
@@ -237,7 +240,9 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Pow(sum / sum_w, 1.0 / power);
         }
 
-        public static decimal MeanArithmeticGeneralizedWeighted
+        public static
+            decimal
+                                        MeanArithmeticGeneralizedWeighted
                                         (
                                             this IEnumerable<decimal> x,
                                             IEnumerable<double> w,
@@ -259,7 +264,6 @@ namespace Core.Math.Statistics.Descriptive
 
             return (decimal) System.Math.Pow(sum / sum_w, 1.0 / power);
         }
-
         //==============================================================================================================
 
     }

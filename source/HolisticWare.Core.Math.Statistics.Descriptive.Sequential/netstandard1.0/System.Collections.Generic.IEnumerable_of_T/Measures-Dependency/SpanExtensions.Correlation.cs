@@ -11,14 +11,17 @@ namespace Core.Math.Statistics.Descriptive
     /// </summary>
     /// <see href="https://en.wikipedia.org/wiki/Correlation_and_dependence"/> 
     /// <see href="http://www.mathsisfun.com/data/correlation.html"/>
-    public static partial class IEnumerableExtensionsCorrelation
+    public static partial class
+                                        IEnumerableExtensionsCorrelation
     {
         //==============================================================================================================
-        public static double Correlation
-                                    (
-                                        this IEnumerable<byte> x, 
-                                        IEnumerable<byte> y
-                                    )
+        public static
+            double
+                                        Correlation
+                                        (
+                                            this IEnumerable<byte> x, 
+                                            IEnumerable<byte> y
+                                        )
         {
             double standard_deviation_x = x.StandardDeviationSample();
 

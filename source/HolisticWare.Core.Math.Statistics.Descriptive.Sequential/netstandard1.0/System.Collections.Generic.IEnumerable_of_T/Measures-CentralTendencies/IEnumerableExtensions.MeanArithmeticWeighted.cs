@@ -9,14 +9,17 @@ namespace Core.Math.Statistics.Descriptive
     /// <summary>
     /// Correlation
     /// </summary>
-    public static partial class IEnumerableExtensionsMeanArithmeticWeighted
+    public static partial class
+                                        IEnumerableExtensionsMeanArithmeticWeighted
     {
         //==============================================================================================================
-        public static double MeanArithmeticWeighted
-                                    (
-                                        this IEnumerable<byte> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanArithmeticWeighted
+                                        (
+                                            this IEnumerable<byte> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -44,11 +47,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / sum_w;
         }
 
-        public static double MeanArithmeticWeighted
-                                    (
-                                        this IEnumerable<short> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanArithmeticWeighted
+                                        (
+                                            this IEnumerable<short> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -76,11 +81,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / sum_w;
         }
 
-        public static double MeanArithmeticWeighted
-                                    (
-                                        this IEnumerable<ushort> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanArithmeticWeighted
+                                        (
+                                            this IEnumerable<ushort> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -108,11 +115,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / sum_w;
         }
 
-        public static double MeanArithmeticWeighted
-                                    (
-                                        this IEnumerable<int> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanArithmeticWeighted
+                                        (
+                                            this IEnumerable<int> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -140,11 +149,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / sum_w;
         }
 
-        public static double MeanArithmeticWeighted
-                                    (
-                                        this IEnumerable<uint> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanArithmeticWeighted
+                                        (
+                                            this IEnumerable<uint> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -172,11 +183,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / sum_w;
         }
 
-        public static double MeanArithmeticWeighted
-                                    (
-                                        this IEnumerable<long> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanArithmeticWeighted
+                                        (
+                                            this IEnumerable<long> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -204,11 +217,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / sum_w;
         }
 
-        public static double MeanArithmeticWeighted
-                                    (
-                                        this IEnumerable<ulong> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanArithmeticWeighted
+                                        (
+                                            this IEnumerable<ulong> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -236,11 +251,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / sum_w;
         }
 
-        public static double MeanArithmeticWeighted
-                                    (
-                                        this IEnumerable<float> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanArithmeticWeighted
+                                        (
+                                            this IEnumerable<float> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -268,11 +285,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / sum_w;
         }
 
-        public static double MeanArithmeticWeighted
-                                    (
-                                        this IEnumerable<double> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanArithmeticWeighted
+                                        (
+                                            this IEnumerable<double> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -300,11 +319,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / sum_w;
         }
 
-        public static decimal MeanArithmeticWeighted
-                                    (
-                                        this IEnumerable<decimal> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            decimal
+                                        MeanArithmeticWeighted
+                                        (
+                                            this IEnumerable<decimal> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 

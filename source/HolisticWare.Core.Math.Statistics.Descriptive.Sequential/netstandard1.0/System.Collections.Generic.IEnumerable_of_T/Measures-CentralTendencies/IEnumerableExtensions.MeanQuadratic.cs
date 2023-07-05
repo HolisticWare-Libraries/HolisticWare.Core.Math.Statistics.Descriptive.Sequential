@@ -10,13 +10,16 @@ namespace Core.Math.Statistics.Descriptive
     /// Mean (Average) Quadratic
     /// </summary>
     /// <see href="https://en.wikipedia.org/wiki/Average"/>
-    public static partial class IEnumerableExtensionsMeanQuadratic
+    public static partial class
+                                        IEnumerableExtensionsMeanQuadratic
     {
         //==============================================================================================================
-        public static double MeanQuadratic
-                                    (
-                                        this IEnumerable<byte> x
-                                    )
+        public static
+            double
+                                        MeanQuadratic
+                                        (
+                                            this IEnumerable<byte> x
+                                        )
         {
             int n = x.Count();
 
@@ -31,10 +34,12 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Pow(sum / n, 1.0 / 2.0);
         }
 
-        public static double MeanQuadratic
-                                    (
-                                        this IEnumerable<short> x
-                                    )
+        public static
+            double
+                                        MeanQuadratic
+                                        (
+                                            this IEnumerable<short> x
+                                        )
         {
             int n = x.Count();
 
@@ -49,10 +54,12 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Pow(sum / n, 1.0 / 2.0);
         }
 
-        public static double MeanQuadratic
-                                    (
-                                        this IEnumerable<ushort> x
-                                    )
+        public static
+            double
+                                        MeanQuadratic
+                                        (
+                                            this IEnumerable<ushort> x
+                                        )
         {
             int n = x.Count();
 
@@ -67,10 +74,12 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Pow(sum / n, 1.0 / 2.0);
         }
 
-        public static double MeanQuadratic
-                                    (
-                                        this IEnumerable<int> x
-                                    )
+        public static
+            double
+                                        MeanQuadratic
+                                        (
+                                            this IEnumerable<int> x
+                                        )
         {
             int n = x.Count();
 
@@ -85,10 +94,12 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Pow(sum / n, 1.0 / 2.0);
         }
 
-        public static double MeanQuadratic
-                                    (
-                                        this IEnumerable<uint> x
-                                    )
+        public static
+            double
+                                        MeanQuadratic
+                                        (
+                                            this IEnumerable<uint> x
+                                        )
         {
             int n = x.Count();
 
@@ -103,10 +114,12 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Pow(sum / n, 1.0 / 2.0);
         }
 
-        public static double MeanQuadratic
-                                    (
-                                        this IEnumerable<long> x
-                                    )
+        public static
+            double
+                                        MeanQuadratic
+                                        (
+                                            this IEnumerable<long> x
+                                        )
         {
             int n = x.Count();
 
@@ -121,10 +134,12 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Pow(sum / n, 1.0 / 2.0);
         }
 
-        public static double MeanQuadratic
-                                    (
-                                        this IEnumerable<ulong> x
-                                    )
+        public static
+            double
+                                        MeanQuadratic
+                                        (
+                                            this IEnumerable<ulong> x
+                                        )
         {
             int n = x.Count();
 
@@ -139,10 +154,12 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Pow(sum / n, 1.0 / 2.0);
         }
 
-        public static double MeanQuadratic
-                                    (
-                                        this IEnumerable<float> x
-                                    )
+        public static
+            double
+                                        MeanQuadratic
+                                        (
+                                            this IEnumerable<float> x
+                                        )
         {
             int n = x.Count();
 
@@ -157,10 +174,12 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Pow(sum / n, 1.0 / 2.0);
         }
 
-        public static double MeanQuadratic
-                                    (
-                                        this IEnumerable<double> x
-                                    )
+        public static
+            double
+                                        MeanQuadratic
+                                        (
+                                            this IEnumerable<double> x
+                                        )
         {
             int n = x.Count();
 
@@ -175,10 +194,12 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Pow(sum / n, 1.0 / 2.0);
         }
 
-        public static decimal MeanQuadratic
-                                    (
-                                        this IEnumerable<decimal> x
-                                    )
+        public static
+            decimal
+                                        MeanQuadratic
+                                        (
+                                            this IEnumerable<decimal> x
+                                        )
         {
             int n = x.Count();
 
@@ -192,7 +213,6 @@ namespace Core.Math.Statistics.Descriptive
 
             return (decimal)System.Math.Pow((double)sum / n, 1.0 / 2.0);
         }
-
         //==============================================================================================================
 
     }

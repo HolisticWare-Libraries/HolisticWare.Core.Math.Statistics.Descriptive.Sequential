@@ -7,14 +7,17 @@ namespace Core.Math.Statistics.Descriptive
     /// <summary>
     /// Covariance
     /// </summary>
-    public static partial class IEnumerableExtensionsCovariance
+    public static partial class
+                                        IEnumerableExtensionsCovariance
     {
         //==============================================================================================================
-        public static double Covariance
-                                    (
-                                        this IEnumerable<byte> x, 
-                                        IEnumerable<byte> y
-                                    )
+        public static
+            double
+                                        Covariance
+                                        (
+                                            this IEnumerable<byte> x, 
+                                            IEnumerable<byte> y
+                                        )
         {
             long sum_x = 0;
             long sum_y = 0;
@@ -34,11 +37,13 @@ namespace Core.Math.Statistics.Descriptive
             return (sum_product_xy - sum_x * sum_y / n) / (n - 1);
         }
 
-        public static double Covariance
-                                    (
-                                        this IEnumerable<short> x, 
-                                        IEnumerable<short> y
-                                    )
+        public static
+            double
+                                        Covariance
+                                        (
+                                            this IEnumerable<short> x, 
+                                            IEnumerable<short> y
+                                        )
         {
             long sum_x = 0;
             long sum_y = 0;
@@ -58,11 +63,13 @@ namespace Core.Math.Statistics.Descriptive
             return (sum_product_xy - sum_x * sum_y / n) / (n - 1);
         }
 
-        public static double Covariance
-                                    (
-                                        this IEnumerable<ushort> x, 
-                                        IEnumerable<ushort> y
-                                    )
+        public static
+            double
+                                        Covariance
+                                        (
+                                            this IEnumerable<ushort> x, 
+                                            IEnumerable<ushort> y
+                                        )
         {
             long sum_x = 0;
             long sum_y = 0;
@@ -82,11 +89,13 @@ namespace Core.Math.Statistics.Descriptive
             return (sum_product_xy - sum_x * sum_y / n) / (n - 1);
         }
 
-        public static double Covariance
-                                    (
-                                        this IEnumerable<int> x, 
-                                        IEnumerable<int> y
-                                    )
+        public static
+            double
+                                        Covariance
+                                        (
+                                            this IEnumerable<int> x, 
+                                            IEnumerable<int> y
+                                        )
         {
             long sum_x = 0;
             long sum_y = 0;
@@ -106,11 +115,13 @@ namespace Core.Math.Statistics.Descriptive
             return (sum_product_xy - sum_x * sum_y / n) / (n - 1);
         }
 
-        public static double Covariance
-                                    (
-                                        this IEnumerable<uint> x, 
-                                        IEnumerable<uint> y
-                                    )
+        public static
+            double
+                                        Covariance
+                                        (
+                                            this IEnumerable<uint> x, 
+                                            IEnumerable<uint> y
+                                        )
         {
             long sum_x = 0;
             long sum_y = 0;
@@ -130,11 +141,13 @@ namespace Core.Math.Statistics.Descriptive
             return (sum_product_xy - sum_x * sum_y / n) / (n - 1);
         }
 
-        public static double Covariance
-                                    (
-                                        this IEnumerable<long> x, 
-                                        IEnumerable<long> y
-                                    )
+        public static
+            double
+                                        Covariance
+                                        (
+                                            this IEnumerable<long> x, 
+                                            IEnumerable<long> y
+                                        )
         {
             double sum_x = 0;
             double sum_y = 0;
@@ -154,11 +167,13 @@ namespace Core.Math.Statistics.Descriptive
             return (sum_product_xy - sum_x * sum_y / n) / (n - 1);
         }
 
-        public static double Covariance
-                                    (
-                                        this IEnumerable<ulong> x, 
-                                        IEnumerable<ulong> y
-                                    )
+        public static
+            double
+                                        Covariance
+                                        (
+                                            this IEnumerable<ulong> x, 
+                                            IEnumerable<ulong> y
+                                        )
         {
             double sum_x = 0;
             double sum_y = 0;
@@ -178,11 +193,13 @@ namespace Core.Math.Statistics.Descriptive
             return (sum_product_xy - sum_x * sum_y / n) / (n - 1);
         }
 
-        public static double Covariance
-                                    (
-                                        this IEnumerable<float> x, 
-                                        IEnumerable<float> y
-                                    )
+        public static
+            double
+                                        Covariance
+                                        (
+                                            this IEnumerable<float> x, 
+                                            IEnumerable<float> y
+                                        )
         {
             double sum_x = 0;
             double sum_y = 0;
@@ -202,11 +219,13 @@ namespace Core.Math.Statistics.Descriptive
             return (sum_product_xy - sum_x * sum_y / n) / (n - 1);
         }
 
-        public static double Covariance
-                                    (
-                                        this IEnumerable<double> x, 
-                                        IEnumerable<double> y
-                                    )
+        public static
+            double
+                                        Covariance
+                                        (
+                                            this IEnumerable<double> x, 
+                                            IEnumerable<double> y
+                                        )
         {
             double sum_x = 0;
             double sum_y = 0;
@@ -226,11 +245,13 @@ namespace Core.Math.Statistics.Descriptive
             return (sum_product_xy - sum_x * sum_y / n) / (n - 1);
         }
 
-        public static decimal Covariance
-                                    (
-                                        this IEnumerable<decimal> x, 
-                                        IEnumerable<decimal> y
-                                    )
+        public static
+            decimal
+                                        Covariance
+                                        (
+                                            this IEnumerable<decimal> x, 
+                                            IEnumerable<decimal> y
+                                        )
         {
             decimal sum_x = 0;
             decimal sum_y = 0;

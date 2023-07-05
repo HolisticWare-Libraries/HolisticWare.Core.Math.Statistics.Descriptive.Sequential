@@ -7,7 +7,8 @@ namespace Core.Math.Statistics.Descriptive
     /// <summary>
     /// 
     /// </summary>
-    public static partial class IEnumerableExtensionsGroupedDataMedian
+    public static partial class
+                                        IEnumerableExtensionsGroupedDataMedian
     {
         //==============================================================================================================
         public static

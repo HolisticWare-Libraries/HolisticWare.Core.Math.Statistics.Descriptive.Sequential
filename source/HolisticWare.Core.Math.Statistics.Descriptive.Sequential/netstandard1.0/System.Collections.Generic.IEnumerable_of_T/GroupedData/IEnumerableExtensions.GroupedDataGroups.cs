@@ -8,7 +8,8 @@ namespace Core.Math.Statistics.Descriptive
     /// <summary>
     /// 
     /// </summary>
-    public static partial class IEnumerableExtensionsGroupedDataGroups
+    public static partial class
+                                        IEnumerableExtensionsGroupedDataGroups
     {
         //==============================================================================================================
         /// <summary>

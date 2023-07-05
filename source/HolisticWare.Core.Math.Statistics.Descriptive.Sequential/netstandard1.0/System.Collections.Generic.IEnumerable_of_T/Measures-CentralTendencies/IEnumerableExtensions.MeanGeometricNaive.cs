@@ -10,10 +10,13 @@ namespace Core.Math.Statistics.Descriptive
     /// Mean (Average) Geometric
     /// </summary>
     /// <see href="https://en.wikipedia.org/wiki/Average"/>
-    public static partial class IEnumerableExtensionsMeanGeometricNaive
+    public static partial class
+                                        IEnumerableExtensionsMeanGeometricNaive
     {
         //==============================================================================================================
-        public static double MeanGeometricNaive
+        public static
+            double
+                                        MeanGeometricNaive
                                         (
                                             this IEnumerable<byte> x
                                         )
@@ -31,7 +34,9 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Exp(sum / n);
         }
 
-        public static double MeanGeometricNaive
+        public static
+            double
+                                        MeanGeometricNaive
                                         (
                                             this IEnumerable<ushort> x
                                         )
@@ -49,7 +54,9 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Exp(sum / n);
         }
 
-        public static double MeanGeometricNaive
+        public static
+            double
+                                        MeanGeometricNaive
                                         (
                                             this IEnumerable<short> x
                                         )
@@ -68,7 +75,9 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Exp(sum / n);
         }
 
-        public static double MeanGeometricNaive
+        public static
+            double
+                                        MeanGeometricNaive
                                         (
                                             this IEnumerable<int> x
                                         )
@@ -86,7 +95,9 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Exp(sum / n);
         }
 
-        public static double MeanGeometricNaive
+        public static
+            double
+                                        MeanGeometricNaive
                                         (
                                             this IEnumerable<uint> x
                                         )
@@ -104,7 +115,9 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Exp(sum / n);
         }
 
-        public static double MeanGeometricNaive
+        public static
+            double
+                                        MeanGeometricNaive
                                         (
                                             this IEnumerable<long> x
                                         )
@@ -122,7 +135,9 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Exp(sum / n);
         }
 
-        public static double MeanGeometricNaive
+        public static
+            double
+                                        MeanGeometricNaive
                                         (
                                             this IEnumerable<ulong> x
                                         )
@@ -140,7 +155,9 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Exp(sum / n);
         }
 
-        public static double MeanGeometricNaive
+        public static
+            double
+                                        MeanGeometricNaive
                                         (
                                             this IEnumerable<float> x
                                         )
@@ -158,7 +175,9 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Exp(sum / n);
         }
 
-        public static double MeanGeometricNaive
+        public static
+            double
+                                        MeanGeometricNaive
                                         (
                                             this IEnumerable<double> x
                                         )
@@ -176,7 +195,12 @@ namespace Core.Math.Statistics.Descriptive
             return System.Math.Exp(sum / n);
         }
 
-        public static decimal MeanGeometricNaive(this IEnumerable<decimal> x)
+        public static
+            decimal
+                                        MeanGeometricNaive
+                                        (
+                                            this IEnumerable<decimal> x
+                                        )
         {
             int n = x.Count();
 

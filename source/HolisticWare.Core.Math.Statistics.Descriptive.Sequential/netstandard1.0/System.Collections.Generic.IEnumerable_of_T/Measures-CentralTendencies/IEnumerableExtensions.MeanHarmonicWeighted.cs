@@ -9,14 +9,17 @@ namespace Core.Math.Statistics.Descriptive
     /// <summary>
     /// Correlation
     /// </summary>
-    public static partial class IEnumerableExtensionsMeanHarmonicWeighted
+    public static partial class
+                                        IEnumerableExtensionsMeanHarmonicWeighted
     {
         //==============================================================================================================
-        public static double MeanHarmonicWeighted
-                                    (
-                                        this IEnumerable<byte> x
-                                        , IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanHarmonicWeighted
+                                        (
+                                            this IEnumerable<byte> x
+                                            , IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -39,11 +42,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum_w / sum;
         }
 
-        public static double MeanHarmonicWeighted
-                                    (
-                                        this IEnumerable<short> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanHarmonicWeighted
+                                        (
+                                            this IEnumerable<short> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -66,11 +71,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum_w / sum;
         }
 
-        public static double MeanHarmonicWeighted
-                                    (
-                                        this IEnumerable<ushort> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanHarmonicWeighted
+                                        (
+                                            this IEnumerable<ushort> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -93,11 +100,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum_w / sum;
         }
 
-        public static double MeanHarmonicWeighted
-                                    (
-                                        this IEnumerable<int> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanHarmonicWeighted
+                                        (
+                                            this IEnumerable<int> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -120,11 +129,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum_w / sum;
         }
 
-        public static double MeanHarmonicWeighted
-                                    (
-                                        this IEnumerable<uint> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanHarmonicWeighted
+                                        (
+                                            this IEnumerable<uint> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -147,11 +158,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum_w / sum;
         }
 
-        public static double MeanHarmonicWeighted
-                                    (
-                                        this IEnumerable<long> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanHarmonicWeighted
+                                        (
+                                            this IEnumerable<long> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -174,11 +187,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum_w / sum;
         }
 
-        public static double MeanHarmonicWeighted
-                                    (
-                                        this IEnumerable<ulong> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanHarmonicWeighted
+                                        (
+                                            this IEnumerable<ulong> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -201,11 +216,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum_w / sum;
         }
 
-        public static double MeanHarmonicWeighted
-                                    (
-                                        this IEnumerable<float> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanHarmonicWeighted
+                                        (
+                                            this IEnumerable<float> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -228,11 +245,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum_w / sum;
         }
 
-        public static double MeanHarmonicWeighted
-                                    (
-                                        this IEnumerable<double> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            double
+                                        MeanHarmonicWeighted
+                                        (
+                                            this IEnumerable<double> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 
@@ -255,11 +274,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum_w / sum;
         }
 
-        public static decimal MeanHarmonicWeighted
-                                    (
-                                        this IEnumerable<decimal> x,
-                                        IEnumerable<double> w
-                                    )
+        public static
+            decimal
+                                        MeanHarmonicWeighted
+                                        (
+                                            this IEnumerable<decimal> x,
+                                            IEnumerable<double> w
+                                        )
         {
             int n = x.Count();
 

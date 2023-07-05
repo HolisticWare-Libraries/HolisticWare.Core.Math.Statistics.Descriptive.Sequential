@@ -11,7 +11,8 @@ namespace Core.Math.Statistics.Descriptive
     /// <see href="https://www.easycalculation.com/statistics/weighted-mean-calculator.php"/>
     /// <see href="http://mathworld.wolfram.com/PowerMean.html"/> 
     /// <see href="http://elsenaju.eu/Calculator/mean-value-calculator.htm"/>
-    public static partial class IEnumerableExtensionsMedianWeighted
+    public static partial class
+                                        IEnumerableExtensionsMedianWeighted
     {
         //==============================================================================================================
         /// <summary>
@@ -22,18 +23,18 @@ namespace Core.Math.Statistics.Descriptive
         /// <param name="weights">Weights.</param>
         /// <see href="https://www.rdocumentation.org/packages/spatstat/versions/1.55-1/topics/weighted.median"/>
         public static 
-                (
-                    int IndexLower, 
-                    int IndexUpper, 
-                    double ValueLower,
-                    double ValueUpper,
-                    double Median
-                ) 
-                            MedianWeighted
-                                    (
-                                        this IEnumerable<int> x, 
-                                        IEnumerable<double> weights
-                                    )
+            (
+                int IndexLower, 
+                int IndexUpper, 
+                double ValueLower,
+                double ValueUpper,
+                double Median
+            ) 
+                                        MedianWeighted
+                                        (
+                                            this IEnumerable<int> x, 
+                                            IEnumerable<double> weights
+                                        )
         {
            
             int n_x = x.Count();
@@ -137,18 +138,18 @@ namespace Core.Math.Statistics.Descriptive
         }
 
         public static
-                (
-                    int IndexLower,
-                    int IndexUpper,
-                    double ValueLower,
-                    double ValueUpper,
-                    double Median
-                )
-                            MedianWeighted
-                                    (
-                                        this IEnumerable<double> x,
-                                        IEnumerable<double> weights
-                                    )
+            (
+                int IndexLower,
+                int IndexUpper,
+                double ValueLower,
+                double ValueUpper,
+                double Median
+            )
+                                        MedianWeighted
+                                        (
+                                            this IEnumerable<double> x,
+                                            IEnumerable<double> weights
+                                        )
         {
 
             int n_x = x.Count();
