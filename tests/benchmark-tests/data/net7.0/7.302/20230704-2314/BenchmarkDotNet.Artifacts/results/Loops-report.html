@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Loops-20230704-230901</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.5, OS=macOS Ventura 13.4.1 (22F82) [Darwin 22.5.0]
+Intel Core i9-9880H CPU 2.30GHz, 1 CPU, 16 logical and 8 physical cores
+.NET SDK=8.0.100-preview.4.23260.5
+  [Host]     : .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+  DefaultJob : .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>                                             Method</th><th>Mean</th><th>Error</th><th>StdDev</th>
+</tr>
+</thead><tbody><tr><td>Foreach_Over_Array_Sum_As_Double</td><td>5.130 ns</td><td>0.0814 ns</td><td>0.0762 ns</td>
+</tr><tr><td>For_Over_Array_Sum_As_Double_Length_Recalculated</td><td>6.312 ns</td><td>0.1430 ns</td><td>0.1957 ns</td>
+</tr><tr><td>For_Over_Array_Sum_As_Double_Length_PreCalculted_long</td><td>8.164 ns</td><td>0.1350 ns</td><td>0.1197 ns</td>
+</tr><tr><td>For_Over_Array_Sum_As_Double_Length_PreCalculted_int</td><td>8.225 ns</td><td>0.1559 ns</td><td>0.1382 ns</td>
+</tr><tr><td>LINQ_Method_Syntax_Over_Array</td><td>5.092 ns</td><td>0.0393 ns</td><td>0.0328 ns</td>
+</tr><tr><td>LINQ_Query_Syntax_Over_Array_</td><td>96.295 ns</td><td>1.9629 ns</td><td>3.4890 ns</td>
+</tr><tr><td>Foreach_Over_Span_With_Sum_As_Double</td><td>5.489 ns</td><td>0.0785 ns</td><td>0.0696 ns</td>
+</tr><tr><td>For_Over_Span_With_Sum_As_Double_Length_Recalculated</td><td>5.510 ns</td><td>0.1399 ns</td><td>0.2007 ns</td>
+</tr><tr><td>For_Over_Span_With_Sum_As_Double_Length_PreCalculted_long</td><td>6.413 ns</td><td>0.1487 ns</td><td>0.2359 ns</td>
+</tr><tr><td>For_Over_Span_With_Sum_As_Double_Length_PreCalculted_int</td><td>6.280 ns</td><td>0.1240 ns</td><td>0.1739 ns</td>
+</tr></tbody></table>
+</body>
+</html>
