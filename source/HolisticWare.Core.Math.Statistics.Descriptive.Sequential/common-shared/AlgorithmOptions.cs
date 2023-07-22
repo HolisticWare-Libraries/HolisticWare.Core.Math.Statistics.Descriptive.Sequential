@@ -30,13 +30,19 @@ using System.Collections.Generic;
 
 namespace Core.Math.Statistics.Descriptive
 {
-    public partial class AlgorithmOptions
+    public partial class
+                                        AlgorithmOptions
     {
-        public AlgorithmOptions()
+        public
+                                        AlgorithmOptions
+                                        (
+                                        )
         {
         }
 
-        public Dictionary<string, double> PrecalculatedCachedData
+        public
+            Dictionary<string, double>
+                                        PrecalculatedCachedData
         {
             get;
             set;
