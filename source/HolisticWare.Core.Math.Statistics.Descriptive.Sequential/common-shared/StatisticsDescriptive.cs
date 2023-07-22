@@ -12,17 +12,24 @@ namespace Core.Math.Statistics.Descriptive
     /// </summary>
     /// <example>
     /// </example>
-    public partial class StatisticsDescriptive
+    public partial class
+                                        StatisticsDescriptive
     {
         
-        public StatisticsDescriptive(IEnumerable data_input)
+        public
+                                        StatisticsDescriptive
+                                        (
+                                            IEnumerable data_input
+                                        )
         {            
             return;
         }
 
         private IEnumerable data = null;
 
-        public IEnumerable Data
+        public
+            IEnumerable
+                                        Data
         {
             get
             {
@@ -42,13 +49,20 @@ namespace Core.Math.Statistics.Descriptive
         ///     -   ....
         /// </remarks>
         /// <value>The data double.</value>
-        public Dictionary<string,double> DataDouble
+        public
+            Dictionary<string,double>
+                                        DataDouble
         {
             get;
             private set;
         }
 
-        public double MeanArithmetic(IEnumerable<byte> data)
+        public
+            double
+                                        MeanArithmetic
+                                        (
+                                            IEnumerable<byte> data
+                                        )
         {
             double mean_arithmetic = data.MeanArithmetic();
 
