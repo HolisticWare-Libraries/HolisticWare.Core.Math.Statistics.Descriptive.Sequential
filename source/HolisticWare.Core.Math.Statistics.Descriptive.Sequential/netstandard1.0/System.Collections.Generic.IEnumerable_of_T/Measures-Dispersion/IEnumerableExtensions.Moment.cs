@@ -4,7 +4,8 @@ using System.Linq;
 
 namespace Core.Math.Statistics.Descriptive
 {
-    public static partial class IEnumerableExtensionsMoment
+    public static partial class
+                                        IEnumerableExtensionsMoment
     {
         //==============================================================================================================
         /// <summary>
@@ -17,12 +18,14 @@ namespace Core.Math.Statistics.Descriptive
         /// <param name="x">The x coordinate.</param>
         /// <param name="m">M.</param>
         /// <param name="point">value about moment is calculated (mean, median or zero)</param>
-        public static double Moment
-                                (
-                                    this IEnumerable<byte> x,
-                                    double m,
-                                    double? point = null
-                                )
+        public static
+            double
+                                        Moment
+                                        (
+                                            this IEnumerable<byte> x,
+                                            double m,
+                                            double? point = null
+                                        )
         {
             double point_about = 0;
 
@@ -59,12 +62,14 @@ namespace Core.Math.Statistics.Descriptive
         /// <param name="x">The x coordinate.</param>
         /// <param name="m">M.</param>
         /// <param name="point">value about moment is calculated (mean, median or zero)</param>
-        public static double Moment
-                                (
-                                    this IEnumerable<short> x,
-                                    double m,
-                                    double? point = null
-                                )
+        public static
+            double
+                                        Moment
+                                        (
+                                            this IEnumerable<short> x,
+                                            double m,
+                                            double? point = null
+                                        )
         {
             double point_about = 0;
 
@@ -101,12 +106,14 @@ namespace Core.Math.Statistics.Descriptive
         /// <param name="x">The x coordinate.</param>
         /// <param name="m">M.</param>
         /// <param name="point">value about moment is calculated (mean, median or zero)</param>
-        public static double Moment
-                                (
-                                    this IEnumerable<ushort> x,
-                                    double m,
-                                    double? point = null
-                                )
+        public static
+            double
+                                        Moment
+                                        (
+                                            this IEnumerable<ushort> x,
+                                            double m,
+                                            double? point = null
+                                        )
         {
             double point_about = 0;
 
@@ -143,12 +150,14 @@ namespace Core.Math.Statistics.Descriptive
         /// <param name="x">The x coordinate.</param>
         /// <param name="m">M.</param>
         /// <param name="point">value about moment is calculated (mean, median or zero)</param>
-        public static double Moment
-                                (
-                                    this IEnumerable<int> x,
-                                    double m,
-                                    double? point = null
-                                )
+        public static
+            double
+                                        Moment
+                                        (
+                                            this IEnumerable<int> x,
+                                            double m,
+                                            double? point = null
+                                        )
         {
             double point_about = 0;
 
@@ -185,12 +194,14 @@ namespace Core.Math.Statistics.Descriptive
         /// <param name="x">The x coordinate.</param>
         /// <param name="m">M.</param>
         /// <param name="point">value about moment is calculated (mean, median or zero)</param>
-        public static double Moment
-                                (
-                                    this IEnumerable<uint> x,
-                                    double m,
-                                    double? point = null
-                                )
+        public static
+            double
+                                        Moment
+                                        (
+                                            this IEnumerable<uint> x,
+                                            double m,
+                                            double? point = null
+                                        )
         {
             double point_about = 0;
 
@@ -227,12 +238,14 @@ namespace Core.Math.Statistics.Descriptive
         /// <param name="x">The x coordinate.</param>
         /// <param name="m">M.</param>
         /// <param name="point">value about moment is calculated (mean, median or zero)</param>
-        public static double Moment
-                                (
-                                    this IEnumerable<long> x,
-                                    double m,
-                                    double? point = null
-                                )
+        public static
+            double
+                                        Moment
+                                        (
+                                            this IEnumerable<long> x,
+                                            double m,
+                                            double? point = null
+                                        )
         {
             double point_about = 0;
 
@@ -269,12 +282,14 @@ namespace Core.Math.Statistics.Descriptive
         /// <param name="x">The x coordinate.</param>
         /// <param name="m">M.</param>
         /// <param name="point">value about moment is calculated (mean, median or zero)</param>
-        public static double Moment
-                                (
-                                    this IEnumerable<ulong> x,
-                                    double m,
-                                    double? point = null
-                                )
+        public static
+            double
+                                        Moment
+                                        (
+                                            this IEnumerable<ulong> x,
+                                            double m,
+                                            double? point = null
+                                        )
         {
             double point_about = 0;
 
@@ -311,12 +326,14 @@ namespace Core.Math.Statistics.Descriptive
         /// <param name="x">The x coordinate.</param>
         /// <param name="m">M.</param>
         /// <param name="point">value about moment is calculated (mean, median or zero)</param>
-        public static double Moment
-                                (
-                                    this IEnumerable<float> x,
-                                    double m,
-                                    double? point = null
-                                )
+        public static
+            double
+                                        Moment
+                                        (
+                                            this IEnumerable<float> x,
+                                            double m,
+                                            double? point = null
+                                        )
         {
             double point_about = 0;
 
@@ -353,12 +370,14 @@ namespace Core.Math.Statistics.Descriptive
         /// <param name="x">The x coordinate.</param>
         /// <param name="m">M.</param>
         /// <param name="point">value about moment is calculated (mean, median or zero)</param>
-        public static double Moment
-                                (
-                                    this IEnumerable<double> x,
-                                    double m,
-                                    double? point = null
-                                )
+        public static
+            double
+                                        Moment
+                                        (
+                                            this IEnumerable<double> x,
+                                            double m,
+                                            double? point = null
+                                        )
         {
             double point_about = 0;
 
@@ -395,12 +414,14 @@ namespace Core.Math.Statistics.Descriptive
         /// <param name="x">The x coordinate.</param>
         /// <param name="m">M.</param>
         /// <param name="point">value about moment is calculated (mean, median or zero)</param>
-        public static decimal Moment
-                                (
-                                    this IEnumerable<decimal> x,
-                                    double m,
-                                    decimal? point = null
-                                )
+        public static
+            decimal
+                                        Moment
+                                        (
+                                            this IEnumerable<decimal> x,
+                                            double m,
+                                            decimal? point = null
+                                        )
         {
             decimal point_about = 0;
 
