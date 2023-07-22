@@ -7,100 +7,120 @@ namespace Core.Math.Statistics.Descriptive
     public static partial class IEnumerableExtensionsStatistics
     {
         //==============================================================================================================
-        public static StatisticsDescriptive StatisticsDescriptive
-                                                            (
-                                                                this IEnumerable<byte> x
-                                                            )
+        public static
+            StatisticsDescriptive
+                                        StatisticsDescriptive
+                                        (
+                                            this IEnumerable<byte> x
+                                        )
         {
             StatisticsDescriptive statistics = new StatisticsDescriptive(x);
 
             return statistics;
         }
 
-        public static StatisticsDescriptive StatisticsDescriptive
-                                                            (
-                                                                this IEnumerable<short> x
-                                                            )
+        public static
+            StatisticsDescriptive
+                                        StatisticsDescriptive
+                                        (
+                                            this IEnumerable<short> x
+                                        )
         {
             StatisticsDescriptive statistics = new StatisticsDescriptive(x);
 
             return statistics;
         }
 
-        public static StatisticsDescriptive StatisticsDescriptive
-                                                            (
-                                                                this IEnumerable<ushort> x
-                                                            )
+        public static
+            StatisticsDescriptive
+                                        StatisticsDescriptive
+                                        (
+                                            this IEnumerable<ushort> x
+                                        )
         {
             StatisticsDescriptive statistics = new StatisticsDescriptive(x);
 
             return statistics;
         }
 
-        public static StatisticsDescriptive StatisticsDescriptive
-                                                            (
-                                                                this IEnumerable<int> x
-                                                            )
+        public static
+            StatisticsDescriptive
+                                        StatisticsDescriptive
+                                        (
+                                            this IEnumerable<int> x
+                                        )
         {
             StatisticsDescriptive statistics = new StatisticsDescriptive(x);
 
             return statistics;
         }
 
-        public static StatisticsDescriptive StatisticsDescriptive
-                                                            (
-                                                                this IEnumerable<uint> x
-                                                            )
+        public static
+            StatisticsDescriptive
+                                        StatisticsDescriptive
+                                        (
+                                            this IEnumerable<uint> x
+                                        )
         {
             StatisticsDescriptive statistics = new StatisticsDescriptive(x);
 
             return statistics;
         }
 
-        public static StatisticsDescriptive StatisticsDescriptive
-                                                            (
-                                                                this IEnumerable<long> x
-                                                            )
+        public static
+            StatisticsDescriptive
+                                        StatisticsDescriptive
+                                        (
+                                            this IEnumerable<long> x
+                                        )
         {
             StatisticsDescriptive statistics = new StatisticsDescriptive(x);
 
             return statistics;
         }
 
-        public static StatisticsDescriptive StatisticsDescriptive
-                                                            (
-                                                                this IEnumerable<ulong> x
-                                                            )
+        public static
+            StatisticsDescriptive
+                                        StatisticsDescriptive
+                                        (
+                                            this IEnumerable<ulong> x
+                                        )
         {
             StatisticsDescriptive statistics = new StatisticsDescriptive(x);
 
             return statistics;
         }
 
-        public static StatisticsDescriptive StatisticsDescriptive
-                                                            (
-                                                                this IEnumerable<float> x
-                                                            )
+        public static
+            StatisticsDescriptive
+                                        StatisticsDescriptive
+                                        (
+                                            this IEnumerable<float> x
+                                        )
         {
             StatisticsDescriptive statistics = new StatisticsDescriptive(x);
 
             return statistics;
         }
 
-        public static StatisticsDescriptive StatisticsDescriptive
-                                                            (
-                                                                this IEnumerable<double> x
-                                                            )
+        public static
+            StatisticsDescriptive
+                                        StatisticsDescriptive
+                                        (
+                                            this IEnumerable<double> x
+                                        )
         {
             StatisticsDescriptive statistics = new StatisticsDescriptive(x);
 
             return statistics;
         }
 
-        public static StatisticsDescriptive StatisticsDescriptive
-                                                            (
-                                                                this IEnumerable<decimal> x
-                                                            )
+        public static
+            StatisticsDescriptive
+                                        StatisticsDescriptive
+                                        (
+                                            this IEnumerable<decimal> x
+                                        )
         {
             StatisticsDescriptive statistics = new StatisticsDescriptive(x);
 
