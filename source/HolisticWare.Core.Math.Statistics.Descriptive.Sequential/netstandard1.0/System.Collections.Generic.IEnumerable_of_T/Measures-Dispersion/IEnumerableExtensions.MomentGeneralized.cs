@@ -4,14 +4,17 @@ using System.Linq;
 
 namespace Core.Math.Statistics.Descriptive
 {
-    public static partial class IEnumerableExtensionsMoment
+    public static partial class
+                                        IEnumerableExtensionsMoment
     {
         //==============================================================================================================
-        public static double MomentGeneralized
-                                (
-                                    this IEnumerable<byte> x, 
-                                    int m
-                                )
+        public static
+            double
+                                        MomentGeneralized
+                                        (
+                                            this IEnumerable<byte> x, 
+                                            int m
+                                        )
         {
             double average = x.Select(x_i => (int)x_i).Average();
             double sum = 0;
@@ -26,11 +29,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static double MomentGeneralized
-                                (
-                                    this IEnumerable<short> x, 
-                                    int m
-                                )
+        public static
+            double
+                                        MomentGeneralized
+                                        (
+                                            this IEnumerable<short> x, 
+                                            int m
+                                        )
         {
             double average = x.Select(x_i => (int)x_i).Average();
             double sum = 0;
@@ -45,11 +50,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static double MomentGeneralized
-                                (
-                                    this IEnumerable<ushort> x, 
-                                    int m
-                                )
+        public static
+            double
+                                        MomentGeneralized
+                                        (
+                                            this IEnumerable<ushort> x, 
+                                            int m
+                                        )
         {
             double average = x.Select(x_i => (int)x_i).Average();
             double sum = 0;
@@ -64,11 +71,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static double MomentGeneralized
-                                (
-                                    this IEnumerable<int> x, 
-                                    int m
-                                )
+        public static
+            double
+                                        MomentGeneralized
+                                        (
+                                            this IEnumerable<int> x, 
+                                            int m
+                                        )
         {
             double average = x.Average();
             double sum = 0;
@@ -83,11 +92,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static double MomentGeneralized
-                                (
-                                    this IEnumerable<uint> x, 
-                                    int m
-                                )
+        public static
+            double
+                                        MomentGeneralized
+                                        (
+                                            this IEnumerable<uint> x, 
+                                            int m
+                                        )
         {
             double average = x.Select(x_i => (long)x_i).Average();
             double sum = 0;
@@ -102,11 +113,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static double MomentGeneralized
-                                (
-                                    this IEnumerable<long> x, 
-                                    int m
-                                )
+        public static
+            double
+                                        MomentGeneralized
+                                        (
+                                            this IEnumerable<long> x, 
+                                            int m
+                                        )
         {
             double average = x.Average();
             double sum = 0;
@@ -121,11 +134,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static double MomentGeneralized
-                                (
-                                    this IEnumerable<ulong> x, 
-                                    int m
-                                )
+        public static
+            double
+                                        MomentGeneralized
+                                        (
+                                            this IEnumerable<ulong> x, 
+                                            int m
+                                        )
         {
             double average = x.Select(x_i => (double)x_i).Average();
             double sum = 0;
@@ -140,11 +155,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static double MomentGeneralized
-                                (
-                                    this IEnumerable<float> x, 
-                                    int m
-                                )
+        public static
+            double
+                                        MomentGeneralized
+                                        (
+                                            this IEnumerable<float> x, 
+                                            int m
+                                        )
         {
             double average = x.Average();
             double sum = 0;
@@ -159,11 +176,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static double MomentGeneralized
-                                (
-                                    this IEnumerable<double> x, 
-                                    int m
-                                )
+        public static
+            double
+                                        MomentGeneralized
+                                        (
+                                            this IEnumerable<double> x, 
+                                            int m
+                                        )
         {
             double average = x.Average();
             double sum = 0;
@@ -178,11 +197,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static decimal MomentGeneralized
-                                (
-                                    this IEnumerable<decimal> x, 
-                                    int m
-                                )
+        public static
+            decimal
+                                        MomentGeneralized
+                                        (
+                                            this IEnumerable<decimal> x, 
+                                            int m
+                                        )
         {
             decimal average = x.Average();
             decimal sum = 0;

@@ -4,10 +4,13 @@ using System.Linq;
 
 namespace Core.Math.Statistics.Descriptive
 {
-    public static partial class IEnumerableExtensionsVarianceSample
+    public static partial class
+                                        IEnumerableExtensionsVarianceSample
     {
         //==============================================================================================================
-        public static double VarianceSample
+        public static
+            double
+                                        VarianceSample
                                         (
                                             this IEnumerable<byte> x
                                         )
@@ -27,7 +30,9 @@ namespace Core.Math.Statistics.Descriptive
             return sum_suquares / (n - 1);
         }
 
-        public static double VarianceSample
+        public static
+            double
+                                        VarianceSample
                                         (
                                             this IEnumerable<short> x
                                         )
@@ -47,7 +52,9 @@ namespace Core.Math.Statistics.Descriptive
             return sum_suquares / (n - 1);
         }
 
-        public static double VarianceSample
+        public static
+            double
+                                        VarianceSample
                                         (
                                             this IEnumerable<ushort> x
                                         )
@@ -67,7 +74,9 @@ namespace Core.Math.Statistics.Descriptive
             return sum_suquares / (n - 1);
         }
 
-        public static double VarianceSample
+        public static
+            double
+                                        VarianceSample
                                         (
                                             this IEnumerable<int> x
                                         )
@@ -87,7 +96,9 @@ namespace Core.Math.Statistics.Descriptive
             return sum_suquares / (n - 1);
         }
 
-        public static double VarianceSample
+        public static
+            double
+                                        VarianceSample
                                         (
                                             this IEnumerable<uint> x
                                         )
@@ -107,7 +118,9 @@ namespace Core.Math.Statistics.Descriptive
             return sum_suquares / (n - 1);
         }
 
-        public static double VarianceSample
+        public static
+            double
+                                        VarianceSample
                                         (
                                             this IEnumerable<long> x
                                         )
@@ -127,7 +140,9 @@ namespace Core.Math.Statistics.Descriptive
             return sum_suquares / (n - 1);
         }
 
-        public static double VarianceSample
+        public static
+            double
+                                        VarianceSample
                                         (
                                             this IEnumerable<ulong> x
                                         )
@@ -147,7 +162,9 @@ namespace Core.Math.Statistics.Descriptive
             return sum_suquares / (n - 1);
         }
 
-        public static double VarianceSample
+        public static
+            double
+                                        VarianceSample
                                         (
                                             this IEnumerable<float> x
                                         )
@@ -167,7 +184,9 @@ namespace Core.Math.Statistics.Descriptive
             return sum_suquares / (n - 1);
         }
 
-        public static double VarianceSample
+        public static
+            double
+                                        VarianceSample
                                         (
                                             this IEnumerable<double> x
                                         )
@@ -187,7 +206,9 @@ namespace Core.Math.Statistics.Descriptive
             return sum_suquares / (n - 1);
         }
 
-        public static decimal VarianceSample
+        public static
+            decimal
+                                        VarianceSample
                                         (
                                             this IEnumerable<decimal> x
                                         )

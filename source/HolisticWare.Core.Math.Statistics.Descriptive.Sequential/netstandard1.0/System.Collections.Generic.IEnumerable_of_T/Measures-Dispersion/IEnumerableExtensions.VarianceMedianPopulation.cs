@@ -4,13 +4,16 @@ using System.Linq;
 
 namespace Core.Math.Statistics.Descriptive
 {
-    public static partial class IEnumerableExtensionsVarianceMedianPopulation
+    public static partial class
+                                        IEnumerableExtensionsVarianceMedianPopulation
     {
         //==============================================================================================================
-        public static double VarianceMedianPopulation
-                                            (
-                                                this IEnumerable<byte> x
-                                            )
+        public static
+            double
+                                        VarianceMedianPopulation
+                                        (
+                                            this IEnumerable<byte> x
+                                        )
         {
             double median = x.Median();
             double sum_suquares = 0;
@@ -27,10 +30,12 @@ namespace Core.Math.Statistics.Descriptive
             return sum_suquares / n;
         }
 
-        public static double VarianceMedianPopulation
-                                            (
-                                                this IEnumerable<short> x
-                                            )
+        public static
+            double
+                                        VarianceMedianPopulation
+                                        (
+                                            this IEnumerable<short> x
+                                        )
         {
             double median = x.Median();
             double sum_suquares = 0;
@@ -47,10 +52,12 @@ namespace Core.Math.Statistics.Descriptive
             return sum_suquares / n;
         }
 
-        public static double VarianceMedianPopulation
-                                            (
-                                                this IEnumerable<ushort> x
-                                            )
+        public static
+            double
+                                        VarianceMedianPopulation
+                                        (
+                                            this IEnumerable<ushort> x
+                                        )
         {
             double median = x.Median();
             double sum_suquares = 0;
@@ -67,10 +74,12 @@ namespace Core.Math.Statistics.Descriptive
             return sum_suquares / n;
         }
 
-        public static double VarianceMedianPopulation
-                                            (
-                                                this IEnumerable<int> x
-                                            )
+        public static
+            double
+                                        VarianceMedianPopulation
+                                        (
+                                            this IEnumerable<int> x
+                                        )
         {
             double median = x.Median();
             double sum_suquares = 0;
@@ -87,10 +96,12 @@ namespace Core.Math.Statistics.Descriptive
             return sum_suquares / n;
         }
 
-        public static double VarianceMedianPopulation
-                                            (
-                                                this IEnumerable<uint> x
-                                            )
+        public static
+            double
+                                        VarianceMedianPopulation
+                                        (
+                                            this IEnumerable<uint> x
+                                        )
         {
             double median = x.Median();
             double sum_suquares = 0;
@@ -107,10 +118,12 @@ namespace Core.Math.Statistics.Descriptive
             return sum_suquares / n;
         }
 
-        public static double VarianceMedianPopulation
-                                            (
-                                                this IEnumerable<long> x
-                                            )
+        public static
+            double
+                                        VarianceMedianPopulation
+                                        (
+                                            this IEnumerable<long> x
+                                        )
         {
             double median = x.Median();
             double sum_suquares = 0;
@@ -127,10 +140,12 @@ namespace Core.Math.Statistics.Descriptive
             return sum_suquares / n;
         }
 
-        public static double VarianceMedianPopulation
-                                            (
-                                                this IEnumerable<ulong> x
-                                            )
+        public static
+            double
+                                        VarianceMedianPopulation
+                                        (
+                                            this IEnumerable<ulong> x
+                                        )
         {
             double median = x.Median();
             double sum_suquares = 0;
@@ -147,10 +162,12 @@ namespace Core.Math.Statistics.Descriptive
             return sum_suquares / n;
         }
 
-        public static double VarianceMedianPopulation
-                                            (
-                                                this IEnumerable<float> x
-                                            )
+        public static
+            double
+                                        VarianceMedianPopulation
+                                        (
+                                            this IEnumerable<float> x
+                                        )
         {
             double median = x.Median();
             double sum_suquares = 0;
@@ -167,10 +184,12 @@ namespace Core.Math.Statistics.Descriptive
             return sum_suquares / n;
         }
 
-        public static double VarianceMedianPopulation
-                                            (
-                                                this IEnumerable<double> x
-                                            )
+        public static
+            double
+                                        VarianceMedianPopulation
+                                        (
+                                            this IEnumerable<double> x
+                                        )
         {
             double median = x.Median();
             double sum_suquares = 0;
@@ -187,10 +206,12 @@ namespace Core.Math.Statistics.Descriptive
             return sum_suquares / n;
         }
 
-        public static decimal VarianceMedianPopulation
-                                            (
-                                                this IEnumerable<decimal> x
-                                            )
+        public static
+            decimal
+                                        VarianceMedianPopulation
+                                        (
+                                            this IEnumerable<decimal> x
+                                        )
         {
             decimal median = x.Median();
             decimal sum_suquares = 0;

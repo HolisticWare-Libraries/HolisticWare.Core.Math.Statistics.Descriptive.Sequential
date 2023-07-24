@@ -4,10 +4,13 @@ using System.Linq;
 
 namespace Core.Math.Statistics.Descriptive
 {
-    public static partial class IEnumerableExtensionsMomentRawAbsolute
+    public static partial class
+                                        IEnumerableExtensionsMomentRawAbsolute
     {
         //==============================================================================================================
-        public static double MomentRawAbsolute
+        public static
+            double
+                                        MomentRawAbsolute
                                         (
                                             this IEnumerable<byte> x, 
                                             double m
@@ -26,7 +29,9 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static double MomentRawAbsolute
+        public static
+            double
+                                        MomentRawAbsolute
                                         (
                                             this IEnumerable<short> x, 
                                             double m
@@ -45,7 +50,9 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static double MomentRawAbsolute
+        public static
+            double
+                                        MomentRawAbsolute
                                         (
                                             this IEnumerable<ushort> x, 
                                             double m
@@ -64,7 +71,9 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static double MomentRawAbsolute
+        public static
+            double
+                                        MomentRawAbsolute
                                         (
                                             this IEnumerable<int> x, 
                                             double m
@@ -83,7 +92,9 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static double MomentRawAbsolute
+        public static
+            double
+                                        MomentRawAbsolute
                                         (
                                             this IEnumerable<uint> x, 
                                             double m
@@ -102,7 +113,9 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static double MomentRawAbsolute
+        public static
+            double
+                                        MomentRawAbsolute
                                         (
                                             this IEnumerable<long> x, 
                                             double m
@@ -121,7 +134,9 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static double MomentRawAbsolute
+        public static
+            double
+                                        MomentRawAbsolute
                                         (
                                             this IEnumerable<ulong> x, 
                                             double m
@@ -140,7 +155,9 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static double MomentRawAbsolute
+        public static
+            double
+                                        MomentRawAbsolute
                                         (
                                             this IEnumerable<float> x, 
                                             double m
@@ -159,7 +176,9 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static double MomentRawAbsolute
+        public static
+            double
+                                        MomentRawAbsolute
                                         (
                                             this IEnumerable<double> x, 
                                             double m
@@ -178,7 +197,9 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static decimal MomentRawAbsolute
+        public static
+            decimal
+                                        MomentRawAbsolute
                                         (
                                             this IEnumerable<decimal> x, 
                                             double m

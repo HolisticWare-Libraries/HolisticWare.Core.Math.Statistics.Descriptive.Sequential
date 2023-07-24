@@ -4,14 +4,17 @@ using System.Linq;
 
 namespace Core.Math.Statistics.Descriptive
 {
-    public static partial class IEnumerableExtensionsMomentRaw
+    public static partial class
+                                        IEnumerableExtensionsMomentRaw
     {
         //==============================================================================================================
-        public static double MomentRaw
-                                    (
-                                        this IEnumerable<byte> x, 
-                                        double m
-                                    )
+        public static
+            double
+                                        MomentRaw
+                                        (
+                                            this IEnumerable<byte> x, 
+                                            double m
+                                        )
         {
             double average = x.Select(x_i => (int)x_i).MeanArithmetic();
             double sum = 0;
@@ -26,11 +29,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static double MomentRaw
-                                    (
-                                        this IEnumerable<short> x, 
-                                        double m
-                                    )
+        public static
+            double
+                                        MomentRaw
+                                        (
+                                            this IEnumerable<short> x, 
+                                            double m
+                                        )
         {
             double average = x.Select(x_i => (int)x_i).MeanArithmetic();
             double sum = 0;
@@ -45,11 +50,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static double MomentRaw
-                                    (
-                                        this IEnumerable<ushort> x, 
-                                        double m
-                                    )
+        public static
+            double
+                                        MomentRaw
+                                        (
+                                            this IEnumerable<ushort> x, 
+                                            double m
+                                        )
         {
             double average = x.Select(x_i => (int)x_i).MeanArithmetic();
             double sum = 0;
@@ -64,11 +71,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static double MomentRaw
-                                    (
-                                        this IEnumerable<int> x, 
-                                        double m
-                                    )
+        public static
+            double
+                                        MomentRaw
+                                        (
+                                            this IEnumerable<int> x, 
+                                            double m
+                                        )
         {
             double average = x.MeanArithmetic();
             double sum = 0;
@@ -83,11 +92,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static double MomentRaw
-                                    (
-                                        this IEnumerable<uint> x, 
-                                        double m
-                                    )
+        public static
+            double
+                                        MomentRaw
+                                        (
+                                            this IEnumerable<uint> x, 
+                                            double m
+                                        )
         {
             double average = x.Select(x_i => (long)x_i).MeanArithmetic();
             double sum = 0;
@@ -102,11 +113,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static double MomentRaw
-                                    (
-                                        this IEnumerable<long> x, 
-                                        double m
-                                    )
+        public static
+            double
+                                        MomentRaw
+                                        (
+                                            this IEnumerable<long> x, 
+                                            double m
+                                        )
         {
             double average = x.MeanArithmetic();
             double sum = 0;
@@ -121,11 +134,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static double MomentRaw
-                                    (
-                                        this IEnumerable<ulong> x, 
-                                        double m
-                                    )
+        public static
+            double
+                                        MomentRaw
+                                        (
+                                            this IEnumerable<ulong> x, 
+                                            double m
+                                        )
         {
             double average = x.Select(x_i => (double)x_i).MeanArithmetic();
             double sum = 0;
@@ -159,11 +174,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static double MomentRaw
-                                    (
-                                        this IEnumerable<double> x, 
-                                        double m
-                                    )
+        public static
+            double
+                                        MomentRaw
+                                        (
+                                            this IEnumerable<double> x, 
+                                            double m
+                                        )
         {
             double average = x.MeanArithmetic();
             double sum = 0;
@@ -178,11 +195,13 @@ namespace Core.Math.Statistics.Descriptive
             return sum / n;
         }
 
-        public static decimal MomentRaw
-                                    (
-                                        this IEnumerable<decimal> x, 
-                                        double m
-                                    )
+        public static
+            decimal
+                                        MomentRaw
+                                        (
+                                            this IEnumerable<decimal> x, 
+                                            double m
+                                        )
         {
             decimal average = x.MeanArithmetic();
             decimal sum = 0;
