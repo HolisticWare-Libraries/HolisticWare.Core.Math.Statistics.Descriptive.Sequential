@@ -4,7 +4,8 @@ using System.Linq;
 
 namespace Core.Math.Statistics.Descriptive
 {
-    public static partial class IEnumerableExtensionsSkewness
+    public static partial class
+                                        IEnumerableExtensionsSkewness
     {
         //==============================================================================================================
         /// <summary>
@@ -19,11 +20,13 @@ namespace Core.Math.Statistics.Descriptive
         /// <seealso href="https://www.rdocumentation.org/packages/e1071/versions/1.6-8/topics/skewness"/>
         /// <seealso href="http://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm"/>
         /// <seealso href="https://cran.r-project.org/web/packages/e1071/e1071.pdf"/>
-        public static double Skewness
-                                    (
-                                        this IEnumerable<byte> x,
-                                        int skewness_type = 1
-                                    )
+        public static
+            double
+                                        Skewness
+                                        (
+                                            this IEnumerable<byte> x,
+                                            int skewness_type = 1
+                                        )
         {
             double s = double.NaN;
 
@@ -45,11 +48,13 @@ namespace Core.Math.Statistics.Descriptive
             return s;
         }
 
-        public static double Skewness
-                                    (
-                                        this IEnumerable<short> x,
-                                        int skewness_type = 1
-                                    )
+        public static
+            double
+                                        Skewness
+                                        (
+                                            this IEnumerable<short> x,
+                                            int skewness_type = 1
+                                        )
         {
             double s = double.NaN;
 
@@ -71,11 +76,13 @@ namespace Core.Math.Statistics.Descriptive
             return s;
         }
 
-        public static double Skewness
-                                    (
-                                        this IEnumerable<ushort> x,
-                                        int skewness_type = 1
-                                    )
+        public static
+            double
+                                        Skewness
+                                        (
+                                            this IEnumerable<ushort> x,
+                                            int skewness_type = 1
+                                        )
         {
             double s = double.NaN;
 
@@ -97,11 +104,13 @@ namespace Core.Math.Statistics.Descriptive
             return s;
         }
 
-        public static double Skewness
-                                    (
-                                        this IEnumerable<int> x,
-                                        int skewness_type = 1
-                                    )
+        public static
+            double
+                                        Skewness
+                                        (
+                                            this IEnumerable<int> x,
+                                            int skewness_type = 1
+                                        )
         {
             double s = double.NaN;
 
@@ -123,11 +132,13 @@ namespace Core.Math.Statistics.Descriptive
             return s;
         }
 
-        public static double Skewness
-                                    (
-                                        this IEnumerable<uint> x,
-                                        int skewness_type = 1
-                                    )
+        public static
+            double
+                                        Skewness
+                                        (
+                                            this IEnumerable<uint> x,
+                                            int skewness_type = 1
+                                        )
         {
             double s = double.NaN;
 
@@ -149,11 +160,13 @@ namespace Core.Math.Statistics.Descriptive
             return s;
         }
 
-        public static double Skewness
-                                    (
-                                        this IEnumerable<long> x,
-                                        int skewness_type = 1
-                                    )
+        public static
+            double
+                                        Skewness
+                                        (
+                                            this IEnumerable<long> x,
+                                            int skewness_type = 1
+                                        )
         {
             double s = double.NaN;
 
@@ -175,11 +188,13 @@ namespace Core.Math.Statistics.Descriptive
             return s;
         }
 
-        public static double Skewness
-                                    (
-                                        this IEnumerable<ulong> x,
-                                        int skewness_type = 1
-                                    )
+        public static
+            double
+                                        Skewness
+                                        (
+                                            this IEnumerable<ulong> x,
+                                            int skewness_type = 1
+                                        )
         {
             double s = double.NaN;
 
@@ -201,11 +216,13 @@ namespace Core.Math.Statistics.Descriptive
             return s;
         }
 
-        public static double Skewness
-                                    (
-                                        this IEnumerable<float> x,
-                                        int skewness_type = 1
-                                    )
+        public static
+            double
+                                        Skewness
+                                        (
+                                            this IEnumerable<float> x,
+                                            int skewness_type = 1
+                                        )
         {
             double s = double.NaN;
 
@@ -227,11 +244,13 @@ namespace Core.Math.Statistics.Descriptive
             return s;
         }
 
-        public static double Skewness
-                                    (
-                                        this IEnumerable<double> x,
-                                        int skewness_type = 1
-                                    )
+        public static
+            double
+                                        Skewness
+                                        (
+                                            this IEnumerable<double> x,
+                                            int skewness_type = 1
+                                        )
         {
             double s = double.NaN;
 
@@ -253,11 +272,13 @@ namespace Core.Math.Statistics.Descriptive
             return s;
         }
 
-        public static decimal Skewness
-                                    (
-                                        this IEnumerable<decimal> x,
-                                        int skewness_type = 1
-                                    )
+        public static
+            decimal
+                                        Skewness
+                                        (
+                                            this IEnumerable<decimal> x,
+                                            int skewness_type = 1
+                                        )
         {
             decimal? s = null;
 

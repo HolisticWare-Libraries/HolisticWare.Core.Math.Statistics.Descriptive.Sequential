@@ -15,11 +15,17 @@ namespace Core.Math.Statistics.Descriptive
     public static partial class IEnumerableExtensionsPercentiles
     {
         //==============================================================================================================
-        public static (int lower, double interpolated, int upper) Percentile
-                                                                    (
-                                                                        this IEnumerable<int> x, 
-                                                                        double p
-                                                                    )
+        public static
+            (
+                int lower,
+                double interpolated,
+                int upper
+            )
+                                        Percentile
+                                        (
+                                            this IEnumerable<int> x, 
+                                            double p
+                                        )
         {
             if (p < 0.0  || p > 1.0)
             {

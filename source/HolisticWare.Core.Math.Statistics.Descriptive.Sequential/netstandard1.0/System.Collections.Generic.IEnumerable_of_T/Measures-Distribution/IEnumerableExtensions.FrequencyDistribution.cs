@@ -9,15 +9,27 @@ namespace Core.Math.Statistics.Descriptive
     /// <summary>
     /// Correlation
     /// </summary>
-    public static partial class IEnumerableExtensionsFrequencyDistibution
+    public static partial class
+                                        IEnumerableExtensionsFrequencyDistibution
     {
         //==============================================================================================================
         public static 
-            IEnumerable<KeyValuePair<T, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>> 
-                FrequencyDistribution<T>
-                                    (
-                                        this IEnumerable<T> x
-                                    )
+            IEnumerable
+                <
+                    KeyValuePair
+                        <
+                            T,
+                            (
+                                uint FrequencyAbsolute,
+                                double FrequencyRelative,
+                                uint FrequencyCummulative
+                            )
+                        >
+                > 
+                                        FrequencyDistribution<T>
+                                        (
+                                            this IEnumerable<T> x
+                                        )
         {
             Dictionary<T, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> frequencies;
 
@@ -65,11 +77,22 @@ namespace Core.Math.Statistics.Descriptive
         }
 
         public static
-            IEnumerable<KeyValuePair<byte, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>>
-                FrequencyDistribution
-                                    (
-                                        this IEnumerable<byte> x
-                                    )
+            IEnumerable
+                <
+                    KeyValuePair
+                        <
+                            byte,
+                            (
+                                uint FrequencyAbsolute,
+                                double FrequencyRelative,
+                                uint FrequencyCummulative
+                            )
+                        >
+                >
+                                        FrequencyDistribution<T>
+                                        (
+                                            this IEnumerable<byte> x
+                                        )
         {
             Dictionary<byte, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> frequencies;
 
@@ -117,11 +140,22 @@ namespace Core.Math.Statistics.Descriptive
         }
 
         public static
-            IEnumerable<KeyValuePair<ushort, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>>
-                FrequencyDistribution
-                                    (
-                                        this IEnumerable<ushort> x
-                                    )
+            IEnumerable
+                <
+                    KeyValuePair
+                        <
+                            ushort,
+                            (
+                                uint FrequencyAbsolute,
+                                double FrequencyRelative,
+                                uint FrequencyCummulative
+                            )
+                        >
+                >
+                                        FrequencyDistribution<T>
+                                        (
+                                            this IEnumerable<ushort> x
+                                        )
         {
             Dictionary<ushort, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> frequencies;
 
@@ -169,11 +203,22 @@ namespace Core.Math.Statistics.Descriptive
         }
 
         public static
-            IEnumerable<KeyValuePair<short, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>>
-                FrequencyDistribution
-                                    (
-                                        this IEnumerable<short> x
-                                    )
+            IEnumerable
+                <
+                    KeyValuePair
+                        <
+                            short,
+                            (
+                                uint FrequencyAbsolute,
+                                double FrequencyRelative,
+                                uint FrequencyCummulative
+                            )
+                        >
+                >
+                                        FrequencyDistribution<T>
+                                        (
+                                            this IEnumerable<short> x
+                                        )
         {
             Dictionary<short, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> frequencies;
 
@@ -221,11 +266,22 @@ namespace Core.Math.Statistics.Descriptive
         }
 
         public static
-            IEnumerable<KeyValuePair<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>>
-                FrequencyDistribution
-                                    (
-                                        this IEnumerable<int> x
-                                    )
+            IEnumerable
+                <
+                    KeyValuePair
+                        <
+                            int,
+                            (
+                                uint FrequencyAbsolute,
+                                double FrequencyRelative,
+                                uint FrequencyCummulative
+                            )
+                        >
+                >
+                                        FrequencyDistribution<T>
+                                        (
+                                            this IEnumerable<int> x
+                                        )
         {
             Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> frequencies;
 
@@ -273,11 +329,22 @@ namespace Core.Math.Statistics.Descriptive
         }
 
         public static
-            IEnumerable<KeyValuePair<uint, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>>
-                FrequencyDistribution
-                                    (
-                                        this IEnumerable<uint> x
-                                    )
+            IEnumerable
+                <
+                    KeyValuePair
+                        <
+                            uint,
+                            (
+                                uint FrequencyAbsolute,
+                                double FrequencyRelative,
+                                uint FrequencyCummulative
+                            )
+                        >
+                >
+                                        FrequencyDistribution<T>
+                                        (
+                                            this IEnumerable<uint> x
+                                        )
         {
             Dictionary<uint, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> frequencies;
 
@@ -325,11 +392,22 @@ namespace Core.Math.Statistics.Descriptive
         }
 
         public static
-            IEnumerable<KeyValuePair<long, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>>
-                FrequencyDistribution
-                                    (
-                                        this IEnumerable<long> x
-                                    )
+            IEnumerable
+                <
+                    KeyValuePair
+                        <
+                            long,
+                            (
+                                uint FrequencyAbsolute,
+                                double FrequencyRelative,
+                                uint FrequencyCummulative
+                            )
+                        >
+                >
+                                        FrequencyDistribution<T>
+                                        (
+                                            this IEnumerable<long> x
+                                        )
         {
             Dictionary<long, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> frequencies;
 
@@ -377,11 +455,22 @@ namespace Core.Math.Statistics.Descriptive
         }
 
         public static
-            IEnumerable<KeyValuePair<ulong, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>>
-                FrequencyDistribution
-                                    (
-                                        this IEnumerable<ulong> x
-                                    )
+            IEnumerable
+                <
+                    KeyValuePair
+                        <
+                            ulong,
+                            (
+                                uint FrequencyAbsolute,
+                                double FrequencyRelative,
+                                uint FrequencyCummulative
+                            )
+                        >
+                >
+                                        FrequencyDistribution<T>
+                                        (
+                                            this IEnumerable<ulong> x
+                                        )
         {
             Dictionary<ulong, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> frequencies;
 
@@ -429,11 +518,22 @@ namespace Core.Math.Statistics.Descriptive
         }
 
         public static
-            IEnumerable<KeyValuePair<float, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>>
-                FrequencyDistribution
-                                    (
-                                        this IEnumerable<float> x
-                                    )
+            IEnumerable
+                <
+                    KeyValuePair
+                        <
+                            float,
+                            (
+                                uint FrequencyAbsolute,
+                                double FrequencyRelative,
+                                uint FrequencyCummulative
+                            )
+                        >
+                >
+                                        FrequencyDistribution<T>
+                                        (
+                                            this IEnumerable<float> x
+                                        )
         {
             Dictionary<float, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> frequencies;
 
@@ -481,11 +581,22 @@ namespace Core.Math.Statistics.Descriptive
         }
 
         public static
-            IEnumerable<KeyValuePair<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>>
-                FrequencyDistribution
-                                    (
-                                        this IEnumerable<double> x
-                                    )
+            IEnumerable
+                <
+                    KeyValuePair
+                        <
+                            double,
+                            (
+                                uint FrequencyAbsolute,
+                                double FrequencyRelative,
+                                uint FrequencyCummulative
+                            )
+                        >
+                >
+                                        FrequencyDistribution<T>
+                                        (
+                                            this IEnumerable<double> x
+                                        )
         {
             Dictionary<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> frequencies;
 
@@ -533,11 +644,22 @@ namespace Core.Math.Statistics.Descriptive
         }
 
         public static
-            IEnumerable<KeyValuePair<decimal, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)>>
-                FrequencyDistribution
-                                    (
-                                        this IEnumerable<decimal> x
-                                    )
+            IEnumerable
+                <
+                    KeyValuePair
+                        <
+                            decimal,
+                            (
+                                uint FrequencyAbsolute,
+                                double FrequencyRelative,
+                                uint FrequencyCummulative
+                            )
+                        >
+                >
+                                        FrequencyDistribution<T>
+                                        (
+                                            this IEnumerable<decimal> x
+                                        )
         {
             Dictionary<decimal, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCummulative)> frequencies;
 

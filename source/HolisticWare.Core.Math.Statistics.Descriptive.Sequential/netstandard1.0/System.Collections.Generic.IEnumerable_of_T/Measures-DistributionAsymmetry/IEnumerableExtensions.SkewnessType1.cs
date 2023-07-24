@@ -4,7 +4,8 @@ using System.Linq;
 
 namespace Core.Math.Statistics.Descriptive
 {
-    public static partial class IEnumerableExtensionsSkewnessType1
+    public static partial class
+                                        IEnumerableExtensionsSkewnessType1
     {
         //==============================================================================================================
         /// <summary>
@@ -18,10 +19,12 @@ namespace Core.Math.Statistics.Descriptive
         /// <see href="https://www.rdocumentation.org/packages/e1071/versions/1.6-8/topics/skewness"/>
         /// <see href="http://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm"/>
         /// <see href="https://cran.r-project.org/web/packages/e1071/e1071.pdf"/>
-        public static double SkewnessType1
-                                    (
-                                        this IEnumerable<byte> x
-                                    )
+        public static
+            double
+                                        SkewnessType1
+                                        (
+                                            this IEnumerable<byte> x
+                                        )
         {
             double x_moment_3 = x.Moment(3);
             double x_moment_2 = x.Moment(2);
@@ -35,10 +38,12 @@ namespace Core.Math.Statistics.Descriptive
                     ;
         }
 
-        public static double SkewnessType1
-                                    (
-                                        this IEnumerable<short> x
-                                    )
+        public static
+            double
+                                        SkewnessType1
+                                        (
+                                            this IEnumerable<short> x
+                                        )
         {
             double x_moment_3 = x.Moment(3);
             double x_moment_2 = x.Moment(2);
@@ -52,10 +57,12 @@ namespace Core.Math.Statistics.Descriptive
                     ;
         }
 
-        public static double SkewnessType1
-                                    (
-                                        this IEnumerable<ushort> x
-                                    )
+        public static
+            double
+                                        SkewnessType1
+                                        (
+                                            this IEnumerable<ushort> x
+                                        )
         {
             double x_moment_3 = x.Moment(3);
             double x_moment_2 = x.Moment(2);
@@ -69,10 +76,12 @@ namespace Core.Math.Statistics.Descriptive
                     ;
         }
 
-        public static double SkewnessType1
-                                    (
-                                        this IEnumerable<int> x
-                                    )
+        public static
+            double
+                                        SkewnessType1
+                                        (
+                                            this IEnumerable<int> x
+                                        )
         {
             double x_moment_3 = x.Moment(3);
             double x_moment_2 = x.Moment(2);
@@ -86,10 +95,12 @@ namespace Core.Math.Statistics.Descriptive
                     ;
         }
 
-        public static double SkewnessType1
-                                    (
-                                        this IEnumerable<uint> x
-                                    )
+        public static
+            double
+                                        SkewnessType1
+                                        (
+                                            this IEnumerable<uint> x
+                                        )
         {
             double x_moment_3 = x.Moment(3);
             double x_moment_2 = x.Moment(2);
@@ -103,10 +114,12 @@ namespace Core.Math.Statistics.Descriptive
                     ;
         }
 
-        public static double SkewnessType1
-                                    (
-                                        this IEnumerable<long> x
-                                    )
+        public static
+            double
+                                        SkewnessType1
+                                        (
+                                            this IEnumerable<long> x
+                                        )
         {
             double x_moment_3 = x.Moment(3);
             double x_moment_2 = x.Moment(2);
@@ -120,10 +133,12 @@ namespace Core.Math.Statistics.Descriptive
                     ;
         }
 
-        public static double SkewnessType1
-                                    (
-                                        this IEnumerable<ulong> x
-                                    )
+        public static
+            double
+                                        SkewnessType1
+                                        (
+                                            this IEnumerable<ulong> x
+                                        )
         {
             double x_moment_3 = x.Moment(3);
             double x_moment_2 = x.Moment(2);
@@ -137,10 +152,12 @@ namespace Core.Math.Statistics.Descriptive
                     ;
         }
 
-        public static double SkewnessType1
-                                    (
-                                        this IEnumerable<float> x
-                                    )
+        public static
+            double
+                                        SkewnessType1
+                                        (
+                                            this IEnumerable<float> x
+                                        )
         {
             double x_moment_3 = x.Moment(3);
             double x_moment_2 = x.Moment(2);
@@ -154,10 +171,12 @@ namespace Core.Math.Statistics.Descriptive
                     ;
         }
 
-        public static double SkewnessType1
-                                    (
-                                        this IEnumerable<double> x
-                                    )
+        public static
+            double
+                                        SkewnessType1
+                                        (
+                                            this IEnumerable<double> x
+                                        )
         {
             double x_moment_3 = x.Moment(3);
             double x_moment_2 = x.Moment(2);
@@ -171,10 +190,12 @@ namespace Core.Math.Statistics.Descriptive
                     ;
         }
 
-        public static decimal SkewnessType1
-                                    (
-                                        this IEnumerable<decimal> x
-                                    )
+        public static
+            decimal
+                                        SkewnessType1
+                                        (
+                                            this IEnumerable<decimal> x
+                                        )
         {
             decimal x_moment_3 = x.Moment(3);
             decimal x_moment_2 = x.Moment(2);

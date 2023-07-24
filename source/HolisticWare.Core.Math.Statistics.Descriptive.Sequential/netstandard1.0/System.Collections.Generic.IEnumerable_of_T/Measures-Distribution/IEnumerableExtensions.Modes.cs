@@ -15,7 +15,8 @@ namespace Core.Math.Statistics.Descriptive
     ///     https://en.wikipedia.org/wiki/Mode_(statistics)
     /// </see>.
     /// </summary>
-    public static partial class IEnumerableExtensionsFrequency
+    public static partial class
+                                        IEnumerableExtensionsFrequency
     {
         //==============================================================================================================
         public static 

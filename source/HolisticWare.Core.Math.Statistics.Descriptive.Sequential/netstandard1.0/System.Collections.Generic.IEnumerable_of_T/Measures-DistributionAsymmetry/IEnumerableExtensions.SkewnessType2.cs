@@ -4,7 +4,8 @@ using System.Linq;
 
 namespace Core.Math.Statistics.Descriptive
 {
-    public static partial class IEnumerableExtensionsSkewnessType2
+    public static partial class
+                                        IEnumerableExtensionsSkewnessType2
     {
         //==============================================================================================================
         /// <summary>
@@ -18,100 +19,120 @@ namespace Core.Math.Statistics.Descriptive
         /// <see href="https://www.rdocumentation.org/packages/e1071/versions/1.6-8/topics/skewness"/>
         /// <see href="http://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm"/>
         /// <see href="https://cran.r-project.org/web/packages/e1071/e1071.pdf"/>
-        public static double SkewnessType2
-                                    (
-                                        this IEnumerable<byte> x
-                                    )
+        public static
+            double
+                                        SkewnessType2
+                                        (
+                                            this IEnumerable<byte> x
+                                        )
         {
             int n = x.Count();
 
             return x.SkewnessType1() * System.Math.Sqrt(n * (n - 1)) / (n - 2);
         }
 
-        public static double SkewnessType2
-                                    (
-                                        this IEnumerable<short> x
-                                    )
+        public static
+            double
+                                        SkewnessType2
+                                        (
+                                            this IEnumerable<short> x
+                                        )
         {
             int n = x.Count();
 
             return x.SkewnessType1() * System.Math.Sqrt(n * (n - 1)) / (n - 2);
         }
 
-        public static double SkewnessType2
-                                    (
-                                        this IEnumerable<ushort> x
-                                    )
+        public static
+            double
+                                        SkewnessType2
+                                        (
+                                            this IEnumerable<ushort> x
+                                        )
         {
             int n = x.Count();
 
             return x.SkewnessType1() * System.Math.Sqrt(n * (n - 1)) / (n - 2);
         }
 
-        public static double SkewnessType2
-                                    (
-                                        this IEnumerable<int> x
-                                    )
+        public static
+            double
+                                        SkewnessType2
+                                        (
+                                            this IEnumerable<int> x
+                                        )
         {
             int n = x.Count();
 
             return x.SkewnessType1() * System.Math.Sqrt(n * (n - 1)) / (n - 2);
         }
 
-        public static double SkewnessType2
-                                    (
-                                        this IEnumerable<uint> x
-                                    )
+        public static
+            double
+                                        SkewnessType2
+                                        (
+                                            this IEnumerable<uint> x
+                                        )
         {
             int n = x.Count();
 
             return x.SkewnessType1() * System.Math.Sqrt(n * (n - 1)) / (n - 2);
         }
 
-        public static double SkewnessType2
-                                    (
-                                        this IEnumerable<long> x
-                                    )
+        public static
+            double
+                                        SkewnessType2
+                                        (
+                                            this IEnumerable<long> x
+                                        )
         {
             int n = x.Count();
 
             return x.SkewnessType1() * System.Math.Sqrt(n * (n - 1)) / (n - 2);
         }
 
-        public static double SkewnessType2
-                                    (
-                                        this IEnumerable<ulong> x
-                                    )
+        public static
+            double
+                                        SkewnessType2
+                                        (
+                                            this IEnumerable<ulong> x
+                                        )
         {
             int n = x.Count();
 
             return x.SkewnessType1() * System.Math.Sqrt(n * (n - 1)) / (n - 2);
         }
 
-        public static double SkewnessType2
-                                    (
-                                        this IEnumerable<float> x
-                                    )
+        public static
+            double
+                                        SkewnessType2
+                                        (
+                                            this IEnumerable<float> x
+                                        )
         {
             int n = x.Count();
 
             return x.SkewnessType1() * System.Math.Sqrt(n * (n - 1)) / (n - 2);
         }
 
-        public static double SkewnessType2
-                                    (
-                                        this IEnumerable<double> x
-                                    )
+        public static
+            double
+                                        SkewnessType2
+                                        (
+                                            this IEnumerable<double> x
+                                        )
         {
             int n = x.Count();
 
             return x.SkewnessType1() * System.Math.Sqrt(n * (n - 1)) / (n - 2);
         }
 
-        public static decimal SkewnessType2
-                                    (
-                                        this IEnumerable<decimal> x
-                                    )
+        public static
+            decimal
+                                        SkewnessType2
+                                        (
+                                            this IEnumerable<decimal> x
+                                        )
         {
             int n = x.Count();
 

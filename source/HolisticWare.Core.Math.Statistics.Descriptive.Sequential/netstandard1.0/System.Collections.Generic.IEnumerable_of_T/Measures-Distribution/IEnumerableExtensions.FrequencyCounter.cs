@@ -8,15 +8,24 @@ namespace Core.Math.Statistics.Descriptive
 {
     /// <summary>
     /// </summary>
-    public static partial class IEnumerableExtensionsFrequencyCounter
+    public static partial class
+                                        IEnumerableExtensionsFrequencyCounter
     {
         //==============================================================================================================
         public static
-            Dictionary<T, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)> 
-                FrequencyCounter<T>
-                                (
-                                    this IEnumerable<T> x
-                                )
+            Dictionary
+                <
+                    T,
+                    (
+                        uint FrequencyAbsolute,
+                        double FrequencyRelative,
+                        uint FrequencyCumulative
+                    )
+                > 
+                                        FrequencyCounter<T>
+                                        (
+                                            this IEnumerable<T> x
+                                        )
         {
             long n = x.LongCount();
 
@@ -52,11 +61,19 @@ namespace Core.Math.Statistics.Descriptive
 
 
         public static
-            Dictionary<byte, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
-                FrequencyCounter
-                                (
-                                    this IEnumerable<byte> x
-                                )
+            Dictionary
+                <
+                    byte,
+                    (
+                        uint FrequencyAbsolute,
+                        double FrequencyRelative,
+                        uint FrequencyCumulative
+                    )
+                >
+                                        FrequencyCounter<T>
+                                        (
+                                            this IEnumerable<byte> x
+                                        )
         {
             long n = x.LongCount();
 
@@ -91,11 +108,19 @@ namespace Core.Math.Statistics.Descriptive
         }
 
         public static
-            Dictionary<ushort, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
-                FrequencyCounter
-                                (
-                                    this IEnumerable<ushort> x
-                                )
+            Dictionary
+                <
+                    ushort,
+                    (
+                        uint FrequencyAbsolute,
+                        double FrequencyRelative,
+                        uint FrequencyCumulative
+                    )
+                >
+                                        FrequencyCounter<T>
+                                        (
+                                            this IEnumerable<ushort> x
+                                        )
         {
             long n = x.LongCount();
 
@@ -130,11 +155,19 @@ namespace Core.Math.Statistics.Descriptive
         }
 
         public static
-            Dictionary<short, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
-                FrequencyCounter
-                                (
-                                    this IEnumerable<short> x
-                                )
+            Dictionary
+                <
+                    short,
+                    (
+                        uint FrequencyAbsolute,
+                        double FrequencyRelative,
+                        uint FrequencyCumulative
+                    )
+                >
+                                        FrequencyCounter<T>
+                                        (
+                                            this IEnumerable<short> x
+                                        )
         {
             long n = x.LongCount();
 
@@ -169,11 +202,19 @@ namespace Core.Math.Statistics.Descriptive
         }
 
         public static
-            Dictionary<int, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
-                FrequencyCounter
-                                (
-                                    this IEnumerable<int> x
-                                )
+            Dictionary
+                <
+                    int,
+                    (
+                        uint FrequencyAbsolute,
+                        double FrequencyRelative,
+                        uint FrequencyCumulative
+                    )
+                >
+                                        FrequencyCounter<T>
+                                        (
+                                            this IEnumerable<int> x
+                                        )
         {
             long n = x.LongCount();
 
@@ -208,11 +249,19 @@ namespace Core.Math.Statistics.Descriptive
         }
 
         public static
-            Dictionary<uint, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
-                FrequencyCounter
-                                (
-                                    this IEnumerable<uint> x
-                                )
+            Dictionary
+                <
+                    uint,
+                    (
+                        uint FrequencyAbsolute,
+                        double FrequencyRelative,
+                        uint FrequencyCumulative
+                    )
+                >
+                                        FrequencyCounter<T>
+                                        (
+                                            this IEnumerable<uint> x
+                                        )
         {
             long n = x.LongCount();
 
@@ -247,11 +296,19 @@ namespace Core.Math.Statistics.Descriptive
         }
 
         public static
-            Dictionary<long, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
-                FrequencyCounter
-                                (
-                                    this IEnumerable<long> x
-                                )
+            Dictionary
+                <
+                    long,
+                    (
+                        uint FrequencyAbsolute,
+                        double FrequencyRelative,
+                        uint FrequencyCumulative
+                    )
+                >
+                                        FrequencyCounter<T>
+                                        (
+                                            this IEnumerable<long> x
+                                        )
         {
             long n = x.LongCount();
 
@@ -286,11 +343,19 @@ namespace Core.Math.Statistics.Descriptive
         }
 
         public static
-            Dictionary<ulong, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
-                FrequencyCounter
-                                (
-                                    this IEnumerable<ulong> x
-                                )
+            Dictionary
+                <
+                    ulong,
+                    (
+                        uint FrequencyAbsolute,
+                        double FrequencyRelative,
+                        uint FrequencyCumulative
+                    )
+                >
+                                        FrequencyCounter<T>
+                                        (
+                                            this IEnumerable<ulong> x
+                                        )
         {
             long n = x.LongCount();
 
@@ -325,11 +390,19 @@ namespace Core.Math.Statistics.Descriptive
         }
 
         public static
-            Dictionary<float, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
-                FrequencyCounter
-                                (
-                                    this IEnumerable<float> x
-                                )
+            Dictionary
+                <
+                    float,
+                    (
+                        uint FrequencyAbsolute,
+                        double FrequencyRelative,
+                        uint FrequencyCumulative
+                    )
+                >
+                                        FrequencyCounter<T>
+                                        (
+                                            this IEnumerable<float> x
+                                        )
         {
             long n = x.LongCount();
 
@@ -364,11 +437,19 @@ namespace Core.Math.Statistics.Descriptive
         }
 
         public static
-            Dictionary<double, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
-                FrequencyCounter
-                                (
-                                    this IEnumerable<double> x
-                                )
+            Dictionary
+                <
+                    double,
+                    (
+                        uint FrequencyAbsolute,
+                        double FrequencyRelative,
+                        uint FrequencyCumulative
+                    )
+                >
+                                        FrequencyCounter<T>
+                                        (
+                                            this IEnumerable<double> x
+                                        )
         {
             long n = x.LongCount();
 
@@ -403,11 +484,19 @@ namespace Core.Math.Statistics.Descriptive
         }
 
         public static
-            Dictionary<decimal, (uint FrequencyAbsolute, double FrequencyRelative, uint FrequencyCumulative)>
-                FrequencyCounter
-                                (
-                                    this IEnumerable<decimal> x
-                                )
+            Dictionary
+                <
+                    decimal,
+                    (
+                        uint FrequencyAbsolute,
+                        double FrequencyRelative,
+                        uint FrequencyCumulative
+                    )
+                >
+                                        FrequencyCounter<T>
+                                        (
+                                            this IEnumerable<decimal> x
+                                        )
         {
             long n = x.LongCount();
 

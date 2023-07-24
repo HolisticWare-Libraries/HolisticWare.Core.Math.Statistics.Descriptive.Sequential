@@ -4,13 +4,16 @@ using System.Linq;
 
 namespace Core.Math.Statistics.Descriptive
 {
-    public static partial class IEnumerableExtensionsSkewnessFisherPearsonAdjusted
+    public static partial class
+                                        IEnumerableExtensionsSkewnessFisherPearsonAdjusted
     {
         //==============================================================================================================
-        public static double SkewnessFisherPearsonAdjusted
-                                    (
-                                        this IEnumerable<byte> x
-                                    )
+        public static
+            double
+                                        SkewnessFisherPearsonAdjusted
+                                        (
+                                            this IEnumerable<byte> x
+                                        )
         {
             // NIST definition of adjusted Fisher-Pearson
             // coefficient of skewness
@@ -26,10 +29,12 @@ namespace Core.Math.Statistics.Descriptive
                       ;
         }
 
-        public static double SkewnessFisherPearsonAdjusted
-                                    (
-                                        this IEnumerable<short> x
-                                    )
+        public static
+            double
+                                        SkewnessFisherPearsonAdjusted
+                                        (
+                                            this IEnumerable<short> x
+                                        )
         {
             // NIST definition of adjusted Fisher-Pearson
             // coefficient of skewness
@@ -45,10 +50,12 @@ namespace Core.Math.Statistics.Descriptive
                       ;
         }
 
-        public static double SkewnessFisherPearsonAdjusted
-                                    (
-                                        this IEnumerable<ushort> x
-                                    )
+        public static
+            double
+                                        SkewnessFisherPearsonAdjusted
+                                        (
+                                            this IEnumerable<ushort> x
+                                        )
         {
             // NIST definition of adjusted Fisher-Pearson
             // coefficient of skewness
@@ -64,10 +71,12 @@ namespace Core.Math.Statistics.Descriptive
                       ;
         }
 
-        public static double SkewSkewnessFisherPearsonAdjustedness
-                                    (
-                                        this IEnumerable<int> x
-                                    )
+        public static
+            double
+                                        SkewnessFisherPearsonAdjusted
+                                        (
+                                            this IEnumerable<int> x
+                                        )
         {
             // NIST definition of adjusted Fisher-Pearson
             // coefficient of skewness
@@ -83,10 +92,12 @@ namespace Core.Math.Statistics.Descriptive
                       ;
         }
 
-        public static double SkewnessFisherPearsonAdjusted
-                                    (
-                                        this IEnumerable<uint> x
-                                    )
+        public static
+            double
+                                        SkewnessFisherPearsonAdjusted
+                                        (
+                                            this IEnumerable<uint> x
+                                        )
         {
             // NIST definition of adjusted Fisher-Pearson
             // coefficient of skewness
@@ -102,10 +113,12 @@ namespace Core.Math.Statistics.Descriptive
                       ;
         }
 
-        public static double SkewnessFisherPearsonAdjusted
-                                    (
-                                        this IEnumerable<long> x
-                                    )
+        public static
+            double
+                                        SkewnessFisherPearsonAdjusted
+                                        (
+                                            this IEnumerable<long> x
+                                        )
         {
             // NIST definition of adjusted Fisher-Pearson
             // coefficient of skewness
@@ -120,10 +133,12 @@ namespace Core.Math.Statistics.Descriptive
                         ;
         }
 
-        public static double SkewnessFisherPearsonAdjusted
-                                    (
-                                        this IEnumerable<ulong> x
-                                    )
+        public static
+            double
+                                        SkewnessFisherPearsonAdjusted
+                                        (
+                                            this IEnumerable<ulong> x
+                                        )
         {
             // NIST definition of adjusted Fisher-Pearson
             // coefficient of skewness
@@ -139,10 +154,12 @@ namespace Core.Math.Statistics.Descriptive
                       ;
         }
 
-        public static double SkewnessFisherPearsonAdjusted
-                                    (
-                                        this IEnumerable<float> x
-                                    )
+        public static
+            double
+                                        SkewnessFisherPearsonAdjusted
+                                        (
+                                            this IEnumerable<float> x
+                                        )
         {
             // NIST definition of adjusted Fisher-Pearson
             // coefficient of skewness
@@ -158,10 +175,12 @@ namespace Core.Math.Statistics.Descriptive
                       ;
         }
 
-        public static double SkewnessFisherPearsonAdjusted
-                                    (
-                                        this IEnumerable<double> x
-                                    )
+        public static
+            double
+                                        SkewnessFisherPearsonAdjusted
+                                        (
+                                            this IEnumerable<double> x
+                                        )
         {
             // NIST definition of adjusted Fisher-Pearson
             // coefficient of skewness
@@ -177,10 +196,12 @@ namespace Core.Math.Statistics.Descriptive
                       ;
         }
 
-        public static decimal SkewnessFisherPearsonAdjusted
-                                    (
-                                        this IEnumerable<decimal> x
-                                    )
+        public static
+            decimal
+                                        SkewnessFisherPearsonAdjusted
+                                        (
+                                            this IEnumerable<decimal> x
+                                        )
         {
             // NIST definition of adjusted Fisher-Pearson
             // coefficient of skewness
