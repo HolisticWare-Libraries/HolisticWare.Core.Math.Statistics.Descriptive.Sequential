@@ -11,10 +11,13 @@ namespace Core.Math.Statistics.Descriptive
     /// <see href="https://en.wikipedia.org/wiki/Kurtosis"/>
     /// <see href="http://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm"/>
     /// <see href="https://cran.r-project.org/web/packages/e1071/e1071.pdf"/>
-    public static partial class IEnumerableExtensionsKurtosisExcess
+    public static partial class
+                                        IEnumerableExtensionsKurtosisExcess
     {
         //==============================================================================================================
-        public static double KurtosisExcess
+        public static
+            double
+                                        KurtosisExcess
                                         (
                                             this IEnumerable<byte> x
                                         )
@@ -22,7 +25,9 @@ namespace Core.Math.Statistics.Descriptive
             return x.Kurtosis() - 3.0;
         }
 
-        public static double KurtosisExcess
+        public static
+            double
+                                        KurtosisExcess
                                         (
                                             this IEnumerable<short> x
                                         )
@@ -30,7 +35,9 @@ namespace Core.Math.Statistics.Descriptive
             return x.Kurtosis() - 3.0;
         }
 
-        public static double KurtosisExcess
+        public static
+            double
+                                        KurtosisExcess
                                         (
                                             this IEnumerable<ushort> x
                                         )
@@ -38,7 +45,9 @@ namespace Core.Math.Statistics.Descriptive
             return x.Kurtosis() - 3.0;
         }
 
-        public static double KurtosisExcess
+        public static
+            double
+                                        KurtosisExcess
                                         (
                                             this IEnumerable<int> x
                                         )
@@ -46,7 +55,9 @@ namespace Core.Math.Statistics.Descriptive
             return x.Kurtosis() - 3.0;
         }
 
-        public static double KurtosisExcess
+        public static
+            double
+                                        KurtosisExcess
                                         (
                                             this IEnumerable<uint> x
                                         )
@@ -54,7 +65,9 @@ namespace Core.Math.Statistics.Descriptive
             return x.Kurtosis() - 3.0;
         }
 
-        public static double KurtosisExcess
+        public static
+            double
+                                        KurtosisExcess
                                         (
                                             this IEnumerable<long> x
                                         )
@@ -62,7 +75,9 @@ namespace Core.Math.Statistics.Descriptive
             return x.Kurtosis() - 3.0;
         }
 
-        public static double KurtosisExcess
+        public static
+            double
+                                        KurtosisExcess
                                         (
                                             this IEnumerable<ulong> x
                                         )
@@ -70,7 +85,9 @@ namespace Core.Math.Statistics.Descriptive
             return x.Kurtosis() - 3.0;
         }
 
-        public static double KurtosisExcess
+        public static
+            double
+                                        KurtosisExcess
                                         (
                                             this IEnumerable<float> x
                                         )
@@ -78,7 +95,9 @@ namespace Core.Math.Statistics.Descriptive
             return x.Kurtosis() - 3.0;
         }
 
-        public static double KurtosisExcess
+        public static
+            double
+                                        KurtosisExcess
                                         (
                                             this IEnumerable<double> x
                                         )
@@ -86,7 +105,9 @@ namespace Core.Math.Statistics.Descriptive
             return x.Kurtosis() - 3.0;
         }
 
-        public static decimal KurtosisExcess
+        public static
+            decimal
+                                        KurtosisExcess
                                         (
                                             this IEnumerable<decimal> x
                                         )

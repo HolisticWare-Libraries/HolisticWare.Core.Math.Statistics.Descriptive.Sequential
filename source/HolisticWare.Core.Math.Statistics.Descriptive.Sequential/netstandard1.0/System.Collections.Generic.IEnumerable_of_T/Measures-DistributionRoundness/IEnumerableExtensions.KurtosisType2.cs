@@ -11,7 +11,8 @@ namespace Core.Math.Statistics.Descriptive
     /// <see href="https://en.wikipedia.org/wiki/Kurtosis"/>
     /// <see href="http://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm"/>
     /// <see href="https://cran.r-project.org/web/packages/e1071/e1071.pdf"/>
-    public static partial class IEnumerableExtensionsKurtosisType2
+    public static partial class
+                                        IEnumerableExtensionsKurtosisType2
     {
         //==============================================================================================================
         /// <summary>
@@ -25,10 +26,12 @@ namespace Core.Math.Statistics.Descriptive
         /// <param name="x">x data</param>
         /// <see href="https://www.rdocumentation.org/packages/SciencesPo/versions/1.4.1/topics/Kurtosis"/>
         /// <see href="https://docs.scipy.org/doc/scipy-0.7.x/reference/generated/scipy.stats.kurtosis.html"/>
-        public static double KurtosisType2
-                                    (
-                                        this IEnumerable<byte> x
-                                    )
+        public static
+            double
+                                        KurtosisType2
+                                        (
+                                            this IEnumerable<byte> x
+                                        )
         {
             double g_2 = x.KurtosisType1();
             int n = x.Count();
@@ -36,10 +39,12 @@ namespace Core.Math.Statistics.Descriptive
             return ((n + 1.0) * g_2 + 6.0) * (n - 1.0) / (n - 2.0) * (n - 3.0);
         }
 
-        public static double KurtosisType2
-                                    (
-                                        this IEnumerable<short> x
-                                    )
+        public static
+            double
+                                        KurtosisType2
+                                        (
+                                            this IEnumerable<short> x
+                                        )
         {
             double g_2 = x.KurtosisType1();
             int n = x.Count();
@@ -47,10 +52,12 @@ namespace Core.Math.Statistics.Descriptive
             return ((n + 1.0) * g_2 + 6.0) * (n - 1.0) / (n - 2.0) * (n - 3.0);
         }
 
-        public static double KurtosisType2
-                                    (
-                                        this IEnumerable<ushort> x
-                                    )
+        public static
+            double
+                                        KurtosisType2
+                                        (
+                                            this IEnumerable<ushort> x
+                                        )
         {
             double g_2 = x.KurtosisType1();
             int n = x.Count();
@@ -58,10 +65,12 @@ namespace Core.Math.Statistics.Descriptive
             return ((n + 1.0) * g_2 + 6.0) * (n - 1.0) / (n - 2.0) * (n - 3.0);
         }
 
-        public static double KurtosisType2
-                                    (
-                                        this IEnumerable<int> x
-                                    )
+        public static
+            double
+                                        KurtosisType2
+                                        (
+                                            this IEnumerable<int> x
+                                        )
         {
             double g_2 = x.KurtosisType1();
             int n = x.Count();
@@ -69,10 +78,12 @@ namespace Core.Math.Statistics.Descriptive
             return ((n + 1.0) * g_2 + 6.0) * (n - 1.0) / (n - 2.0) * (n - 3.0);
         }
 
-        public static double KurtosisType2
-                                    (
-                                        this IEnumerable<uint> x
-                                    )
+        public static
+            double
+                                        KurtosisType2
+                                        (
+                                            this IEnumerable<uint> x
+                                        )
         {
             double g_2 = x.KurtosisType1();
             int n = x.Count();
@@ -80,10 +91,12 @@ namespace Core.Math.Statistics.Descriptive
             return ((n + 1.0) * g_2 + 6.0) * (n - 1.0) / (n - 2.0) * (n - 3.0);
         }
 
-        public static double KurtosisType2
-                                    (
-                                        this IEnumerable<long> x
-                                    )
+        public static
+            double
+                                        KurtosisType2
+                                        (
+                                            this IEnumerable<long> x
+                                        )
         {
             double g_2 = x.KurtosisType1();
             int n = x.Count();
@@ -91,10 +104,12 @@ namespace Core.Math.Statistics.Descriptive
             return ((n + 1.0) * g_2 + 6.0) * (n - 1.0) / (n - 2.0) * (n - 3.0);
         }
 
-        public static double KurtosisType2
-                                    (
-                                        this IEnumerable<ulong> x
-                                    )
+        public static
+            double
+                                        KurtosisType2
+                                        (
+                                            this IEnumerable<ulong> x
+                                        )
         {
             double g_2 = x.KurtosisType1();
             int n = x.Count();
@@ -102,10 +117,12 @@ namespace Core.Math.Statistics.Descriptive
             return ((n + 1.0) * g_2 + 6.0) * (n - 1.0) / (n - 2.0) * (n - 3.0);
         }
 
-        public static double KurtosisType2
-                                    (
-                                        this IEnumerable<float> x
-                                    )
+        public static
+            double
+                                        KurtosisType2
+                                        (
+                                            this IEnumerable<float> x
+                                        )
         {
             double g_2 = x.KurtosisType1();
             int n = x.Count();
@@ -113,10 +130,12 @@ namespace Core.Math.Statistics.Descriptive
             return ((n + 1.0) * g_2 + 6.0) * (n - 1.0) / (n - 2.0) * (n - 3.0);
         }
 
-        public static double KurtosisType2
-                                    (
-                                        this IEnumerable<double> x
-                                    )
+        public static
+            double
+                                        KurtosisType2
+                                        (
+                                            this IEnumerable<double> x
+                                        )
         {
             double g_2 = x.KurtosisType1();
             int n = x.Count();
@@ -124,10 +143,12 @@ namespace Core.Math.Statistics.Descriptive
             return ((n + 1.0) * g_2 + 6.0) * (n - 1.0) / (n - 2.0) * (n - 3.0);
         }
 
-        public static decimal KurtosisType2
-                                    (
-                                        this IEnumerable<decimal> x
-                                    )
+        public static
+            decimal
+                                        KurtosisType2
+                                        (
+                                            this IEnumerable<decimal> x
+                                        )
         {
             decimal g_2 = x.KurtosisType1();
             int n = x.Count();
