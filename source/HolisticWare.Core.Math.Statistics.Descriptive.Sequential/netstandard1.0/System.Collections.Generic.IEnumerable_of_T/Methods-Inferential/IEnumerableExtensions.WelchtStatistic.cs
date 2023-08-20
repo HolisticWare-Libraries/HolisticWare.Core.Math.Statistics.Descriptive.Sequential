@@ -9,14 +9,20 @@ namespace Core.Math.Statistics.Descriptive
     /// </summary>
     /// TODO: Welch t test (statistics) 1. optimize/reduce redundant code (analysis needed)
     /// TODO: Welch t test (statistics) 2. async/await
-    public static partial class IEnumerableExtensionsWelchtStatistic
+    public static partial class
+                                        IEnumerableExtensionsWelchtStatistic
     {
         //==============================================================================================================
-        public static (double welch_t, double degrees_of_freedom) WelchtStatistic
-                                                                        (
-                                                                            this IEnumerable<byte> x,
-                                                                            IEnumerable<byte> y
-                                                                        )
+        public static
+            (
+                double welch_t,
+                double degrees_of_freedom
+            )
+                                        WelchtStatistic
+                                        (
+                                            this IEnumerable<byte> x,
+                                            IEnumerable<byte> y
+                                        )
         {
             // unequal variances
             double xmean = x.Select(x_i => (int)x_i).Average();
@@ -35,11 +41,16 @@ namespace Core.Math.Statistics.Descriptive
             return (ws, df);
         }
 
-        public static (double welch_t, double degrees_of_freedom) WelchtStatistic
-                                                                        (
-                                                                            this IEnumerable<short> x,
-                                                                            IEnumerable<short> y
-                                                                        )
+        public static
+            (
+                double welch_t,
+                double degrees_of_freedom
+            )
+                                        WelchtStatistic
+                                        (
+                                            this IEnumerable<short> x,
+                                            IEnumerable<short> y
+                                        )
         {
             // unequal variances
             double xmean = x.Select(x_i => (int)x_i).Average();
@@ -58,11 +69,16 @@ namespace Core.Math.Statistics.Descriptive
             return (ws, df);
         }
 
-        public static (double welch_t, double degrees_of_freedom) WelchtStatistic
-                                                                        (
-                                                                            this IEnumerable<ushort> x,
-                                                                            IEnumerable<ushort> y
-                                                                        )
+        public static
+            (
+                double welch_t,
+                double degrees_of_freedom
+            )
+                                        WelchtStatistic
+                                        (
+                                            this IEnumerable<ushort> x,
+                                            IEnumerable<ushort> y
+                                        )
         {
             // unequal variances
             double xmean = x.Select(x_i => (int)x_i).Average();
@@ -81,11 +97,16 @@ namespace Core.Math.Statistics.Descriptive
             return (ws, df);
         }
 
-        public static (double welch_t, double degrees_of_freedom) WelchtStatistic
-                                                                        (
-                                                                            this IEnumerable<int> x,
-                                                                            IEnumerable<int> y
-                                                                        )
+        public static
+            (
+                double welch_t,
+                double degrees_of_freedom
+            )
+                                        WelchtStatistic
+                                        (
+                                            this IEnumerable<int> x,
+                                            IEnumerable<int> y
+                                        )
         {
             // unequal variances
             double xmean = x.Average();
@@ -104,11 +125,16 @@ namespace Core.Math.Statistics.Descriptive
             return (ws, df);
         }
 
-        public static (double welch_t, double degrees_of_freedom) WelchtStatistic
-                                                                        (
-                                                                            this IEnumerable<uint> x,
-                                                                            IEnumerable<uint> y
-                                                                        )
+        public static
+            (
+                double welch_t,
+                double degrees_of_freedom
+            )
+                                        WelchtStatistic
+                                        (
+                                            this IEnumerable<uint> x,
+                                            IEnumerable<uint> y
+                                        )
         {
             // unequal variances
             double xmean = x.Select(x_i => (long)x_i).Average();
@@ -127,11 +153,16 @@ namespace Core.Math.Statistics.Descriptive
             return (ws, df);
         }
 
-        public static (double welch_t, double degrees_of_freedom) WelchtStatistic
-                                                                        (
-                                                                            this IEnumerable<long> x,
-                                                                            IEnumerable<long> y
-                                                                        )
+        public static
+            (
+                double welch_t,
+                double degrees_of_freedom
+            )
+                                        WelchtStatistic
+                                        (
+                                            this IEnumerable<long> x,
+                                            IEnumerable<long> y
+                                        )
         {
             // unequal variances
             double xmean = x.Average();
@@ -150,11 +181,16 @@ namespace Core.Math.Statistics.Descriptive
             return (ws, df);
         }
 
-        public static (double welch_t, double degrees_of_freedom) WelchtStatistic
-                                                                        (
-                                                                            this IEnumerable<ulong> x,
-                                                                            IEnumerable<ulong> y
-                                                                        )
+        public static
+            (
+                double welch_t,
+                double degrees_of_freedom
+            )
+                                        WelchtStatistic
+                                        (
+                                            this IEnumerable<ulong> x,
+                                            IEnumerable<ulong> y
+                                        )
         {
             // unequal variances
             double xmean = x.Select(x_i => (double)x_i).Average();
@@ -173,11 +209,16 @@ namespace Core.Math.Statistics.Descriptive
             return (ws, df);
         }
 
-        public static (double welch_t, double degrees_of_freedom) WelchtStatistic
-                                                                        (
-                                                                            this IEnumerable<float> x,
-                                                                            IEnumerable<float> y
-                                                                        )
+        public static
+            (
+                double welch_t,
+                double degrees_of_freedom
+            )
+                                        WelchtStatistic
+                                        (
+                                            this IEnumerable<float> x,
+                                            IEnumerable<float> y
+                                        )
         {
             // unequal variances
             double xmean = x.Average();
@@ -196,11 +237,16 @@ namespace Core.Math.Statistics.Descriptive
             return (ws, df);
         }
 
-        public static (double welch_t, double degrees_of_freedom) WelchtStatistic
-                                                                        (
-                                                                            this IEnumerable<double> x, 
-                                                                            IEnumerable<double>  y
-                                                                        )
+        public static
+            (
+                double welch_t,
+                double degrees_of_freedom
+            )
+                                        WelchtStatistic
+                                        (
+                                            this IEnumerable<double> x,
+                                            IEnumerable<double>  y
+                                        )
         {
             // unequal variances
             double xmean = x.Average();
@@ -219,11 +265,16 @@ namespace Core.Math.Statistics.Descriptive
             return (ws, df);
         }
 
-        public static (decimal welch_t, decimal degrees_of_freedom) WelchtStatistic
-                                                                        (
-                                                                            this IEnumerable<decimal> x,
-                                                                            IEnumerable<decimal> y
-                                                                        )
+        public static
+            (
+                double welch_t,
+                double degrees_of_freedom
+            )
+                                        WelchtStatistic
+                                        (
+                                            this IEnumerable<decimal> x,
+                                            IEnumerable<decimal> y
+                                        )
         {
             // unequal variances
             decimal xmean = x.Average();
@@ -236,9 +287,9 @@ namespace Core.Math.Statistics.Descriptive
             decimal yvn = yvar / yn;
             decimal sxy = (decimal) System.Math.Sqrt((double)(xvn + yvn));
 
-            decimal df = 
+            decimal df =
                             (decimal) System.Math.Pow((double)(xvn + yvn), 2)
-                            / 
+                            /
                             (xvn * xvn / (xn - 1) + yvn * yvn / (yn - 1))
                             ;
             decimal ws = (xmean - ymean) / sxy;
