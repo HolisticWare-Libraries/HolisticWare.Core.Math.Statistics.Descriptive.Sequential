@@ -9,95 +9,116 @@ namespace Core.Math.Statistics.Descriptive
     /// <summary>
     /// Correlation
     /// </summary>
-    public static partial class StudenttStatisticIndependent
+    public static partial class
+                                        StudenttStatisticIndependent
     {
         //==============================================================================================================
-        public static double Calculate
+        public static
+            double
+                                        Calculate
                                     (
-                                        IEnumerable<byte> x, 
+                                        IEnumerable<byte> x,
                                         IEnumerable<byte> y
                                     )
         {
             return x.StudenttStatisticIndependent(y);
         }
 
-        public static double Calculate
-                                    (
-                                        IEnumerable<short> x, 
-                                        IEnumerable<short> y
-                                    )
+        public static
+            double
+                                        Calculate
+                                        (
+                                            IEnumerable<short> x,
+                                            IEnumerable<short> y
+                                        )
         {
             return x.StudenttStatisticIndependent(y);
         }
 
-        public static double Calculate
-                                    (
-                                        IEnumerable<ushort> x, 
-                                        IEnumerable<ushort> y
-                                    )
+        public static
+            double
+                                        Calculate
+                                        (
+                                            IEnumerable<ushort> x,
+                                            IEnumerable<ushort> y
+                                        )
         {
             return x.StudenttStatisticIndependent(y);
         }
 
-        public static double Calculate
-                                    (
-                                        IEnumerable<int> x, 
-                                        IEnumerable<int> y
-                                    )
+        public static
+            double
+                                        Calculate
+                                        (
+                                            IEnumerable<int> x,
+                                            IEnumerable<int> y
+                                        )
         {
             return x.StudenttStatisticIndependent(y);
         }
 
-        public static double Calculate
-                                    (
-                                        IEnumerable<uint> x, 
-                                        IEnumerable<uint> y
-                                    )
+        public static
+            double
+                                        Calculate
+                                        (
+                                            IEnumerable<uint> x,
+                                            IEnumerable<uint> y
+                                        )
         {
             return x.StudenttStatisticIndependent(y);
         }
 
-        public static double Calculate
-                                    (
-                                        IEnumerable<long> x, 
-                                        IEnumerable<long> y
-                                    )
+        public static
+            double
+                                        Calculate
+                                        (
+                                            IEnumerable<long> x,
+                                            IEnumerable<long> y
+                                        )
         {
             return x.StudenttStatisticIndependent(y);
         }
 
-        public static double Calculate
-                                    (
-                                        IEnumerable<ulong> x, 
-                                        IEnumerable<ulong> y
-                                    )
+        public static
+            double
+                                        Calculate
+                                        (
+                                            IEnumerable<ulong> x,
+                                            IEnumerable<ulong> y
+                                        )
         {
             return x.StudenttStatisticIndependent(y);
         }
 
-        public static double Calculate
-                                    (
-                                        IEnumerable<float> x, 
-                                        IEnumerable<float> y
-                                    )
+        public static
+            double
+                                        Calculate
+                                        (
+                                            IEnumerable<float> x,
+                                            IEnumerable<float> y
+                                        )
         {
             return x.StudenttStatisticIndependent(y);
         }
 
-        public static double Calculate
-                                    (
-                                        IEnumerable<double> x, 
-                                        IEnumerable<double> y
-                                    )
+        public static
+            double
+                                        Calculate
+                                        (
+                                            IEnumerable<double> x,
+                                            IEnumerable<double> y
+                                        )
         {
             return x.StudenttStatisticIndependent(y);
         }
 
-        public static decimal Calculate
-                                    (
-                                        IEnumerable<decimal> x, 
-                                        IEnumerable<decimal> y
-                                    )
+        public static
+            double
+                                        Calculate
+                                        (
+                                            IEnumerable<decimal> x,
+                                            IEnumerable<decimal> y
+                                        )
         {
             return x.StudenttStatisticIndependent(y);
         }
