@@ -10,95 +10,116 @@ namespace Core.Math.Statistics.Descriptive
     /// find out if the means between two populations are significantly 
     /// </summary>
     /// <see href="https://en.wikipedia.org/wiki/F-test"/>
-    public static partial class IEnumerableExtensionsFStatistic
+    public static partial class
+                                        IEnumerableExtensionsFStatistic
     {
         //==============================================================================================================
-        public static double FStatistic
-                                    (
-                                        this IEnumerable<byte> x, 
-                                        IEnumerable<byte> y
-                                    )
+        public static
+            double
+                                        FStatistic
+                                        (
+                                            this IEnumerable<byte> x, 
+                                            IEnumerable<byte> y
+                                        )
         {
             return x.VarianceSample() / y.VarianceSample();
         }
 
-        public static double FStatistic
-                                    (
-                                        this IEnumerable<short> x, 
-                                        IEnumerable<short> y
-                                    )
+        public static
+            double
+                                        FStatistic
+                                        (
+                                            this IEnumerable<short> x, 
+                                            IEnumerable<short> y
+                                        )
         {
             return x.VarianceSample() / y.VarianceSample();
         }
 
-        public static double FStatistic
-                                    (
-                                        this IEnumerable<ushort> x, 
-                                        IEnumerable<ushort> y
-                                    )
+        public static
+            double
+                                        FStatistic
+                                        (
+                                            this IEnumerable<ushort> x, 
+                                            IEnumerable<ushort> y
+                                        )
         {
             return x.VarianceSample() / y.VarianceSample();
         }
 
-        public static double FStatistic
-                                    (
-                                        this IEnumerable<int> x, 
-                                        IEnumerable<int> y
-                                    )
+        public static
+            double
+                                        FStatistic
+                                        (
+                                            this IEnumerable<int> x, 
+                                            IEnumerable<int> y
+                                        )
         {
             return x.VarianceSample() / y.VarianceSample();
         }
 
-        public static double FStatistic
-                                    (
-                                        this IEnumerable<uint> x, 
-                                        IEnumerable<uint> y
-                                    )
+        public static
+            double
+                                        FStatistic
+                                        (
+                                            this IEnumerable<uint> x, 
+                                            IEnumerable<uint> y
+                                        )
         {
             return x.VarianceSample() / y.VarianceSample();
         }
 
-        public static double FStatistic
-                                    (
-                                        this IEnumerable<long> x, 
-                                        IEnumerable<long> y
-                                    )
+        public static
+            double
+                                        FStatistic
+                                        (
+                                            this IEnumerable<long> x, 
+                                            IEnumerable<long> y
+                                        )
         {
             return x.VarianceSample() / y.VarianceSample();
         }
 
-        public static double FStatistic
-                                    (
-                                        this IEnumerable<ulong> x, 
-                                        IEnumerable<ulong> y
-                                    )
+        public static
+            double
+                                        FStatistic
+                                        (
+                                            this IEnumerable<ulong> x, 
+                                            IEnumerable<ulong> y
+                                        )
         {
             return x.VarianceSample() / y.VarianceSample();
         }
 
-        public static double FStatistic
-                                    (
-                                        this IEnumerable<float> x, 
-                                        IEnumerable<float> y
-                                    )
+        public static
+            double
+                                        FStatistic
+                                        (
+                                            this IEnumerable<float> x, 
+                                            IEnumerable<float> y
+                                        )
         {
             return x.VarianceSample() / y.VarianceSample();
         }
 
-        public static double FStatistic
-                                    (
-                                        this IEnumerable<double> x, 
-                                        IEnumerable<double> y
-                                    )
+        public static
+            double
+                                        FStatistic
+                                        (
+                                            this IEnumerable<double> x, 
+                                            IEnumerable<double> y
+                                        )
         {
             return x.VarianceSample() / y.VarianceSample();
         }
 
-        public static decimal FStatistic
-                                    (
-                                        this IEnumerable<decimal> x, 
-                                        IEnumerable<decimal> y
-                                    )
+        public static
+            decimal
+                                        FStatistic
+                                        (
+                                            this IEnumerable<decimal> x, 
+                                            IEnumerable<decimal> y
+                                        )
         {
             return x.VarianceSample() / y.VarianceSample();
         }
