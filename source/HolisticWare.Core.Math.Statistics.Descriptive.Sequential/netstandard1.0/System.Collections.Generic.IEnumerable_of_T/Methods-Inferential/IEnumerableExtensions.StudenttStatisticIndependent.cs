@@ -4,7 +4,8 @@ using System.Linq;
 
 namespace Core.Math.Statistics.Descriptive
 {
-    public static partial class IEnumerableExtensionsStudenttStatisticIndependent
+    public static partial class
+                                        IEnumerableExtensionsStudenttStatisticIndependent
     {
         //==============================================================================================================
         public static double StudenttStatisticIndependent
