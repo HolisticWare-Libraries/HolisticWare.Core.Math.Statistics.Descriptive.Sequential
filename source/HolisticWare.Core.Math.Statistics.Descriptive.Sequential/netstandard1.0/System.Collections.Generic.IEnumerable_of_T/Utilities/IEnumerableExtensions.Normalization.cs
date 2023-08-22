@@ -10,7 +10,8 @@ namespace Core.Math.Statistics.Descriptive
     /// Mean (Average) Arithmetic
     /// </summary>
     /// <see href="https://en.wikipedia.org/wiki/Average"/>
-    public static partial class IEnumerableExtensionsMeanArithmetic
+    public static partial class
+                                        IEnumerableExtensionsMeanArithmetic
     {
         //==============================================================================================================
         public static
@@ -220,7 +221,7 @@ namespace Core.Math.Statistics.Descriptive
                 yield return x.ElementAt(i) / sum;
             }
         }
-         
+
         public static
             IEnumerable<double>
                                         Normalize
