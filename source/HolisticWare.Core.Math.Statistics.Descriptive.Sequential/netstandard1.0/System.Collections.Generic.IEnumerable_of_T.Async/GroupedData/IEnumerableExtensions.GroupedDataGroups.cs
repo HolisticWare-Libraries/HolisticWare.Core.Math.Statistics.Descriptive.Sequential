@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 namespace Core.Math.Statistics.Descriptive
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public static partial class IEnumerableExtensionsGroupedDataGroups
+    public static partial class
+                                        IEnumerableExtensionsGroupedDataGroups
     {
         //==============================================================================================================
         // https://stackoverflow.com/questions/17119075/do-you-have-to-put-task-run-in-a-method-to-make-it-async
