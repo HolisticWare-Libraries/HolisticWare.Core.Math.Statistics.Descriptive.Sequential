@@ -267,8 +267,8 @@ namespace Core.Math.Statistics.Descriptive
 
         public static
             (
-                double welch_t,
-                double degrees_of_freedom
+                decimal welch_t,
+                decimal degrees_of_freedom
             )
                                         WelchtStatistic
                                         (
