@@ -113,7 +113,7 @@ namespace Core.Math.Statistics.Descriptive
         }
 
         public static
-            double
+            decimal
                                         Calculate
                                         (
                                             IEnumerable<decimal> x,
