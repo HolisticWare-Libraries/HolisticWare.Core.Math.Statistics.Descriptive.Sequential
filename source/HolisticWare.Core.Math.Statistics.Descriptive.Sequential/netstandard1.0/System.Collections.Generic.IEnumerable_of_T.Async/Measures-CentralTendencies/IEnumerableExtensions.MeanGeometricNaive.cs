@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
-using Core.Math.Statistics.Descriptive;
+using System.Threading.Tasks;
 
 namespace Core.Math.Statistics.Descriptive
 {
@@ -10,7 +9,8 @@ namespace Core.Math.Statistics.Descriptive
     /// Mean (Average) Geometric
     /// </summary>
     /// <see href="https://en.wikipedia.org/wiki/Average"/>
-    public static partial class IEnumerableExtensionsMeanGeometricNaive
+    public static partial class
+                                        IEnumerableExtensionsMeanGeometricNaive
     {
         //==============================================================================================================
         public static double MeanGeometricNaiveAsync
