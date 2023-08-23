@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 using Core.Math.Statistics.Descriptive;
 
@@ -11,7 +12,8 @@ namespace Core.Math.Statistics.Descriptive
     /// </summary>
     /// <see href="https://en.wikipedia.org/wiki/Average"/>
     /// <see href="https://en.wikipedia.org/wiki/Generalized_mean"/>
-    public static partial class IEnumerableExtensionsMeanGeneralized
+    public static partial class
+                                        IEnumerableExtensionsMeanGeneralized
     {
         //==============================================================================================================
         public static double MeanGeneralizedAsync
@@ -54,7 +56,7 @@ namespace Core.Math.Statistics.Descriptive
 
         public static double MeanGeneralizedAsync
                                         (
-                                            this IEnumerable<ushort> x, 
+                                            this IEnumerable<ushort> x,
                                             double power
                                         )
         {
@@ -73,7 +75,7 @@ namespace Core.Math.Statistics.Descriptive
 
         public static double MeanGeneralizedAsync
                                         (
-                                            this IEnumerable<int> x, 
+                                            this IEnumerable<int> x,
                                             double power
                                         )
         {
@@ -92,7 +94,7 @@ namespace Core.Math.Statistics.Descriptive
 
         public static double MeanGeneralizedAsync
                                         (
-                                            this IEnumerable<uint> x, 
+                                            this IEnumerable<uint> x,
                                             double power
                                         )
         {
@@ -111,7 +113,7 @@ namespace Core.Math.Statistics.Descriptive
 
         public static double MeanGeneralizedAsync
                                         (
-                                            this IEnumerable<long> x, 
+                                            this IEnumerable<long> x,
                                             double power
                                         )
         {
@@ -130,7 +132,7 @@ namespace Core.Math.Statistics.Descriptive
 
         public static double MeanGeneralizedAsync
                                         (
-                                            this IEnumerable<ulong> x, 
+                                            this IEnumerable<ulong> x,
                                             double power
                                         )
         {
@@ -149,7 +151,7 @@ namespace Core.Math.Statistics.Descriptive
 
         public static double MeanGeneralizedAsync
                                         (
-                                            this IEnumerable<float> x, 
+                                            this IEnumerable<float> x,
                                             double power
                                         )
         {
@@ -168,7 +170,7 @@ namespace Core.Math.Statistics.Descriptive
 
         public static double MeanGeneralizedAsync
                                         (
-                                            this IEnumerable<double> x, 
+                                            this IEnumerable<double> x,
                                             double power
                                         )
         {
@@ -187,7 +189,7 @@ namespace Core.Math.Statistics.Descriptive
 
         public static decimal MeanGeneralizedAsync
                                         (
-                                            this IEnumerable<decimal> x, 
+                                            this IEnumerable<decimal> x,
                                             double power
                                         )
         {
