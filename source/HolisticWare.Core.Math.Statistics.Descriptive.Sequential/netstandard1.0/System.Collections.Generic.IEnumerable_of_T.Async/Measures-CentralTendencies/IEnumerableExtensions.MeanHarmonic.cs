@@ -1,8 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
-using Core.Math.Statistics.Descriptive;
+using System.Threading.Tasks;
 
 namespace Core.Math.Statistics.Descriptive
 {
@@ -13,7 +12,8 @@ namespace Core.Math.Statistics.Descriptive
     /// https://www.hackmath.net/en/calculator/harmonic-mean
     /// http://www.alcula.com/calculators/statistics/harmonic-mean/
     /// https://ncalculators.com/statistics/harmonic-mean-calculator.htm
-    public static partial class IEnumerableExtensionsMeanHarmonic
+    public static partial class
+                                        IEnumerableExtensionsMeanHarmonic
     {
         //==============================================================================================================
         public static double MeanHarmonicAsync
@@ -24,7 +24,7 @@ namespace Core.Math.Statistics.Descriptive
             int n = x.Count();
             double sum = 0.0;
 
-            for (int i = 0; i < n; i++) 
+            for (int i = 0; i < n; i++)
             {
                 double x_i = x.ElementAt(i);
                 sum += 1.0 / x_i;
@@ -41,7 +41,7 @@ namespace Core.Math.Statistics.Descriptive
             int n = x.Count();
             double sum = 0.0;
 
-            for (int i = 0; i < n; i++) 
+            for (int i = 0; i < n; i++)
             {
                 double x_i = x.ElementAt(i);
                 sum += 1.0 / x_i;
@@ -58,7 +58,7 @@ namespace Core.Math.Statistics.Descriptive
             int n = x.Count();
             double sum = 0.0;
 
-            for (int i = 0; i < n; i++) 
+            for (int i = 0; i < n; i++)
             {
                 double x_i = x.ElementAt(i);
                 sum += 1.0 / x_i;
@@ -92,7 +92,7 @@ namespace Core.Math.Statistics.Descriptive
             int n = x.Count();
             double sum = 0.0;
 
-            for (int i = 0; i < n; i++) 
+            for (int i = 0; i < n; i++)
             {
                 double x_i = x.ElementAt(i);
                 sum += 1.0 / x_i;
@@ -109,7 +109,7 @@ namespace Core.Math.Statistics.Descriptive
             int n = x.Count();
             double sum = 0.0;
 
-            for (int i = 0; i < n; i++) 
+            for (int i = 0; i < n; i++)
             {
                 double x_i = x.ElementAt(i);
                 sum += 1.0 / x_i;
@@ -126,7 +126,7 @@ namespace Core.Math.Statistics.Descriptive
             int n = x.Count();
             double sum = 0.0;
 
-            for (int i = 0; i < n; i++) 
+            for (int i = 0; i < n; i++)
             {
                 double x_i = x.ElementAt(i);
                 sum += 1.0 / x_i;
@@ -143,7 +143,7 @@ namespace Core.Math.Statistics.Descriptive
             int n = x.Count();
             double sum = 0.0;
 
-            for (int i = 0; i < n; i++) 
+            for (int i = 0; i < n; i++)
             {
                 double x_i = x.ElementAt(i);
                 sum += 1.0 / x_i;
