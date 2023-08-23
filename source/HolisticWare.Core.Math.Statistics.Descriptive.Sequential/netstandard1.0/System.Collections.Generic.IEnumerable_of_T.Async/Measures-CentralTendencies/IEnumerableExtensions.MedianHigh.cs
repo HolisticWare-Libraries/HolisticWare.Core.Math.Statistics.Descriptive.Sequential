@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Core.Math.Statistics.Descriptive
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public static partial class IEnumerableExtensionsMedianHigh
+    public static partial class
+                                        IEnumerableExtensionsMedianHigh
     {
         //==============================================================================================================
         public static double MedianHighAsync
