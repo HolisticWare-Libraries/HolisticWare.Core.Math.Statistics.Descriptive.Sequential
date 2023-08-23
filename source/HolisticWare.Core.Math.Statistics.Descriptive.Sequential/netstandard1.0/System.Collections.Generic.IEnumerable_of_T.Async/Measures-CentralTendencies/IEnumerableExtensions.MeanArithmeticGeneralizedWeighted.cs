@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 using Core.Math.Statistics.Descriptive;
 
@@ -14,234 +15,274 @@ namespace Core.Math.Statistics.Descriptive
     public static partial class IEnumerableExtensionsMeanArithmeticGeneralizedWeighted
     {
         //==============================================================================================================
-        public static double MeanArithmeticGeneralizedWeightedAsync
+        public static
+            Task<double>
+                                        MeanArithmeticGeneralizedWeightedAsync
                                         (
                                             this IEnumerable<byte> x,
                                             IEnumerable<double> w,
                                             double power
                                         )
         {
-            int n = x.Count();
+            TaskCompletionSource<double> tcs;
+            tcs = new TaskCompletionSource<double>();
+            Task.Run
+                    (
+                        () =>
+                        {
+                            double result = x.MeanArithmeticGeneralizedWeighted
+                                                                        (
+                                                                            w,
+                                                                            power
+                                                                        );
+                            tcs.SetResult(result);
+                        }
+                    );
 
-            double sum = 0.0;
-            double sum_w = 0.0;
-
-            for (int i = 0; i < n; i++)
-            {
-                byte x_i = x.ElementAt(i);
-                double w_i = w.ElementAt(i);
-                sum += w_i * System.Math.Pow(x_i, power);
-                sum_w += w_i;
-            }
-
-            return System.Math.Pow(sum / sum_w, 1.0 / power);
+            return tcs.Task;
         }
 
-        public static double MeanArithmeticGeneralizedWeightedAsync
+        public static
+            Task<double>
+                                        MeanArithmeticGeneralizedWeightedAsync
                                         (
                                             this IEnumerable<short> x,
                                             IEnumerable<double> w,
                                             double power
                                         )
         {
-            int n = x.Count();
+            TaskCompletionSource<double> tcs;
+            tcs = new TaskCompletionSource<double>();
+            Task.Run
+                    (
+                        () =>
+                        {
+                            double result = x.MeanArithmeticGeneralizedWeighted
+                                                                        (
+                                                                            w,
+                                                                            power
+                                                                        );
+                            tcs.SetResult(result);
+                        }
+                    );
 
-            double sum = 0.0;
-            double sum_w = 0.0;
-
-            for (int i = 0; i < n; i++)
-            {
-                short x_i = x.ElementAt(i);
-                double w_i = w.ElementAt(i);
-                sum += w_i * System.Math.Pow(x_i, power);
-                sum_w += w_i;
-            }
-
-            return System.Math.Pow(sum / sum_w, 1.0 / power);
+            return tcs.Task;
         }
 
-        public static double MeanArithmeticGeneralizedWeightedAsync
+        public static
+            Task<double>
+                                        MeanArithmeticGeneralizedWeightedAsync
                                         (
                                             this IEnumerable<ushort> x,
                                             IEnumerable<double> w,
                                             double power
                                         )
         {
-            int n = x.Count();
+            TaskCompletionSource<double> tcs;
+            tcs = new TaskCompletionSource<double>();
+            Task.Run
+                    (
+                        () =>
+                        {
+                            double result = x.MeanArithmeticGeneralizedWeighted
+                                                                        (
+                                                                            w,
+                                                                            power
+                                                                        );
+                            tcs.SetResult(result);
+                        }
+                    );
 
-            double sum = 0.0;
-            double sum_w = 0.0;
-
-            for (int i = 0; i < n; i++)
-            {
-                ushort x_i = x.ElementAt(i);
-                double w_i = w.ElementAt(i);
-                sum += w_i * System.Math.Pow(x_i, power);
-                sum_w += w_i;
-            }
-
-            return System.Math.Pow(sum / sum_w, 1.0 / power);
+            return tcs.Task;
         }
 
-        public static double MeanArithmeticGeneralizedWeightedAsync
+        public static
+            Task<double>
+                                        MeanArithmeticGeneralizedWeightedAsync
                                         (
                                             this IEnumerable<int> x,
                                             IEnumerable<double> w,
                                             double power
                                         )
         {
-            int n = x.Count();
+            TaskCompletionSource<double> tcs;
+            tcs = new TaskCompletionSource<double>();
+            Task.Run
+                    (
+                        () =>
+                        {
+                            double result = x.MeanArithmeticGeneralizedWeighted
+                                                                        (
+                                                                            w,
+                                                                            power
+                                                                        );
+                            tcs.SetResult(result);
+                        }
+                    );
 
-            double sum = 0.0;
-            double sum_w = 0.0;
-
-            for (int i = 0; i < n; i++)
-            {
-                int x_i = x.ElementAt(i);
-                double w_i = w.ElementAt(i);
-                sum += w_i * System.Math.Pow(x_i, power);
-                sum_w += w_i;
-            }
-
-            return System.Math.Pow(sum / sum_w, 1.0 / power);
+            return tcs.Task;
         }
 
-        public static double MeanArithmeticGeneralizedWeightedAsync
+        public static
+            Task<double>
+                                        MeanArithmeticGeneralizedWeightedAsync
                                         (
                                             this IEnumerable<uint> x,
                                             IEnumerable<double> w,
                                             double power
                                         )
         {
-            int n = x.Count();
+            TaskCompletionSource<double> tcs;
+            tcs = new TaskCompletionSource<double>();
+            Task.Run
+                    (
+                        () =>
+                        {
+                            double result = x.MeanArithmeticGeneralizedWeighted
+                                                                        (
+                                                                            w,
+                                                                            power
+                                                                        );
+                            tcs.SetResult(result);
+                        }
+                    );
 
-            double sum = 0.0;
-            double sum_w = 0.0;
-
-            for (int i = 0; i < n; i++)
-            {
-                uint x_i = x.ElementAt(i);
-                double w_i = w.ElementAt(i);
-                sum += w_i * System.Math.Pow(x_i, power);
-                sum_w += w_i;
-            }
-
-            return System.Math.Pow(sum / sum_w, 1.0 / power);
+            return tcs.Task;
         }
 
-        public static double MeanArithmeticGeneralizedWeightedAsync
+        public static
+            Task<double>
+                                        MeanArithmeticGeneralizedWeightedAsync
                                         (
                                             this IEnumerable<long> x,
                                             IEnumerable<double> w,
                                             double power
                                         )
         {
-            int n = x.Count();
+            TaskCompletionSource<double> tcs;
+            tcs = new TaskCompletionSource<double>();
+            Task.Run
+                    (
+                        () =>
+                        {
+                            double result = x.MeanArithmeticGeneralizedWeighted
+                                                                        (
+                                                                            w,
+                                                                            power
+                                                                        );
+                            tcs.SetResult(result);
+                        }
+                    );
 
-            double sum = 0.0;
-            double sum_w = 0.0;
-
-            for (int i = 0; i < n; i++)
-            {
-                long x_i = x.ElementAt(i);
-                double w_i = w.ElementAt(i);
-                sum += w_i * System.Math.Pow(x_i, power);
-                sum_w += w_i;
-            }
-
-            return System.Math.Pow(sum / sum_w, 1.0 / power);
+            return tcs.Task;
         }
 
-        public static double MeanArithmeticGeneralizedWeightedAsync
+        public static
+            Task<double>
+                                        MeanArithmeticGeneralizedWeightedAsync
                                         (
                                             this IEnumerable<ulong> x,
                                             IEnumerable<double> w,
                                             double power
                                         )
         {
-            int n = x.Count();
+            TaskCompletionSource<double> tcs;
+            tcs = new TaskCompletionSource<double>();
+            Task.Run
+                    (
+                        () =>
+                        {
+                            double result = x.MeanArithmeticGeneralizedWeighted
+                                                                        (
+                                                                            w,
+                                                                            power
+                                                                        );
+                            tcs.SetResult(result);
+                        }
+                    );
 
-            double sum = 0.0;
-            double sum_w = 0.0;
-
-            for (int i = 0; i < n; i++)
-            {
-                ulong x_i = x.ElementAt(i);
-                double w_i = w.ElementAt(i);
-                sum += w_i * System.Math.Pow(x_i, power);
-                sum_w += w_i;
-            }
-
-            return System.Math.Pow(sum / sum_w, 1.0 / power);
+            return tcs.Task;
         }
 
-        public static double MeanArithmeticGeneralizedWeightedAsync
+        public static
+            Task<double>
+                                        MeanArithmeticGeneralizedWeightedAsync
                                         (
                                             this IEnumerable<float> x,
                                             IEnumerable<double> w,
                                             double power
                                         )
         {
-            int n = x.Count();
+            TaskCompletionSource<double> tcs;
+            tcs = new TaskCompletionSource<double>();
+            Task.Run
+                    (
+                        () =>
+                        {
+                            double result = x.MeanArithmeticGeneralizedWeighted
+                                                                        (
+                                                                            w,
+                                                                            power
+                                                                        );
+                            tcs.SetResult(result);
+                        }
+                    );
 
-            double sum = 0.0;
-            double sum_w = 0.0;
-
-            for (int i = 0; i < n; i++)
-            {
-                float x_i = x.ElementAt(i);
-                double w_i = w.ElementAt(i);
-                sum += w_i * System.Math.Pow(x_i, power);
-                sum_w += w_i;
-            }
-
-            return System.Math.Pow(sum / sum_w, 1.0 / power);
+            return tcs.Task;
         }
 
-        public static double MeanArithmeticGeneralizedWeightedAsync
+        public static
+            Task<double>
+                                        MeanArithmeticGeneralizedWeightedAsync
                                         (
                                             this IEnumerable<double> x,
                                             IEnumerable<double> w,
                                             double power
                                         )
         {
-            int n = x.Count();
+            TaskCompletionSource<double> tcs;
+            tcs = new TaskCompletionSource<double>();
+            Task.Run
+                    (
+                        () =>
+                        {
+                            double result = x.MeanArithmeticGeneralizedWeighted
+                                                                        (
+                                                                            w,
+                                                                            power
+                                                                        );
+                            tcs.SetResult(result);
+                        }
+                    );
 
-            double sum = 0.0;
-            double sum_w = 0.0;
-
-            for (int i = 0; i < n; i++)
-            {
-                double x_i = x.ElementAt(i);
-                double w_i = w.ElementAt(i);
-                sum += w_i * System.Math.Pow(x_i, power);
-                sum_w += w_i;
-            }
-
-            return System.Math.Pow(sum / sum_w, 1.0 / power);
+            return tcs.Task;
         }
 
-        public static decimal MeanArithmeticGeneralizedWeightedAsync
+        public static
+            Task<decimal>
+                                        MeanArithmeticGeneralizedWeightedAsync
                                         (
                                             this IEnumerable<decimal> x,
                                             IEnumerable<double> w,
                                             double power
                                         )
         {
-            int n = x.Count();
+            TaskCompletionSource<decimal> tcs;
+            tcs = new TaskCompletionSource<decimal>();
+            Task.Run
+                    (
+                        () =>
+                        {
+                            decimal result = x.MeanArithmeticGeneralizedWeighted
+                                                                        (
+                                                                            w,
+                                                                            power
+                                                                        );
+                            tcs.SetResult(result);
+                        }
+                    );
 
-            double sum = 0.0;
-            double sum_w = 0.0;
-
-            for (int i = 0; i < n; i++)
-            {
-                decimal x_i = x.ElementAt(i);
-                double w_i = w.ElementAt(i);
-                sum += w_i * System.Math.Pow((double) x_i, power);
-                sum_w += w_i;
-            }
-
-            return (decimal) System.Math.Pow(sum / sum_w, 1.0 / power);
+            return tcs.Task;
         }
 
         //==============================================================================================================
