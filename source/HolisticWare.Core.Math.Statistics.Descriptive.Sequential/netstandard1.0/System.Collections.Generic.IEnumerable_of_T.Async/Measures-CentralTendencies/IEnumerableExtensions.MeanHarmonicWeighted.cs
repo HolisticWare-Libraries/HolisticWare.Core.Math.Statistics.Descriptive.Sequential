@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
-using Core.Math.Statistics.Descriptive;
+using System.Threading.Tasks;
 
 namespace Core.Math.Statistics.Descriptive
 {
     /// <summary>
     /// Correlation
     /// </summary>
-    public static partial class IEnumerableExtensionsMeanHarmonicWeightedAsync
+    public static partial class
+                                        IEnumerableExtensionsMeanHarmonicWeightedAsync
     {
         //==============================================================================================================
         public static double MeanHarmonicWeightedAsync
