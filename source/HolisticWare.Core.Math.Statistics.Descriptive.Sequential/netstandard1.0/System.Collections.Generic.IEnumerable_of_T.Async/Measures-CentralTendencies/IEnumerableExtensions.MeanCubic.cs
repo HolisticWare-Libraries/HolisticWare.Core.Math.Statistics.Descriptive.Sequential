@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 using Core.Math.Statistics.Descriptive;
 
@@ -10,13 +11,16 @@ namespace Core.Math.Statistics.Descriptive
     /// Mean (Average) Cubic
     /// </summary>
     /// <see href="https://en.wikipedia.org/wiki/Average"/>
-    public static partial class IEnumerableExtensionsMeanCubic
+    public static partial class
+                                        IEnumerableExtensionsMeanCubic
     {
         //==============================================================================================================
-        public static double MeanCubicAsync
-                                    (
-                                        this IEnumerable<byte> x
-                                    )
+        public static
+            double
+                                        MeanCubicAsync
+                                        (
+                                            this IEnumerable<byte> x
+                                        )
         {
             int n = x.Count();
 
