@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
-using Core.Math.Statistics.Descriptive;
+using System.Threading.Tasks;
 
 namespace Core.Math.Statistics.Descriptive
 {
@@ -10,7 +9,8 @@ namespace Core.Math.Statistics.Descriptive
     /// Correlation
     /// </summary>
     /// <see href="https://ncalculators.com/statistics/weighted-mean-calculator.htm"/>
-    public static partial class IEnumerableExtensionsMeanWeighted
+    public static partial class
+                                        IEnumerableExtensionsMeanWeighted
     {
         //==============================================================================================================
         /// <summary>
@@ -31,7 +31,7 @@ namespace Core.Math.Statistics.Descriptive
 
         public static double MeanWeightedAsync
                                     (
-                                        this IEnumerable<short> x, 
+                                        this IEnumerable<short> x,
                                         IEnumerable<double> w
                                     )
         {
@@ -40,7 +40,7 @@ namespace Core.Math.Statistics.Descriptive
 
         public static double MeanWeightedAsync
                                     (
-                                        this IEnumerable<ushort> x, 
+                                        this IEnumerable<ushort> x,
                                         IEnumerable<double> w
                                     )
         {
@@ -49,7 +49,7 @@ namespace Core.Math.Statistics.Descriptive
 
         public static double MeanWeightedAsync
                                     (
-                                        this IEnumerable<int> x, 
+                                        this IEnumerable<int> x,
                                         IEnumerable<double> w
                                     )
         {
@@ -58,7 +58,7 @@ namespace Core.Math.Statistics.Descriptive
 
         public static double MeanWeightedAsync
                                     (
-                                        this IEnumerable<uint> x, 
+                                        this IEnumerable<uint> x,
                                         IEnumerable<double> w
                                     )
         {
@@ -67,7 +67,7 @@ namespace Core.Math.Statistics.Descriptive
 
         public static double MeanWeightedAsync
                                     (
-                                        this IEnumerable<long> x, 
+                                        this IEnumerable<long> x,
                                         IEnumerable<double> w
                                     )
         {
@@ -76,7 +76,7 @@ namespace Core.Math.Statistics.Descriptive
 
         public static double MeanWeightedAsync
                                     (
-                                        this IEnumerable<ulong> x, 
+                                        this IEnumerable<ulong> x,
                                         IEnumerable<double> w
                                     )
         {
@@ -85,7 +85,7 @@ namespace Core.Math.Statistics.Descriptive
 
         public static double MeanWeightedAsync
                                     (
-                                        this IEnumerable<float> x, 
+                                        this IEnumerable<float> x,
                                         IEnumerable<double> w
                                     )
         {
@@ -94,7 +94,7 @@ namespace Core.Math.Statistics.Descriptive
 
         public static double MeanWeightedAsync
                                     (
-                                        this IEnumerable<double> x, 
+                                        this IEnumerable<double> x,
                                         IEnumerable<double> w
                                     )
         {
@@ -103,7 +103,7 @@ namespace Core.Math.Statistics.Descriptive
 
         public static decimal MeanWeightedAsync
                                     (
-                                        this IEnumerable<decimal> x, 
+                                        this IEnumerable<decimal> x,
                                         IEnumerable<double> w
                                     )
         {
