@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Core.Math.Statistics.Descriptive
 {
@@ -9,9 +10,10 @@ namespace Core.Math.Statistics.Descriptive
     /// </summary>
     /// <see href="https://en.wikipedia.org/wiki/Weighted_median"/>
     /// <see href="https://www.easycalculation.com/statistics/weighted-mean-calculator.php"/>
-    /// <see href="http://mathworld.wolfram.com/PowerMean.html"/> 
+    /// <see href="http://mathworld.wolfram.com/PowerMean.html"/>
     /// <see href="http://elsenaju.eu/Calculator/mean-value-calculator.htm"/>
-    public static partial class IEnumerableExtensionsMedianWeightedAsync
+    public static partial class
+                                        IEnumerableExtensionsMedianWeightedAsync
     {
         //==============================================================================================================
         /// <summary>
@@ -21,21 +23,21 @@ namespace Core.Math.Statistics.Descriptive
         /// <param name="x">x data</param>
         /// <param name="weights">Weights.</param>
         /// <see href="https://www.rdocumentation.org/packages/spatstat/versions/1.55-1/topics/weighted.median"/>
-        public static 
+        public static
                 (
-                    int IndexLower, 
-                    int IndexUpper, 
+                    int IndexLower,
+                    int IndexUpper,
                     double ValueLower,
                     double ValueUpper,
                     double Median
-                ) 
+                )
                             MedianWeightedAsync
                                     (
-                                        this IEnumerable<int> x, 
+                                        this IEnumerable<int> x,
                                         IEnumerable<double> weights
                                     )
         {
-           
+
             int n_x = x.Count();
             int n_w = weights.ToArray().Count();
 
@@ -60,7 +62,7 @@ namespace Core.Math.Statistics.Descriptive
             }
             else
             {
-                weights_normalized = weights;    
+                weights_normalized = weights;
             }
 
             bool advance_lower = true;
@@ -102,7 +104,7 @@ namespace Core.Math.Statistics.Descriptive
 
             if (n_x % 2 != 0 && i_lower + 1 == i_upper - 1)
             {
-                index_lower = i_lower; 
+                index_lower = i_lower;
                 index_upper = i_upper;
                 index = index_lower + 1;
                 //index = index_upper - 1;
@@ -126,10 +128,10 @@ namespace Core.Math.Statistics.Descriptive
             double value_lower = x.ElementAt(index_lower);
             double value_upper = x.ElementAt(index_upper);
 
-            return 
+            return
                 (
-                    IndexLower: index_lower, 
-                    IndexUpper: index_upper, 
+                    IndexLower: index_lower,
+                    IndexUpper: index_upper,
                     ValueLower: value_lower,
                     ValueUpper: value_upper,
                     Median: median
