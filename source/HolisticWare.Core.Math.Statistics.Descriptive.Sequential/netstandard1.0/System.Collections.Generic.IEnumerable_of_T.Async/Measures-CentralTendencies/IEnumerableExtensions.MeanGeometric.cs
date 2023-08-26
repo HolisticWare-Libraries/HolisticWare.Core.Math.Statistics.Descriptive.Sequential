@@ -13,182 +13,214 @@ namespace Core.Math.Statistics.Descriptive
                                         IEnumerableExtensionsMeanGeometric
     {
         //==============================================================================================================
-        public static double MeanGeometricAsync
+        public static 
+            Task<double> 
+                                        MeanGeometricAsync
                                         (
                                             this IEnumerable<byte> x
                                         )
         {
-            int n = x.Count();
+            TaskCompletionSource<double> tcs;
+            tcs = new TaskCompletionSource<double>();
+            Task.Run
+                    (
+                        () =>
+                        {
+                            double result = x.MeanGeometric();
+                            tcs.SetResult(result);
+                        }
+                    );
 
-            double product = 1.0;
-
-            for (int i = 0; i < n; i++)
-            {
-                byte x_i = x.ElementAt(i);
-                product *= x_i;
-            }
-
-            return System.Math.Pow(product, 1.0 / n);
+            return tcs.Task;
         }
 
-        public static double MeanGeometricAsync
+        public static 
+            Task<double> 
+                                        MeanGeometricAsync
                                         (
                                             this IEnumerable<ushort> x
                                         )
         {
-            int n = x.Count();
+            TaskCompletionSource<double> tcs;
+            tcs = new TaskCompletionSource<double>();
+            Task.Run
+                    (
+                        () =>
+                        {
+                            double result = x.MeanGeometric();
+                            tcs.SetResult(result);
+                        }
+                    );
 
-            double product = 1.0;
-
-            for(int i = 0; i < n; i++)
-            {
-                ushort x_i = x.ElementAt(i);
-                product *= x_i;
-            }
-
-            return System.Math.Pow(product, 1.0 / n);
+            return tcs.Task;
         }
 
-        public static double MeanGeometricAsync
+        public static 
+            Task<double> 
+                                        MeanGeometricAsync
                                         (
                                             this IEnumerable<short> x
                                         )
         {
-            int n = x.Count();
+            TaskCompletionSource<double> tcs;
+            tcs = new TaskCompletionSource<double>();
+            Task.Run
+                    (
+                        () =>
+                        {
+                            double result = x.MeanGeometric();
+                            tcs.SetResult(result);
+                        }
+                    );
 
-            double product = 1.0;
-
-            for (int i = 0; i < n; i++)
-            {
-
-                short x_i = x.ElementAt(i);
-                product *= x_i;
-            }
-
-            return System.Math.Pow(product, 1.0 / n);
+            return tcs.Task;
         }
 
-        public static double MeanGeometricAsync
+        public static 
+            Task<double> 
+                                        MeanGeometricAsync
                                         (
                                             this IEnumerable<int> x
                                         )
         {
-            int n = x.Count();
+            TaskCompletionSource<double> tcs;
+            tcs = new TaskCompletionSource<double>();
+            Task.Run
+                    (
+                        () =>
+                        {
+                            double result = x.MeanGeometric();
+                            tcs.SetResult(result);
+                        }
+                    );
 
-            double product = 1.0;
-
-            for (int i = 0; i < n; i++)
-            {
-                int x_i = x.ElementAt(i);
-                product *= x_i;
-            }
-
-            return System.Math.Pow(product, 1.0 / n);
+            return tcs.Task;
         }
 
-        public static double MeanGeometricAsync
+        public static 
+            Task<double> 
+                                        MeanGeometricAsync
                                         (
                                             this IEnumerable<uint> x
                                         )
         {
-            int n = x.Count();
+            TaskCompletionSource<double> tcs;
+            tcs = new TaskCompletionSource<double>();
+            Task.Run
+                    (
+                        () =>
+                        {
+                            double result = x.MeanGeometric();
+                            tcs.SetResult(result);
+                        }
+                    );
 
-            double product = 1.0;
-
-            for (int i = 0; i < n; i++)
-            {
-                uint x_i = x.ElementAt(i);
-                product *= x_i;
-            }
-
-            return System.Math.Pow(product, 1.0 / n);
+            return tcs.Task;
         }
 
-        public static double MeanGeometricAsync
+        public static 
+            Task<double> 
+                                        MeanGeometricAsync
                                         (
                                             this IEnumerable<long> x
                                         )
         {
-            int n = x.Count();
+            TaskCompletionSource<double> tcs;
+            tcs = new TaskCompletionSource<double>();
+            Task.Run
+                    (
+                        () =>
+                        {
+                            double result = x.MeanGeometric();
+                            tcs.SetResult(result);
+                        }
+                    );
 
-            double product = 1.0;
-
-            for (int i = 0; i < n; i++)
-            {
-                long x_i = x.ElementAt(i);
-                product *= x_i;
-            }
-
-            return System.Math.Pow(product, 1.0 / n);
+            return tcs.Task;
         }
 
-        public static double MeanGeometricAsync
+        public static 
+            Task<double> 
+                                        MeanGeometricAsync
                                         (
                                             this IEnumerable<ulong> x
                                         )
         {
-            int n = x.Count();
+            TaskCompletionSource<double> tcs;
+            tcs = new TaskCompletionSource<double>();
+            Task.Run
+                    (
+                        () =>
+                        {
+                            double result = x.MeanGeometric();
+                            tcs.SetResult(result);
+                        }
+                    );
 
-            double product = 1.0;
-
-            for (int i = 0; i < n; i++)
-            {
-                ulong x_i = x.ElementAt(i);
-                product *= x_i;
-            }
-
-            return System.Math.Pow(product, 1.0 / n);
+            return tcs.Task;
         }
 
-        public static double MeanGeometricAsync
+        public static 
+            Task<double> 
+                                        MeanGeometricAsync
                                         (
                                             this IEnumerable<float> x
                                         )
         {
-            int n = x.Count();
+            TaskCompletionSource<double> tcs;
+            tcs = new TaskCompletionSource<double>();
+            Task.Run
+                    (
+                        () =>
+                        {
+                            double result = x.MeanGeometric();
+                            tcs.SetResult(result);
+                        }
+                    );
 
-            double product = 1.0;
-
-            for (int i = 0; i < n; i++)
-            {
-                float x_i = x.ElementAt(i);
-                product *= x_i;
-            }
-
-            return System.Math.Pow(product, 1.0 / n);
+            return tcs.Task;
         }
 
-        public static double MeanGeometricAsync
+        public static 
+            Task<double> 
+                                        MeanGeometricAsync
                                         (
                                             this IEnumerable<double> x
                                         )
         {
-            int n = x.Count();
+            TaskCompletionSource<double> tcs;
+            tcs = new TaskCompletionSource<double>();
+            Task.Run
+                    (
+                        () =>
+                        {
+                            double result = x.MeanGeometric();
+                            tcs.SetResult(result);
+                        }
+                    );
 
-            double product = 1.0;
-
-            for (int i = 0; i < n; i++)
-            {
-                double x_i = x.ElementAt(i);
-                product *= x_i;
-            }
-
-            return System.Math.Pow(product, 1.0 / n);
+            return tcs.Task;
         }
 
-        public static decimal MeanGeometricAsync(this IEnumerable<decimal> x)
+        public static 
+            Task<decimal> 
+                                        MeanGeometricAsyn
+                                        (
+                                            this IEnumerable<decimal> x
+                                        )
         {
-            int n = x.Count();
+            TaskCompletionSource<decimal> tcs;
+            tcs = new TaskCompletionSource<decimal>();
+            Task.Run
+                    (
+                        () =>
+                        {
+                            decimal result = x.MeanGeometric();
+                            tcs.SetResult(result);
+                        }
+                    );
 
-            decimal product = 1.0M;
-
-            for (int i = 0; i < n; i++)
-            {
-                decimal x_i = x.ElementAt(i);
-                product *= x_i;
-            }
-
-            return (decimal) System.Math.Pow((double)product, 1.0 / n);
+            return tcs.Task;
         }
         //==============================================================================================================
 
