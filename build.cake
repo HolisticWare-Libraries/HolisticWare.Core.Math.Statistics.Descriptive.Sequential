@@ -155,9 +155,11 @@ Task("Default")
     (
         () =>
         {
-            //RunTarget("unit-tests");
+            RunTarget("unit-tests");
             RunTarget("nuget-pack");
             RunTarget("samples");
+
+            return;
         }
     );
 
