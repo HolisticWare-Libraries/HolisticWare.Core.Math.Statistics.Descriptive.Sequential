@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0</TargetFrameworks>
+        <!--
+        <DefaultItemExcludes>$(DefaultItemExcludes);.DS_Store</DefaultItemExcludes>
+        <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+        -->
+        <RootNamespace>Core.Math.Statistic.Descriptive.MatlabOctave</RootNamespace>
+        <AssemblyName>HolisticWare.$(RootNamespace)</AssemblyName>
+
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+        <CreatePackage>false</CreatePackage>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\HolisticWare.Core.Math.Statistics.Descriptive\HolisticWare.Core.Math.Statistics.Descriptive.csproj" />
+    </ItemGroup>
+
+</Project>
