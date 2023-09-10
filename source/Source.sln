@@ -12,11 +12,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "externals-submodules", "ext
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core.LINQ", "Core.LINQ", "{9AE372A0-FCD3-41D1-A963-D16223DAA544}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Math.Statistics.Descriptive.Sequential", "HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.csproj", "{B080C361-4404-41EB-8C23-53A06ACA895A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.LINQ.Memory", "..\externals-submodules\Core.LINQ\source\HolisticWare.Core.LINQ.Memory\HolisticWare.Core.LINQ.Memory.csproj", "{E958E716-EDC1-4007-8FE1-B16EA9FE296C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "library-source", "library-source", "{6FE17277-3E98-46D0-9C03-CD6C2FC68292}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core", "..\externals-submodules\Core\source\HolisticWare.Core\HolisticWare.Core.csproj", "{60B3D2F6-1E68-414F-A4DB-68089E7C4691}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Math", "..\externals-submodules\Core.Math\source\HolisticWare.Core.Math\HolisticWare.Core.Math.csproj", "{EE0E8F49-1772-4E65-8C6C-B9C160015DF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave", "HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave\HolisticWare.Core.Math.Statistics.Descriptive.MatlabOctave.csproj", "{557DC0D8-8F79-48EE-BA31-3EA434A27D9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Core.Math.Statistics.Descriptive", "HolisticWare.Core.Math.Statistics.Descriptive\HolisticWare.Core.Math.Statistics.Descriptive.csproj", "{1F85EB27-2074-415C-B610-D23D2F239ED2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,14 +30,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B080C361-4404-41EB-8C23-53A06ACA895A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B080C361-4404-41EB-8C23-53A06ACA895A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B080C361-4404-41EB-8C23-53A06ACA895A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B080C361-4404-41EB-8C23-53A06ACA895A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E958E716-EDC1-4007-8FE1-B16EA9FE296C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E958E716-EDC1-4007-8FE1-B16EA9FE296C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E958E716-EDC1-4007-8FE1-B16EA9FE296C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E958E716-EDC1-4007-8FE1-B16EA9FE296C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60B3D2F6-1E68-414F-A4DB-68089E7C4691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60B3D2F6-1E68-414F-A4DB-68089E7C4691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60B3D2F6-1E68-414F-A4DB-68089E7C4691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60B3D2F6-1E68-414F-A4DB-68089E7C4691}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE0E8F49-1772-4E65-8C6C-B9C160015DF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE0E8F49-1772-4E65-8C6C-B9C160015DF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE0E8F49-1772-4E65-8C6C-B9C160015DF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE0E8F49-1772-4E65-8C6C-B9C160015DF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{557DC0D8-8F79-48EE-BA31-3EA434A27D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{557DC0D8-8F79-48EE-BA31-3EA434A27D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{557DC0D8-8F79-48EE-BA31-3EA434A27D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{557DC0D8-8F79-48EE-BA31-3EA434A27D9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F85EB27-2074-415C-B610-D23D2F239ED2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F85EB27-2074-415C-B610-D23D2F239ED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F85EB27-2074-415C-B610-D23D2F239ED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F85EB27-2074-415C-B610-D23D2F239ED2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,7 +57,10 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{9AE372A0-FCD3-41D1-A963-D16223DAA544} = {5EA6F703-ADC1-4150-A30E-55DCB34A9489}
 		{E958E716-EDC1-4007-8FE1-B16EA9FE296C} = {9AE372A0-FCD3-41D1-A963-D16223DAA544}
-		{B080C361-4404-41EB-8C23-53A06ACA895A} = {6FE17277-3E98-46D0-9C03-CD6C2FC68292}
+		{60B3D2F6-1E68-414F-A4DB-68089E7C4691} = {5EA6F703-ADC1-4150-A30E-55DCB34A9489}
+		{EE0E8F49-1772-4E65-8C6C-B9C160015DF9} = {5EA6F703-ADC1-4150-A30E-55DCB34A9489}
+		{557DC0D8-8F79-48EE-BA31-3EA434A27D9A} = {6FE17277-3E98-46D0-9C03-CD6C2FC68292}
+		{1F85EB27-2074-415C-B610-D23D2F239ED2} = {6FE17277-3E98-46D0-9C03-CD6C2FC68292}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D407CCD4-3E13-4090-84BA-9DE5B3A8F357}
