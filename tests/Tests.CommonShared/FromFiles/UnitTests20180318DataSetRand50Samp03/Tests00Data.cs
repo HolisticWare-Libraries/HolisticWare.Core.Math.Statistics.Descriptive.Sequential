@@ -70,7 +70,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Reflection;
 
-using Core.Math.Statistics.Descriptive.Sequential;
+using Core.Math.Statistics.Descriptive;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {

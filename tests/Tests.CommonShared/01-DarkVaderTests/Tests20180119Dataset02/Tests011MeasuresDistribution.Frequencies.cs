@@ -67,7 +67,7 @@ using System.Linq;
 using System.Diagnostics;
 using System.Collections.ObjectModel;
 
-using Core.Math.Statistics.Descriptive.Sequential;
+using Core.Math.Statistics.Descriptive;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
@@ -164,7 +164,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Assert
-            #if NUNIT && !NUNIT_LITE            //CollectionAssert.AreEquivalent
+            #if NUNIT && !NUNIT_LITE
+            //CollectionAssert.AreEquivalent
                                      //(
                                      //    frequencies_calculated.ToList(),
                                      //    f
@@ -298,7 +299,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             // Assert
-            #if NUNIT && !NUNIT_LITE            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
+            #if NUNIT && !NUNIT_LITE
+            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
             for (int i = 0; i < frequencies_calculated.Count(); i++)
             {
                 Assert.AreEqual
@@ -420,7 +422,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Assert
-#if NUNIT && !NUNIT_LITE            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
+#if NUNIT && !NUNIT_LITE
+            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
             for (int i = 0; i < frequencies_calculated.Count(); i++)
             {
                 Assert.AreEqual
@@ -538,7 +541,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             // Assert
-#if NUNIT && !NUNIT_LITE            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
+#if NUNIT && !NUNIT_LITE
+            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
             for (int i = 0; i < frequencies_calculated.Count(); i++)
             {
                 Assert.AreEqual
@@ -661,7 +665,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Assert
-            #if NUNIT && !NUNIT_LITE            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
+            #if NUNIT && !NUNIT_LITE
+            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
             for (int i = 0; i < frequencies_calculated.Count(); i++)
             {
                 Assert.AreEqual
@@ -784,7 +789,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Assert
-            #if NUNIT && !NUNIT_LITE            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
+            #if NUNIT && !NUNIT_LITE
+            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
             for (int i = 0; i < frequencies_calculated.Count(); i++)
             {
                 Assert.AreEqual
@@ -907,7 +913,8 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 
             //----------------------------------------------------------------------------------------------------
             // Assert
-            #if NUNIT && !NUNIT_LITE            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
+            #if NUNIT && !NUNIT_LITE
+            Assert.AreEqual(frequencies_calculated.Count(), f.Count());
             for (int i = 0; i < frequencies_calculated.Count(); i++)
             {
                 Assert.AreEqual

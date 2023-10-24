@@ -57,7 +57,7 @@ using Test = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 #endif
 
-using Core.Math.Statistics.Descriptive.Sequential;
+using Core.Math.Statistics.Descriptive;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {

@@ -57,7 +57,8 @@ using BenchmarkDotNet.Running;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Attributes.Jobs;
 #else
-using Benchmark = HolisticWare.Core.Testing.BenchmarkTests.Benchmark;using ShortRunJob = HolisticWare.Core.Testing.BenchmarkTests.ShortRunJob;
+using Benchmark = HolisticWare.Core.Testing.BenchmarkTests.Benchmark;
+using ShortRunJob = HolisticWare.Core.Testing.BenchmarkTests.ShortRunJob;
 #endif
 
 using System;
@@ -65,7 +66,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
 using System.Collections.ObjectModel;
-
+using Core.Math.Statistics.Descriptive;
 using Core.Math.Statistics.Descriptive.Sequential;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
@@ -109,7 +110,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
+            #if NUNIT && !NUNIT_LITE
+            CollectionAssert.AreEquivalent
+                        (
                             frequencies_cumulative_calculated.ToList(),
                             frequencies
                         );
@@ -159,7 +162,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Reset();
             //----------------------------------------------------------------------------------------------------
             // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
+            #if NUNIT && !NUNIT_LITE
+            CollectionAssert.AreEquivalent
+                        (
                             frequencies_cumulative_calculated.ToList(),
                             frequencies
                         );
@@ -208,7 +213,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Reset();
             //----------------------------------------------------------------------------------------------------
             // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
+            #if NUNIT && !NUNIT_LITE
+            CollectionAssert.AreEquivalent
+                        (
                             frequencies_cumulative_calculated.ToList(),
                             frequencies
                         );
@@ -257,7 +264,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Reset();
             //----------------------------------------------------------------------------------------------------
             // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
+            #if NUNIT && !NUNIT_LITE
+            CollectionAssert.AreEquivalent
+                        (
                             frequencies_cumulative_calculated.ToList(),
                             frequencies
                         );
@@ -307,7 +316,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Reset();
             //----------------------------------------------------------------------------------------------------
             // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
+            #if NUNIT && !NUNIT_LITE
+            CollectionAssert.AreEquivalent
+                        (
                             frequencies_cumulative_calculated.ToList(),
                             frequencies
                         );
@@ -358,7 +369,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             //----------------------------------------------------------------------------------------------------
             // Assert
             // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
+            #if NUNIT && !NUNIT_LITE
+            CollectionAssert.AreEquivalent
+                        (
                             frequencies_cumulative_calculated.ToList(),
                             frequencies
                         );
@@ -408,7 +421,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             sw.Reset();
             //----------------------------------------------------------------------------------------------------
             // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
+            #if NUNIT && !NUNIT_LITE
+            CollectionAssert.AreEquivalent
+                        (
                             frequencies_cumulative_calculated.ToList(),
                             frequencies
                         );

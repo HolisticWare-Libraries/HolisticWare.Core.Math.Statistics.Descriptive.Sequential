@@ -57,7 +57,8 @@ using BenchmarkDotNet.Running;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Attributes.Jobs;
 #else
-using Benchmark = HolisticWare.Core.Testing.BenchmarkTests.Benchmark;using ShortRunJob = HolisticWare.Core.Testing.BenchmarkTests.ShortRunJob;
+using Benchmark = HolisticWare.Core.Testing.BenchmarkTests.Benchmark;
+using ShortRunJob = HolisticWare.Core.Testing.BenchmarkTests.ShortRunJob;
 #endif
 
 using System;
@@ -65,8 +66,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
 using System.Collections.ObjectModel;
-
-using Core.Math.Statistics.Descriptive.Sequential;
+using Core.Math.Statistics.Descriptive;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeighted.Wikipedia
 {

@@ -71,7 +71,7 @@ using System.IO;
 using System.Reflection;
 using System.Collections.ObjectModel;
 
-using Core.Math.Statistics.Descriptive.Sequential;
+using Core.Math.Statistics.Descriptive;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
@@ -91,7 +91,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             Console.WriteLine($"List<int>.Modes() size={data01.Count()} elapsed[ticks]={sw.ElapsedTicks}");
 
             // Assert
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                            (
+            #if NUNIT && !NUNIT_LITE
+            CollectionAssert.AreEquivalent
+                            (
                                 new List<int> { 2, 3 },
                                 modes01
                             );

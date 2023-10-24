@@ -1,0 +1,47 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+
+
+  <PropertyGroup>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <LangVersion>Latest</LangVersion>
+    <!--
+
+      
+    The MSAL.snk has both private and public keys 
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)/build/MSAL.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>false</DelaySign>
+
+    <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)/build/SolutionWideAnalyzerConfig.ruleset</CodeAnalysisRuleSet>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    -->
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!--
+      EnableNETAnalyzers  
+    -->
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <!--
+      AnalysisLevel
+    -->
+    <AnalysisLevel>latest</AnalysisLevel>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\source\HolisticWare.Core.Math.Statistics.Descriptive.Sequential\HolisticWare.Core.Math.Statistics.Descriptive.Sequential.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\externals-submodules\Core.Math.Samples\data\HolisticWare.Core.Sample.Data\HolisticWare.Core.Sample.Data.csproj" />
+  </ItemGroup>
+
+  <Import Project="..\..\Tests.CommonShared\Tests.CommonShared.projitems" Label="Shared" />
+  <Import Project="..\UnitTests.Common.Utils.Shared\UnitTests.Common.Utils.Shared.projitems" Label="Shared" />
+
+</Project>

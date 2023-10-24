@@ -67,7 +67,7 @@ using System.Linq;
 using System.Diagnostics;
 using System.Collections.ObjectModel;
 
-using Core.Math.Statistics.Descriptive.Sequential;
+using Core.Math.Statistics.Descriptive;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.MedianWeighted.Wikipedia
 {

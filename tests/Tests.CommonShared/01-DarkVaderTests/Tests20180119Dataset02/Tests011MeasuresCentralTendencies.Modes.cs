@@ -67,7 +67,7 @@ using System.Linq;
 using System.Diagnostics;
 using System.Collections.ObjectModel;
 
-using Core.Math.Statistics.Descriptive.Sequential;
+using Core.Math.Statistics.Descriptive;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
 {
@@ -105,7 +105,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Assert
             modes.Sort();
 
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
+            #if NUNIT && !NUNIT_LITE
+            CollectionAssert.AreEquivalent
+                        (
                             new List<double> { 14.7, 18.2 },
                             modes
                         );
@@ -157,7 +159,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Assert
             modes.Sort();
 
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
+            #if NUNIT && !NUNIT_LITE
+            CollectionAssert.AreEquivalent
+                        (
                             new List<double> { 14.7, 18.2 },
                             modes
                         );
@@ -208,7 +212,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Assert
             modes.Sort();
 
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
+            #if NUNIT && !NUNIT_LITE
+            CollectionAssert.AreEquivalent
+                        (
                             new List<double> { 14.7, 18.2 },
                             modes
                         );
@@ -259,7 +265,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Assert
             modes.Sort();
 
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
+            #if NUNIT && !NUNIT_LITE
+            CollectionAssert.AreEquivalent
+                        (
                             new List<double> { 14.7, 18.2 },
                             modes
                         );
@@ -312,7 +320,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync
             // Assert
             modes.Sort();
 
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                        (
+            #if NUNIT && !NUNIT_LITE
+            CollectionAssert.AreEquivalent
+                        (
                             new List<double> { 14.7, 18.2 },
                             modes
                         );

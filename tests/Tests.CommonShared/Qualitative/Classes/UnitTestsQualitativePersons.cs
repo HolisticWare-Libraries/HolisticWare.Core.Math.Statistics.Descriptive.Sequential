@@ -58,7 +58,7 @@ using OneTimeSetUp = Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializ
 using Fact = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 #endif
 
-using Core.Math.Statistics.Descriptive.Sequential;
+using Core.Math.Statistics.Descriptive;
 
 namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.Qualitative.Classes
 {
@@ -85,7 +85,9 @@ namespace UnitTests.Core.Math.Statistics.Descriptive.Sequential.Sync.Qualitative
             f = data_eyecolors.Frequencies();
 
 
-            #if NUNIT && !NUNIT_LITE            CollectionAssert.AreEquivalent                                (
+            #if NUNIT && !NUNIT_LITE
+            CollectionAssert.AreEquivalent
+                                (
                                     f,
                                     fc
                                 );
