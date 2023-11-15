@@ -21,11 +21,13 @@ namespace Core.Math.Statistics.Descriptive
                                         (
                                             IEnumerable data_input
                                         )
-        {            
+        {
+            data = data_input;
+            
             return;
         }
 
-        private IEnumerable data = null;
+        private IEnumerable data;
 
         public
             IEnumerable

@@ -41,7 +41,7 @@ namespace Core.Math.Statistics.Descriptive
         }
 
         public
-            Dictionary<string, double>
+            Dictionary<string, double>?
                                         PrecalculatedCachedData
         {
             get;

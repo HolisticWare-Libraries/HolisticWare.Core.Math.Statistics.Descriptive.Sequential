@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
+﻿
 namespace Core.Math.Statistics.Descriptive
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     /// <summary>
     /// Median Weighted
     /// </summary>
@@ -31,23 +31,27 @@ namespace Core.Math.Statistics.Descriptive
                     double ValueUpper,
                     double Median
                 )
-                            MedianWeightedAsync
-                                    (
-                                        this IEnumerable<int> x,
-                                        IEnumerable<double> weights
-                                    )
+                                        MedianWeightedAsync
+                                        (
+                                            this IEnumerable<int> x,
+                                            IEnumerable<double> weights
+                                        )
         {
-
-            int n_x = x.Count();
-            int n_w = weights.ToArray().Count();
+            #pragma warning disable CA1851
+            Span<int> span_x = new Span<int>(x.ToArray());
+            Span<double> span_w = new Span<double>(weights.ToArray());
+            #pragma warning restore CA1851
+            
+            int n_x = span_x.Length;
+            int n_w = span_w.Length;
 
             if ( n_x != n_w)
             {
                 throw new InvalidOperationException("Number of elements must match");
             }
 
-            double sum_weights = weights.Sum();
-            IEnumerable<double> weights_normalized = null;
+            double sum_weights = span_x.Sum();
+            IEnumerable<double>? weights_normalized = null;
 
             if (System.Math.Abs(sum_weights - 1.0) >= double.Epsilon)
             {

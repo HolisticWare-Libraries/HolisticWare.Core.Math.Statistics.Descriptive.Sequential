@@ -21,6 +21,7 @@
     -->
     <!-- common NuGet package refs that affect all projects -->
     <ItemGroup>
+        <PackageReference Include="System.Memory" />
         <PackageReference Include="System.ValueTuple" />
     </ItemGroup>
 

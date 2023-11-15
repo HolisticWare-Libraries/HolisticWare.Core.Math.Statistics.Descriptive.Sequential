@@ -20,7 +20,7 @@ namespace Core.Math.Statistics.Descriptive
                                         DataMissing<T>
                                         (
                                             IEnumerable<T?> input, 
-                                            Dictionary<T?, T> data_fixes_map = null
+                                            Dictionary<T?, T>? data_fixes_map = null
                                         ) 
             where T : struct
         {
