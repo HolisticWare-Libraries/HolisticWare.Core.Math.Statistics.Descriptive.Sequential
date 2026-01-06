@@ -1,4 +1,4 @@
-using System;
+    using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,7 +13,8 @@ namespace Core.Collections.Generic
     public static partial class IEnumerableExtensionsNormalize
     {
         //==============================================================================================================
-        public static IEnumerable<double> Normalize
+        public static IEnumerable<double> 
+                                    Normalize
                                     (
                                         this IEnumerable<byte> x,
                                         double? value = null
