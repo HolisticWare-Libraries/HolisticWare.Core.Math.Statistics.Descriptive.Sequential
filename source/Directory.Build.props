@@ -1,9 +1,9 @@
 <Project>
   <PropertyGroup>
-      <LangVersion>Latest</LangVersion>
-      <Nullable>enable</Nullable>
-      <ImplicitUsings>enable</ImplicitUsings>
-      <!--
+    <LangVersion>Latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!--
       <SingleProject>true</SingleProject>
       <CheckEolTargetFramework>false</CheckEolTargetFramework>
       -->
@@ -34,62 +34,63 @@
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
   </PropertyGroup>
 
-      <!--
+  <!--
         Maintanability + Security: NuGet Central Package Management
       -->
-      <PropertyGroup>
-        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-        <!--
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <!--
         <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
         -->
-    </PropertyGroup>
+  </PropertyGroup>
 
-    <PropertyGroup>
-        <!--
+  <PropertyGroup>
+    <!--
         The MSAL.snk has both private and public keys
         <SignAssembly>true</SignAssembly>
         <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)/build/MSAL.snk</AssemblyOriginatorKeyFile>
         <DelaySign>false</DelaySign>
-
-        <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)/build/SolutionWideAnalyzerConfig.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)/build/SolutionWideAnalyzerConfig.ruleset</CodeAnalysisRuleSet>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
         -->
-    </PropertyGroup>
+  </PropertyGroup>
 
-    <PropertyGroup>
-        <!--
+  <PropertyGroup>
+    <!--
         https://github.com/dotnet/roslyn-analyzers
         Microsoft.CodeAnalysis.NetAnalyzers
 
         EnableNETAnalyzers
         -->
-		<EnableNETAnalyzers>true</EnableNETAnalyzers>
-		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<AnalysisMode>AllEnabledByDefault</AnalysisMode>
-		<CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
-		<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-        <AnalysisLevel>latest</AnalysisLevel>
-		<RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
-		<RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
-		<Deterministic>true</Deterministic>
-		<Features>strict</Features>
-		<ReportAnalyzer>true</ReportAnalyzer>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+    <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
+    <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
+    <Deterministic>true</Deterministic>
+    <Features>strict</Features>
+    <ReportAnalyzer>true</ReportAnalyzer>
     <!--
-      AnalysisLevel
-      -->
+          AnalysisLevel
+          -->
   </PropertyGroup>
 
-    <!--
+  <!--
     <Import Project="../Directory.Build.props" />
-    <Import Project="./Rules-N-Recommendations.ruleset" Condition="Exists('./Rules-N-Recommendations.ruleset')" />
+    <Import Project="./Rules-N-Recommendations.ruleset"
+  Condition="Exists('./Rules-N-Recommendations.ruleset')" />
     -->
 
-    <!--
+  <!--
     https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-8/
     https://devblogs.microsoft.com/dotnet/dotnet-8-performance-improvements-in-dotnet-maui/
     -->
-  <PropertyGroup Condition=" $(TargetFramework.Contains('-android')) and '$(Configuration)' == 'Release' ">
+  <PropertyGroup
+    Condition=" $(TargetFramework.Contains('-android')) and '$(Configuration)' == 'Release' ">
     <AndroidStripILAfterAOT>true</AndroidStripILAfterAOT>
     <AndroidEnableProfiledAot>true</AndroidEnableProfiledAot>
 
@@ -98,7 +99,8 @@
     <RuntimeIdentifier>android-arm64</RuntimeIdentifier>
   </PropertyGroup>
 
-  <PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios' and '$(Configuration)' == 'Release'">
+  <PropertyGroup
+    Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios' and '$(Configuration)' == 'Release'">
     <!-- PublishAot=true indicates NativeAOT, while omitting this property would use Mono's AOT -->
     <PublishAot>true</PublishAot>
   </PropertyGroup>
